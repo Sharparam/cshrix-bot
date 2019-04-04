@@ -6,7 +6,7 @@ sudo: required
 dist: bionic
 
 dotnet: 2.2.105
-mono: none
+mono: latest
 
 env:
   global:
