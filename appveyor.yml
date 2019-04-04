@@ -1,0 +1,41 @@
+image: Visual Studio 2017
+
+version: '{build}'
+
+pull_requests:
+  do_not_increment_build_number: true
+
+nuget:
+  disable_publish_on_pr: true
+
+environment:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+cache:
+  - tools -> build.cake
+  - C:\ProgramData\chocolatey\bin -> build.cake
+  - C:\ProgramData\chocolatey\lib -> build.cake
+  - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
+
+init:
+  - git config --global user.name "AppVeyor CI"
+  - git config --global user.email "ci@appveyor.com"
+
+install:
+  - git config --global user.name "AppVeyor CI"
+  - git config --global user.email "ci@appveyor.com"
+
+build_script:
+- ps: .\build.ps1 -Target AppVeyor
+
+test: off
+
+artifacts:
+- path: .\artifacts\**\*.nupkg
+  name: NuGet
+- path: .\artifacts\**\*.zip
+  name: Archive
+
+notifications:
+- provider: GitHubPullRequest
