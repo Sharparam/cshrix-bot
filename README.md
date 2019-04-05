@@ -15,7 +15,7 @@ Copyright © 2019 by [Adam Hellberg][sharparam].
 
 This project is licensed under the [Mozilla Public License (MPL) 2.0][mpl].
 
-See the file <LICENSE> for more details.
+See the file [LICENSE]() for more details.
 
 [cshrix]: https://github.com/Sharparam/cshrix
 [sharparam]: https://github.com/Sharparam
