@@ -21,7 +21,7 @@ before_install:
   - "./travis/fix-branches.sh"
 
 install:
-  - dotnet install -g Cake.Tool --version 0.33.0
+  - dotnet tool install -g Cake.Tool --version 0.33.0
 
 before_script:
   - chmod +x build.sh
