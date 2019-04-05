@@ -181,6 +181,10 @@ Task("Default")
         Information("To push the Docker container into an Docker registry use the cake build argument: --target Push-Container -dockerRegistry=\"yourregistry\"");
     });
 
+Task("AppVeyor").IsDependentOn("Test");
+
+Task("Travis").IsDependentOn("Test");
+
 FilePathCollection GetSrcProjectFiles()
 {
     return GetFiles("./src/**/*.csproj");
