@@ -23,6 +23,9 @@ before_install:
 install:
   - dotnet tool install -g Cake.Tool --version 0.33.0
 
+before_script:
+  - PATH=$PATH:/home/travis/.dotnet/tools
+
 script:
   - "dotnet-cake -t Travis"
 
