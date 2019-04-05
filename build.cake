@@ -1,73 +1,228 @@
-//////////////////////////////////////////////////////////////////////
-// ARGUMENTS
-//////////////////////////////////////////////////////////////////////
+/* Copyright (c) 2019 by Adam Hellberg.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+#addin nuget:?package=Cake.Docker&version=0.9.9
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+var testFailed = false;
+var solutionDir = System.IO.Directory.GetCurrentDirectory();
 
-//////////////////////////////////////////////////////////////////////
-// PREPARATION
-//////////////////////////////////////////////////////////////////////
-
-const string Name = "Cshrix.Bot";
-const string SourceDir = "src";
-var sourcePath = $"{SourceDir}/";
-
-// Define directories.
-var buildDir = Directory($"./{SourceDir}/{Name}/bin") + Directory(configuration);
-
-//////////////////////////////////////////////////////////////////////
-// TASKS
-//////////////////////////////////////////////////////////////////////
+var testResultDir = Argument("testResultDir", System.IO.Path.Combine(solutionDir, "test-results"));
+var artifactDir = Argument("artifactDir", "./artifacts");
+var buildNumber = Argument<int>("buildNumber", 0);
+var dockerRegistry = Argument("dockerRegistry", "local");
+var slnName = Argument("slnName", "Cshrix.Bot");
 
 Task("Clean")
     .Does(() =>
-{
-    CleanDirectory(buildDir);
-});
+    {
+        var settings = new DeleteDirectorySettings {
+            Recursive = true,
+            Force = true
+        };
+
+        if(DirectoryExists(testResultDir))
+        {
+            CleanDirectory(testResultDir);
+            DeleteDirectory(testResultDir, settings);
+        }
+
+        if(DirectoryExists(artifactDir))
+        {
+            CleanDirectory(artifactDir);
+            DeleteDirectory(artifactDir, settings);
+        }
+
+        var binDirs = GetDirectories("./**/bin");
+        var objDirs = GetDirectories("./**/obj");
+        var testResDirs = GetDirectories("./**/TestResults");
+
+        CleanDirectories(binDirs);
+        CleanDirectories(objDirs);
+        CleanDirectories(testResDirs);
+
+        DeleteDirectories(binDirs, settings);
+        DeleteDirectories(objDirs, settings);
+        DeleteDirectories(testResDirs, settings);
+    });
+
+Task("PrepareDirectories")
+    .Does(() =>
+    {
+        EnsureDirectoryExists(testResultDir);
+        EnsureDirectoryExists(artifactDir);
+    });
 
 Task("Restore")
-    .IsDependentOn("Clean")
     .Does(() =>
-{
-    DotNetCoreRestore(sourcePath);
-});
+    {
+        DotNetCoreRestore();
+    });
 
 Task("Build")
+    .IsDependentOn("Clean")
+    .IsDependentOn("PrepareDirectories")
     .IsDependentOn("Restore")
     .Does(() =>
-{
-    var settings = new DotNetCoreBuildSettings
     {
-        Configuration = configuration
-    };
+        var solution = GetFiles("./*.sln").ElementAt(0);
+        Information("Build solution: {0}", solution);
 
-    DotNetCoreBuild(sourcePath, settings);
-});
+        var settings = new DotNetCoreBuildSettings
+        {
+            Configuration = configuration
+        };
+
+        DotNetCoreBuild(solution.FullPath, settings);
+    });
 
 Task("Test")
     .IsDependentOn("Build")
-    .Does(() =>
-{
-    var settings = new DotNetCoreTestSettings
+    .ContinueOnError()
+    .DoesForEach(GetTestProjectFiles(), (testProject) =>
     {
-        Configuration = configuration,
-        NoBuild = true
-    };
+        var projectFolder = System.IO.Path.GetDirectoryName(testProject.FullPath);
+        DotNetCoreTest(testProject.FullPath, new DotNetCoreTestSettings
+        {
+            ArgumentCustomization = args => args.Append("-l trx"),
+            WorkingDirectory = projectFolder
+        });
+    })
+    .Does(() =>
+    {
+        var tmpTestResultFiles = GetFiles("./**/*.trx");
+        CopyFiles(tmpTestResultFiles, testResultDir);
+    })
+    .DeferOnError();
 
-    DotNetCoreTest(sourcePath, settings);
-});
+Task("Pack")
+    .IsDependentOn("Test")
+    .Does(() =>
+    {
+        if (testFailed)
+        {
+            Information("Do not pack because tests failed");
+            return;
+        }
 
-//////////////////////////////////////////////////////////////////////
-// TASK TARGETS
-//////////////////////////////////////////////////////////////////////
+        var projects = GetSrcProjectFiles();
+        var settings = new DotNetCorePackSettings
+        {
+            Configuration = configuration,
+            OutputDirectory = artifactDir
+        };
 
-Task("Default").IsDependentOn("Test");
-Task("AppVeyor").IsDependentOn("Test");
-Task("Travis").IsDependentOn("Test");
+        foreach (var project in projects)
+        {
+            Information("Pack {0}", project.FullPath);
+            DotNetCorePack(project.FullPath, settings);
+        }
+    });
 
-//////////////////////////////////////////////////////////////////////
-// EXECUTION
-//////////////////////////////////////////////////////////////////////
+Task("Publish")
+    .IsDependentOn("Test")
+    .DoesForEach(GetSrcProjectFiles(), project =>
+    {
+        var projectDir = System.IO.Path.GetDirectoryName(project.FullPath);
+        var projectName = new System.IO.DirectoryInfo(projectDir).Name;
+        var outputDir = System.IO.Path.Combine(artifactDir, projectName);
+        EnsureDirectoryExists(outputDir);
+
+        Information("Publish {0} to {1}", projectName, outputDir);
+
+        var settings = new DotNetCorePublishSettings
+        {
+            OutputDirectory = outputDir,
+            Configuration = configuration
+        };
+
+        DotNetCorePublish(project.FullPath, settings);
+    });
+
+Task("Build-Container")
+    .IsDependentOn("Publish")
+    .Does(() => {
+        var version = GetProjectVersion();
+        var imageName = GetImageName();
+        var tagVersion = $"{imageName}:{version}-{buildNumber}".ToLower();
+        var tagLatest = $"{imageName}:latest".ToLower();
+
+        Information($"Build docker image {tagVersion}");
+        Information($"Build docker image {tagLatest}");
+
+        var buildArgs = new DockerImageBuildSettings
+        {
+            Tag = new List<string>() { tagVersion, tagLatest }.ToArray()
+        };
+
+        DockerBuild(buildArgs, solutionDir);
+    });
+
+Task("Push-Container")
+    .IsDependentOn("Build-Container")
+    .Does(() => {
+        var imageName = GetImageName().ToLower();
+        DockerPush(imageName);
+    });
+
+Task("Default")
+    .IsDependentOn("Test")
+    .Does(() =>
+    {
+        Information("Build and test the whole solution.");
+        Information("To pack (nuget) the application use the cake build argument: --target Pack");
+        Information("To publish (to run it somewhere else) the application use the cake build argument: --target Publish");
+        Information("To build a Docker container with the application use the cake build argument: --target Build-Container");
+        Information("To push the Docker container into an Docker registry use the cake build argument: --target Push-Container -dockerRegistry=\"yourregistry\"");
+    });
+
+FilePathCollection GetSrcProjectFiles()
+{
+    return GetFiles("./src/**/*.csproj");
+}
+
+FilePathCollection GetTestProjectFiles()
+{
+    return GetFiles("./test/**/*.Tests/*.csproj");
+}
+
+FilePath GetSlnFile()
+{
+    return GetFiles("./**/*.sln").First();
+}
+
+FilePath GetMainProjectFile()
+{
+    foreach(var project in GetSrcProjectFiles())
+    {
+        if(project.FullPath.EndsWith($"{slnName}.Console.csproj"))
+        {
+            return project;
+        }
+    }
+
+    Error("Cannot find main project file");
+    return null;
+}
+
+string GetProjectVersion()
+{
+    var project = GetMainProjectFile();
+
+    var doc = System.Xml.Linq.XDocument.Load(project.FullPath);
+    var version = doc.Descendants().First(p => p.Name.LocalName == "Version").Value;
+    Information($"Extrated version {version} from {project}");
+    return version;
+}
+
+string GetImageName()
+{
+    return $"{dockerRegistry}/{slnName}";
+}
 
 RunTarget(target);
