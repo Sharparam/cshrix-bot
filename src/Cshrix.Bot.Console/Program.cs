@@ -7,11 +7,33 @@
 
 namespace Cshrix.Bot.Console
 {
+    using System.IO;
+
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
+
     public static class Program
     {
         public static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello Cake!");
+            var configBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", false, true)
+                .AddJsonFile("appsettings.local.json", true, true)
+                .AddEnvironmentVariables("CSHRIX_BOT")
+                .AddCommandLine(args);
+
+            var configuration = configBuilder.Build();
+
+            var services = new ServiceCollection();
+
+            services.AddLogging(b => b.SetMinimumLevel(LogLevel.Warning).AddDebug().AddConsole());
+
+            services.AddCshrixServices();
+
+            var provider = services.BuildServiceProvider();
+
+            var bot = provider.GetRequiredService<Bot>();
         }
     }
 }
