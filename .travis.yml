@@ -27,7 +27,7 @@ before_script:
   - PATH=$PATH:/home/travis/.dotnet/tools
 
 script:
-  - "dotnet-cake -t Travis"
+  - dotnet-cake --target="Travis"
 
 cache:
   directories:
