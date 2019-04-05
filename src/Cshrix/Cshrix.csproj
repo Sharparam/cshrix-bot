@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Version>0.0.0</Version>
+    <Authors>Adam Hellberg</Authors>
+    <Product>cshrix</Product>
+    <Description>Matrix library for C#.</Description>
+    <Copyright>Copyright (c) 2019 by Adam Hellberg.</Copyright>
+    <PackageLicenseUrl>https://github.com/Sharparam/cshrix/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Sharparam/cshrix</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sharparam/cshrix</RepositoryUrl>
+    <PackageTags>matrix</PackageTags>
+  </PropertyGroup>
+
+</Project>
