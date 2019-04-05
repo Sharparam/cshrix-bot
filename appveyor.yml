@@ -25,9 +25,10 @@ init:
 install:
   - git config --global user.name "AppVeyor CI"
   - git config --global user.email "ci@appveyor.com"
+  - dotnet install -g Cake.Tool --version 0.33.0
 
 build_script:
-- ps: .\build.ps1 -Target AppVeyor
+- ps: dotnet-cake -t AppVeyor
 
 test: off
 
