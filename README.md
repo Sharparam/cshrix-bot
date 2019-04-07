@@ -13,7 +13,9 @@ Big thanks to the almighty @expectocode for coming up with a name for this proje
 
 Copyright © 2019 by [Adam Hellberg][sharparam].
 
-This project is licensed under the [Mozilla Public License (MPL) 2.0][mpl].
+This Source Code Form is subject to the terms of the [Mozilla Public
+License, v. 2.0][mpl]. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 See the file [LICENSE](LICENSE) for more details.
 

@@ -7,7 +7,7 @@ namespace Cshrix.Data
     using Serialization;
 
     [JsonConverter(typeof(UserIdConverter))]
-    public readonly struct UserId
+    public readonly struct UserId : IIdentifier
     {
         [JsonConstructor]
         public UserId(string id)
@@ -35,37 +35,52 @@ namespace Cshrix.Data
                 throw new ArgumentException("ID must contain a ':'", nameof(id));
             }
 
-            Id = id;
+            var sepIndex = id.IndexOf(':');
 
-            var split = id.Substring(1).Split(':');
-
-            if (split.Length != 2)
+            if (sepIndex == 1)
             {
-                throw new ArgumentException("ID must contain both local-part and server", nameof(id));
+                throw new ArgumentException("ID cannot have empty localpart", nameof(id));
             }
 
-            LocalPart = split[0];
-            Server = split[1];
-
-            if (string.IsNullOrWhiteSpace(LocalPart))
+            if (sepIndex == id.Length - 1)
             {
-                throw new ArgumentException("ID cannot contain empty local-part");
+                throw new ArgumentException("ID cannot have empty domain");
             }
 
-            if (string.IsNullOrWhiteSpace(Server))
+            Localpart = id.Substring(1, sepIndex - 1);
+
+            if (string.IsNullOrWhiteSpace(Localpart))
             {
-                throw new ArgumentException("ID must contain a server");
+                throw new ArgumentException("ID cannot have empty localpart", nameof(id));
             }
+
+            Domain = new ServerName(id.Substring(sepIndex + 1));
         }
 
-        public string Id { get; }
+        public UserId(string localpart, ServerName domain)
+        {
+            if (localpart == null)
+            {
+                throw new ArgumentNullException(nameof(localpart));
+            }
 
-        public string LocalPart { get; }
+            if (string.IsNullOrWhiteSpace(localpart))
+            {
+                throw new ArgumentException("ID cannot have empty localpart", nameof(localpart));
+            }
 
-        public string Server { get; }
+            Localpart = localpart;
+            Domain = domain;
+        }
 
-        public static UserId FromString(string id) => new UserId(id);
+        public IdentifierType Type => IdentifierType.User;
 
-        public override string ToString() => Id;
+        public char Sigil => '@';
+
+        public string Localpart { get; }
+
+        public ServerName Domain { get; }
+
+        public override string ToString() => $"{Sigil}{Localpart}:{Domain}";
     }
 }
