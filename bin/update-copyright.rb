@@ -8,6 +8,7 @@
 
 require 'time'
 
+BOM = "\u00ef\u00bb\u00bf"
 START_YEAR = 2019
 CURRENT_YEAR = Time.now.year
 
@@ -28,9 +29,16 @@ FORMATTERS = {
     lines << "// </copyright>\n"
   end,
   xml: -> (filename, tmpl) {
-    tmpl.lines.map { |line| line.strip.empty? ? "\n" : "- #{line}" }.tap do |mapped|
-      mapped[0] = "<!-#{mapped[0]}"
-      mapped[-1] = "#{mapped[-1]} -->"
+    tmpl.lines.map.with_index do |line, i|
+      if line.strip.empty?
+        "   -\n"
+      elsif i == 0
+        "<!-- #{line}"
+      else
+        "   - #{line}"
+      end
+    end.tap do |mapped|
+      mapped[-1] = "#{mapped[-1].chomp} -->\n"
     end
   }
 }.freeze
@@ -55,17 +63,18 @@ EXCLUDE = [
 # Simple check for now: If file contains a comment on the first line, then
 # assume it has a copyright notice.
 def has_copyright?(file, type)
-  first_line = File.open(file, &:readline)
+  first_line = File.open(file, 'r:bom|utf-8', &:readline)
   COMMENT_CHECKS[type].call(first_line)
 end
 
 def patch!(file, type)
   puts "Patching [#{type}] #{file}"
+
   lines = FORMATTERS[type].call(File.basename(file), TEMPLATE)
   lines << "\n"
-  lines.concat File.readlines(file)
+  lines.concat File.readlines(file, encoding: 'bom|utf-8')
   content = lines.join
-  File.write(file, content)
+  File.write(file, content, encoding: 'utf-8')
 end
 
 files = `git ls-files`.split("\n").reject { |f| EXCLUDE.any? { |e| e.match? f } }
