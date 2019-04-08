@@ -8,12 +8,14 @@
 
 namespace Cshrix.Data
 {
+    using System;
+
     using Newtonsoft.Json;
 
     using Serialization;
 
     [JsonConverter(typeof(IdentifierConverter))]
-    public interface IIdentifier
+    public interface IIdentifier : IEquatable<IIdentifier>, IEquatable<string>
     {
         IdentifierType Type { get; }
 

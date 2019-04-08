@@ -9,13 +9,16 @@
 namespace Cshrix.Data
 {
     using System;
+    using System.Text.RegularExpressions;
+
+    using Helpers;
 
     using Newtonsoft.Json;
 
     using Serialization;
 
     [JsonConverter(typeof(UserIdConverter))]
-    public readonly struct UserId : IIdentifier
+    public readonly struct UserId : IIdentifier, IEquatable<UserId>
     {
         [JsonConstructor]
         public UserId(string id)
@@ -81,6 +84,26 @@ namespace Cshrix.Data
             Domain = domain;
         }
 
+        public static bool operator ==(UserId left, UserId right) => left.Equals(right);
+
+        public static bool operator !=(UserId left, UserId right) => !left.Equals(right);
+
+        public static bool operator ==(UserId left, IIdentifier right) => left.Equals(right);
+
+        public static bool operator !=(UserId left, IIdentifier right) => !left.Equals(right);
+
+        public static bool operator ==(IIdentifier left, UserId right) => right.Equals(left);
+
+        public static bool operator !=(IIdentifier left, UserId right) => !right.Equals(left);
+
+        public static bool operator ==(UserId left, string right) => left.Equals(right);
+
+        public static bool operator !=(UserId left, string right) => !left.Equals(right);
+
+        public static bool operator ==(string left, UserId right) => right.Equals(left);
+
+        public static bool operator !=(string left, UserId right) => right.Equals(left);
+
         public IdentifierType Type => IdentifierType.User;
 
         public char Sigil => '@';
@@ -88,6 +111,41 @@ namespace Cshrix.Data
         public string Localpart { get; }
 
         public ServerName Domain { get; }
+
+        public override bool Equals(object obj)
+        {
+            switch (obj)
+            {
+                case null:
+                    return false;
+
+                case IIdentifier identifier:
+                    return Equals(identifier);
+
+                case string str:
+                    return Equals(str);
+
+                default:
+                    return obj is UserId other && Equals(other);
+            }
+        }
+
+        public bool Equals(IIdentifier other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            return Type == other.Type && Sigil == other.Sigil && Localpart == other.Localpart && Domain == other.Domain;
+        }
+
+        public bool Equals(string other) => string.Equals(ToString(), other);
+
+        public bool Equals(UserId other) =>
+            Type == other.Type && Sigil == other.Sigil && Localpart == other.Localpart && Domain == other.Domain;
+
+        public override int GetHashCode() => HashCode.Combine(Type, Sigil, Localpart, Domain);
 
         public override string ToString() => $"{Sigil}{Localpart}:{Domain}";
     }

@@ -9,13 +9,18 @@
 namespace Cshrix.Data
 {
     using System;
+    using System.Data.Common;
+
+    using Helpers;
+
+    using Microsoft.Extensions.Primitives;
 
     using Newtonsoft.Json;
 
     using Serialization;
 
     [JsonConverter(typeof(ServerNameConverter))]
-    public readonly struct ServerName
+    public readonly struct ServerName : IEquatable<ServerName>, IEquatable<string>
     {
         [JsonConstructor]
         public ServerName(string raw)
@@ -55,11 +60,44 @@ namespace Cshrix.Data
             Port = port;
         }
 
+        public static bool operator ==(ServerName left, ServerName right) => left.Equals(right);
+
+        public static bool operator !=(ServerName left, ServerName right) => !left.Equals(right);
+
+        public static bool operator ==(ServerName left, string right) => left.Equals(right);
+
+        public static bool operator !=(ServerName left, string right) => !left.Equals(right);
+
+        public static bool operator ==(string left, ServerName right) => right.Equals(left);
+
+        public static bool operator !=(string left, ServerName right) => right.Equals(left);
+
         public string Hostname { get; }
 
         public ushort? Port { get; }
 
         public ushort GetPortOrDefault(ushort defaultValue = default) => Port ?? defaultValue;
+
+        public bool Equals(ServerName other) => string.Equals(Hostname, other.Hostname) && Port == other.Port;
+
+        public bool Equals(string other) => string.Equals(ToString(), other);
+
+        public override bool Equals(object obj)
+        {
+            switch (obj)
+            {
+                case null:
+                    return false;
+
+                case string otherString:
+                    return Equals(otherString);
+
+                default:
+                    return obj is ServerName other && Equals(other);
+            }
+        }
+
+        public override int GetHashCode() => HashCode.Combine(Hostname, Port);
 
         public override string ToString() => Port.HasValue ? $"{Hostname}:{Port}" : Hostname;
     }
