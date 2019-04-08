@@ -39,8 +39,8 @@ Task("Clean")
             DeleteDirectory(artifactDir, settings);
         }
 
-        var binDirs = GetDirectories("./**/bin");
-        var objDirs = GetDirectories("./**/obj");
+        var binDirs = GetDirectories("./src/**/bin");
+        var objDirs = GetDirectories("./src/**/obj");
         var testResDirs = GetDirectories("./**/TestResults");
 
         CleanDirectories(binDirs);
