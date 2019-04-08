@@ -82,7 +82,5 @@ files = `git ls-files`.split("\n").reject { |f| EXCLUDE.any? { |e| e.match? f } 
 files.each do |file|
   type = FILE_EXT_PATTERNS.find { |(k, _)| k.match? file }&.last
   next unless type
-  is_updated = has_copyright? file, type
-  next if is_updated
-  patch! file, type
+  patch! file, type unless has_copyright? file, type
 end
