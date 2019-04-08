@@ -27,13 +27,13 @@ Task("Clean")
             Force = true
         };
 
-        if(DirectoryExists(testResultDir))
+        if (DirectoryExists(testResultDir))
         {
             CleanDirectory(testResultDir);
             DeleteDirectory(testResultDir, settings);
         }
 
-        if(DirectoryExists(artifactDir))
+        if (DirectoryExists(artifactDir))
         {
             CleanDirectory(artifactDir);
             DeleteDirectory(artifactDir, settings);

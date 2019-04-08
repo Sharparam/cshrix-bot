@@ -28,7 +28,7 @@ FORMATTERS = {
     lines.concat tmpl.lines.map { |line| line.strip.empty? ? "//\n" : "//   #{line}" }
     lines << "// </copyright>\n"
   end,
-  xml: -> (filename, tmpl) {
+  xml: -> (filename, tmpl) do
     tmpl.lines.map.with_index do |line, i|
       if line.strip.empty?
         "   -\n"
@@ -40,7 +40,7 @@ FORMATTERS = {
     end.tap do |mapped|
       mapped[-1] = "#{mapped[-1].chomp} -->\n"
     end
-  }
+  end
 }.freeze
 
 COMMENT_CHECKS = {
