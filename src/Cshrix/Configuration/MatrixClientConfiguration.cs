@@ -8,8 +8,12 @@
 
 namespace Cshrix.Configuration
 {
+    using System;
+
     public class MatrixClientConfiguration
     {
+        public Uri BaseUri { get; set; }
+
         public string AccessToken { get; set; }
     }
 }

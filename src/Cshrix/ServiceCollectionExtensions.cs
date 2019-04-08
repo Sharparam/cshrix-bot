@@ -14,6 +14,8 @@ namespace Cshrix
     {
         public static IServiceCollection AddCshrixServices(this IServiceCollection services)
         {
+            services.AddHttpClient<IMatrixClient, MatrixClient>();
+
             return services;
         }
     }

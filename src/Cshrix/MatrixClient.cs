@@ -8,19 +8,33 @@
 
 namespace Cshrix
 {
+    using System;
+    using System.Net.Http;
+
     using Configuration;
 
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
 
+    using RestEase;
+
     public class MatrixClient : IMatrixClient
     {
+        private const string DefaultBaseUrl = "https://matrix.org/_matrix/client";
+
+        private readonly IMatrixApi _api;
+
         private readonly IOptionsMonitor<MatrixClientConfiguration> _configMonitor;
 
-        public MatrixClient(ILogger<MatrixClient> log, IOptionsMonitor<MatrixClientConfiguration> clientConfig)
+        public MatrixClient(
+            ILogger<MatrixClient> log,
+            HttpClient httpClient,
+            IOptionsMonitor<MatrixClientConfiguration> clientConfig)
         {
-            _configMonitor = clientConfig;
             Log = log;
+            httpClient.BaseAddress = clientConfig.CurrentValue.BaseUri ?? new Uri(DefaultBaseUrl);
+            _api = RestClient.For<IMatrixApi>(httpClient);
+            _configMonitor = clientConfig;
         }
 
         protected ILogger Log { get; }

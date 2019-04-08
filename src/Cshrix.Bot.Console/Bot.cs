@@ -14,6 +14,17 @@ namespace Cshrix.Bot.Console
     {
         private readonly ILogger _log;
 
-        public Bot(ILogger<Bot> log) => _log = log;
+        private readonly IMatrixClient _client;
+
+        public Bot(ILogger<Bot> log, IMatrixClient client)
+        {
+            _log = log;
+            _client = client;
+        }
+
+        public void Test()
+        {
+            _log.LogInformation("Testing");
+        }
     }
 }

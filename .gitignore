@@ -731,3 +731,6 @@ test-results/
 
 # Exclude root bin folder containing utility scripts
 !/bin
+
+# Ignore local settings
+appsettings.local.json

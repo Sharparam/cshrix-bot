@@ -8,7 +8,10 @@
 
 namespace Cshrix.Bot.Console
 {
+    using System;
     using System.IO;
+
+    using Configuration;
 
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -18,23 +21,60 @@ namespace Cshrix.Bot.Console
     {
         public static void Main(string[] args)
         {
-            var configBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", false, true)
-                .AddJsonFile("appsettings.local.json", true, true)
-                .AddEnvironmentVariables("CSHRIX_BOT")
-                .AddCommandLine(args);
+            ServiceProvider provider = null;
+            ILogger log = null;
 
-            var configuration = configBuilder.Build();
+            try
+            {
+                var configBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json", false, true)
+                    .AddJsonFile("appsettings.local.json", true, true)
+                    .AddEnvironmentVariables("CSHRIX_BOT")
+                    .AddCommandLine(args);
 
-            var services = new ServiceCollection();
+                var configuration = configBuilder.Build();
 
-            services.AddLogging(b => b.SetMinimumLevel(LogLevel.Warning).AddDebug().AddConsole());
+                var services = new ServiceCollection();
 
-            services.AddCshrixServices();
+                services.Configure<MatrixClientConfiguration>(configuration.GetSection("ClientConfiguration"));
 
-            var provider = services.BuildServiceProvider();
+                services.AddLogging(
+                    b => b.AddConfiguration(configuration.GetSection("Logging"))
+                        .AddDebug()
+                        .AddConsole()
+                        .AddEventSourceLogger()
+                        .AddTraceSource("cshrix-bot"));
 
-            var bot = provider.GetRequiredService<Bot>();
+                services.AddCshrixServices();
+
+                services.AddTransient<Bot>();
+
+                provider = services.BuildServiceProvider();
+
+                log = provider.GetRequiredService<ILoggerFactory>().CreateLogger("MAIN");
+
+                var bot = provider.GetRequiredService<Bot>();
+
+                bot.Test();
+            }
+            catch (Exception ex)
+            {
+                if (log == null)
+                {
+                    System.Console.WriteLine($"Unhandled exception {ex.GetType()} in main: {ex.Message}");
+                    System.Console.WriteLine(ex.StackTrace);
+                }
+                else
+                {
+                    log.LogCritical(ex, "Unhandled exception in main");
+                }
+
+                throw;
+            }
+            finally
+            {
+                provider?.Dispose();
+            }
         }
     }
 }
