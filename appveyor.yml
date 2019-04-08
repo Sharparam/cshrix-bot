@@ -28,7 +28,7 @@ install:
   - dotnet tool install -g Cake.Tool --version 0.33.0
 
 build_script:
-- ps: dotnet-cake -t AppVeyor
+- ps: dotnet-cake --target="AppVeyor"
 
 test: off
 
