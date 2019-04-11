@@ -20,7 +20,6 @@ namespace Cshrix.Data
     [JsonConverter(typeof(UserIdConverter))]
     public readonly struct UserId : IIdentifier, IEquatable<UserId>
     {
-        [JsonConstructor]
         public UserId(string id)
             : this()
         {
@@ -68,6 +67,7 @@ namespace Cshrix.Data
             Domain = new ServerName(id.Substring(sepIndex + 1));
         }
 
+        [JsonConstructor]
         public UserId(string localpart, ServerName domain)
         {
             if (localpart == null)

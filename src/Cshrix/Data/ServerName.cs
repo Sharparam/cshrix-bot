@@ -22,7 +22,6 @@ namespace Cshrix.Data
     [JsonConverter(typeof(ServerNameConverter))]
     public readonly struct ServerName : IEquatable<ServerName>, IEquatable<string>
     {
-        [JsonConstructor]
         public ServerName(string raw)
             : this()
         {
@@ -43,6 +42,7 @@ namespace Cshrix.Data
             Port = split.Length > 1 ? (ushort?)ushort.Parse(split[1]) : null;
         }
 
+        [JsonConstructor]
         public ServerName(string hostname, ushort? port)
             : this()
         {

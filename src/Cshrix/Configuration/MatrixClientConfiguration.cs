@@ -14,6 +14,8 @@ namespace Cshrix.Configuration
     {
         public Uri BaseUri { get; set; }
 
+        public string ApiVersion { get; set; }
+
         public string AccessToken { get; set; }
     }
 }

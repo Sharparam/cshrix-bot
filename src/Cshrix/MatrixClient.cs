@@ -10,8 +10,11 @@ namespace Cshrix
 {
     using System;
     using System.Net.Http;
+    using System.Threading.Tasks;
 
     using Configuration;
+
+    using Data;
 
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
@@ -20,9 +23,13 @@ namespace Cshrix
 
     public class MatrixClient : IMatrixClient
     {
-        private const string DefaultBaseUrl = "https://matrix.org/_matrix/client";
+        private const string DefaultBaseUrl = "https://matrix.org";
 
-        private readonly IMatrixApi _api;
+        private const string ClientServerSlug = "_matrix/client";
+
+        private const string DefaultApiVersion = "r0";
+
+        private readonly IMatrixClientServerApi _api;
 
         private readonly IOptionsMonitor<MatrixClientConfiguration> _configMonitor;
 
@@ -32,11 +39,16 @@ namespace Cshrix
             IOptionsMonitor<MatrixClientConfiguration> clientConfig)
         {
             Log = log;
-            httpClient.BaseAddress = clientConfig.CurrentValue.BaseUri ?? new Uri(DefaultBaseUrl);
-            _api = RestClient.For<IMatrixApi>(httpClient);
+            var baseUri = clientConfig.CurrentValue.BaseUri ?? new Uri(DefaultBaseUrl);
+            var clientServerBase = new Uri(baseUri, ClientServerSlug);
+            httpClient.BaseAddress = clientServerBase;
+            _api = RestClient.For<IMatrixClientServerApi>(httpClient);
             _configMonitor = clientConfig;
+            _api.ApiVersion = clientConfig.CurrentValue.ApiVersion ?? DefaultApiVersion;
         }
 
         protected ILogger Log { get; }
+
+        public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync()).UserId;
     }
 }

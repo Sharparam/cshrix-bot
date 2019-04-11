@@ -10,6 +10,7 @@ namespace Cshrix.Bot.Console
 {
     using System;
     using System.IO;
+    using System.Threading.Tasks;
 
     using Configuration;
 
@@ -19,7 +20,7 @@ namespace Cshrix.Bot.Console
 
     public static class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             ServiceProvider provider = null;
             ILogger log = null;
@@ -55,7 +56,7 @@ namespace Cshrix.Bot.Console
 
                 var bot = provider.GetRequiredService<Bot>();
 
-                bot.Test();
+                await bot.TestAsync();
             }
             catch (Exception ex)
             {

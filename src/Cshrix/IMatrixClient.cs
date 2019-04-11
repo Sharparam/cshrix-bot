@@ -8,7 +8,13 @@
 
 namespace Cshrix
 {
+    using System.Threading.Tasks;
+
+    using Data;
+
     public interface IMatrixClient
     {
+
+        Task<UserId> GetUserIdAsync();
     }
 }

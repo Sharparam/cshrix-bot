@@ -8,6 +8,8 @@
 
 namespace Cshrix.Bot.Console
 {
+    using System.Threading.Tasks;
+
     using Microsoft.Extensions.Logging;
 
     internal sealed class Bot
@@ -22,9 +24,13 @@ namespace Cshrix.Bot.Console
             _client = client;
         }
 
-        public void Test()
+        public async Task TestAsync()
         {
             _log.LogInformation("Testing");
+
+            var userId = await _client.GetUserIdAsync();
+
+            _log.LogInformation("I am {UserId}", userId);
         }
     }
 }
