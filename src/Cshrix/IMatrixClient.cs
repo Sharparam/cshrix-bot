@@ -14,7 +14,6 @@ namespace Cshrix
 
     public interface IMatrixClient
     {
-
-        Task<UserId> GetUserIdAsync();
+        Task<Identifier> GetUserIdAsync();
     }
 }

@@ -1,4 +1,4 @@
-// <copyright file="WhoisResponse.cs">
+// <copyright file="DevicesContainer.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -8,24 +8,16 @@
 
 namespace Cshrix.Data
 {
-    using System.Collections.Generic;
-
     using Newtonsoft.Json;
 
-    public readonly struct WhoisResponse
+    public readonly struct DevicesResponse
     {
         [JsonConstructor]
-        public WhoisResponse(Identifier userId, Dictionary<string, DeviceInfo> devices)
-            : this()
-        {
-            UserId = userId;
+        public DevicesResponse(Device[] devices)
+            : this() =>
             Devices = devices;
-        }
-
-        [JsonProperty("user_id")]
-        public Identifier UserId { get; }
 
         [JsonProperty("devices")]
-        public Dictionary<string, DeviceInfo> Devices { get; }
+        public Device[] Devices { get; }
     }
 }

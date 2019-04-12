@@ -1,4 +1,4 @@
-// <copyright file="User.cs">
+// <copyright file="Profile.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -12,24 +12,20 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
-    public readonly struct User
+    public readonly struct Profile
     {
         [JsonConstructor]
-        public User(Uri avatarUri, string displayName, Identifier userId)
+        public Profile(string displayName, Uri avatarUri)
             : this()
         {
-            AvatarUri = avatarUri;
             DisplayName = displayName;
-            UserId = userId;
+            AvatarUri = avatarUri;
         }
+
+        [JsonProperty("displayname")]
+        public string DisplayName { get; }
 
         [JsonProperty("avatar_url")]
         public Uri AvatarUri { get; }
-
-        [JsonProperty("display_name")]
-        public string DisplayName { get; }
-
-        [JsonProperty("user_id")]
-        public Identifier UserId { get; }
     }
 }

@@ -49,6 +49,6 @@ namespace Cshrix
 
         protected ILogger Log { get; }
 
-        public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync()).UserId;
+        public async Task<Identifier> GetUserIdAsync() => (await _api.WhoAmIAsync()).UserId;
     }
 }

@@ -9,11 +9,8 @@
 namespace Cshrix.Data
 {
     using System;
-    using System.Data.Common;
 
     using Helpers;
-
-    using Microsoft.Extensions.Primitives;
 
     using Newtonsoft.Json;
 

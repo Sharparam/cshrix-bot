@@ -1,4 +1,4 @@
-// <copyright file="UserIdContainer.cs">
+// <copyright file="TagsContainer.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -8,16 +8,18 @@
 
 namespace Cshrix.Data
 {
+    using System.Collections.Generic;
+
     using Newtonsoft.Json;
 
-    public readonly struct UserIdContainer
+    public readonly struct TagsResponse
     {
         [JsonConstructor]
-        public UserIdContainer(Identifier userId)
+        public TagsResponse(Dictionary<string, TagData> tags)
             : this() =>
-            UserId = userId;
+            Tags = tags;
 
-        [JsonProperty("user_id")]
-        public Identifier UserId { get; }
+        [JsonProperty("tags")]
+        public Dictionary<string, TagData> Tags { get; }
     }
 }

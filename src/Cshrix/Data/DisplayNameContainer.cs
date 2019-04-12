@@ -1,4 +1,4 @@
-// <copyright file="UserIdContainer.cs">
+// <copyright file="DisplayNameContainer.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -10,14 +10,14 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
-    public readonly struct UserIdContainer
+    public readonly struct DisplayNameContainer
     {
         [JsonConstructor]
-        public UserIdContainer(Identifier userId)
+        public DisplayNameContainer(string displayName)
             : this() =>
-            UserId = userId;
+            DisplayName = displayName;
 
-        [JsonProperty("user_id")]
-        public Identifier UserId { get; }
+        [JsonProperty("displayname")]
+        public string DisplayName { get; }
     }
 }

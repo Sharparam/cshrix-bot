@@ -8,9 +8,16 @@
 
 namespace Cshrix.Extensions
 {
-    public static class MatrixApiExtensions
+    using System.Threading.Tasks;
+
+    using Data;
+
+    public static class MatrixClientServerApiExtensions
     {
         public static void SetBearerToken(this IMatrixClientServerApi api, string accessToken) =>
             api.Authorization = $"Bearer {accessToken}";
+
+        public static Task<OpenIdToken> RequestOpenIdTokenAsync(this IMatrixClientServerApi api, Identifier userId) =>
+            api.RequestOpenIdTokenAsync(userId, new object());
     }
 }

@@ -1,4 +1,4 @@
-// <copyright file="ConnectionInfo.cs">
+// <copyright file="Device.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -15,26 +15,30 @@ namespace Cshrix.Data
 
     using Serialization;
 
-    public readonly struct ConnectionInfo
+    public readonly struct Device
     {
         [JsonConstructor]
-        public ConnectionInfo(IPAddress ip, DateTimeOffset lastSeenAt, string userAgent)
+        public Device(string id, string displayName, IPAddress lastSeenIp, DateTimeOffset lastSeenAt)
             : this()
         {
-            Ip = ip;
+            Id = id;
+            DisplayName = displayName;
+            LastSeenIp = lastSeenIp;
             LastSeenAt = lastSeenAt;
-            UserAgent = userAgent;
         }
 
-        [JsonProperty("ip")]
-        [JsonConverter(typeof(StringIpAddressConverter))]
-        public IPAddress Ip { get; }
+        [JsonProperty("device_id")]
+        public string Id { get; }
 
-        [JsonProperty("last_seen")]
+        [JsonProperty("display_name")]
+        public string DisplayName { get; }
+
+        [JsonProperty("last_seen_ip")]
+        [JsonConverter(typeof(StringIpAddressConverter))]
+        public IPAddress LastSeenIp { get; }
+
+        [JsonProperty("last_seen_ts")]
         [JsonConverter(typeof(UnixMillisecondDateTimeConverter))]
         public DateTimeOffset LastSeenAt { get; }
-
-        [JsonProperty("user_agent")]
-        public string UserAgent { get; }
     }
 }

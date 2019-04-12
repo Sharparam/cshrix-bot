@@ -1,4 +1,4 @@
-// <copyright file="IIdentifier.cs">
+// <copyright file="AvatarUrlContainer.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -12,17 +12,14 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
-    using Serialization;
-
-    [JsonConverter(typeof(IdentifierConverter))]
-    public interface IIdentifier : IEquatable<IIdentifier>, IEquatable<string>
+    public readonly struct AvatarUrlContainer
     {
-        IdentifierType Type { get; }
+        [JsonConstructor]
+        public AvatarUrlContainer(Uri uri)
+            : this() =>
+            Uri = uri;
 
-        char Sigil { get; }
-
-        string Localpart { get; }
-
-        ServerName Domain { get; }
+        [JsonProperty("avatar_url")]
+        public Uri Uri { get; }
     }
 }
