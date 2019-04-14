@@ -23,7 +23,7 @@ namespace Cshrix.Data.Events
             Identifier? roomId,
             Identifier sender,
             DateTimeOffset sentAt,
-            UnsignedData unsigned,
+            UnsignedData? unsigned,
             [CanBeNull] EventContent previousContent,
             string stateKey)
             : base(content, type, id, sender, roomId, sentAt, unsigned)

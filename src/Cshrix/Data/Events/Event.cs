@@ -10,6 +10,9 @@ namespace Cshrix.Data.Events
 {
     using Newtonsoft.Json;
 
+    using Serialization;
+
+    [JsonConverter(typeof(EventConverter))]
     public class Event
     {
         public Event(EventContent content, string type)

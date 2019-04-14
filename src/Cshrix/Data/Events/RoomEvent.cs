@@ -12,6 +12,8 @@ namespace Cshrix.Data.Events
 
     using Newtonsoft.Json;
 
+    using Serialization;
+
     public class RoomEvent : SenderEvent
     {
         public RoomEvent(
@@ -21,7 +23,7 @@ namespace Cshrix.Data.Events
             Identifier sender,
             Identifier? roomId,
             DateTimeOffset sentAt,
-            UnsignedData unsigned)
+            UnsignedData? unsigned)
             : base(content, type, sender)
         {
             Id = id;
@@ -45,9 +47,10 @@ namespace Cshrix.Data.Events
         public Identifier? RoomId { get; internal set; }
 
         [JsonProperty("origin_server_ts")]
+        [JsonConverter(typeof(UnixMillisecondDateTimeConverter))]
         public DateTimeOffset SentAt { get; }
 
         [JsonProperty("unsigned")]
-        public UnsignedData Unsigned { get; }
+        public UnsignedData? Unsigned { get; }
     }
 }
