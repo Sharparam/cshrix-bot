@@ -14,7 +14,7 @@ namespace Cshrix.Data.Events
 
     using Newtonsoft.Json;
 
-    public class StateEvent : StrippedState
+    public class StateEvent : RoomEvent
     {
         public StateEvent(
             EventContent content,
@@ -26,26 +26,14 @@ namespace Cshrix.Data.Events
             UnsignedData unsigned,
             [CanBeNull] EventContent previousContent,
             string stateKey)
-            : base(content, stateKey, type, sender)
+            : base(content, type, id, sender, roomId, sentAt, unsigned)
         {
-            Id = id;
-            RoomId = roomId;
-            SentAt = sentAt;
-            Unsigned = unsigned;
+            StateKey = stateKey;
             PreviousContent = previousContent;
         }
 
-        [JsonProperty("event_id")]
-        public Identifier Id { get; }
-
-        [JsonProperty("room_id")]
-        public Identifier? RoomId { get; }
-
-        [JsonProperty("origin_server_ts")]
-        public DateTimeOffset SentAt { get; }
-
-        [JsonProperty("unsigned")]
-        public UnsignedData Unsigned { get; }
+        [JsonProperty("state_key")]
+        public string StateKey { get; }
 
         [JsonProperty("prev_content")]
         [CanBeNull]
