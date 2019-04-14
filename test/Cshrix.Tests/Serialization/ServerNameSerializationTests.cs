@@ -29,8 +29,8 @@ namespace Cshrix.Tests.Serialization
         [Test]
         public void ShouldDeserializeStringServerName()
         {
-            const string serverName = "\"matrix.sharparam.com\"";
-            var deserialized = JsonConvert.DeserializeObject<ServerName>(serverName);
+            const string ServerName = "\"matrix.sharparam.com\"";
+            var deserialized = JsonConvert.DeserializeObject<ServerName>(ServerName);
 
             Assert.AreEqual("matrix.sharparam.com", deserialized.Hostname);
         }
@@ -38,11 +38,11 @@ namespace Cshrix.Tests.Serialization
         [Test]
         public void ShouldDeserializeObjectServerName()
         {
-            const string serverName = @"{
+            const string ServerName = @"{
                 ""Hostname"": ""matrix.sharparam.com"",
             }";
 
-            var deserialized = JsonConvert.DeserializeObject<ServerName>(serverName);
+            var deserialized = JsonConvert.DeserializeObject<ServerName>(ServerName);
 
             Assert.AreEqual("matrix.sharparam.com", deserialized.Hostname);
         }

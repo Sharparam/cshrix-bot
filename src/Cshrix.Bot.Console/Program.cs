@@ -14,6 +14,8 @@ namespace Cshrix.Bot.Console
 
     using Configuration;
 
+    using Data;
+
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
@@ -62,8 +64,8 @@ namespace Cshrix.Bot.Console
             {
                 if (log == null)
                 {
-                    System.Console.WriteLine($"Unhandled exception {ex.GetType()} in main: {ex.Message}");
-                    System.Console.WriteLine(ex.StackTrace);
+                    Console.WriteLine($"Unhandled exception {ex.GetType()} in main: {ex.Message}");
+                    Console.WriteLine(ex.StackTrace);
                 }
                 else
                 {

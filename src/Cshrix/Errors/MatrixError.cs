@@ -8,20 +8,24 @@
 
 namespace Cshrix.Errors
 {
+    using JetBrains.Annotations;
+
     using Newtonsoft.Json;
 
     public class MatrixError
     {
-        public MatrixError(string code, string message)
+        public MatrixError([CanBeNull] string code, [CanBeNull] string message)
         {
             Code = code;
             Message = message;
         }
 
         [JsonProperty("errcode")]
+        [CanBeNull]
         public string Code { get; }
 
         [JsonProperty("error")]
+        [CanBeNull]
         public string Message { get; }
     }
 }

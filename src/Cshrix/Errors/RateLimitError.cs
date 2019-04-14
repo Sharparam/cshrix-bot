@@ -6,7 +6,7 @@ namespace Cshrix.Errors
 
     using Serialization;
 
-    public class RateLimitError : MatrixError
+    public sealed class RateLimitError : MatrixError
     {
         [JsonConstructor]
         public RateLimitError(TimeSpan retryAfter, string code, string message)

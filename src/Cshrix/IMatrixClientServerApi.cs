@@ -42,6 +42,21 @@ namespace Cshrix
 
         #region User data
 
+        [Get("{apiVersion}/account/3pid")]
+        Task<ThirdPartyIdentifiersResponse> GetThirdPartyIdentifiersAsync();
+
+        [Post("{apiVersion}/account/3pid")]
+        Task AddThirdPartyIdentifierAsync([Body] ThirdPartyIdentifierRegistrationRequest data);
+
+        [Post("{apiVersion}/account/3pid/delete")]
+        Task DeleteThirdPartyIdentifierAsync([Body] ThirdPartyIdentifierDeletionRequest data);
+
+        [Post("{apiVersion}/account/deactivate")]
+        Task DeactivateAccountAsync([Body] AuthenticationContainer data);
+
+        [Post("{apiVersion}/account/password")]
+        Task ChangePasswordAsync([Body] ChangePasswordRequest data);
+
         [Get("{apiVersion}/account/whoami")]
         Task<UserIdContainer> WhoAmIAsync();
 
@@ -60,8 +75,21 @@ namespace Cshrix
         [Put("{apiVersion}/profile/{userId}/displayname")]
         Task SetDisplayNameAsync([Path] Identifier userId, [Body] DisplayNameContainer data);
 
+        [Post("{apiVersion}/register")]
+        Task<RegistrationResponse> RegisterAsync([Body] RegistrationRequest data);
+
         [Get("{apiVersion}/register/available")]
         Task<AvailableContainer> IsRegistrationAvailableAsync([Query] string username);
+
+        [Put("{apiVersion}/user/{userId}/account_data/{type}")]
+        Task SetAccountDataAsync([Path] Identifier userId, [Path] string type, [Body] object data);
+
+        [Put("{apiVersion}/user/{userId}/rooms/{roomId}/account_data/{type}")]
+        Task SetRoomAccountDataAsync(
+            [Path] Identifier userId,
+            [Path] Identifier roomId,
+            [Path] string type,
+            [Body] object data);
 
         [Get("{apiVersion}/user/{userId}/rooms/{roomId}/tags")]
         Task<TagsResponse> GetRoomTagsAsync([Path] Identifier userId, [Path] Identifier roomId);
