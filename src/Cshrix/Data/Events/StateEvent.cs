@@ -10,6 +10,8 @@ namespace Cshrix.Data.Events
 {
     using System;
 
+    using JetBrains.Annotations;
+
     using Newtonsoft.Json;
 
     public class StateEvent : StrippedState
@@ -18,21 +20,26 @@ namespace Cshrix.Data.Events
             EventContent content,
             string type,
             Identifier id,
+            Identifier? roomId,
             Identifier sender,
             DateTimeOffset sentAt,
             UnsignedData unsigned,
-            EventContent previousContent,
+            [CanBeNull] EventContent previousContent,
             string stateKey)
             : base(content, stateKey, type, sender)
         {
             Id = id;
+            RoomId = roomId;
             SentAt = sentAt;
             Unsigned = unsigned;
             PreviousContent = previousContent;
         }
 
         [JsonProperty("event_id")]
-        public string Id { get; }
+        public Identifier Id { get; }
+
+        [JsonProperty("room_id")]
+        public Identifier? RoomId { get; }
 
         [JsonProperty("origin_server_ts")]
         public DateTimeOffset SentAt { get; }
@@ -41,6 +48,7 @@ namespace Cshrix.Data.Events
         public UnsignedData Unsigned { get; }
 
         [JsonProperty("prev_content")]
+        [CanBeNull]
         public EventContent PreviousContent { get; }
     }
 }

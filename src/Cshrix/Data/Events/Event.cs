@@ -8,8 +8,6 @@
 
 namespace Cshrix.Data.Events
 {
-    using System;
-
     using Newtonsoft.Json;
 
     public class Event

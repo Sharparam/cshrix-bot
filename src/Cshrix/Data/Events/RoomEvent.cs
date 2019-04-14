@@ -14,12 +14,18 @@ namespace Cshrix.Data.Events
 
     public class RoomEvent : SenderEvent
     {
-        public RoomEvent(EventContent content, string type, Identifier id, Identifier sender)
-            : base(content, type, sender) =>
+        public RoomEvent(EventContent content, string type, Identifier id, Identifier sender, Identifier? roomId)
+            : base(content, type, sender)
+        {
             Id = id;
+            RoomId = roomId;
+        }
 
         [JsonProperty("event_id")]
         public Identifier Id { get; }
+
+        [JsonProperty("room_id")]
+        public Identifier? RoomId { get; }
 
         [JsonProperty("origin_server_ts")]
         public DateTimeOffset SentAt { get; }
