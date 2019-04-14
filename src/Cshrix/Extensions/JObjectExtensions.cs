@@ -12,6 +12,8 @@ namespace Cshrix.Extensions
 
     public static class JObjectExtensions
     {
+        public static T Object<T>(this JObject jObject, string key) => jObject[key].ToObject<T>();
+
         public static bool TryGetValue<T>(this JObject jObject, string key, out T value)
         {
             if (!jObject.ContainsKey(key))
@@ -21,6 +23,18 @@ namespace Cshrix.Extensions
             }
 
             value = jObject.Value<T>(key);
+            return true;
+        }
+
+        public static bool TryGetObject<T>(this JObject jObject, string key, out T value)
+        {
+            if (!jObject.ContainsKey(key))
+            {
+                value = default;
+                return false;
+            }
+
+            value = jObject.Object<T>(key);
             return true;
         }
     }

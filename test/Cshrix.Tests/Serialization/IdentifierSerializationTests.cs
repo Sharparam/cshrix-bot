@@ -8,7 +8,7 @@
 
 namespace Cshrix.Tests.Serialization
 {
-    using Data;
+    using Cshrix.Data;
 
     using Newtonsoft.Json;
 

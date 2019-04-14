@@ -8,6 +8,7 @@
 
 namespace Cshrix.Data.Events
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
@@ -20,8 +21,24 @@ namespace Cshrix.Data.Events
         {
         }
 
-        public bool TryGetValue<T>(string key, out T value)
+        public T GetValueOrDefault<T>([NotNull] string key, T @default = default)
         {
+            if (key == null)
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+
+            var hasValue = TryGetValue<T>(key, out var value);
+            return hasValue ? value : @default;
+        }
+
+        public bool TryGetValue<T>([NotNull] string key, out T value)
+        {
+            if (key == null)
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+
             var hasValue = TryGetValue(key, out var obj);
 
             if (hasValue && obj is T t)

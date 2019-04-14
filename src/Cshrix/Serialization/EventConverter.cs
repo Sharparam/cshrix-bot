@@ -44,14 +44,14 @@ namespace Cshrix.Serialization
 
             var jObject = JObject.Load(reader);
 
-            var content = jObject.Value<EventContent>("content");
+            var content = jObject.Object<EventContent>("content");
             var type = jObject.Value<string>("type");
-            var hasSender = jObject.TryGetValue<Identifier>("sender", out var sender);
-            var hasId = jObject.TryGetValue<Identifier>("event_id", out var id);
+            var hasSender = jObject.TryGetObject<Identifier>("sender", out var sender);
+            var hasId = jObject.TryGetObject<Identifier>("event_id", out var id);
             var hasStateKey = jObject.TryGetValue<string>("state_key", out var stateKey);
-            var hasRoomId = jObject.TryGetValue<Identifier?>("room_id", out var roomId);
-            var hasUnsigned = jObject.TryGetValue<UnsignedData?>("unsigned", out var unsigned);
-            var hasPreviousContent = jObject.TryGetValue<EventContent>("prev_content", out var previousContent);
+            var hasRoomId = jObject.TryGetObject<Identifier?>("room_id", out var roomId);
+            var hasUnsigned = jObject.TryGetObject<UnsignedData?>("unsigned", out var unsigned);
+            var hasPreviousContent = jObject.TryGetObject<EventContent>("prev_content", out var previousContent);
 
             var hasSentAt = false;
             DateTimeOffset sentAt;
