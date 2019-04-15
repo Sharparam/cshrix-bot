@@ -112,6 +112,9 @@ namespace Cshrix
 
         #region Room creation
 
+        [Post("{apiVersion}/createRoom")]
+        Task<RoomIdContainer> CreateRoomAsync([Body] CreateRoomRequest data);
+
         #endregion Room creation
 
         #region Device management
