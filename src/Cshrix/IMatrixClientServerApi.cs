@@ -138,6 +138,12 @@ namespace Cshrix
 
         #region Application service room directory management
 
+        [Put("{apiVersion}/directory/list/appservice/{networkId}/{roomId}")]
+        Task UpdateAppServiceRoomVisibilityAsync(
+            [Path] string networkId,
+            [Path] Identifier roomId,
+            [Body] RoomVisibilityContainer data);
+
         #endregion Application service room directory management
 
         #region Room directory
