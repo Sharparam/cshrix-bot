@@ -6,8 +6,6 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using NUnit.Framework;
-
 namespace Cshrix.Tests.Data.Events
 {
     using System;
@@ -18,40 +16,11 @@ namespace Cshrix.Tests.Data.Events
 
     using Newtonsoft.Json;
 
+    using NUnit.Framework;
+
     [TestFixture]
     public class RoomEventTests
     {
-        [Test]
-        public void ShouldParseSimpleMemberEvent()
-        {
-            var json = @"{
-                ""content"": {
-                    ""avatar_url"": ""mxc://domain.com/SEsfnsuifSDFSSEF#auto"",
-                    ""displayname"": ""Alice Margatroid"",
-                    ""membership"": ""join""
-                },
-                ""event_id"": ""$143273582443PhrSn:domain.com"",
-                ""origin_server_ts"": 1432735824653,
-                ""room_id"": ""!jEsUZKDJdhlrceRyVU:domain.com"",
-                ""sender"": ""@example:domain.com"",
-                ""state_key"": ""@alice:domain.com"",
-                ""type"": ""m.room.member"",
-                ""unsigned"": {
-                    ""age"": 1234
-                }
-            }";
-
-            var ev = JsonConvert.DeserializeObject<StateEvent>(json);
-
-            Assert.That(ev.Content, Is.TypeOf<MemberContent>());
-
-            var content = (MemberContent)ev.Content;
-
-            Assert.AreEqual(new Uri("mxc://domain.com/SEsfnsuifSDFSSEF#auto"), content.AvatarUri);
-            Assert.AreEqual("Alice Margatroid", content.DisplayName);
-            Assert.AreEqual(Membership.Joined, content.Membership);
-        }
-
         [Test]
         public void ShouldParsePowerLevelsEvent()
         {
@@ -103,6 +72,37 @@ namespace Cshrix.Tests.Data.Events
             Assert.AreEqual(50, content.StateDefault);
             Assert.AreEqual(100, content.Users[(Identifier)"@example:localhost"]);
             Assert.AreEqual(0, content.UsersDefault);
+        }
+
+        [Test]
+        public void ShouldParseSimpleMemberEvent()
+        {
+            var json = @"{
+                ""content"": {
+                    ""avatar_url"": ""mxc://domain.com/SEsfnsuifSDFSSEF#auto"",
+                    ""displayname"": ""Alice Margatroid"",
+                    ""membership"": ""join""
+                },
+                ""event_id"": ""$143273582443PhrSn:domain.com"",
+                ""origin_server_ts"": 1432735824653,
+                ""room_id"": ""!jEsUZKDJdhlrceRyVU:domain.com"",
+                ""sender"": ""@example:domain.com"",
+                ""state_key"": ""@alice:domain.com"",
+                ""type"": ""m.room.member"",
+                ""unsigned"": {
+                    ""age"": 1234
+                }
+            }";
+
+            var ev = JsonConvert.DeserializeObject<StateEvent>(json);
+
+            Assert.That(ev.Content, Is.TypeOf<MemberContent>());
+
+            var content = (MemberContent)ev.Content;
+
+            Assert.AreEqual(new Uri("mxc://domain.com/SEsfnsuifSDFSSEF#auto"), content.AvatarUri);
+            Assert.AreEqual("Alice Margatroid", content.DisplayName);
+            Assert.AreEqual(Membership.Joined, content.Membership);
         }
     }
 }
