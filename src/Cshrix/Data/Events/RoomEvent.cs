@@ -10,6 +10,8 @@ namespace Cshrix.Data.Events
 {
     using System;
 
+    using Content;
+
     using Newtonsoft.Json;
 
     using Serialization;

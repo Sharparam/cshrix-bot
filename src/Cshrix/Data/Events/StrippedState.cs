@@ -8,6 +8,8 @@
 
 namespace Cshrix.Data.Events
 {
+    using Content;
+
     using Newtonsoft.Json;
 
     public class StrippedState : SenderEvent

@@ -10,9 +10,12 @@ namespace Cshrix.Serialization
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
 
     using Data;
     using Data.Events;
+    using Data.Events.Content;
 
     using Extensions;
 
@@ -21,7 +24,29 @@ namespace Cshrix.Serialization
 
     public class EventConverter : JsonConverter<Event>
     {
-        private static readonly IReadOnlyDictionary<string, Func<EventContent, string, Event>> EventTypeGenerators;
+        private static readonly IReadOnlyDictionary<string, Func<string, IDictionary<string, object>, EventContent>>
+            ContentTypes = new Dictionary<string, Func<string, IDictionary<string, object>, EventContent>>
+            {
+                ["m.room.aliases"] = (_, dict) => new AliasesContent(dict),
+                ["m.room.message"] = (type, dict) =>
+                {
+                    var hasFunc = MessageContentTypes.TryGetValue(type, out var func);
+                    return hasFunc ? func(dict) : new MessageContent(dict);
+                }
+            };
+
+        private static readonly IReadOnlyDictionary<string, Func<IDictionary<string, object>, MessageContent>>
+            MessageContentTypes = new Dictionary<string, Func<IDictionary<string, object>, MessageContent>>
+            {
+                ["m.text"] = dict => new TextMessageContent(dict),
+                ["m.emote"] = dict => new EmoteMessageContent(dict),
+                ["m.notice"] = dict => new NoticeMessageContent(dict),
+                ["m.image"] = dict => new ImageMessageContent(dict),
+                ["m.file"] = dict => new FileMessageContent(dict),
+                ["m.video"] = dict => new VideoMessageContent(dict),
+                ["m.audio"] = dict => new AudioMessageContent(dict),
+                ["m.location"] = dict => new LocationMessageContent(dict)
+            };
 
         public override bool CanWrite => false;
 
@@ -44,8 +69,9 @@ namespace Cshrix.Serialization
 
             var jObject = JObject.Load(reader);
 
-            var content = jObject.Object<EventContent>("content");
             var type = jObject.Value<string>("type");
+            var content = ParseEventContent(type, jObject);
+
             var hasSender = jObject.TryGetObject<Identifier>("sender", out var sender);
             var hasId = jObject.TryGetObject<Identifier>("event_id", out var id);
             var hasStateKey = jObject.TryGetValue<string>("state_key", out var stateKey);
@@ -89,6 +115,22 @@ namespace Cshrix.Serialization
             }
 
             return new Event(content, type);
+        }
+
+        private static EventContent ParseEventContent(string type, JObject jObject)
+        {
+            if (!jObject.ContainsKey("content"))
+            {
+                return null;
+            }
+
+            var contentDict = jObject.Object<ReadOnlyDictionary<string, object>>("content");
+
+            var hasMessageType = contentDict.TryGetValue("msgtype", out var messageTypeObject);
+            var messageType = hasMessageType ? messageTypeObject.ToString() : null;
+            var hasGenerator = ContentTypes.TryGetValue(type, out var generator);
+
+            return hasGenerator ? generator(messageType, contentDict) : new EventContent(contentDict);
         }
     }
 }

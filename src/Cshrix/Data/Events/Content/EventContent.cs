@@ -6,13 +6,15 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data.Events
+namespace Cshrix.Data.Events.Content
 {
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json.Linq;
 
     public class EventContent : ReadOnlyDictionary<string, object>
     {
