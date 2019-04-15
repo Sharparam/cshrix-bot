@@ -19,7 +19,13 @@ namespace Cshrix.Data.Events.Content
     {
         [UsedImplicitly]
         [JsonExtensionData]
-        public JObject AdditionalData { get; [UsedImplicitly] protected set; }
+        public JObject AdditionalData
+        {
+            get;
+
+            [UsedImplicitly]
+            protected set;
+        }
 
         protected T GetValueOrDefault<T>([NotNull] string key, T @default = default) =>
             AdditionalData.ValueOrDefault(key, @default);
