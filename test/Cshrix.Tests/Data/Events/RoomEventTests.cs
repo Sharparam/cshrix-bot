@@ -10,6 +10,8 @@ using NUnit.Framework;
 
 namespace Cshrix.Tests.Data.Events
 {
+    using System;
+
     using Cshrix.Data;
     using Cshrix.Data.Events;
     using Cshrix.Data.Events.Content;
@@ -45,7 +47,7 @@ namespace Cshrix.Tests.Data.Events
 
             var content = (MemberContent)ev.Content;
 
-            Assert.AreEqual("mxc://domain.com/SEsfnsuifSDFSSEF#auto", content.AvatarUri);
+            Assert.AreEqual(new Uri("mxc://domain.com/SEsfnsuifSDFSSEF#auto"), content.AvatarUri);
             Assert.AreEqual("Alice Margatroid", content.DisplayName);
             Assert.AreEqual(Membership.Joined, content.Membership);
         }
