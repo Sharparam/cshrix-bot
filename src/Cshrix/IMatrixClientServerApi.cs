@@ -119,11 +119,20 @@ namespace Cshrix
 
         #region Device management
 
+        [Post("{apiVersion}/delete_devices")]
+        Task DeleteDevicesAsync([Body] DeleteDevicesRequest data);
+
         [Get("{apiVersion}/devices")]
         Task<DevicesResponse> GetDevicesAsync();
 
+        [Delete("{apiVersion}/devices/{deviceId}")]
+        Task DeleteDeviceAsync([Path] string deviceId, [Body] AuthenticationContainer authentication);
+
         [Get("{apiVersion}/devices/{deviceId}")]
         Task<Device> GetDeviceAsync([Path] string deviceId);
+
+        [Put("{apiVersion}/devices/{deviceId}")]
+        Task SetDeviceMetadataAsync([Path] string deviceId, [Body] DeviceMetadata data);
 
         #endregion Device management
 

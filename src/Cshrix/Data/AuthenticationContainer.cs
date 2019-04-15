@@ -10,17 +10,14 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
-    public readonly struct AuthenticationContainer
+    public class AuthenticationContainer
     {
-        [JsonConstructor]
-        public AuthenticationContainer(SessionContainer data)
-            : this() =>
-            Data = data;
+        public AuthenticationContainer(SessionContainer authentication = null) => Authentication = authentication;
 
         [JsonProperty(
             "auth",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public SessionContainer Data { get; }
+        public SessionContainer Authentication { get; }
     }
 }
