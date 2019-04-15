@@ -26,8 +26,15 @@ namespace Cshrix.Serialization
         private static readonly IReadOnlyDictionary<string, Func<string, IDictionary<string, object>, EventContent>>
             ContentTypes = new Dictionary<string, Func<string, IDictionary<string, object>, EventContent>>
             {
+                ["m.forwarded_room_key"] = (_, dict) => new ForwardedRoomKeyContent(dict),
+                ["m.fully_read"] = (_, dict) => new FullyReadContent(dict),
+                ["m.presence"] = (_, dict) => new PresenceContent(dict),
+                ["m.room_key"] = (_, dict) => new RoomKeyContent(dict),
+                ["m.room_key_request"] = (_, dict) => new RoomKeyRequestContent(dict),
                 ["m.room.aliases"] = (_, dict) => new AliasesContent(dict),
                 ["m.room.avatar"] = (_, dict) => new AvatarContent(dict),
+                ["m.room.encrypted"] = (_, dict) => new EncryptedContent(dict),
+                ["m.room.encryption"] = (_, dict) => new EncryptionContent(dict),
                 ["m.room.message"] = (type, dict) =>
                 {
                     var hasFunc = MessageContentTypes.TryGetValue(type, out var func);
@@ -116,6 +123,16 @@ namespace Cshrix.Serialization
             if (objectType == typeof(SenderEvent) || hasSender)
             {
                 return new SenderEvent(content, type, sender);
+            }
+
+            if (objectType == typeof(RoomIdEvent) || roomId.HasValue)
+            {
+                if (!roomId.HasValue)
+                {
+                    throw new JsonSerializationException($"Cannot deserialize to {objectType} if room_id is missing");
+                }
+
+                return new RoomIdEvent(content, type, roomId.Value);
             }
 
             return new Event(content, type);
