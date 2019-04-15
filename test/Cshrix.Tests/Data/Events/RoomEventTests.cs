@@ -49,5 +49,58 @@ namespace Cshrix.Tests.Data.Events
             Assert.AreEqual("Alice Margatroid", content.DisplayName);
             Assert.AreEqual(Membership.Joined, content.Membership);
         }
+
+        [Test]
+        public void ShouldParsePowerLevelsEvent()
+        {
+            var json = @"{
+                ""content"": {
+                    ""ban"": 50,
+                    ""events"": {
+                        ""m.room.name"": 100,
+                        ""m.room.power_levels"": 100
+                    },
+                    ""events_default"": 0,
+                    ""invite"": 50,
+                    ""kick"": 50,
+                    ""notifications"": {
+                        ""room"": 20
+                    },
+                    ""redact"": 50,
+                    ""state_default"": 50,
+                    ""users"": {
+                        ""@example:localhost"": 100
+                    },
+                    ""users_default"": 0
+                },
+                ""event_id"": ""$143273582443PhrSn:domain.com"",
+                ""origin_server_ts"": 1432735824653,
+                ""room_id"": ""!jEsUZKDJdhlrceRyVU:domain.com"",
+                ""sender"": ""@example:domain.com"",
+                ""state_key"": """",
+                ""type"": ""m.room.power_levels"",
+                ""unsigned"": {
+                    ""age"": 1234
+                }
+            }";
+
+            var ev = JsonConvert.DeserializeObject<StateEvent>(json);
+
+            Assert.That(ev.Content, Is.TypeOf<PowerLevelsContent>());
+
+            var content = (PowerLevelsContent)ev.Content;
+
+            Assert.AreEqual(50, content.Ban);
+            Assert.AreEqual(100, content.Events["m.room.name"]);
+            Assert.AreEqual(100, content.Events["m.room.power_levels"]);
+            Assert.AreEqual(0, content.EventsDefault);
+            Assert.AreEqual(50, content.Invite);
+            Assert.AreEqual(50, content.Kick);
+            Assert.AreEqual(20, content.Notifications.Room);
+            Assert.AreEqual(50, content.Redact);
+            Assert.AreEqual(50, content.StateDefault);
+            Assert.AreEqual(100, content.Users[(Identifier)"@example:localhost"]);
+            Assert.AreEqual(0, content.UsersDefault);
+        }
     }
 }

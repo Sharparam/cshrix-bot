@@ -142,5 +142,41 @@ namespace Cshrix.Tests.Data.Events
             Assert.AreEqual(expectedEventId, content.TargetEventId);
             Assert.AreEqual(expectedType, content.Type);
         }
+
+        [Test]
+        public void ShouldParseReceiptEvent()
+        {
+            const string Json = @"{
+                ""content"": {
+                    ""$1435641916114394fHBLK:matrix.org"": {
+                        ""m.read"": {
+                            ""@rikj:jki.re"": {
+                                ""ts"": 1436451550453
+                            }
+                        }
+                    }
+                },
+                ""room_id"": ""!jEsUZKDJdhlrceRyVU:domain.com"",
+                ""type"": ""m.receipt""
+            }";
+
+            var ev = JsonConvert.DeserializeObject<Event>(Json);
+
+            Assert.That(ev.Content, Is.TypeOf<ReceiptContent>());
+
+            var eventId = (Identifier)"$1435641916114394fHBLK:matrix.org";
+            var userId = (Identifier)"@rikj:jki.re";
+            const long Timestamp = 1436451550453;
+
+            var content = (ReceiptContent)ev.Content;
+
+            Assert.True(content.ContainsEvent(eventId));
+
+            var data = content[eventId];
+
+            Assert.True(data.Read.ContainsKey(userId));
+
+            Assert.AreEqual(Timestamp, data.Read[userId].Timestamp.ToUnixTimeMilliseconds());
+        }
     }
 }
