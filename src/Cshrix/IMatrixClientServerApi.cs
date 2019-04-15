@@ -148,6 +148,15 @@ namespace Cshrix
 
         #region Room directory
 
+        [Delete("{apiVersion}/directory/room/{roomAlias}")]
+        Task DeleteRoomAliasAsync([Path("roomAlias")] Identifier alias);
+
+        [Get("{apiVersion}/directory/room/{roomAlias}")]
+        Task<RoomAliasInformation> ResolveRoomAliasAsync([Path("roomAlias")] Identifier alias);
+
+        [Put("{apiVersion}/directory/room/{roomAlias}")]
+        Task MapRoomAliasAsync([Path("roomAlias")] Identifier alias, [Body] RoomIdContainer data);
+
         #endregion Room directory
 
         #region Room participation
