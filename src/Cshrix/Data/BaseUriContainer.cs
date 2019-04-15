@@ -16,10 +16,8 @@ namespace Cshrix.Data
     {
         [JsonConstructor]
         public BaseUriContainer(Uri baseUri)
-            : this()
-        {
+            : this() =>
             BaseUri = baseUri;
-        }
 
         [JsonProperty("base_url")]
         public Uri BaseUri { get; }

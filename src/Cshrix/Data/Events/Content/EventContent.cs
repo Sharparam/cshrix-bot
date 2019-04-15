@@ -8,13 +8,12 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    using JetBrains.Annotations;
+    using Extensions;
 
-    using Newtonsoft.Json.Linq;
+    using JetBrains.Annotations;
 
     public class EventContent : ReadOnlyDictionary<string, object>
     {
@@ -23,34 +22,10 @@ namespace Cshrix.Data.Events.Content
         {
         }
 
-        public T GetValueOrDefault<T>([NotNull] string key, T @default = default)
-        {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
+        protected T GetValueOrDefault<T>([NotNull] string key, T @default = default) =>
+            this.GetValueOrDefault<string, T>(key, @default);
 
-            var hasValue = TryGetValue<T>(key, out var value);
-            return hasValue ? value : @default;
-        }
-
-        public bool TryGetValue<T>([NotNull] string key, out T value)
-        {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            var hasValue = TryGetValue(key, out var obj);
-
-            if (hasValue && obj is T t)
-            {
-                value = t;
-                return true;
-            }
-
-            value = default;
-            return false;
-        }
+        protected bool TryGetValue<T>([NotNull] string key, out T value) =>
+            this.TryGetValue<string, T>(key, out value);
     }
 }

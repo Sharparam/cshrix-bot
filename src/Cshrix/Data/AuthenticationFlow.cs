@@ -8,16 +8,24 @@
 
 namespace Cshrix.Data
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Newtonsoft.Json;
 
     public readonly struct AuthenticationFlow
     {
+        public AuthenticationFlow(IEnumerable<string> stages)
+            : this(stages.ToList().AsReadOnly())
+        {
+        }
+
         [JsonConstructor]
-        public AuthenticationFlow(string[] stages)
+        public AuthenticationFlow(IReadOnlyCollection<string> stages)
             : this() =>
             Stages = stages;
 
         [JsonProperty("stages")]
-        public string[] Stages { get; }
+        public IReadOnlyCollection<string> Stages { get; }
     }
 }

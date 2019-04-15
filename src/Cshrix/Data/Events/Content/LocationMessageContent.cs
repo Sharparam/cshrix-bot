@@ -25,7 +25,7 @@ namespace Cshrix.Data.Events.Content
             Uri = hasUri ? new Uri(uri) : null;
 
             var hasInfo = TryGetValue<JObject>("info", out var info);
-            Info = GetValueOrDefault<LocationInfo>("info");
+            Info = hasInfo ? info.ToObject<LocationInfo>() : default;
         }
 
         [JsonProperty("geo_uri")]

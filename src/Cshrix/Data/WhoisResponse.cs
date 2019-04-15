@@ -9,13 +9,19 @@
 namespace Cshrix.Data
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     using Newtonsoft.Json;
 
     public readonly struct WhoisResponse
     {
+        public WhoisResponse(Identifier userId, IDictionary<string, DeviceInfo> devices)
+            : this(userId, (IReadOnlyDictionary<string, DeviceInfo>)new ReadOnlyDictionary<string, DeviceInfo>(devices))
+        {
+        }
+
         [JsonConstructor]
-        public WhoisResponse(Identifier userId, Dictionary<string, DeviceInfo> devices)
+        public WhoisResponse(Identifier userId, IReadOnlyDictionary<string, DeviceInfo> devices)
             : this()
         {
             UserId = userId;
@@ -26,6 +32,6 @@ namespace Cshrix.Data
         public Identifier UserId { get; }
 
         [JsonProperty("devices")]
-        public Dictionary<string, DeviceInfo> Devices { get; }
+        public IReadOnlyDictionary<string, DeviceInfo> Devices { get; }
     }
 }

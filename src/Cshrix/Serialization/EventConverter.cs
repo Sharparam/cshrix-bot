@@ -11,7 +11,6 @@ namespace Cshrix.Serialization
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Linq;
 
     using Data;
     using Data.Events;
@@ -75,9 +74,9 @@ namespace Cshrix.Serialization
             var hasSender = jObject.TryGetObject<Identifier>("sender", out var sender);
             var hasId = jObject.TryGetObject<Identifier>("event_id", out var id);
             var hasStateKey = jObject.TryGetValue<string>("state_key", out var stateKey);
-            var hasRoomId = jObject.TryGetObject<Identifier?>("room_id", out var roomId);
-            var hasUnsigned = jObject.TryGetObject<UnsignedData?>("unsigned", out var unsigned);
-            var hasPreviousContent = jObject.TryGetObject<EventContent>("prev_content", out var previousContent);
+            var roomId = jObject.ObjectOrDefault<Identifier?>("room_id");
+            var unsigned = jObject.ObjectOrDefault<UnsignedData?>("unsigned");
+            var previousContent = jObject.ObjectOrDefault<EventContent>("prev_content");
 
             var hasSentAt = false;
             DateTimeOffset sentAt;

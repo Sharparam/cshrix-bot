@@ -8,16 +8,24 @@
 
 namespace Cshrix.Data
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Newtonsoft.Json;
 
     public readonly struct SessionInfo
     {
+        public SessionInfo(IEnumerable<ConnectionInfo> connections)
+            : this(connections.ToList().AsReadOnly())
+        {
+        }
+
         [JsonConstructor]
-        public SessionInfo(ConnectionInfo[] connections)
+        public SessionInfo(IReadOnlyCollection<ConnectionInfo> connections)
             : this() =>
             Connections = connections;
 
         [JsonProperty("connections")]
-        public ConnectionInfo[] Connections { get; }
+        public IReadOnlyCollection<ConnectionInfo> Connections { get; }
     }
 }

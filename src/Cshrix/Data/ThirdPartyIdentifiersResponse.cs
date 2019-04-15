@@ -8,16 +8,24 @@
 
 namespace Cshrix.Data
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Newtonsoft.Json;
 
     public readonly struct ThirdPartyIdentifiersResponse
     {
+        public ThirdPartyIdentifiersResponse(IEnumerable<ThirdPartyIdentifier> identifiers)
+            : this(identifiers.ToList().AsReadOnly())
+        {
+        }
+
         [JsonConstructor]
-        public ThirdPartyIdentifiersResponse(ThirdPartyIdentifier[] identifiers)
+        public ThirdPartyIdentifiersResponse(IReadOnlyCollection<ThirdPartyIdentifier> identifiers)
             : this() =>
             Identifiers = identifiers;
 
         [JsonProperty("threepids")]
-        public ThirdPartyIdentifier[] Identifiers { get; }
+        public IReadOnlyCollection<ThirdPartyIdentifier> Identifiers { get; }
     }
 }

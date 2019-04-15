@@ -24,7 +24,7 @@ namespace Cshrix.Data
 
         private const string SeparatorString = ":";
 
-        private static readonly Dictionary<char, IdentifierType> TypeMapping = new Dictionary<char, IdentifierType>
+        private static readonly IReadOnlyDictionary<char, IdentifierType> TypeMapping = new Dictionary<char, IdentifierType>
         {
             ['@'] = IdentifierType.User,
             ['!'] = IdentifierType.Room,
@@ -33,7 +33,7 @@ namespace Cshrix.Data
             ['#'] = IdentifierType.RoomAlias
         };
 
-        private static readonly Dictionary<IdentifierType, char> SigilMapping = new Dictionary<IdentifierType, char>
+        private static readonly IReadOnlyDictionary<IdentifierType, char> SigilMapping = new Dictionary<IdentifierType, char>
         {
             [IdentifierType.User] = '@',
             [IdentifierType.Room] = '!',

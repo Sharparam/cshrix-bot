@@ -23,7 +23,7 @@ namespace Cshrix.Errors
             [CanBeNull] string message,
             [CanBeNull] string[] completed,
             AuthenticationFlow[] flows,
-            Dictionary<string, Dictionary<string, string>> parameters,
+            IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> parameters,
             string session)
             : base(code, message)
         {
@@ -41,7 +41,7 @@ namespace Cshrix.Errors
         public AuthenticationFlow[] Flows { get; }
 
         [JsonProperty("params")]
-        public Dictionary<string, Dictionary<string, string>> Parameters { get; }
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Parameters { get; }
 
         [JsonProperty("session")]
         public string Session { get; }

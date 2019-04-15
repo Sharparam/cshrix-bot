@@ -26,6 +26,9 @@ namespace Cshrix.Extensions
             return true;
         }
 
+        public static T ObjectOrDefault<T>(this JObject jObject, string key, T @default = default) =>
+            jObject.TryGetValue<T>(key, out var value) ? value : @default;
+
         public static bool TryGetObject<T>(this JObject jObject, string key, out T value)
         {
             if (!jObject.ContainsKey(key))

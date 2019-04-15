@@ -9,17 +9,23 @@
 namespace Cshrix.Data
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     using Newtonsoft.Json;
 
     public readonly struct TagsResponse
     {
+        public TagsResponse(IDictionary<string, TagData> tags)
+            : this((IReadOnlyDictionary<string, TagData>)new ReadOnlyDictionary<string, TagData>(tags))
+        {
+        }
+
         [JsonConstructor]
-        public TagsResponse(Dictionary<string, TagData> tags)
+        public TagsResponse(IReadOnlyDictionary<string, TagData> tags)
             : this() =>
             Tags = tags;
 
         [JsonProperty("tags")]
-        public Dictionary<string, TagData> Tags { get; }
+        public IReadOnlyDictionary<string, TagData> Tags { get; }
     }
 }

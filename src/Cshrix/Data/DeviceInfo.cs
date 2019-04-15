@@ -8,15 +8,24 @@
 
 namespace Cshrix.Data
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Newtonsoft.Json;
 
     public readonly struct DeviceInfo
     {
-        public DeviceInfo(SessionInfo[] sessions)
+        public DeviceInfo(IEnumerable<SessionInfo> sessions)
+            : this(sessions.ToList().AsReadOnly())
+        {
+        }
+
+        [JsonConstructor]
+        public DeviceInfo(IReadOnlyCollection<SessionInfo> sessions)
             : this() =>
             Sessions = sessions;
 
         [JsonProperty("sessions")]
-        public SessionInfo[] Sessions { get; }
+        public IReadOnlyCollection<SessionInfo> Sessions { get; }
     }
 }

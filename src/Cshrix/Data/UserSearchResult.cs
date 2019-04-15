@@ -8,12 +8,20 @@
 
 namespace Cshrix.Data
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Newtonsoft.Json;
 
     public readonly struct UserSearchResult
     {
+        public UserSearchResult(bool limited, IEnumerable<User> results)
+            : this(limited, results.ToList().AsReadOnly())
+        {
+        }
+
         [JsonConstructor]
-        public UserSearchResult(bool limited, User[] results)
+        public UserSearchResult(bool limited, IReadOnlyCollection<User> results)
             : this()
         {
             Limited = limited;
@@ -24,6 +32,6 @@ namespace Cshrix.Data
         public bool Limited { get; }
 
         [JsonProperty("results")]
-        public User[] Results { get; }
+        public IReadOnlyCollection<User> Results { get; }
     }
 }

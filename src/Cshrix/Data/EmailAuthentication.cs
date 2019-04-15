@@ -20,13 +20,11 @@ namespace Cshrix.Data
         {
         }
 
-        public EmailAuthentication(string session, params ThirdPartyIdentifierCredentials[] credentials)
-            : base(AuthenticationType.Email, session)
-        {
+        public EmailAuthentication(string session, IReadOnlyCollection<ThirdPartyIdentifierCredentials> credentials)
+            : base(AuthenticationType.Email, session) =>
             Credentials = credentials;
-        }
 
         [JsonProperty("threepidCreds")]
-        public ThirdPartyIdentifierCredentials[] Credentials { get; }
+        public IReadOnlyCollection<ThirdPartyIdentifierCredentials> Credentials { get; }
     }
 }

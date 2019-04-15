@@ -8,16 +8,24 @@
 
 namespace Cshrix.Data
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Newtonsoft.Json;
 
     public readonly struct VersionsResponse
     {
+        public VersionsResponse(IEnumerable<string> versions)
+            : this(versions.ToList().AsReadOnly())
+        {
+        }
+
         [JsonConstructor]
-        public VersionsResponse(string[] versions)
+        public VersionsResponse(IReadOnlyCollection<string> versions)
             : this() =>
             Versions = versions;
 
         [JsonProperty("versions")]
-        public string[] Versions { get; }
+        public IReadOnlyCollection<string> Versions { get; }
     }
 }

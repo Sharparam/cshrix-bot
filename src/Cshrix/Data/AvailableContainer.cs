@@ -12,7 +12,8 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
-    public readonly struct AvailableContainer : IEquatable<AvailableContainer>, IEquatable<bool>, IComparable<AvailableContainer>, IComparable<bool>
+    public readonly struct AvailableContainer : IEquatable<AvailableContainer>, IEquatable<bool>,
+        IComparable<AvailableContainer>, IComparable<bool>
     {
         [JsonConstructor]
         public AvailableContainer(bool available)
