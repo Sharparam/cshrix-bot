@@ -161,6 +161,26 @@ namespace Cshrix
 
         #region Room participation
 
+        [Get("{apiVersion}/rooms/{roomId}/context/{eventId}")]
+        Task<EventContext> GetContextAsync([Path] Identifier roomId, [Path] Identifier eventId, [Query] int limit = 10);
+
+        [Get("{apiVersion}/rooms/{roomId}/event/{eventId}")]
+        Task<Event> GetEventAsync([Path] Identifier roomId, [Path] Identifier eventId);
+
+        [Get("{apiVersion}/rooms/{roomId}/joined_members")]
+        Task<JoinedMembersResponse> GetJoinedMembersAsync([Path] Identifier roomId);
+
+        [Get("{apiVersion}/rooms/{roomId}/members")]
+        Task<Chunk<StateEvent>> GetMemberEventsAsync([Path] Identifier roomId);
+
+        Task<PaginatedChunk<RoomEvent>> GetMessageEventsAsync(
+            [Path] Identifier roomId,
+            [Query] string from = null,
+            [Query] string to = null,
+            [Query("dir")] Direction direction = Direction.Backwards,
+            [Query] int limit = 10,
+            [Query] RoomEventFilter filter = default);
+
         [Get("{apiVersion}/sync")]
         Task<SyncResponse> SyncAsync(
             [Query] string since = null,
