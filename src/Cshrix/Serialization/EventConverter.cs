@@ -27,11 +27,16 @@ namespace Cshrix.Serialization
             ContentTypes = new Dictionary<string, Func<string, IDictionary<string, object>, EventContent>>
             {
                 ["m.room.aliases"] = (_, dict) => new AliasesContent(dict),
+                ["m.room.avatar"] = (_, dict) => new AvatarContent(dict),
                 ["m.room.message"] = (type, dict) =>
                 {
                     var hasFunc = MessageContentTypes.TryGetValue(type, out var func);
                     return hasFunc ? func(dict) : new MessageContent(dict);
-                }
+                },
+                ["m.room.message.feedback"] = (_, dict) => new FeedbackContent(dict),
+                ["m.room.name"] = (_, dict) => new RoomNameContent(dict),
+                ["m.room.pinned_events"] = (_, dict) => new PinnedEventsContent(dict),
+                ["m.room.topic"] = (_, dict) => new RoomTopicContent(dict)
             };
 
         private static readonly IReadOnlyDictionary<string, Func<IDictionary<string, object>, MessageContent>>

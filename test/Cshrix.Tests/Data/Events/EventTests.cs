@@ -8,7 +8,9 @@
 
 namespace Cshrix.Tests.Data.Events
 {
+    using Cshrix.Data;
     using Cshrix.Data.Events;
+    using Cshrix.Data.Events.Content;
 
     using Newtonsoft.Json;
 
@@ -108,6 +110,37 @@ namespace Cshrix.Tests.Data.Events
             var ev = JsonConvert.DeserializeObject<Event>(json);
 
             Assert.NotNull(ev);
+        }
+
+        [Test]
+        public void ShouldParseFeedbackEvent()
+        {
+            var json = @"{
+                ""content"": {
+                    ""target_event_id"": ""$WEIGFHFW:localhost"",
+                    ""type"": ""delivered""
+                },
+                ""event_id"": ""$143273582443PhrSn:domain.com"",
+                ""origin_server_ts"": 1432735824653,
+                ""room_id"": ""!jEsUZKDJdhlrceRyVU:domain.com"",
+                ""sender"": ""@example:domain.com"",
+                ""type"": ""m.room.message.feedback"",
+                ""unsigned"": {
+                    ""age"": 1234
+                }
+            }";
+
+            var ev = JsonConvert.DeserializeObject<RoomEvent>(json);
+
+            var expectedEventId = (Identifier)"$WEIGFHFW:localhost";
+            var expectedType = FeedbackType.Delivered;
+
+            var content = ev.Content as FeedbackContent;
+
+            Assert.NotNull(content);
+
+            Assert.AreEqual(expectedEventId, content.TargetEventId);
+            Assert.AreEqual(expectedType, content.Type);
         }
     }
 }

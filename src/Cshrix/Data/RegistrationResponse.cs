@@ -26,9 +26,11 @@ namespace Cshrix.Data
         {
             AccessToken = accessToken;
             DeviceId = deviceId;
-#pragma warning disable 618
+
+            #pragma warning disable 618
             Homeserver = homeserver;
-#pragma warning restore 618
+            #pragma warning restore 618
+
             UserId = userId;
         }
 
