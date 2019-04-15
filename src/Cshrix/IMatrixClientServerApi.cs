@@ -11,6 +11,7 @@ namespace Cshrix
     using System.Threading.Tasks;
 
     using Data;
+    using Data.Events;
 
     using JetBrains.Annotations;
 
@@ -132,6 +133,14 @@ namespace Cshrix
         #endregion Room directory
 
         #region Room participation
+
+        [Get("{apiVersion}/sync")]
+        Task<SyncResponse> SyncAsync(
+            [Query] string since = null,
+            [Query] string filter = null,
+            [Query("full_state")] bool fullState = false,
+            [Query("set_presence")] string setPresence = "offline",
+            [Query] long timeout = 0);
 
         #endregion Room participation
 
