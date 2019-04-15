@@ -9,9 +9,6 @@
 namespace Cshrix.Data.Events.Content
 {
     using System;
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
 
     using Newtonsoft.Json;
 
@@ -19,13 +16,11 @@ namespace Cshrix.Data.Events.Content
 
     public class EncryptionContent : EventContent
     {
-        public EncryptionContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public EncryptionContent(string algorithm, TimeSpan rotationPeriod, int rotationPeriodMessages)
         {
-            Algorithm = GetValueOrDefault<string>("algorithm");
-            var rotationPeriodMs = GetValueOrDefault<long>("rotation_period_ms");
-            RotationPeriod = TimeSpan.FromMilliseconds(rotationPeriodMs);
-            RotationPeriodMessages = GetValueOrDefault<int>("rotation_period_msgs");
+            Algorithm = algorithm;
+            RotationPeriod = rotationPeriod;
+            RotationPeriodMessages = rotationPeriodMessages;
         }
 
         [JsonProperty("algorithm")]

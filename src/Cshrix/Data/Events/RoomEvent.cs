@@ -21,12 +21,13 @@ namespace Cshrix.Data.Events
         public RoomEvent(
             EventContent content,
             string type,
+            Identifier? redacts,
             Identifier id,
             Identifier sender,
             Identifier? roomId,
             DateTimeOffset sentAt,
             UnsignedData? unsigned)
-            : base(content, type, sender)
+            : base(content, type, redacts, sender)
         {
             Id = id;
             RoomId = roomId;

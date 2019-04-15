@@ -9,22 +9,15 @@
 namespace Cshrix.Data.Events.Content
 {
     using System;
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     public class AvatarContent : EventContent
     {
-        public AvatarContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public AvatarContent(ImageInfo info, Uri uri)
         {
-            var hasInfo = TryGetValue<JObject>("info", out var info);
-            Info = hasInfo ? info.ToObject<ImageInfo>() : default;
-
-            Uri = GetValueOrDefault<Uri>("url");
+            Info = info;
+            Uri = uri;
         }
 
         [JsonProperty("info")]

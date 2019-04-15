@@ -1,4 +1,4 @@
-// <copyright file="FullyReadContent.cs">
+// <copyright file="EventContentTypeAttribute.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -8,13 +8,13 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using Newtonsoft.Json;
+    using System;
 
-    public class FullyReadContent : EventContent
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = false)]
+    public class EventContentTypeAttribute : Attribute
     {
-        public FullyReadContent(Identifier eventId) => EventId = eventId;
+        public EventContentTypeAttribute(string type) => Type = type;
 
-        [JsonProperty("event_id")]
-        public Identifier EventId { get; }
+        public string Type { get; }
     }
 }

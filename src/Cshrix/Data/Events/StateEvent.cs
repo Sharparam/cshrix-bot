@@ -21,6 +21,7 @@ namespace Cshrix.Data.Events
         public StateEvent(
             EventContent content,
             string type,
+            Identifier? redacts,
             Identifier id,
             Identifier? roomId,
             Identifier sender,
@@ -28,7 +29,7 @@ namespace Cshrix.Data.Events
             UnsignedData? unsigned,
             [CanBeNull] EventContent previousContent,
             string stateKey)
-            : base(content, type, id, sender, roomId, sentAt, unsigned)
+            : base(content, type, redacts, id, sender, roomId, sentAt, unsigned)
         {
             StateKey = stateKey;
             PreviousContent = previousContent;

@@ -8,24 +8,27 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-
     using Extensions;
 
     using JetBrains.Annotations;
 
-    public class EventContent : ReadOnlyDictionary<string, object>
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+
+    public class EventContent
     {
-        public EventContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
-        {
-        }
+        [UsedImplicitly]
+        [JsonExtensionData]
+        public JObject AdditionalData { get; [UsedImplicitly] protected set; }
 
         protected T GetValueOrDefault<T>([NotNull] string key, T @default = default) =>
-            this.GetValueOrDefault<string, T>(key, @default);
+            AdditionalData.ValueOrDefault(key, @default);
 
-        protected bool TryGetValue<T>([NotNull] string key, out T value) =>
-            this.TryGetValue<string, T>(key, out value);
+        protected bool TryGetValue<T>([NotNull] string key, out T value) => AdditionalData.TryGetValue(key, out value);
+
+        protected T GetObjectOrDefault<T>([NotNull] string key, T @default = default) =>
+            AdditionalData.ObjectOrDefault(key, @default);
+
+        protected bool TryGetObject<T>([NotNull] string key, out T value) => AdditionalData.TryGetObject(key, out value);
     }
 }

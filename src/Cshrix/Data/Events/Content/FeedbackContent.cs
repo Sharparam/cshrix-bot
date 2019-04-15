@@ -8,21 +8,14 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     public class FeedbackContent : EventContent
     {
-        public FeedbackContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public FeedbackContent(Identifier targetEventId, FeedbackType type)
         {
-            var hasId = TryGetValue<string>("target_event_id", out var id);
-            TargetEventId = hasId ? (Identifier)id : default;
-
-            Type = GetValueOrDefault<FeedbackType>("type");
+            TargetEventId = targetEventId;
+            Type = type;
         }
 
         [JsonProperty("target_event_id")]

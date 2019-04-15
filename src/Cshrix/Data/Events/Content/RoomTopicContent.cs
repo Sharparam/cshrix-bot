@@ -8,17 +8,11 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     public class RoomTopicContent : EventContent
     {
-        public RoomTopicContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary) =>
-            Topic = GetValueOrDefault<string>("topic");
+        public RoomTopicContent(string topic) => Topic = topic;
 
         [JsonProperty("topic")]
         public string Topic { get; }

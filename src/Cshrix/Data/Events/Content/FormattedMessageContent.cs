@@ -8,27 +8,24 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     public abstract class FormattedMessageContent : MessageContent
     {
-        protected FormattedMessageContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        protected FormattedMessageContent(string body, string messageType, string format, string formattedBody)
+            : base(body, messageType)
         {
-            Format = GetValueOrDefault<string>("format");
-            FormattedBody = GetValueOrDefault<string>("formatted_body");
+            Format = format;
+            FormattedBody = formattedBody;
         }
-
-        public override string Body => FormattedBody ?? base.Body;
 
         [JsonProperty("format")]
         public string Format { get; }
 
         [JsonProperty("formatted_body")]
         public string FormattedBody { get; }
+
+        [JsonIgnore]
+        public string Rendered => FormattedBody ?? base.Body;
     }
 }

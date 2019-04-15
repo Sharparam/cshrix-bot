@@ -8,14 +8,17 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
+    using System;
 
     public class VideoMessageContent : UriMessageContent<VideoInfo>
     {
-        public VideoMessageContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public VideoMessageContent(
+            string body,
+            string messageType,
+            VideoInfo info,
+            Uri uri,
+            EncryptedFile? encryptedFile)
+            : base(body, messageType, info, uri, encryptedFile)
         {
         }
     }

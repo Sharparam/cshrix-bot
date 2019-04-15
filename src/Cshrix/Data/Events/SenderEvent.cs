@@ -15,8 +15,8 @@ namespace Cshrix.Data.Events
     public class SenderEvent : Event
     {
         [JsonConstructor]
-        public SenderEvent(EventContent content, string type, Identifier sender)
-            : base(content, type) =>
+        public SenderEvent(EventContent content, string type, Identifier? redacts, Identifier sender)
+            : base(content, type, redacts) =>
             Sender = sender;
 
         [JsonProperty("sender")]

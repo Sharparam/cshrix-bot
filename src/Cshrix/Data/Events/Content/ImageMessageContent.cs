@@ -8,14 +8,17 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
+    using System;
 
     public class ImageMessageContent : UriMessageContent<ImageInfo>
     {
-        public ImageMessageContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public ImageMessageContent(
+            string body,
+            string messageType,
+            ImageInfo info,
+            Uri uri,
+            EncryptedFile? encryptedFile)
+            : base(body, messageType, info, uri, encryptedFile)
         {
         }
     }

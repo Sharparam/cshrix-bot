@@ -9,23 +9,12 @@
 namespace Cshrix.Data.Events.Content
 {
     using System.Collections.Generic;
-    using System.Linq;
-
-    using JetBrains.Annotations;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     public class PinnedEventsContent : EventContent
     {
-        public PinnedEventsContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
-        {
-            var hasEvents = TryGetValue<JArray>("pinned", out var events);
-            Pinned = hasEvents
-                ? events.ToObject<IReadOnlyCollection<Identifier>>()
-                : Enumerable.Empty<Identifier>().ToList().AsReadOnly();
-        }
+        public PinnedEventsContent(IReadOnlyCollection<Identifier> pinned) => Pinned = pinned;
 
         [JsonProperty("pinned")]
         public IReadOnlyCollection<Identifier> Pinned { get; }

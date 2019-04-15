@@ -14,8 +14,8 @@ namespace Cshrix.Data.Events
 
     public class StrippedState : SenderEvent
     {
-        public StrippedState(EventContent content, string stateKey, string type, Identifier sender)
-            : base(content, type, sender) =>
+        public StrippedState(EventContent content, string stateKey, string type, Identifier? redacts, Identifier sender)
+            : base(content, type, redacts, sender) =>
             StateKey = stateKey;
 
         [JsonProperty("state_key")]

@@ -8,19 +8,14 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     public class MessageContent : EventContent
     {
-        public MessageContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public MessageContent(string body, string messageType)
         {
-            Body = GetValueOrDefault<string>("body");
-            MessageType = GetValueOrDefault<string>("msgtype");
+            Body = body;
+            MessageType = messageType;
         }
 
         [JsonProperty("body")]

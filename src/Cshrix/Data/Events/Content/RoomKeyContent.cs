@@ -8,22 +8,16 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     public class RoomKeyContent : EventContent
     {
-        public RoomKeyContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public RoomKeyContent(string algorithm, Identifier roomId, string sessionId, string sessionKey)
         {
-            Algorithm = GetValueOrDefault<string>("algorithm");
-            var roomId = GetValueOrDefault<string>("room_id");
-            RoomId = (Identifier)roomId;
-            SessionId = GetValueOrDefault<string>("session_id");
-            SessionKey = GetValueOrDefault<string>("session_key");
+            Algorithm = algorithm;
+            RoomId = roomId;
+            SessionId = sessionId;
+            SessionKey = sessionKey;
         }
 
         [JsonProperty("algorithm")]

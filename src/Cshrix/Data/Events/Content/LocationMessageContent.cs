@@ -9,23 +9,16 @@
 namespace Cshrix.Data.Events.Content
 {
     using System;
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     public class LocationMessageContent : MessageContent
     {
-        public LocationMessageContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public LocationMessageContent(string body, string messageType, Uri uri, LocationInfo info)
+            : base(body, messageType)
         {
-            var hasUri = TryGetValue<string>("geo_uri", out var uri);
-            Uri = hasUri ? new Uri(uri) : null;
-
-            var hasInfo = TryGetValue<JObject>("info", out var info);
-            Info = hasInfo ? info.ToObject<LocationInfo>() : default;
+            Uri = uri;
+            Info = info;
         }
 
         [JsonProperty("geo_uri")]

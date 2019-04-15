@@ -17,10 +17,11 @@ namespace Cshrix.Data.Events
     [JsonConverter(typeof(EventConverter))]
     public class Event
     {
-        public Event(EventContent content, string type)
+        public Event(EventContent content, string type, Identifier? redacts)
         {
             Content = content;
             Type = type;
+            Redacts = redacts;
         }
 
         [JsonProperty("content")]
@@ -28,5 +29,10 @@ namespace Cshrix.Data.Events
 
         [JsonProperty("type")]
         public string Type { get; }
+
+        [JsonProperty("redacts")]
+        public Identifier? Redacts { get; }
+
+        public bool IsRedaction => Redacts.HasValue;
     }
 }

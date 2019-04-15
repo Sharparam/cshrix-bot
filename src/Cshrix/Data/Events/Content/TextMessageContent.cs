@@ -8,14 +8,10 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
-
     public class TextMessageContent : FormattedMessageContent
     {
-        public TextMessageContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public TextMessageContent(string body, string messageType, string format, string formattedBody)
+            : base(body, messageType, format, formattedBody)
         {
         }
     }

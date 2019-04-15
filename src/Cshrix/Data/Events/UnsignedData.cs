@@ -9,6 +9,9 @@
 namespace Cshrix.Data.Events
 {
     using System;
+    using System.Collections.Generic;
+
+    using JetBrains.Annotations;
 
     using Newtonsoft.Json;
 
@@ -17,12 +20,17 @@ namespace Cshrix.Data.Events
     public readonly struct UnsignedData
     {
         [JsonConstructor]
-        public UnsignedData(TimeSpan age, Event @event, string transactionId)
+        public UnsignedData(
+            TimeSpan age,
+            Event @event,
+            string transactionId,
+            IReadOnlyCollection<StrippedState> inviteRoomState)
             : this()
         {
             Age = age;
             Event = @event;
             TransactionId = transactionId;
+            InviteRoomState = inviteRoomState;
         }
 
         [JsonProperty("age")]
@@ -30,9 +38,15 @@ namespace Cshrix.Data.Events
         public TimeSpan Age { get; }
 
         [JsonProperty("redacted_because")]
+        [CanBeNull]
         public Event Event { get; }
 
         [JsonProperty("transaction_id")]
+        [CanBeNull]
         public string TransactionId { get; }
+
+        [JsonProperty("invite_room_state")]
+        [CanBeNull]
+        public IReadOnlyCollection<StrippedState> InviteRoomState { get; }
     }
 }

@@ -10,7 +10,6 @@ namespace Cshrix.Serialization
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
 
     using Data;
     using Data.Events;
@@ -23,40 +22,38 @@ namespace Cshrix.Serialization
 
     public class EventConverter : JsonConverter<Event>
     {
-        private static readonly IReadOnlyDictionary<string, Func<string, IDictionary<string, object>, EventContent>>
-            ContentTypes = new Dictionary<string, Func<string, IDictionary<string, object>, EventContent>>
+        private static readonly IReadOnlyDictionary<string, Type>
+            ContentTypes = new Dictionary<string, Type>
             {
-                ["m.forwarded_room_key"] = (_, dict) => new ForwardedRoomKeyContent(dict),
-                ["m.fully_read"] = (_, dict) => new FullyReadContent(dict),
-                ["m.presence"] = (_, dict) => new PresenceContent(dict),
-                ["m.room_key"] = (_, dict) => new RoomKeyContent(dict),
-                ["m.room_key_request"] = (_, dict) => new RoomKeyRequestContent(dict),
-                ["m.room.aliases"] = (_, dict) => new AliasesContent(dict),
-                ["m.room.avatar"] = (_, dict) => new AvatarContent(dict),
-                ["m.room.encrypted"] = (_, dict) => new EncryptedContent(dict),
-                ["m.room.encryption"] = (_, dict) => new EncryptionContent(dict),
-                ["m.room.message"] = (type, dict) =>
-                {
-                    var hasFunc = MessageContentTypes.TryGetValue(type, out var func);
-                    return hasFunc ? func(dict) : new MessageContent(dict);
-                },
-                ["m.room.message.feedback"] = (_, dict) => new FeedbackContent(dict),
-                ["m.room.name"] = (_, dict) => new RoomNameContent(dict),
-                ["m.room.pinned_events"] = (_, dict) => new PinnedEventsContent(dict),
-                ["m.room.topic"] = (_, dict) => new RoomTopicContent(dict)
-            };
-
-        private static readonly IReadOnlyDictionary<string, Func<IDictionary<string, object>, MessageContent>>
-            MessageContentTypes = new Dictionary<string, Func<IDictionary<string, object>, MessageContent>>
-            {
-                ["m.text"] = dict => new TextMessageContent(dict),
-                ["m.emote"] = dict => new EmoteMessageContent(dict),
-                ["m.notice"] = dict => new NoticeMessageContent(dict),
-                ["m.image"] = dict => new ImageMessageContent(dict),
-                ["m.file"] = dict => new FileMessageContent(dict),
-                ["m.video"] = dict => new VideoMessageContent(dict),
-                ["m.audio"] = dict => new AudioMessageContent(dict),
-                ["m.location"] = dict => new LocationMessageContent(dict)
+                ["m.forwarded_room_key"] = typeof(ForwardedRoomKeyContent),
+                ["m.fully_read"] = typeof(FullyReadContent),
+                ["m.presence"] = typeof(PresenceContent),
+                ["m.room_key"] = typeof(RoomKeyContent),
+                ["m.room_key_request"] = typeof(RoomKeyRequestContent),
+                ["m.room.aliases"] = typeof(AliasesContent),
+                ["m.room.avatar"] = typeof(AvatarContent),
+                ["m.room.canonical_alias"] = typeof(CanonicalAliasContent),
+                ["m.room.create"] = typeof(CreationContent),
+                ["m.room.encrypted"] = typeof(EncryptedContent),
+                ["m.room.encryption"] = typeof(EncryptionContent),
+                ["m.room.history_visibility"] = typeof(HistoryVisibilityContent),
+                ["m.room.join_rules"] = typeof(JoinRuleContent),
+                ["m.room.member"] = typeof(MemberContent),
+                ["m.room.message"] = typeof(MessageContent),
+                ["m.room.message.feedback"] = typeof(FeedbackContent),
+                ["m.room.name"] = typeof(RoomNameContent),
+                ["m.room.redaction"] = typeof(RedactionContent),
+                ["m.room.pinned_events"] = typeof(PinnedEventsContent),
+                ["m.room.third_party_invite"] = typeof(ThirdPartyInviteContent),
+                ["m.room.topic"] = typeof(RoomTopicContent),
+                ["m.text"] = typeof(TextMessageContent),
+                ["m.emote"] = typeof(EmoteMessageContent),
+                ["m.notice"] = typeof(NoticeMessageContent),
+                ["m.image"] = typeof(ImageMessageContent),
+                ["m.file"] = typeof(FileMessageContent),
+                ["m.video"] = typeof(VideoMessageContent),
+                ["m.audio"] = typeof(AudioMessageContent),
+                ["m.location"] = typeof(LocationMessageContent)
             };
 
         public override bool CanWrite => false;
@@ -82,6 +79,7 @@ namespace Cshrix.Serialization
 
             var type = jObject.Value<string>("type");
             var content = ParseEventContent(type, jObject);
+            var redacts = jObject.ObjectOrDefault<Identifier?>("redacts");
 
             var hasSender = jObject.TryGetObject<Identifier>("sender", out var sender);
             var hasId = jObject.TryGetObject<Identifier>("event_id", out var id);
@@ -107,22 +105,32 @@ namespace Cshrix.Serialization
 
             if (objectType == typeof(StateEvent) || (hasId && hasSender && hasSentAt && hasStateKey))
             {
-                return new StateEvent(content, type, id, roomId, sender, sentAt, unsigned, previousContent, stateKey);
+                return new StateEvent(
+                    content,
+                    type,
+                    redacts,
+                    id,
+                    roomId,
+                    sender,
+                    sentAt,
+                    unsigned,
+                    previousContent,
+                    stateKey);
             }
 
             if (objectType == typeof(RoomEvent) || (hasId && hasSender && hasSentAt))
             {
-                return new RoomEvent(content, type, id, sender, roomId, sentAt, unsigned);
+                return new RoomEvent(content, type, redacts, id, sender, roomId, sentAt, unsigned);
             }
 
             if (objectType == typeof(StrippedState) || (hasStateKey && hasSender))
             {
-                return new StrippedState(content, stateKey, type, sender);
+                return new StrippedState(content, stateKey, type, redacts, sender);
             }
 
             if (objectType == typeof(SenderEvent) || hasSender)
             {
-                return new SenderEvent(content, type, sender);
+                return new SenderEvent(content, type, redacts, sender);
             }
 
             if (objectType == typeof(RoomIdEvent) || roomId.HasValue)
@@ -132,26 +140,35 @@ namespace Cshrix.Serialization
                     throw new JsonSerializationException($"Cannot deserialize to {objectType} if room_id is missing");
                 }
 
-                return new RoomIdEvent(content, type, roomId.Value);
+                return new RoomIdEvent(content, type, redacts, roomId.Value);
             }
 
-            return new Event(content, type);
+            return new Event(content, type, redacts);
         }
 
         private static EventContent ParseEventContent(string type, JObject jObject)
         {
-            if (!jObject.ContainsKey("content"))
+            if (!jObject.TryGetValue("content", out var contentToken))
             {
                 return null;
             }
 
-            var contentDict = jObject.Object<ReadOnlyDictionary<string, object>>("content");
+            if (!(contentToken is JObject contentObject))
+            {
+                return null;
+            }
 
-            var hasMessageType = contentDict.TryGetValue("msgtype", out var messageTypeObject);
-            var messageType = hasMessageType ? messageTypeObject.ToString() : null;
-            var hasGenerator = ContentTypes.TryGetValue(type, out var generator);
+            var hasMessageType = contentObject.TryGetValue("msgtype", out var messageTypeObject);
+            var messageType = hasMessageType ? (string)messageTypeObject : null;
+            var hasType = ContentTypes.TryGetValue(type, out var contentType);
 
-            return hasGenerator ? generator(messageType, contentDict) : new EventContent(contentDict);
+            if (hasMessageType && ContentTypes.TryGetValue(messageType, out var messageContentType))
+            {
+                contentType = messageContentType;
+                hasType = true;
+            }
+
+            return hasType ? (EventContent)contentObject.ToObject(contentType) : contentObject.ToObject<EventContent>();
         }
     }
 }

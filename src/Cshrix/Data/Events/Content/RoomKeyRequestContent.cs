@@ -8,25 +8,22 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
     using Cryptography;
 
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     public class RoomKeyRequestContent : EventContent
     {
-        public RoomKeyRequestContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public RoomKeyRequestContent(
+            RequestedKeyInfo body,
+            RequestAction action,
+            string requestingDeviceId,
+            string requestId)
         {
-            var body = GetValueOrDefault<JObject>("body");
-            Body = body?.ToObject<RequestedKeyInfo>() ?? default;
-            Action = GetValueOrDefault<RequestAction>("action");
-            RequestingDeviceId = GetValueOrDefault<string>("requesting_device_id");
-            RequestId = GetValueOrDefault<string>("request_id");
+            Body = body;
+            Action = action;
+            RequestingDeviceId = requestingDeviceId;
+            RequestId = requestId;
         }
 
         [JsonProperty("body")]

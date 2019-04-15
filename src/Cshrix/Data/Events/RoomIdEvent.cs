@@ -14,8 +14,8 @@ namespace Cshrix.Data.Events
 
     public class RoomIdEvent : Event
     {
-        public RoomIdEvent(EventContent content, string type, Identifier roomId)
-            : base(content, type) =>
+        public RoomIdEvent(EventContent content, string type, Identifier? redacts, Identifier roomId)
+            : base(content, type, redacts) =>
             RoomId = roomId;
 
         [JsonProperty("room_id")]

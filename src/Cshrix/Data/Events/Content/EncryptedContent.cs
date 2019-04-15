@@ -19,23 +19,26 @@ namespace Cshrix.Data.Events.Content
 
     public class EncryptedContent : EventContent
     {
-        public EncryptedContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public EncryptedContent(
+            Algorithm algorithm,
+            JToken rawCiphertext,
+            string senderKey,
+            string deviceId,
+            string sessionId)
         {
-            Algorithm = GetValueOrDefault<Algorithm>("algorithm");
-            SenderKey = GetValueOrDefault<string>("sender_key");
-            DeviceId = GetValueOrDefault<string>("device_id");
-            SessionId = GetValueOrDefault<string>("session_id");
+            Algorithm = algorithm;
+            RawCiphertext = rawCiphertext;
+            SenderKey = senderKey;
+            DeviceId = deviceId;
+            SessionId = sessionId;
 
-            var ciphertext = dictionary["ciphertext"];
-
-            if (ciphertext is JObject jObject)
+            if (RawCiphertext is JObject jObject)
             {
                 CiphertextInfos = jObject.ToObject<IReadOnlyDictionary<string, CiphertextInfo>>();
             }
-            else
+            else if (RawCiphertext is JValue jValue && jValue.Type == JTokenType.String)
             {
-                Ciphertext = (string)ciphertext;
+                Ciphertext = (string)jValue;
             }
         }
 
@@ -43,10 +46,13 @@ namespace Cshrix.Data.Events.Content
         public Algorithm Algorithm { get; }
 
         [JsonProperty("ciphertext")]
+        public JToken RawCiphertext { get; }
+
+        [JsonIgnore]
         [CanBeNull]
         public string Ciphertext { get; }
 
-        [JsonProperty("ciphertext")]
+        [JsonIgnore]
         [CanBeNull]
         public IReadOnlyDictionary<string, CiphertextInfo> CiphertextInfos { get; }
 

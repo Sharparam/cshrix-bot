@@ -8,14 +8,12 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
+    using System;
 
     public class FileMessageContent : UriMessageContent<FileInfo>
     {
-        public FileMessageContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public FileMessageContent(string body, string messageType, FileInfo info, Uri uri, EncryptedFile? encryptedFile)
+            : base(body, messageType, info, uri, encryptedFile)
         {
         }
     }

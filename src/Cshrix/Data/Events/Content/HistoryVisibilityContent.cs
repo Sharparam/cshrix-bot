@@ -1,4 +1,4 @@
-// <copyright file="FullyReadContent.cs">
+// <copyright file="HistoryVisibilityContent.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -10,11 +10,11 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class FullyReadContent : EventContent
+    public class HistoryVisibilityContent : EventContent
     {
-        public FullyReadContent(Identifier eventId) => EventId = eventId;
+        public HistoryVisibilityContent(HistoryVisibility visibility) => Visibility = visibility;
 
-        [JsonProperty("event_id")]
-        public Identifier EventId { get; }
+        [JsonProperty("history_visibility")]
+        public HistoryVisibility Visibility { get; }
     }
 }

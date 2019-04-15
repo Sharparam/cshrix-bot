@@ -9,7 +9,6 @@
 namespace Cshrix.Data.Events.Content
 {
     using System;
-    using System.Collections.Generic;
 
     using JetBrains.Annotations;
 
@@ -19,15 +18,18 @@ namespace Cshrix.Data.Events.Content
 
     public class PresenceContent : EventContent
     {
-        public PresenceContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public PresenceContent(
+            Uri avatarUri,
+            string displayName,
+            TimeSpan lastActiveAgo,
+            Presence presence,
+            bool currentlyActive)
         {
-            AvatarUri = GetValueOrDefault<Uri>("avatar_url");
-            DisplayName = GetValueOrDefault<string>("displayname");
-            var lastActiveAgoMs = GetValueOrDefault<long>("last_active_ago");
-            LastActiveAgo = TimeSpan.FromMilliseconds(lastActiveAgoMs);
-            Presence = GetValueOrDefault<Presence>("presence");
-            CurrentlyActive = GetValueOrDefault<bool>("currently_active");
+            AvatarUri = avatarUri;
+            DisplayName = displayName;
+            LastActiveAgo = lastActiveAgo;
+            Presence = presence;
+            CurrentlyActive = currentlyActive;
         }
 
         [JsonProperty("avatar_url")]

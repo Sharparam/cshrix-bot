@@ -8,14 +8,17 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System.Collections.Generic;
-
-    using JetBrains.Annotations;
+    using System;
 
     public class AudioMessageContent : UriMessageContent<AudioInfo>
     {
-        public AudioMessageContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public AudioMessageContent(
+            string body,
+            string messageType,
+            AudioInfo info,
+            Uri uri,
+            EncryptedFile? encryptedFile)
+            : base(body, messageType, info, uri, encryptedFile)
         {
         }
     }

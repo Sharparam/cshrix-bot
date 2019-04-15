@@ -9,29 +9,27 @@
 namespace Cshrix.Data.Events.Content
 {
     using System.Collections.Generic;
-    using System.Linq;
-
-    using JetBrains.Annotations;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     public class ForwardedRoomKeyContent : EventContent
     {
-        public ForwardedRoomKeyContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
+        public ForwardedRoomKeyContent(
+            string algorithm,
+            Identifier roomId,
+            string senderKey,
+            string sessionId,
+            string sessionKey,
+            string senderClaimedEd25519Key,
+            IReadOnlyCollection<string> forwardingCurve25519KeyChain)
         {
-            Algorithm = GetValueOrDefault<string>("algorithm");
-            var roomId = GetValueOrDefault<string>("room_id");
-            RoomId = (Identifier)roomId;
-            SenderKey = GetValueOrDefault<string>("sender_key");
-            SessionId = GetValueOrDefault<string>("session_id");
-            SessionKey = GetValueOrDefault<string>("session_key");
-            SenderClaimedEd25519Key = GetValueOrDefault<string>("sender_claimed_ed25519_key");
-
-            var keyChain = GetValueOrDefault<JArray>("forwarding_curve25519_key_chain");
-            ForwardingCurve25519KeyChain = keyChain?.ToObject<IReadOnlyCollection<string>>() ??
-                                           Enumerable.Empty<string>().ToList().AsReadOnly();
+            Algorithm = algorithm;
+            RoomId = roomId;
+            SenderKey = senderKey;
+            SessionId = sessionId;
+            SessionKey = sessionKey;
+            SenderClaimedEd25519Key = senderClaimedEd25519Key;
+            ForwardingCurve25519KeyChain = forwardingCurve25519KeyChain;
         }
 
         [JsonProperty("algorithm")]

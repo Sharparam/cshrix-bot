@@ -9,24 +9,12 @@
 namespace Cshrix.Data.Events.Content
 {
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using JetBrains.Annotations;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     public class AliasesContent : EventContent
     {
-        public AliasesContent([NotNull] IDictionary<string, object> dictionary)
-            : base(dictionary)
-        {
-            var hasAliases = TryGetValue<JArray>("aliases", out var aliases);
-            Aliases = hasAliases
-                ? aliases.ToObject<ReadOnlyCollection<Identifier>>()
-                : Enumerable.Empty<Identifier>().ToList().AsReadOnly();
-        }
+        public AliasesContent(IReadOnlyCollection<Identifier> aliases) => Aliases = aliases;
 
         [JsonProperty("aliases")]
         public IReadOnlyCollection<Identifier> Aliases { get; }
