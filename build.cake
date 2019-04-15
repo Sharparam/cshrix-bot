@@ -7,17 +7,82 @@
 // </copyright>
 
 #addin nuget:?package=Cake.Docker&version=0.9.9
+#tool "nuget:?package=GitVersion.CommandLine&version=4.0.0"
+
+var isAppVeyor = AppVeyor.IsRunningOnAppVeyor;
+var isTravis = TravisCI.IsRunningOnTravisCI;
+var isCi = isAppVeyor || isTravis;
 
 var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Release");
+
+var configuration = HasArgument("Configuration")
+    ? Argument<string>("Configuration")
+    : EnvironmentVariable("CONFIGURATION") != null
+        ? EnvironmentVariable("CONFIGURATION")
+        : "Release";
+
+var buildNumber = HasArgument("BuildNumber")
+    ? Argument<int>("BuildNumber")
+    : isAppVeyor
+        ? AppVeyor.Environment.Build.Number
+        : isTravis
+            ? TravisCI.Environment.Build.BuildNumber
+            : EnvironmentVariable("BUILD_NUMBER") != null
+                ? int.Parse(EnvironmentVariable("BUILD_NUMBER"))
+                : 0;
+
 var testFailed = false;
 var solutionDir = System.IO.Directory.GetCurrentDirectory();
 
 var testResultDir = Argument("testResultDir", System.IO.Path.Combine(solutionDir, "test-results"));
 var artifactDir = Argument("artifactDir", "./artifacts");
-var buildNumber = Argument<int>("buildNumber", 0);
 var dockerRegistry = Argument("dockerRegistry", "local");
 var slnName = Argument("slnName", "Cshrix.Bot");
+
+GitVersion version = null;
+
+GitVersion GetGitVersion(bool buildServerOutput = false)
+{
+    var settings = new GitVersionSettings
+    {
+        RepositoryPath = ".",
+        OutputType = buildServerOutput ? GitVersionOutput.BuildServer : GitVersionOutput.Json
+    };
+
+    return GitVersion(settings);
+}
+
+DotNetCoreMSBuildSettings GetMSBuildSettings(GitVersion version)
+{
+    return new DotNetCoreMSBuildSettings()
+        .SetVersion(version.NuGetVersion)
+        .SetFileVersion(version.AssemblySemFileVer)
+        .SetInformationalVersion(version.InformationalVersion)
+        .WithProperty("AssemblyVersion", version.AssemblySemVer);
+}
+
+DotNetCoreBuildSettings GetBuildSettings()
+{
+    return new DotNetCoreBuildSettings
+    {
+        Configuration = configuration,
+        MSBuildSettings = GetMSBuildSettings(version)
+    };
+}
+
+Setup(ctx =>
+{
+    Information("PATH is {0}", EnvironmentVariable("PATH"));
+
+    if (isCi)
+    {
+        GetGitVersion(true);
+    }
+
+    version = GetGitVersion();
+
+    Information("Version: {0} on {1}", version.InformationalVersion, version.CommitDate);
+});
 
 Task("Clean")
     .Does(() =>
@@ -74,11 +139,7 @@ Task("Build")
         var solution = GetFiles("./*.sln").ElementAt(0);
         Information("Build solution: {0}", solution);
 
-        var settings = new DotNetCoreBuildSettings
-        {
-            Configuration = configuration
-        };
-
+        var settings = GetBuildSettings();
         DotNetCoreBuild(solution.FullPath, settings);
     });
 
@@ -115,7 +176,8 @@ Task("Pack")
         var settings = new DotNetCorePackSettings
         {
             Configuration = configuration,
-            OutputDirectory = artifactDir
+            OutputDirectory = artifactDir,
+            MSBuildSettings = GetMSBuildSettings(version)
         };
 
         foreach (var project in projects)
@@ -139,7 +201,8 @@ Task("Publish")
         var settings = new DotNetCorePublishSettings
         {
             OutputDirectory = outputDir,
-            Configuration = configuration
+            Configuration = configuration,
+            MSBuildSettings = GetMSBuildSettings(version)
         };
 
         DotNetCorePublish(project.FullPath, settings);
@@ -148,9 +211,8 @@ Task("Publish")
 Task("Build-Container")
     .IsDependentOn("Publish")
     .Does(() => {
-        var version = GetProjectVersion();
         var imageName = GetImageName();
-        var tagVersion = $"{imageName}:{version}-{buildNumber}".ToLower();
+        var tagVersion = $"{imageName}:{version.FullSemVer}".ToLower();
         var tagLatest = $"{imageName}:latest".ToLower();
 
         Information($"Build docker image {tagVersion}");
@@ -158,7 +220,7 @@ Task("Build-Container")
 
         var buildArgs = new DockerImageBuildSettings
         {
-            Tag = new List<string>() { tagVersion, tagLatest }.ToArray()
+            Tag = new[] { tagVersion, tagLatest }
         };
 
         DockerBuild(buildArgs, solutionDir);
@@ -213,16 +275,6 @@ FilePath GetMainProjectFile()
 
     Error("Cannot find main project file");
     return null;
-}
-
-string GetProjectVersion()
-{
-    var project = GetMainProjectFile();
-
-    var doc = System.Xml.Linq.XDocument.Load(project.FullPath);
-    var version = doc.Descendants().First(p => p.Name.LocalName == "Version").Value;
-    Information($"Extrated version {version} from {project}");
-    return version;
 }
 
 string GetImageName()
