@@ -8,10 +8,12 @@
 
 namespace Cshrix
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     using Data;
     using Data.Events;
+    using Data.Events.Content;
 
     using JetBrains.Annotations;
 
@@ -30,6 +32,16 @@ namespace Cshrix
         [UsedImplicitly]
         [Header("Authorization")]
         string Authorization { get; set; }
+
+        /// <summary>
+        /// Gets or sets the impersonated user.
+        /// </summary>
+        /// <remarks>
+        /// This field is only usable if the token in use belongs to an application service.
+        /// </remarks>
+        [UsedImplicitly]
+        [Query("user_id")]
+        Identifier? UserId { get; set; }
 
         #region Server administration
 
@@ -181,6 +193,52 @@ namespace Cshrix
             [Query] int limit = 10,
             [Query] RoomEventFilter filter = default);
 
+        [Post("{apiVersion}/rooms/{roomId}/receipt/{receiptType}/{eventId}")]
+        Task SendReceiptAsync(
+            [Path] Identifier roomId,
+            [Path] string receiptType,
+            [Path] Identifier eventId,
+            [Body] object data = null);
+
+        [Put("{apiVersion}/rooms/{roomId}/redact/{eventId}/{txnId}")]
+        Task<EventIdContainer> RedactEventAsync(
+            [Path] Identifier roomId,
+            [Path] Identifier eventId,
+            [Path("txnId")] int transactionId,
+            [Body] RedactionContent data);
+
+        [Put("{apiVersion}/rooms/{roomId}/send/{eventType}/{txnId}")]
+        Task<EventIdContainer> SendEventAsync(
+            [Path] Identifier roomId,
+            [Path] string eventType,
+            [Path("txnId")] int transactionId,
+            [Body] Event data);
+
+        [Get("{apiVersion}/rooms/{roomId}/state")]
+        Task<IReadOnlyCollection<StateEvent>> GetStateEventsAsync([Path] Identifier roomId);
+
+        [Get("{apiVersion}/rooms/{roomId}/state/{eventType}")]
+        Task<StateEvent> GetStateEventAsync([Path] Identifier roomId, [Path] string eventType);
+
+        [Put("{apiVersion}/rooms/{roomId}/state/{eventType}")]
+        Task<EventIdContainer> SendStateAsync(
+            [Path] Identifier roomId,
+            [Path] string eventType,
+            [Body] EventContent data);
+
+        [Get("{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
+        Task<StateEvent> GetStateEventAsync([Path] Identifier roomId, [Path] string eventType, [Path] string stateKey);
+
+        [Put("{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
+        Task<EventIdContainer> SendStateAsync(
+            [Path] Identifier roomId,
+            [Path] string eventType,
+            [Path] string stateKey,
+            [Body] EventContent data);
+
+        [Put("{apiVersion}/rooms/{roomId}/typing/{userId}")]
+        Task SendTypingAsync([Path] Identifier roomId, [Path] Identifier userId, [Body] TypingState data);
+
         [Get("{apiVersion}/sync")]
         Task<SyncResponse> SyncAsync(
             [Query] string since = null,
@@ -188,6 +246,12 @@ namespace Cshrix
             [Query("full_state")] bool fullState = false,
             [Query("set_presence")] string setPresence = "offline",
             [Query] long timeout = 0);
+
+        [Post("{apiVersion}/user/{userId}/filter")]
+        Task<FilterIdContainer> UploadFilterAsync([Path] Identifier userId, [Body] Filter data);
+
+        [Get("{apiVersion}/user/{userId}/filter/{filterId}")]
+        Task<Filter> GetFilterAsync([Path] Identifier userId, [Path] string filterId);
 
         #endregion Room participation
 
