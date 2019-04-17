@@ -1,4 +1,4 @@
-// <copyright file="Chunk.cs">
+// <copyright file="SignedSenderDataContainer.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -8,16 +8,16 @@
 
 namespace Cshrix.Data
 {
-    using System.Collections.Generic;
-
     using Newtonsoft.Json;
 
-    public class Chunk<T>
+    public readonly struct SignedSenderDataContainer
     {
         [JsonConstructor]
-        public Chunk(IReadOnlyCollection<T> data) => Data = data;
+        public SignedSenderDataContainer(SignedData data)
+            : this() =>
+            Data = data;
 
-        [JsonProperty("chunk")]
-        public IReadOnlyCollection<T> Data { get; }
+        [JsonProperty("signed")]
+        public SignedData Data { get; }
     }
 }

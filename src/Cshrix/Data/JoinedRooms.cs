@@ -1,4 +1,4 @@
-// <copyright file="Chunk.cs">
+// <copyright file="JoinedRooms.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -12,12 +12,14 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
-    public class Chunk<T>
+    public readonly struct JoinedRooms
     {
         [JsonConstructor]
-        public Chunk(IReadOnlyCollection<T> data) => Data = data;
+        public JoinedRooms(IReadOnlyCollection<Identifier> roomIds)
+            : this() =>
+            RoomIds = roomIds;
 
-        [JsonProperty("chunk")]
-        public IReadOnlyCollection<T> Data { get; }
+        [JsonProperty("joined_rooms")]
+        public IReadOnlyCollection<Identifier> RoomIds { get; }
     }
 }

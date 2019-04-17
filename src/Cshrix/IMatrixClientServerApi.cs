@@ -257,6 +257,43 @@ namespace Cshrix
 
         #region Room membership
 
+        // TODO: The docs say that the third party data object should be additionally wrapped in
+        // another level `signed`. For now assume that is a doc error because it would be a
+        // preposterous amount of nesting. Awaiting response from #matrix-dev:matrix.org
+        // on whether this is actually intended.
+        [Post("{apiVersion}/join/{roomIdOrAlias}")]
+        Task<RoomIdContainer> JoinRoomOrAliasAsync(
+            [Path] Identifier roomIdOrAlias,
+            [Query("server_name")] IEnumerable<string> serverNames = null,
+            [Body] SignedThirdPartyData? data = null);
+
+        [Get("{apiVersion}/joined_rooms")]
+        Task<JoinedRooms> GetJoinedRoomsAsync();
+
+        [Post("{apiVersion}/rooms/{roomId}/ban")]
+        Task BanAsync([Path] Identifier roomId, [Body] Reason data);
+
+        [Post("{apiVersion}/rooms/{roomId}/forget")]
+        Task ForgetAsync([Path] Identifier roomId);
+
+        [Post("{apiVersion}/rooms/{roomId}/invite")]
+        Task InviteAsync([Path] Identifier roomId, [Body] ThirdPartyRoomInvite data);
+
+        [Post("{apiVersion}/rooms/{roomId}/invite")]
+        Task InviteAsync([Path] Identifier roomId, [Body] UserIdContainer data);
+
+        [Post("{apiVersion}/rooms/{roomId}/join")]
+        Task<RoomIdContainer> JoinRoomAsync([Path] Identifier roomId, [Body] SignedThirdPartyData? data = null);
+
+        [Post("{apiVersion}/rooms/{roomId}/kick")]
+        Task KickAsync([Path] Identifier roomId, [Body] Reason data);
+
+        [Post("{apiVersion}/rooms/{roomId}/leave")]
+        Task LeaveAsync([Path] Identifier roomid);
+
+        [Post("{apiVersion}/rooms/{roomId}/unban")]
+        Task UnbanAsync([Path] Identifier roomId, [Body] UserIdContainer data);
+
         #endregion Room membership
 
         #region End-to-end encryption

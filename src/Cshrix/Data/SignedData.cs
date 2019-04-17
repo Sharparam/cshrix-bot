@@ -6,20 +6,18 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data.Events.Content
+namespace Cshrix.Data
 {
     using System.Collections.Generic;
 
     using Newtonsoft.Json;
 
-    public readonly struct SignedData
+    public class SignedData
     {
-        [JsonConstructor]
         public SignedData(
             Identifier userId,
             IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> signatures,
             string token)
-            : this()
         {
             UserId = userId;
             Signatures = signatures;
