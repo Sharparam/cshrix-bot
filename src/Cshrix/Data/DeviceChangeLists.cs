@@ -6,7 +6,7 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data.Events
+namespace Cshrix.Data
 {
     using System.Collections.Generic;
 

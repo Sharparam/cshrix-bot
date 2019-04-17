@@ -298,6 +298,18 @@ namespace Cshrix
 
         #region End-to-end encryption
 
+        [Get("{apiVersion}/keys/changes")]
+        Task<DeviceChangeLists> GetDeviceKeyChangesAsync([Query] string from, [Query] string to);
+
+        [Post("{apiVersion}/keys/claim")]
+        Task<ClaimKeysResponse> ClaimOneTimeKeysAsync([Body] ClaimKeysRequest data);
+
+        [Post("{apiVersion}/keys/query")]
+        Task<DeviceKeysQueryResponse> QueryDeviceKeysAsync([Body] DeviceKeysQuery data);
+
+        [Post("{apiVersion}/keys/upload")]
+        Task<IReadOnlyDictionary<string, int>> UploadDeviceKeysAsync([Body] UploadKeysRequest data);
+
         #endregion End-to-end encryption
 
         #region Session management
