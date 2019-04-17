@@ -55,5 +55,8 @@ namespace Cshrix.Data.Events
 
         [JsonProperty("unsigned")]
         public UnsignedData? Unsigned { get; }
+
+        [JsonIgnore]
+        public bool IsRedacted => Unsigned?.IsRedaction == true;
     }
 }

@@ -22,13 +22,13 @@ namespace Cshrix.Data.Events
         [JsonConstructor]
         public UnsignedData(
             TimeSpan age,
-            Event @event,
+            Event redactionEvent,
             string transactionId,
             IReadOnlyCollection<StrippedState> inviteRoomState)
             : this()
         {
             Age = age;
-            Event = @event;
+            RedactionEvent = redactionEvent;
             TransactionId = transactionId;
             InviteRoomState = inviteRoomState;
         }
@@ -39,7 +39,7 @@ namespace Cshrix.Data.Events
 
         [JsonProperty("redacted_because")]
         [CanBeNull]
-        public Event Event { get; }
+        public Event RedactionEvent { get; }
 
         [JsonProperty("transaction_id")]
         [CanBeNull]
@@ -48,5 +48,8 @@ namespace Cshrix.Data.Events
         [JsonProperty("invite_room_state")]
         [CanBeNull]
         public IReadOnlyCollection<StrippedState> InviteRoomState { get; }
+
+        [JsonIgnore]
+        public bool IsRedaction => RedactionEvent != null;
     }
 }
