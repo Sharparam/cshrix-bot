@@ -12,8 +12,13 @@ namespace Cshrix.Data
     using System.Collections.ObjectModel;
     using System.Linq;
 
+    using JetBrains.Annotations;
+
     using Newtonsoft.Json;
 
+    using Serialization;
+
+    [JsonConverter(typeof(OneTimeKeyConverter))]
     public readonly struct OneTimeKey
     {
         public OneTimeKey(string key, IDictionary<Identifier, IDictionary<string, string>> signatures)
@@ -27,7 +32,9 @@ namespace Cshrix.Data
         }
 
         [JsonConstructor]
-        public OneTimeKey(string key, IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> signatures)
+        public OneTimeKey(
+            string key,
+            IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> signatures = null)
             : this()
         {
             Key = key;
@@ -37,7 +44,14 @@ namespace Cshrix.Data
         [JsonProperty("key")]
         public string Key { get; }
 
+        /// <summary>
+        /// Signatures for the key (if signed).
+        /// </summary>
+        /// <remarks>
+        /// Will be <c>null</c> if this is an unsigned key.
+        /// </remarks>
         [JsonProperty("signatures")]
+        [CanBeNull]
         public IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> Signatures { get; }
     }
 }
