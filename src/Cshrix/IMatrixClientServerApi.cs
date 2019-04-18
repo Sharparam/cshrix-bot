@@ -330,6 +330,12 @@ namespace Cshrix
 
         #region Push notifications
 
+        [Get("{apiVersion}/notifications")]
+        Task<NotificationsResponse> GetNotificationsAsync(
+            [Query] string from = null,
+            [Query] int? limit = null,
+            [Query] string only = null);
+
         #endregion Push notifications
 
         #region Presence
