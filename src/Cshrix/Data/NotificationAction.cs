@@ -17,7 +17,7 @@ namespace Cshrix.Data
     [JsonConverter(typeof(NotificationActionConverter))]
     public readonly struct NotificationAction
     {
-        public NotificationAction(string action, string name = null, object value = null)
+        public NotificationAction(string action, [CanBeNull] string name = null, [CanBeNull] object value = null)
             : this()
         {
             Action = action;
