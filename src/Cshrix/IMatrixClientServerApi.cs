@@ -95,14 +95,14 @@ namespace Cshrix
         Task<AvailableContainer> IsRegistrationAvailableAsync([Query] string username);
 
         [Put("{apiVersion}/user/{userId}/account_data/{type}")]
-        Task SetAccountDataAsync([Path] Identifier userId, [Path] string type, [Body] object data);
+        Task SetAccountDataAsync([Path] Identifier userId, [Path] string type, [Body] EventContent data);
 
         [Put("{apiVersion}/user/{userId}/rooms/{roomId}/account_data/{type}")]
         Task SetRoomAccountDataAsync(
             [Path] Identifier userId,
             [Path] Identifier roomId,
             [Path] string type,
-            [Body] object data);
+            [Body] EventContent data);
 
         [Get("{apiVersion}/user/{userId}/rooms/{roomId}/tags")]
         Task<TagsResponse> GetRoomTagsAsync([Path] Identifier userId, [Path] Identifier roomId);
