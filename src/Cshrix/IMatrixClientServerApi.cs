@@ -89,7 +89,7 @@ namespace Cshrix
         Task SetDisplayNameAsync([Path] Identifier userId, [Body] DisplayNameContainer data);
 
         [Post("{apiVersion}/register")]
-        Task<RegistrationResponse> RegisterAsync([Body] RegistrationRequest data);
+        Task<AuthenticationResponse> RegisterAsync([Body] RegistrationRequest data);
 
         [Get("{apiVersion}/register/available")]
         Task<AvailableContainer> IsRegistrationAvailableAsync([Query] string username);
@@ -313,6 +313,18 @@ namespace Cshrix
         #endregion End-to-end encryption
 
         #region Session management
+
+        [Get("{apiVersion}/login")]
+        Task<LoginFlows> GetLoginFlowsAsync();
+
+        [Post("{apiVersion}/login")]
+        Task<AuthenticationResponse> LoginAsync([Body] LoginRequest data);
+
+        [Post("{apiVersion}/logout")]
+        Task LogoutAsync();
+
+        [Post("{apiVersion}/logout/all")]
+        Task LogoutAllAsync();
 
         #endregion Session management
 

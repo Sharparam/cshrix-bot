@@ -1,4 +1,4 @@
-// <copyright file="RegistrationResponse.cs">
+// <copyright file="AuthenticationResponse.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -14,10 +14,10 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
-    public readonly struct RegistrationResponse
+    public readonly struct AuthenticationResponse
     {
         [JsonConstructor]
-        public RegistrationResponse(
+        public AuthenticationResponse(
             [CanBeNull] string accessToken,
             [CanBeNull] string deviceId,
             [CanBeNull] string homeserver,
