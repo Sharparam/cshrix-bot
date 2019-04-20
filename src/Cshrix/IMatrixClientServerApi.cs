@@ -14,6 +14,7 @@ namespace Cshrix
     using Data;
     using Data.Events;
     using Data.Events.Content;
+    using Data.Notifications;
 
     using JetBrains.Annotations;
 
@@ -185,6 +186,7 @@ namespace Cshrix
         [Get("{apiVersion}/rooms/{roomId}/members")]
         Task<Chunk<StateEvent>> GetMemberEventsAsync([Path] Identifier roomId);
 
+        [Get("{apiVersion}/rooms/{roomId}/messages")]
         Task<PaginatedChunk<RoomEvent>> GetMessageEventsAsync(
             [Path] Identifier roomId,
             [Query] string from = null,
@@ -289,7 +291,7 @@ namespace Cshrix
         Task KickAsync([Path] Identifier roomId, [Body] Reason data);
 
         [Post("{apiVersion}/rooms/{roomId}/leave")]
-        Task LeaveAsync([Path] Identifier roomid);
+        Task LeaveAsync([Path] Identifier roomId);
 
         [Post("{apiVersion}/rooms/{roomId}/unban")]
         Task UnbanAsync([Path] Identifier roomId, [Body] UserIdContainer data);
@@ -335,6 +337,50 @@ namespace Cshrix
             [Query] string from = null,
             [Query] int? limit = null,
             [Query] string only = null);
+
+        [Get("{apiVersion}/pushers")]
+        Task<NotificationPushersContainer> GetNotificationPushersAsync();
+
+        [Post("{apiVersion}/pushers/set")]
+        Task ModifyNotificationPusherAsync([Body] NotificationPusher data);
+
+        [Get("{apiVersion}/pushrules/{scope}")]
+        Task<NotificationRulesets> GetNotificationPushRulesAsync([Path] string scope = null);
+
+        [Get("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
+        Task<NotificationPushRule> GetNotificationPushRuleAsync(
+            [Path] string scope,
+            [Path] NotificationPushRuleKind kind,
+            [Path] string ruleId);
+
+        [Delete("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
+        Task DeleteNotificationPushRuleAsync(
+            [Path] string scope,
+            [Path] NotificationPushRuleKind kind,
+            [Path] string ruleId);
+
+        [Put("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
+        Task SetNotificationPushRuleAsync(
+            [Path] string scope,
+            [Path] NotificationPushRuleKind kind,
+            [Path] string ruleId,
+            [Body] NotificationPushRule data,
+            [Query] string before = null,
+            [Query] string after = null);
+
+        [Put("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}/actions")]
+        Task SetNotificationPushRuleActionsAsync(
+            [Path] string scope,
+            [Path] NotificationPushRuleKind kind,
+            [Path] string ruleId,
+            [Body] NotificationActionsContainer data);
+
+        [Put("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}/enabled")]
+        Task SetNotificationPushRuleEnabledAsync(
+            [Path] string scope,
+            [Path] NotificationPushRuleKind kind,
+            [Path] string ruleId,
+            [Body] EnabledContainer data);
 
         #endregion Push notifications
 

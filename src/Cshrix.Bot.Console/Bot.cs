@@ -31,6 +31,10 @@ namespace Cshrix.Bot.Console
             var userId = await _client.GetUserIdAsync();
 
             _log.LogInformation("I am {UserId}", userId);
+
+            var pushRules = await _client.GetNotificationPushRulesAsync();
+
+            _log.LogInformation("My push rules are {@Rules}", pushRules);
         }
     }
 }

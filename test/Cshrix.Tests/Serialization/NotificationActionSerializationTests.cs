@@ -10,7 +10,7 @@ using NUnit.Framework;
 
 namespace Cshrix.Tests.Serialization
 {
-    using Cshrix.Data;
+    using Cshrix.Data.Notifications;
 
     using Newtonsoft.Json;
 

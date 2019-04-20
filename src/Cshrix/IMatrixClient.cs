@@ -11,9 +11,12 @@ namespace Cshrix
     using System.Threading.Tasks;
 
     using Data;
+    using Data.Notifications;
 
     public interface IMatrixClient
     {
         Task<Identifier> GetUserIdAsync();
+
+        Task<NotificationRulesets> GetNotificationPushRulesAsync();
     }
 }

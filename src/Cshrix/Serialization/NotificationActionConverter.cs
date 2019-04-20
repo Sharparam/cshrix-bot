@@ -10,7 +10,7 @@ namespace Cshrix.Serialization
 {
     using System;
 
-    using Data;
+    using Data.Notifications;
 
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;

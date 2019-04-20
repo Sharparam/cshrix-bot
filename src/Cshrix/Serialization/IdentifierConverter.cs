@@ -41,22 +41,20 @@ namespace Cshrix.Serialization
         {
             var nullable = ReflectionHelpers.IsNullable(objectType);
 
-            if (reader.TokenType == JsonToken.Null)
+            switch (reader.TokenType)
             {
-                if (!nullable)
-                {
+                case JsonToken.Null when !nullable:
                     throw new JsonSerializationException($"Cannot convert null value to {objectType}");
-                }
 
-                return null;
+                case JsonToken.Null:
+                    return null;
+
+                case JsonToken.String:
+                    return new Identifier((string)reader.Value);
+
+                default:
+                    throw new JsonSerializationException("Cannot deserialize identifier if it is not a string");
             }
-
-            if (reader.TokenType == JsonToken.String)
-            {
-                return new Identifier((string)reader.Value);
-            }
-
-            throw new JsonSerializationException("Cannot deserialize identifier if it is not a string");
         }
     }
 }

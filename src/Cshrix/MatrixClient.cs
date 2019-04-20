@@ -15,6 +15,9 @@ namespace Cshrix
     using Configuration;
 
     using Data;
+    using Data.Notifications;
+
+    using Extensions;
 
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
@@ -44,11 +47,14 @@ namespace Cshrix
             httpClient.BaseAddress = clientServerBase;
             _api = RestClient.For<IMatrixClientServerApi>(httpClient);
             _configMonitor = clientConfig;
-            _api.ApiVersion = clientConfig.CurrentValue.ApiVersion ?? DefaultApiVersion;
+            _api.ApiVersion = _configMonitor.CurrentValue.ApiVersion ?? DefaultApiVersion;
+            _api.SetBearerToken(_configMonitor.CurrentValue.AccessToken);
         }
 
         protected ILogger Log { get; }
 
         public async Task<Identifier> GetUserIdAsync() => (await _api.WhoAmIAsync()).UserId;
+
+        public Task<NotificationRulesets> GetNotificationPushRulesAsync() => _api.GetNotificationPushRulesAsync();
     }
 }

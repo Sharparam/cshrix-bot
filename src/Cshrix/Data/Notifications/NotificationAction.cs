@@ -6,14 +6,17 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data
+namespace Cshrix.Data.Notifications
 {
+    using System.Diagnostics;
+
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;
 
     using Serialization;
 
+    [DebuggerDisplay("{Action} ({Name} = {Value})")]
     [JsonConverter(typeof(NotificationActionConverter))]
     public readonly struct NotificationAction
     {
