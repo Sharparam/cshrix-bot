@@ -386,6 +386,18 @@ namespace Cshrix
 
         #region Presence
 
+        [Get("{apiVersion}/presence/list/{userId}")]
+        Task<IReadOnlyCollection<Event>> GetPresenceEventsAsync([Path] Identifier userId);
+
+        [Post("{apiVersion}/presence/list/{userId}")]
+        Task UpdatePresenceListAsync([Path] Identifier userId, [Body] PresenceListUpdate data);
+
+        [Get("{apiVersion}/presence/{userId}/status")]
+        Task<PresenceStatusResponse> GetPresenceAsync([Path] Identifier userId);
+
+        [Put("{apiVersion}/presence/{userId}/status")]
+        Task SetPresenceAsync([Path] Identifier userId, [Body] PresenceStatusRequest data);
+
         #endregion Presence
 
         #region Room discovery
