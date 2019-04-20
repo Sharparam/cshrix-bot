@@ -394,6 +394,9 @@ namespace Cshrix
 
         #region Read Markers
 
+        [Post("{apiVersion}/rooms/{roomId}/read_markers")]
+        Task SetReadMarkersAsync([Path] Identifier roomId, [Body] ReadMarkers data);
+
         #endregion Read Markers
 
         #region Reporting content
