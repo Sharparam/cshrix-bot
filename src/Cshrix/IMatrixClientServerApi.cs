@@ -398,6 +398,9 @@ namespace Cshrix
 
         #region Reporting content
 
+        [Post("{apiVersion}/rooms/{roomId}/report/{eventId}")]
+        Task ReportAsync([Path] Identifier roomId, [Path] Identifier eventId, [Body] Report data);
+
         #endregion Reporting content
 
         #region Search
