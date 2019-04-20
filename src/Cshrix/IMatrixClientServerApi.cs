@@ -412,6 +412,12 @@ namespace Cshrix
 
         #region Send-to-Device messaging
 
+        [Put("{apiVersion}/sendToDevice/{eventType}/{txnId}")]
+        Task SendToDevicesAsync(
+            [Path] string eventType,
+            [Path("txnId")] string transactionId,
+            [Body] SendToDeviceMessages data);
+
         #endregion Send-to-Device messaging
 
         #region OpenID
