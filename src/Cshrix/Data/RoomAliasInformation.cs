@@ -15,7 +15,7 @@ namespace Cshrix.Data
     public struct RoomAliasInformation
     {
         [JsonConstructor]
-        public RoomAliasInformation(Identifier roomId, IReadOnlyCollection<string> servers)
+        public RoomAliasInformation(string roomId, IReadOnlyCollection<string> servers)
             : this()
         {
             RoomId = roomId;
@@ -23,7 +23,7 @@ namespace Cshrix.Data
         }
 
         [JsonProperty("room_id")]
-        public Identifier RoomId { get; }
+        public string RoomId { get; }
 
         [JsonProperty("servers")]
         public IReadOnlyCollection<string> Servers { get; }

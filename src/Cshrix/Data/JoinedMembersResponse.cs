@@ -15,11 +15,11 @@ namespace Cshrix.Data
     public readonly struct JoinedMembersResponse
     {
         [JsonConstructor]
-        public JoinedMembersResponse(IReadOnlyDictionary<Identifier, Profile> joined)
+        public JoinedMembersResponse(IReadOnlyDictionary<UserId, Profile> joined)
             : this() =>
             Joined = joined;
 
         [JsonProperty("joined")]
-        public IReadOnlyDictionary<Identifier, Profile> Joined { get; }
+        public IReadOnlyDictionary<UserId, Profile> Joined { get; }
     }
 }

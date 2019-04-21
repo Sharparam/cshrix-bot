@@ -21,10 +21,10 @@ namespace Cshrix.Data.Events
         public RoomEvent(
             EventContent content,
             string type,
-            Identifier? redacts,
-            Identifier id,
-            Identifier sender,
-            Identifier? roomId,
+            string redacts,
+            string id,
+            UserId sender,
+            string roomId,
             DateTimeOffset sentAt,
             UnsignedData? unsigned)
             : base(content, type, redacts, sender)
@@ -36,7 +36,7 @@ namespace Cshrix.Data.Events
         }
 
         [JsonProperty("event_id")]
-        public Identifier Id { get; }
+        public string Id { get; }
 
         /// <summary>
         /// Gets the ID of the room this event is associated with.
@@ -47,7 +47,7 @@ namespace Cshrix.Data.Events
         /// but it cannot guarantee that the ID will be set at all times.
         /// </remarks>
         [JsonProperty("room_id")]
-        public Identifier? RoomId { get; internal set; }
+        public string RoomId { get; internal set; }
 
         [JsonProperty("origin_server_ts")]
         [JsonConverter(typeof(UnixMillisecondDateTimeConverter))]

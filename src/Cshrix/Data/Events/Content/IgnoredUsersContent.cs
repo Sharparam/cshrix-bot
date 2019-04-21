@@ -14,9 +14,9 @@ namespace Cshrix.Data.Events.Content
 
     public class IgnoredUsersContent : EventContent
     {
-        public IgnoredUsersContent(IReadOnlyDictionary<Identifier, object> users) => Users = users;
+        public IgnoredUsersContent(IReadOnlyDictionary<UserId, object> users) => Users = users;
 
         [JsonProperty("ignored_users")]
-        public IReadOnlyDictionary<Identifier, object> Users { get; }
+        public IReadOnlyDictionary<UserId, object> Users { get; }
     }
 }

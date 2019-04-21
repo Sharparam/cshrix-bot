@@ -16,9 +16,9 @@ namespace Cshrix.Data.Events
     {
         [JsonConstructor]
         public Rooms(
-            IReadOnlyDictionary<Identifier, JoinedRoom> joined,
-            IReadOnlyDictionary<Identifier, InvitedRoom> invited,
-            IReadOnlyDictionary<Identifier, LeftRoom> left)
+            IReadOnlyDictionary<string, JoinedRoom> joined,
+            IReadOnlyDictionary<string, InvitedRoom> invited,
+            IReadOnlyDictionary<string, LeftRoom> left)
             : this()
         {
             Joined = joined;
@@ -27,12 +27,12 @@ namespace Cshrix.Data.Events
         }
 
         [JsonProperty("join")]
-        public IReadOnlyDictionary<Identifier, JoinedRoom> Joined { get; }
+        public IReadOnlyDictionary<string, JoinedRoom> Joined { get; }
 
         [JsonProperty("invite")]
-        public IReadOnlyDictionary<Identifier, InvitedRoom> Invited { get; }
+        public IReadOnlyDictionary<string, InvitedRoom> Invited { get; }
 
         [JsonProperty("leave")]
-        public IReadOnlyDictionary<Identifier, LeftRoom> Left { get; }
+        public IReadOnlyDictionary<string, LeftRoom> Left { get; }
     }
 }

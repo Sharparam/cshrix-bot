@@ -21,8 +21,8 @@ namespace Cshrix.Data
             EventFilter? accountData = null,
             EventFilter? ephemeral = null,
             bool includeLeave = false,
-            [CanBeNull] IEnumerable<Identifier> notRooms = null,
-            [CanBeNull] IEnumerable<Identifier> rooms = null,
+            [CanBeNull] IEnumerable<string> notRooms = null,
+            [CanBeNull] IEnumerable<string> rooms = null,
             EventFilter? state = null,
             EventFilter? timeline = null)
             : this(
@@ -41,8 +41,8 @@ namespace Cshrix.Data
             EventFilter? accountData = null,
             EventFilter? ephemeral = null,
             bool includeLeave = false,
-            [CanBeNull] IReadOnlyCollection<Identifier> notRooms = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> rooms = null,
+            [CanBeNull] IReadOnlyCollection<string> notRooms = null,
+            [CanBeNull] IReadOnlyCollection<string> rooms = null,
             EventFilter? state = null,
             EventFilter? timeline = null)
             : this()
@@ -76,14 +76,14 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> NotRooms { get; }
+        public IReadOnlyCollection<string> NotRooms { get; }
 
         [JsonProperty(
             "rooms",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> Rooms { get; }
+        public IReadOnlyCollection<string> Rooms { get; }
 
         [JsonProperty(
             "state",

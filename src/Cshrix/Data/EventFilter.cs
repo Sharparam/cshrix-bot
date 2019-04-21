@@ -19,9 +19,9 @@ namespace Cshrix.Data
     {
         public EventFilter(
             int? limit = null,
-            [CanBeNull] IEnumerable<Identifier> notSenders = null,
+            [CanBeNull] IEnumerable<UserId> notSenders = null,
             [CanBeNull] IEnumerable<string> notTypes = null,
-            [CanBeNull] IEnumerable<Identifier> senders = null,
+            [CanBeNull] IEnumerable<UserId> senders = null,
             [CanBeNull] IEnumerable<string> types = null)
             : this(
                 limit,
@@ -35,9 +35,9 @@ namespace Cshrix.Data
         [JsonConstructor]
         public EventFilter(
             int? limit = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> notSenders = null,
+            [CanBeNull] IReadOnlyCollection<UserId> notSenders = null,
             [CanBeNull] IReadOnlyCollection<string> notTypes = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> senders = null,
+            [CanBeNull] IReadOnlyCollection<UserId> senders = null,
             [CanBeNull] IReadOnlyCollection<string> types = null)
             : this()
         {
@@ -57,7 +57,7 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> NotSenders { get; }
+        public IReadOnlyCollection<UserId> NotSenders { get; }
 
         [JsonProperty(
             "not_types",
@@ -71,7 +71,7 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> Senders { get; }
+        public IReadOnlyCollection<UserId> Senders { get; }
 
         [JsonProperty(
             "types",

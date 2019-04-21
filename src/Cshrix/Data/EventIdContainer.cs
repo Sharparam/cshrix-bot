@@ -13,11 +13,11 @@ namespace Cshrix.Data
     public readonly struct EventIdContainer
     {
         [JsonConstructor]
-        public EventIdContainer(Identifier id)
+        public EventIdContainer(string id)
             : this() =>
             Id = id;
 
         [JsonProperty("event_id")]
-        public Identifier Id { get; }
+        public string Id { get; }
     }
 }

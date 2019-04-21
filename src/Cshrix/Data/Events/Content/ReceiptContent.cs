@@ -8,7 +8,6 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -16,7 +15,7 @@ namespace Cshrix.Data.Events.Content
 
     public class ReceiptContent : EventContent
     {
-        public ReceiptData this[Identifier key]
+        public ReceiptData this[string key]
         {
             get
             {
@@ -27,11 +26,11 @@ namespace Cshrix.Data.Events.Content
 
         public int Count => Keys.Count();
 
-        public IEnumerable<Identifier> Keys => GetValidKeys();
+        public IEnumerable<string> Keys => GetValidKeys();
 
-        public bool ContainsEvent(Identifier key) => AdditionalData.ContainsKey(key);
+        public bool ContainsEvent(string key) => AdditionalData.ContainsKey(key);
 
-        public bool TryGetData(Identifier key, out ReceiptData value)
+        public bool TryGetData(string key, out ReceiptData value)
         {
             if (!AdditionalData.TryGetValue(key, out var jToken))
             {
@@ -51,19 +50,13 @@ namespace Cshrix.Data.Events.Content
             }
         }
 
-        private IEnumerable<Identifier> GetValidKeys()
+        private IEnumerable<string> GetValidKeys()
         {
-            var validKeys = new List<Identifier>();
+            var validKeys = new List<string>();
+
             foreach (var kvp in AdditionalData)
             {
-                try
-                {
-                    var identifier = new Identifier(kvp.Key);
-                    validKeys.Add(identifier);
-                }
-                catch (ArgumentException)
-                {
-                }
+                validKeys.Add(kvp.Key);
             }
 
             return validKeys;

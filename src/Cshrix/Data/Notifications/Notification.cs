@@ -27,7 +27,7 @@ namespace Cshrix.Data.Notifications
             Event @event,
             [CanBeNull] string profileTag,
             bool read,
-            Identifier roomId,
+            string roomId,
             DateTimeOffset sentAt)
             : this()
         {
@@ -53,7 +53,7 @@ namespace Cshrix.Data.Notifications
         public bool Read { get; }
 
         [JsonProperty("room_id")]
-        public Identifier RoomId { get; }
+        public string RoomId { get; }
 
         [JsonProperty("ts")]
         [JsonConverter(typeof(UnixMillisecondDateTimeConverter))]

@@ -21,7 +21,7 @@ namespace Cshrix.Data
             [CanBeNull] string accessToken,
             [CanBeNull] string deviceId,
             [CanBeNull] string homeserver,
-            Identifier userId)
+            UserId userId)
             : this()
         {
             AccessToken = accessToken;
@@ -48,6 +48,6 @@ namespace Cshrix.Data
         public string Homeserver { get; }
 
         [JsonProperty("user_id")]
-        public Identifier UserId { get; }
+        public UserId UserId { get; }
     }
 }

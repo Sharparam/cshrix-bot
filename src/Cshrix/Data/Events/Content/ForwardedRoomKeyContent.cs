@@ -16,7 +16,7 @@ namespace Cshrix.Data.Events.Content
     {
         public ForwardedRoomKeyContent(
             string algorithm,
-            Identifier roomId,
+            string roomId,
             string senderKey,
             string sessionId,
             string sessionKey,
@@ -36,7 +36,7 @@ namespace Cshrix.Data.Events.Content
         public string Algorithm { get; }
 
         [JsonProperty("room_id")]
-        public Identifier RoomId { get; }
+        public string RoomId { get; }
 
         [JsonProperty("sender_key")]
         public string SenderKey { get; }

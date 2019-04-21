@@ -14,9 +14,9 @@ namespace Cshrix.Data.Events.Content
 
     public class AliasesContent : EventContent
     {
-        public AliasesContent(IReadOnlyCollection<Identifier> aliases) => Aliases = aliases;
+        public AliasesContent(IReadOnlyCollection<RoomAlias> aliases) => Aliases = aliases;
 
         [JsonProperty("aliases")]
-        public IReadOnlyCollection<Identifier> Aliases { get; }
+        public IReadOnlyCollection<RoomAlias> Aliases { get; }
     }
 }

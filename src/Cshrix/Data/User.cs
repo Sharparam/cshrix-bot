@@ -15,7 +15,7 @@ namespace Cshrix.Data
     public readonly struct User
     {
         [JsonConstructor]
-        public User(Uri avatarUri, string displayName, Identifier userId)
+        public User(Uri avatarUri, string displayName, UserId userId)
             : this()
         {
             AvatarUri = avatarUri;
@@ -30,6 +30,6 @@ namespace Cshrix.Data
         public string DisplayName { get; }
 
         [JsonProperty("user_id")]
-        public Identifier UserId { get; }
+        public UserId UserId { get; }
     }
 }

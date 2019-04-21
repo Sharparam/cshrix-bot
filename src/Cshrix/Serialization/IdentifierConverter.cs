@@ -12,16 +12,11 @@ namespace Cshrix.Serialization
 
     using Data;
 
-    using Helpers;
-
     using Newtonsoft.Json;
 
-    public sealed class IdentifierConverter : JsonConverter
+    public abstract class IdentifierConverter<T> : JsonConverter<T> where T : Identifier
     {
-        public override bool CanConvert(Type objectType) =>
-            objectType == typeof(Identifier) || objectType == typeof(Identifier?);
-
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, T value, JsonSerializer serializer)
         {
             if (value == null)
             {
@@ -33,28 +28,26 @@ namespace Cshrix.Serialization
             }
         }
 
-        public override object ReadJson(
+        public override T ReadJson(
             JsonReader reader,
             Type objectType,
-            object existingValue,
+            T existingValue,
+            bool hasExistingValue,
             JsonSerializer serializer)
         {
-            var nullable = ReflectionHelpers.IsNullable(objectType);
-
             switch (reader.TokenType)
             {
-                case JsonToken.Null when !nullable:
-                    throw new JsonSerializationException($"Cannot convert null value to {objectType}");
-
                 case JsonToken.Null:
                     return null;
 
                 case JsonToken.String:
-                    return new Identifier((string)reader.Value);
+                    return Parse((string)reader.Value);
 
                 default:
                     throw new JsonSerializationException("Cannot deserialize identifier if it is not a string");
             }
         }
+
+        protected abstract T Parse(string id);
     }
 }

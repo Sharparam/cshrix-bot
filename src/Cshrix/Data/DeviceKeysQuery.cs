@@ -20,11 +20,11 @@ namespace Cshrix.Data
     public readonly struct DeviceKeysQuery
     {
         public DeviceKeysQuery(
-            IDictionary<Identifier, IEnumerable<string>> deviceKeys,
+            IDictionary<UserId, IEnumerable<string>> deviceKeys,
             string token,
             TimeSpan? timeout = null)
             : this(
-                new ReadOnlyDictionary<Identifier, IReadOnlyCollection<string>>(
+                new ReadOnlyDictionary<UserId, IReadOnlyCollection<string>>(
                     deviceKeys.ToDictionary(
                         kvp => kvp.Key,
                         kvp => (IReadOnlyCollection<string>)kvp.Value.ToList().AsReadOnly())),
@@ -35,7 +35,7 @@ namespace Cshrix.Data
 
         [JsonConstructor]
         public DeviceKeysQuery(
-            IReadOnlyDictionary<Identifier, IReadOnlyCollection<string>> deviceKeys,
+            IReadOnlyDictionary<UserId, IReadOnlyCollection<string>> deviceKeys,
             string token,
             TimeSpan? timeout = null)
             : this()
@@ -50,7 +50,7 @@ namespace Cshrix.Data
         public TimeSpan Timeout { get; }
 
         [JsonProperty("device_keys")]
-        public IReadOnlyDictionary<Identifier, IReadOnlyCollection<string>> DeviceKeys { get; }
+        public IReadOnlyDictionary<UserId, IReadOnlyCollection<string>> DeviceKeys { get; }
 
         [JsonProperty("token")]
         public string Token { get; }

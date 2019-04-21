@@ -8,7 +8,6 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -16,53 +15,50 @@ namespace Cshrix.Data.Events.Content
 
     public class DirectContent : EventContent
     {
-        public Identifier this[Identifier key]
+        public IReadOnlyCollection<string> this[UserId key]
         {
             get
             {
                 var jToken = AdditionalData[key];
-                return jToken.ToObject<Identifier>();
+                return jToken.ToObject<IReadOnlyCollection<string>>();
             }
         }
 
         public int Count => Keys.Count();
 
-        public IEnumerable<Identifier> Keys => GetValidKeys();
+        public IEnumerable<UserId> Keys => GetValidKeys();
 
-        public bool ContainsEvent(Identifier key) => AdditionalData.ContainsKey(key);
+        public bool ContainsUser(UserId key) => AdditionalData.ContainsKey(key);
 
-        public bool TryGetData(Identifier key, out Identifier value)
+        public bool TryGetData(UserId key, out IReadOnlyCollection<string> values)
         {
             if (!AdditionalData.TryGetValue(key, out var jToken))
             {
-                value = default;
+                values = default;
                 return false;
             }
 
             try
             {
-                value = jToken.ToObject<Identifier>();
+                values = jToken.ToObject<IReadOnlyCollection<string>>();
                 return true;
             }
             catch (JsonSerializationException)
             {
-                value = default;
+                values = default;
                 return false;
             }
         }
 
-        private IEnumerable<Identifier> GetValidKeys()
+        private IEnumerable<UserId> GetValidKeys()
         {
-            var validKeys = new List<Identifier>();
+            var validKeys = new List<UserId>();
             foreach (var kvp in AdditionalData)
             {
-                try
+                var valid = UserId.TryParse(kvp.Key, out var userId);
+                if (valid)
                 {
-                    var identifier = new Identifier(kvp.Key);
-                    validKeys.Add(identifier);
-                }
-                catch (ArgumentException)
-                {
+                    validKeys.Add(userId);
                 }
             }
 

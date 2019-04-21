@@ -12,9 +12,9 @@ namespace Cshrix.Data.Events.Content
 
     public class FullyReadContent : EventContent
     {
-        public FullyReadContent(Identifier eventId) => EventId = eventId;
+        public FullyReadContent(string eventId) => EventId = eventId;
 
         [JsonProperty("event_id")]
-        public Identifier EventId { get; }
+        public string EventId { get; }
     }
 }

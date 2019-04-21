@@ -26,7 +26,7 @@ namespace Cshrix.Data
             [CanBeNull] string aliasLocalpart = null,
             [CanBeNull] string name = null,
             [CanBeNull] string topic = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> invites = null,
+            [CanBeNull] IReadOnlyCollection<UserId> invites = null,
             [CanBeNull] IReadOnlyCollection<ThirdPartyRoomInvite> thirdPartyInvites = null,
             [CanBeNull] string version = null,
             [CanBeNull] CreationContent content = null,
@@ -78,7 +78,7 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> Invites { get; }
+        public IReadOnlyCollection<UserId> Invites { get; }
 
         [JsonProperty(
             "invite_3pid",

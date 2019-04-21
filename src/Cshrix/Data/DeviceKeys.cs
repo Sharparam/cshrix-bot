@@ -17,18 +17,18 @@ namespace Cshrix.Data
     public readonly struct DeviceKeys
     {
         public DeviceKeys(
-            Identifier userId,
+            UserId userId,
             string deviceId,
             IEnumerable<string> algorithms,
             IDictionary<string, string> keys,
-            IDictionary<Identifier, IDictionary<string, string>> signatures,
+            IDictionary<UserId, IDictionary<string, string>> signatures,
             UnsignedDeviceInfo? unsignedDeviceInfo = null)
             : this(
                 userId,
                 deviceId,
                 algorithms.ToList().AsReadOnly(),
                 new ReadOnlyDictionary<string, string>(keys),
-                new ReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>>(
+                new ReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>>(
                     signatures.ToDictionary(
                         kvp => kvp.Key,
                         kvp => (IReadOnlyDictionary<string, string>)new ReadOnlyDictionary<string, string>(kvp.Value))),
@@ -38,11 +38,11 @@ namespace Cshrix.Data
 
         [JsonConstructor]
         public DeviceKeys(
-            Identifier userId,
+            UserId userId,
             string deviceId,
             IReadOnlyCollection<string> algorithms,
             IReadOnlyDictionary<string, string> keys,
-            IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> signatures,
+            IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>> signatures,
             UnsignedDeviceInfo? unsignedDeviceInfo = null)
             : this()
         {
@@ -55,7 +55,7 @@ namespace Cshrix.Data
         }
 
         [JsonProperty("user_id")]
-        public Identifier UserId { get; }
+        public UserId UserId { get; }
 
         [JsonProperty("device_id")]
         public string DeviceId { get; }
@@ -67,7 +67,7 @@ namespace Cshrix.Data
         public IReadOnlyDictionary<string, string> Keys { get; }
 
         [JsonProperty("signatures")]
-        public IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> Signatures { get; }
+        public IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>> Signatures { get; }
 
         [JsonProperty("unsigned")]
         public UnsignedDeviceInfo? UnsignedDeviceInfo { get; }

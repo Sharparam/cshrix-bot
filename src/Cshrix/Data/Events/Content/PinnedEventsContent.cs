@@ -14,9 +14,9 @@ namespace Cshrix.Data.Events.Content
 
     public class PinnedEventsContent : EventContent
     {
-        public PinnedEventsContent(IReadOnlyCollection<Identifier> pinned) => Pinned = pinned;
+        public PinnedEventsContent(IReadOnlyCollection<UserId> pinned) => Pinned = pinned;
 
         [JsonProperty("pinned")]
-        public IReadOnlyCollection<Identifier> Pinned { get; }
+        public IReadOnlyCollection<UserId> Pinned { get; }
     }
 }

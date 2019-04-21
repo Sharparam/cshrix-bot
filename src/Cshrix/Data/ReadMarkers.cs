@@ -13,7 +13,7 @@ namespace Cshrix.Data
     public readonly struct ReadMarkers
     {
         [JsonConstructor]
-        public ReadMarkers(Identifier fullyReadEventId, Identifier? readEventId = null)
+        public ReadMarkers(string fullyReadEventId, string readEventId = null)
             : this()
         {
             FullyReadEventId = fullyReadEventId;
@@ -21,9 +21,9 @@ namespace Cshrix.Data
         }
 
         [JsonProperty("m.fully_read")]
-        public Identifier FullyReadEventId { get; }
+        public string FullyReadEventId { get; }
 
         [JsonProperty("m.read")]
-        public Identifier? ReadEventId { get; }
+        public string ReadEventId { get; }
     }
 }

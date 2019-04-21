@@ -132,7 +132,7 @@ namespace Cshrix.Tests.Data.Events
 
             var ev = JsonConvert.DeserializeObject<RoomEvent>(json);
 
-            var expectedEventId = (Identifier)"$WEIGFHFW:localhost";
+            var expectedEventId = "$WEIGFHFW:localhost";
             var expectedType = FeedbackType.Delivered;
 
             var content = ev.Content as FeedbackContent;
@@ -164,8 +164,8 @@ namespace Cshrix.Tests.Data.Events
 
             Assert.That(ev.Content, Is.TypeOf<ReceiptContent>());
 
-            var eventId = (Identifier)"$1435641916114394fHBLK:matrix.org";
-            var userId = (Identifier)"@rikj:jki.re";
+            var eventId = "$1435641916114394fHBLK:matrix.org";
+            var userId = (UserId)"@rikj:jki.re";
             const long Timestamp = 1436451550453;
 
             var content = (ReceiptContent)ev.Content;

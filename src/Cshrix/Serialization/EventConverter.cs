@@ -93,12 +93,12 @@ namespace Cshrix.Serialization
 
             var type = jObject.Value<string>("type");
             var content = ParseEventContent(type, jObject);
-            var redacts = jObject.ObjectOrDefault<Identifier?>("redacts");
+            var redacts = jObject.ValueOrDefault<string>("redacts");
 
-            var hasSender = jObject.TryGetObject<Identifier>("sender", out var sender);
-            var hasId = jObject.TryGetObject<Identifier>("event_id", out var id);
+            var hasSender = jObject.TryGetObject<UserId>("sender", out var sender);
+            var hasId = jObject.TryGetValue<string>("event_id", out var id);
             var hasStateKey = jObject.TryGetValue<string>("state_key", out var stateKey);
-            var roomId = jObject.ObjectOrDefault<Identifier?>("room_id");
+            var roomId = jObject.ValueOrDefault<string>("room_id");
             var unsigned = jObject.ObjectOrDefault<UnsignedData?>("unsigned");
             var previousContent = jObject.ObjectOrDefault<EventContent>("prev_content");
 
@@ -147,14 +147,14 @@ namespace Cshrix.Serialization
                 return new SenderEvent(content, type, redacts, sender);
             }
 
-            if (objectType == typeof(RoomIdEvent) || roomId.HasValue)
+            if (objectType == typeof(RoomIdEvent) || roomId != null)
             {
-                if (!roomId.HasValue)
+                if (roomId == null)
                 {
                     throw new JsonSerializationException($"Cannot deserialize to {objectType} if room_id is missing");
                 }
 
-                return new RoomIdEvent(content, type, redacts, roomId.Value);
+                return new RoomIdEvent(content, type, redacts, roomId);
             }
 
             return new Event(content, type, redacts);

@@ -88,7 +88,7 @@ namespace Cshrix.Serialization
             }
 
             var signatures = signaturesToken
-                .ToObject<IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>>>();
+                .ToObject<IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>>>();
 
             return new OneTimeKey(key, signatures);
         }

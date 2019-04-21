@@ -12,14 +12,14 @@ namespace Cshrix.Data.Events.Content
 
     public class FeedbackContent : EventContent
     {
-        public FeedbackContent(Identifier targetEventId, FeedbackType type)
+        public FeedbackContent(string targetEventId, FeedbackType type)
         {
             TargetEventId = targetEventId;
             Type = type;
         }
 
         [JsonProperty("target_event_id")]
-        public Identifier TargetEventId { get; }
+        public string TargetEventId { get; }
 
         [JsonProperty("type")]
         public FeedbackType Type { get; }

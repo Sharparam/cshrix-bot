@@ -15,14 +15,14 @@ namespace Cshrix.Data
     public class SignedSenderData : SignedData
     {
         public SignedSenderData(
-            Identifier userId,
+            UserId userId,
             IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> signatures,
             string token,
-            Identifier sender)
+            UserId sender)
             : base(userId, signatures, token) =>
             Sender = sender;
 
         [JsonProperty("sender")]
-        public Identifier Sender { get; }
+        public UserId Sender { get; }
     }
 }

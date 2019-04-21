@@ -14,9 +14,9 @@ namespace Cshrix.Data.Events.Content
 
     public class GroupsContent : EventContent
     {
-        public GroupsContent(IReadOnlyCollection<Identifier> groups) => Groups = groups;
+        public GroupsContent(IReadOnlyCollection<GroupId> groups) => Groups = groups;
 
         [JsonProperty("groups")]
-        public IReadOnlyCollection<Identifier> Groups { get; }
+        public IReadOnlyCollection<GroupId> Groups { get; }
     }
 }

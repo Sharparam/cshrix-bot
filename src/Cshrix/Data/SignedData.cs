@@ -15,7 +15,7 @@ namespace Cshrix.Data
     public class SignedData
     {
         public SignedData(
-            Identifier userId,
+            UserId userId,
             IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> signatures,
             string token)
         {
@@ -25,7 +25,7 @@ namespace Cshrix.Data
         }
 
         [JsonProperty("mxid")]
-        public Identifier UserId { get; }
+        public UserId UserId { get; }
 
         [JsonProperty("signatures")]
         public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Signatures { get; }

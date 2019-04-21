@@ -18,9 +18,9 @@ namespace Cshrix.Data
 
     public readonly struct SendToDeviceMessages
     {
-        public SendToDeviceMessages(IDictionary<Identifier, IDictionary<string, EventContent>> messages)
+        public SendToDeviceMessages(IDictionary<UserId, IDictionary<string, EventContent>> messages)
             : this(
-                new ReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, EventContent>>(
+                new ReadOnlyDictionary<UserId, IReadOnlyDictionary<string, EventContent>>(
                     messages.ToDictionary(
                         kvp => kvp.Key,
                         kvp => (IReadOnlyDictionary<string, EventContent>)new ReadOnlyDictionary<string, EventContent>(
@@ -29,11 +29,11 @@ namespace Cshrix.Data
         }
 
         [JsonConstructor]
-        public SendToDeviceMessages(IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, EventContent>> messages)
+        public SendToDeviceMessages(IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, EventContent>> messages)
             : this() =>
             Messages = messages;
 
         [JsonProperty("messages")]
-        public IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, EventContent>> Messages { get; }
+        public IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, EventContent>> Messages { get; }
     }
 }

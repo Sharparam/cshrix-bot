@@ -21,10 +21,10 @@ namespace Cshrix.Data
     [JsonConverter(typeof(OneTimeKeyConverter))]
     public readonly struct OneTimeKey
     {
-        public OneTimeKey(string key, IDictionary<Identifier, IDictionary<string, string>> signatures)
+        public OneTimeKey(string key, IDictionary<UserId, IDictionary<string, string>> signatures)
             : this(
                 key,
-                new ReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>>(
+                new ReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>>(
                     signatures.ToDictionary(
                         kvp => kvp.Key,
                         kvp => (IReadOnlyDictionary<string, string>)new ReadOnlyDictionary<string, string>(kvp.Value))))
@@ -34,7 +34,7 @@ namespace Cshrix.Data
         [JsonConstructor]
         public OneTimeKey(
             string key,
-            IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> signatures = null)
+            IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>> signatures = null)
             : this()
         {
             Key = key;
@@ -52,6 +52,6 @@ namespace Cshrix.Data
         /// </remarks>
         [JsonProperty("signatures")]
         [CanBeNull]
-        public IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> Signatures { get; }
+        public IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>> Signatures { get; }
     }
 }

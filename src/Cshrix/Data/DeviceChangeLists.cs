@@ -15,7 +15,7 @@ namespace Cshrix.Data
     public readonly struct DeviceChangeLists
     {
         [JsonConstructor]
-        public DeviceChangeLists(IReadOnlyCollection<Identifier> changed, IReadOnlyCollection<Identifier> left)
+        public DeviceChangeLists(IReadOnlyCollection<UserId> changed, IReadOnlyCollection<UserId> left)
             : this()
         {
             Changed = changed;
@@ -23,9 +23,9 @@ namespace Cshrix.Data
         }
 
         [JsonProperty("changed")]
-        public IReadOnlyCollection<Identifier> Changed { get; }
+        public IReadOnlyCollection<UserId> Changed { get; }
 
         [JsonProperty("left")]
-        public IReadOnlyCollection<Identifier> Left { get; }
+        public IReadOnlyCollection<UserId> Left { get; }
     }
 }

@@ -14,9 +14,9 @@ namespace Cshrix.Data.Events.Content
 
     public class TypingContent : EventContent
     {
-        public TypingContent(IReadOnlyCollection<Identifier> userIds) => UserIds = userIds;
+        public TypingContent(IReadOnlyCollection<UserId> userIds) => UserIds = userIds;
 
         [JsonProperty("user_ids")]
-        public IReadOnlyCollection<Identifier> UserIds { get; }
+        public IReadOnlyCollection<UserId> UserIds { get; }
     }
 }

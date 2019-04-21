@@ -20,12 +20,12 @@ namespace Cshrix.Data
     {
         public RoomEventFilter(
             int? limit = null,
-            [CanBeNull] IEnumerable<Identifier> notSenders = null,
+            [CanBeNull] IEnumerable<UserId> notSenders = null,
             [CanBeNull] IEnumerable<string> notTypes = null,
-            [CanBeNull] IEnumerable<Identifier> senders = null,
+            [CanBeNull] IEnumerable<UserId> senders = null,
             [CanBeNull] IEnumerable<string> types = null,
-            [CanBeNull] IEnumerable<Identifier> notRooms = null,
-            [CanBeNull] IEnumerable<Identifier> rooms = null,
+            [CanBeNull] IEnumerable<string> notRooms = null,
+            [CanBeNull] IEnumerable<string> rooms = null,
             bool containsUrl = false)
             : this(
                 limit,
@@ -42,12 +42,12 @@ namespace Cshrix.Data
         [JsonConstructor]
         public RoomEventFilter(
             int? limit = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> notSenders = null,
+            [CanBeNull] IReadOnlyCollection<UserId> notSenders = null,
             [CanBeNull] IReadOnlyCollection<string> notTypes = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> senders = null,
+            [CanBeNull] IReadOnlyCollection<UserId> senders = null,
             [CanBeNull] IReadOnlyCollection<string> types = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> notRooms = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> rooms = null,
+            [CanBeNull] IReadOnlyCollection<string> notRooms = null,
+            [CanBeNull] IReadOnlyCollection<string> rooms = null,
             bool containsUrl = false)
             : this()
         {
@@ -69,7 +69,7 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> NotSenders { get; }
+        public IReadOnlyCollection<UserId> NotSenders { get; }
 
         [JsonProperty(
             "not_types",
@@ -83,7 +83,7 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> Senders { get; }
+        public IReadOnlyCollection<UserId> Senders { get; }
 
         [JsonProperty(
             "types",
@@ -97,14 +97,14 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> NotRooms { get; }
+        public IReadOnlyCollection<string> NotRooms { get; }
 
         [JsonProperty(
             "rooms",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> Rooms { get; }
+        public IReadOnlyCollection<string> Rooms { get; }
 
         [DefaultValue(false)]
         [JsonProperty("contains_url")]

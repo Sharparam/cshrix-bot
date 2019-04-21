@@ -8,13 +8,16 @@
 
 namespace Cshrix.Data.Events.Content
 {
+    using JetBrains.Annotations;
+
     using Newtonsoft.Json;
 
     public class CanonicalAliasContent : EventContent
     {
-        public CanonicalAliasContent(Identifier? alias) => Alias = alias;
+        public CanonicalAliasContent([CanBeNull] RoomAlias alias) => Alias = alias;
 
         [JsonProperty("alias")]
-        public Identifier? Alias { get; }
+        [CanBeNull]
+        public RoomAlias Alias { get; }
     }
 }

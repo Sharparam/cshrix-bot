@@ -18,16 +18,16 @@ namespace Cshrix.Data
     public readonly struct PresenceListUpdate
     {
         public PresenceListUpdate(
-            [CanBeNull] IEnumerable<Identifier> add = null,
-            [CanBeNull] IEnumerable<Identifier> remove = null)
+            [CanBeNull] IEnumerable<UserId> add = null,
+            [CanBeNull] IEnumerable<UserId> remove = null)
             : this(add?.ToList().AsReadOnly(), remove?.ToList().AsReadOnly())
         {
         }
 
         [JsonConstructor]
         public PresenceListUpdate(
-            [CanBeNull] IReadOnlyCollection<Identifier> add = null,
-            [CanBeNull] IReadOnlyCollection<Identifier> remove = null)
+            [CanBeNull] IReadOnlyCollection<UserId> add = null,
+            [CanBeNull] IReadOnlyCollection<UserId> remove = null)
             : this()
         {
             Add = add;
@@ -39,13 +39,13 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> Add { get; }
+        public IReadOnlyCollection<UserId> Add { get; }
 
         [JsonProperty(
             "drop",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<Identifier> Remove { get; }
+        public IReadOnlyCollection<UserId> Remove { get; }
     }
 }

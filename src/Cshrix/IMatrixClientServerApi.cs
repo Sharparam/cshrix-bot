@@ -42,7 +42,7 @@ namespace Cshrix
         /// </remarks>
         [UsedImplicitly]
         [Query("user_id")]
-        Identifier? UserId { get; set; }
+        UserId UserId { get; set; }
 
         #region Server administration
 
@@ -50,7 +50,7 @@ namespace Cshrix
         Task<VersionsResponse> GetVersionsAsync();
 
         [Get("{apiVersion}/admin/whois/{userId}")]
-        Task<WhoisResponse> WhoisAsync([Path] Identifier userId);
+        Task<WhoisResponse> WhoisAsync([Path] UserId userId);
 
         #endregion Server administration
 
@@ -75,19 +75,19 @@ namespace Cshrix
         Task<UserIdContainer> WhoAmIAsync();
 
         [Get("{apiVersion}/profile/{userId}")]
-        Task<Profile> GetProfileAsync([Path] Identifier userId);
+        Task<Profile> GetProfileAsync([Path] UserId userId);
 
         [Get("{apiVersion}/profile/{userId}/avatar_url")]
-        Task<AvatarUrlContainer> GetAvatarUrlAsync([Path] Identifier userId);
+        Task<AvatarUrlContainer> GetAvatarUrlAsync([Path] UserId userId);
 
         [Put("{apiVersion}/profile/{userId}/avatar_url")]
-        Task SetAvatarUrlAsync([Path] Identifier userId, [Body] AvatarUrlContainer data);
+        Task SetAvatarUrlAsync([Path] UserId userId, [Body] AvatarUrlContainer data);
 
         [Get("{apiVersion}/profile/{userId}/displayname")]
-        Task<DisplayNameContainer> GetDisplayNameAsync([Path] Identifier userId);
+        Task<DisplayNameContainer> GetDisplayNameAsync([Path] UserId userId);
 
         [Put("{apiVersion}/profile/{userId}/displayname")]
-        Task SetDisplayNameAsync([Path] Identifier userId, [Body] DisplayNameContainer data);
+        Task SetDisplayNameAsync([Path] UserId userId, [Body] DisplayNameContainer data);
 
         [Post("{apiVersion}/register")]
         Task<AuthenticationResponse> RegisterAsync([Body] RegistrationRequest data);
@@ -96,25 +96,25 @@ namespace Cshrix
         Task<AvailableContainer> IsRegistrationAvailableAsync([Query] string username);
 
         [Put("{apiVersion}/user/{userId}/account_data/{type}")]
-        Task SetAccountDataAsync([Path] Identifier userId, [Path] string type, [Body] EventContent data);
+        Task SetAccountDataAsync([Path] UserId userId, [Path] string type, [Body] EventContent data);
 
         [Put("{apiVersion}/user/{userId}/rooms/{roomId}/account_data/{type}")]
         Task SetRoomAccountDataAsync(
-            [Path] Identifier userId,
-            [Path] Identifier roomId,
+            [Path] UserId userId,
+            [Path] string roomId,
             [Path] string type,
             [Body] EventContent data);
 
         [Get("{apiVersion}/user/{userId}/rooms/{roomId}/tags")]
-        Task<TagsResponse> GetRoomTagsAsync([Path] Identifier userId, [Path] Identifier roomId);
+        Task<TagsResponse> GetRoomTagsAsync([Path] UserId userId, [Path] string roomId);
 
         [Delete("{apiVersion}/user/{userId}/rooms/{roomId}/tags/{tag}")]
-        Task DeleteRoomTagAsync([Path] Identifier userId, [Path] Identifier roomId, [Path] string tag);
+        Task DeleteRoomTagAsync([Path] UserId userId, [Path] string roomId, [Path] string tag);
 
         [Put("{apiVersion}/user/{userId}/rooms/{roomId}/tags/{tag}")]
         Task AddRoomTagAsync(
-            [Path] Identifier userId,
-            [Path] Identifier roomId,
+            [Path] UserId userId,
+            [Path] string roomId,
             [Path] string tag,
             [Body] TagData data);
 
@@ -154,7 +154,7 @@ namespace Cshrix
         [Put("{apiVersion}/directory/list/appservice/{networkId}/{roomId}")]
         Task UpdateAppServiceRoomVisibilityAsync(
             [Path] string networkId,
-            [Path] Identifier roomId,
+            [Path] string roomId,
             [Body] RoomVisibilityContainer data);
 
         #endregion Application service room directory management
@@ -162,33 +162,33 @@ namespace Cshrix
         #region Room directory
 
         [Delete("{apiVersion}/directory/room/{roomAlias}")]
-        Task DeleteRoomAliasAsync([Path("roomAlias")] Identifier alias);
+        Task DeleteRoomAliasAsync([Path("roomAlias")] RoomAlias alias);
 
         [Get("{apiVersion}/directory/room/{roomAlias}")]
-        Task<RoomAliasInformation> ResolveRoomAliasAsync([Path("roomAlias")] Identifier alias);
+        Task<RoomAliasInformation> ResolveRoomAliasAsync([Path("roomAlias")] RoomAlias alias);
 
         [Put("{apiVersion}/directory/room/{roomAlias}")]
-        Task MapRoomAliasAsync([Path("roomAlias")] Identifier alias, [Body] RoomIdContainer data);
+        Task MapRoomAliasAsync([Path("roomAlias")] RoomAlias alias, [Body] RoomIdContainer data);
 
         #endregion Room directory
 
         #region Room participation
 
         [Get("{apiVersion}/rooms/{roomId}/context/{eventId}")]
-        Task<EventContext> GetContextAsync([Path] Identifier roomId, [Path] Identifier eventId, [Query] int limit = 10);
+        Task<EventContext> GetContextAsync([Path] string roomId, [Path] string eventId, [Query] int limit = 10);
 
         [Get("{apiVersion}/rooms/{roomId}/event/{eventId}")]
-        Task<Event> GetEventAsync([Path] Identifier roomId, [Path] Identifier eventId);
+        Task<Event> GetEventAsync([Path] string roomId, [Path] string eventId);
 
         [Get("{apiVersion}/rooms/{roomId}/joined_members")]
-        Task<JoinedMembersResponse> GetJoinedMembersAsync([Path] Identifier roomId);
+        Task<JoinedMembersResponse> GetJoinedMembersAsync([Path] string roomId);
 
         [Get("{apiVersion}/rooms/{roomId}/members")]
-        Task<Chunk<StateEvent>> GetMemberEventsAsync([Path] Identifier roomId);
+        Task<Chunk<StateEvent>> GetMemberEventsAsync([Path] string roomId);
 
         [Get("{apiVersion}/rooms/{roomId}/messages")]
         Task<PaginatedChunk<RoomEvent>> GetMessageEventsAsync(
-            [Path] Identifier roomId,
+            [Path] string roomId,
             [Query] string from = null,
             [Query] string to = null,
             [Query("dir")] Direction direction = Direction.Backwards,
@@ -197,49 +197,49 @@ namespace Cshrix
 
         [Post("{apiVersion}/rooms/{roomId}/receipt/{receiptType}/{eventId}")]
         Task SendReceiptAsync(
-            [Path] Identifier roomId,
+            [Path] string roomId,
             [Path] string receiptType,
-            [Path] Identifier eventId,
+            [Path] string eventId,
             [Body] object data = null);
 
         [Put("{apiVersion}/rooms/{roomId}/redact/{eventId}/{txnId}")]
         Task<EventIdContainer> RedactEventAsync(
-            [Path] Identifier roomId,
-            [Path] Identifier eventId,
+            [Path] string roomId,
+            [Path] string eventId,
             [Path("txnId")] int transactionId,
             [Body] RedactionContent data);
 
         [Put("{apiVersion}/rooms/{roomId}/send/{eventType}/{txnId}")]
         Task<EventIdContainer> SendEventAsync(
-            [Path] Identifier roomId,
+            [Path] string roomId,
             [Path] string eventType,
             [Path("txnId")] int transactionId,
             [Body] Event data);
 
         [Get("{apiVersion}/rooms/{roomId}/state")]
-        Task<IReadOnlyCollection<StateEvent>> GetStateEventsAsync([Path] Identifier roomId);
+        Task<IReadOnlyCollection<StateEvent>> GetStateEventsAsync([Path] string roomId);
 
         [Get("{apiVersion}/rooms/{roomId}/state/{eventType}")]
-        Task<StateEvent> GetStateEventAsync([Path] Identifier roomId, [Path] string eventType);
+        Task<StateEvent> GetStateEventAsync([Path] string roomId, [Path] string eventType);
 
         [Put("{apiVersion}/rooms/{roomId}/state/{eventType}")]
         Task<EventIdContainer> SendStateAsync(
-            [Path] Identifier roomId,
+            [Path] string roomId,
             [Path] string eventType,
             [Body] EventContent data);
 
         [Get("{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
-        Task<StateEvent> GetStateEventAsync([Path] Identifier roomId, [Path] string eventType, [Path] string stateKey);
+        Task<StateEvent> GetStateEventAsync([Path] string roomId, [Path] string eventType, [Path] string stateKey);
 
         [Put("{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
         Task<EventIdContainer> SendStateAsync(
-            [Path] Identifier roomId,
+            [Path] string roomId,
             [Path] string eventType,
             [Path] string stateKey,
             [Body] EventContent data);
 
         [Put("{apiVersion}/rooms/{roomId}/typing/{userId}")]
-        Task SendTypingAsync([Path] Identifier roomId, [Path] Identifier userId, [Body] TypingState data);
+        Task SendTypingAsync([Path] string roomId, [Path] UserId userId, [Body] TypingState data);
 
         [Get("{apiVersion}/sync")]
         Task<SyncResponse> SyncAsync(
@@ -250,10 +250,10 @@ namespace Cshrix
             [Query] long timeout = 0);
 
         [Post("{apiVersion}/user/{userId}/filter")]
-        Task<FilterIdContainer> UploadFilterAsync([Path] Identifier userId, [Body] Filter data);
+        Task<FilterIdContainer> UploadFilterAsync([Path] UserId userId, [Body] Filter data);
 
         [Get("{apiVersion}/user/{userId}/filter/{filterId}")]
-        Task<Filter> GetFilterAsync([Path] Identifier userId, [Path] string filterId);
+        Task<Filter> GetFilterAsync([Path] UserId userId, [Path] string filterId);
 
         #endregion Room participation
 
@@ -265,7 +265,7 @@ namespace Cshrix
         // on whether this is actually intended.
         [Post("{apiVersion}/join/{roomIdOrAlias}")]
         Task<RoomIdContainer> JoinRoomOrAliasAsync(
-            [Path] Identifier roomIdOrAlias,
+            [Path] string roomIdOrAlias,
             [Query("server_name")] IEnumerable<string> serverNames = null,
             [Body] SignedThirdPartyData? data = null);
 
@@ -273,28 +273,28 @@ namespace Cshrix
         Task<JoinedRooms> GetJoinedRoomsAsync();
 
         [Post("{apiVersion}/rooms/{roomId}/ban")]
-        Task BanAsync([Path] Identifier roomId, [Body] Reason data);
+        Task BanAsync([Path] string roomId, [Body] Reason data);
 
         [Post("{apiVersion}/rooms/{roomId}/forget")]
-        Task ForgetAsync([Path] Identifier roomId);
+        Task ForgetAsync([Path] string roomId);
 
         [Post("{apiVersion}/rooms/{roomId}/invite")]
-        Task InviteAsync([Path] Identifier roomId, [Body] ThirdPartyRoomInvite data);
+        Task InviteAsync([Path] string roomId, [Body] ThirdPartyRoomInvite data);
 
         [Post("{apiVersion}/rooms/{roomId}/invite")]
-        Task InviteAsync([Path] Identifier roomId, [Body] UserIdContainer data);
+        Task InviteAsync([Path] string roomId, [Body] UserIdContainer data);
 
         [Post("{apiVersion}/rooms/{roomId}/join")]
-        Task<RoomIdContainer> JoinRoomAsync([Path] Identifier roomId, [Body] SignedThirdPartyData? data = null);
+        Task<RoomIdContainer> JoinRoomAsync([Path] string roomId, [Body] SignedThirdPartyData? data = null);
 
         [Post("{apiVersion}/rooms/{roomId}/kick")]
-        Task KickAsync([Path] Identifier roomId, [Body] Reason data);
+        Task KickAsync([Path] string roomId, [Body] Reason data);
 
         [Post("{apiVersion}/rooms/{roomId}/leave")]
-        Task LeaveAsync([Path] Identifier roomId);
+        Task LeaveAsync([Path] string roomId);
 
         [Post("{apiVersion}/rooms/{roomId}/unban")]
-        Task UnbanAsync([Path] Identifier roomId, [Body] UserIdContainer data);
+        Task UnbanAsync([Path] string roomId, [Body] UserIdContainer data);
 
         #endregion Room membership
 
@@ -387,16 +387,16 @@ namespace Cshrix
         #region Presence
 
         [Get("{apiVersion}/presence/list/{userId}")]
-        Task<IReadOnlyCollection<Event>> GetPresenceEventsAsync([Path] Identifier userId);
+        Task<IReadOnlyCollection<Event>> GetPresenceEventsAsync([Path] UserId userId);
 
         [Post("{apiVersion}/presence/list/{userId}")]
-        Task UpdatePresenceListAsync([Path] Identifier userId, [Body] PresenceListUpdate data);
+        Task UpdatePresenceListAsync([Path] UserId userId, [Body] PresenceListUpdate data);
 
         [Get("{apiVersion}/presence/{userId}/status")]
-        Task<PresenceStatusResponse> GetPresenceAsync([Path] Identifier userId);
+        Task<PresenceStatusResponse> GetPresenceAsync([Path] UserId userId);
 
         [Put("{apiVersion}/presence/{userId}/status")]
-        Task SetPresenceAsync([Path] Identifier userId, [Body] PresenceStatusRequest data);
+        Task SetPresenceAsync([Path] UserId userId, [Body] PresenceStatusRequest data);
 
         #endregion Presence
 
@@ -407,14 +407,14 @@ namespace Cshrix
         #region Read Markers
 
         [Post("{apiVersion}/rooms/{roomId}/read_markers")]
-        Task SetReadMarkersAsync([Path] Identifier roomId, [Body] ReadMarkers data);
+        Task SetReadMarkersAsync([Path] string roomId, [Body] ReadMarkers data);
 
         #endregion Read Markers
 
         #region Reporting content
 
         [Post("{apiVersion}/rooms/{roomId}/report/{eventId}")]
-        Task ReportAsync([Path] Identifier roomId, [Path] Identifier eventId, [Body] Report data);
+        Task ReportAsync([Path] string roomId, [Path] string eventId, [Body] Report data);
 
         #endregion Reporting content
 
@@ -435,7 +435,7 @@ namespace Cshrix
         #region OpenID
 
         [Post("{apiVersion}/user/{userId}/openid/request_token")]
-        Task<OpenIdToken> RequestOpenIdTokenAsync([Path] Identifier userId, [Body] object data);
+        Task<OpenIdToken> RequestOpenIdTokenAsync([Path] UserId userId, [Body] object data);
 
         #endregion OpenID
 

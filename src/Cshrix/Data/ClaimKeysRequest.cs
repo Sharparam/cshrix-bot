@@ -18,10 +18,10 @@ namespace Cshrix.Data
     public readonly struct ClaimKeysRequest
     {
         public ClaimKeysRequest(
-            IDictionary<Identifier, IDictionary<string, string>> oneTimeKeys,
+            IDictionary<UserId, IDictionary<string, string>> oneTimeKeys,
             TimeSpan? timeout = null)
             : this(
-                new ReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>>(
+                new ReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>>(
                     oneTimeKeys.ToDictionary(
                         kvp => kvp.Key,
                         kvp => (IReadOnlyDictionary<string, string>)new ReadOnlyDictionary<string, string>(kvp.Value))),
@@ -31,7 +31,7 @@ namespace Cshrix.Data
 
         [JsonConstructor]
         public ClaimKeysRequest(
-            IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> oneTimeKeys,
+            IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>> oneTimeKeys,
             TimeSpan? timeout = null)
             : this()
         {
@@ -43,6 +43,6 @@ namespace Cshrix.Data
         public TimeSpan Timeout { get; }
 
         [JsonProperty("one_time_keys")]
-        public IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, string>> OneTimeKeys { get; }
+        public IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, string>> OneTimeKeys { get; }
     }
 }

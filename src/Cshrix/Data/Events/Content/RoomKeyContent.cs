@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     public class RoomKeyContent : EventContent
     {
-        public RoomKeyContent(string algorithm, Identifier roomId, string sessionId, string sessionKey)
+        public RoomKeyContent(string algorithm, string roomId, string sessionId, string sessionKey)
         {
             Algorithm = algorithm;
             RoomId = roomId;
@@ -24,7 +24,7 @@ namespace Cshrix.Data.Events.Content
         public string Algorithm { get; }
 
         [JsonProperty("room_id")]
-        public Identifier RoomId { get; }
+        public string RoomId { get; }
 
         [JsonProperty("session_id")]
         public string SessionId { get; }

@@ -18,10 +18,10 @@ namespace Cshrix.Data
     {
         public ClaimKeysResponse(
             IDictionary<string, object> failures,
-            IDictionary<Identifier, IDictionary<string, OneTimeKey>> oneTimeKeys)
+            IDictionary<UserId, IDictionary<string, OneTimeKey>> oneTimeKeys)
             : this(
                 new ReadOnlyDictionary<string, object>(failures),
-                new ReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, OneTimeKey>>(
+                new ReadOnlyDictionary<UserId, IReadOnlyDictionary<string, OneTimeKey>>(
                     oneTimeKeys.ToDictionary(
                         kvp => kvp.Key,
                         kvp => (IReadOnlyDictionary<string, OneTimeKey>)new ReadOnlyDictionary<string, OneTimeKey>(
@@ -32,7 +32,7 @@ namespace Cshrix.Data
         [JsonConstructor]
         public ClaimKeysResponse(
             IReadOnlyDictionary<string, object> failures,
-            IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, OneTimeKey>> oneTimeKeys)
+            IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, OneTimeKey>> oneTimeKeys)
             : this()
         {
             Failures = failures;
@@ -43,6 +43,6 @@ namespace Cshrix.Data
         public IReadOnlyDictionary<string, object> Failures { get; }
 
         [JsonProperty("one_time_keys")]
-        public IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, OneTimeKey>> OneTimeKeys { get; }
+        public IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, OneTimeKey>> OneTimeKeys { get; }
     }
 }

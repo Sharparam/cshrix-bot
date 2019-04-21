@@ -18,10 +18,10 @@ namespace Cshrix.Data
     {
         public DeviceKeysQueryResponse(
             IDictionary<string, object> failures,
-            IDictionary<Identifier, IDictionary<string, DeviceKeys>> deviceKeys)
+            IDictionary<UserId, IDictionary<string, DeviceKeys>> deviceKeys)
             : this(
                 new ReadOnlyDictionary<string, object>(failures),
-                new ReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, DeviceKeys>>(
+                new ReadOnlyDictionary<UserId, IReadOnlyDictionary<string, DeviceKeys>>(
                     deviceKeys.ToDictionary(
                         kvp => kvp.Key,
                         kvp => (IReadOnlyDictionary<string, DeviceKeys>)new ReadOnlyDictionary<string, DeviceKeys>(
@@ -32,7 +32,7 @@ namespace Cshrix.Data
         [JsonConstructor]
         public DeviceKeysQueryResponse(
             IReadOnlyDictionary<string, object> failures,
-            IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, DeviceKeys>> deviceKeys)
+            IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, DeviceKeys>> deviceKeys)
             : this()
         {
             Failures = failures;
@@ -43,6 +43,6 @@ namespace Cshrix.Data
         public IReadOnlyDictionary<string, object> Failures { get; }
 
         [JsonProperty("device_keys")]
-        public IReadOnlyDictionary<Identifier, IReadOnlyDictionary<string, DeviceKeys>> DeviceKeys { get; }
+        public IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, DeviceKeys>> DeviceKeys { get; }
     }
 }

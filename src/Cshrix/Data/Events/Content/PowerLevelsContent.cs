@@ -23,7 +23,7 @@ namespace Cshrix.Data.Events.Content
             int kick,
             int redact,
             int stateDefault,
-            IReadOnlyDictionary<Identifier, int> users,
+            IReadOnlyDictionary<UserId, int> users,
             int usersDefault,
             NotificationsPowerLevels notifications)
         {
@@ -67,7 +67,7 @@ namespace Cshrix.Data.Events.Content
         public int StateDefault { get; }
 
         [JsonProperty("users")]
-        public IReadOnlyDictionary<Identifier, int> Users { get; }
+        public IReadOnlyDictionary<UserId, int> Users { get; }
 
         [JsonProperty("users_default")]
         [DefaultValue(0)]

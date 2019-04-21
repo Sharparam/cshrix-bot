@@ -13,7 +13,7 @@ namespace Cshrix.Data.Events.Content
     public readonly struct RequestedKeyInfo
     {
         [JsonConstructor]
-        public RequestedKeyInfo(string algorithm, Identifier roomId, string senderKey, string sessionId)
+        public RequestedKeyInfo(string algorithm, string roomId, string senderKey, string sessionId)
             : this()
         {
             Algorithm = algorithm;
@@ -26,7 +26,7 @@ namespace Cshrix.Data.Events.Content
         public string Algorithm { get; }
 
         [JsonProperty("room_id")]
-        public Identifier RoomId { get; }
+        public string RoomId { get; }
 
         [JsonProperty("sender_key")]
         public string SenderKey { get; }

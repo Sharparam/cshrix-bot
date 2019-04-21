@@ -70,7 +70,7 @@ namespace Cshrix.Tests.Data.Events
             Assert.AreEqual(20, content.Notifications.Room);
             Assert.AreEqual(50, content.Redact);
             Assert.AreEqual(50, content.StateDefault);
-            Assert.AreEqual(100, content.Users[(Identifier)"@example:localhost"]);
+            Assert.AreEqual(100, content.Users[(UserId)"@example:localhost"]);
             Assert.AreEqual(0, content.UsersDefault);
         }
 

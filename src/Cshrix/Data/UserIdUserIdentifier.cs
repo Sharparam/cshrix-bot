@@ -13,13 +13,13 @@ namespace Cshrix.Data
     public readonly struct UserIdUserIdentifier : IUserIdentifier
     {
         [JsonConstructor]
-        public UserIdUserIdentifier(Identifier userId)
+        public UserIdUserIdentifier(UserId userId)
             : this() =>
             UserId = userId;
 
         public UserIdentifierType Type => UserIdentifierType.User;
 
         [JsonProperty("user")]
-        public Identifier UserId { get; }
+        public UserId UserId { get; }
     }
 }

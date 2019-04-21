@@ -15,13 +15,13 @@ namespace Cshrix.Data
 
     public readonly struct WhoisResponse
     {
-        public WhoisResponse(Identifier userId, IDictionary<string, DeviceInfo> devices)
+        public WhoisResponse(UserId userId, IDictionary<string, DeviceInfo> devices)
             : this(userId, (IReadOnlyDictionary<string, DeviceInfo>)new ReadOnlyDictionary<string, DeviceInfo>(devices))
         {
         }
 
         [JsonConstructor]
-        public WhoisResponse(Identifier userId, IReadOnlyDictionary<string, DeviceInfo> devices)
+        public WhoisResponse(UserId userId, IReadOnlyDictionary<string, DeviceInfo> devices)
             : this()
         {
             UserId = userId;
@@ -29,7 +29,7 @@ namespace Cshrix.Data
         }
 
         [JsonProperty("user_id")]
-        public Identifier UserId { get; }
+        public UserId UserId { get; }
 
         [JsonProperty("devices")]
         public IReadOnlyDictionary<string, DeviceInfo> Devices { get; }

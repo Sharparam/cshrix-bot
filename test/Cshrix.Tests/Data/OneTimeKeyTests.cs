@@ -33,9 +33,9 @@ namespace Cshrix.Tests.Data
         {
             var otk = new OneTimeKey(
                 "foobar",
-                new Dictionary<Identifier, IDictionary<string, string>>
+                new Dictionary<UserId, IDictionary<string, string>>
                 {
-                    [(Identifier)"@sharparam:matrix.sharparam.com"] = new Dictionary<string, string>
+                    [(UserId)"@sharparam:matrix.sharparam.com"] = new Dictionary<string, string>
                     {
                         ["fizz"] = "buzz"
                     }

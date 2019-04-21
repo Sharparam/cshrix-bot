@@ -13,11 +13,11 @@ namespace Cshrix.Data
     public readonly struct UserIdContainer
     {
         [JsonConstructor]
-        public UserIdContainer(Identifier userId)
+        public UserIdContainer(UserId userId)
             : this() =>
             UserId = userId;
 
         [JsonProperty("user_id")]
-        public Identifier UserId { get; }
+        public UserId UserId { get; }
     }
 }

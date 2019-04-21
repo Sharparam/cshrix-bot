@@ -14,7 +14,7 @@ namespace Cshrix.Data.Events
 
     public class StrippedState : SenderEvent
     {
-        public StrippedState(EventContent content, string stateKey, string type, Identifier? redacts, Identifier sender)
+        public StrippedState(EventContent content, string stateKey, string type, string redacts, UserId sender)
             : base(content, type, redacts, sender) =>
             StateKey = stateKey;
 

@@ -15,7 +15,7 @@ namespace Cshrix.Data
     public readonly struct Reason
     {
         [JsonConstructor]
-        public Reason(Identifier userId, string description = null)
+        public Reason(UserId userId, string description = null)
             : this()
         {
             Description = description;
@@ -30,6 +30,6 @@ namespace Cshrix.Data
         public string Description { get; }
 
         [JsonProperty("user_id")]
-        public Identifier UserId { get; }
+        public UserId UserId { get; }
     }
 }

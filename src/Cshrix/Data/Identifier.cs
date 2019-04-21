@@ -10,43 +10,83 @@ namespace Cshrix.Data
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
 
     using Helpers;
 
-    using Newtonsoft.Json;
-
-    using Serialization;
-
-    [JsonConverter(typeof(IdentifierConverter))]
-    public readonly struct Identifier : IEquatable<Identifier>, IEquatable<string>
+    public abstract class Identifier : IEquatable<Identifier>, IEquatable<string>
     {
         private const char Separator = ':';
 
         private const string SeparatorString = ":";
 
-        private static readonly IReadOnlyDictionary<char, IdentifierType> TypeMapping =
-            new Dictionary<char, IdentifierType>
-            {
-                ['@'] = IdentifierType.User,
-                ['!'] = IdentifierType.Room,
-                ['$'] = IdentifierType.Event,
-                ['+'] = IdentifierType.Group,
-                ['#'] = IdentifierType.RoomAlias
-            };
-
-        private static readonly IReadOnlyDictionary<IdentifierType, char> SigilMapping =
+        protected static readonly IReadOnlyDictionary<IdentifierType, char> SigilMapping =
             new Dictionary<IdentifierType, char>
             {
                 [IdentifierType.User] = '@',
-                [IdentifierType.Room] = '!',
-                [IdentifierType.Event] = '$',
                 [IdentifierType.Group] = '+',
                 [IdentifierType.RoomAlias] = '#'
             };
 
-        public Identifier(string id)
-            : this()
+        private static readonly IReadOnlyDictionary<char, IdentifierType> TypeMapping =
+            new Dictionary<char, IdentifierType>
+            {
+                ['@'] = IdentifierType.User,
+                ['+'] = IdentifierType.Group,
+                ['#'] = IdentifierType.RoomAlias
+            };
+
+        protected Identifier(IdentifierType type, string localpart, ServerName domain)
+            : this(type, SigilMapping[type], localpart, domain)
+        {
+        }
+
+        protected Identifier(IdentifierType type, char sigil, string localpart, ServerName domain)
+        {
+            if (localpart == null)
+            {
+                throw new ArgumentNullException(nameof(localpart));
+            }
+
+            if (string.IsNullOrWhiteSpace(localpart))
+            {
+                throw new ArgumentException("ID cannot have empty localpart", nameof(localpart));
+            }
+
+            Type = type;
+            Sigil = sigil;
+            Localpart = localpart.Trim();
+            Domain = domain;
+        }
+
+        public static implicit operator string(Identifier identifier) => identifier.ToString();
+
+        public static bool operator ==(Identifier left, Identifier right) =>
+            left?.Equals(right) ?? ReferenceEquals(null, right);
+
+        public static bool operator !=(Identifier left, Identifier right) =>
+            left?.Equals(right) ?? !ReferenceEquals(null, right);
+
+        public static bool operator ==(Identifier left, string right) =>
+            left?.Equals(right) ?? ReferenceEquals(null, right);
+
+        public static bool operator !=(Identifier left, string right) =>
+            left?.Equals(right) ?? ReferenceEquals(null, right);
+
+        public static bool operator ==(string left, Identifier right) =>
+            right?.Equals(left) ?? ReferenceEquals(null, left);
+
+        public static bool operator !=(string left, Identifier right) =>
+            right?.Equals(left) ?? !ReferenceEquals(null, left);
+
+        public IdentifierType Type { get; }
+
+        public char Sigil { get; }
+
+        public string Localpart { get; }
+
+        public ServerName Domain { get; }
+
+        protected static Identifier ParseId(string id)
         {
             if (id == null)
             {
@@ -60,33 +100,18 @@ namespace Cshrix.Data
                 throw new ArgumentException("ID cannot be empty or full of whitespace", nameof(id));
             }
 
-            Sigil = id[0];
+            var sigil = id[0];
 
-            var validSigil = TypeMapping.TryGetValue(Sigil, out var type);
+            var validSigil = TypeMapping.TryGetValue(sigil, out var type);
 
             if (!validSigil)
             {
                 throw new ArgumentException("ID must start with a valid sigil character", nameof(id));
             }
 
-            Type = type;
-
             if (!id.Contains(SeparatorString))
             {
-                if (Type != IdentifierType.Event && Type != IdentifierType.Room)
-                {
-                    throw new ArgumentException("Only event and room IDs can omit domain", nameof(id));
-                }
-
-                Localpart = id.Substring(1);
-
-                if (string.IsNullOrWhiteSpace(Localpart))
-                {
-                    throw new ArgumentException("ID cannot have empty localpart", nameof(id));
-                }
-
-                Domain = null;
-                return;
+                throw new ArgumentException("ID cannot have empty domain", nameof(id));
             }
 
             var sepIndex = id.IndexOf(Separator);
@@ -101,98 +126,30 @@ namespace Cshrix.Data
                 throw new ArgumentException("ID cannot have empty domain");
             }
 
-            Localpart = id.Substring(1, sepIndex - 1);
+            var localpart = id.Substring(1, sepIndex - 1);
 
-            if (string.IsNullOrWhiteSpace(Localpart))
+            if (string.IsNullOrWhiteSpace(localpart))
             {
                 throw new ArgumentException("ID cannot have empty localpart", nameof(id));
             }
 
-            Domain = new ServerName(id.Substring(sepIndex + 1));
-        }
+            var domain = new ServerName(id.Substring(sepIndex + 1));
 
-        public Identifier(IdentifierType type, string localpart, ServerName? domain = null)
-            : this(type, SigilMapping[type], localpart, domain)
-        {
-        }
-
-        [JsonConstructor]
-        public Identifier(IdentifierType type, char sigil, string localpart, ServerName? domain = null)
-        {
-            if (localpart == null)
+            switch (type)
             {
-                throw new ArgumentNullException(nameof(localpart));
-            }
+                case IdentifierType.User:
+                    return new UserId(localpart, domain);
 
-            if (string.IsNullOrWhiteSpace(localpart))
-            {
-                throw new ArgumentException("ID cannot have empty localpart", nameof(localpart));
-            }
+                case IdentifierType.Group:
+                    return new GroupId(localpart, domain);
 
-            if (domain == null && type != IdentifierType.Event)
-            {
-                throw new ArgumentException("Only event IDs can omit the domain", nameof(domain));
-            }
+                case IdentifierType.RoomAlias:
+                    return new RoomAlias(localpart, domain);
 
-            Type = type;
-            Sigil = sigil;
-            Localpart = localpart;
-            Domain = domain;
+                default:
+                    throw new ArgumentException("ID was not of a supported type", nameof(id));
+            }
         }
-
-        public static implicit operator string(Identifier identifier) => identifier.ToString();
-
-        public static explicit operator Identifier(string str) => new Identifier(str);
-
-        public static bool operator ==(Identifier left, Identifier right) => left.Equals(right);
-
-        public static bool operator !=(Identifier left, Identifier right) => !left.Equals(right);
-
-        public static bool operator ==(Identifier left, string right) => left.Equals(right);
-
-        public static bool operator !=(Identifier left, string right) => !left.Equals(right);
-
-        public static bool operator ==(string left, Identifier right) => right.Equals(left);
-
-        public static bool operator !=(string left, Identifier right) => right.Equals(left);
-
-        public IdentifierType Type { get; }
-
-        public char Sigil { get; }
-
-        public string Localpart { get; }
-
-        public ServerName? Domain { get; }
-
-        public static Identifier User(string localpart, string domain) => User(localpart, new ServerName(domain));
-
-        public static Identifier User(string localpart, ServerName domain) =>
-            new Identifier(IdentifierType.User, localpart, domain);
-
-        public static Identifier Room(string localpart) => new Identifier(IdentifierType.Room, localpart);
-
-        public static Identifier Room(string localpart, string domain) => Room(localpart, new ServerName(domain));
-
-        public static Identifier Room(string localpart, ServerName domain) =>
-            new Identifier(IdentifierType.Room, localpart, domain);
-
-        public static Identifier Event(string localpart) => new Identifier(IdentifierType.Event, localpart);
-
-        public static Identifier Event(string localpart, string domain) => Event(localpart, new ServerName(domain));
-
-        public static Identifier Event(string localpart, ServerName domain) =>
-            new Identifier(IdentifierType.Event, localpart, domain);
-
-        public static Identifier Group(string localpart, string domain) => Group(localpart, new ServerName(domain));
-
-        public static Identifier Group(string localpart, ServerName domain) =>
-            new Identifier(IdentifierType.Group, localpart, domain);
-
-        public static Identifier RoomAlias(string localpart, string domain) =>
-            RoomAlias(localpart, new ServerName(domain));
-
-        public static Identifier RoomAlias(string localpart, ServerName domain) =>
-            new Identifier(IdentifierType.RoomAlias, localpart, domain);
 
         public override bool Equals(object obj)
         {
@@ -209,25 +166,13 @@ namespace Cshrix.Data
             }
         }
 
-        public bool Equals(string other) => string.Equals(ToString(), other);
+        public bool Equals(string other) => string.Equals(ToString(), other, StringComparison.InvariantCulture);
 
         public bool Equals(Identifier other) =>
-            Type == other.Type && Sigil == other.Sigil && Localpart == other.Localpart && Domain == other.Domain;
+            Type == other?.Type && Sigil == other.Sigil && Localpart == other.Localpart && Domain == other.Domain;
 
         public override int GetHashCode() => HashCode.Combine(Type, Sigil, Localpart, Domain);
 
-        public override string ToString()
-        {
-            var sb = new StringBuilder($"{Sigil}{Localpart}");
-
-            if (Domain == null)
-            {
-                return sb.ToString();
-            }
-
-            sb.Append($":{Domain}");
-
-            return sb.ToString();
-        }
+        public override string ToString() => $"{Localpart}{Separator}{Domain}";
     }
 }

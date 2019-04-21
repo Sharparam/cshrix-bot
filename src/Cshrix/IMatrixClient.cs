@@ -15,7 +15,7 @@ namespace Cshrix
 
     public interface IMatrixClient
     {
-        Task<Identifier> GetUserIdAsync();
+        Task<UserId> GetUserIdAsync();
 
         Task<NotificationRulesets> GetNotificationPushRulesAsync();
     }

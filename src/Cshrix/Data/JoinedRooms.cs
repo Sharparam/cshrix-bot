@@ -15,11 +15,11 @@ namespace Cshrix.Data
     public readonly struct JoinedRooms
     {
         [JsonConstructor]
-        public JoinedRooms(IReadOnlyCollection<Identifier> roomIds)
+        public JoinedRooms(IReadOnlyCollection<string> roomIds)
             : this() =>
             RoomIds = roomIds;
 
         [JsonProperty("joined_rooms")]
-        public IReadOnlyCollection<Identifier> RoomIds { get; }
+        public IReadOnlyCollection<string> RoomIds { get; }
     }
 }

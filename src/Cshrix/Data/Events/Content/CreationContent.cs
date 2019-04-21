@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     public class CreationContent : EventContent
     {
-        public CreationContent(Identifier creator, bool federate, string roomVersion)
+        public CreationContent(UserId creator, bool federate, string roomVersion)
         {
             Creator = creator;
             Federate = federate;
@@ -20,7 +20,7 @@ namespace Cshrix.Data.Events.Content
         }
 
         [JsonProperty("creator")]
-        public Identifier Creator { get; }
+        public UserId Creator { get; }
 
         [JsonProperty("m.federate")]
         public bool Federate { get; }

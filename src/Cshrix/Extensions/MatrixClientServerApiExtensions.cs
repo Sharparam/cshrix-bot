@@ -28,7 +28,7 @@ namespace Cshrix.Extensions
             TimeSpan timeout = default) =>
             api.SyncAsync(since, filter, fullState, setPresence, (long)timeout.TotalMilliseconds);
 
-        public static Task<OpenIdToken> RequestOpenIdTokenAsync(this IMatrixClientServerApi api, Identifier userId) =>
+        public static Task<OpenIdToken> RequestOpenIdTokenAsync(this IMatrixClientServerApi api, UserId userId) =>
             api.RequestOpenIdTokenAsync(userId, new object());
     }
 }

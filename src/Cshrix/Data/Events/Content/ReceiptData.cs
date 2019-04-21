@@ -15,11 +15,11 @@ namespace Cshrix.Data.Events.Content
     public readonly struct ReceiptData
     {
         [JsonConstructor]
-        public ReceiptData(IReadOnlyDictionary<Identifier, UserReceipt> read)
+        public ReceiptData(IReadOnlyDictionary<UserId, UserReceipt> read)
             : this() =>
             Read = read;
 
         [JsonProperty("m.read")]
-        public IReadOnlyDictionary<Identifier, UserReceipt> Read { get; }
+        public IReadOnlyDictionary<UserId, UserReceipt> Read { get; }
     }
 }

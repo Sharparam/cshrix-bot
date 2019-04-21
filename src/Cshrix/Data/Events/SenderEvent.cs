@@ -15,11 +15,11 @@ namespace Cshrix.Data.Events
     public class SenderEvent : Event
     {
         [JsonConstructor]
-        public SenderEvent(EventContent content, string type, Identifier? redacts, Identifier sender)
+        public SenderEvent(EventContent content, string type, string redacts, UserId sender)
             : base(content, type, redacts) =>
             Sender = sender;
 
         [JsonProperty("sender")]
-        public Identifier Sender { get; }
+        public UserId Sender { get; }
     }
 }

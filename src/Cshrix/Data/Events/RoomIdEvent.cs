@@ -14,11 +14,11 @@ namespace Cshrix.Data.Events
 
     public class RoomIdEvent : Event
     {
-        public RoomIdEvent(EventContent content, string type, Identifier? redacts, Identifier roomId)
+        public RoomIdEvent(EventContent content, string type, string redacts, string roomId)
             : base(content, type, redacts) =>
             RoomId = roomId;
 
         [JsonProperty("room_id")]
-        public Identifier RoomId { get; }
+        public string RoomId { get; }
     }
 }
