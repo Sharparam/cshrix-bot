@@ -10,6 +10,7 @@ namespace Cshrix.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.Text;
 
     using Helpers;
 
@@ -70,7 +71,14 @@ namespace Cshrix.Data
 
             if (!id.Contains(SeparatorString))
             {
-                throw new ArgumentException($"ID must contain a '{Separator}'", nameof(id));
+                if (type != IdentifierType.Event)
+                {
+                    throw new ArgumentException($"Non-event ID must contain a '{Separator}'", nameof(id));
+                }
+
+                Localpart = id.Substring(1);
+                Domain = null;
+                return;
             }
 
             var sepIndex = id.IndexOf(Separator);
@@ -95,13 +103,13 @@ namespace Cshrix.Data
             Domain = new ServerName(id.Substring(sepIndex + 1));
         }
 
-        public Identifier(IdentifierType type, string localpart, ServerName domain)
+        public Identifier(IdentifierType type, string localpart, ServerName? domain = null)
             : this(type, SigilMapping[type], localpart, domain)
         {
         }
 
         [JsonConstructor]
-        public Identifier(IdentifierType type, char sigil, string localpart, ServerName domain)
+        public Identifier(IdentifierType type, char sigil, string localpart, ServerName? domain = null)
         {
             if (localpart == null)
             {
@@ -111,6 +119,11 @@ namespace Cshrix.Data
             if (string.IsNullOrWhiteSpace(localpart))
             {
                 throw new ArgumentException("ID cannot have empty localpart", nameof(localpart));
+            }
+
+            if (domain == null && type != IdentifierType.Event)
+            {
+                throw new ArgumentException("Only event IDs can omit the domain", nameof(domain));
             }
 
             Type = type;
@@ -141,7 +154,7 @@ namespace Cshrix.Data
 
         public string Localpart { get; }
 
-        public ServerName Domain { get; }
+        public ServerName? Domain { get; }
 
         public static Identifier User(string localpart, string domain) => User(localpart, new ServerName(domain));
 
@@ -152,6 +165,8 @@ namespace Cshrix.Data
 
         public static Identifier Room(string localpart, ServerName domain) =>
             new Identifier(IdentifierType.Room, localpart, domain);
+
+        public static Identifier Event(string localpart) => new Identifier(IdentifierType.Event, localpart);
 
         public static Identifier Event(string localpart, string domain) => Event(localpart, new ServerName(domain));
 
@@ -190,6 +205,18 @@ namespace Cshrix.Data
 
         public override int GetHashCode() => HashCode.Combine(Type, Sigil, Localpart, Domain);
 
-        public override string ToString() => $"{Sigil}{Localpart}:{Domain}";
+        public override string ToString()
+        {
+            var sb = new StringBuilder($"{Sigil}{Localpart}");
+
+            if (Domain == null)
+            {
+                return sb.ToString();
+            }
+
+            sb.Append($":{Domain}");
+
+            return sb.ToString();
+        }
     }
 }

@@ -35,7 +35,22 @@ namespace Cshrix.Tests.Serialization
             Assert.AreEqual(IdentifierType.User, deserialized.Type);
             Assert.AreEqual('@', deserialized.Sigil);
             Assert.AreEqual("sharparam", deserialized.Localpart);
-            Assert.AreEqual("matrix.sharparam.com", deserialized.Domain.Hostname);
+            Assert.True(deserialized.Domain.HasValue);
+            Assert.AreEqual("matrix.sharparam.com", deserialized.Domain.Value.Hostname);
+        }
+
+        [Test]
+        public void ShouldDeserializeV3EventId()
+        {
+            const string Localpart = "acR1l0raoZnm60CBwAVgqbZqoO/mYU81xysh1u7XcJk";
+            const string Json = "\"$" + Localpart + "\"";
+            var deserialized = JsonConvert.DeserializeObject<Identifier>(Json);
+
+            Assert.AreEqual(IdentifierType.Event, deserialized.Type);
+            Assert.AreEqual('$', deserialized.Sigil);
+            Assert.AreEqual(Localpart, deserialized.Localpart);
+            Assert.False(deserialized.Domain.HasValue);
+            Assert.Null(deserialized.Domain);
         }
     }
 }
