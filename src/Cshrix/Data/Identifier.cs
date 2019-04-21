@@ -25,23 +25,25 @@ namespace Cshrix.Data
 
         private const string SeparatorString = ":";
 
-        private static readonly IReadOnlyDictionary<char, IdentifierType> TypeMapping = new Dictionary<char, IdentifierType>
-        {
-            ['@'] = IdentifierType.User,
-            ['!'] = IdentifierType.Room,
-            ['$'] = IdentifierType.Event,
-            ['+'] = IdentifierType.Group,
-            ['#'] = IdentifierType.RoomAlias
-        };
+        private static readonly IReadOnlyDictionary<char, IdentifierType> TypeMapping =
+            new Dictionary<char, IdentifierType>
+            {
+                ['@'] = IdentifierType.User,
+                ['!'] = IdentifierType.Room,
+                ['$'] = IdentifierType.Event,
+                ['+'] = IdentifierType.Group,
+                ['#'] = IdentifierType.RoomAlias
+            };
 
-        private static readonly IReadOnlyDictionary<IdentifierType, char> SigilMapping = new Dictionary<IdentifierType, char>
-        {
-            [IdentifierType.User] = '@',
-            [IdentifierType.Room] = '!',
-            [IdentifierType.Event] = '$',
-            [IdentifierType.Group] = '+',
-            [IdentifierType.RoomAlias] = '#'
-        };
+        private static readonly IReadOnlyDictionary<IdentifierType, char> SigilMapping =
+            new Dictionary<IdentifierType, char>
+            {
+                [IdentifierType.User] = '@',
+                [IdentifierType.Room] = '!',
+                [IdentifierType.Event] = '$',
+                [IdentifierType.Group] = '+',
+                [IdentifierType.RoomAlias] = '#'
+            };
 
         public Identifier(string id)
             : this()
@@ -71,12 +73,18 @@ namespace Cshrix.Data
 
             if (!id.Contains(SeparatorString))
             {
-                if (type != IdentifierType.Event)
+                if (Type != IdentifierType.Event && Type != IdentifierType.Room)
                 {
-                    throw new ArgumentException($"Non-event ID must contain a '{Separator}'", nameof(id));
+                    throw new ArgumentException("Only event and room IDs can omit domain", nameof(id));
                 }
 
                 Localpart = id.Substring(1);
+
+                if (string.IsNullOrWhiteSpace(Localpart))
+                {
+                    throw new ArgumentException("ID cannot have empty localpart", nameof(id));
+                }
+
                 Domain = null;
                 return;
             }
@@ -161,6 +169,8 @@ namespace Cshrix.Data
         public static Identifier User(string localpart, ServerName domain) =>
             new Identifier(IdentifierType.User, localpart, domain);
 
+        public static Identifier Room(string localpart) => new Identifier(IdentifierType.Room, localpart);
+
         public static Identifier Room(string localpart, string domain) => Room(localpart, new ServerName(domain));
 
         public static Identifier Room(string localpart, ServerName domain) =>
@@ -178,7 +188,8 @@ namespace Cshrix.Data
         public static Identifier Group(string localpart, ServerName domain) =>
             new Identifier(IdentifierType.Group, localpart, domain);
 
-        public static Identifier RoomAlias(string localpart, string domain) => RoomAlias(localpart, new ServerName(domain));
+        public static Identifier RoomAlias(string localpart, string domain) =>
+            RoomAlias(localpart, new ServerName(domain));
 
         public static Identifier RoomAlias(string localpart, ServerName domain) =>
             new Identifier(IdentifierType.RoomAlias, localpart, domain);
