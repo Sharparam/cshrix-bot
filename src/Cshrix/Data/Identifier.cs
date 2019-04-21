@@ -173,6 +173,6 @@ namespace Cshrix.Data
 
         public override int GetHashCode() => HashCode.Combine(Type, Sigil, Localpart, Domain);
 
-        public override string ToString() => $"{Localpart}{Separator}{Domain}";
+        public override string ToString() => $"{Sigil}{Localpart}{Separator}{Domain}";
     }
 }
