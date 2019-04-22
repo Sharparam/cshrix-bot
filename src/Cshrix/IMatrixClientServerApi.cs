@@ -403,6 +403,15 @@ namespace Cshrix
 
         #region Room discovery
 
+        [Get("{apiVersion}/publicRooms")]
+        Task<PublicRoomsChunk> GetPublicRoomsAsync(
+            [Query] int? limit = null,
+            [Query] string since = null,
+            [Query] string server = null);
+
+        [Post("{apiVersion}/publicRooms")]
+        Task<PublicRoomsChunk> GetPublicRoomsAsync([Body] PublicRoomsRequest data);
+
         #endregion Room discovery
 
         #region Read Markers
