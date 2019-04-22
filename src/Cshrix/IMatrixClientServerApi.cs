@@ -16,6 +16,7 @@ namespace Cshrix
     using Data.Events;
     using Data.Events.Content;
     using Data.Notifications;
+    using Data.Search;
 
     using JetBrains.Annotations;
 
@@ -429,6 +430,9 @@ namespace Cshrix
         #endregion Reporting content
 
         #region Search
+
+        [Post("{apiVersion}/search")]
+        Task<SearchResult> SearchAsync([Body] SearchQuery data, [Query("next_batch")] string from = null);
 
         #endregion Search
 
