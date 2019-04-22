@@ -18,23 +18,23 @@ namespace Cshrix.Data.Search
 
         [JsonConstructor]
         public SearchContextConfiguration(
-            int beforeLimit = DefaultLimit,
-            int afterLimit = DefaultLimit,
+            int limitBefore = DefaultLimit,
+            int limitAfter = DefaultLimit,
             bool includeProfile = false)
             : this()
         {
-            BeforeLimit = beforeLimit;
-            AfterLimit = afterLimit;
+            LimitBefore = limitBefore;
+            LimitAfter = limitAfter;
             IncludeProfile = includeProfile;
         }
 
         [DefaultValue(DefaultLimit)]
         [JsonProperty("before_limit")]
-        public int BeforeLimit { get; }
+        public int LimitBefore { get; }
 
         [DefaultValue(DefaultLimit)]
         [JsonProperty("after_limit")]
-        public int AfterLimit { get; }
+        public int LimitAfter { get; }
 
         [DefaultValue(false)]
         [JsonProperty("include_profile")]
