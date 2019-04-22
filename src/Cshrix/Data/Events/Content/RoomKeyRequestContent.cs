@@ -16,7 +16,7 @@ namespace Cshrix.Data.Events.Content
     {
         public RoomKeyRequestContent(
             RequestedKeyInfo body,
-            RequestAction action,
+            KeyRequestAction action,
             string requestingDeviceId,
             string requestId)
         {
@@ -30,7 +30,7 @@ namespace Cshrix.Data.Events.Content
         public RequestedKeyInfo Body { get; }
 
         [JsonProperty("action")]
-        public RequestAction Action { get; }
+        public KeyRequestAction Action { get; }
 
         [JsonProperty("requesting_device_id")]
         public string RequestingDeviceId { get; }

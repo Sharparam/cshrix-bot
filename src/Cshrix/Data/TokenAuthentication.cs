@@ -8,6 +8,8 @@
 
 namespace Cshrix.Data
 {
+    using Authentication;
+
     using Newtonsoft.Json;
 
     public sealed class TokenAuthentication : AuthenticationData

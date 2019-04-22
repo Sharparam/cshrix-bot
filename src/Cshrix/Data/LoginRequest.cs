@@ -8,6 +8,8 @@
 
 namespace Cshrix.Data
 {
+    using Authentication;
+
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;

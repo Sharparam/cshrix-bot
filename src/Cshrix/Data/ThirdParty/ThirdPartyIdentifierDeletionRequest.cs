@@ -1,4 +1,4 @@
-// <copyright file="ThirdPartyRoomInvite.cs">
+// <copyright file="ThirdPartyIdentifierDeletionRequest.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -6,28 +6,24 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data
+namespace Cshrix.Data.ThirdParty
 {
     using Newtonsoft.Json;
 
-    public readonly struct ThirdPartyRoomInvite
+    public readonly struct ThirdPartyIdentifierDeletionRequest
     {
         [JsonConstructor]
-        public ThirdPartyRoomInvite(string identityServer, string medium, string address)
+        public ThirdPartyIdentifierDeletionRequest(string address, string medium)
             : this()
         {
-            IdentityServer = identityServer;
-            Medium = medium;
             Address = address;
+            Medium = medium;
         }
-
-        [JsonProperty("id_server")]
-        private string IdentityServer { get; }
-
-        [JsonProperty("medium")]
-        public string Medium { get; }
 
         [JsonProperty("address")]
         public string Address { get; }
+
+        [JsonProperty("medium")]
+        public string Medium { get; }
     }
 }

@@ -6,7 +6,7 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data
+namespace Cshrix.Data.Search
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -15,13 +15,13 @@ namespace Cshrix.Data
 
     public readonly struct UserSearchResult
     {
-        public UserSearchResult(bool limited, IEnumerable<User> results)
+        public UserSearchResult(bool limited, IEnumerable<SearchUser> results)
             : this(limited, results.ToList().AsReadOnly())
         {
         }
 
         [JsonConstructor]
-        public UserSearchResult(bool limited, IReadOnlyCollection<User> results)
+        public UserSearchResult(bool limited, IReadOnlyCollection<SearchUser> results)
             : this()
         {
             Limited = limited;
@@ -32,6 +32,6 @@ namespace Cshrix.Data
         public bool Limited { get; }
 
         [JsonProperty("results")]
-        public IReadOnlyCollection<User> Results { get; }
+        public IReadOnlyCollection<SearchUser> Results { get; }
     }
 }

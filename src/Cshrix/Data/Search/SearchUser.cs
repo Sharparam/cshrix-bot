@@ -6,16 +6,16 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data
+namespace Cshrix.Data.Search
 {
     using System;
 
     using Newtonsoft.Json;
 
-    public readonly struct User
+    public readonly struct SearchUser
     {
         [JsonConstructor]
-        public User(Uri avatarUri, string displayName, UserId userId)
+        public SearchUser(Uri avatarUri, string displayName, UserId userId)
             : this()
         {
             AvatarUri = avatarUri;

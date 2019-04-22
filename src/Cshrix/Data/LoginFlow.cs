@@ -8,6 +8,8 @@
 
 namespace Cshrix.Data
 {
+    using Authentication;
+
     using Newtonsoft.Json;
 
     public readonly struct LoginFlow

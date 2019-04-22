@@ -8,6 +8,8 @@
 
 namespace Cshrix.Data
 {
+    using Authentication;
+
     public sealed class DummyAuthentication : AuthenticationData
     {
         public DummyAuthentication(string session)

@@ -13,10 +13,12 @@ namespace Cshrix
     using System.Threading.Tasks;
 
     using Data;
+    using Data.Authentication;
     using Data.Events;
     using Data.Events.Content;
     using Data.Notifications;
     using Data.Search;
+    using Data.ThirdParty;
 
     using JetBrains.Annotations;
 

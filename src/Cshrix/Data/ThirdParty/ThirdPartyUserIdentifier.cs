@@ -1,4 +1,4 @@
-// <copyright file="ThirdPartyIdentifierDeletionRequest.cs">
+// <copyright file="ThirdPartyUserIdentifier.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -6,24 +6,26 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data
+namespace Cshrix.Data.ThirdParty
 {
     using Newtonsoft.Json;
 
-    public readonly struct ThirdPartyIdentifierDeletionRequest
+    public readonly struct ThirdPartyUserIdentifier : IUserIdentifier
     {
         [JsonConstructor]
-        public ThirdPartyIdentifierDeletionRequest(string address, string medium)
+        public ThirdPartyUserIdentifier(string medium, string address)
             : this()
         {
-            Address = address;
             Medium = medium;
+            Address = address;
         }
 
-        [JsonProperty("address")]
-        public string Address { get; }
+        public UserIdentifierType Type => UserIdentifierType.ThirdParty;
 
         [JsonProperty("medium")]
         public string Medium { get; }
+
+        [JsonProperty("address")]
+        public string Address { get; }
     }
 }

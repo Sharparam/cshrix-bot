@@ -14,7 +14,7 @@ namespace Cshrix.Cryptography
     using Newtonsoft.Json.Converters;
 
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum RequestAction
+    public enum KeyRequestAction
     {
         [EnumMember(Value = "request")]
         Request,

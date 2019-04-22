@@ -18,6 +18,8 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    using ThirdParty;
+
     public readonly struct CreateRoomRequest
     {
         public CreateRoomRequest(
