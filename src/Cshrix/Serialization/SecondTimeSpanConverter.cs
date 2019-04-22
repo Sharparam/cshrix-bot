@@ -10,25 +10,43 @@ namespace Cshrix.Serialization
 {
     using System;
 
+    using Helpers;
+
     using Newtonsoft.Json;
 
-    public class SecondTimeSpanConverter : JsonConverter<TimeSpan>
+    public class SecondTimeSpanConverter : JsonConverter
     {
-        public override void WriteJson(JsonWriter writer, TimeSpan value, JsonSerializer serializer)
+        public override bool CanConvert(Type objectType) =>
+            objectType == typeof(TimeSpan) || objectType == typeof(TimeSpan?);
+
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            writer.WriteValue(value.TotalSeconds);
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                writer.WriteValue((long)((TimeSpan)value).TotalSeconds);
+            }
         }
 
-        public override TimeSpan ReadJson(
+        public override object ReadJson(
             JsonReader reader,
             Type objectType,
-            TimeSpan existingValue,
-            bool hasExistingValue,
+            object existingValue,
             JsonSerializer serializer)
         {
+            var nullable = ReflectionHelpers.IsNullable(objectType);
+
             if (reader.TokenType == JsonToken.Null)
             {
-                throw new JsonSerializationException($"Cannot convert null value to {objectType}");
+                if (!nullable)
+                {
+                    throw new JsonSerializationException($"Cannot convert null value to {objectType}");
+                }
+
+                return null;
             }
 
             long seconds;

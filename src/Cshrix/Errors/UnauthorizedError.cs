@@ -19,8 +19,8 @@ namespace Cshrix.Errors
     public sealed class UnauthorizedError : MatrixError
     {
         public UnauthorizedError(
-            [CanBeNull] string code,
-            [CanBeNull] string message,
+            string code,
+            string message,
             [CanBeNull] string[] completed,
             AuthenticationFlow[] flows,
             IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> parameters,
@@ -45,5 +45,7 @@ namespace Cshrix.Errors
 
         [JsonProperty("session")]
         public string Session { get; }
+
+        public bool IsFailure => Code != default || Message != default;
     }
 }

@@ -12,6 +12,9 @@ namespace Cshrix.Errors
 
     using Newtonsoft.Json;
 
+    using Serialization;
+
+    [JsonConverter(typeof(MatrixErrorConverter))]
     public class MatrixError
     {
         public MatrixError([CanBeNull] string code, [CanBeNull] string message)
@@ -27,5 +30,7 @@ namespace Cshrix.Errors
         [JsonProperty("error")]
         [CanBeNull]
         public string Message { get; }
+
+        public override string ToString() => $"{Code}: {Message}";
     }
 }

@@ -16,7 +16,8 @@ namespace Cshrix.Serialization
 
     public class MillisecondTimeSpanConverter : JsonConverter
     {
-        public override bool CanConvert(Type objectType) => objectType == typeof(TimeSpan) || objectType == typeof(TimeSpan?);
+        public override bool CanConvert(Type objectType) =>
+            objectType == typeof(TimeSpan) || objectType == typeof(TimeSpan?);
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
@@ -26,7 +27,7 @@ namespace Cshrix.Serialization
             }
             else
             {
-                writer.WriteValue(((TimeSpan)value).TotalMilliseconds);
+                writer.WriteValue((long)((TimeSpan)value).TotalMilliseconds);
             }
         }
 

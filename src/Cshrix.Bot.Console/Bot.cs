@@ -8,9 +8,14 @@
 
 namespace Cshrix.Bot.Console
 {
+    using System;
     using System.Threading.Tasks;
 
+    using Extensions;
+
     using Microsoft.Extensions.Logging;
+
+    using RestEase;
 
     internal sealed class Bot
     {
@@ -28,9 +33,24 @@ namespace Cshrix.Bot.Console
         {
             _log.LogInformation("Testing");
 
-            var userId = await _client.GetUserIdAsync();
+            try
+            {
+                var userId = await _client.GetUserIdAsync();
+                _log.LogInformation("I am {UserId}", userId);
+            }
+            catch (ApiException ex)
+            {
+                var hasError = ex.TryGetError(out var error);
 
-            _log.LogInformation("I am {UserId}", userId);
+                if (hasError)
+                {
+                    _log.LogError(ex, "Failed to get user ID: {@Error}", error);
+                }
+                else
+                {
+                    _log.LogError(ex, "Failed to get user ID, no error reported.");
+                }
+            }
 
             var pushRules = await _client.GetNotificationPushRulesAsync();
 

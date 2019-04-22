@@ -9,7 +9,7 @@ namespace Cshrix.Errors
     public sealed class RateLimitError : MatrixError
     {
         [JsonConstructor]
-        public RateLimitError(TimeSpan retryAfter, string code, string message)
+        public RateLimitError(string code, string message, TimeSpan retryAfter)
             : base(code, message) =>
             RetryAfter = retryAfter;
 

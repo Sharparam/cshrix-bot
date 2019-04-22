@@ -72,10 +72,8 @@ namespace Cshrix.Serialization
 
         public override bool CanWrite => false;
 
-        public override void WriteJson(JsonWriter writer, Event value, JsonSerializer serializer)
-        {
+        public override void WriteJson(JsonWriter writer, Event value, JsonSerializer serializer) =>
             throw new NotImplementedException();
-        }
 
         public override Event ReadJson(
             JsonReader reader,
