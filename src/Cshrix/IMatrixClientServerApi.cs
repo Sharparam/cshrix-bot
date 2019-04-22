@@ -9,6 +9,7 @@
 namespace Cshrix
 {
     using System.Collections.Generic;
+    using System.Net.Http.Headers;
     using System.Threading.Tasks;
 
     using Data;
@@ -32,7 +33,7 @@ namespace Cshrix
 
         [UsedImplicitly]
         [Header("Authorization")]
-        string Authorization { get; set; }
+        AuthenticationHeaderValue Authorization { get; set; }
 
         /// <summary>
         /// Gets or sets the impersonated user.

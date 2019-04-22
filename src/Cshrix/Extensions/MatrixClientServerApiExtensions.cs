@@ -9,6 +9,7 @@
 namespace Cshrix.Extensions
 {
     using System;
+    using System.Net.Http.Headers;
     using System.Threading.Tasks;
 
     using Data;
@@ -17,7 +18,7 @@ namespace Cshrix.Extensions
     public static class MatrixClientServerApiExtensions
     {
         public static void SetBearerToken(this IMatrixClientServerApi api, string accessToken) =>
-            api.Authorization = $"Bearer {accessToken}";
+            api.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
         public static Task<SyncResponse> SyncAsync(
             this IMatrixClientServerApi api,
