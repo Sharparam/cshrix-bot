@@ -1,0 +1,52 @@
+﻿<!-- Copyright (c) 2019 by Adam Hellberg.
+   -
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Version>0.0.0</Version>
+    <Authors>Adam Hellberg</Authors>
+    <Product>cshrix-bot</Product>
+    <Description>Bot for Matrix made with cshrix.</Description>
+    <Copyright>Copyright (c) 2019 by Adam Hellberg.</Copyright>
+    <PackageLicenseUrl>https://github.com/Sharparam/cshrix-bot/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Sharparam/cshrix-bot</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sharparam/cshrix-bot</RepositoryUrl>
+    <PackageTags>matrix</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.local.json" Condition="Exists('appsettings.local.json')">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventLog" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.TraceSource" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cshrix\Cshrix.csproj" />
+  </ItemGroup>
+</Project>
