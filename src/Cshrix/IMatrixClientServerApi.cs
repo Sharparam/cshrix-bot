@@ -50,112 +50,112 @@ namespace Cshrix
 
         #region Server administration
 
-        [Get("versions")]
+        [Get("_matrix/client/versions")]
         Task<VersionsResponse> GetVersionsAsync();
 
-        [Get("{apiVersion}/admin/whois/{userId}")]
+        [Get("_matrix/client/{apiVersion}/admin/whois/{userId}")]
         Task<WhoisResponse> WhoisAsync([Path] UserId userId);
 
         #endregion Server administration
 
         #region User data
 
-        [Get("{apiVersion}/account/3pid")]
+        [Get("_matrix/client/{apiVersion}/account/3pid")]
         Task<ThirdPartyIdentifiersResponse> GetThirdPartyIdentifiersAsync();
 
-        [Post("{apiVersion}/account/3pid")]
+        [Post("_matrix/client/{apiVersion}/account/3pid")]
         Task AddThirdPartyIdentifierAsync([Body] ThirdPartyIdentifierRegistrationRequest data);
 
-        [Post("{apiVersion}/account/3pid/delete")]
+        [Post("_matrix/client/{apiVersion}/account/3pid/delete")]
         Task DeleteThirdPartyIdentifierAsync([Body] ThirdPartyIdentifierDeletionRequest data);
 
-        [Post("{apiVersion}/account/deactivate")]
+        [Post("_matrix/client/{apiVersion}/account/deactivate")]
         Task DeactivateAccountAsync([Body] AuthenticationContainer data);
 
-        [Post("{apiVersion}/account/password")]
+        [Post("_matrix/client/{apiVersion}/account/password")]
         Task ChangePasswordAsync([Body] ChangePasswordRequest data);
 
-        [Get("{apiVersion}/account/whoami")]
+        [Get("_matrix/client/{apiVersion}/account/whoami")]
         Task<UserIdContainer> WhoAmIAsync();
 
-        [Get("{apiVersion}/profile/{userId}")]
+        [Get("_matrix/client/{apiVersion}/profile/{userId}")]
         Task<Profile> GetProfileAsync([Path] UserId userId);
 
-        [Get("{apiVersion}/profile/{userId}/avatar_url")]
+        [Get("_matrix/client/{apiVersion}/profile/{userId}/avatar_url")]
         Task<AvatarUrlContainer> GetAvatarUrlAsync([Path] UserId userId);
 
-        [Put("{apiVersion}/profile/{userId}/avatar_url")]
+        [Put("_matrix/client/{apiVersion}/profile/{userId}/avatar_url")]
         Task SetAvatarUrlAsync([Path] UserId userId, [Body] AvatarUrlContainer data);
 
-        [Get("{apiVersion}/profile/{userId}/displayname")]
+        [Get("_matrix/client/{apiVersion}/profile/{userId}/displayname")]
         Task<DisplayNameContainer> GetDisplayNameAsync([Path] UserId userId);
 
-        [Put("{apiVersion}/profile/{userId}/displayname")]
+        [Put("_matrix/client/{apiVersion}/profile/{userId}/displayname")]
         Task SetDisplayNameAsync([Path] UserId userId, [Body] DisplayNameContainer data);
 
-        [Post("{apiVersion}/register")]
+        [Post("_matrix/client/{apiVersion}/register")]
         Task<AuthenticationResponse> RegisterAsync([Body] RegistrationRequest data);
 
-        [Get("{apiVersion}/register/available")]
+        [Get("_matrix/client/{apiVersion}/register/available")]
         Task<AvailableContainer> IsRegistrationAvailableAsync([Query] string username);
 
-        [Put("{apiVersion}/user/{userId}/account_data/{type}")]
+        [Put("_matrix/client/{apiVersion}/user/{userId}/account_data/{type}")]
         Task SetAccountDataAsync([Path] UserId userId, [Path] string type, [Body] EventContent data);
 
-        [Put("{apiVersion}/user/{userId}/rooms/{roomId}/account_data/{type}")]
+        [Put("_matrix/client/{apiVersion}/user/{userId}/rooms/{roomId}/account_data/{type}")]
         Task SetRoomAccountDataAsync(
             [Path] UserId userId,
             [Path] string roomId,
             [Path] string type,
             [Body] EventContent data);
 
-        [Get("{apiVersion}/user/{userId}/rooms/{roomId}/tags")]
+        [Get("_matrix/client/{apiVersion}/user/{userId}/rooms/{roomId}/tags")]
         Task<TagsResponse> GetRoomTagsAsync([Path] UserId userId, [Path] string roomId);
 
-        [Delete("{apiVersion}/user/{userId}/rooms/{roomId}/tags/{tag}")]
+        [Delete("_matrix/client/{apiVersion}/user/{userId}/rooms/{roomId}/tags/{tag}")]
         Task DeleteRoomTagAsync([Path] UserId userId, [Path] string roomId, [Path] string tag);
 
-        [Put("{apiVersion}/user/{userId}/rooms/{roomId}/tags/{tag}")]
+        [Put("_matrix/client/{apiVersion}/user/{userId}/rooms/{roomId}/tags/{tag}")]
         Task AddRoomTagAsync(
             [Path] UserId userId,
             [Path] string roomId,
             [Path] string tag,
             [Body] TagData data);
 
-        [Post("{apiVersion}/user_directory/search")]
+        [Post("_matrix/client/{apiVersion}/user_directory/search")]
         Task<UserSearchResult> SearchUsersAsync([Body] UserSearchQuery query);
 
         #endregion User data
 
         #region Room creation
 
-        [Post("{apiVersion}/createRoom")]
+        [Post("_matrix/client/{apiVersion}/createRoom")]
         Task<RoomIdContainer> CreateRoomAsync([Body] CreateRoomRequest data);
 
         #endregion Room creation
 
         #region Device management
 
-        [Post("{apiVersion}/delete_devices")]
+        [Post("_matrix/client/{apiVersion}/delete_devices")]
         Task DeleteDevicesAsync([Body] DeleteDevicesRequest data);
 
-        [Get("{apiVersion}/devices")]
+        [Get("_matrix/client/{apiVersion}/devices")]
         Task<DevicesResponse> GetDevicesAsync();
 
-        [Delete("{apiVersion}/devices/{deviceId}")]
+        [Delete("_matrix/client/{apiVersion}/devices/{deviceId}")]
         Task DeleteDeviceAsync([Path] string deviceId, [Body] AuthenticationContainer authentication);
 
-        [Get("{apiVersion}/devices/{deviceId}")]
+        [Get("_matrix/client/{apiVersion}/devices/{deviceId}")]
         Task<Device> GetDeviceAsync([Path] string deviceId);
 
-        [Put("{apiVersion}/devices/{deviceId}")]
+        [Put("_matrix/client/{apiVersion}/devices/{deviceId}")]
         Task SetDeviceMetadataAsync([Path] string deviceId, [Body] DeviceMetadata data);
 
         #endregion Device management
 
         #region Application service room directory management
 
-        [Put("{apiVersion}/directory/list/appservice/{networkId}/{roomId}")]
+        [Put("_matrix/client/{apiVersion}/directory/list/appservice/{networkId}/{roomId}")]
         Task UpdateAppServiceRoomVisibilityAsync(
             [Path] string networkId,
             [Path] string roomId,
@@ -165,32 +165,32 @@ namespace Cshrix
 
         #region Room directory
 
-        [Delete("{apiVersion}/directory/room/{roomAlias}")]
+        [Delete("_matrix/client/{apiVersion}/directory/room/{roomAlias}")]
         Task DeleteRoomAliasAsync([Path("roomAlias")] RoomAlias alias);
 
-        [Get("{apiVersion}/directory/room/{roomAlias}")]
+        [Get("_matrix/client/{apiVersion}/directory/room/{roomAlias}")]
         Task<RoomAliasInformation> ResolveRoomAliasAsync([Path("roomAlias")] RoomAlias alias);
 
-        [Put("{apiVersion}/directory/room/{roomAlias}")]
+        [Put("_matrix/client/{apiVersion}/directory/room/{roomAlias}")]
         Task MapRoomAliasAsync([Path("roomAlias")] RoomAlias alias, [Body] RoomIdContainer data);
 
         #endregion Room directory
 
         #region Room participation
 
-        [Get("{apiVersion}/rooms/{roomId}/context/{eventId}")]
+        [Get("_matrix/client/{apiVersion}/rooms/{roomId}/context/{eventId}")]
         Task<EventContext> GetContextAsync([Path] string roomId, [Path] string eventId, [Query] int limit = 10);
 
-        [Get("{apiVersion}/rooms/{roomId}/event/{eventId}")]
+        [Get("_matrix/client/{apiVersion}/rooms/{roomId}/event/{eventId}")]
         Task<Event> GetEventAsync([Path] string roomId, [Path] string eventId);
 
-        [Get("{apiVersion}/rooms/{roomId}/joined_members")]
+        [Get("_matrix/client/{apiVersion}/rooms/{roomId}/joined_members")]
         Task<JoinedMembersResponse> GetJoinedMembersAsync([Path] string roomId);
 
-        [Get("{apiVersion}/rooms/{roomId}/members")]
+        [Get("_matrix/client/{apiVersion}/rooms/{roomId}/members")]
         Task<Chunk<StateEvent>> GetMemberEventsAsync([Path] string roomId);
 
-        [Get("{apiVersion}/rooms/{roomId}/messages")]
+        [Get("_matrix/client/{apiVersion}/rooms/{roomId}/messages")]
         Task<PaginatedChunk<RoomEvent>> GetMessageEventsAsync(
             [Path] string roomId,
             [Query] string from = null,
@@ -199,53 +199,53 @@ namespace Cshrix
             [Query] int limit = 10,
             [Query] RoomEventFilter filter = default);
 
-        [Post("{apiVersion}/rooms/{roomId}/receipt/{receiptType}/{eventId}")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/receipt/{receiptType}/{eventId}")]
         Task SendReceiptAsync(
             [Path] string roomId,
             [Path] string receiptType,
             [Path] string eventId,
             [Body] object data = null);
 
-        [Put("{apiVersion}/rooms/{roomId}/redact/{eventId}/{txnId}")]
+        [Put("_matrix/client/{apiVersion}/rooms/{roomId}/redact/{eventId}/{txnId}")]
         Task<EventIdContainer> RedactEventAsync(
             [Path] string roomId,
             [Path] string eventId,
             [Path("txnId")] int transactionId,
             [Body] RedactionContent data);
 
-        [Put("{apiVersion}/rooms/{roomId}/send/{eventType}/{txnId}")]
+        [Put("_matrix/client/{apiVersion}/rooms/{roomId}/send/{eventType}/{txnId}")]
         Task<EventIdContainer> SendEventAsync(
             [Path] string roomId,
             [Path] string eventType,
             [Path("txnId")] int transactionId,
             [Body] Event data);
 
-        [Get("{apiVersion}/rooms/{roomId}/state")]
+        [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state")]
         Task<IReadOnlyCollection<StateEvent>> GetStateEventsAsync([Path] string roomId);
 
-        [Get("{apiVersion}/rooms/{roomId}/state/{eventType}")]
+        [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}")]
         Task<StateEvent> GetStateEventAsync([Path] string roomId, [Path] string eventType);
 
-        [Put("{apiVersion}/rooms/{roomId}/state/{eventType}")]
+        [Put("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}")]
         Task<EventIdContainer> SendStateAsync(
             [Path] string roomId,
             [Path] string eventType,
             [Body] EventContent data);
 
-        [Get("{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
+        [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
         Task<StateEvent> GetStateEventAsync([Path] string roomId, [Path] string eventType, [Path] string stateKey);
 
-        [Put("{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
+        [Put("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
         Task<EventIdContainer> SendStateAsync(
             [Path] string roomId,
             [Path] string eventType,
             [Path] string stateKey,
             [Body] EventContent data);
 
-        [Put("{apiVersion}/rooms/{roomId}/typing/{userId}")]
+        [Put("_matrix/client/{apiVersion}/rooms/{roomId}/typing/{userId}")]
         Task SendTypingAsync([Path] string roomId, [Path] UserId userId, [Body] TypingState data);
 
-        [Get("{apiVersion}/sync")]
+        [Get("_matrix/client/{apiVersion}/sync")]
         Task<SyncResponse> SyncAsync(
             [Query] string since = null,
             [Query] string filter = null,
@@ -253,10 +253,10 @@ namespace Cshrix
             [Query("set_presence")] string setPresence = "offline",
             [Query] long timeout = 0);
 
-        [Post("{apiVersion}/user/{userId}/filter")]
+        [Post("_matrix/client/{apiVersion}/user/{userId}/filter")]
         Task<FilterIdContainer> UploadFilterAsync([Path] UserId userId, [Body] Filter data);
 
-        [Get("{apiVersion}/user/{userId}/filter/{filterId}")]
+        [Get("_matrix/client/{apiVersion}/user/{userId}/filter/{filterId}")]
         Task<Filter> GetFilterAsync([Path] UserId userId, [Path] string filterId);
 
         #endregion Room participation
@@ -267,103 +267,103 @@ namespace Cshrix
         // another level `signed`. For now assume that is a doc error because it would be a
         // preposterous amount of nesting. Awaiting response from #matrix-dev:matrix.org
         // on whether this is actually intended.
-        [Post("{apiVersion}/join/{roomIdOrAlias}")]
+        [Post("_matrix/client/{apiVersion}/join/{roomIdOrAlias}")]
         Task<RoomIdContainer> JoinRoomOrAliasAsync(
             [Path] string roomIdOrAlias,
             [Query("server_name")] IEnumerable<string> serverNames = null,
             [Body] SignedThirdPartyData? data = null);
 
-        [Get("{apiVersion}/joined_rooms")]
+        [Get("_matrix/client/{apiVersion}/joined_rooms")]
         Task<JoinedRooms> GetJoinedRoomsAsync();
 
-        [Post("{apiVersion}/rooms/{roomId}/ban")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/ban")]
         Task BanAsync([Path] string roomId, [Body] Reason data);
 
-        [Post("{apiVersion}/rooms/{roomId}/forget")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/forget")]
         Task ForgetAsync([Path] string roomId);
 
-        [Post("{apiVersion}/rooms/{roomId}/invite")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/invite")]
         Task InviteAsync([Path] string roomId, [Body] ThirdPartyRoomInvite data);
 
-        [Post("{apiVersion}/rooms/{roomId}/invite")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/invite")]
         Task InviteAsync([Path] string roomId, [Body] UserIdContainer data);
 
-        [Post("{apiVersion}/rooms/{roomId}/join")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/join")]
         Task<RoomIdContainer> JoinRoomAsync([Path] string roomId, [Body] SignedThirdPartyData? data = null);
 
-        [Post("{apiVersion}/rooms/{roomId}/kick")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/kick")]
         Task KickAsync([Path] string roomId, [Body] Reason data);
 
-        [Post("{apiVersion}/rooms/{roomId}/leave")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/leave")]
         Task LeaveAsync([Path] string roomId);
 
-        [Post("{apiVersion}/rooms/{roomId}/unban")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/unban")]
         Task UnbanAsync([Path] string roomId, [Body] UserIdContainer data);
 
         #endregion Room membership
 
         #region End-to-end encryption
 
-        [Get("{apiVersion}/keys/changes")]
+        [Get("_matrix/client/{apiVersion}/keys/changes")]
         Task<DeviceChangeLists> GetDeviceKeyChangesAsync([Query] string from, [Query] string to);
 
-        [Post("{apiVersion}/keys/claim")]
+        [Post("_matrix/client/{apiVersion}/keys/claim")]
         Task<ClaimKeysResponse> ClaimOneTimeKeysAsync([Body] ClaimKeysRequest data);
 
-        [Post("{apiVersion}/keys/query")]
+        [Post("_matrix/client/{apiVersion}/keys/query")]
         Task<DeviceKeysQueryResponse> QueryDeviceKeysAsync([Body] DeviceKeysQuery data);
 
-        [Post("{apiVersion}/keys/upload")]
+        [Post("_matrix/client/{apiVersion}/keys/upload")]
         Task<IReadOnlyDictionary<string, int>> UploadDeviceKeysAsync([Body] UploadKeysRequest data);
 
         #endregion End-to-end encryption
 
         #region Session management
 
-        [Get("{apiVersion}/login")]
+        [Get("_matrix/client/{apiVersion}/login")]
         Task<LoginFlows> GetLoginFlowsAsync();
 
-        [Post("{apiVersion}/login")]
+        [Post("_matrix/client/{apiVersion}/login")]
         Task<AuthenticationResponse> LoginAsync([Body] LoginRequest data);
 
-        [Post("{apiVersion}/logout")]
+        [Post("_matrix/client/{apiVersion}/logout")]
         Task LogoutAsync();
 
-        [Post("{apiVersion}/logout/all")]
+        [Post("_matrix/client/{apiVersion}/logout/all")]
         Task LogoutAllAsync();
 
         #endregion Session management
 
         #region Push notifications
 
-        [Get("{apiVersion}/notifications")]
+        [Get("_matrix/client/{apiVersion}/notifications")]
         Task<NotificationsResponse> GetNotificationsAsync(
             [Query] string from = null,
             [Query] int? limit = null,
             [Query] string only = null);
 
-        [Get("{apiVersion}/pushers")]
+        [Get("_matrix/client/{apiVersion}/pushers")]
         Task<NotificationPushersContainer> GetNotificationPushersAsync();
 
-        [Post("{apiVersion}/pushers/set")]
+        [Post("_matrix/client/{apiVersion}/pushers/set")]
         Task ModifyNotificationPusherAsync([Body] NotificationPusher data);
 
-        [Get("{apiVersion}/pushrules/{scope}")]
+        [Get("_matrix/client/{apiVersion}/pushrules/{scope}")]
         Task<NotificationRulesets> GetNotificationPushRulesAsync([Path] string scope = null);
 
-        [Get("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
+        [Get("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
         Task<NotificationPushRule> GetNotificationPushRuleAsync(
             [Path] string scope,
             [Path] NotificationPushRuleKind kind,
             [Path] string ruleId);
 
-        [Delete("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
+        [Delete("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
         Task DeleteNotificationPushRuleAsync(
             [Path] string scope,
             [Path] NotificationPushRuleKind kind,
             [Path] string ruleId);
 
-        [Put("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
+        [Put("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
         Task SetNotificationPushRuleAsync(
             [Path] string scope,
             [Path] NotificationPushRuleKind kind,
@@ -372,14 +372,14 @@ namespace Cshrix
             [Query] string before = null,
             [Query] string after = null);
 
-        [Put("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}/actions")]
+        [Put("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}/actions")]
         Task SetNotificationPushRuleActionsAsync(
             [Path] string scope,
             [Path] NotificationPushRuleKind kind,
             [Path] string ruleId,
             [Body] NotificationActionsContainer data);
 
-        [Put("{apiVersion}/pushrules/{scope}/{kind}/{ruleId}/enabled")]
+        [Put("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}/enabled")]
         Task SetNotificationPushRuleEnabledAsync(
             [Path] string scope,
             [Path] NotificationPushRuleKind kind,
@@ -390,57 +390,57 @@ namespace Cshrix
 
         #region Presence
 
-        [Get("{apiVersion}/presence/list/{userId}")]
+        [Get("_matrix/client/{apiVersion}/presence/list/{userId}")]
         Task<IReadOnlyCollection<Event>> GetPresenceEventsAsync([Path] UserId userId);
 
-        [Post("{apiVersion}/presence/list/{userId}")]
+        [Post("_matrix/client/{apiVersion}/presence/list/{userId}")]
         Task UpdatePresenceListAsync([Path] UserId userId, [Body] PresenceListUpdate data);
 
-        [Get("{apiVersion}/presence/{userId}/status")]
+        [Get("_matrix/client/{apiVersion}/presence/{userId}/status")]
         Task<PresenceStatusResponse> GetPresenceAsync([Path] UserId userId);
 
-        [Put("{apiVersion}/presence/{userId}/status")]
+        [Put("_matrix/client/{apiVersion}/presence/{userId}/status")]
         Task SetPresenceAsync([Path] UserId userId, [Body] PresenceStatusRequest data);
 
         #endregion Presence
 
         #region Room discovery
 
-        [Get("{apiVersion}/publicRooms")]
+        [Get("_matrix/client/{apiVersion}/publicRooms")]
         Task<PublicRoomsChunk> GetPublicRoomsAsync(
             [Query] int? limit = null,
             [Query] string since = null,
             [Query] string server = null);
 
-        [Post("{apiVersion}/publicRooms")]
+        [Post("_matrix/client/{apiVersion}/publicRooms")]
         Task<PublicRoomsChunk> GetPublicRoomsAsync([Body] PublicRoomsRequest data);
 
         #endregion Room discovery
 
         #region Read Markers
 
-        [Post("{apiVersion}/rooms/{roomId}/read_markers")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/read_markers")]
         Task SetReadMarkersAsync([Path] string roomId, [Body] ReadMarkers data);
 
         #endregion Read Markers
 
         #region Reporting content
 
-        [Post("{apiVersion}/rooms/{roomId}/report/{eventId}")]
+        [Post("_matrix/client/{apiVersion}/rooms/{roomId}/report/{eventId}")]
         Task ReportAsync([Path] string roomId, [Path] string eventId, [Body] Report data);
 
         #endregion Reporting content
 
         #region Search
 
-        [Post("{apiVersion}/search")]
+        [Post("_matrix/client/{apiVersion}/search")]
         Task<SearchResult> SearchAsync([Body] SearchQuery data, [Query("next_batch")] string from = null);
 
         #endregion Search
 
         #region Send-to-Device messaging
 
-        [Put("{apiVersion}/sendToDevice/{eventType}/{txnId}")]
+        [Put("_matrix/client/{apiVersion}/sendToDevice/{eventType}/{txnId}")]
         Task SendToDevicesAsync(
             [Path] string eventType,
             [Path("txnId")] string transactionId,
@@ -450,14 +450,14 @@ namespace Cshrix
 
         #region OpenID
 
-        [Post("{apiVersion}/user/{userId}/openid/request_token")]
+        [Post("_matrix/client/{apiVersion}/user/{userId}/openid/request_token")]
         Task<OpenIdToken> RequestOpenIdTokenAsync([Path] UserId userId, [Body] object data);
 
         #endregion OpenID
 
         #region VOIP
 
-        [Get("{apiVersion}/voip/turnServer")]
+        [Get("_matrix/client/{apiVersion}/voip/turnServer")]
         Task<TurnServerCredentials> GetTurnServerCredentialsAsync();
 
         #endregion VOIP

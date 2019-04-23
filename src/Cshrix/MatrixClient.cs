@@ -28,8 +28,6 @@ namespace Cshrix
     {
         private const string DefaultBaseUrl = "https://matrix.org";
 
-        private const string ClientServerSlug = "_matrix/client";
-
         private const string DefaultApiVersion = "r0";
 
         private readonly IMatrixClientServerApi _api;
@@ -43,8 +41,7 @@ namespace Cshrix
         {
             Log = log;
             var baseUri = clientConfig.CurrentValue.BaseUri ?? new Uri(DefaultBaseUrl);
-            var clientServerBase = new Uri(baseUri, ClientServerSlug);
-            httpClient.BaseAddress = clientServerBase;
+            httpClient.BaseAddress = baseUri;
             _api = RestClient.For<IMatrixClientServerApi>(httpClient);
             _configMonitor = clientConfig;
             _api.ApiVersion = _configMonitor.CurrentValue.ApiVersion ?? DefaultApiVersion;
