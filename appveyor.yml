@@ -26,6 +26,7 @@ install:
   - git config --global user.name "AppVeyor CI"
   - git config --global user.email "ci@appveyor.com"
   - dotnet tool install -g Cake.Tool --version 0.33.0
+  - cmd: nuget install AppVeyor.TestLogger -Version 2.0.0
 
 build_script:
 - ps: dotnet-cake --target="AppVeyor"

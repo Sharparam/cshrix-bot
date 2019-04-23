@@ -39,6 +39,8 @@ var artifactDir = Argument("artifactDir", "./artifacts");
 var dockerRegistry = Argument("dockerRegistry", "local");
 var slnName = Argument("slnName", "Cshrix.Bot");
 
+var solutionFile = System.IO.Path.Combine(solutionDir, $"{slnName}.sln");
+
 GitVersion version = null;
 
 GitVersion GetGitVersion(bool buildServerOutput = false)
@@ -136,31 +138,35 @@ Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
-        var solution = GetFiles("./*.sln").ElementAt(0);
-        Information("Build solution: {0}", solution);
-
+        Information("Build solution: {0}", solutionFile);
         var settings = GetBuildSettings();
-        DotNetCoreBuild(solution.FullPath, settings);
+        DotNetCoreBuild(solutionFile, settings);
     });
 
 Task("Test")
     .IsDependentOn("Build")
-    .ContinueOnError()
-    .DoesForEach(GetTestProjectFiles(), (testProject) =>
-    {
-        var projectFolder = System.IO.Path.GetDirectoryName(testProject.FullPath);
-        DotNetCoreTest(testProject.FullPath, new DotNetCoreTestSettings
-        {
-            ArgumentCustomization = args => args.Append("-l trx"),
-            WorkingDirectory = projectFolder
-        });
-    })
     .Does(() =>
     {
-        var tmpTestResultFiles = GetFiles("./**/*.trx");
+        var settings = new DotNetCoreTestSettings
+        {
+            Configuration = configuration,
+            NoBuild = true
+        };
+
+        if (isAppVeyor)
+        {
+            settings.ArgumentCustomization = args => args.Append("--logger:AppVeyor");
+        }
+        else
+        {
+            settings.ArgumentCustomization = args => args.Append("--logger:trx");
+        }
+
+        DotNetCoreTest(solutionFile, settings);
+
+        var tmpTestResultFiles = GetFiles("./**/TestResults/*.*");
         CopyFiles(tmpTestResultFiles, testResultDir);
-    })
-    .DeferOnError();
+    });
 
 Task("Pack")
     .IsDependentOn("Test")
