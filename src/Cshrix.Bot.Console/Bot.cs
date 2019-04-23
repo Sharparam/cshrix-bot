@@ -8,6 +8,7 @@
 
 namespace Cshrix.Bot.Console
 {
+    using System;
     using System.Threading.Tasks;
 
     using Extensions;
@@ -50,10 +51,6 @@ namespace Cshrix.Bot.Console
                     _log.LogError(ex, "Failed to get user ID, no error reported.");
                 }
             }
-
-            var pushRules = await _client.GetNotificationPushRulesAsync();
-
-            _log.LogInformation("My push rules are {@Rules}", pushRules);
         }
     }
 }

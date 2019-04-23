@@ -8,7 +8,10 @@
 
 namespace Cshrix
 {
+    using System;
     using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
 
@@ -410,7 +413,7 @@ namespace Cshrix
         Task<PublicRoomsChunk> GetPublicRoomsAsync(
             [Query] int? limit = null,
             [Query] string since = null,
-            [Query] string server = null);
+            [Query()] string server = null);
 
         [Post("_matrix/client/{apiVersion}/publicRooms")]
         Task<PublicRoomsChunk> GetPublicRoomsAsync([Body] PublicRoomsRequest data);
@@ -463,6 +466,60 @@ namespace Cshrix
         #endregion VOIP
 
         #region Media
+
+        [Post("_matrix/media/{apiVersion}/upload")]
+        Task<ContentUriContainer> UploadAsync(
+            [Query] string filename,
+            [Header("Content-Type")] MediaTypeHeaderValue contentType,
+            [Body] Stream data);
+
+        [Post("_matrix/media/{apiVersion}/upload")]
+        Task<ContentUriContainer> UploadAsync(
+            [Query] string filename,
+            [Header("Content-Type")] string contentType,
+            [Body] Stream data);
+
+        [Post("_matrix/media/{apiVersion}/upload")]
+        Task<ContentUriContainer> UploadAsync(
+            [Query] string filename,
+            [Header("Content-Type")] MediaTypeHeaderValue contentType,
+            [Body] byte[] data);
+
+        [Post("_matrix/media/{apiVersion}/upload")]
+        Task<ContentUriContainer> UploadAsync(
+            [Query] string filename,
+            [Header("Content-Type")] string contentType,
+            [Body] byte[] data);
+
+        [Get("_matrix/media/{apiVersion}/download/{serverName}/{mediaId}")]
+        Task<HttpResponseMessage> DownloadAsync(
+            [Path] string serverName,
+            [Path] string mediaId,
+            [Query("allow_remote")] bool? allowRemote = null);
+
+        [Get("_matrix/media/{apiVersion}/download/{serverName}/{mediaId}/{filename}")]
+        Task<HttpResponseMessage> DownloadAsync(
+            [Path] string serverName,
+            [Path] string mediaId,
+            [Path] string filename,
+            [Query("allow_remote")] bool? allowRemote = null);
+
+        [Get("_matrix/media/{apiVersion}/thumbnail/{serverName}/{mediaId}")]
+        Task<HttpResponseMessage> DownloadThumbnailAsync(
+            [Path] string serverName,
+            [Path] string mediaId,
+            [Query] int width,
+            [Query] int height,
+            [Query("method", QuerySerializationMethod.Serialized)] ResizeMethod resizeMethod = ResizeMethod.Scale,
+            [Query("allow_remote")] bool? allowRemote = null);
+
+        [Get("_matrix/media/{apiVersion}/preview_url")]
+        Task<PreviewInfo> GetUriPreviewInfoAsync(
+            [Query("url")] Uri uri,
+            [Query("ts")] long? timestamp = null);
+
+        [Get("_matrix/media/{apiVersion}/config")]
+        Task<ContentConfiguration> GetContentConfigurationAsync();
 
         #endregion Media
     }

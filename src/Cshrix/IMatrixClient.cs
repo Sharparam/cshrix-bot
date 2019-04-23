@@ -8,6 +8,7 @@
 
 namespace Cshrix
 {
+    using System;
     using System.Threading.Tasks;
 
     using Data;
@@ -18,5 +19,7 @@ namespace Cshrix
         Task<UserId> GetUserIdAsync();
 
         Task<NotificationRulesets> GetNotificationPushRulesAsync();
+
+        Task<PreviewInfo> GetPreviewInfoAsync(Uri uri, DateTimeOffset? at = null);
     }
 }

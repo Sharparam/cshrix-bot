@@ -53,5 +53,11 @@ namespace Cshrix
         public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync()).UserId;
 
         public Task<NotificationRulesets> GetNotificationPushRulesAsync() => _api.GetNotificationPushRulesAsync();
+
+        public async Task<PreviewInfo> GetPreviewInfoAsync(Uri uri, DateTimeOffset? at = null)
+        {
+            var info = await _api.GetUriPreviewInfoAsync(uri, at);
+            return info;
+        }
     }
 }
