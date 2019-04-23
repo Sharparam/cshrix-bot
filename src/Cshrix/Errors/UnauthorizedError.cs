@@ -10,7 +10,6 @@ namespace Cshrix.Errors
 {
     using System.Collections.Generic;
 
-    using Data;
     using Data.Authentication;
 
     using JetBrains.Annotations;

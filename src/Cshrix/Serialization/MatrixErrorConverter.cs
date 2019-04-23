@@ -11,7 +11,6 @@ namespace Cshrix.Serialization
     using System;
     using System.Collections.Generic;
 
-    using Data;
     using Data.Authentication;
 
     using Errors;
