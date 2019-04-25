@@ -51,6 +51,9 @@ artifacts:
 - path: .\artifacts\coverage-report
   name: Coverage
 
+before_deploy:
+- ps: .\appveyor\deploy-docs.ps1
+
 deploy:
 - provider: GitHub
   description: Automatically created by AppVeyor.
@@ -60,9 +63,6 @@ deploy:
   draft: true
   on:
     appveyor_repo_tag: true
-
-after_deploy:
-- ps: .\appveyor\deploy-docs.ps1
 
 notifications:
 - provider: GitHubPullRequest
