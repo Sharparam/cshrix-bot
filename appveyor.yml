@@ -39,6 +39,9 @@ install:
 build_script:
 - ps: dotnet-cake --target="AppVeyor" --cover
 
+after_build:
+- ps: .\appveyor\deploy-docs.ps1
+
 test: off
 
 artifacts:
@@ -50,9 +53,6 @@ artifacts:
   name: OpenCover
 - path: .\artifacts\coverage-report
   name: Coverage
-
-before_deploy:
-- ps: .\appveyor\deploy-docs.ps1
 
 deploy:
 - provider: GitHub
