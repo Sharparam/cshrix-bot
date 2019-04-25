@@ -3,9 +3,9 @@
 [![MPL 2.0 License][mpl-badge]][mpl]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
 
-| [Master][master] | [![Build status][appveyor-master-badge]][appveyor-master-status] | [![TravisCI Status][travis-master-badge]][travis-master-status] | [![Test status][test-master-badge]][test-master-status] |
-|-|-|-|-|
-| [**Develop**][develop] | [![Build status][appveyor-develop-badge]][appveyor-develop-status] | [![TravisCI Status][travis-develop-badge]][travis-develop-status] | [![Test status][test-develop-badge]][test-develop-status] |
+| [Master][master] | [![Build status][appveyor-master-badge]][appveyor-master-status] | [![TravisCI Status][travis-master-badge]][travis-master-status] | [![Test status][test-master-badge]][test-master-status] | [![Coverage][coveralls-master-badge]][coveralls-master] | [![Codecov coverage][codecov-master-badge]][codecov-master] | [![CodeFactor][codefactor-master-badge]][codefactor-master] |
+|-|-|-|-|-|-|-|
+| [**Develop**][develop] | [![Build status][appveyor-develop-badge]][appveyor-develop-status] | [![TravisCI Status][travis-develop-badge]][travis-develop-status] | [![Test status][test-develop-badge]][test-develop-status] | [![Coverage][coveralls-develop-badge]][coveralls-develop] | [![Codecov coverage][codecov-develop-badge]][codecov-develop] | [![CodeFactor][codefactor-develop-badge]][codefactor-develop] |
 
 Matrix bot using the cshrix library.
 
@@ -98,6 +98,12 @@ a [PR][] and update this section.
 [travis-develop-badge]: https://travis-ci.com/Sharparam/cshrix-bot.svg?branch=develop
 [test-develop-status]: https://ci.appveyor.com/project/Sharparam/cshrix-bot/branch/develop/tests
 [test-develop-badge]: https://img.shields.io/appveyor/tests/Sharparam/cshrix-bot/develop.svg
+[coveralls-develop]: https://coveralls.io/github/Sharparam/cshrix-bot?branch=develop
+[coveralls-develop-badge]: https://coveralls.io/repos/github/Sharparam/cshrix-bot/badge.svg?branch=develop
+[codecov-develop]: https://codecov.io/gh/Sharparam/cshrix-bot/branch/develop
+[codecov-develop-badge]: https://codecov.io/gh/Sharparam/cshrix-bot/branch/develop/graph/badge.svg
+[codefactor-develop]: https://www.codefactor.io/repository/github/sharparam/cshrix-bot/overview/develop
+[codefactor-develop-badge]: https://www.codefactor.io/repository/github/sharparam/cshrix-bot/badge/develop
 
 [appveyor-master-status]: https://ci.appveyor.com/project/Sharparam/cshrix-bot/branch/master
 [appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/e331me30fi95jgf1/branch/master?svg=true
@@ -105,3 +111,9 @@ a [PR][] and update this section.
 [travis-master-badge]: https://travis-ci.com/Sharparam/cshrix-bot.svg?branch=master
 [test-master-status]: https://ci.appveyor.com/project/Sharparam/cshrix-bot/branch/master/tests
 [test-master-badge]: https://img.shields.io/appveyor/tests/Sharparam/cshrix-bot/master.svg
+[coveralls-master]: https://coveralls.io/github/Sharparam/cshrix-bot
+[coveralls-master-badge]: https://coveralls.io/repos/github/Sharparam/cshrix-bot/badge.svg
+[codecov-master]: https://codecov.io/gh/Sharparam/cshrix-bot
+[codecov-master-badge]: https://codecov.io/gh/Sharparam/cshrix-bot/branch/master/graph/badge.svg
+[codefactor-master]: https://www.codefactor.io/repository/github/sharparam/cshrix-bot/overview/master
+[codefactor-master-badge]: https://www.codefactor.io/repository/github/sharparam/cshrix-bot/badge/master
