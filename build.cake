@@ -48,6 +48,7 @@ var solutionDir = System.IO.Directory.GetCurrentDirectory();
 
 var testResultDir = Argument("testResultDir", System.IO.Path.Combine(solutionDir, "test-results"));
 var artifactDir = Argument("artifactDir", "./artifacts");
+var coverageResultsFile = System.IO.Path.Combine(artifactDir, "opencover-results.xml");
 var dockerRegistry = Argument("dockerRegistry", "local");
 var slnName = Argument("slnName", "Cshrix.Bot");
 
@@ -222,9 +223,9 @@ Task("Test")
                 MergeOutput = true
             }, (a, e) => a.WithFilter(e));
 
-            OpenCover(c => Test(c), new FilePath("./artifacts/opencover-results.xml"), settings);
+            OpenCover(c => Test(c), new FilePath(coverageResultsFile), settings);
 
-            ReportGenerator("./artifacts/opencover-results.xml", "./artifacts/coverage-report");
+            ReportGenerator(coverageResultsFile, "./artifacts/coverage-report");
         }
         else
         {
@@ -298,7 +299,7 @@ Task("Coveralls")
     {
         Information("Running Coveralls tool on OpenCover result");
 
-        CoverallsIo("./artifacts/opencover-result.xml", new CoverallsIoSettings
+        CoverallsIo(coverageResultsFile, new CoverallsIoSettings
         {
             FullSources = true,
             RepoToken = coverallsRepoToken
@@ -317,7 +318,7 @@ Task("Codecov")
 
         Codecov(new CodecovSettings
         {
-            Files = new[] { "./artifacts/opencover-result.xml" },
+            Files = new[] { coverageResultsFile },
             Required = true,
             Branch = Uri.EscapeDataString(version.BranchName),
             EnvironmentVariables = new Dictionary<string, string>
