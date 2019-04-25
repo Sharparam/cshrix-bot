@@ -24,6 +24,8 @@ namespace Cshrix
 
     using RestEase;
 
+    using Serialization;
+
     public class MatrixClient : IMatrixClient
     {
         private const string DefaultBaseUrl = "https://matrix.org";
@@ -42,7 +44,12 @@ namespace Cshrix
             Log = log;
             var baseUri = clientConfig.CurrentValue.BaseUri ?? new Uri(DefaultBaseUrl);
             httpClient.BaseAddress = baseUri;
-            _api = RestClient.For<IMatrixClientServerApi>(httpClient);
+
+            _api = new RestClient(httpClient)
+            {
+                RequestQueryParamSerializer = new QuoteStrippingJsonRequestQueryParamSerializer()
+            }.For<IMatrixClientServerApi>();
+
             _configMonitor = clientConfig;
             _api.ApiVersion = _configMonitor.CurrentValue.ApiVersion ?? DefaultApiVersion;
             _api.SetBearerToken(_configMonitor.CurrentValue.AccessToken);
