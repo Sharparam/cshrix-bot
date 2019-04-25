@@ -11,6 +11,10 @@ nuget:
 environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
+  github_access_token:
+    secure: H9GNaUHDXdNotkHCbBnrAmifPm0EVND+1eMCMSAGdFf1UbVWHsTBcwSu2UqOwONH
+  COVERALLS_REPO_TOKEN:
+    secure: KBR9chytnX5p8YjEuRn+mwEVKRW7FcWE/gxJaiRosnjVTIozI103+bCesjxpZ1aj
 
 cache:
   - tools -> build.cake
@@ -21,11 +25,14 @@ cache:
 init:
   - git config --global user.name "AppVeyor CI"
   - git config --global user.email "ci@appveyor.com"
+  - git config --global credential.helper store
+  - ps: Add-Content "$HOME\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
 
 install:
   - git config --global user.name "AppVeyor CI"
   - git config --global user.email "ci@appveyor.com"
   - dotnet tool install -g Cake.Tool --version 0.33.0
+  - choco install docfx -y
 
 build_script:
 - ps: dotnet-cake --target="AppVeyor"
@@ -37,6 +44,23 @@ artifacts:
   name: NuGet
 - path: .\artifacts\**\*.zip
   name: Archive
+- path: .\artifacts\opencover-results.xml
+  name: OpenCover
+- path: .\artifacts\coverage-report
+  name: Coverage
+
+deploy:
+- provider: GitHub
+  description: Automatically created by AppVeyor.
+  auth_token:
+    secure: H9GNaUHDXdNotkHCbBnrAmifPm0EVND+1eMCMSAGdFf1UbVWHsTBcwSu2UqOwONH
+  artifact: NuGet,Archive,OpenCover,Coverage
+  draft: true
+  on:
+    appveyor_repo_tag: true
+
+after_deploy:
+- ps: .\appveyor\deploy-docs.ps1
 
 notifications:
 - provider: GitHubPullRequest
