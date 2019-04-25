@@ -37,7 +37,7 @@ install:
   - choco install docfx -y
 
 build_script:
-- ps: dotnet-cake --target="AppVeyor"
+- ps: dotnet-cake --target="AppVeyor" --cover
 
 test: off
 
