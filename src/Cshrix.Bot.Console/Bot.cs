@@ -8,7 +8,6 @@
 
 namespace Cshrix.Bot.Console
 {
-    using System;
     using System.Threading.Tasks;
 
     using Extensions;
