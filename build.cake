@@ -47,9 +47,15 @@ var isTag = HasArgument("isTag")
     ? Argument<string>("isTag") == "true"
     : isAppVeyor
         ? AppVeyor.Environment.Repository.Tag?.IsTag == true
-        : false;
+        : isTravis
+            ? TravisCI.Environment.Build.Tag != null
+            : false;
 
-var isPr = isAppVeyor && AppVeyor.Environment.PullRequest?.IsPullRequest == true;
+var isPr = isAppVeyor
+    ? AppVeyor.Environment.PullRequest?.IsPullRequest == true
+    : isTravis
+        ? TravisCI.Environment.PullRequest?.IsPullRequest == true
+        : false;
 
 var testFailed = false;
 var solutionDir = System.IO.Directory.GetCurrentDirectory();
@@ -123,7 +129,11 @@ Setup(ctx =>
     }
 
     version = GetGitVersion();
-    isDevelop = isAppVeyor ? AppVeyor.Environment.Repository.Branch == "develop" : version.BranchName == "develop";
+    isDevelop = isAppVeyor
+        ? AppVeyor.Environment.Repository.Branch == "develop"
+        : isTravis
+            ? TravisCI.Environment.Build.Branch == "develop"
+            : version.BranchName == "develop";
 
     Information("Version: {0} on {1}", version.InformationalVersion, version.CommitDate);
 });
@@ -393,10 +403,12 @@ Task("CI")
 Task("AppVeyor")
     .IsDependentOn("CI")
     .IsDependentOn("Coveralls")
-    .IsDependentOn("Codecov")
-    .IsDependentOn("Build-Container");
+    .IsDependentOn("Codecov");
 
-Task("Travis").IsDependentOn("CI");
+Task("Travis")
+    .IsDependentOn("CI")
+    .IsDependentOn("Build-Container")
+    .IsDependentOn("Push-Container");
 
 FilePathCollection GetSrcProjectFiles()
 {
