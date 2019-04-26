@@ -430,7 +430,7 @@ var assemblies = [
       { "name": "Cshrix.Helpers.HashCode", "rp": "Cshrix_HashCode.htm", "cl": 10, "ucl": 40, "cal": 50, "tl": 136, "ct": "LineCoverage", "mc": "-", "cb": 6, "tb": 70, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.RandomHelpers", "rp": "Cshrix_RandomHelpers.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 28, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.ReflectionHelpers", "rp": "Cshrix_ReflectionHelpers.htm", "cl": 2, "ucl": 0, "cal": 2, "tl": 19, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 4, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.MatrixClient", "rp": "Cshrix_MatrixClient.htm", "cl": 0, "ucl": 17, "cal": 17, "tl": 63, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.MatrixClient", "rp": "Cshrix_MatrixClient.htm", "cl": 0, "ucl": 20, "cal": 20, "tl": 70, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.ComparisonConditionConverter`1", "rp": "Cshrix_ComparisonConditionConverter_1.htm", "cl": 0, "ucl": 34, "cal": 34, "tl": 94, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 16, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.EventConverter", "rp": "Cshrix_EventConverter.htm", "cl": 94, "ucl": 9, "cal": 103, "tl": 186, "ct": "LineCoverage", "mc": "-", "cb": 26, "tb": 36, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.GroupIdConverter", "rp": "Cshrix_GroupIdConverter.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 29, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
@@ -439,6 +439,7 @@ var assemblies = [
       { "name": "Cshrix.Serialization.MillisecondTimeSpanConverter", "rp": "Cshrix_MillisecondTimeSpanConverter.htm", "cl": 9, "ucl": 11, "cal": 20, "tl": 74, "ct": "LineCoverage", "mc": "-", "cb": 3, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.NotificationActionConverter", "rp": "Cshrix_NotificationActionConverter.htm", "cl": 26, "ucl": 4, "cal": 30, "tl": 92, "ct": "LineCoverage", "mc": "-", "cb": 15, "tb": 20, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.OneTimeKeyConverter", "rp": "Cshrix_OneTimeKeyConverter.htm", "cl": 10, "ucl": 23, "cal": 33, "tl": 96, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 18, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer", "rp": "Cshrix_QuoteStrippingJsonRequestQueryParamSerializer.htm", "cl": 0, "ucl": 14, "cal": 14, "tl": 64, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.RoomAliasConverter", "rp": "Cshrix_RoomAliasConverter.htm", "cl": 3, "ucl": 1, "cal": 4, "tl": 29, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.SecondTimeSpanConverter", "rp": "Cshrix_SecondTimeSpanConverter.htm", "cl": 0, "ucl": 20, "cal": 20, "tl": 74, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.ServerNameConverter", "rp": "Cshrix_ServerNameConverter.htm", "cl": 16, "ucl": 10, "cal": 26, "tl": 88, "ct": "LineCoverage", "mc": "-", "cb": 9, "tb": 18, "lch": [], "bch": [], "hc": [] },
@@ -566,6 +567,13 @@ var riskHotspots = [
       { "value": 42, "exceeded": true },
     ]},
   {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer", "reportPath": "Cshrix_QuoteStrippingJsonRequestQueryParamSerializer.htm", "methodName": "SerializeQueryCollectionParam()", "methodShortName": "SerializeQueryCollectionParam()", "fileIndex": 0, "line": 38,
+    "metrics": [
+      { "value": 6, "exceeded": false },
+      { "value": 4, "exceeded": false },
+      { "value": 42, "exceeded": true },
+    ]},
+  {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.SecondTimeSpanConverter", "reportPath": "Cshrix_SecondTimeSpanConverter.htm", "methodName": "System.Object Cshrix.Serialization.SecondTimeSpanConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 40,
     "metrics": [
       { "value": 6, "exceeded": false },
@@ -661,6 +669,13 @@ var riskHotspots = [
     "metrics": [
       { "value": 4, "exceeded": false },
       { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer", "reportPath": "Cshrix_QuoteStrippingJsonRequestQueryParamSerializer.htm", "methodName": "SerializeQueryParam()", "methodShortName": "SerializeQueryParam()", "fileIndex": 0, "line": 24,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 2, "exceeded": false },
       { "value": 20, "exceeded": true },
     ]},
   {

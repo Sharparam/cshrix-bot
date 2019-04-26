@@ -15243,6 +15243,44 @@ references:
   isSpec: "True"
   fullName: Cshrix.Serialization.OneTimeKeyConverter.WriteJson
   nameWithType: OneTimeKeyConverter.WriteJson
+- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer
+  name: QuoteStrippingJsonRequestQueryParamSerializer
+  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html
+  commentId: T:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer
+  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer
+  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer
+- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam*
+  name: SerializeQueryCollectionParam
+  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html#Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryCollectionParam_
+  commentId: Overload:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam
+  isSpec: "True"
+  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam
+  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam
+- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam``1(System.String,System.Collections.Generic.IEnumerable{``0},RestEase.RequestQueryParamSerializerInfo)
+  name: SerializeQueryCollectionParam<T>(String, IEnumerable<T>, RequestQueryParamSerializerInfo)
+  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html#Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryCollectionParam__1_System_String_System_Collections_Generic_IEnumerable___0__RestEase_RequestQueryParamSerializerInfo_
+  commentId: M:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam``1(System.String,System.Collections.Generic.IEnumerable{``0},RestEase.RequestQueryParamSerializerInfo)
+  name.vb: SerializeQueryCollectionParam(Of T)(String, IEnumerable(Of T), RequestQueryParamSerializerInfo)
+  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam<T>(System.String, System.Collections.Generic.IEnumerable<T>, RestEase.RequestQueryParamSerializerInfo)
+  fullName.vb: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam(Of T)(System.String, System.Collections.Generic.IEnumerable(Of T), RestEase.RequestQueryParamSerializerInfo)
+  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam<T>(String, IEnumerable<T>, RequestQueryParamSerializerInfo)
+  nameWithType.vb: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam(Of T)(String, IEnumerable(Of T), RequestQueryParamSerializerInfo)
+- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam*
+  name: SerializeQueryParam
+  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html#Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryParam_
+  commentId: Overload:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam
+  isSpec: "True"
+  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam
+  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam
+- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam``1(System.String,``0,RestEase.RequestQueryParamSerializerInfo)
+  name: SerializeQueryParam<T>(String, T, RequestQueryParamSerializerInfo)
+  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html#Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryParam__1_System_String___0_RestEase_RequestQueryParamSerializerInfo_
+  commentId: M:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam``1(System.String,``0,RestEase.RequestQueryParamSerializerInfo)
+  name.vb: SerializeQueryParam(Of T)(String, T, RequestQueryParamSerializerInfo)
+  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam<T>(System.String, T, RestEase.RequestQueryParamSerializerInfo)
+  fullName.vb: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam(Of T)(System.String, T, RestEase.RequestQueryParamSerializerInfo)
+  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam<T>(String, T, RequestQueryParamSerializerInfo)
+  nameWithType.vb: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam(Of T)(String, T, RequestQueryParamSerializerInfo)
 - uid: Cshrix.Serialization.RoomAliasConverter
   name: RoomAliasConverter
   href: api/Cshrix.Serialization.RoomAliasConverter.html
