@@ -43,6 +43,14 @@ var coverallsRepoToken = HasArgument("coveralls-token")
     ? Argument<string>("CoverallsToken")
     : EnvironmentVariable("COVERALLS_REPO_TOKEN");
 
+var isTag = HasArgument("isTag")
+    ? Argument<string>("isTag") == "true"
+    : isAppVeyor
+        ? AppVeyor.Environment.Repository.Tag?.IsTag == true
+        : false;
+
+var isPr = isAppVeyor && AppVeyor.Environment.PullRequest?.IsPullRequest == true;
+
 var testFailed = false;
 var solutionDir = System.IO.Directory.GetCurrentDirectory();
 
@@ -50,9 +58,12 @@ var testResultDir = Argument("testResultDir", System.IO.Path.Combine(solutionDir
 var artifactDir = Argument("artifactDir", "./artifacts");
 var coverageResultsFile = System.IO.Path.Combine(artifactDir, "opencover-results.xml");
 var dockerRegistry = Argument("dockerRegistry", "local");
+var dockerName = Argument("dockerName", "cshrix-bot");
 var slnName = Argument("slnName", "Cshrix.Bot");
 
 var solutionFile = System.IO.Path.Combine(solutionDir, $"{slnName}.sln");
+var dockerImageName = $"{dockerRegistry}/{dockerName}";
+var isDevelop = false;
 
 GitVersion version = null;
 
@@ -112,6 +123,7 @@ Setup(ctx =>
     }
 
     version = GetGitVersion();
+    isDevelop = isAppVeyor ? AppVeyor.Environment.Repository.Branch == "develop" : version.BranchName == "develop";
 
     Information("Version: {0} on {1}", version.InformationalVersion, version.CommitDate);
 });
@@ -331,16 +343,24 @@ Task("Codecov")
 Task("Build-Container")
     .IsDependentOn("Publish")
     .Does(() => {
-        var imageName = GetImageName();
-        var tagVersion = $"{imageName}:{version.FullSemVer}".ToLower();
-        var tagLatest = $"{imageName}:latest".ToLower();
+        var tagSha = $"{dockerImageName}:{version.Sha}".ToLower();
+        var tagVersion = $"{dockerImageName}:{version.FullSemVer}".ToLower();
+        var tagLatest = $"{dockerImageName}:latest".ToLower();
 
-        Information($"Build docker image {tagVersion}");
-        Information($"Build docker image {tagLatest}");
+        Information($"Building docker image {tagSha}");
+        Information($"Building docker image {tagVersion}");
+
+        var tags = new List<string> { tagSha, tagVersion };
+
+        if (isTag && !isPr)
+        {
+            tags.Add(tagLatest);
+            Information($"Building docker image {tagLatest}");
+        }
 
         var buildArgs = new DockerImageBuildSettings
         {
-            Tag = new[] { tagVersion, tagLatest }
+            Tag = tags.ToArray()
         };
 
         DockerBuild(buildArgs, solutionDir);
@@ -348,9 +368,11 @@ Task("Build-Container")
 
 Task("Push-Container")
     .IsDependentOn("Build-Container")
-    .Does(() => {
-        var imageName = GetImageName().ToLower();
-        DockerPush(imageName);
+    .WithCriteria(!isPr)
+    .WithCriteria(isDevelop || isTag)
+    .Does(() =>
+    {
+        DockerPush(dockerImageName.ToLower());
     });
 
 Task("Default")
@@ -371,18 +393,14 @@ Task("CI")
 Task("AppVeyor")
     .IsDependentOn("CI")
     .IsDependentOn("Coveralls")
-    .IsDependentOn("Codecov");
+    .IsDependentOn("Codecov")
+    .IsDependentOn("Build-Container");
 
 Task("Travis").IsDependentOn("CI");
 
 FilePathCollection GetSrcProjectFiles()
 {
     return GetFiles("./src/**/*.csproj");
-}
-
-string GetImageName()
-{
-    return $"{dockerRegistry}/{slnName}";
 }
 
 RunTarget(target);
