@@ -34,7 +34,7 @@ init:
   - git config --global user.email "ci@appveyor.com"
   - git config --global credential.helper store
   - ps: Add-Content "$HOME\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
-  - ps: docker login -u "$env:DOCKER_USER" -p "$env:DOCKER_PASSWORD"
+  - ps: $env:DOCKER_PASSWORD | docker login -u "$env:DOCKER_USER" --password-stdin
 
 install:
   - git config --global user.name "AppVeyor CI"
