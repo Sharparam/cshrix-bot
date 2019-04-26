@@ -392,10 +392,16 @@ Task("Build-Container")
 Task("Push-Container")
     .IsDependentOn("Build-Container")
     .WithCriteria(!isPr)
-    .WithCriteria(isDevelop || isTag)
     .Does(() =>
     {
-        DockerPush(dockerImageName.ToLower());
+        if (isDevelop || isTag)
+        {
+            DockerPush(dockerImageName.ToLower());
+        }
+        else
+        {
+            Information("Not develop branch or a tag, skipping docker push");
+        }
     });
 
 Task("Default")
