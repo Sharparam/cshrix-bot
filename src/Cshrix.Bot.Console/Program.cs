@@ -27,12 +27,14 @@ namespace Cshrix.Bot.Console
             ServiceProvider provider = null;
             ILogger log = null;
 
+            var basePath = AppContext.BaseDirectory;
+
             try
             {
-                var configBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                var configBuilder = new ConfigurationBuilder().SetBasePath(basePath)
                     .AddJsonFile("appsettings.json", false, true)
                     .AddJsonFile("appsettings.local.json", true, true)
-                    .AddEnvironmentVariables("CSHRIX_BOT")
+                    .AddEnvironmentVariables("CSHRIXBOT_")
                     .AddCommandLine(args);
 
                 var configuration = configBuilder.Build();
