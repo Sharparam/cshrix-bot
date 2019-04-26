@@ -43,14 +43,7 @@ var coverallsRepoToken = HasArgument("coveralls-token")
     ? Argument<string>("CoverallsToken")
     : EnvironmentVariable("COVERALLS_REPO_TOKEN");
 
-var isTag = HasArgument("isTag")
-    ? Argument<string>("isTag") == "true"
-    : isAppVeyor
-        ? AppVeyor.Environment.Repository.Tag?.IsTag == true
-        : isTravis
-            ? TravisCI.Environment.Build.Tag != null
-            : false;
-
+var isTag = IsTag();
 var isPr = isAppVeyor
     ? AppVeyor.Environment.PullRequest?.IsPullRequest == true
     : isTravis
@@ -72,6 +65,26 @@ var dockerImageName = $"{dockerRegistry}/{dockerName}";
 var isDevelop = false;
 
 GitVersion version = null;
+
+bool IsTag()
+{
+    if (HasArgument("isTag"))
+    {
+        return Argument<string>("isTag") == "true";
+    }
+
+    return IsAppVeyorTag() || IsTravisTag();
+}
+
+bool IsTravisTag()
+{
+    return isTravis && !string.IsNullOrWhiteSpace(TravisCI.Environment.Build.Tag);
+}
+
+bool IsAppVeyorTag()
+{
+    return isAppVeyor && AppVeyor.Environment.Repository.Tag?.IsTag == true;
+}
 
 GitVersion GetGitVersion(bool buildServerOutput = false)
 {
