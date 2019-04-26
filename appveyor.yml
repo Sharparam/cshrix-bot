@@ -43,7 +43,7 @@ install:
   - choco install docfx -y
 
 build_script:
-- ps: dotnet-cake --target="AppVeyor" --cover --dockerRegistry="$env:DOCKER_REGISTRY"
+- ps: dotnet-cake --target="AppVeyor" --cover
 
 after_build:
 - ps: .\appveyor\deploy-docs.ps1

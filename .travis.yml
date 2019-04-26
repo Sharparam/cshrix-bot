@@ -28,7 +28,7 @@ before_script:
   - PATH=$PATH:/home/travis/.dotnet/tools
 
 script:
-  - dotnet-cake --target="Travis"
+  - dotnet-cake --target="Travis" --dockerRegistry="$DOCKER_REGISTRY"
 
 cache:
   directories:
