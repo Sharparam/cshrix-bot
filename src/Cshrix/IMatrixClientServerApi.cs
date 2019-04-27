@@ -73,7 +73,7 @@ namespace Cshrix
         Task DeleteThirdPartyIdentifierAsync([Body] ThirdPartyIdentifierDeletionRequest data);
 
         [Post("_matrix/client/{apiVersion}/account/deactivate")]
-        Task DeactivateAccountAsync([Body] AuthenticationContainer data);
+        Task<HttpResponseMessage> DeactivateAccountAsync([Body] AuthenticationContainer data);
 
         [Post("_matrix/client/{apiVersion}/account/password")]
         Task ChangePasswordAsync([Body] ChangePasswordRequest data);
