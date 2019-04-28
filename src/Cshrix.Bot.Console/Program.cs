@@ -20,6 +20,8 @@ namespace Cshrix.Bot.Console
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
 
+    using Newtonsoft.Json.Converters;
+
     /// <summary>
     /// Main program class containing the entry point.
     /// </summary>

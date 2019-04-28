@@ -1,4 +1,4 @@
-// <copyright file="QuoteStrippingJsonRequestQueryParamSerializer.cs">
+// <copyright file="MatrixApiQueryParamSerializer.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -8,7 +8,11 @@
 
 namespace Cshrix.Serialization
 {
+    using System;
     using System.Collections.Generic;
+    using System.Globalization;
+
+    using Extensions;
 
     using Newtonsoft.Json;
 
@@ -16,10 +20,17 @@ namespace Cshrix.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Custom serializer for RestEase that converts a query parameter to JSON and strips any leading and trailing
-    /// quotation marks.
+    /// Custom serializer for RestEase that converts query parameters to relevant data for the Matrix API,
+    /// depending on their type.
     /// </summary>
-    public sealed class QuoteStrippingJsonRequestQueryParamSerializer : RequestQueryParamSerializer
+    /// <remarks>
+    ///  * Instances of <see cref="TimeSpan" /> are turned into their duration in milliseconds.
+    ///  * Instances of <see cref="DateTime" /> and <see cref="DateTimeOffset" /> are turned into their UNIX
+    ///    timestamp in milliseconds.
+    ///  * Other types are serialized using Newtonsoft.Json, stripping any leading and trailing double quotes
+    ///    afterwards.
+    /// </remarks>
+    public sealed class MatrixApiQueryParamSerializer : RequestQueryParamSerializer
     {
         /// <inheritdoc />
         /// <summary>
@@ -78,12 +89,63 @@ namespace Cshrix.Serialization
         }
 
         /// <summary>
+        /// Serializes a value appropriately depending on its type.
+        /// </summary>
+        /// <param name="value">The value to serialize.</param>
+        /// <typeparam name="T">The type of the value being serialized.</typeparam>
+        /// <returns>An appropriate string representation of <paramref name="value" />.</returns>
+        private static string Serialize<T>(T value)
+        {
+            switch (value)
+            {
+                case null:
+                    return null;
+
+                case TimeSpan timeSpan:
+                    return SerializeTimeSpan(timeSpan);
+
+                case DateTime dateTime:
+                    return SerializeDateTime(dateTime);
+
+                case DateTimeOffset dateTimeOffset:
+                    return SerializeDateTimeOffset(dateTimeOffset);
+
+                default:
+                    return SerializeToStrippedJson(value);
+            }
+        }
+
+        /// <summary>
+        /// Serializes a <see cref="TimeSpan" /> into its duration in milliseconds.
+        /// </summary>
+        /// <param name="value">The value to serialize.</param>
+        /// <returns>The duration of <paramref name="value" /> in milliseconds.</returns>
+        private static string SerializeTimeSpan(TimeSpan value) =>
+            value.TotalMilliseconds.ToString(CultureInfo.InvariantCulture);
+
+        /// <summary>
+        /// Serializes a <see cref="DateTime" /> into its Unix timestamp in milliseconds.
+        /// </summary>
+        /// <param name="value">The value to serialize.</param>
+        /// <returns>The Unix timestamp in milliseconds for <paramref name="value" />.</returns>
+        private static string SerializeDateTime(DateTime value) =>
+            value.ToUnixTimeMilliseconds().ToString(CultureInfo.InvariantCulture);
+
+        /// <summary>
+        /// Serializes a <see cref="DateTimeOffset" /> into its Unix timestamp in milliseconds.
+        /// </summary>
+        /// <param name="value">The value to serialize.</param>
+        /// <returns>The Unix timestamp in milliseconds for <paramref name="value" />.</returns>
+        private static string SerializeDateTimeOffset(DateTimeOffset value) =>
+            value.ToUnixTimeMilliseconds().ToString(CultureInfo.InvariantCulture);
+
+        /// <summary>
         /// Serializes a value into JSON using the default Newtonsoft.Json serializer.
         /// </summary>
         /// <param name="value">The value to serialize.</param>
         /// <typeparam name="T">The type of <paramref name="value" />.</typeparam>
         /// <returns>The JSON representation of <paramref name="value" />.</returns>
-        private static string Serialize<T>(T value)
+        private static string SerializeToStrippedJson<T>(T value)
         {
             var serializedValue = JsonConvert.SerializeObject(value);
             var stripped = StripQuotes(serializedValue);

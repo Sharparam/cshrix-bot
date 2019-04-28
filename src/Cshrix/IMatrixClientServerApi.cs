@@ -633,7 +633,7 @@ namespace Cshrix
             [Query] string filter = null,
             [Query("full_state")] bool fullState = false,
             [Query("set_presence")] string setPresence = "offline",
-            [Query] long timeout = 0);
+            [Query(QuerySerializationMethod.Serialized)] TimeSpan timeout = default);
 
         [Post("_matrix/client/{apiVersion}/user/{userId}/filter")]
         Task<FilterIdContainer> UploadFilterAsync([Path] UserId userId, [Body] Filter data);
@@ -895,7 +895,7 @@ namespace Cshrix
         [Get("_matrix/media/{apiVersion}/preview_url")]
         Task<PreviewInfo> GetUriPreviewInfoAsync(
             [Query("url")] Uri uri,
-            [Query("ts")] long? timestamp = null);
+            [Query("ts", QuerySerializationMethod.Serialized)] DateTimeOffset? at = null);
 
         [Get("_matrix/media/{apiVersion}/config")]
         Task<ContentConfiguration> GetContentConfigurationAsync();

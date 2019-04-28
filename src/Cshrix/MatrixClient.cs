@@ -71,7 +71,7 @@ namespace Cshrix
             _api = new RestClient(httpClient)
             {
                 RequestPathParamSerializer = new StringEnumRequestPathParamSerializer(),
-                RequestQueryParamSerializer = new QuoteStrippingJsonRequestQueryParamSerializer()
+                RequestQueryParamSerializer = new MatrixApiQueryParamSerializer()
             }.For<IMatrixClientServerApi>();
 
             _configMonitor = clientConfig;

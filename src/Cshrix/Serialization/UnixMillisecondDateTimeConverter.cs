@@ -31,6 +31,8 @@ namespace Cshrix.Serialization
 {
     using System;
 
+    using Extensions;
+
     using Helpers;
 
     using Newtonsoft.Json;
@@ -43,11 +45,6 @@ namespace Cshrix.Serialization
     /// </summary>
     public class UnixMillisecondDateTimeConverter : DateTimeConverterBase
     {
-        /// <summary>
-        /// A <see cref="DateTime" /> set to the UNIX epoch (1970-01-01T00:00:00Z).
-        /// </summary>
-        private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-
         /// <inheritdoc />
         /// <summary>Writes the JSON representation of the object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
@@ -60,7 +57,7 @@ namespace Cshrix.Serialization
             switch (value)
             {
                 case DateTime dateTime:
-                    milliseconds = (long)(dateTime.ToUniversalTime() - UnixEpoch).TotalMilliseconds;
+                    milliseconds = dateTime.ToUnixTimeMilliseconds();
                     break;
 
                 case DateTimeOffset dateTimeOffset:
@@ -135,7 +132,7 @@ namespace Cshrix.Serialization
 
             return type == typeof(DateTimeOffset)
                 ? DateTimeOffset.FromUnixTimeMilliseconds(milliseconds)
-                : UnixEpoch.AddMilliseconds(milliseconds);
+                : DateTimeUtils.FromUnixTimeMilliseconds(milliseconds);
         }
     }
 }

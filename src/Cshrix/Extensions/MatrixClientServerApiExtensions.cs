@@ -38,15 +38,6 @@ namespace Cshrix.Extensions
         public static void SetBearerToken(this IMatrixClientServerApi api, string accessToken) =>
             api.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-        public static Task<SyncResponse> SyncAsync(
-            this IMatrixClientServerApi api,
-            string since = null,
-            string filter = null,
-            bool fullState = false,
-            string setPresence = "offline",
-            TimeSpan timeout = default) =>
-            api.SyncAsync(since, filter, fullState, setPresence, (long)timeout.TotalMilliseconds);
-
         public static Task<OpenIdToken> RequestOpenIdTokenAsync(this IMatrixClientServerApi api, UserId userId) =>
             api.RequestOpenIdTokenAsync(userId, new object());
 
@@ -112,15 +103,6 @@ namespace Cshrix.Extensions
             {
                 return await CreateContentFromResponse(response);
             }
-        }
-
-        public static Task<PreviewInfo> GetUriPreviewInfoAsync(
-            this IMatrixClientServerApi api,
-            Uri uri,
-            DateTimeOffset? at = null)
-        {
-            var timestamp = at?.ToUnixTimeMilliseconds();
-            return api.GetUriPreviewInfoAsync(uri, timestamp);
         }
 
         /// <summary>
