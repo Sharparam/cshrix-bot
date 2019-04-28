@@ -148,7 +148,7 @@
                             <a href="Cshrix.Data.AvailableContainer.html" title="AvailableContainer" class="">AvailableContainer</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.AvatarUrlContainer.html" title="AvatarUrlContainer" class="">AvatarUrlContainer</a>
+                            <a href="Cshrix.Data.AvatarUriContainer.html" title="AvatarUriContainer" class="">AvatarUriContainer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.BaseUriContainer.html" title="BaseUriContainer" class="">BaseUriContainer</a>
@@ -883,10 +883,10 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.DictionaryExtensions.html" title="DictionaryExtensions" class="">DictionaryExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseMessageExtensions.html" title="HttpResponseMessageExtensions" class="">HttpResponseMessageExtensions</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Extensions.JObjectExtensions.html" title="JObjectExtensions" class="">JObjectExtensions</a>
@@ -903,9 +903,6 @@
                       <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
                         
                         <ul class="nav level2">
-                          <li class="">
-                            <a href="Cshrix.Helpers.EnumHelpers.html" title="EnumHelpers" class="">EnumHelpers</a>
-                          </li>
                           <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
@@ -1018,7 +1015,8 @@
   
   <h1 id="Cshrix_Configuration_MatrixClientConfiguration" data-uid="Cshrix.Configuration.MatrixClientConfiguration" class="text-break">Class MatrixClientConfiguration
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Configuration for <a class="xref" href="Cshrix.MatrixClient.html">MatrixClient</a>.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1062,11 +1060,13 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Configuration_MatrixClientConfiguration_AccessToken.md&amp;value=---%0Auid%3A%20Cshrix.Configuration.MatrixClientConfiguration.AccessToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Configuration/MatrixClientConfiguration.cs/#L19">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Configuration/MatrixClientConfiguration.cs/#L35">View Source</a>
   </span>
   <a id="Cshrix_Configuration_MatrixClientConfiguration_AccessToken_" data-uid="Cshrix.Configuration.MatrixClientConfiguration.AccessToken*"></a>
   <h4 id="Cshrix_Configuration_MatrixClientConfiguration_AccessToken" data-uid="Cshrix.Configuration.MatrixClientConfiguration.AccessToken">AccessToken</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Access token to use for authenticating the user.
+Not required for endpoints that don't require authentication.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1092,11 +1092,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Configuration_MatrixClientConfiguration_ApiVersion.md&amp;value=---%0Auid%3A%20Cshrix.Configuration.MatrixClientConfiguration.ApiVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Configuration/MatrixClientConfiguration.cs/#L17">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Configuration/MatrixClientConfiguration.cs/#L29">View Source</a>
   </span>
   <a id="Cshrix_Configuration_MatrixClientConfiguration_ApiVersion_" data-uid="Cshrix.Configuration.MatrixClientConfiguration.ApiVersion*"></a>
   <h4 id="Cshrix_Configuration_MatrixClientConfiguration_ApiVersion" data-uid="Cshrix.Configuration.MatrixClientConfiguration.ApiVersion">ApiVersion</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The API version of the API to use.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1117,16 +1118,22 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Configuration_MatrixClientConfiguration_ApiVersion_examples">Examples</h5>
+  <p>r0</p>
+
+  <p>unstable</p>
+
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Configuration_MatrixClientConfiguration_BaseUri.md&amp;value=---%0Auid%3A%20Cshrix.Configuration.MatrixClientConfiguration.BaseUri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Configuration/MatrixClientConfiguration.cs/#L15">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Configuration/MatrixClientConfiguration.cs/#L22">View Source</a>
   </span>
   <a id="Cshrix_Configuration_MatrixClientConfiguration_BaseUri_" data-uid="Cshrix.Configuration.MatrixClientConfiguration.BaseUri*"></a>
   <h4 id="Cshrix_Configuration_MatrixClientConfiguration_BaseUri" data-uid="Cshrix.Configuration.MatrixClientConfiguration.BaseUri">BaseUri</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The base URI of the homeserver.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1147,6 +1154,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Configuration_MatrixClientConfiguration_BaseUri_examples">Examples</h5>
+  <p><a href="https://matrix.org">https://matrix.org</a></p>
+
 </article>
           </div>
           
@@ -1158,7 +1168,7 @@
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Configuration_MatrixClientConfiguration.md&amp;value=---%0Auid%3A%20Cshrix.Configuration.MatrixClientConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Configuration/MatrixClientConfiguration.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Configuration/MatrixClientConfiguration.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

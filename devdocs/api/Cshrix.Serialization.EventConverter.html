@@ -148,7 +148,7 @@
                             <a href="Cshrix.Data.AvailableContainer.html" title="AvailableContainer" class="">AvailableContainer</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.AvatarUrlContainer.html" title="AvatarUrlContainer" class="">AvatarUrlContainer</a>
+                            <a href="Cshrix.Data.AvatarUriContainer.html" title="AvatarUriContainer" class="">AvatarUriContainer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.BaseUriContainer.html" title="BaseUriContainer" class="">BaseUriContainer</a>
@@ -883,10 +883,10 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.DictionaryExtensions.html" title="DictionaryExtensions" class="">DictionaryExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseMessageExtensions.html" title="HttpResponseMessageExtensions" class="">HttpResponseMessageExtensions</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Extensions.JObjectExtensions.html" title="JObjectExtensions" class="">JObjectExtensions</a>
@@ -903,9 +903,6 @@
                       <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
                         
                         <ul class="nav level2">
-                          <li class="">
-                            <a href="Cshrix.Helpers.EnumHelpers.html" title="EnumHelpers" class="">EnumHelpers</a>
-                          </li>
                           <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
@@ -1018,7 +1015,8 @@
   
   <h1 id="Cshrix_Serialization_EventConverter" data-uid="Cshrix.Serialization.EventConverter" class="text-break">Class EventConverter
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A converter to convert <a class="xref" href="Cshrix.Data.Events.Event.html">Event</a> objects to/from their JSON representation.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1069,6 +1067,10 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class EventConverter : JsonConverter&lt;Event&gt;</code></pre>
   </div>
+  <h5 id="Cshrix_Serialization_EventConverter_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This is a &quot;smart&quot; converter, it will convert JSON to the event that fits best according to available
+properties in the JSON data. The same applies for the <a class="xref" href="Cshrix.Data.Events.Content.EventContent.html">EventContent</a> supplied with the event.</p>
+</div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
@@ -1076,11 +1078,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_EventConverter_CanWrite.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.EventConverter.CanWrite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/EventConverter.cs/#L73">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/EventConverter.cs/#L94">View Source</a>
   </span>
   <a id="Cshrix_Serialization_EventConverter_CanWrite_" data-uid="Cshrix.Serialization.EventConverter.CanWrite*"></a>
   <h4 id="Cshrix_Serialization_EventConverter_CanWrite" data-uid="Cshrix.Serialization.EventConverter.CanWrite">CanWrite</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this <span class="xref">Newtonsoft.Json.JsonConverter</span> can write JSON.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1097,7 +1100,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if this <span class="xref">Newtonsoft.Json.JsonConverter</span> can write JSON; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1110,11 +1114,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_EventConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_Cshrix_Data_Events_Event_System_Boolean_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.EventConverter.ReadJson(Newtonsoft.Json.JsonReader%2CSystem.Type%2CCshrix.Data.Events.Event%2CSystem.Boolean%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/EventConverter.cs/#L78">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/EventConverter.cs/#L117">View Source</a>
   </span>
   <a id="Cshrix_Serialization_EventConverter_ReadJson_" data-uid="Cshrix.Serialization.EventConverter.ReadJson*"></a>
   <h4 id="Cshrix_Serialization_EventConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_Cshrix_Data_Events_Event_System_Boolean_Newtonsoft_Json_JsonSerializer_" data-uid="Cshrix.Serialization.EventConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Data.Events.Event,System.Boolean,Newtonsoft.Json.JsonSerializer)">ReadJson(JsonReader, Type, Event, Boolean, JsonSerializer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the JSON representation of the object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1133,27 +1138,32 @@
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonReader</span></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>The <span class="xref">Newtonsoft.Json.JsonReader</span> to read from.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">objectType</span></td>
-        <td></td>
+        <td><p>Type of the object.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Events.Event.html">Event</a></td>
         <td><span class="parametername">existingValue</span></td>
-        <td></td>
+        <td><p>The existing value of object being read. If there is no existing value then <code>null</code> will be used.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">hasExistingValue</span></td>
-        <td></td>
+        <td><p>The existing value has a value.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonSerializer</span></td>
         <td><span class="parametername">serializer</span></td>
-        <td></td>
+        <td><p>The calling serializer.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1168,7 +1178,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Events.Event.html">Event</a></td>
-        <td></td>
+        <td><p>An appropriate <a class="xref" href="Cshrix.Data.Events.Event.html">Event</a> instance.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1179,11 +1190,13 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_EventConverter_WriteJson_Newtonsoft_Json_JsonWriter_Cshrix_Data_Events_Event_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.EventConverter.WriteJson(Newtonsoft.Json.JsonWriter%2CCshrix.Data.Events.Event%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/EventConverter.cs/#L75">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/EventConverter.cs/#L104">View Source</a>
   </span>
   <a id="Cshrix_Serialization_EventConverter_WriteJson_" data-uid="Cshrix.Serialization.EventConverter.WriteJson*"></a>
   <h4 id="Cshrix_Serialization_EventConverter_WriteJson_Newtonsoft_Json_JsonWriter_Cshrix_Data_Events_Event_Newtonsoft_Json_JsonSerializer_" data-uid="Cshrix.Serialization.EventConverter.WriteJson(Newtonsoft.Json.JsonWriter,Cshrix.Data.Events.Event,Newtonsoft.Json.JsonSerializer)">WriteJson(JsonWriter, Event, JsonSerializer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Throws <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a>, as this converter doesn't implement custom serialization
+and instead delegates this to the default serialization behaviour by Newtonsoft.Json;</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1202,17 +1215,20 @@
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonWriter</span></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>The <span class="xref">Newtonsoft.Json.JsonWriter</span> to write to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Events.Event.html">Event</a></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The value.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonSerializer</span></td>
         <td><span class="parametername">serializer</span></td>
-        <td></td>
+        <td><p>The calling serializer.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1229,7 +1245,7 @@
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_EventConverter.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.EventConverter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/EventConverter.cs/#L23" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/EventConverter.cs/#L31" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

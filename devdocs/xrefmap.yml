@@ -380,19 +380,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.AvailableContainer.AvailableContainer
   nameWithType: AvailableContainer.AvailableContainer
-- uid: Cshrix.Data.AvailableContainer.Available
-  name: Available
-  href: api/Cshrix.Data.AvailableContainer.html#Cshrix_Data_AvailableContainer_Available
-  commentId: P:Cshrix.Data.AvailableContainer.Available
-  fullName: Cshrix.Data.AvailableContainer.Available
-  nameWithType: AvailableContainer.Available
-- uid: Cshrix.Data.AvailableContainer.Available*
-  name: Available
-  href: api/Cshrix.Data.AvailableContainer.html#Cshrix_Data_AvailableContainer_Available_
-  commentId: Overload:Cshrix.Data.AvailableContainer.Available
-  isSpec: "True"
-  fullName: Cshrix.Data.AvailableContainer.Available
-  nameWithType: AvailableContainer.Available
 - uid: Cshrix.Data.AvailableContainer.CompareTo(Cshrix.Data.AvailableContainer)
   name: CompareTo(AvailableContainer)
   href: api/Cshrix.Data.AvailableContainer.html#Cshrix_Data_AvailableContainer_CompareTo_Cshrix_Data_AvailableContainer_
@@ -450,6 +437,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.AvailableContainer.GetHashCode
   nameWithType: AvailableContainer.GetHashCode
+- uid: Cshrix.Data.AvailableContainer.IsAvailable
+  name: IsAvailable
+  href: api/Cshrix.Data.AvailableContainer.html#Cshrix_Data_AvailableContainer_IsAvailable
+  commentId: P:Cshrix.Data.AvailableContainer.IsAvailable
+  fullName: Cshrix.Data.AvailableContainer.IsAvailable
+  nameWithType: AvailableContainer.IsAvailable
+- uid: Cshrix.Data.AvailableContainer.IsAvailable*
+  name: IsAvailable
+  href: api/Cshrix.Data.AvailableContainer.html#Cshrix_Data_AvailableContainer_IsAvailable_
+  commentId: Overload:Cshrix.Data.AvailableContainer.IsAvailable
+  isSpec: "True"
+  fullName: Cshrix.Data.AvailableContainer.IsAvailable
+  nameWithType: AvailableContainer.IsAvailable
 - uid: Cshrix.Data.AvailableContainer.op_Equality(Cshrix.Data.AvailableContainer,Cshrix.Data.AvailableContainer)
   name: Equality(AvailableContainer, AvailableContainer)
   href: api/Cshrix.Data.AvailableContainer.html#Cshrix_Data_AvailableContainer_op_Equality_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_
@@ -654,38 +654,38 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.AvailableContainer.True
   nameWithType: AvailableContainer.True
-- uid: Cshrix.Data.AvatarUrlContainer
-  name: AvatarUrlContainer
-  href: api/Cshrix.Data.AvatarUrlContainer.html
-  commentId: T:Cshrix.Data.AvatarUrlContainer
-  fullName: Cshrix.Data.AvatarUrlContainer
-  nameWithType: AvatarUrlContainer
-- uid: Cshrix.Data.AvatarUrlContainer.#ctor(System.Uri)
-  name: AvatarUrlContainer(Uri)
-  href: api/Cshrix.Data.AvatarUrlContainer.html#Cshrix_Data_AvatarUrlContainer__ctor_System_Uri_
-  commentId: M:Cshrix.Data.AvatarUrlContainer.#ctor(System.Uri)
-  fullName: Cshrix.Data.AvatarUrlContainer.AvatarUrlContainer(System.Uri)
-  nameWithType: AvatarUrlContainer.AvatarUrlContainer(Uri)
-- uid: Cshrix.Data.AvatarUrlContainer.#ctor*
-  name: AvatarUrlContainer
-  href: api/Cshrix.Data.AvatarUrlContainer.html#Cshrix_Data_AvatarUrlContainer__ctor_
-  commentId: Overload:Cshrix.Data.AvatarUrlContainer.#ctor
+- uid: Cshrix.Data.AvatarUriContainer
+  name: AvatarUriContainer
+  href: api/Cshrix.Data.AvatarUriContainer.html
+  commentId: T:Cshrix.Data.AvatarUriContainer
+  fullName: Cshrix.Data.AvatarUriContainer
+  nameWithType: AvatarUriContainer
+- uid: Cshrix.Data.AvatarUriContainer.#ctor(System.Uri)
+  name: AvatarUriContainer(Uri)
+  href: api/Cshrix.Data.AvatarUriContainer.html#Cshrix_Data_AvatarUriContainer__ctor_System_Uri_
+  commentId: M:Cshrix.Data.AvatarUriContainer.#ctor(System.Uri)
+  fullName: Cshrix.Data.AvatarUriContainer.AvatarUriContainer(System.Uri)
+  nameWithType: AvatarUriContainer.AvatarUriContainer(Uri)
+- uid: Cshrix.Data.AvatarUriContainer.#ctor*
+  name: AvatarUriContainer
+  href: api/Cshrix.Data.AvatarUriContainer.html#Cshrix_Data_AvatarUriContainer__ctor_
+  commentId: Overload:Cshrix.Data.AvatarUriContainer.#ctor
   isSpec: "True"
-  fullName: Cshrix.Data.AvatarUrlContainer.AvatarUrlContainer
-  nameWithType: AvatarUrlContainer.AvatarUrlContainer
-- uid: Cshrix.Data.AvatarUrlContainer.Uri
+  fullName: Cshrix.Data.AvatarUriContainer.AvatarUriContainer
+  nameWithType: AvatarUriContainer.AvatarUriContainer
+- uid: Cshrix.Data.AvatarUriContainer.Uri
   name: Uri
-  href: api/Cshrix.Data.AvatarUrlContainer.html#Cshrix_Data_AvatarUrlContainer_Uri
-  commentId: P:Cshrix.Data.AvatarUrlContainer.Uri
-  fullName: Cshrix.Data.AvatarUrlContainer.Uri
-  nameWithType: AvatarUrlContainer.Uri
-- uid: Cshrix.Data.AvatarUrlContainer.Uri*
+  href: api/Cshrix.Data.AvatarUriContainer.html#Cshrix_Data_AvatarUriContainer_Uri
+  commentId: P:Cshrix.Data.AvatarUriContainer.Uri
+  fullName: Cshrix.Data.AvatarUriContainer.Uri
+  nameWithType: AvatarUriContainer.Uri
+- uid: Cshrix.Data.AvatarUriContainer.Uri*
   name: Uri
-  href: api/Cshrix.Data.AvatarUrlContainer.html#Cshrix_Data_AvatarUrlContainer_Uri_
-  commentId: Overload:Cshrix.Data.AvatarUrlContainer.Uri
+  href: api/Cshrix.Data.AvatarUriContainer.html#Cshrix_Data_AvatarUriContainer_Uri_
+  commentId: Overload:Cshrix.Data.AvatarUriContainer.Uri
   isSpec: "True"
-  fullName: Cshrix.Data.AvatarUrlContainer.Uri
-  nameWithType: AvatarUrlContainer.Uri
+  fullName: Cshrix.Data.AvatarUriContainer.Uri
+  nameWithType: AvatarUriContainer.Uri
 - uid: Cshrix.Data.BaseUriContainer
   name: BaseUriContainer
   href: api/Cshrix.Data.BaseUriContainer.html
@@ -9285,12 +9285,15 @@ references:
   commentId: T:Cshrix.Data.Profile
   fullName: Cshrix.Data.Profile
   nameWithType: Profile
-- uid: Cshrix.Data.Profile.#ctor(System.String,System.Uri)
-  name: Profile(String, Uri)
-  href: api/Cshrix.Data.Profile.html#Cshrix_Data_Profile__ctor_System_String_System_Uri_
-  commentId: M:Cshrix.Data.Profile.#ctor(System.String,System.Uri)
-  fullName: Cshrix.Data.Profile.Profile(System.String, System.Uri)
-  nameWithType: Profile.Profile(String, Uri)
+- uid: Cshrix.Data.Profile.#ctor(System.String,System.Uri,System.Collections.Generic.IReadOnlyDictionary{System.String,Newtonsoft.Json.Linq.JToken})
+  name: Profile(String, Uri, IReadOnlyDictionary<String, JToken>)
+  href: api/Cshrix.Data.Profile.html#Cshrix_Data_Profile__ctor_System_String_System_Uri_System_Collections_Generic_IReadOnlyDictionary_System_String_Newtonsoft_Json_Linq_JToken__
+  commentId: M:Cshrix.Data.Profile.#ctor(System.String,System.Uri,System.Collections.Generic.IReadOnlyDictionary{System.String,Newtonsoft.Json.Linq.JToken})
+  name.vb: Profile(String, Uri, IReadOnlyDictionary(Of String, JToken))
+  fullName: Cshrix.Data.Profile.Profile(System.String, System.Uri, System.Collections.Generic.IReadOnlyDictionary<System.String, Newtonsoft.Json.Linq.JToken>)
+  fullName.vb: Cshrix.Data.Profile.Profile(System.String, System.Uri, System.Collections.Generic.IReadOnlyDictionary(Of System.String, Newtonsoft.Json.Linq.JToken))
+  nameWithType: Profile.Profile(String, Uri, IReadOnlyDictionary<String, JToken>)
+  nameWithType.vb: Profile.Profile(String, Uri, IReadOnlyDictionary(Of String, JToken))
 - uid: Cshrix.Data.Profile.#ctor*
   name: Profile
   href: api/Cshrix.Data.Profile.html#Cshrix_Data_Profile__ctor_
@@ -9298,6 +9301,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Profile.Profile
   nameWithType: Profile.Profile
+- uid: Cshrix.Data.Profile.AdditionalData
+  name: AdditionalData
+  href: api/Cshrix.Data.Profile.html#Cshrix_Data_Profile_AdditionalData
+  commentId: P:Cshrix.Data.Profile.AdditionalData
+  fullName: Cshrix.Data.Profile.AdditionalData
+  nameWithType: Profile.AdditionalData
+- uid: Cshrix.Data.Profile.AdditionalData*
+  name: AdditionalData
+  href: api/Cshrix.Data.Profile.html#Cshrix_Data_Profile_AdditionalData_
+  commentId: Overload:Cshrix.Data.Profile.AdditionalData
+  isSpec: "True"
+  fullName: Cshrix.Data.Profile.AdditionalData
+  nameWithType: Profile.AdditionalData
 - uid: Cshrix.Data.Profile.AvatarUri
   name: AvatarUri
   href: api/Cshrix.Data.Profile.html#Cshrix_Data_Profile_AvatarUri
@@ -12924,15 +12940,15 @@ references:
   commentId: T:Cshrix.Errors.UnauthorizedError
   fullName: Cshrix.Errors.UnauthorizedError
   nameWithType: UnauthorizedError
-- uid: Cshrix.Errors.UnauthorizedError.#ctor(System.String,System.String,System.String[],Cshrix.Data.Authentication.AuthenticationFlow[],System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.String)
-  name: UnauthorizedError(String, String, String[], AuthenticationFlow[], IReadOnlyDictionary<String, IReadOnlyDictionary<String, String>>, String)
-  href: api/Cshrix.Errors.UnauthorizedError.html#Cshrix_Errors_UnauthorizedError__ctor_System_String_System_String_System_String___Cshrix_Data_Authentication_AuthenticationFlow___System_Collections_Generic_IReadOnlyDictionary_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String___System_String_
-  commentId: M:Cshrix.Errors.UnauthorizedError.#ctor(System.String,System.String,System.String[],Cshrix.Data.Authentication.AuthenticationFlow[],System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.String)
-  name.vb: UnauthorizedError(String, String, String(), AuthenticationFlow(), IReadOnlyDictionary(Of String, IReadOnlyDictionary(Of String, String)), String)
-  fullName: Cshrix.Errors.UnauthorizedError.UnauthorizedError(System.String, System.String, System.String[], Cshrix.Data.Authentication.AuthenticationFlow[], System.Collections.Generic.IReadOnlyDictionary<System.String, System.Collections.Generic.IReadOnlyDictionary<System.String, System.String>>, System.String)
-  fullName.vb: Cshrix.Errors.UnauthorizedError.UnauthorizedError(System.String, System.String, System.String(), Cshrix.Data.Authentication.AuthenticationFlow(), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.String)), System.String)
-  nameWithType: UnauthorizedError.UnauthorizedError(String, String, String[], AuthenticationFlow[], IReadOnlyDictionary<String, IReadOnlyDictionary<String, String>>, String)
-  nameWithType.vb: UnauthorizedError.UnauthorizedError(String, String, String(), AuthenticationFlow(), IReadOnlyDictionary(Of String, IReadOnlyDictionary(Of String, String)), String)
+- uid: Cshrix.Errors.UnauthorizedError.#ctor(System.String,System.String,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Authentication.AuthenticationFlow},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.String)
+  name: UnauthorizedError(String, String, IReadOnlyCollection<String>, IReadOnlyCollection<AuthenticationFlow>, IReadOnlyDictionary<String, IReadOnlyDictionary<String, String>>, String)
+  href: api/Cshrix.Errors.UnauthorizedError.html#Cshrix_Errors_UnauthorizedError__ctor_System_String_System_String_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Authentication_AuthenticationFlow__System_Collections_Generic_IReadOnlyDictionary_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String___System_String_
+  commentId: M:Cshrix.Errors.UnauthorizedError.#ctor(System.String,System.String,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Authentication.AuthenticationFlow},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.String)
+  name.vb: UnauthorizedError(String, String, IReadOnlyCollection(Of String), IReadOnlyCollection(Of AuthenticationFlow), IReadOnlyDictionary(Of String, IReadOnlyDictionary(Of String, String)), String)
+  fullName: Cshrix.Errors.UnauthorizedError.UnauthorizedError(System.String, System.String, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Authentication.AuthenticationFlow>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Collections.Generic.IReadOnlyDictionary<System.String, System.String>>, System.String)
+  fullName.vb: Cshrix.Errors.UnauthorizedError.UnauthorizedError(System.String, System.String, System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Authentication.AuthenticationFlow), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.String)), System.String)
+  nameWithType: UnauthorizedError.UnauthorizedError(String, String, IReadOnlyCollection<String>, IReadOnlyCollection<AuthenticationFlow>, IReadOnlyDictionary<String, IReadOnlyDictionary<String, String>>, String)
+  nameWithType.vb: UnauthorizedError.UnauthorizedError(String, String, IReadOnlyCollection(Of String), IReadOnlyCollection(Of AuthenticationFlow), IReadOnlyDictionary(Of String, IReadOnlyDictionary(Of String, String)), String)
 - uid: Cshrix.Errors.UnauthorizedError.#ctor*
   name: UnauthorizedError
   href: api/Cshrix.Errors.UnauthorizedError.html#Cshrix_Errors_UnauthorizedError__ctor_
@@ -13064,53 +13080,6 @@ references:
   fullName.vb: Cshrix.Extensions.ApiExceptionExtensions.TryGetError(Of TError)(RestEase.ApiException, ByRef TError)
   nameWithType: ApiExceptionExtensions.TryGetError<TError>(ApiException, out TError)
   nameWithType.vb: ApiExceptionExtensions.TryGetError(Of TError)(ApiException, ByRef TError)
-- uid: Cshrix.Extensions.DictionaryExtensions
-  name: DictionaryExtensions
-  href: api/Cshrix.Extensions.DictionaryExtensions.html
-  commentId: T:Cshrix.Extensions.DictionaryExtensions
-  fullName: Cshrix.Extensions.DictionaryExtensions
-  nameWithType: DictionaryExtensions
-- uid: Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault*
-  name: GetValueOrDefault
-  href: api/Cshrix.Extensions.DictionaryExtensions.html#Cshrix_Extensions_DictionaryExtensions_GetValueOrDefault_
-  commentId: Overload:Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault
-  isSpec: "True"
-  fullName: Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault
-  nameWithType: DictionaryExtensions.GetValueOrDefault
-- uid: Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
-  name: GetValueOrDefault<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
-  href: api/Cshrix.Extensions.DictionaryExtensions.html#Cshrix_Extensions_DictionaryExtensions_GetValueOrDefault__2_System_Collections_Generic_IDictionary___0___1____0___1_
-  commentId: M:Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
-  name.vb: GetValueOrDefault(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
-  fullName: Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey, TValue)
-  fullName.vb: Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey, TValue)
-  nameWithType: DictionaryExtensions.GetValueOrDefault<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
-  nameWithType.vb: DictionaryExtensions.GetValueOrDefault(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
-- uid: Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault``2(System.Collections.Generic.IDictionary{``0,System.Object},``0,``1)
-  name: GetValueOrDefault<TKey, TValue>(IDictionary<TKey, Object>, TKey, TValue)
-  href: api/Cshrix.Extensions.DictionaryExtensions.html#Cshrix_Extensions_DictionaryExtensions_GetValueOrDefault__2_System_Collections_Generic_IDictionary___0_System_Object____0___1_
-  commentId: M:Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault``2(System.Collections.Generic.IDictionary{``0,System.Object},``0,``1)
-  name.vb: GetValueOrDefault(Of TKey, TValue)(IDictionary(Of TKey, Object), TKey, TValue)
-  fullName: Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, System.Object>, TKey, TValue)
-  fullName.vb: Cshrix.Extensions.DictionaryExtensions.GetValueOrDefault(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, System.Object), TKey, TValue)
-  nameWithType: DictionaryExtensions.GetValueOrDefault<TKey, TValue>(IDictionary<TKey, Object>, TKey, TValue)
-  nameWithType.vb: DictionaryExtensions.GetValueOrDefault(Of TKey, TValue)(IDictionary(Of TKey, Object), TKey, TValue)
-- uid: Cshrix.Extensions.DictionaryExtensions.TryGetValue*
-  name: TryGetValue
-  href: api/Cshrix.Extensions.DictionaryExtensions.html#Cshrix_Extensions_DictionaryExtensions_TryGetValue_
-  commentId: Overload:Cshrix.Extensions.DictionaryExtensions.TryGetValue
-  isSpec: "True"
-  fullName: Cshrix.Extensions.DictionaryExtensions.TryGetValue
-  nameWithType: DictionaryExtensions.TryGetValue
-- uid: Cshrix.Extensions.DictionaryExtensions.TryGetValue``2(System.Collections.Generic.IDictionary{``0,System.Object},``0,``1@)
-  name: TryGetValue<TKey, TValue>(IDictionary<TKey, Object>, TKey, out TValue)
-  href: api/Cshrix.Extensions.DictionaryExtensions.html#Cshrix_Extensions_DictionaryExtensions_TryGetValue__2_System_Collections_Generic_IDictionary___0_System_Object____0___1__
-  commentId: M:Cshrix.Extensions.DictionaryExtensions.TryGetValue``2(System.Collections.Generic.IDictionary{``0,System.Object},``0,``1@)
-  name.vb: TryGetValue(Of TKey, TValue)(IDictionary(Of TKey, Object), TKey, ByRef TValue)
-  fullName: Cshrix.Extensions.DictionaryExtensions.TryGetValue<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, System.Object>, TKey, out TValue)
-  fullName.vb: Cshrix.Extensions.DictionaryExtensions.TryGetValue(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, System.Object), TKey, ByRef TValue)
-  nameWithType: DictionaryExtensions.TryGetValue<TKey, TValue>(IDictionary<TKey, Object>, TKey, out TValue)
-  nameWithType.vb: DictionaryExtensions.TryGetValue(Of TKey, TValue)(IDictionary(Of TKey, Object), TKey, ByRef TValue)
 - uid: Cshrix.Extensions.HttpResponseHeadersExtensions
   name: HttpResponseHeadersExtensions
   href: api/Cshrix.Extensions.HttpResponseHeadersExtensions.html
@@ -13165,6 +13134,56 @@ references:
   isSpec: "True"
   fullName: Cshrix.Extensions.HttpResponseHeadersExtensions.TryGetFirstHeaderValue
   nameWithType: HttpResponseHeadersExtensions.TryGetFirstHeaderValue
+- uid: Cshrix.Extensions.HttpResponseMessageExtensions
+  name: HttpResponseMessageExtensions
+  href: api/Cshrix.Extensions.HttpResponseMessageExtensions.html
+  commentId: T:Cshrix.Extensions.HttpResponseMessageExtensions
+  fullName: Cshrix.Extensions.HttpResponseMessageExtensions
+  nameWithType: HttpResponseMessageExtensions
+- uid: Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync(System.Net.Http.HttpResponseMessage)
+  name: GetErrorAsync(HttpResponseMessage)
+  href: api/Cshrix.Extensions.HttpResponseMessageExtensions.html#Cshrix_Extensions_HttpResponseMessageExtensions_GetErrorAsync_System_Net_Http_HttpResponseMessage_
+  commentId: M:Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync(System.Net.Http.HttpResponseMessage)
+  fullName: Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync(System.Net.Http.HttpResponseMessage)
+  nameWithType: HttpResponseMessageExtensions.GetErrorAsync(HttpResponseMessage)
+- uid: Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync*
+  name: GetErrorAsync
+  href: api/Cshrix.Extensions.HttpResponseMessageExtensions.html#Cshrix_Extensions_HttpResponseMessageExtensions_GetErrorAsync_
+  commentId: Overload:Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync
+  isSpec: "True"
+  fullName: Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync
+  nameWithType: HttpResponseMessageExtensions.GetErrorAsync
+- uid: Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync``1(System.Net.Http.HttpResponseMessage)
+  name: GetErrorAsync<T>(HttpResponseMessage)
+  href: api/Cshrix.Extensions.HttpResponseMessageExtensions.html#Cshrix_Extensions_HttpResponseMessageExtensions_GetErrorAsync__1_System_Net_Http_HttpResponseMessage_
+  commentId: M:Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync``1(System.Net.Http.HttpResponseMessage)
+  name.vb: GetErrorAsync(Of T)(HttpResponseMessage)
+  fullName: Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync<T>(System.Net.Http.HttpResponseMessage)
+  fullName.vb: Cshrix.Extensions.HttpResponseMessageExtensions.GetErrorAsync(Of T)(System.Net.Http.HttpResponseMessage)
+  nameWithType: HttpResponseMessageExtensions.GetErrorAsync<T>(HttpResponseMessage)
+  nameWithType.vb: HttpResponseMessageExtensions.GetErrorAsync(Of T)(HttpResponseMessage)
+- uid: Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync(System.Net.Http.HttpResponseMessage)
+  name: TryGetErrorAsync(HttpResponseMessage)
+  href: api/Cshrix.Extensions.HttpResponseMessageExtensions.html#Cshrix_Extensions_HttpResponseMessageExtensions_TryGetErrorAsync_System_Net_Http_HttpResponseMessage_
+  commentId: M:Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync(System.Net.Http.HttpResponseMessage)
+  fullName: Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync(System.Net.Http.HttpResponseMessage)
+  nameWithType: HttpResponseMessageExtensions.TryGetErrorAsync(HttpResponseMessage)
+- uid: Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync*
+  name: TryGetErrorAsync
+  href: api/Cshrix.Extensions.HttpResponseMessageExtensions.html#Cshrix_Extensions_HttpResponseMessageExtensions_TryGetErrorAsync_
+  commentId: Overload:Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync
+  isSpec: "True"
+  fullName: Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync
+  nameWithType: HttpResponseMessageExtensions.TryGetErrorAsync
+- uid: Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync``1(System.Net.Http.HttpResponseMessage)
+  name: TryGetErrorAsync<T>(HttpResponseMessage)
+  href: api/Cshrix.Extensions.HttpResponseMessageExtensions.html#Cshrix_Extensions_HttpResponseMessageExtensions_TryGetErrorAsync__1_System_Net_Http_HttpResponseMessage_
+  commentId: M:Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync``1(System.Net.Http.HttpResponseMessage)
+  name.vb: TryGetErrorAsync(Of T)(HttpResponseMessage)
+  fullName: Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync<T>(System.Net.Http.HttpResponseMessage)
+  fullName.vb: Cshrix.Extensions.HttpResponseMessageExtensions.TryGetErrorAsync(Of T)(System.Net.Http.HttpResponseMessage)
+  nameWithType: HttpResponseMessageExtensions.TryGetErrorAsync<T>(HttpResponseMessage)
+  nameWithType.vb: HttpResponseMessageExtensions.TryGetErrorAsync(Of T)(HttpResponseMessage)
 - uid: Cshrix.Extensions.JObjectExtensions
   name: JObjectExtensions
   href: api/Cshrix.Extensions.JObjectExtensions.html
@@ -13424,34 +13443,6 @@ references:
   commentId: N:Cshrix.Helpers
   fullName: Cshrix.Helpers
   nameWithType: Cshrix.Helpers
-- uid: Cshrix.Helpers.EnumHelpers
-  name: EnumHelpers
-  href: api/Cshrix.Helpers.EnumHelpers.html
-  commentId: T:Cshrix.Helpers.EnumHelpers
-  fullName: Cshrix.Helpers.EnumHelpers
-  nameWithType: EnumHelpers
-- uid: Cshrix.Helpers.EnumHelpers.GetNamedFlags(System.Type)
-  name: GetNamedFlags(Type)
-  href: api/Cshrix.Helpers.EnumHelpers.html#Cshrix_Helpers_EnumHelpers_GetNamedFlags_System_Type_
-  commentId: M:Cshrix.Helpers.EnumHelpers.GetNamedFlags(System.Type)
-  fullName: Cshrix.Helpers.EnumHelpers.GetNamedFlags(System.Type)
-  nameWithType: EnumHelpers.GetNamedFlags(Type)
-- uid: Cshrix.Helpers.EnumHelpers.GetNamedFlags*
-  name: GetNamedFlags
-  href: api/Cshrix.Helpers.EnumHelpers.html#Cshrix_Helpers_EnumHelpers_GetNamedFlags_
-  commentId: Overload:Cshrix.Helpers.EnumHelpers.GetNamedFlags
-  isSpec: "True"
-  fullName: Cshrix.Helpers.EnumHelpers.GetNamedFlags
-  nameWithType: EnumHelpers.GetNamedFlags
-- uid: Cshrix.Helpers.EnumHelpers.GetNamedFlags``1
-  name: GetNamedFlags<TEnum>()
-  href: api/Cshrix.Helpers.EnumHelpers.html#Cshrix_Helpers_EnumHelpers_GetNamedFlags__1
-  commentId: M:Cshrix.Helpers.EnumHelpers.GetNamedFlags``1
-  name.vb: GetNamedFlags(Of TEnum)()
-  fullName: Cshrix.Helpers.EnumHelpers.GetNamedFlags<TEnum>()
-  fullName.vb: Cshrix.Helpers.EnumHelpers.GetNamedFlags(Of TEnum)()
-  nameWithType: EnumHelpers.GetNamedFlags<TEnum>()
-  nameWithType.vb: EnumHelpers.GetNamedFlags(Of TEnum)()
 - uid: Cshrix.Helpers.RandomHelpers
   name: RandomHelpers
   href: api/Cshrix.Helpers.RandomHelpers.html
@@ -14424,12 +14415,12 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.SearchAsync
   nameWithType: IMatrixClientServerApi.SearchAsync
-- uid: Cshrix.IMatrixClientServerApi.SearchUsersAsync(Cshrix.Data.Search.UserSearchQuery)
-  name: SearchUsersAsync(UserSearchQuery)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SearchUsersAsync_Cshrix_Data_Search_UserSearchQuery_
-  commentId: M:Cshrix.IMatrixClientServerApi.SearchUsersAsync(Cshrix.Data.Search.UserSearchQuery)
-  fullName: Cshrix.IMatrixClientServerApi.SearchUsersAsync(Cshrix.Data.Search.UserSearchQuery)
-  nameWithType: IMatrixClientServerApi.SearchUsersAsync(UserSearchQuery)
+- uid: Cshrix.IMatrixClientServerApi.SearchUsersAsync(Cshrix.Data.Search.UserSearchQuery,System.String)
+  name: SearchUsersAsync(UserSearchQuery, String)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SearchUsersAsync_Cshrix_Data_Search_UserSearchQuery_System_String_
+  commentId: M:Cshrix.IMatrixClientServerApi.SearchUsersAsync(Cshrix.Data.Search.UserSearchQuery,System.String)
+  fullName: Cshrix.IMatrixClientServerApi.SearchUsersAsync(Cshrix.Data.Search.UserSearchQuery, System.String)
+  nameWithType: IMatrixClientServerApi.SearchUsersAsync(UserSearchQuery, String)
 - uid: Cshrix.IMatrixClientServerApi.SearchUsersAsync*
   name: SearchUsersAsync
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SearchUsersAsync_
@@ -14521,12 +14512,12 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.SetAccountDataAsync
   nameWithType: IMatrixClientServerApi.SetAccountDataAsync
-- uid: Cshrix.IMatrixClientServerApi.SetAvatarUrlAsync(Cshrix.Data.UserId,Cshrix.Data.AvatarUrlContainer)
-  name: SetAvatarUrlAsync(UserId, AvatarUrlContainer)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SetAvatarUrlAsync_Cshrix_Data_UserId_Cshrix_Data_AvatarUrlContainer_
-  commentId: M:Cshrix.IMatrixClientServerApi.SetAvatarUrlAsync(Cshrix.Data.UserId,Cshrix.Data.AvatarUrlContainer)
-  fullName: Cshrix.IMatrixClientServerApi.SetAvatarUrlAsync(Cshrix.Data.UserId, Cshrix.Data.AvatarUrlContainer)
-  nameWithType: IMatrixClientServerApi.SetAvatarUrlAsync(UserId, AvatarUrlContainer)
+- uid: Cshrix.IMatrixClientServerApi.SetAvatarUrlAsync(Cshrix.Data.UserId,Cshrix.Data.AvatarUriContainer)
+  name: SetAvatarUrlAsync(UserId, AvatarUriContainer)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SetAvatarUrlAsync_Cshrix_Data_UserId_Cshrix_Data_AvatarUriContainer_
+  commentId: M:Cshrix.IMatrixClientServerApi.SetAvatarUrlAsync(Cshrix.Data.UserId,Cshrix.Data.AvatarUriContainer)
+  fullName: Cshrix.IMatrixClientServerApi.SetAvatarUrlAsync(Cshrix.Data.UserId, Cshrix.Data.AvatarUriContainer)
+  nameWithType: IMatrixClientServerApi.SetAvatarUrlAsync(UserId, AvatarUriContainer)
 - uid: Cshrix.IMatrixClientServerApi.SetAvatarUrlAsync*
   name: SetAvatarUrlAsync
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SetAvatarUrlAsync_
@@ -15868,19 +15859,6 @@ references:
   commentId: T:Cshrix.Tests.Serialization.ServerNameSerializationTests
   fullName: Cshrix.Tests.Serialization.ServerNameSerializationTests
   nameWithType: ServerNameSerializationTests
-- uid: Cshrix.Tests.Serialization.ServerNameSerializationTests.ShouldDeserializeObjectServerName
-  name: ShouldDeserializeObjectServerName()
-  href: api/Cshrix.Tests.Serialization.ServerNameSerializationTests.html#Cshrix_Tests_Serialization_ServerNameSerializationTests_ShouldDeserializeObjectServerName
-  commentId: M:Cshrix.Tests.Serialization.ServerNameSerializationTests.ShouldDeserializeObjectServerName
-  fullName: Cshrix.Tests.Serialization.ServerNameSerializationTests.ShouldDeserializeObjectServerName()
-  nameWithType: ServerNameSerializationTests.ShouldDeserializeObjectServerName()
-- uid: Cshrix.Tests.Serialization.ServerNameSerializationTests.ShouldDeserializeObjectServerName*
-  name: ShouldDeserializeObjectServerName
-  href: api/Cshrix.Tests.Serialization.ServerNameSerializationTests.html#Cshrix_Tests_Serialization_ServerNameSerializationTests_ShouldDeserializeObjectServerName_
-  commentId: Overload:Cshrix.Tests.Serialization.ServerNameSerializationTests.ShouldDeserializeObjectServerName
-  isSpec: "True"
-  fullName: Cshrix.Tests.Serialization.ServerNameSerializationTests.ShouldDeserializeObjectServerName
-  nameWithType: ServerNameSerializationTests.ShouldDeserializeObjectServerName
 - uid: Cshrix.Tests.Serialization.ServerNameSerializationTests.ShouldDeserializeStringServerName
   name: ShouldDeserializeStringServerName()
   href: api/Cshrix.Tests.Serialization.ServerNameSerializationTests.html#Cshrix_Tests_Serialization_ServerNameSerializationTests_ShouldDeserializeStringServerName

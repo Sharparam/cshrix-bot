@@ -148,7 +148,7 @@
                             <a href="Cshrix.Data.AvailableContainer.html" title="AvailableContainer" class="">AvailableContainer</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.AvatarUrlContainer.html" title="AvatarUrlContainer" class="">AvatarUrlContainer</a>
+                            <a href="Cshrix.Data.AvatarUriContainer.html" title="AvatarUriContainer" class="">AvatarUriContainer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.BaseUriContainer.html" title="BaseUriContainer" class="">BaseUriContainer</a>
@@ -883,10 +883,10 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.DictionaryExtensions.html" title="DictionaryExtensions" class="">DictionaryExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseMessageExtensions.html" title="HttpResponseMessageExtensions" class="">HttpResponseMessageExtensions</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Extensions.JObjectExtensions.html" title="JObjectExtensions" class="">JObjectExtensions</a>
@@ -903,9 +903,6 @@
                       <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
                         
                         <ul class="nav level2">
-                          <li class="">
-                            <a href="Cshrix.Helpers.EnumHelpers.html" title="EnumHelpers" class="">EnumHelpers</a>
-                          </li>
                           <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
@@ -1018,7 +1015,8 @@
   
   <h1 id="Cshrix_Data_ClientInfo" data-uid="Cshrix.Data.ClientInfo" class="text-break">Struct ClientInfo
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains information about what servers a client should use for communicating with a homeserver.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1054,11 +1052,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_ClientInfo__ctor_Cshrix_Data_BaseUriContainer_Cshrix_Data_BaseUriContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.ClientInfo.%23ctor(Cshrix.Data.BaseUriContainer%2CCshrix.Data.BaseUriContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/ClientInfo.cs/#L15">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/ClientInfo.cs/#L23">View Source</a>
   </span>
   <a id="Cshrix_Data_ClientInfo__ctor_" data-uid="Cshrix.Data.ClientInfo.#ctor*"></a>
   <h4 id="Cshrix_Data_ClientInfo__ctor_Cshrix_Data_BaseUriContainer_Cshrix_Data_BaseUriContainer_" data-uid="Cshrix.Data.ClientInfo.#ctor(Cshrix.Data.BaseUriContainer,Cshrix.Data.BaseUriContainer)">ClientInfo(BaseUriContainer, BaseUriContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.ClientInfo.html">ClientInfo</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1078,12 +1077,14 @@ public ClientInfo(BaseUriContainer homeserver, BaseUriContainer identityServer)<
       <tr>
         <td><a class="xref" href="Cshrix.Data.BaseUriContainer.html">BaseUriContainer</a></td>
         <td><span class="parametername">homeserver</span></td>
-        <td></td>
+        <td><p>URI to the homeserver.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.BaseUriContainer.html">BaseUriContainer</a></td>
         <td><span class="parametername">identityServer</span></td>
-        <td></td>
+        <td><p>URI to the identity server.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1094,11 +1095,12 @@ public ClientInfo(BaseUriContainer homeserver, BaseUriContainer identityServer)<
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_ClientInfo_Homeserver.md&amp;value=---%0Auid%3A%20Cshrix.Data.ClientInfo.Homeserver%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/ClientInfo.cs/#L23">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/ClientInfo.cs/#L34">View Source</a>
   </span>
   <a id="Cshrix_Data_ClientInfo_Homeserver_" data-uid="Cshrix.Data.ClientInfo.Homeserver*"></a>
   <h4 id="Cshrix_Data_ClientInfo_Homeserver" data-uid="Cshrix.Data.ClientInfo.Homeserver">Homeserver</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the URI to the homeserver.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1125,11 +1127,12 @@ public BaseUriContainer Homeserver { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_ClientInfo_IdentityServer.md&amp;value=---%0Auid%3A%20Cshrix.Data.ClientInfo.IdentityServer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/ClientInfo.cs/#L26">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/ClientInfo.cs/#L40">View Source</a>
   </span>
   <a id="Cshrix_Data_ClientInfo_IdentityServer_" data-uid="Cshrix.Data.ClientInfo.IdentityServer*"></a>
   <h4 id="Cshrix_Data_ClientInfo_IdentityServer" data-uid="Cshrix.Data.ClientInfo.IdentityServer">IdentityServer</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the URI to the identity server.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1162,7 +1165,7 @@ public BaseUriContainer IdentityServer { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_ClientInfo.md&amp;value=---%0Auid%3A%20Cshrix.Data.ClientInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/ClientInfo.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/ClientInfo.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

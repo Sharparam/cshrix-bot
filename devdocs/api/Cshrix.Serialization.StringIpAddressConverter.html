@@ -148,7 +148,7 @@
                             <a href="Cshrix.Data.AvailableContainer.html" title="AvailableContainer" class="">AvailableContainer</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.AvatarUrlContainer.html" title="AvatarUrlContainer" class="">AvatarUrlContainer</a>
+                            <a href="Cshrix.Data.AvatarUriContainer.html" title="AvatarUriContainer" class="">AvatarUriContainer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.BaseUriContainer.html" title="BaseUriContainer" class="">BaseUriContainer</a>
@@ -883,10 +883,10 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.DictionaryExtensions.html" title="DictionaryExtensions" class="">DictionaryExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseMessageExtensions.html" title="HttpResponseMessageExtensions" class="">HttpResponseMessageExtensions</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Extensions.JObjectExtensions.html" title="JObjectExtensions" class="">JObjectExtensions</a>
@@ -903,9 +903,6 @@
                       <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
                         
                         <ul class="nav level2">
-                          <li class="">
-                            <a href="Cshrix.Helpers.EnumHelpers.html" title="EnumHelpers" class="">EnumHelpers</a>
-                          </li>
                           <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
@@ -1018,7 +1015,8 @@
   
   <h1 id="Cshrix_Serialization_StringIpAddressConverter" data-uid="Cshrix.Serialization.StringIpAddressConverter" class="text-break">Class StringIpAddressConverter
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Converts <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a> to/from its string representation in JSON.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1079,11 +1077,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_StringIpAddressConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Net_IPAddress_System_Boolean_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.StringIpAddressConverter.ReadJson(Newtonsoft.Json.JsonReader%2CSystem.Type%2CSystem.Net.IPAddress%2CSystem.Boolean%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/StringIpAddressConverter.cs/#L30">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/StringIpAddressConverter.cs/#L49">View Source</a>
   </span>
   <a id="Cshrix_Serialization_StringIpAddressConverter_ReadJson_" data-uid="Cshrix.Serialization.StringIpAddressConverter.ReadJson*"></a>
   <h4 id="Cshrix_Serialization_StringIpAddressConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Net_IPAddress_System_Boolean_Newtonsoft_Json_JsonSerializer_" data-uid="Cshrix.Serialization.StringIpAddressConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Net.IPAddress,System.Boolean,Newtonsoft.Json.JsonSerializer)">ReadJson(JsonReader, Type, IPAddress, Boolean, JsonSerializer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the JSON representation of the object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1102,27 +1101,32 @@
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonReader</span></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>The <span class="xref">Newtonsoft.Json.JsonReader</span> to read from.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">objectType</span></td>
-        <td></td>
+        <td><p>Type of the object.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a></td>
         <td><span class="parametername">existingValue</span></td>
-        <td></td>
+        <td><p>The existing value of object being read. If there is no existing value then <code>null</code> will be used.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">hasExistingValue</span></td>
-        <td></td>
+        <td><p>The existing value has a value.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonSerializer</span></td>
         <td><span class="parametername">serializer</span></td>
-        <td></td>
+        <td><p>The calling serializer.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1137,7 +1141,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a></td>
-        <td></td>
+        <td><p>The object value.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1148,11 +1153,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_StringIpAddressConverter_WriteJson_Newtonsoft_Json_JsonWriter_System_Net_IPAddress_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.StringIpAddressConverter.WriteJson(Newtonsoft.Json.JsonWriter%2CSystem.Net.IPAddress%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/StringIpAddressConverter.cs/#L18">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/StringIpAddressConverter.cs/#L27">View Source</a>
   </span>
   <a id="Cshrix_Serialization_StringIpAddressConverter_WriteJson_" data-uid="Cshrix.Serialization.StringIpAddressConverter.WriteJson*"></a>
   <h4 id="Cshrix_Serialization_StringIpAddressConverter_WriteJson_Newtonsoft_Json_JsonWriter_System_Net_IPAddress_Newtonsoft_Json_JsonSerializer_" data-uid="Cshrix.Serialization.StringIpAddressConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Net.IPAddress,Newtonsoft.Json.JsonSerializer)">WriteJson(JsonWriter, IPAddress, JsonSerializer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the JSON representation of the object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1171,17 +1177,20 @@
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonWriter</span></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>The <span class="xref">Newtonsoft.Json.JsonWriter</span> to write to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The value.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonSerializer</span></td>
         <td><span class="parametername">serializer</span></td>
-        <td></td>
+        <td><p>The calling serializer.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1198,7 +1207,7 @@
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_StringIpAddressConverter.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.StringIpAddressConverter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/StringIpAddressConverter.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/StringIpAddressConverter.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

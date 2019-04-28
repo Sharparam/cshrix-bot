@@ -148,7 +148,7 @@
                             <a href="Cshrix.Data.AvailableContainer.html" title="AvailableContainer" class="active">AvailableContainer</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.AvatarUrlContainer.html" title="AvatarUrlContainer" class="">AvatarUrlContainer</a>
+                            <a href="Cshrix.Data.AvatarUriContainer.html" title="AvatarUriContainer" class="">AvatarUriContainer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.BaseUriContainer.html" title="BaseUriContainer" class="">BaseUriContainer</a>
@@ -883,10 +883,10 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.DictionaryExtensions.html" title="DictionaryExtensions" class="">DictionaryExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseMessageExtensions.html" title="HttpResponseMessageExtensions" class="">HttpResponseMessageExtensions</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Extensions.JObjectExtensions.html" title="JObjectExtensions" class="">JObjectExtensions</a>
@@ -903,9 +903,6 @@
                       <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
                         
                         <ul class="nav level2">
-                          <li class="">
-                            <a href="Cshrix.Helpers.EnumHelpers.html" title="EnumHelpers" class="">EnumHelpers</a>
-                          </li>
                           <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
@@ -1018,7 +1015,8 @@
   
   <h1 id="Cshrix_Data_AvailableContainer" data-uid="Cshrix.Data.AvailableContainer" class="text-break">Struct AvailableContainer
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains a boolean value indicating whether a resource or action is available.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -1055,16 +1053,17 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer__ctor_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.%23ctor(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L18">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L27">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer__ctor_" data-uid="Cshrix.Data.AvailableContainer.#ctor*"></a>
   <h4 id="Cshrix_Data_AvailableContainer__ctor_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.#ctor(System.Boolean)">AvailableContainer(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of this <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public AvailableContainer(bool available)</code></pre>
+public AvailableContainer(bool isAvailable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1078,8 +1077,9 @@ public AvailableContainer(bool available)</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">available</span></td>
-        <td></td>
+        <td><span class="parametername">isAvailable</span></td>
+        <td><p>Whether or not the resource or action is available.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1087,19 +1087,20 @@ public AvailableContainer(bool available)</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_Available.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.Available%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_IsAvailable.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.IsAvailable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L67">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L243">View Source</a>
   </span>
-  <a id="Cshrix_Data_AvailableContainer_Available_" data-uid="Cshrix.Data.AvailableContainer.Available*"></a>
-  <h4 id="Cshrix_Data_AvailableContainer_Available" data-uid="Cshrix.Data.AvailableContainer.Available">Available</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Cshrix_Data_AvailableContainer_IsAvailable_" data-uid="Cshrix.Data.AvailableContainer.IsAvailable*"></a>
+  <h4 id="Cshrix_Data_AvailableContainer_IsAvailable" data-uid="Cshrix.Data.AvailableContainer.IsAvailable">IsAvailable</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the relevant resource or action is available.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonProperty(&quot;available&quot;)]
-public bool Available { get; }</code></pre>
+public bool IsAvailable { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1123,11 +1124,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_CompareTo_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.CompareTo(Cshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L74">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L274">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_CompareTo_" data-uid="Cshrix.Data.AvailableContainer.CompareTo*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_CompareTo_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.CompareTo(Cshrix.Data.AvailableContainer)">CompareTo(AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compares this instance to another object of type <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1146,7 +1148,8 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">other</span></td>
-        <td></td>
+        <td><p>The value to compare with.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1161,7 +1164,10 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
+        <td><p><code>-1</code> if this value comes before <code data-dev-comment-type="paramref" class="paramref">other</code>,
+<code>0</code> if this value and <code data-dev-comment-type="paramref" class="paramref">other</code> are equal,
+<code>1</code> if this value comes after <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1170,11 +1176,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_CompareTo_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.CompareTo(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L76">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L286">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_CompareTo_" data-uid="Cshrix.Data.AvailableContainer.CompareTo*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_CompareTo_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.CompareTo(System.Boolean)">CompareTo(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compares this instance of <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> value.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1208,7 +1215,10 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
+        <td><p><code>-1</code> if this value comes before <code data-dev-comment-type="paramref" class="paramref">other</code>,
+<code>0</code> if this value and <code data-dev-comment-type="paramref" class="paramref">other</code> are equal,
+<code>1</code> if this value comes after <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1217,11 +1227,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_Equals_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.Equals(Cshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L70">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L253">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_Equals_" data-uid="Cshrix.Data.AvailableContainer.Equals*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_Equals_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.Equals(Cshrix.Data.AvailableContainer)">Equals(AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1240,7 +1251,8 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">other</span></td>
-        <td></td>
+        <td><p>An object to compare with this object.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1255,7 +1267,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the current object is equal to the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1264,11 +1278,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_Equals_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.Equals(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L72">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L262">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_Equals_" data-uid="Cshrix.Data.AvailableContainer.Equals*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_Equals_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.Equals(System.Boolean)">Equals(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1287,7 +1302,8 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">other</span></td>
-        <td></td>
+        <td><p>An object to compare with this object.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1302,7 +1318,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the current object is equal to the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1311,11 +1329,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L78">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L295">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_Equals_" data-uid="Cshrix.Data.AvailableContainer.Equals*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_Equals_System_Object_" data-uid="Cshrix.Data.AvailableContainer.Equals(System.Object)">Equals(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Indicates whether this instance and a specified object are equal.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1334,7 +1353,8 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">obj</span></td>
-        <td></td>
+        <td><p>The object to compare with the current instance.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1349,7 +1369,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">obj</code> and this instance are the same type and represent
+the same value; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1360,11 +1382,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_GetHashCode.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L95">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L315">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_GetHashCode_" data-uid="Cshrix.Data.AvailableContainer.GetHashCode*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_GetHashCode" data-uid="Cshrix.Data.AvailableContainer.GetHashCode">GetHashCode()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the hash code for this instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1381,7 +1404,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
+        <td><p>A 32-bit signed integer that is the hash code for this instance.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1394,11 +1418,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_Equality_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_Equality(Cshrix.Data.AvailableContainer%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L27">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L52">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_Equality_" data-uid="Cshrix.Data.AvailableContainer.op_Equality*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_Equality_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_Equality(Cshrix.Data.AvailableContainer,Cshrix.Data.AvailableContainer)">Equality(AvailableContainer, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compares two instance of <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> for equality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1417,12 +1442,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1437,7 +1464,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the two instances are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1446,11 +1474,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_Equality_Cshrix_Data_AvailableContainer_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_Equality(Cshrix.Data.AvailableContainer%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L31">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L68">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_Equality_" data-uid="Cshrix.Data.AvailableContainer.op_Equality*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_Equality_Cshrix_Data_AvailableContainer_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.op_Equality(Cshrix.Data.AvailableContainer,System.Boolean)">Equality(AvailableContainer, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compares an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> and <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> for equality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1469,12 +1498,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1489,7 +1520,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the two are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1498,11 +1530,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_Equality_System_Boolean_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_Equality(System.Boolean%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L35">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L84">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_Equality_" data-uid="Cshrix.Data.AvailableContainer.op_Equality*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_Equality_System_Boolean_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_Equality(System.Boolean,Cshrix.Data.AvailableContainer)">Equality(Boolean, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compares a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> and <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> for equality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1521,12 +1554,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1541,7 +1576,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the two are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1550,11 +1586,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_False_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_False(Cshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L65">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L238">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_False_" data-uid="Cshrix.Data.AvailableContainer.op_False*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_False_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_False(Cshrix.Data.AvailableContainer)">False(AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether a given <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is definitely <code>false</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1573,7 +1610,8 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">container</span></td>
-        <td></td>
+        <td><p>The container to check.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1588,7 +1626,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the container is definitely <code>false</code>; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1597,11 +1636,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_GreaterThan_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_GreaterThan(Cshrix.Data.AvailableContainer%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L39">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L103">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_GreaterThan_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThan*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_GreaterThan_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThan(Cshrix.Data.AvailableContainer,Cshrix.Data.AvailableContainer)">GreaterThan(AvailableContainer, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is greater than another.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1620,12 +1660,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1640,7 +1682,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is greater than <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1649,11 +1693,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_GreaterThan_Cshrix_Data_AvailableContainer_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_GreaterThan(Cshrix.Data.AvailableContainer%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L47">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L147">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_GreaterThan_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThan*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_GreaterThan_Cshrix_Data_AvailableContainer_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThan(Cshrix.Data.AvailableContainer,System.Boolean)">GreaterThan(AvailableContainer, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is greater than a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1672,12 +1717,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1692,7 +1739,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is greater than <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1701,11 +1750,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_GreaterThan_System_Boolean_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_GreaterThan(System.Boolean%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L55">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L191">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_GreaterThan_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThan*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_GreaterThan_System_Boolean_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThan(System.Boolean,Cshrix.Data.AvailableContainer)">GreaterThan(Boolean, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> is greater than an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1724,12 +1774,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1744,7 +1796,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is greater than <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1753,11 +1807,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual(Cshrix.Data.AvailableContainer%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L43">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L125">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual(Cshrix.Data.AvailableContainer,Cshrix.Data.AvailableContainer)">GreaterThanOrEqual(AvailableContainer, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is greater than or equal to another.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1776,12 +1831,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1796,7 +1853,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is greater than or equal to <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1805,11 +1864,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_Cshrix_Data_AvailableContainer_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual(Cshrix.Data.AvailableContainer%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L51">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L169">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_Cshrix_Data_AvailableContainer_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual(Cshrix.Data.AvailableContainer,System.Boolean)">GreaterThanOrEqual(AvailableContainer, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is greater than or equal to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1828,12 +1888,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1848,7 +1910,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is greater than or equal to <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1857,11 +1921,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_System_Boolean_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual(System.Boolean%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L59">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L213">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_GreaterThanOrEqual_System_Boolean_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_GreaterThanOrEqual(System.Boolean,Cshrix.Data.AvailableContainer)">GreaterThanOrEqual(Boolean, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> is greater than or equal to an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1880,12 +1945,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1900,7 +1967,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is greater than or equal to <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1909,11 +1978,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_Implicit_Cshrix_Data_AvailableContainer__System_Boolean.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_Implicit(Cshrix.Data.AvailableContainer)~System.Boolean%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L23">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L37">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_Implicit_" data-uid="Cshrix.Data.AvailableContainer.op_Implicit*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_Implicit_Cshrix_Data_AvailableContainer__System_Boolean" data-uid="Cshrix.Data.AvailableContainer.op_Implicit(Cshrix.Data.AvailableContainer)~System.Boolean">Implicit(AvailableContainer to Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> value to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1932,7 +2002,8 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">container</span></td>
-        <td></td>
+        <td><p>The container to convert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1947,7 +2018,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p>The converted value.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1956,11 +2028,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_Implicit_System_Boolean__Cshrix_Data_AvailableContainer.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_Implicit(System.Boolean)~Cshrix.Data.AvailableContainer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L25">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L44">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_Implicit_" data-uid="Cshrix.Data.AvailableContainer.op_Implicit*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_Implicit_System_Boolean__Cshrix_Data_AvailableContainer" data-uid="Cshrix.Data.AvailableContainer.op_Implicit(System.Boolean)~Cshrix.Data.AvailableContainer">Implicit(Boolean to AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> to an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1979,7 +2052,8 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">boolean</span></td>
-        <td></td>
+        <td><p>The boolean to convert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1994,7 +2068,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
-        <td></td>
+        <td><p>An instance of <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2003,11 +2078,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_Inequality_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_Inequality(Cshrix.Data.AvailableContainer%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L29">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L60">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_Inequality_" data-uid="Cshrix.Data.AvailableContainer.op_Inequality*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_Inequality_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_Inequality(Cshrix.Data.AvailableContainer,Cshrix.Data.AvailableContainer)">Inequality(AvailableContainer, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compares two instance of <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> for inequality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2026,12 +2102,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2046,7 +2124,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the two instances are not equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2055,11 +2134,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_Inequality_Cshrix_Data_AvailableContainer_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_Inequality(Cshrix.Data.AvailableContainer%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L33">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L76">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_Inequality_" data-uid="Cshrix.Data.AvailableContainer.op_Inequality*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_Inequality_Cshrix_Data_AvailableContainer_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.op_Inequality(Cshrix.Data.AvailableContainer,System.Boolean)">Inequality(AvailableContainer, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compares an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> and <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> for inequality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2078,12 +2158,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2098,7 +2180,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the two are not equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2107,11 +2190,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_Inequality_System_Boolean_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_Inequality(System.Boolean%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L37">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L92">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_Inequality_" data-uid="Cshrix.Data.AvailableContainer.op_Inequality*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_Inequality_System_Boolean_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_Inequality(System.Boolean,Cshrix.Data.AvailableContainer)">Inequality(Boolean, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compares a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> and <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> for inequality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2130,12 +2214,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2150,7 +2236,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the two are not equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2159,11 +2246,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_LessThan_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_LessThan(Cshrix.Data.AvailableContainer%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L41">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L114">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_LessThan_" data-uid="Cshrix.Data.AvailableContainer.op_LessThan*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_LessThan_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_LessThan(Cshrix.Data.AvailableContainer,Cshrix.Data.AvailableContainer)">LessThan(AvailableContainer, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is less than another.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2182,12 +2270,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2202,7 +2292,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is less than <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2211,11 +2303,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_LessThan_Cshrix_Data_AvailableContainer_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_LessThan(Cshrix.Data.AvailableContainer%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L49">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L158">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_LessThan_" data-uid="Cshrix.Data.AvailableContainer.op_LessThan*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_LessThan_Cshrix_Data_AvailableContainer_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.op_LessThan(Cshrix.Data.AvailableContainer,System.Boolean)">LessThan(AvailableContainer, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is less than a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2234,12 +2327,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2254,7 +2349,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is less than <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2263,11 +2360,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_LessThan_System_Boolean_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_LessThan(System.Boolean%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L57">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L202">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_LessThan_" data-uid="Cshrix.Data.AvailableContainer.op_LessThan*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_LessThan_System_Boolean_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_LessThan(System.Boolean,Cshrix.Data.AvailableContainer)">LessThan(Boolean, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> is less than an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2286,12 +2384,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2306,7 +2406,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is less than <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2315,11 +2417,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_LessThanOrEqual_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_LessThanOrEqual(Cshrix.Data.AvailableContainer%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L45">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L136">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_LessThanOrEqual_" data-uid="Cshrix.Data.AvailableContainer.op_LessThanOrEqual*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_LessThanOrEqual_Cshrix_Data_AvailableContainer_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_LessThanOrEqual(Cshrix.Data.AvailableContainer,Cshrix.Data.AvailableContainer)">LessThanOrEqual(AvailableContainer, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is less than or equal to another.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2338,12 +2441,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2358,7 +2463,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is less than or equal to <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2367,11 +2474,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_LessThanOrEqual_Cshrix_Data_AvailableContainer_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_LessThanOrEqual(Cshrix.Data.AvailableContainer%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L53">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L180">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_LessThanOrEqual_" data-uid="Cshrix.Data.AvailableContainer.op_LessThanOrEqual*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_LessThanOrEqual_Cshrix_Data_AvailableContainer_System_Boolean_" data-uid="Cshrix.Data.AvailableContainer.op_LessThanOrEqual(Cshrix.Data.AvailableContainer,System.Boolean)">LessThanOrEqual(AvailableContainer, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is less than or equal to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2390,12 +2498,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2410,7 +2520,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is less than or equal to <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2419,11 +2531,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_LessThanOrEqual_System_Boolean_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_LessThanOrEqual(System.Boolean%2CCshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L61">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L224">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_LessThanOrEqual_" data-uid="Cshrix.Data.AvailableContainer.op_LessThanOrEqual*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_LessThanOrEqual_System_Boolean_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_LessThanOrEqual(System.Boolean,Cshrix.Data.AvailableContainer)">LessThanOrEqual(Boolean, AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> is less than or equal to an <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2442,12 +2555,14 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">left</span></td>
-        <td></td>
+        <td><p>Left operand.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">right</span></td>
-        <td></td>
+        <td><p>Right operand.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2462,7 +2577,9 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">left</code> is less than or equal to <code data-dev-comment-type="paramref" class="paramref">right</code>;
+otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2471,11 +2588,12 @@ public bool Available { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer_op_True_Cshrix_Data_AvailableContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer.op_True(Cshrix.Data.AvailableContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L63">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L231">View Source</a>
   </span>
   <a id="Cshrix_Data_AvailableContainer_op_True_" data-uid="Cshrix.Data.AvailableContainer.op_True*"></a>
   <h4 id="Cshrix_Data_AvailableContainer_op_True_Cshrix_Data_AvailableContainer_" data-uid="Cshrix.Data.AvailableContainer.op_True(Cshrix.Data.AvailableContainer)">True(AvailableContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether a given <a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a> is definitely <code>true</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2494,7 +2612,8 @@ public bool Available { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.AvailableContainer.html">AvailableContainer</a></td>
         <td><span class="parametername">container</span></td>
-        <td></td>
+        <td><p>The container to check.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2509,7 +2628,8 @@ public bool Available { get; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the container is definitely <code>true</code>; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2537,7 +2657,7 @@ public bool Available { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Data_AvailableContainer.md&amp;value=---%0Auid%3A%20Cshrix.Data.AvailableContainer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L15" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/AvailableContainer.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -148,7 +148,7 @@
                             <a href="Cshrix.Data.AvailableContainer.html" title="AvailableContainer" class="">AvailableContainer</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.AvatarUrlContainer.html" title="AvatarUrlContainer" class="">AvatarUrlContainer</a>
+                            <a href="Cshrix.Data.AvatarUriContainer.html" title="AvatarUriContainer" class="">AvatarUriContainer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.BaseUriContainer.html" title="BaseUriContainer" class="">BaseUriContainer</a>
@@ -883,10 +883,10 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.DictionaryExtensions.html" title="DictionaryExtensions" class="">DictionaryExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseMessageExtensions.html" title="HttpResponseMessageExtensions" class="">HttpResponseMessageExtensions</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Extensions.JObjectExtensions.html" title="JObjectExtensions" class="">JObjectExtensions</a>
@@ -903,9 +903,6 @@
                       <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
                         
                         <ul class="nav level2">
-                          <li class="">
-                            <a href="Cshrix.Helpers.EnumHelpers.html" title="EnumHelpers" class="">EnumHelpers</a>
-                          </li>
                           <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
@@ -1018,7 +1015,8 @@
   
   <h1 id="Cshrix_Serialization_NotificationActionConverter" data-uid="Cshrix.Serialization.NotificationActionConverter" class="text-break">Class NotificationActionConverter
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Converts <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a> objects to/from their JSON representation.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1072,6 +1070,11 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class NotificationActionConverter : JsonConverter&lt;NotificationAction&gt;</code></pre>
   </div>
+  <h5 id="Cshrix_Serialization_NotificationActionConverter_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The Matrix API can send/receive notification actions either as a string (for simple actions),
+or as an object specifying additional parameters. This custom serializer makes it possible to represent
+both as complete objects on the C# side, while the API can send and receive what it expects.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -1079,11 +1082,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_NotificationActionConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_Cshrix_Data_Notifications_NotificationAction_System_Boolean_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.NotificationActionConverter.ReadJson(Newtonsoft.Json.JsonReader%2CSystem.Type%2CCshrix.Data.Notifications.NotificationAction%2CSystem.Boolean%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/NotificationActionConverter.cs/#L41">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/NotificationActionConverter.cs/#L118">View Source</a>
   </span>
   <a id="Cshrix_Serialization_NotificationActionConverter_ReadJson_" data-uid="Cshrix.Serialization.NotificationActionConverter.ReadJson*"></a>
   <h4 id="Cshrix_Serialization_NotificationActionConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_Cshrix_Data_Notifications_NotificationAction_System_Boolean_Newtonsoft_Json_JsonSerializer_" data-uid="Cshrix.Serialization.NotificationActionConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Data.Notifications.NotificationAction,System.Boolean,Newtonsoft.Json.JsonSerializer)">ReadJson(JsonReader, Type, NotificationAction, Boolean, JsonSerializer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the JSON representation of a <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1102,27 +1106,32 @@
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonReader</span></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>The <span class="xref">Newtonsoft.Json.JsonReader</span> to read from.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">objectType</span></td>
-        <td></td>
+        <td><p>Type of the object.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a></td>
         <td><span class="parametername">existingValue</span></td>
-        <td></td>
+        <td><p>The existing value of object being read. If there is no existing value then <code>null</code> will be used.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">hasExistingValue</span></td>
-        <td></td>
+        <td><p>The existing value has a value.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonSerializer</span></td>
         <td><span class="parametername">serializer</span></td>
-        <td></td>
+        <td><p>The calling serializer.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1137,22 +1146,46 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a> value.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">Newtonsoft.Json.JsonConverter&lt;Cshrix.Data.Notifications.NotificationAction&gt;.ReadJson(Newtonsoft.Json.JsonReader, System.Type, Cshrix.Data.Notifications.NotificationAction, System.Boolean, Newtonsoft.Json.JsonSerializer)</span></div>
+  <h5 id="Cshrix_Serialization_NotificationActionConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_Cshrix_Data_Notifications_NotificationAction_System_Boolean_Newtonsoft_Json_JsonSerializer__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+If the JSON value is a simple string, it gets deserialized into a <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a>
+with only <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html#Cshrix_Data_Notifications_NotificationAction_Action">Action</a> set.
+</p>
+<p>
+If, on the other hand, the JSON value is an object, the deserializer will attempt to extract relevant
+values from it, as specified by the API.
+</p>
+</div>
+  <h5 id="Cshrix_Serialization_NotificationActionConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_Cshrix_Data_Notifications_NotificationAction_System_Boolean_Newtonsoft_Json_JsonSerializer__examples">Examples</h5>
+  <pre><code>var json = &quot;\&quot;notify\&quot;&quot;;
+var action = JsonConvert.DeserializeObject&lt;NotificationAction>(json);
+// action has its Action property set to &quot;notify&quot;</code></pre>
+
+  <pre><code>var json = &quot;{ \&quot;set_tweak\&quot;: \&quot;highlight\&quot;, \&quot;value\&quot;: false }&quot;;
+var action = JsonConvert.DeserializeObject&lt;NotificationAction>(json);
+// action has the following properties:
+//   Action = &quot;set_tweak&quot;
+//   Name = &quot;highlight&quot;
+//   Value = false</code></pre>
+
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_NotificationActionConverter_WriteJson_Newtonsoft_Json_JsonWriter_Cshrix_Data_Notifications_NotificationAction_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.NotificationActionConverter.WriteJson(Newtonsoft.Json.JsonWriter%2CCshrix.Data.Notifications.NotificationAction%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/NotificationActionConverter.cs/#L20">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/NotificationActionConverter.cs/#L60">View Source</a>
   </span>
   <a id="Cshrix_Serialization_NotificationActionConverter_WriteJson_" data-uid="Cshrix.Serialization.NotificationActionConverter.WriteJson*"></a>
   <h4 id="Cshrix_Serialization_NotificationActionConverter_WriteJson_Newtonsoft_Json_JsonWriter_Cshrix_Data_Notifications_NotificationAction_Newtonsoft_Json_JsonSerializer_" data-uid="Cshrix.Serialization.NotificationActionConverter.WriteJson(Newtonsoft.Json.JsonWriter,Cshrix.Data.Notifications.NotificationAction,Newtonsoft.Json.JsonSerializer)">WriteJson(JsonWriter, NotificationAction, JsonSerializer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the JSON representation of an instance of <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1171,22 +1204,46 @@
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonWriter</span></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>The <span class="xref">Newtonsoft.Json.JsonWriter</span> to write to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The value.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Newtonsoft.Json.JsonSerializer</span></td>
         <td><span class="parametername">serializer</span></td>
-        <td></td>
+        <td><p>The calling serializer.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">Newtonsoft.Json.JsonConverter&lt;Cshrix.Data.Notifications.NotificationAction&gt;.WriteJson(Newtonsoft.Json.JsonWriter, Cshrix.Data.Notifications.NotificationAction, Newtonsoft.Json.JsonSerializer)</span></div>
+  <h5 id="Cshrix_Serialization_NotificationActionConverter_WriteJson_Newtonsoft_Json_JsonWriter_Cshrix_Data_Notifications_NotificationAction_Newtonsoft_Json_JsonSerializer__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+If <code data-dev-comment-type="paramref" class="paramref">value</code> only has <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html#Cshrix_Data_Notifications_NotificationAction_Action">Action</a> specified, then the
+serializer will product a simple string value, as expected by the API.
+</p>
+<p>
+If, on the other hand, the <code data-dev-comment-type="paramref" class="paramref">value</code> has one or both of
+<a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html#Cshrix_Data_Notifications_NotificationAction_Name">Name</a> and/or <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html#Cshrix_Data_Notifications_NotificationAction_Value">Value</a> specified,
+then it will serialize into a complete object representation, with <code>set_tweak</code> set to the value
+of <a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html#Cshrix_Data_Notifications_NotificationAction_Name">Name</a>.
+</p>
+</div>
+  <h5 id="Cshrix_Serialization_NotificationActionConverter_WriteJson_Newtonsoft_Json_JsonWriter_Cshrix_Data_Notifications_NotificationAction_Newtonsoft_Json_JsonSerializer__examples">Examples</h5>
+  <pre><code>var action = new NotificationAction(&quot;notify&quot;);
+var json = JsonConvert.SerializeObject(action);
+// Value of json: &quot;notify&quot;</code></pre>
+
+  <pre><code>var action = new NotificationAction(&quot;set_tweak&quot;, &quot;highlight&quot;, true);
+var json = JsonConvert.SerializeObject(action);
+// Value of json: { &quot;set_tweak&quot;: &quot;highlight&quot;, &quot;value&quot;: true }</code></pre>
+
 </article>
           </div>
           
@@ -1198,7 +1255,7 @@
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_NotificationActionConverter.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.NotificationActionConverter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/NotificationActionConverter.cs/#L18" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/NotificationActionConverter.cs/#L27" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

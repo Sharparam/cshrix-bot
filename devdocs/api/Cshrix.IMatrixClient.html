@@ -148,7 +148,7 @@
                             <a href="Cshrix.Data.AvailableContainer.html" title="AvailableContainer" class="">AvailableContainer</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.AvatarUrlContainer.html" title="AvatarUrlContainer" class="">AvatarUrlContainer</a>
+                            <a href="Cshrix.Data.AvatarUriContainer.html" title="AvatarUriContainer" class="">AvatarUriContainer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.BaseUriContainer.html" title="BaseUriContainer" class="">BaseUriContainer</a>
@@ -883,10 +883,10 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.DictionaryExtensions.html" title="DictionaryExtensions" class="">DictionaryExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
+                            <a href="Cshrix.Extensions.HttpResponseMessageExtensions.html" title="HttpResponseMessageExtensions" class="">HttpResponseMessageExtensions</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Extensions.JObjectExtensions.html" title="JObjectExtensions" class="">JObjectExtensions</a>
@@ -903,9 +903,6 @@
                       <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
                         
                         <ul class="nav level2">
-                          <li class="">
-                            <a href="Cshrix.Helpers.EnumHelpers.html" title="EnumHelpers" class="">EnumHelpers</a>
-                          </li>
                           <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
@@ -1018,13 +1015,15 @@
   
   <h1 id="Cshrix_IMatrixClient" data-uid="Cshrix.IMatrixClient" class="text-break">Interface IMatrixClient
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A client interface providing an easier way to interact with the Matrix API.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Cshrix.html">Cshrix</a></h6>
   <h6><strong>Assembly</strong>: Cshrix.dll</h6>
   <h5 id="Cshrix_IMatrixClient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IMatrixClient</code></pre>
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+public interface IMatrixClient</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
@@ -1033,11 +1032,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClient_GetNotificationPushRulesAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClient.GetNotificationPushRulesAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClient.cs/#L21">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClient.cs/#L35">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClient_GetNotificationPushRulesAsync_" data-uid="Cshrix.IMatrixClient.GetNotificationPushRulesAsync*"></a>
   <h4 id="Cshrix_IMatrixClient_GetNotificationPushRulesAsync" data-uid="Cshrix.IMatrixClient.GetNotificationPushRulesAsync">GetNotificationPushRulesAsync()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets all configured notification push rules for the current user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1054,7 +1054,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Cshrix.Data.Notifications.NotificationRulesets.html">NotificationRulesets</a>&gt;</td>
-        <td></td>
+        <td><p>Configured notification push rules.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1063,11 +1064,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClient_GetPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClient.GetPreviewInfoAsync(System.Uri%2CSystem.Nullable%7BSystem.DateTimeOffset%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClient.cs/#L23">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClient.cs/#L43">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClient_GetPreviewInfoAsync_" data-uid="Cshrix.IMatrixClient.GetPreviewInfoAsync*"></a>
   <h4 id="Cshrix_IMatrixClient_GetPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__" data-uid="Cshrix.IMatrixClient.GetPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})">GetPreviewInfoAsync(Uri, Nullable&lt;DateTimeOffset&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets preview information for a URL.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1086,12 +1088,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">uri</span></td>
-        <td></td>
+        <td><p>The URI to get preview information for.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>&gt;</td>
         <td><span class="parametername">at</span></td>
-        <td></td>
+        <td><p>The point in time at which to get information from.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1106,7 +1110,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Cshrix.Data.PreviewInfo.html">PreviewInfo</a>&gt;</td>
-        <td></td>
+        <td><p>Information about the URI.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1115,11 +1120,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClient_GetUserIdAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClient.GetUserIdAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClient.cs/#L19">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClient.cs/#L29">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClient_GetUserIdAsync_" data-uid="Cshrix.IMatrixClient.GetUserIdAsync*"></a>
   <h4 id="Cshrix_IMatrixClient_GetUserIdAsync" data-uid="Cshrix.IMatrixClient.GetUserIdAsync">GetUserIdAsync()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the current user's ID.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1136,7 +1142,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Cshrix.Data.UserId.html">UserId</a>&gt;</td>
-        <td></td>
+        <td><p>The current user's ID.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1151,7 +1158,7 @@
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClient.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClient.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClient.cs/#L22" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
