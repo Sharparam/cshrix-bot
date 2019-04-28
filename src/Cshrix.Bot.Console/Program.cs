@@ -9,7 +9,6 @@
 namespace Cshrix.Bot.Console
 {
     using System;
-    using System.IO;
     using System.Threading.Tasks;
 
     using Configuration;
@@ -19,8 +18,6 @@ namespace Cshrix.Bot.Console
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
-
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Main program class containing the entry point.
