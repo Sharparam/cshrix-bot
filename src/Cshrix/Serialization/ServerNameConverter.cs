@@ -52,8 +52,7 @@ namespace Cshrix.Serialization
                     return new ServerName((string)value);
 
                 default:
-                    throw new JsonSerializationException(
-                        "Cannot deserialize ServerName if it is not a string or object");
+                    throw new JsonSerializationException("Cannot deserialize ServerName if it is not a string");
             }
         }
 

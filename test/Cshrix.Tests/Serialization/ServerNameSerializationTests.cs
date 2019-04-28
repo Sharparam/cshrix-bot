@@ -34,17 +34,5 @@ namespace Cshrix.Tests.Serialization
 
             Assert.AreEqual("matrix.sharparam.com", deserialized.Hostname);
         }
-
-        [Test]
-        public void ShouldDeserializeObjectServerName()
-        {
-            const string ServerName = @"{
-                ""Hostname"": ""matrix.sharparam.com"",
-            }";
-
-            var deserialized = JsonConvert.DeserializeObject<ServerName>(ServerName);
-
-            Assert.AreEqual("matrix.sharparam.com", deserialized.Hostname);
-        }
     }
 }
