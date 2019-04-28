@@ -883,6 +883,9 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
+                            <a href="Cshrix.Extensions.DateTimeExtensions.html" title="DateTimeExtensions" class="">DateTimeExtensions</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
@@ -903,6 +906,9 @@
                       <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
                         
                         <ul class="nav level2">
+                          <li class="">
+                            <a href="Cshrix.Helpers.DateTimeUtils.html" title="DateTimeUtils" class="">DateTimeUtils</a>
+                          </li>
                           <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
@@ -925,6 +931,9 @@
                             <a href="Cshrix.Serialization.IdentifierConverter-1.html" title="IdentifierConverter&lt;T&gt;" class="">IdentifierConverter&lt;T&gt;</a>
                           </li>
                           <li class="">
+                            <a href="Cshrix.Serialization.MatrixApiQueryParamSerializer.html" title="MatrixApiQueryParamSerializer" class="">MatrixApiQueryParamSerializer</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Serialization.MatrixErrorConverter.html" title="MatrixErrorConverter" class="">MatrixErrorConverter</a>
                           </li>
                           <li class="">
@@ -935,9 +944,6 @@
                           </li>
                           <li class="">
                             <a href="Cshrix.Serialization.OneTimeKeyConverter.html" title="OneTimeKeyConverter" class="">OneTimeKeyConverter</a>
-                          </li>
-                          <li class="">
-                            <a href="Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html" title="QuoteStrippingJsonRequestQueryParamSerializer" class="">QuoteStrippingJsonRequestQueryParamSerializer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Serialization.RoomAliasConverter.html" title="RoomAliasConverter" class="">RoomAliasConverter</a>
@@ -3641,19 +3647,19 @@ Task&lt;TurnServerCredentials&gt; GetTurnServerCredentialsAsync()</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_Int64__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri%2CSystem.Nullable%7BSystem.Int64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri%2CSystem.Nullable%7BSystem.DateTimeOffset%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L895">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync*"></a>
-  <h4 id="Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_Int64__" data-uid="Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.Int64})">GetUriPreviewInfoAsync(Uri, Nullable&lt;Int64&gt;)</h4>
+  <h4 id="Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__" data-uid="Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})">GetUriPreviewInfoAsync(Uri, Nullable&lt;DateTimeOffset&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Get(&quot;_matrix/media/{apiVersion}/preview_url&quot;)]
-Task&lt;PreviewInfo&gt; GetUriPreviewInfoAsync([Query(&quot;url&quot;)] Uri uri, [Query(&quot;ts&quot;)] long? timestamp = default(long? ))</code></pre>
+Task&lt;PreviewInfo&gt; GetUriPreviewInfoAsync([Query(&quot;url&quot;)] Uri uri, [Query(&quot;ts&quot;, QuerySerializationMethod.Serialized)] DateTimeOffset? at = default(DateTimeOffset? ))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3671,8 +3677,8 @@ Task&lt;PreviewInfo&gt; GetUriPreviewInfoAsync([Query(&quot;url&quot;)] Uri uri,
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a>&gt;</td>
-        <td><span class="parametername">timestamp</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>&gt;</td>
+        <td><span class="parametername">at</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -5811,19 +5817,19 @@ the account data. The config will be synced to clients in the per-room <code>acc
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SyncAsync(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_TimeSpan_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SyncAsync(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.String%2CSystem.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L630">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SyncAsync_" data-uid="Cshrix.IMatrixClientServerApi.SyncAsync*"></a>
-  <h4 id="Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_Int64_" data-uid="Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.Int64)">SyncAsync(String, String, Boolean, String, Int64)</h4>
+  <h4 id="Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_TimeSpan_" data-uid="Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.TimeSpan)">SyncAsync(String, String, Boolean, String, TimeSpan)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Get(&quot;_matrix/client/{apiVersion}/sync&quot;)]
-Task&lt;SyncResponse&gt; SyncAsync([Query] string since = null, [Query] string filter = null, [Query(&quot;full_state&quot;)] bool fullState = false, [Query(&quot;set_presence&quot;)] string setPresence = &quot;offline&quot;, [Query] long timeout = 0L)</code></pre>
+Task&lt;SyncResponse&gt; SyncAsync([Query] string since = null, [Query] string filter = null, [Query(&quot;full_state&quot;)] bool fullState = false, [Query(&quot;set_presence&quot;)] string setPresence = &quot;offline&quot;, [Query(QuerySerializationMethod.Serialized)] TimeSpan timeout = default(TimeSpan))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5856,7 +5862,7 @@ Task&lt;SyncResponse&gt; SyncAsync([Query] string since = null, [Query] string f
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
         <td><span class="parametername">timeout</span></td>
         <td></td>
       </tr>
@@ -6467,9 +6473,6 @@ Server-local administrator privileges are not specified in this document.</p>
       <a class="xref" href="Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_SetBearerToken_Cshrix_IMatrixClientServerApi_System_String_">MatrixClientServerApiExtensions.SetBearerToken(IMatrixClientServerApi, String)</a>
   </div>
   <div>
-      <a class="xref" href="Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_SyncAsync_Cshrix_IMatrixClientServerApi_System_String_System_String_System_Boolean_System_String_System_TimeSpan_">MatrixClientServerApiExtensions.SyncAsync(IMatrixClientServerApi, String, String, Boolean, String, TimeSpan)</a>
-  </div>
-  <div>
       <a class="xref" href="Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_RequestOpenIdTokenAsync_Cshrix_IMatrixClientServerApi_Cshrix_Data_UserId_">MatrixClientServerApiExtensions.RequestOpenIdTokenAsync(IMatrixClientServerApi, UserId)</a>
   </div>
   <div>
@@ -6483,9 +6486,6 @@ Server-local administrator privileges are not specified in this document.</p>
   </div>
   <div>
       <a class="xref" href="Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_DownloadThumbnailContentAsync_Cshrix_IMatrixClientServerApi_System_String_System_String_System_Int32_System_Int32_Cshrix_Data_ResizeMethod_System_Nullable_System_Boolean__">MatrixClientServerApiExtensions.DownloadThumbnailContentAsync(IMatrixClientServerApi, String, String, Int32, Int32, ResizeMethod, Nullable&lt;Boolean&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_GetUriPreviewInfoAsync_Cshrix_IMatrixClientServerApi_System_Uri_System_Nullable_System_DateTimeOffset__">MatrixClientServerApiExtensions.GetUriPreviewInfoAsync(IMatrixClientServerApi, Uri, Nullable&lt;DateTimeOffset&gt;)</a>
   </div>
 </article>
           </div>

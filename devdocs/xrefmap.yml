@@ -13080,6 +13080,25 @@ references:
   fullName.vb: Cshrix.Extensions.ApiExceptionExtensions.TryGetError(Of TError)(RestEase.ApiException, ByRef TError)
   nameWithType: ApiExceptionExtensions.TryGetError<TError>(ApiException, out TError)
   nameWithType.vb: ApiExceptionExtensions.TryGetError(Of TError)(ApiException, ByRef TError)
+- uid: Cshrix.Extensions.DateTimeExtensions
+  name: DateTimeExtensions
+  href: api/Cshrix.Extensions.DateTimeExtensions.html
+  commentId: T:Cshrix.Extensions.DateTimeExtensions
+  fullName: Cshrix.Extensions.DateTimeExtensions
+  nameWithType: DateTimeExtensions
+- uid: Cshrix.Extensions.DateTimeExtensions.ToUnixTimeMilliseconds(System.DateTime)
+  name: ToUnixTimeMilliseconds(DateTime)
+  href: api/Cshrix.Extensions.DateTimeExtensions.html#Cshrix_Extensions_DateTimeExtensions_ToUnixTimeMilliseconds_System_DateTime_
+  commentId: M:Cshrix.Extensions.DateTimeExtensions.ToUnixTimeMilliseconds(System.DateTime)
+  fullName: Cshrix.Extensions.DateTimeExtensions.ToUnixTimeMilliseconds(System.DateTime)
+  nameWithType: DateTimeExtensions.ToUnixTimeMilliseconds(DateTime)
+- uid: Cshrix.Extensions.DateTimeExtensions.ToUnixTimeMilliseconds*
+  name: ToUnixTimeMilliseconds
+  href: api/Cshrix.Extensions.DateTimeExtensions.html#Cshrix_Extensions_DateTimeExtensions_ToUnixTimeMilliseconds_
+  commentId: Overload:Cshrix.Extensions.DateTimeExtensions.ToUnixTimeMilliseconds
+  isSpec: "True"
+  fullName: Cshrix.Extensions.DateTimeExtensions.ToUnixTimeMilliseconds
+  nameWithType: DateTimeExtensions.ToUnixTimeMilliseconds
 - uid: Cshrix.Extensions.HttpResponseHeadersExtensions
   name: HttpResponseHeadersExtensions
   href: api/Cshrix.Extensions.HttpResponseHeadersExtensions.html
@@ -13326,22 +13345,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.DownloadThumbnailContentAsync
   nameWithType: MatrixClientServerApiExtensions.DownloadThumbnailContentAsync
-- uid: Cshrix.Extensions.MatrixClientServerApiExtensions.GetUriPreviewInfoAsync(Cshrix.IMatrixClientServerApi,System.Uri,System.Nullable{System.DateTimeOffset})
-  name: GetUriPreviewInfoAsync(IMatrixClientServerApi, Uri, Nullable<DateTimeOffset>)
-  href: api/Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_GetUriPreviewInfoAsync_Cshrix_IMatrixClientServerApi_System_Uri_System_Nullable_System_DateTimeOffset__
-  commentId: M:Cshrix.Extensions.MatrixClientServerApiExtensions.GetUriPreviewInfoAsync(Cshrix.IMatrixClientServerApi,System.Uri,System.Nullable{System.DateTimeOffset})
-  name.vb: GetUriPreviewInfoAsync(IMatrixClientServerApi, Uri, Nullable(Of DateTimeOffset))
-  fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.GetUriPreviewInfoAsync(Cshrix.IMatrixClientServerApi, System.Uri, System.Nullable<System.DateTimeOffset>)
-  fullName.vb: Cshrix.Extensions.MatrixClientServerApiExtensions.GetUriPreviewInfoAsync(Cshrix.IMatrixClientServerApi, System.Uri, System.Nullable(Of System.DateTimeOffset))
-  nameWithType: MatrixClientServerApiExtensions.GetUriPreviewInfoAsync(IMatrixClientServerApi, Uri, Nullable<DateTimeOffset>)
-  nameWithType.vb: MatrixClientServerApiExtensions.GetUriPreviewInfoAsync(IMatrixClientServerApi, Uri, Nullable(Of DateTimeOffset))
-- uid: Cshrix.Extensions.MatrixClientServerApiExtensions.GetUriPreviewInfoAsync*
-  name: GetUriPreviewInfoAsync
-  href: api/Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_GetUriPreviewInfoAsync_
-  commentId: Overload:Cshrix.Extensions.MatrixClientServerApiExtensions.GetUriPreviewInfoAsync
-  isSpec: "True"
-  fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.GetUriPreviewInfoAsync
-  nameWithType: MatrixClientServerApiExtensions.GetUriPreviewInfoAsync
 - uid: Cshrix.Extensions.MatrixClientServerApiExtensions.RequestOpenIdTokenAsync(Cshrix.IMatrixClientServerApi,Cshrix.Data.UserId)
   name: RequestOpenIdTokenAsync(IMatrixClientServerApi, UserId)
   href: api/Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_RequestOpenIdTokenAsync_Cshrix_IMatrixClientServerApi_Cshrix_Data_UserId_
@@ -13368,19 +13371,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.SetBearerToken
   nameWithType: MatrixClientServerApiExtensions.SetBearerToken
-- uid: Cshrix.Extensions.MatrixClientServerApiExtensions.SyncAsync(Cshrix.IMatrixClientServerApi,System.String,System.String,System.Boolean,System.String,System.TimeSpan)
-  name: SyncAsync(IMatrixClientServerApi, String, String, Boolean, String, TimeSpan)
-  href: api/Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_SyncAsync_Cshrix_IMatrixClientServerApi_System_String_System_String_System_Boolean_System_String_System_TimeSpan_
-  commentId: M:Cshrix.Extensions.MatrixClientServerApiExtensions.SyncAsync(Cshrix.IMatrixClientServerApi,System.String,System.String,System.Boolean,System.String,System.TimeSpan)
-  fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.SyncAsync(Cshrix.IMatrixClientServerApi, System.String, System.String, System.Boolean, System.String, System.TimeSpan)
-  nameWithType: MatrixClientServerApiExtensions.SyncAsync(IMatrixClientServerApi, String, String, Boolean, String, TimeSpan)
-- uid: Cshrix.Extensions.MatrixClientServerApiExtensions.SyncAsync*
-  name: SyncAsync
-  href: api/Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_SyncAsync_
-  commentId: Overload:Cshrix.Extensions.MatrixClientServerApiExtensions.SyncAsync
-  isSpec: "True"
-  fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.SyncAsync
-  nameWithType: MatrixClientServerApiExtensions.SyncAsync
 - uid: Cshrix.Extensions.ResponseExtensions
   name: ResponseExtensions
   href: api/Cshrix.Extensions.ResponseExtensions.html
@@ -13443,6 +13433,25 @@ references:
   commentId: N:Cshrix.Helpers
   fullName: Cshrix.Helpers
   nameWithType: Cshrix.Helpers
+- uid: Cshrix.Helpers.DateTimeUtils
+  name: DateTimeUtils
+  href: api/Cshrix.Helpers.DateTimeUtils.html
+  commentId: T:Cshrix.Helpers.DateTimeUtils
+  fullName: Cshrix.Helpers.DateTimeUtils
+  nameWithType: DateTimeUtils
+- uid: Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds(System.Int64)
+  name: FromUnixTimeMilliseconds(Int64)
+  href: api/Cshrix.Helpers.DateTimeUtils.html#Cshrix_Helpers_DateTimeUtils_FromUnixTimeMilliseconds_System_Int64_
+  commentId: M:Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds(System.Int64)
+  fullName: Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds(System.Int64)
+  nameWithType: DateTimeUtils.FromUnixTimeMilliseconds(Int64)
+- uid: Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds*
+  name: FromUnixTimeMilliseconds
+  href: api/Cshrix.Helpers.DateTimeUtils.html#Cshrix_Helpers_DateTimeUtils_FromUnixTimeMilliseconds_
+  commentId: Overload:Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds
+  isSpec: "True"
+  fullName: Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds
+  nameWithType: DateTimeUtils.FromUnixTimeMilliseconds
 - uid: Cshrix.Helpers.RandomHelpers
   name: RandomHelpers
   href: api/Cshrix.Helpers.RandomHelpers.html
@@ -14140,15 +14149,15 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.GetTurnServerCredentialsAsync
   nameWithType: IMatrixClientServerApi.GetTurnServerCredentialsAsync
-- uid: Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.Int64})
-  name: GetUriPreviewInfoAsync(Uri, Nullable<Int64>)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_Int64__
-  commentId: M:Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.Int64})
-  name.vb: GetUriPreviewInfoAsync(Uri, Nullable(Of Int64))
-  fullName: Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri, System.Nullable<System.Int64>)
-  fullName.vb: Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri, System.Nullable(Of System.Int64))
-  nameWithType: IMatrixClientServerApi.GetUriPreviewInfoAsync(Uri, Nullable<Int64>)
-  nameWithType.vb: IMatrixClientServerApi.GetUriPreviewInfoAsync(Uri, Nullable(Of Int64))
+- uid: Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
+  name: GetUriPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__
+  commentId: M:Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
+  name.vb: GetUriPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
+  fullName: Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri, System.Nullable<System.DateTimeOffset>)
+  fullName.vb: Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri, System.Nullable(Of System.DateTimeOffset))
+  nameWithType: IMatrixClientServerApi.GetUriPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
+  nameWithType.vb: IMatrixClientServerApi.GetUriPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
 - uid: Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync*
   name: GetUriPreviewInfoAsync
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_
@@ -14629,12 +14638,12 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.SetRoomAccountDataAsync
   nameWithType: IMatrixClientServerApi.SetRoomAccountDataAsync
-- uid: Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.Int64)
-  name: SyncAsync(String, String, Boolean, String, Int64)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_Int64_
-  commentId: M:Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.Int64)
-  fullName: Cshrix.IMatrixClientServerApi.SyncAsync(System.String, System.String, System.Boolean, System.String, System.Int64)
-  nameWithType: IMatrixClientServerApi.SyncAsync(String, String, Boolean, String, Int64)
+- uid: Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.TimeSpan)
+  name: SyncAsync(String, String, Boolean, String, TimeSpan)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_TimeSpan_
+  commentId: M:Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.TimeSpan)
+  fullName: Cshrix.IMatrixClientServerApi.SyncAsync(System.String, System.String, System.Boolean, System.String, System.TimeSpan)
+  nameWithType: IMatrixClientServerApi.SyncAsync(String, String, Boolean, String, TimeSpan)
 - uid: Cshrix.IMatrixClientServerApi.SyncAsync*
   name: SyncAsync
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_
@@ -15080,6 +15089,44 @@ references:
   fullName.vb: Cshrix.Serialization.IdentifierConverter(Of T).WriteJson
   nameWithType: IdentifierConverter<T>.WriteJson
   nameWithType.vb: IdentifierConverter(Of T).WriteJson
+- uid: Cshrix.Serialization.MatrixApiQueryParamSerializer
+  name: MatrixApiQueryParamSerializer
+  href: api/Cshrix.Serialization.MatrixApiQueryParamSerializer.html
+  commentId: T:Cshrix.Serialization.MatrixApiQueryParamSerializer
+  fullName: Cshrix.Serialization.MatrixApiQueryParamSerializer
+  nameWithType: MatrixApiQueryParamSerializer
+- uid: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam*
+  name: SerializeQueryCollectionParam
+  href: api/Cshrix.Serialization.MatrixApiQueryParamSerializer.html#Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryCollectionParam_
+  commentId: Overload:Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam
+  isSpec: "True"
+  fullName: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam
+  nameWithType: MatrixApiQueryParamSerializer.SerializeQueryCollectionParam
+- uid: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam``1(System.String,System.Collections.Generic.IEnumerable{``0},RestEase.RequestQueryParamSerializerInfo)
+  name: SerializeQueryCollectionParam<T>(String, IEnumerable<T>, RequestQueryParamSerializerInfo)
+  href: api/Cshrix.Serialization.MatrixApiQueryParamSerializer.html#Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryCollectionParam__1_System_String_System_Collections_Generic_IEnumerable___0__RestEase_RequestQueryParamSerializerInfo_
+  commentId: M:Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam``1(System.String,System.Collections.Generic.IEnumerable{``0},RestEase.RequestQueryParamSerializerInfo)
+  name.vb: SerializeQueryCollectionParam(Of T)(String, IEnumerable(Of T), RequestQueryParamSerializerInfo)
+  fullName: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam<T>(System.String, System.Collections.Generic.IEnumerable<T>, RestEase.RequestQueryParamSerializerInfo)
+  fullName.vb: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam(Of T)(System.String, System.Collections.Generic.IEnumerable(Of T), RestEase.RequestQueryParamSerializerInfo)
+  nameWithType: MatrixApiQueryParamSerializer.SerializeQueryCollectionParam<T>(String, IEnumerable<T>, RequestQueryParamSerializerInfo)
+  nameWithType.vb: MatrixApiQueryParamSerializer.SerializeQueryCollectionParam(Of T)(String, IEnumerable(Of T), RequestQueryParamSerializerInfo)
+- uid: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam*
+  name: SerializeQueryParam
+  href: api/Cshrix.Serialization.MatrixApiQueryParamSerializer.html#Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryParam_
+  commentId: Overload:Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam
+  isSpec: "True"
+  fullName: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam
+  nameWithType: MatrixApiQueryParamSerializer.SerializeQueryParam
+- uid: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam``1(System.String,``0,RestEase.RequestQueryParamSerializerInfo)
+  name: SerializeQueryParam<T>(String, T, RequestQueryParamSerializerInfo)
+  href: api/Cshrix.Serialization.MatrixApiQueryParamSerializer.html#Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryParam__1_System_String___0_RestEase_RequestQueryParamSerializerInfo_
+  commentId: M:Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam``1(System.String,``0,RestEase.RequestQueryParamSerializerInfo)
+  name.vb: SerializeQueryParam(Of T)(String, T, RequestQueryParamSerializerInfo)
+  fullName: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam<T>(System.String, T, RestEase.RequestQueryParamSerializerInfo)
+  fullName.vb: Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam(Of T)(System.String, T, RestEase.RequestQueryParamSerializerInfo)
+  nameWithType: MatrixApiQueryParamSerializer.SerializeQueryParam<T>(String, T, RequestQueryParamSerializerInfo)
+  nameWithType.vb: MatrixApiQueryParamSerializer.SerializeQueryParam(Of T)(String, T, RequestQueryParamSerializerInfo)
 - uid: Cshrix.Serialization.MatrixErrorConverter
   name: MatrixErrorConverter
   href: api/Cshrix.Serialization.MatrixErrorConverter.html
@@ -15234,44 +15281,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Serialization.OneTimeKeyConverter.WriteJson
   nameWithType: OneTimeKeyConverter.WriteJson
-- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer
-  name: QuoteStrippingJsonRequestQueryParamSerializer
-  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html
-  commentId: T:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer
-  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer
-  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer
-- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam*
-  name: SerializeQueryCollectionParam
-  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html#Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryCollectionParam_
-  commentId: Overload:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam
-  isSpec: "True"
-  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam
-  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam
-- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam``1(System.String,System.Collections.Generic.IEnumerable{``0},RestEase.RequestQueryParamSerializerInfo)
-  name: SerializeQueryCollectionParam<T>(String, IEnumerable<T>, RequestQueryParamSerializerInfo)
-  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html#Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryCollectionParam__1_System_String_System_Collections_Generic_IEnumerable___0__RestEase_RequestQueryParamSerializerInfo_
-  commentId: M:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam``1(System.String,System.Collections.Generic.IEnumerable{``0},RestEase.RequestQueryParamSerializerInfo)
-  name.vb: SerializeQueryCollectionParam(Of T)(String, IEnumerable(Of T), RequestQueryParamSerializerInfo)
-  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam<T>(System.String, System.Collections.Generic.IEnumerable<T>, RestEase.RequestQueryParamSerializerInfo)
-  fullName.vb: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam(Of T)(System.String, System.Collections.Generic.IEnumerable(Of T), RestEase.RequestQueryParamSerializerInfo)
-  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam<T>(String, IEnumerable<T>, RequestQueryParamSerializerInfo)
-  nameWithType.vb: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam(Of T)(String, IEnumerable(Of T), RequestQueryParamSerializerInfo)
-- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam*
-  name: SerializeQueryParam
-  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html#Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryParam_
-  commentId: Overload:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam
-  isSpec: "True"
-  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam
-  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam
-- uid: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam``1(System.String,``0,RestEase.RequestQueryParamSerializerInfo)
-  name: SerializeQueryParam<T>(String, T, RequestQueryParamSerializerInfo)
-  href: api/Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html#Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryParam__1_System_String___0_RestEase_RequestQueryParamSerializerInfo_
-  commentId: M:Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam``1(System.String,``0,RestEase.RequestQueryParamSerializerInfo)
-  name.vb: SerializeQueryParam(Of T)(String, T, RequestQueryParamSerializerInfo)
-  fullName: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam<T>(System.String, T, RestEase.RequestQueryParamSerializerInfo)
-  fullName.vb: Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam(Of T)(System.String, T, RestEase.RequestQueryParamSerializerInfo)
-  nameWithType: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam<T>(String, T, RequestQueryParamSerializerInfo)
-  nameWithType.vb: QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam(Of T)(String, T, RequestQueryParamSerializerInfo)
 - uid: Cshrix.Serialization.RoomAliasConverter
   name: RoomAliasConverter
   href: api/Cshrix.Serialization.RoomAliasConverter.html

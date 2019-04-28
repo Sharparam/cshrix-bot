@@ -421,32 +421,34 @@ var assemblies = [
       { "name": "Cshrix.Errors.RateLimitError", "rp": "Cshrix_RateLimitError.htm", "cl": 3, "ucl": 0, "cal": 3, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Errors.UnauthorizedError", "rp": "Cshrix_UnauthorizedError.htm", "cl": 0, "ucl": 11, "cal": 11, "tl": 91, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.ApiExceptionExtensions", "rp": "Cshrix_ApiExceptionExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 92, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Extensions.DateTimeExtensions", "rp": "Cshrix_DateTimeExtensions.htm", "cl": 0, "ucl": 1, "cal": 1, "tl": 29, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.DictionaryExtensions", "rp": "Cshrix_DictionaryExtensions.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 56, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.HttpResponseHeadersExtensions", "rp": "Cshrix_HttpResponseHeadersExtensions.htm", "cl": 0, "ucl": 16, "cal": 16, "tl": 107, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 10, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.HttpResponseMessageExtensions", "rp": "Cshrix_HttpResponseMessageExtensions.htm", "cl": 0, "ucl": 24, "cal": 24, "tl": 127, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 20, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.JObjectExtensions", "rp": "Cshrix_JObjectExtensions.htm", "cl": 23, "ucl": 10, "cal": 33, "tl": 176, "ct": "LineCoverage", "mc": "-", "cb": 18, "tb": 28, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Extensions.MatrixClientServerApiExtensions", "rp": "Cshrix_MatrixClientServerApiExtensions.htm", "cl": 0, "ucl": 48, "cal": 48, "tl": 228, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 26, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Extensions.MatrixClientServerApiExtensions", "rp": "Cshrix_MatrixClientServerApiExtensions.htm", "cl": 0, "ucl": 45, "cal": 45, "tl": 210, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 24, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.ResponseExtensions", "rp": "Cshrix_ResponseExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Helpers.DateTimeUtils", "rp": "Cshrix_DateTimeUtils.htm", "cl": 0, "ucl": 2, "cal": 2, "tl": 30, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.EnumHelpers", "rp": "Cshrix_EnumHelpers.htm", "cl": 13, "ucl": 0, "cal": 13, "tl": 64, "ct": "LineCoverage", "mc": "-", "cb": 6, "tb": 10, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.HashCode", "rp": "Cshrix_HashCode.htm", "cl": 10, "ucl": 40, "cal": 50, "tl": 239, "ct": "LineCoverage", "mc": "-", "cb": 6, "tb": 70, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.RandomHelpers", "rp": "Cshrix_RandomHelpers.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.ReflectionHelpers", "rp": "Cshrix_ReflectionHelpers.htm", "cl": 2, "ucl": 0, "cal": 2, "tl": 32, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 4, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.MatrixClient", "rp": "Cshrix_MatrixClient.htm", "cl": 0, "ucl": 20, "cal": 20, "tl": 99, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.MatrixClient", "rp": "Cshrix_MatrixClient.htm", "cl": 0, "ucl": 21, "cal": 21, "tl": 100, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.ComparisonConditionConverter`1", "rp": "Cshrix_ComparisonConditionConverter_1.htm", "cl": 0, "ucl": 29, "cal": 29, "tl": 124, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 16, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.EventConverter", "rp": "Cshrix_EventConverter.htm", "cl": 94, "ucl": 9, "cal": 103, "tl": 232, "ct": "LineCoverage", "mc": "-", "cb": 26, "tb": 36, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.GroupIdConverter", "rp": "Cshrix_GroupIdConverter.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 42, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.IdentifierConverter`1", "rp": "Cshrix_IdentifierConverter_1.htm", "cl": 5, "ucl": 4, "cal": 9, "tl": 80, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 6, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "rp": "Cshrix_MatrixApiQueryParamSerializer.htm", "cl": 0, "ucl": 22, "cal": 22, "tl": 162, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.MatrixErrorConverter", "rp": "Cshrix_MatrixErrorConverter.htm", "cl": 16, "ucl": 5, "cal": 21, "tl": 100, "ct": "LineCoverage", "mc": "-", "cb": 5, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.MillisecondTimeSpanConverter", "rp": "Cshrix_MillisecondTimeSpanConverter.htm", "cl": 9, "ucl": 11, "cal": 20, "tl": 101, "ct": "LineCoverage", "mc": "-", "cb": 3, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.NotificationActionConverter", "rp": "Cshrix_NotificationActionConverter.htm", "cl": 26, "ucl": 4, "cal": 30, "tl": 179, "ct": "LineCoverage", "mc": "-", "cb": 15, "tb": 20, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.OneTimeKeyConverter", "rp": "Cshrix_OneTimeKeyConverter.htm", "cl": 10, "ucl": 23, "cal": 33, "tl": 124, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 18, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer", "rp": "Cshrix_QuoteStrippingJsonRequestQueryParamSerializer.htm", "cl": 0, "ucl": 14, "cal": 14, "tl": 100, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.RoomAliasConverter", "rp": "Cshrix_RoomAliasConverter.htm", "cl": 3, "ucl": 1, "cal": 4, "tl": 42, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.SecondTimeSpanConverter", "rp": "Cshrix_SecondTimeSpanConverter.htm", "cl": 0, "ucl": 20, "cal": 20, "tl": 102, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.ServerNameConverter", "rp": "Cshrix_ServerNameConverter.htm", "cl": 7, "ucl": 2, "cal": 9, "tl": 69, "ct": "LineCoverage", "mc": "-", "cb": 3, "tb": 6, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.StringArrayFlagsEnumConverter`1", "rp": "Cshrix_StringArrayFlagsEnumConverter_1.htm", "cl": 21, "ucl": 4, "cal": 25, "tl": 109, "ct": "LineCoverage", "mc": "-", "cb": 11, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.StringIpAddressConverter", "rp": "Cshrix_StringIpAddressConverter.htm", "cl": 0, "ucl": 15, "cal": 15, "tl": 86, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 10, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Serialization.UnixMillisecondDateTimeConverter", "rp": "Cshrix_UnixMillisecondDateTimeConverter.htm", "cl": 10, "ucl": 21, "cal": 31, "tl": 141, "ct": "LineCoverage", "mc": "-", "cb": 5, "tb": 18, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Serialization.UnixMillisecondDateTimeConverter", "rp": "Cshrix_UnixMillisecondDateTimeConverter.htm", "cl": 10, "ucl": 20, "cal": 30, "tl": 138, "ct": "LineCoverage", "mc": "-", "cb": 5, "tb": 18, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.UserIdConverter", "rp": "Cshrix_UserIdConverter.htm", "cl": 3, "ucl": 1, "cal": 4, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Microsoft.CodeAnalysis.EmbeddedAttribute", "rp": "Cshrix_EmbeddedAttribute.htm", "cl": 0, "ucl": 0, "cal": 0, "tl": 0, "ct": "MethodCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "System.Runtime.CompilerServices.IsReadOnlyAttribute", "rp": "Cshrix_IsReadOnlyAttribute.htm", "cl": 0, "ucl": 0, "cal": 0, "tl": 0, "ct": "MethodCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
@@ -484,7 +486,7 @@ var riskHotspots = [
       { "value": 306, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Serialization.UnixMillisecondDateTimeConverter", "reportPath": "Cshrix_UnixMillisecondDateTimeConverter.htm", "methodName": "System.Object Cshrix.Serialization.UnixMillisecondDateTimeConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 96,
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.UnixMillisecondDateTimeConverter", "reportPath": "Cshrix_UnixMillisecondDateTimeConverter.htm", "methodName": "System.Object Cshrix.Serialization.UnixMillisecondDateTimeConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 93,
     "metrics": [
       { "value": 10, "exceeded": false },
       { "value": 256, "exceeded": true },
@@ -526,21 +528,21 @@ var riskHotspots = [
       { "value": 90, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "DownloadContentAsync()", "methodShortName": "DownloadContentAsync()", "fileIndex": 0, "line": 74,
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "DownloadContentAsync()", "methodShortName": "DownloadContentAsync()", "fileIndex": 0, "line": 65,
     "metrics": [
       { "value": 8, "exceeded": false },
       { "value": 8, "exceeded": false },
       { "value": 72, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "DownloadThumbnailContentAsync()", "methodShortName": "DownloadThumbnailContentAsync()", "fileIndex": 0, "line": 105,
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "DownloadThumbnailContentAsync()", "methodShortName": "DownloadThumbnailContentAsync()", "fileIndex": 0, "line": 96,
     "metrics": [
       { "value": 8, "exceeded": false },
       { "value": 8, "exceeded": false },
       { "value": 72, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "CreateContentFromResponse()", "methodShortName": "CreateContentFromResponse()", "fileIndex": 0, "line": 163,
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "CreateContentFromResponse()", "methodShortName": "CreateContentFromResponse()", "fileIndex": 0, "line": 145,
     "metrics": [
       { "value": 7, "exceeded": false },
       { "value": 8, "exceeded": false },
@@ -561,17 +563,17 @@ var riskHotspots = [
       { "value": 42, "exceeded": true },
     ]},
   {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "reportPath": "Cshrix_MatrixApiQueryParamSerializer.htm", "methodName": "SerializeQueryCollectionParam()", "methodShortName": "SerializeQueryCollectionParam()", "fileIndex": 0, "line": 74,
+    "metrics": [
+      { "value": 6, "exceeded": false },
+      { "value": 4, "exceeded": false },
+      { "value": 42, "exceeded": true },
+    ]},
+  {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.OneTimeKeyConverter", "reportPath": "Cshrix_OneTimeKeyConverter.htm", "methodName": "Cshrix.Data.OneTimeKey Cshrix.Serialization.OneTimeKeyConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Data.OneTimeKey,System.Boolean,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 64,
     "metrics": [
       { "value": 6, "exceeded": false },
       { "value": 32, "exceeded": false },
-      { "value": 42, "exceeded": true },
-    ]},
-  {
-    "assembly": "Cshrix", "class": "Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer", "reportPath": "Cshrix_QuoteStrippingJsonRequestQueryParamSerializer.htm", "methodName": "SerializeQueryCollectionParam()", "methodShortName": "SerializeQueryCollectionParam()", "fileIndex": 0, "line": 63,
-    "metrics": [
-      { "value": 6, "exceeded": false },
-      { "value": 4, "exceeded": false },
       { "value": 42, "exceeded": true },
     ]},
   {
@@ -607,6 +609,13 @@ var riskHotspots = [
     "metrics": [
       { "value": 5, "exceeded": false },
       { "value": 8, "exceeded": false },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "reportPath": "Cshrix_MatrixApiQueryParamSerializer.htm", "methodName": "System.String Cshrix.Serialization.MatrixApiQueryParamSerializer::Serialize(T)", "methodShortName": "Serialize(...)", "fileIndex": 0, "line": 102,
+    "metrics": [
+      { "value": 5, "exceeded": false },
+      { "value": 0, "exceeded": false },
       { "value": 30, "exceeded": true },
     ]},
   {
@@ -694,6 +703,13 @@ var riskHotspots = [
       { "value": 20, "exceeded": true },
     ]},
   {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "reportPath": "Cshrix_MatrixApiQueryParamSerializer.htm", "methodName": "SerializeQueryParam()", "methodShortName": "SerializeQueryParam()", "fileIndex": 0, "line": 50,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 2, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.OneTimeKeyConverter", "reportPath": "Cshrix_OneTimeKeyConverter.htm", "methodName": "Cshrix.Data.OneTimeKey Cshrix.Serialization.OneTimeKeyConverter::CreateFromJObject(Newtonsoft.Json.Linq.JObject)", "methodShortName": "CreateFromJObject(...)", "fileIndex": 0, "line": 96,
     "metrics": [
       { "value": 4, "exceeded": false },
@@ -701,14 +717,7 @@ var riskHotspots = [
       { "value": 20, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer", "reportPath": "Cshrix_QuoteStrippingJsonRequestQueryParamSerializer.htm", "methodName": "SerializeQueryParam()", "methodShortName": "SerializeQueryParam()", "fileIndex": 0, "line": 39,
-    "metrics": [
-      { "value": 4, "exceeded": false },
-      { "value": 2, "exceeded": false },
-      { "value": 20, "exceeded": true },
-    ]},
-  {
-    "assembly": "Cshrix", "class": "Cshrix.Serialization.UnixMillisecondDateTimeConverter", "reportPath": "Cshrix_UnixMillisecondDateTimeConverter.htm", "methodName": "System.Void Cshrix.Serialization.UnixMillisecondDateTimeConverter::WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)", "methodShortName": "WriteJson(...)", "fileIndex": 0, "line": 63,
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.UnixMillisecondDateTimeConverter", "reportPath": "Cshrix_UnixMillisecondDateTimeConverter.htm", "methodName": "System.Void Cshrix.Serialization.UnixMillisecondDateTimeConverter::WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)", "methodShortName": "WriteJson(...)", "fileIndex": 0, "line": 60,
     "metrics": [
       { "value": 4, "exceeded": false },
       { "value": 2, "exceeded": false },

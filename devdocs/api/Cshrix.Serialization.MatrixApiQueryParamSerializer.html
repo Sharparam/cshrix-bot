@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class QuoteStrippingJsonRequestQueryParamSerializer
+    <title>Class MatrixApiQueryParamSerializer
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class QuoteStrippingJsonRequestQueryParamSerializer
+    <meta name="title" content="Class MatrixApiQueryParamSerializer
    ">
     <meta name="generator" content="docfx 2.42.1.0">
     
@@ -883,6 +883,9 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
+                            <a href="Cshrix.Extensions.DateTimeExtensions.html" title="DateTimeExtensions" class="">DateTimeExtensions</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Extensions.HttpResponseHeadersExtensions.html" title="HttpResponseHeadersExtensions" class="">HttpResponseHeadersExtensions</a>
                           </li>
                           <li class="">
@@ -904,6 +907,9 @@
                         
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Cshrix.Helpers.DateTimeUtils.html" title="DateTimeUtils" class="">DateTimeUtils</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
                           </li>
                         </ul>  </li>
@@ -924,6 +930,9 @@
                           <li class="">
                             <a href="Cshrix.Serialization.IdentifierConverter-1.html" title="IdentifierConverter&lt;T&gt;" class="">IdentifierConverter&lt;T&gt;</a>
                           </li>
+                          <li class="active">
+                            <a href="Cshrix.Serialization.MatrixApiQueryParamSerializer.html" title="MatrixApiQueryParamSerializer" class="active">MatrixApiQueryParamSerializer</a>
+                          </li>
                           <li class="">
                             <a href="Cshrix.Serialization.MatrixErrorConverter.html" title="MatrixErrorConverter" class="">MatrixErrorConverter</a>
                           </li>
@@ -935,9 +944,6 @@
                           </li>
                           <li class="">
                             <a href="Cshrix.Serialization.OneTimeKeyConverter.html" title="OneTimeKeyConverter" class="">OneTimeKeyConverter</a>
-                          </li>
-                          <li class="active">
-                            <a href="Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.html" title="QuoteStrippingJsonRequestQueryParamSerializer" class="active">QuoteStrippingJsonRequestQueryParamSerializer</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Serialization.RoomAliasConverter.html" title="RoomAliasConverter" class="">RoomAliasConverter</a>
@@ -1010,20 +1016,20 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer">
+            <article class="content wrap" id="_content" data-uid="Cshrix.Serialization.MatrixApiQueryParamSerializer">
   
   
-  <h1 id="Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer" data-uid="Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer" class="text-break">Class QuoteStrippingJsonRequestQueryParamSerializer
+  <h1 id="Cshrix_Serialization_MatrixApiQueryParamSerializer" data-uid="Cshrix.Serialization.MatrixApiQueryParamSerializer" class="text-break">Class MatrixApiQueryParamSerializer
   </h1>
-  <div class="markdown level0 summary"><p>Custom serializer for RestEase that converts a query parameter to JSON and strips any leading and trailing
-quotation marks.</p>
+  <div class="markdown level0 summary"><p>Custom serializer for RestEase that converts query parameters to relevant data for the Matrix API,
+depending on their type.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">RestEase.RequestQueryParamSerializer</span></div>
-    <div class="level2"><span class="xref">QuoteStrippingJsonRequestQueryParamSerializer</span></div>
+    <div class="level2"><span class="xref">MatrixApiQueryParamSerializer</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -1055,21 +1061,30 @@ quotation marks.</p>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Cshrix.Serialization.html">Cshrix.Serialization</a></h6>
   <h6><strong>Assembly</strong>: Cshrix.dll</h6>
-  <h5 id="Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_syntax">Syntax</h5>
+  <h5 id="Cshrix_Serialization_MatrixApiQueryParamSerializer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class QuoteStrippingJsonRequestQueryParamSerializer : RequestQueryParamSerializer, IRequestQueryParamSerializer</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class MatrixApiQueryParamSerializer : RequestQueryParamSerializer, IRequestQueryParamSerializer</code></pre>
   </div>
+  <h5 id="Cshrix_Serialization_MatrixApiQueryParamSerializer_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><ul>
+<li>Instances of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> are turned into their duration in milliseconds.</li>
+<li>Instances of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a> and <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a> are turned into their UNIX
+timestamp in milliseconds.</li>
+<li>Other types are serialized using Newtonsoft.Json, stripping any leading and trailing double quotes
+afterwards.</li>
+</ul>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryCollectionParam__1_System_String_System_Collections_Generic_IEnumerable___0__RestEase_RequestQueryParamSerializerInfo_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam%60%601(System.String%2CSystem.Collections.Generic.IEnumerable%7B%60%600%7D%2CRestEase.RequestQueryParamSerializerInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryCollectionParam__1_System_String_System_Collections_Generic_IEnumerable___0__RestEase_RequestQueryParamSerializerInfo_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam%60%601(System.String%2CSystem.Collections.Generic.IEnumerable%7B%60%600%7D%2CRestEase.RequestQueryParamSerializerInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/QuoteStrippingJsonRequestQueryParamSerializer.cs/#L58">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/MatrixApiQueryParamSerializer.cs/#L69">View Source</a>
   </span>
-  <a id="Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryCollectionParam_" data-uid="Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam*"></a>
-  <h4 id="Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryCollectionParam__1_System_String_System_Collections_Generic_IEnumerable___0__RestEase_RequestQueryParamSerializerInfo_" data-uid="Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryCollectionParam``1(System.String,System.Collections.Generic.IEnumerable{``0},RestEase.RequestQueryParamSerializerInfo)">SerializeQueryCollectionParam&lt;T&gt;(String, IEnumerable&lt;T&gt;, RequestQueryParamSerializerInfo)</h4>
+  <a id="Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryCollectionParam_" data-uid="Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam*"></a>
+  <h4 id="Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryCollectionParam__1_System_String_System_Collections_Generic_IEnumerable___0__RestEase_RequestQueryParamSerializerInfo_" data-uid="Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryCollectionParam``1(System.String,System.Collections.Generic.IEnumerable{``0},RestEase.RequestQueryParamSerializerInfo)">SerializeQueryCollectionParam&lt;T&gt;(String, IEnumerable&lt;T&gt;, RequestQueryParamSerializerInfo)</h4>
   <div class="markdown level1 summary"><p>Serialize a query parameter whose value is a collection,
 into a collection of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair&lt;TKey,TValue&gt;</a>.</p>
 </div>
@@ -1144,13 +1159,13 @@ into a collection of <a class="xref" href="https://docs.microsoft.com/dotnet/api
   <div><span class="xref">RestEase.RequestQueryParamSerializer.SerializeQueryCollectionParam&lt;T&gt;(System.String, System.Collections.Generic.IEnumerable&lt;T&gt;, RestEase.RequestQueryParamSerializerInfo)</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryParam__1_System_String___0_RestEase_RequestQueryParamSerializerInfo_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam%60%601(System.String%2C%60%600%2CRestEase.RequestQueryParamSerializerInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryParam__1_System_String___0_RestEase_RequestQueryParamSerializerInfo_.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam%60%601(System.String%2C%60%600%2CRestEase.RequestQueryParamSerializerInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/QuoteStrippingJsonRequestQueryParamSerializer.cs/#L34">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/MatrixApiQueryParamSerializer.cs/#L45">View Source</a>
   </span>
-  <a id="Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryParam_" data-uid="Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam*"></a>
-  <h4 id="Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer_SerializeQueryParam__1_System_String___0_RestEase_RequestQueryParamSerializerInfo_" data-uid="Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer.SerializeQueryParam``1(System.String,``0,RestEase.RequestQueryParamSerializerInfo)">SerializeQueryParam&lt;T&gt;(String, T, RequestQueryParamSerializerInfo)</h4>
+  <a id="Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryParam_" data-uid="Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam*"></a>
+  <h4 id="Cshrix_Serialization_MatrixApiQueryParamSerializer_SerializeQueryParam__1_System_String___0_RestEase_RequestQueryParamSerializerInfo_" data-uid="Cshrix.Serialization.MatrixApiQueryParamSerializer.SerializeQueryParam``1(System.String,``0,RestEase.RequestQueryParamSerializerInfo)">SerializeQueryParam&lt;T&gt;(String, T, RequestQueryParamSerializerInfo)</h4>
   <div class="markdown level1 summary"><p>Serialize a query parameter whose value is scalar (not a collection),
 into a collection of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair&lt;TKey,TValue&gt;</a>.</p>
 </div>
@@ -1235,10 +1250,10 @@ into a collection of <a class="xref" href="https://docs.microsoft.com/dotnet/api
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_QuoteStrippingJsonRequestQueryParamSerializer.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.QuoteStrippingJsonRequestQueryParamSerializer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_Serialization_MatrixApiQueryParamSerializer.md&amp;value=---%0Auid%3A%20Cshrix.Serialization.MatrixApiQueryParamSerializer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/QuoteStrippingJsonRequestQueryParamSerializer.cs/#L22" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Serialization/MatrixApiQueryParamSerializer.cs/#L33" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
