@@ -5,7 +5,7 @@ os: linux
 sudo: required
 dist: bionic
 
-dotnet: 2.2.105
+dotnet: 2.2.203
 mono: latest
 
 env:
