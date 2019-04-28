@@ -16,15 +16,31 @@ namespace Cshrix.Helpers
     using System.Reflection;
     using System.Runtime.Serialization;
 
-    public static class EnumHelpers
+    /// <summary>
+    /// Contains helper methods for working with enums.
+    /// </summary>
+    internal static class EnumHelpers
     {
+        /// <summary>
+        /// Contains cached dictionaries with information about enum types and their flags values.
+        /// </summary>
         private static readonly ConcurrentDictionary<Type, IReadOnlyDictionary<string, Enum>> NamedFlagsCache =
             new ConcurrentDictionary<Type, IReadOnlyDictionary<string, Enum>>();
 
-        public static IReadOnlyDictionary<string, Enum> GetNamedFlags<TEnum>() where TEnum : Enum =>
+        /// <summary>
+        /// Gets all values from a flags enum that have an <see cref="EnumMemberAttribute" /> specified.
+        /// </summary>
+        /// <typeparam name="TEnum">The type of the enum to examine.</typeparam>
+        /// <returns>A dictionary mapping EnumMember-names to their enum value.</returns>
+        internal static IReadOnlyDictionary<string, Enum> GetNamedFlags<TEnum>() where TEnum : Enum =>
             GetNamedFlags(typeof(TEnum));
 
-        public static IReadOnlyDictionary<string, Enum> GetNamedFlags(Type type)
+        /// <summary>
+        /// Gets all values from a flags enum that have an <see cref="EnumMemberAttribute" /> specified.
+        /// </summary>
+        /// <param name="type">The type of the enum to examine.</param>
+        /// <returns>A dictionary mapping EnumMember-names to their enum value.</returns>
+        internal static IReadOnlyDictionary<string, Enum> GetNamedFlags(Type type)
         {
             if (NamedFlagsCache.TryGetValue(type, out var named))
             {

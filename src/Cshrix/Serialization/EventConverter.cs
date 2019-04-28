@@ -20,8 +20,24 @@ namespace Cshrix.Serialization
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// A converter to convert <see cref="Event" /> objects to/from their JSON representation.
+    /// </summary>
+    /// <remarks>
+    /// This is a "smart" converter, it will convert JSON to the event that fits best according to available
+    /// properties in the JSON data. The same applies for the <see cref="EventContent" /> supplied with the event.
+    /// </remarks>
     public class EventConverter : JsonConverter<Event>
     {
+        /// <summary>
+        /// Contains a mapping between <see cref="Event" /> and <see cref="EventContent" /> types and the
+        /// Cshrix <see cref="Type" /> used to contain the event content data.
+        /// </summary>
+        /// <remarks>
+        /// This is used to select the appropriate <see cref="EventContent" /> subclass to deserialized event content
+        /// into, depending on the event and, if applicable, event content type.
+        /// </remarks>
         private static readonly IReadOnlyDictionary<string, Type>
             ContentTypes = new Dictionary<string, Type>
             {
@@ -70,11 +86,34 @@ namespace Cshrix.Serialization
                 ["m.location"] = typeof(LocationMessageContent)
             };
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="JsonConverter" /> can write JSON.
+        /// </summary>
+        /// <value><c>true</c> if this <see cref="JsonConverter" /> can write JSON; otherwise, <c>false</c>.</value>
         public override bool CanWrite => false;
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Throws <see cref="NotImplementedException" />, as this converter doesn't implement custom serialization
+        /// and instead delegates this to the default serialization behaviour by Newtonsoft.Json;
+        /// </summary>
+        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, Event value, JsonSerializer serializer) =>
             throw new NotImplementedException();
 
+        /// <inheritdoc />
+        /// <summary>Reads the JSON representation of the object.</summary>
+        /// <param name="reader">The <see cref="JsonReader" /> to read from.</param>
+        /// <param name="objectType">Type of the object.</param>
+        /// <param name="existingValue">
+        /// The existing value of object being read. If there is no existing value then <c>null</c> will be used.
+        /// </param>
+        /// <param name="hasExistingValue">The existing value has a value.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        /// <returns>An appropriate <see cref="Event" /> instance.</returns>
         public override Event ReadJson(
             JsonReader reader,
             Type objectType,
@@ -158,6 +197,13 @@ namespace Cshrix.Serialization
             return new Event(content, type, redacts);
         }
 
+        /// <summary>
+        /// Parses event content data into an appropriate <see cref="EventContent" /> class,
+        /// based on event and event content type.
+        /// </summary>
+        /// <param name="type">The type of event this content came from.</param>
+        /// <param name="jObject">An instance of <see cref="JObject" /> containing the data.</param>
+        /// <returns>An appropriate instance of <see cref="EventContent" />.</returns>
         private static EventContent ParseEventContent(string type, JObject jObject)
         {
             if (!jObject.TryGetValue("content", out var contentToken))

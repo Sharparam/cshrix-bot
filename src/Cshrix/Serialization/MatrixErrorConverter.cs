@@ -20,13 +20,40 @@ namespace Cshrix.Serialization
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// Serializes and deserializes <see cref="MatrixError" /> objects.
+    /// </summary>
     public class MatrixErrorConverter : JsonConverter<MatrixError>
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="JsonConverter" /> can write JSON.
+        /// </summary>
+        /// <value><c>true</c> if this <see cref="JsonConverter" /> can write JSON; otherwise, <c>false</c>.</value>
         public override bool CanWrite => false;
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Throws a <see cref="NotImplementedException" />, due to
+        /// serialization being delegated to the default behaviour.
+        /// </summary>
+        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, MatrixError value, JsonSerializer serializer) =>
             throw new NotImplementedException();
 
+        /// <inheritdoc />
+        /// <summary>Reads the JSON representation of a <see cref="MatrixError" />.</summary>
+        /// <param name="reader">The <see cref="JsonReader" /> to read from.</param>
+        /// <param name="objectType">Type of the object.</param>
+        /// <param name="existingValue">
+        /// The existing value of object being read. If there is no existing value then <c>null</c> will be used.
+        /// </param>
+        /// <param name="hasExistingValue">The existing value has a value.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        /// <returns>An instance of a relevant <see cref="MatrixError" /> type.</returns>
         public override MatrixError ReadJson(
             JsonReader reader,
             Type objectType,

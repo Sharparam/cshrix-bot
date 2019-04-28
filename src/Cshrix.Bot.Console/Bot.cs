@@ -16,18 +16,36 @@ namespace Cshrix.Bot.Console
 
     using RestEase;
 
+    /// <summary>
+    /// Main bot class.
+    /// </summary>
     internal sealed class Bot
     {
+        /// <summary>
+        /// Logger instance for this class.
+        /// </summary>
         private readonly ILogger _log;
 
+        /// <summary>
+        /// <see cref="MatrixClient" /> instance for this class used to communicate with the Matrix API.
+        /// </summary>
         private readonly IMatrixClient _client;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Bot" /> class.
+        /// </summary>
+        /// <param name="log">Logger instance to use.</param>
+        /// <param name="client"><see cref="MatrixClient" /> instance to use.</param>
         public Bot(ILogger<Bot> log, IMatrixClient client)
         {
             _log = log;
             _client = client;
         }
 
+        /// <summary>
+        /// Runs some tests to check the Matrix API.
+        /// </summary>
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
         public async Task TestAsync()
         {
             _log.LogInformation("Testing");

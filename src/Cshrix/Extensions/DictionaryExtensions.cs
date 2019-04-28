@@ -13,10 +13,29 @@ namespace Cshrix.Extensions
 
     using JetBrains.Annotations;
 
-    public static class DictionaryExtensions
+    /// <summary>
+    /// Contains extension methods for the <see cref="IDictionary{TKey, TValue}" /> interface.
+    /// </summary>
+    internal static class DictionaryExtensions
     {
-        public static TValue GetValueOrDefault<TKey, TValue>(
-            this IDictionary<TKey, TValue> dict,
+        /// <summary>
+        /// Gets the value associated with the specified key, or <paramref name="default" />
+        /// if the key does not exist.
+        /// </summary>
+        /// <param name="dict">The dictionary to get the value from.</param>
+        /// <param name="key">The key to look up.</param>
+        /// <param name="default">Default value to return if the key is not found.</param>
+        /// <typeparam name="TKey">The type of the keys in the dictionary.</typeparam>
+        /// <typeparam name="TValue">The type of the values in the dictionary.</typeparam>
+        /// <returns>
+        /// The value specified by <paramref name="key" /> in the dictionary,
+        /// or <paramref name="default" /> if it was not found.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown if <paramref name="dict" /> and/or <paramref name="key" /> is <c>null</c>.
+        /// </exception>
+        internal static TValue GetValueOrDefault<TKey, TValue>(
+            [NotNull] this IDictionary<TKey, TValue> dict,
             [NotNull] TKey key,
             TValue @default = default)
         {
@@ -32,47 +51,6 @@ namespace Cshrix.Extensions
 
             var hasValue = dict.TryGetValue(key, out var value);
             return hasValue ? value : @default;
-        }
-
-        public static TValue GetValueOrDefault<TKey, TValue>(
-            this IDictionary<TKey, object> dict,
-            [NotNull] TKey key,
-            TValue @default = default)
-        {
-            if (dict == null)
-            {
-                throw new ArgumentNullException(nameof(dict));
-            }
-
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            var hasValue = dict.TryGetValue<TKey, TValue>(key, out var value);
-            return hasValue ? value : @default;
-        }
-
-        public static bool TryGetValue<TKey, TValue>(
-            this IDictionary<TKey, object> dict,
-            [NotNull] TKey key,
-            out TValue value)
-        {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            var hasValue = dict.TryGetValue(key, out var objValue);
-
-            if (hasValue && objValue is TValue t)
-            {
-                value = t;
-                return true;
-            }
-
-            value = default;
-            return false;
         }
     }
 }

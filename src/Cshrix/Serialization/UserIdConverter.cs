@@ -12,8 +12,18 @@ namespace Cshrix.Serialization
 
     using Newtonsoft.Json;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// A converter to convert user IDs to/from their JSON representation.
+    /// </summary>
     public sealed class UserIdConverter : IdentifierConverter<UserId>
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Parses a string ID into a <see cref="UserId"/>.
+        /// </summary>
+        /// <param name="id">The ID to parse.</param>
+        /// <returns>An instance of <see cref="UserId"/>.</returns>
         protected override UserId Parse(string id)
         {
             var successful = UserId.TryParse(id, out var userId);

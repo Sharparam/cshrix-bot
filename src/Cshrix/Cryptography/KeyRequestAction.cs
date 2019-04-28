@@ -13,12 +13,21 @@ namespace Cshrix.Cryptography
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Type of key request in end-to-end encryption.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum KeyRequestAction
     {
+        /// <summary>
+        /// Request a key.
+        /// </summary>
         [EnumMember(Value = "request")]
         Request,
 
+        /// <summary>
+        /// Cancel a pending request for a key.
+        /// </summary>
         [EnumMember(Value = "cancel_request")]
         CancelRequest
     }

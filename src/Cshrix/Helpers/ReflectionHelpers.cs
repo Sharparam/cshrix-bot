@@ -10,10 +10,23 @@ namespace Cshrix.Helpers
 {
     using System;
 
+    /// <summary>
+    /// Contains helper methods for performing reflection tasks.
+    /// </summary>
     internal static class ReflectionHelpers
     {
-        public static bool IsNullable(Type type) => !type.IsValueType || IsNullableType(type);
+        /// <summary>
+        /// Checks if a type is not a value type and nullable.
+        /// </summary>
+        /// <param name="type">The type to check.</param>
+        /// <returns><c>true</c> if the type is nullable, otherwise <c>false</c>.</returns>
+        internal static bool IsNullable(Type type) => !type.IsValueType || IsNullableType(type);
 
-        public static bool IsNullableType(Type type) => type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);
+        /// <summary>
+        /// Checks if a type (including value types) is nullable.
+        /// </summary>
+        /// <param name="type">The type to check.</param>
+        /// <returns><c>true</c> if the type is nullable, otherwise <c>false</c>.</returns>
+        internal static bool IsNullableType(Type type) => type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);
     }
 }

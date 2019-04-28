@@ -21,6 +21,7 @@ namespace Cshrix.Extensions
     /// <summary>
     /// Contains extension methods for the <see cref="HttpResponseMessage" /> class.
     /// </summary>
+    [PublicAPI]
     public static class HttpResponseMessageExtensions
     {
         /// <summary>

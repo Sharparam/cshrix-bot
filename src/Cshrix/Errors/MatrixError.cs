@@ -14,23 +14,38 @@ namespace Cshrix.Errors
 
     using Serialization;
 
+    /// <summary>
+    /// Contains basic error data returned from Matrix APIs.
+    /// </summary>
     [JsonConverter(typeof(MatrixErrorConverter))]
     public class MatrixError
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MatrixError" /> class.
+        /// </summary>
+        /// <param name="code">The error code.</param>
+        /// <param name="message">A description of the error.</param>
         public MatrixError([CanBeNull] string code, [CanBeNull] string message)
         {
             Code = code;
             Message = message;
         }
 
+        /// <summary>
+        /// Gets the error code of this error.
+        /// </summary>
         [JsonProperty("errcode")]
         [CanBeNull]
         public string Code { get; }
 
+        /// <summary>
+        /// Gets a description of this error.
+        /// </summary>
         [JsonProperty("error")]
         [CanBeNull]
         public string Message { get; }
 
+        /// <inheritdoc />
         public override string ToString() => $"{Code}: {Message}";
     }
 }

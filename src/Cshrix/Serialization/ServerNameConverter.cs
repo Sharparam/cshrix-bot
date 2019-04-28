@@ -15,8 +15,22 @@ namespace Cshrix.Serialization
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// Converts a <see cref="ServerName" /> to/from its JSON representation.
+    /// </summary>
     public class ServerNameConverter : JsonConverter<ServerName>
     {
+        /// <inheritdoc />
+        /// <summary>Reads the JSON representation of the object.</summary>
+        /// <param name="reader">The <see cref="JsonReader" /> to read from.</param>
+        /// <param name="objectType">Type of the object.</param>
+        /// <param name="existingValue">
+        /// The existing value of object being read. If there is no existing value then <c>null</c> will be used.
+        /// </param>
+        /// <param name="hasExistingValue">The existing value has a value.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        /// <returns>The <see cref="ServerName" /> value.</returns>
         public override ServerName ReadJson(
             JsonReader reader,
             Type objectType,
@@ -37,52 +51,20 @@ namespace Cshrix.Serialization
                 case JTokenType.String when token is JValue value:
                     return new ServerName((string)value);
 
-                case JTokenType.Object when token is JObject obj:
-                    return CreateFromJObject(obj);
-
                 default:
                     throw new JsonSerializationException(
                         "Cannot deserialize ServerName if it is not a string or object");
             }
         }
 
+        /// <inheritdoc />
+        /// <summary>Writes the JSON representation of the object.</summary>
+        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, ServerName value, JsonSerializer serializer)
         {
             writer.WriteValue(value.ToString());
-        }
-
-        private static ServerName CreateFromJObject(JObject obj)
-        {
-            var hasHostname = obj.TryGetValue(nameof(ServerName.Hostname), out var hostnameToken);
-
-            if (!hasHostname)
-            {
-                throw new JsonSerializationException("Cannot deserialize server name that is missing hostname");
-            }
-
-            if (hostnameToken.Type != JTokenType.String)
-            {
-                throw new JsonSerializationException(
-                    "Cannot deserialize server name that has non-string type hostname");
-            }
-
-            var hostname = hostnameToken.Value<string>();
-
-            var hasPort = obj.TryGetValue(nameof(ServerName.Port), out var portToken);
-
-            if (!hasPort)
-            {
-                return new ServerName(hostname, null);
-            }
-
-            if (portToken.Type != JTokenType.Integer)
-            {
-                throw new JsonSerializationException("Cannot deserialize server name that has non-integer type port");
-            }
-
-            var port = portToken.Value<ushort>();
-
-            return new ServerName(hostname, port);
         }
     }
 }

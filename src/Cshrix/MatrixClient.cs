@@ -26,16 +26,39 @@ namespace Cshrix
 
     using Serialization;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// Implementation of a Matrix client.
+    /// </summary>
     public class MatrixClient : IMatrixClient
     {
+        /// <summary>
+        /// The default base URL for the API that will be used if none is configured.
+        /// </summary>
         private const string DefaultBaseUrl = "https://matrix.org";
 
+        /// <summary>
+        /// The default API version to use if none is configured.
+        /// </summary>
         private const string DefaultApiVersion = "r0";
 
+        /// <summary>
+        /// The instance of <see cref="IMatrixClientServerApi" /> to use for API calls.
+        /// </summary>
         private readonly IMatrixClientServerApi _api;
 
+        /// <summary>
+        /// An options monitor to retrieve the current client configuration.
+        /// </summary>
         private readonly IOptionsMonitor<MatrixClientConfiguration> _configMonitor;
 
+        // ReSharper disable once SuggestBaseTypeForParameter
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MatrixClient" /> class.
+        /// </summary>
+        /// <param name="log">Logger instance.</param>
+        /// <param name="httpClient">An instance of <see cref="HttpClient" /> to use for making API calls.</param>
+        /// <param name="clientConfig">Client configuration monitor.</param>
         public MatrixClient(
             ILogger<MatrixClient> log,
             HttpClient httpClient,
@@ -55,12 +78,18 @@ namespace Cshrix
             _api.SetBearerToken(_configMonitor.CurrentValue.AccessToken);
         }
 
+        /// <summary>
+        /// Gets the <see cref="ILogger" /> for this instance.
+        /// </summary>
         protected ILogger Log { get; }
 
+        /// <inheritdoc />
         public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync()).UserId;
 
+        /// <inheritdoc />
         public Task<NotificationRulesets> GetNotificationPushRulesAsync() => _api.GetNotificationPushRulesAsync();
 
+        /// <inheritdoc />
         public async Task<PreviewInfo> GetPreviewInfoAsync(Uri uri, DateTimeOffset? at = null)
         {
             var info = await _api.GetUriPreviewInfoAsync(uri, at);
