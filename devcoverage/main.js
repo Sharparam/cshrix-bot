@@ -438,7 +438,7 @@ var assemblies = [
       { "name": "Cshrix.Serialization.EventConverter", "rp": "Cshrix_EventConverter.htm", "cl": 94, "ucl": 9, "cal": 103, "tl": 232, "ct": "LineCoverage", "mc": "-", "cb": 26, "tb": 36, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.GroupIdConverter", "rp": "Cshrix_GroupIdConverter.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 42, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.IdentifierConverter`1", "rp": "Cshrix_IdentifierConverter_1.htm", "cl": 5, "ucl": 4, "cal": 9, "tl": 80, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 6, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "rp": "Cshrix_MatrixApiQueryParamSerializer.htm", "cl": 0, "ucl": 22, "cal": 22, "tl": 162, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "rp": "Cshrix_MatrixApiQueryParamSerializer.htm", "cl": 0, "ucl": 23, "cal": 23, "tl": 164, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.MatrixErrorConverter", "rp": "Cshrix_MatrixErrorConverter.htm", "cl": 16, "ucl": 5, "cal": 21, "tl": 100, "ct": "LineCoverage", "mc": "-", "cb": 5, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.MillisecondTimeSpanConverter", "rp": "Cshrix_MillisecondTimeSpanConverter.htm", "cl": 9, "ucl": 11, "cal": 20, "tl": 101, "ct": "LineCoverage", "mc": "-", "cb": 3, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.NotificationActionConverter", "rp": "Cshrix_NotificationActionConverter.htm", "cl": 26, "ucl": 4, "cal": 30, "tl": 179, "ct": "LineCoverage", "mc": "-", "cb": 15, "tb": 20, "lch": [], "bch": [], "hc": [] },
@@ -612,10 +612,10 @@ var riskHotspots = [
       { "value": 30, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "reportPath": "Cshrix_MatrixApiQueryParamSerializer.htm", "methodName": "System.String Cshrix.Serialization.MatrixApiQueryParamSerializer::Serialize(T)", "methodShortName": "Serialize(...)", "fileIndex": 0, "line": 102,
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "reportPath": "Cshrix_MatrixApiQueryParamSerializer.htm", "methodName": "System.String Cshrix.Serialization.MatrixApiQueryParamSerializer::Serialize(T)", "methodShortName": "Serialize(...)", "fileIndex": 0, "line": 99,
     "metrics": [
       { "value": 5, "exceeded": false },
-      { "value": 0, "exceeded": false },
+      { "value": 16, "exceeded": false },
       { "value": 30, "exceeded": true },
     ]},
   {
