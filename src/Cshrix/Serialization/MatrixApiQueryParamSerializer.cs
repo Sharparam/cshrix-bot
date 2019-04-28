@@ -96,11 +96,13 @@ namespace Cshrix.Serialization
         /// <returns>An appropriate string representation of <paramref name="value" />.</returns>
         private static string Serialize<T>(T value)
         {
+            if (ReferenceEquals(null, value))
+            {
+                return default;
+            }
+
             switch (value)
             {
-                case null:
-                    return null;
-
                 case TimeSpan timeSpan:
                     return SerializeTimeSpan(timeSpan);
 
