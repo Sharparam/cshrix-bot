@@ -70,6 +70,7 @@ namespace Cshrix
 
             _api = new RestClient(httpClient)
             {
+                RequestPathParamSerializer = new StringEnumRequestPathParamSerializer(),
                 RequestQueryParamSerializer = new QuoteStrippingJsonRequestQueryParamSerializer()
             }.For<IMatrixClientServerApi>();
 
