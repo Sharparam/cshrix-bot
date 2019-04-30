@@ -31,15 +31,25 @@ namespace Cshrix.Serialization
 {
     using System;
 
+    using Extensions;
+
     using Helpers;
 
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// Converts <see cref="DateTime" /> and <see cref="DateTimeOffset" /> to/from millisecond UNIX timestamps
+    /// in JSON.
+    /// </summary>
     public class UnixMillisecondDateTimeConverter : DateTimeConverterBase
     {
-        private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-
+        /// <inheritdoc />
+        /// <summary>Writes the JSON representation of the object.</summary>
+        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             long milliseconds;
@@ -47,7 +57,7 @@ namespace Cshrix.Serialization
             switch (value)
             {
                 case DateTime dateTime:
-                    milliseconds = (long)(dateTime.ToUniversalTime() - UnixEpoch).TotalMilliseconds;
+                    milliseconds = dateTime.ToUnixTimeMilliseconds();
                     break;
 
                 case DateTimeOffset dateTimeOffset:
@@ -67,6 +77,13 @@ namespace Cshrix.Serialization
             writer.WriteValue(milliseconds);
         }
 
+        /// <inheritdoc />
+        /// <summary>Reads the JSON representation of the object.</summary>
+        /// <param name="reader">The <see cref="JsonReader" /> to read from.</param>
+        /// <param name="objectType">Type of the object.</param>
+        /// <param name="existingValue">The existing value of object being read.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        /// <returns>The object value.</returns>
         public override object ReadJson(
             JsonReader reader,
             Type objectType,
@@ -87,6 +104,7 @@ namespace Cshrix.Serialization
 
             long milliseconds;
 
+            // ReSharper disable once ConvertIfStatementToSwitchStatement
             if (reader.TokenType == JsonToken.Integer)
             {
                 milliseconds = (long)reader.Value;
@@ -114,7 +132,7 @@ namespace Cshrix.Serialization
 
             return type == typeof(DateTimeOffset)
                 ? DateTimeOffset.FromUnixTimeMilliseconds(milliseconds)
-                : UnixEpoch.AddMilliseconds(milliseconds);
+                : DateTimeUtils.FromUnixTimeMilliseconds(milliseconds);
         }
     }
 }

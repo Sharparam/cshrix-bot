@@ -8,14 +8,28 @@
 
 namespace Cshrix.DependencyInjection
 {
+    using Configuration;
+
     using Microsoft.Extensions.DependencyInjection;
 
+    /// <summary>
+    /// Contains extension methods for the <see cref="IServiceCollection" /> interface.
+    /// </summary>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// Adds Cshrix services to the dependency injection system.
+        /// </summary>
+        /// <param name="services">The instance of <see cref="IServiceCollection" /> to register Cshrix into.</param>
+        /// <returns>
+        /// The same instance of <see cref="IServiceCollection" /> that was passed in, but with Cshrix services added.
+        /// </returns>
+        /// <remarks>
+        /// Cshrix expects the <see cref="MatrixClientConfiguration" /> to have been registered as an options item.
+        /// </remarks>
         public static IServiceCollection AddCshrixServices(this IServiceCollection services)
         {
             services.AddHttpClient<IMatrixClient, MatrixClient>();
-
             return services;
         }
     }

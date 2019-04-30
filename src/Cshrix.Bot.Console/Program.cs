@@ -9,7 +9,6 @@
 namespace Cshrix.Bot.Console
 {
     using System;
-    using System.IO;
     using System.Threading.Tasks;
 
     using Configuration;
@@ -20,19 +19,29 @@ namespace Cshrix.Bot.Console
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
 
+    /// <summary>
+    /// Main program class containing the entry point.
+    /// </summary>
     public static class Program
     {
+        /// <summary>
+        /// Entry point for the program.
+        /// </summary>
+        /// <param name="args">Arguments passed to the program, if any.</param>
+        /// <returns>A <see cref="Task" /> representing program progress.</returns>
         public static async Task Main(string[] args)
         {
             ServiceProvider provider = null;
             ILogger log = null;
 
+            var basePath = AppContext.BaseDirectory;
+
             try
             {
-                var configBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                var configBuilder = new ConfigurationBuilder().SetBasePath(basePath)
                     .AddJsonFile("appsettings.json", false, true)
                     .AddJsonFile("appsettings.local.json", true, true)
-                    .AddEnvironmentVariables("CSHRIX_BOT")
+                    .AddEnvironmentVariables("CSHRIXBOT_")
                     .AddCommandLine(args);
 
                 var configuration = configBuilder.Build();

@@ -1,4 +1,4 @@
-// <copyright file="AvatarUrlContainer.cs">
+// <copyright file="AvatarUriContainer.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -12,10 +12,10 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
-    public readonly struct AvatarUrlContainer
+    public readonly struct AvatarUriContainer
     {
         [JsonConstructor]
-        public AvatarUrlContainer(Uri uri)
+        public AvatarUriContainer(Uri uri)
             : this() =>
             Uri = uri;
 

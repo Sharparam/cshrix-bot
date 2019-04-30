@@ -10,8 +10,16 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information about what servers a client should use for communicating with a homeserver.
+    /// </summary>
     public readonly struct ClientInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClientInfo" /> structure.
+        /// </summary>
+        /// <param name="homeserver">URI to the homeserver.</param>
+        /// <param name="identityServer">URI to the identity server.</param>
         [JsonConstructor]
         public ClientInfo(BaseUriContainer homeserver, BaseUriContainer identityServer)
             : this()
@@ -20,9 +28,15 @@ namespace Cshrix.Data
             IdentityServer = identityServer;
         }
 
+        /// <summary>
+        /// Gets the URI to the homeserver.
+        /// </summary>
         [JsonProperty("m.homeserver")]
         public BaseUriContainer Homeserver { get; }
 
+        /// <summary>
+        /// Gets the URI to the identity server.
+        /// </summary>
         [JsonProperty("m.identity_server")]
         public BaseUriContainer IdentityServer { get; }
     }

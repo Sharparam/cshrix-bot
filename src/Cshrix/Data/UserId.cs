@@ -14,9 +14,19 @@ namespace Cshrix.Data
 
     using Serialization;
 
+    /// <inheritdoc cref="Identifier" />
+    /// <inheritdoc cref="IEquatable{UserId}"/>
+    /// <summary>
+    /// The MXID of a user on Matrix.
+    /// </summary>
     [JsonConverter(typeof(UserIdConverter))]
     public sealed class UserId : Identifier, IEquatable<UserId>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserId" /> class.
+        /// </summary>
+        /// <param name="localpart">The localpart of the user ID (between initial <c>@</c> and first <c>:</c>.</param>
+        /// <param name="domain">The domain of the user ID.</param>
         public UserId(string localpart, string domain)
             : this(localpart, new ServerName(domain))
         {

@@ -12,8 +12,21 @@ namespace Cshrix.Serialization
 
     using Newtonsoft.Json;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// A converter to convert group IDs to/from their JSON representation.
+    /// </summary>
     public class GroupIdConverter : IdentifierConverter<GroupId>
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Parses a string ID into a <see cref="GroupId" />.
+        /// </summary>
+        /// <param name="id">The ID to parse.</param>
+        /// <returns>An instance of <see cref="GroupId" />.</returns>
+        /// <exception cref="JsonSerializationException">
+        /// Thrown if <paramref name="id" /> is not a valid group ID.
+        /// </exception>
         protected override GroupId Parse(string id)
         {
             var successful = GroupId.TryParse(id, out var userId);

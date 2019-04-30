@@ -5,7 +5,7 @@ os: linux
 sudo: required
 dist: bionic
 
-dotnet: 2.2.105
+dotnet: 2.2.203
 mono: latest
 
 env:
@@ -19,6 +19,7 @@ addons:
 before_install:
   - chmod +x travis/fix-branches.sh
   - "./travis/fix-branches.sh"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 
 install:
   - dotnet tool install -g Cake.Tool --version 0.33.0
@@ -27,7 +28,7 @@ before_script:
   - PATH=$PATH:/home/travis/.dotnet/tools
 
 script:
-  - dotnet-cake --target="Travis"
+  - dotnet-cake --target="Travis" --dockerRegistry="$DOCKER_REGISTRY"
 
 cache:
   directories:

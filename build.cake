@@ -6,22 +6,30 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+#addin nuget:?package=Cake.DocFx&version=0.12.0
+#addin nuget:?package=Cake.Coveralls&version=0.9.0
+#addin nuget:?package=Cake.Codecov&version=0.5.0
 #addin nuget:?package=Cake.Docker&version=0.9.9
 #tool "nuget:?package=GitVersion.CommandLine&version=4.0.0"
+#tool "nuget:?package=OpenCover&version=4.7.922"
+#tool "nuget:?package=ReportGenerator&version=4.1.4"
+#tool nuget:?package=coveralls.io&version=1.4.2
+#tool nuget:?package=Codecov&version=1.4.0
 
 var isAppVeyor = AppVeyor.IsRunningOnAppVeyor;
 var isTravis = TravisCI.IsRunningOnTravisCI;
 var isCi = isAppVeyor || isTravis;
+var cover = isAppVeyor || HasArgument("cover");
 
 var target = Argument("target", "Default");
 
-var configuration = HasArgument("Configuration")
+var configuration = HasArgument("configuration")
     ? Argument<string>("Configuration")
     : EnvironmentVariable("CONFIGURATION") != null
         ? EnvironmentVariable("CONFIGURATION")
         : "Release";
 
-var buildNumber = HasArgument("BuildNumber")
+var buildNumber = HasArgument("build-number")
     ? Argument<int>("BuildNumber")
     : isAppVeyor
         ? AppVeyor.Environment.Build.Number
@@ -31,17 +39,52 @@ var buildNumber = HasArgument("BuildNumber")
                 ? int.Parse(EnvironmentVariable("BUILD_NUMBER"))
                 : 0;
 
+var coverallsRepoToken = HasArgument("coveralls-token")
+    ? Argument<string>("CoverallsToken")
+    : EnvironmentVariable("COVERALLS_REPO_TOKEN");
+
+var isTag = IsTag();
+var isPr = isAppVeyor
+    ? AppVeyor.Environment.PullRequest?.IsPullRequest == true
+    : isTravis
+        ? TravisCI.Environment.PullRequest?.IsPullRequest == true
+        : false;
+
 var testFailed = false;
 var solutionDir = System.IO.Directory.GetCurrentDirectory();
 
 var testResultDir = Argument("testResultDir", System.IO.Path.Combine(solutionDir, "test-results"));
 var artifactDir = Argument("artifactDir", "./artifacts");
+var coverageResultsFile = System.IO.Path.Combine(artifactDir, "opencover-results.xml");
 var dockerRegistry = Argument("dockerRegistry", "local");
+var dockerName = Argument("dockerName", "cshrix-bot");
 var slnName = Argument("slnName", "Cshrix.Bot");
 
 var solutionFile = System.IO.Path.Combine(solutionDir, $"{slnName}.sln");
+var dockerImageName = $"{dockerRegistry}/{dockerName}";
+var isDevelop = false;
 
 GitVersion version = null;
+
+bool IsTag()
+{
+    if (HasArgument("isTag"))
+    {
+        return Argument<string>("isTag") == "true";
+    }
+
+    return IsAppVeyorTag() || IsTravisTag();
+}
+
+bool IsTravisTag()
+{
+    return isTravis && !string.IsNullOrWhiteSpace(TravisCI.Environment.Build.Tag);
+}
+
+bool IsAppVeyorTag()
+{
+    return isAppVeyor && AppVeyor.Environment.Repository.Tag?.IsTag == true;
+}
 
 GitVersion GetGitVersion(bool buildServerOutput = false)
 {
@@ -72,9 +115,26 @@ DotNetCoreBuildSettings GetBuildSettings()
     };
 }
 
+IEnumerable<string> ReadCoverageFilters(string path)
+{
+    return System.IO.File.ReadLines(path).Where(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#"));
+}
+
+if (isTravis && cover)
+{
+    Information("OpenCover does not work on Travis CI, disabling coverage generation");
+    cover = false;
+}
+
 Setup(ctx =>
 {
     Information("PATH is {0}", EnvironmentVariable("PATH"));
+
+    var docFxBranch = EnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME");
+    if (docFxBranch != null)
+    {
+        Information("DocFx branch is {0}", docFxBranch);
+    }
 
     if (isCi)
     {
@@ -82,6 +142,11 @@ Setup(ctx =>
     }
 
     version = GetGitVersion();
+    isDevelop = isAppVeyor
+        ? AppVeyor.Environment.Repository.Branch == "develop"
+        : isTravis
+            ? TravisCI.Environment.Build.Branch == "develop"
+            : version.BranchName == "develop";
 
     Information("Version: {0} on {1}", version.InformationalVersion, version.CommitDate);
 });
@@ -106,8 +171,8 @@ Task("Clean")
             DeleteDirectory(artifactDir, settings);
         }
 
-        var binDirs = GetDirectories("./src/**/bin");
-        var objDirs = GetDirectories("./src/**/obj");
+        var binDirs = GetDirectories("./src/*/bin");
+        var objDirs = GetDirectories("./src/*/obj");
         var testResDirs = GetDirectories("./**/TestResults");
 
         CleanDirectories(binDirs);
@@ -143,29 +208,65 @@ Task("Build")
         DotNetCoreBuild(solutionFile, settings);
     });
 
+void Test(ICakeContext context = null)
+{
+    var settings = new DotNetCoreTestSettings
+    {
+        Configuration = configuration,
+        NoBuild = true
+    };
+
+    if (isAppVeyor)
+    {
+        settings.ArgumentCustomization = args => args.Append("--logger:AppVeyor");
+    }
+    else
+    {
+        settings.ArgumentCustomization = args => args.Append("--logger:trx");
+    }
+
+    if (context == null)
+    {
+        DotNetCoreTest(solutionFile, settings);
+    }
+    else
+    {
+        context.DotNetCoreTest(solutionFile, settings);
+    }
+
+    if (isAppVeyor)
+    {
+        return;
+    }
+
+    var tmpTestResultFiles = GetFiles("./**/TestResults/*.*");
+    CopyFiles(tmpTestResultFiles, testResultDir);
+}
+
 Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        var settings = new DotNetCoreTestSettings
+        if (cover)
         {
-            Configuration = configuration,
-            NoBuild = true
-        };
+            Information("Running tests with coverage, using OpenCover");
 
-        if (isAppVeyor)
-        {
-            settings.ArgumentCustomization = args => args.Append("--logger:AppVeyor");
+            var filters = ReadCoverageFilters("./src/coverage-filters.txt");
+            var settings = filters.Aggregate(new OpenCoverSettings
+            {
+                OldStyle = true,
+                MergeOutput = true
+            }, (a, e) => a.WithFilter(e));
+
+            OpenCover(c => Test(c), new FilePath(coverageResultsFile), settings);
+
+            ReportGenerator(coverageResultsFile, "./artifacts/coverage-report");
         }
         else
         {
-            settings.ArgumentCustomization = args => args.Append("--logger:trx");
+            Information("Running tests without coverage");
+            Test();
         }
-
-        DotNetCoreTest(solutionFile, settings);
-
-        var tmpTestResultFiles = GetFiles("./**/TestResults/*.*");
-        CopyFiles(tmpTestResultFiles, testResultDir);
     });
 
 Task("Pack")
@@ -214,19 +315,75 @@ Task("Publish")
         DotNetCorePublish(project.FullPath, settings);
     });
 
+Task("Docs")
+    .IsDependentOn("Build")
+    .WithCriteria(!isTravis)
+    .Does(() =>
+    {
+        DocFxMetadata("./docs/docfx.json");
+        DocFxBuild("./docs/docfx.json");
+        Zip("./docs/_site", $"./artifacts/cshrix-bot_{version.SemVer}_docs.zip");
+    });
+
+Task("Coveralls")
+    .WithCriteria(cover)
+    .WithCriteria(isAppVeyor)
+    .WithCriteria(coverallsRepoToken != null)
+    .IsDependentOn("Test")
+    .Does(() =>
+    {
+        Information("Running Coveralls tool on OpenCover result");
+
+        CoverallsIo(coverageResultsFile, new CoverallsIoSettings
+        {
+            FullSources = true,
+            RepoToken = coverallsRepoToken
+        });
+    });
+
+Task("Codecov")
+    .WithCriteria(cover)
+    .WithCriteria(isAppVeyor)
+    .IsDependentOn("Test")
+    .Does(() =>
+    {
+        var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Version}";
+
+        Information($"Running Codecov tool with version {ccVersion} on OpenCover result");
+
+        Codecov(new CodecovSettings
+        {
+            Files = new[] { coverageResultsFile },
+            Required = true,
+            Branch = Uri.EscapeDataString(version.BranchName),
+            EnvironmentVariables = new Dictionary<string, string>
+            {
+                ["APPVEYOR_BUILD_VERSION"] = Uri.EscapeDataString(ccVersion)
+            }
+        });
+    });
+
 Task("Build-Container")
     .IsDependentOn("Publish")
     .Does(() => {
-        var imageName = GetImageName();
-        var tagVersion = $"{imageName}:{version.FullSemVer}".ToLower();
-        var tagLatest = $"{imageName}:latest".ToLower();
+        var tagSha = $"{dockerImageName}:{version.Sha}".ToLower();
+        var tagVersion = $"{dockerImageName}:{version.FullSemVer}".ToLower();
+        var tagLatest = $"{dockerImageName}:latest".ToLower();
 
-        Information($"Build docker image {tagVersion}");
-        Information($"Build docker image {tagLatest}");
+        Information($"Building docker image {tagSha}");
+        Information($"Building docker image {tagVersion}");
+
+        var tags = new List<string> { tagSha, tagVersion };
+
+        if (isTag && !isPr)
+        {
+            tags.Add(tagLatest);
+            Information($"Building docker image {tagLatest}");
+        }
 
         var buildArgs = new DockerImageBuildSettings
         {
-            Tag = new[] { tagVersion, tagLatest }
+            Tag = tags.ToArray()
         };
 
         DockerBuild(buildArgs, solutionDir);
@@ -234,9 +391,17 @@ Task("Build-Container")
 
 Task("Push-Container")
     .IsDependentOn("Build-Container")
-    .Does(() => {
-        var imageName = GetImageName().ToLower();
-        DockerPush(imageName);
+    .WithCriteria(!isPr)
+    .Does(() =>
+    {
+        if (isDevelop || isTag)
+        {
+            DockerPush(dockerImageName.ToLower());
+        }
+        else
+        {
+            Information("Not develop branch or a tag, skipping docker push");
+        }
     });
 
 Task("Default")
@@ -250,42 +415,23 @@ Task("Default")
         Information("To push the Docker container into an Docker registry use the cake build argument: --target Push-Container -dockerRegistry=\"yourregistry\"");
     });
 
-Task("AppVeyor").IsDependentOn("Test");
+Task("CI")
+    .IsDependentOn("Test")
+    .IsDependentOn("Docs");
 
-Task("Travis").IsDependentOn("Test");
+Task("AppVeyor")
+    .IsDependentOn("CI")
+    .IsDependentOn("Coveralls")
+    .IsDependentOn("Codecov");
+
+Task("Travis")
+    .IsDependentOn("CI")
+    .IsDependentOn("Build-Container")
+    .IsDependentOn("Push-Container");
 
 FilePathCollection GetSrcProjectFiles()
 {
     return GetFiles("./src/**/*.csproj");
-}
-
-FilePathCollection GetTestProjectFiles()
-{
-    return GetFiles("./test/**/*.Tests/*.csproj");
-}
-
-FilePath GetSlnFile()
-{
-    return GetFiles("./**/*.sln").First();
-}
-
-FilePath GetMainProjectFile()
-{
-    foreach(var project in GetSrcProjectFiles())
-    {
-        if(project.FullPath.EndsWith($"{slnName}.Console.csproj"))
-        {
-            return project;
-        }
-    }
-
-    Error("Cannot find main project file");
-    return null;
-}
-
-string GetImageName()
-{
-    return $"{dockerRegistry}/{slnName}";
 }
 
 RunTarget(target);

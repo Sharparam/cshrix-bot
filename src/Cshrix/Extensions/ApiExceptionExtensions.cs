@@ -12,26 +12,46 @@ namespace Cshrix.Extensions
 
     using Errors;
 
+    using JetBrains.Annotations;
+
     using Newtonsoft.Json;
 
     using RestEase;
 
+    /// <summary>
+    /// Contains extension methods for the <see cref="ApiException" /> class.
+    /// </summary>
     public static class ApiExceptionExtensions
     {
-        public static MatrixError GetError(this ApiException exception)
+        public static MatrixError GetError([NotNull] this ApiException exception)
         {
+            if (exception == null)
+            {
+                throw new ArgumentNullException(nameof(exception));
+            }
+
             var error = JsonConvert.DeserializeObject<MatrixError>(exception.Content);
             return error;
         }
 
-        public static TError GetError<TError>(this ApiException exception) where TError : MatrixError
+        public static TError GetError<TError>([NotNull] this ApiException exception) where TError : MatrixError
         {
+            if (exception == null)
+            {
+                throw new ArgumentNullException(nameof(exception));
+            }
+
             var error = JsonConvert.DeserializeObject<TError>(exception.Content);
             return error;
         }
 
-        public static bool TryGetError(this ApiException exception, out MatrixError error)
+        public static bool TryGetError([NotNull] this ApiException exception, out MatrixError error)
         {
+            if (exception == null)
+            {
+                throw new ArgumentNullException(nameof(exception));
+            }
+
             try
             {
                 error = exception.GetError();
@@ -44,8 +64,14 @@ namespace Cshrix.Extensions
             }
         }
 
-        public static bool TryGetError<TError>(this ApiException exception, out TError error) where TError : MatrixError
+        public static bool TryGetError<TError>([NotNull] this ApiException exception, out TError error)
+            where TError : MatrixError
         {
+            if (exception == null)
+            {
+                throw new ArgumentNullException(nameof(exception));
+            }
+
             try
             {
                 error = exception.GetError<TError>();

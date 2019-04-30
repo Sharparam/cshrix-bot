@@ -14,14 +14,34 @@ namespace Cshrix.Serialization
 
     using Newtonsoft.Json;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// Converts typed <see cref="ComparisonCondition{T}" /> instances to/from their JSON representation.
+    /// </summary>
+    /// <typeparam name="T">The type contained in the <see cref="ComparisonCondition{T}" />.</typeparam>
     public class ComparisonConditionConverter<T> : JsonConverter<ComparisonCondition<T>>
         where T : IEquatable<T>, IComparable<T>
     {
+        /// <inheritdoc />
+        /// <summary>Writes the JSON representation of the object.</summary>
+        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, ComparisonCondition<T> value, JsonSerializer serializer)
         {
             writer.WriteValue(value.ToString());
         }
 
+        /// <inheritdoc />
+        /// <summary>Reads the JSON representation of the object.</summary>
+        /// <param name="reader">The <see cref="JsonReader" /> to read from.</param>
+        /// <param name="objectType">Type of the object.</param>
+        /// <param name="existingValue">
+        /// The existing value of object being read. If there is no existing value then <c>null</c> will be used.
+        /// </param>
+        /// <param name="hasExistingValue">The existing value has a value.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        /// <returns>The deserialized <see cref="ComparisonCondition{T}" />.</returns>
         public override ComparisonCondition<T> ReadJson(
             JsonReader reader,
             Type objectType,
@@ -43,29 +63,9 @@ namespace Cshrix.Serialization
             var value = (string)reader.Value;
             var operandType = typeof(T);
 
-            string op = null;
             string operandString;
 
-            if (value.StartsWith("=="))
-            {
-                op = "==";
-            }
-            else if (value.StartsWith("<"))
-            {
-                op = "<";
-            }
-            else if (value.StartsWith(">"))
-            {
-                op = ">";
-            }
-            else if (value.StartsWith(">="))
-            {
-                op = ">=";
-            }
-            else if (value.StartsWith("<="))
-            {
-                op = "<=";
-            }
+            var op = ExtractOperator(value);
 
             if (op != null)
             {
@@ -89,6 +89,36 @@ namespace Cshrix.Serialization
             }
 
             return new ComparisonCondition<T>(operand, op);
+        }
+
+        /// <summary>
+        /// Extracts a comparison operator from an input string, if any is present.
+        /// </summary>
+        /// <param name="value">The string to parse.</param>
+        /// <returns>A string containing the operand if one was found; otherwise, <c>null</c>.</returns>
+        private static string ExtractOperator(string value)
+        {
+            if (value.StartsWith("=="))
+            {
+                return "==";
+            }
+
+            if (value.StartsWith("<"))
+            {
+                return "<";
+            }
+
+            if (value.StartsWith(">"))
+            {
+                return ">";
+            }
+
+            if (value.StartsWith(">="))
+            {
+                return ">=";
+            }
+
+            return value.StartsWith("<=") ? "<=" : null;
         }
     }
 }

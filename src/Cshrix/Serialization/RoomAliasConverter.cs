@@ -12,8 +12,21 @@ namespace Cshrix.Serialization
 
     using Newtonsoft.Json;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// Converts <see cref="RoomAlias" /> to/from its JSON representation.
+    /// </summary>
     public class RoomAliasConverter : IdentifierConverter<RoomAlias>
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Parses a string ID into a <see cref="RoomAlias"/>.
+        /// </summary>
+        /// <param name="id">The ID to parse.</param>
+        /// <returns>An instance of <see cref="RoomAlias" />.</returns>
+        /// <exception cref="JsonSerializationException">
+        /// Thrown if <paramref name="id" /> is not a valid room alias.
+        /// </exception>
         protected override RoomAlias Parse(string id)
         {
             var successful = RoomAlias.TryParse(id, out var userId);

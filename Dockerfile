@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.2-runtime-alpine3.9
+FROM mcr.microsoft.com/dotnet/core/runtime:2.2-alpine
 
 COPY artifacts/Cshrix.Bot.Console/ /data
 ENTRYPOINT dotnet /data/Cshrix.Bot.Console.dll
