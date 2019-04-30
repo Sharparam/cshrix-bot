@@ -2,6 +2,7 @@
 
 [![MPL 2.0 License][mpl-badge]][mpl]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
+[![Docker image][docker-badge]][docker]
 
 | [Master][master] | [![Build status][appveyor-master-badge]][appveyor-master-status] | [![TravisCI Status][travis-master-badge]][travis-master-status] | [![Test status][test-master-badge]][test-master-status] | [![Coverage][coveralls-master-badge]][coveralls-master] | [![Codecov coverage][codecov-master-badge]][codecov-master] | [![CodeFactor][codefactor-master-badge]][codefactor-master] |
 |-|-|-|-|-|-|-|
@@ -25,7 +26,16 @@ This Source Code Form is subject to the terms of the [Mozilla Public
 License, v. 2.0][mpl]. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-See the file [LICENSE](LICENSE) for more details.
+See the file [LICENSE][] for more details.
+
+## Code of Conduct
+
+This project is covered under a [Code of Conduct][coc], please remember to
+adhere by this when interacting with the project.
+
+## Contributing
+
+Please see the [CONTRIBUTING][] document for our contribution guidelines.
 
 ## End-to-end (E2E) encryption
 
@@ -71,6 +81,7 @@ a [PR][] and update this section.
 [mpl-osi]: https://opensource.org/licenses/MPL-2.0
 [mpl-badge]: https://img.shields.io/badge/license-MPL%202.0-blue.svg
 
+[license]: LICENSE
 [coc]: CODE_OF_CONDUCT.md
 [contributing]: CONTRIBUTING.md
 
@@ -91,6 +102,9 @@ a [PR][] and update this section.
 
 [ghrelease]: https://github.com/Sharparam/cshrix-bot/releases
 [ghreleasebadge]: https://img.shields.io/github/release/Sharparam/cshrix-bot.svg?logo=github
+
+[docker]: https://hub.docker.com/r/sharparam/cshrix-bot
+[docker-badge]: https://img.shields.io/badge/docker-sharparam%2Fcshrix--bot-blue.svg
 
 [appveyor-develop-status]: https://ci.appveyor.com/project/Sharparam/cshrix-bot/branch/develop
 [appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/e331me30fi95jgf1/branch/develop?svg=true
