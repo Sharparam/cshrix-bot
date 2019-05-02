@@ -210,7 +210,7 @@ var assemblies = [
   {
     "name": "Cshrix",
     "classes": [
-      { "name": "Cshrix.Configuration.MatrixClientConfiguration", "rp": "Cshrix_MatrixClientConfiguration.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 37, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Configuration.MatrixClientConfiguration", "rp": "Cshrix_MatrixClientConfiguration.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 42, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Cryptography.Olm.NativeMethods", "rp": "Cshrix_NativeMethods.htm", "cl": 0, "ucl": 0, "cal": 0, "tl": 0, "ct": "MethodCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Authentication.AuthenticationContainer", "rp": "Cshrix_AuthenticationContainer.htm", "cl": 0, "ucl": 2, "cal": 2, "tl": 23, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Authentication.AuthenticationData", "rp": "Cshrix_AuthenticationData.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 19, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
@@ -416,7 +416,7 @@ var assemblies = [
       { "name": "Cshrix.Data.UserIdUserIdentifier", "rp": "Cshrix_UserIdUserIdentifier.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 25, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.VersionsResponse", "rp": "Cshrix_VersionsResponse.htm", "cl": 0, "ucl": 5, "cal": 5, "tl": 31, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.WhoisResponse", "rp": "Cshrix_WhoisResponse.htm", "cl": 0, "ucl": 8, "cal": 8, "tl": 37, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.DependencyInjection.ServiceCollectionExtensions", "rp": "Cshrix_ServiceCollectionExtensions.htm", "cl": 0, "ucl": 2, "cal": 2, "tl": 36, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.DependencyInjection.ServiceCollectionExtensions", "rp": "Cshrix_ServiceCollectionExtensions.htm", "cl": 0, "ucl": 5, "cal": 5, "tl": 79, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Errors.MatrixError", "rp": "Cshrix_MatrixError.htm", "cl": 6, "ucl": 1, "cal": 7, "tl": 51, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Errors.RateLimitError", "rp": "Cshrix_RateLimitError.htm", "cl": 3, "ucl": 0, "cal": 3, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Errors.UnauthorizedError", "rp": "Cshrix_UnauthorizedError.htm", "cl": 0, "ucl": 11, "cal": 11, "tl": 91, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },

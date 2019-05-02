@@ -86,6 +86,12 @@ references:
   isSpec: "True"
   fullName: Cshrix.Configuration.MatrixClientConfiguration.BaseUri
   nameWithType: MatrixClientConfiguration.BaseUri
+- uid: Cshrix.Configuration.MatrixClientConfiguration.DefaultSectionName
+  name: DefaultSectionName
+  href: api/Cshrix.Configuration.MatrixClientConfiguration.html#Cshrix_Configuration_MatrixClientConfiguration_DefaultSectionName
+  commentId: F:Cshrix.Configuration.MatrixClientConfiguration.DefaultSectionName
+  fullName: Cshrix.Configuration.MatrixClientConfiguration.DefaultSectionName
+  nameWithType: MatrixClientConfiguration.DefaultSectionName
 - uid: Cshrix.Cryptography
   name: Cshrix.Cryptography
   href: api/Cshrix.Cryptography.html
@@ -12831,6 +12837,18 @@ references:
   commentId: M:Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   fullName: Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   nameWithType: ServiceCollectionExtensions.AddCshrixServices(IServiceCollection)
+- uid: Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+  name: AddCshrixServices(IServiceCollection, IConfiguration)
+  href: api/Cshrix.DependencyInjection.ServiceCollectionExtensions.html#Cshrix_DependencyInjection_ServiceCollectionExtensions_AddCshrixServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_
+  commentId: M:Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+  fullName: Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration)
+  nameWithType: ServiceCollectionExtensions.AddCshrixServices(IServiceCollection, IConfiguration)
+- uid: Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  name: AddCshrixServices(IServiceCollection, IConfiguration, String)
+  href: api/Cshrix.DependencyInjection.ServiceCollectionExtensions.html#Cshrix_DependencyInjection_ServiceCollectionExtensions_AddCshrixServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_
+  commentId: M:Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  fullName: Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.String)
+  nameWithType: ServiceCollectionExtensions.AddCshrixServices(IServiceCollection, IConfiguration, String)
 - uid: Cshrix.DependencyInjection.ServiceCollectionExtensions.AddCshrixServices*
   name: AddCshrixServices
   href: api/Cshrix.DependencyInjection.ServiceCollectionExtensions.html#Cshrix_DependencyInjection_ServiceCollectionExtensions_AddCshrixServices_
