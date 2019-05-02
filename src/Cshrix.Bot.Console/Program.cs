@@ -45,8 +45,6 @@ namespace Cshrix.Bot.Console
 
                 var services = new ServiceCollection();
 
-                services.Configure<MatrixClientConfiguration>(configuration.GetSection("ClientConfiguration"));
-
                 services.AddLogging(
                     builder =>
                     {
@@ -55,7 +53,7 @@ namespace Cshrix.Bot.Console
                         builder.AddSerilog(logger, true);
                     });
 
-                services.AddCshrixServices();
+                services.AddCshrixServices(configuration, "ClientConfiguration");
 
                 services.AddTransient<Bot>();
 

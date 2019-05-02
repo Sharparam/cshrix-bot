@@ -10,6 +10,7 @@ namespace Cshrix.DependencyInjection
 {
     using Configuration;
 
+    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
     /// <summary>
@@ -31,6 +32,48 @@ namespace Cshrix.DependencyInjection
         {
             services.AddHttpClient<IMatrixClient, MatrixClient>();
             return services;
+        }
+
+        /// <summary>
+        /// Adds Cshrix services to the dependency injection system.
+        /// </summary>
+        /// <param name="services">The instance of <see cref="IServiceCollection" /> to register Cshrix into.</param>
+        /// <param name="configuration">Configuration object.</param>
+        /// <returns>
+        /// The same instance of <see cref="IServiceCollection" /> that was passed in, but with Cshrix services added.
+        /// </returns>
+        /// <remarks>
+        /// This method also takes an <see cref="IConfiguration" /> object containing the
+        /// <see cref="MatrixClientConfiguration" /> for Cshrix.
+        /// </remarks>
+        public static IServiceCollection AddCshrixServices(
+            this IServiceCollection services,
+            IConfiguration configuration) =>
+            services.AddCshrixServices(configuration, MatrixClientConfiguration.DefaultSectionName);
+
+        /// <summary>
+        /// Adds Cshrix services to the dependency injection system.
+        /// </summary>
+        /// <param name="services">The instance of <see cref="IServiceCollection" /> to register Cshrix into.</param>
+        /// <param name="configuration">Configuration object.</param>
+        /// <param name="sectionName">
+        /// Name of the section inside <paramref name="configuration" /> that contains the
+        /// <see cref="MatrixClientConfiguration" /> for Cshrix.
+        /// </param>
+        /// <returns>
+        /// The same instance of <see cref="IServiceCollection" /> that was passed in, but with Cshrix services added.
+        /// </returns>
+        /// <remarks>
+        /// This method also takes an <see cref="IConfiguration" /> object and a section name pointing
+        /// to a <see cref="MatrixClientConfiguration" /> inside that configuration object.
+        /// </remarks>
+        public static IServiceCollection AddCshrixServices(
+            this IServiceCollection services,
+            IConfiguration configuration,
+            string sectionName)
+        {
+            services.Configure<MatrixClientConfiguration>(configuration.GetSection(sectionName));
+            return services.AddCshrixServices();
         }
     }
 }

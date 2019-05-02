@@ -16,6 +16,11 @@ namespace Cshrix.Configuration
     public class MatrixClientConfiguration
     {
         /// <summary>
+        /// The default name used to specify this configuration in an appsettings.json file.
+        /// </summary>
+        public const string DefaultSectionName = nameof(MatrixClientConfiguration);
+
+        /// <summary>
         /// The base URI of the homeserver.
         /// </summary>
         /// <example>https://matrix.org</example>
