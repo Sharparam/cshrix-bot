@@ -1,4 +1,4 @@
-# cshrix-bot [![#cshrix-bot:matrix.sharparam.com][matrix-badge]][matrix-cshrix-bot]
+# cshrix-bot [![#cshrix-bot:sharparam.com][matrix-badge]][matrix-cshrix-bot]
 
 [![MPL 2.0 License][mpl-badge]][mpl]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
@@ -96,9 +96,9 @@ a [PR][] and update this section.
 [libolm-aur]: https://aur.archlinux.org/packages/libolm/
 [libolm-git-aur]: https://aur.archlinux.org/packages/libolm-git/
 
-[matrix-sharparam]: https://matrix.to/#/@sharparam:matrix.sharparam.com
-[matrix-cshrix-bot]: https://matrix.to/#/!NjGVdVzefonjVQMtiM:matrix.sharparam.com?via=matrix.sharparam.com&via=matrix.org
-[matrix-badge]: https://img.shields.io/matrix/cshrix-bot:matrix.sharparam.com.svg?label=%23cshrix-bot%3Amatrix.sharparam.com&logo=matrix&server_fqdn=matrix.sharparam.com
+[matrix-sharparam]: https://matrix.to/#/@sharparam:sharparam.com
+[matrix-cshrix-bot]: https://matrix.to/#/!RRgORzEtLTHVHtwEVi:sharparam.com?via=sharparam.com
+[matrix-badge]: https://img.shields.io/matrix/cshrix-bot:sharparam.com.svg?label=%23cshrix-bot%3Asharparam.com&logo=matrix&server_fqdn=sharparam.com
 
 [ghrelease]: https://github.com/Sharparam/cshrix-bot/releases
 [ghreleasebadge]: https://img.shields.io/github/release/Sharparam/cshrix-bot.svg?logo=github

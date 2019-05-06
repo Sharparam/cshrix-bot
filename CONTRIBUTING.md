@@ -163,7 +163,7 @@ namespace Test
  * Use `var` where possible.
 
 [cshrix-bot]: https://github.com/Sharparam/cshrix-bot
-[room]: https://matrix.to/#/!NjGVdVzefonjVQMtiM:matrix.sharparam.com?via=matrix.sharparam.com&via=matrix.org
+[room]: https://matrix.to/#/!RRgORzEtLTHVHtwEVi:sharparam.com?via=sharparam.com
 [new-issue]: https://github.com/Sharparam/cshrix-bot/issues/new
 [coc]: CODE_OF_CONDUCT.md
 [sharparam]: https://github.com/Sharparam
