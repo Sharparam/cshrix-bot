@@ -14,19 +14,19 @@ namespace Cshrix.Helpers
     /// <summary>
     /// Contains helper methods for working with and generating random numbers and data.
     /// </summary>
-    public static class RandomHelpers
+    internal static class RandomHelpers
     {
         /// <summary>
         /// Global <see cref="Random" /> instance.
         /// </summary>
-        public static readonly Random Rng = new Random();
+        internal static readonly Random Rng = new Random();
 
         /// <summary>
         /// Gets an array of random bytes, generated securely.
         /// </summary>
         /// <param name="count">Number of bytes to generate.</param>
         /// <returns>An array containing <paramref name="count" /> securely generated random bytes.</returns>
-        public static byte[] SecureBytes(int count)
+        internal static byte[] SecureBytes(int count)
         {
             using (var csprng = new RNGCryptoServiceProvider())
             {

@@ -10,7 +10,10 @@ namespace Cshrix.Helpers
 {
     using System;
 
-    public static class DateTimeUtils
+    /// <summary>
+    /// Contains helper methods for working with <see cref="DateTime" /> objects.
+    /// </summary>
+    internal static class DateTimeUtils
     {
         /// <summary>
         /// A <see cref="DateTime" /> set to the UNIX epoch (1970-01-01T00:00:00Z).
@@ -25,6 +28,6 @@ namespace Cshrix.Helpers
         /// A Unix time, expressed as the number of milliseconds that have elapsed since 1970-01-01T00:00:00Z.
         /// </param>
         /// <returns>A date and time value that represents the same moment in time as the Unix time.</returns>
-        public static DateTime FromUnixTimeMilliseconds(long timestamp) => UnixEpoch.AddMilliseconds(timestamp);
+        internal static DateTime FromUnixTimeMilliseconds(long timestamp) => UnixEpoch.AddMilliseconds(timestamp);
     }
 }
