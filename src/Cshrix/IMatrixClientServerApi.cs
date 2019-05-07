@@ -518,18 +518,65 @@ namespace Cshrix
 
         #region Device management
 
+        /// <summary>
+        /// Bulk deletion of devices.
+        /// </summary>
+        /// <param name="data">Data specifying what devices to delete, along with authentication.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>
+        /// This API endpoint uses the
+        /// <a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#user-interactive-authentication-api">
+        ///     User-Interactive Authentication API
+        /// </a>.
+        /// </para>
+        /// <para>Deletes the given devices, and invalidates any access token associated with them.</para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/delete_devices")]
         Task DeleteDevicesAsync([Body] DeleteDevicesRequest data);
 
+        /// <summary>
+        /// List registered devices for the current user.
+        /// </summary>
+        /// <returns>A wrapper object containing the list of devices registered to the user.</returns>
+        /// <remarks>Gets information about all devices for the current user.</remarks>
         [Get("_matrix/client/{apiVersion}/devices")]
         Task<DevicesResponse> GetDevicesAsync();
 
+        /// <summary>
+        /// Delete a device.
+        /// </summary>
+        /// <param name="deviceId">The ID of the device to delete.</param>
+        /// <param name="authentication">Authentication data.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>
+        /// This API endpoint uses the
+        /// <a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#user-interactive-authentication-api">
+        ///     User-Interactive Authentication API
+        /// </a>.
+        /// </para>
+        /// <para>Deletes the given device, and invalidates any access token associated with it.</para>
+        /// </remarks>
         [Delete("_matrix/client/{apiVersion}/devices/{deviceId}")]
         Task DeleteDeviceAsync([Path] string deviceId, [Body] AuthenticationContainer authentication);
 
+        /// <summary>
+        /// Get a single device.
+        /// </summary>
+        /// <param name="deviceId">The ID of the device to get.</param>
+        /// <returns>The <see cref="Device" />.</returns>
+        /// <remarks>Gets information on a single device, by device ID.</remarks>
         [Get("_matrix/client/{apiVersion}/devices/{deviceId}")]
         Task<Device> GetDeviceAsync([Path] string deviceId);
 
+        /// <summary>
+        /// Update a device.
+        /// </summary>
+        /// <param name="deviceId">The ID of the device to update.</param>
+        /// <param name="data">New metadata to set on the device.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>Updates the metadata on the given device.</remarks>
         [Put("_matrix/client/{apiVersion}/devices/{deviceId}")]
         Task SetDeviceMetadataAsync([Path] string deviceId, [Body] DeviceMetadata data);
 
@@ -537,6 +584,23 @@ namespace Cshrix
 
         #region Application service room directory management
 
+        /// <summary>
+        /// Updates a room's visibility in the application service's room directory.
+        /// </summary>
+        /// <param name="networkId">
+        /// The protocol (network) ID to update the room list for. This would have been provided by the application
+        /// service as being listed as a supported protocol.
+        /// </param>
+        /// <param name="roomId">The room ID to add to the directory.</param>
+        /// <param name="data">A wrapper object containing the room visibility to set.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>Updates the visibility of a given room on the application service's room directory.</para>
+        /// <para>
+        /// This API is similar to the room directory visibility API used by clients to update the homeserver's more
+        /// general room directory.
+        /// </para>
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/directory/list/appservice/{networkId}/{roomId}")]
         Task UpdateAppServiceRoomVisibilityAsync(
             [Path] string networkId,
@@ -547,12 +611,41 @@ namespace Cshrix
 
         #region Room directory
 
+        /// <summary>
+        /// Remove a mapping of room alias to room ID.
+        /// </summary>
+        /// <param name="alias">The alias to remove.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>
+        /// Servers may choose to implement additional access control checks here, for instance that room aliases can
+        /// only be deleted by their creator or a server administrator.
+        /// </para>
+        /// </remarks>
         [Delete("_matrix/client/{apiVersion}/directory/room/{roomAlias}")]
         Task DeleteRoomAliasAsync([Path("roomAlias")] RoomAlias alias);
 
+        /// <summary>
+        /// Get the room ID corresponding to this room alias.
+        /// </summary>
+        /// <param name="alias">The room alias.</param>
+        /// <returns>Information about the alias.</returns>
+        /// <remarks>
+        /// <para>Requests that the server resolve a room alias to a room ID.</para>
+        /// <para>
+        /// The server will use the federation API to resolve the alias if the domain part of the alias does not
+        /// correspond to the server's own domain.
+        /// </para>
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/directory/room/{roomAlias}")]
         Task<RoomAliasInformation> ResolveRoomAliasAsync([Path("roomAlias")] RoomAlias alias);
 
+        /// <summary>
+        /// Create a new mapping from room alias to room ID.
+        /// </summary>
+        /// <param name="alias">The room alias to set.</param>
+        /// <param name="data">Information about the room alias.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
         [Put("_matrix/client/{apiVersion}/directory/room/{roomAlias}")]
         Task MapRoomAliasAsync([Path("roomAlias")] RoomAlias alias, [Body] RoomIdContainer data);
 
@@ -560,6 +653,17 @@ namespace Cshrix
 
         #region Room participation
 
+        /// <summary>
+        /// Get events and state around a specified event.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to get events from.</param>
+        /// <param name="eventId">The ID of the event to get context around.</param>
+        /// <param name="limit">The maximum number of events to return. Defaults to <c>10</c>.</param>
+        /// <returns>An object containing the event context.</returns>
+        /// <remarks>
+        /// This API returns a number of events that happened just before and after the specified event.
+        /// This allows clients to get the context surrounding an event.
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/context/{eventId}")]
         Task<EventContext> GetContextAsync([Path] string roomId, [Path] string eventId, [Query] int limit = 10);
 
