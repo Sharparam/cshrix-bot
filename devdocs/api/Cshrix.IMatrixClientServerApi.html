@@ -903,18 +903,6 @@
                         </ul>  </li>
                     <li class="">
                       <span class="expand-stub"></span>
-                      <a href="Cshrix.Helpers.html" title="Cshrix.Helpers" class="">Cshrix.Helpers</a>
-                        
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="Cshrix.Helpers.DateTimeUtils.html" title="DateTimeUtils" class="">DateTimeUtils</a>
-                          </li>
-                          <li class="">
-                            <a href="Cshrix.Helpers.RandomHelpers.html" title="RandomHelpers" class="">RandomHelpers</a>
-                          </li>
-                        </ul>  </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
                       <a href="Cshrix.Serialization.html" title="Cshrix.Serialization" class="">Cshrix.Serialization</a>
                         
                         <ul class="nav level2">
@@ -1308,7 +1296,7 @@ Task AddThirdPartyIdentifierAsync([Body] ThirdPartyIdentifierRegistrationRequest
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_BanAsync_System_String_Cshrix_Data_Reason_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.BanAsync(System.String%2CCshrix.Data.Reason)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L661">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L765">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_BanAsync_" data-uid="Cshrix.IMatrixClientServerApi.BanAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_BanAsync_System_String_Cshrix_Data_Reason_" data-uid="Cshrix.IMatrixClientServerApi.BanAsync(System.String,Cshrix.Data.Reason)">BanAsync(String, Reason)</h4>
@@ -1429,7 +1417,7 @@ This can be more easily done by using the extension methods defined in
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_ClaimOneTimeKeysAsync_Cshrix_Data_ClaimKeysRequest_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync(Cshrix.Data.ClaimKeysRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L692">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L796">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_ClaimOneTimeKeysAsync_" data-uid="Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_ClaimOneTimeKeysAsync_Cshrix_Data_ClaimKeysRequest_" data-uid="Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync(Cshrix.Data.ClaimKeysRequest)">ClaimOneTimeKeysAsync(ClaimKeysRequest)</h4>
@@ -1660,11 +1648,12 @@ This can be more easily done by using the extension methods defined in
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_DeleteDeviceAsync_System_String_Cshrix_Data_Authentication_AuthenticationContainer_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.DeleteDeviceAsync(System.String%2CCshrix.Data.Authentication.AuthenticationContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L527">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L561">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_DeleteDeviceAsync_" data-uid="Cshrix.IMatrixClientServerApi.DeleteDeviceAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_DeleteDeviceAsync_System_String_Cshrix_Data_Authentication_AuthenticationContainer_" data-uid="Cshrix.IMatrixClientServerApi.DeleteDeviceAsync(System.String,Cshrix.Data.Authentication.AuthenticationContainer)">DeleteDeviceAsync(String, AuthenticationContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Delete a device.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1684,12 +1673,14 @@ Task DeleteDeviceAsync([Path] string deviceId, [Body] AuthenticationContainer au
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">deviceId</span></td>
-        <td></td>
+        <td><p>The ID of the device to delete.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Authentication.AuthenticationContainer.html">AuthenticationContainer</a></td>
         <td><span class="parametername">authentication</span></td>
-        <td></td>
+        <td><p>Authentication data.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1704,20 +1695,31 @@ Task DeleteDeviceAsync([Path] string deviceId, [Body] AuthenticationContainer au
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing request progress.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_DeleteDeviceAsync_System_String_Cshrix_Data_Authentication_AuthenticationContainer__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This API endpoint uses the
+<a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#user-interactive-authentication-api">
+    User-Interactive Authentication API
+</a>.
+</p>
+<p>Deletes the given device, and invalidates any access token associated with it.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_DeleteDevicesAsync_Cshrix_Data_DeleteDevicesRequest_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.DeleteDevicesAsync(Cshrix.Data.DeleteDevicesRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L521">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L535">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_DeleteDevicesAsync_" data-uid="Cshrix.IMatrixClientServerApi.DeleteDevicesAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_DeleteDevicesAsync_Cshrix_Data_DeleteDevicesRequest_" data-uid="Cshrix.IMatrixClientServerApi.DeleteDevicesAsync(Cshrix.Data.DeleteDevicesRequest)">DeleteDevicesAsync(DeleteDevicesRequest)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Bulk deletion of devices.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1737,7 +1739,8 @@ Task DeleteDevicesAsync([Body] DeleteDevicesRequest data)</code></pre>
       <tr>
         <td><a class="xref" href="Cshrix.Data.DeleteDevicesRequest.html">DeleteDevicesRequest</a></td>
         <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><p>Data specifying what devices to delete, along with authentication.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1752,16 +1755,26 @@ Task DeleteDevicesAsync([Body] DeleteDevicesRequest data)</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing request progress.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_DeleteDevicesAsync_Cshrix_Data_DeleteDevicesRequest__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This API endpoint uses the
+<a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#user-interactive-authentication-api">
+    User-Interactive Authentication API
+</a>.
+</p>
+<p>Deletes the given devices, and invalidates any access token associated with them.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_DeleteNotificationPushRuleAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.DeleteNotificationPushRuleAsync(System.String%2CCshrix.Data.Notifications.NotificationPushRuleKind%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L742">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L846">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_DeleteNotificationPushRuleAsync_" data-uid="Cshrix.IMatrixClientServerApi.DeleteNotificationPushRuleAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_DeleteNotificationPushRuleAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_" data-uid="Cshrix.IMatrixClientServerApi.DeleteNotificationPushRuleAsync(System.String,Cshrix.Data.Notifications.NotificationPushRuleKind,System.String)">DeleteNotificationPushRuleAsync(String, NotificationPushRuleKind, String)</h4>
@@ -1819,11 +1832,12 @@ Task DeleteNotificationPushRuleAsync([Path] string scope, [Path] NotificationPus
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_DeleteRoomAliasAsync_Cshrix_Data_RoomAlias_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.DeleteRoomAliasAsync(Cshrix.Data.RoomAlias)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L550">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L625">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_DeleteRoomAliasAsync_" data-uid="Cshrix.IMatrixClientServerApi.DeleteRoomAliasAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_DeleteRoomAliasAsync_Cshrix_Data_RoomAlias_" data-uid="Cshrix.IMatrixClientServerApi.DeleteRoomAliasAsync(Cshrix.Data.RoomAlias)">DeleteRoomAliasAsync(RoomAlias)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Remove a mapping of room alias to room ID.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1843,7 +1857,8 @@ Task DeleteRoomAliasAsync([Path(&quot;roomAlias&quot;)] RoomAlias alias)</code><
       <tr>
         <td><a class="xref" href="Cshrix.Data.RoomAlias.html">RoomAlias</a></td>
         <td><span class="parametername">alias</span></td>
-        <td></td>
+        <td><p>The alias to remove.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1858,10 +1873,17 @@ Task DeleteRoomAliasAsync([Path(&quot;roomAlias&quot;)] RoomAlias alias)</code><
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing request progress.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_DeleteRoomAliasAsync_Cshrix_Data_RoomAlias__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Servers may choose to implement additional access control checks here, for instance that room aliases can
+only be deleted by their creator or a server administrator.
+</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_DeleteRoomTagAsync_Cshrix_Data_UserId_System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.DeleteRoomTagAsync(Cshrix.Data.UserId%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -1984,7 +2006,7 @@ Task DeleteThirdPartyIdentifierAsync([Body] ThirdPartyIdentifierDeletionRequest 
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_DownloadAsync_System_String_System_String_System_Nullable_System_Boolean__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.DownloadAsync(System.String%2CSystem.String%2CSystem.Nullable%7BSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L873">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L977">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_DownloadAsync_" data-uid="Cshrix.IMatrixClientServerApi.DownloadAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_DownloadAsync_System_String_System_String_System_Nullable_System_Boolean__" data-uid="Cshrix.IMatrixClientServerApi.DownloadAsync(System.String,System.String,System.Nullable{System.Boolean})">DownloadAsync(String, String, Nullable&lt;Boolean&gt;)</h4>
@@ -2042,7 +2064,7 @@ Task&lt;HttpResponseMessage&gt; DownloadAsync([Path] string serverName, [Path] s
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_DownloadAsync_System_String_System_String_System_String_System_Nullable_System_Boolean__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.DownloadAsync(System.String%2CSystem.String%2CSystem.String%2CSystem.Nullable%7BSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L879">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L983">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_DownloadAsync_" data-uid="Cshrix.IMatrixClientServerApi.DownloadAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_DownloadAsync_System_String_System_String_System_String_System_Nullable_System_Boolean__" data-uid="Cshrix.IMatrixClientServerApi.DownloadAsync(System.String,System.String,System.String,System.Nullable{System.Boolean})">DownloadAsync(String, String, String, Nullable&lt;Boolean&gt;)</h4>
@@ -2105,7 +2127,7 @@ Task&lt;HttpResponseMessage&gt; DownloadAsync([Path] string serverName, [Path] s
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_DownloadThumbnailAsync_System_String_System_String_System_Int32_System_Int32_Cshrix_Data_ResizeMethod_System_Nullable_System_Boolean__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.DownloadThumbnailAsync(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32%2CCshrix.Data.ResizeMethod%2CSystem.Nullable%7BSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L886">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L990">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_DownloadThumbnailAsync_" data-uid="Cshrix.IMatrixClientServerApi.DownloadThumbnailAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_DownloadThumbnailAsync_System_String_System_String_System_Int32_System_Int32_Cshrix_Data_ResizeMethod_System_Nullable_System_Boolean__" data-uid="Cshrix.IMatrixClientServerApi.DownloadThumbnailAsync(System.String,System.String,System.Int32,System.Int32,Cshrix.Data.ResizeMethod,System.Nullable{System.Boolean})">DownloadThumbnailAsync(String, String, Int32, Int32, ResizeMethod, Nullable&lt;Boolean&gt;)</h4>
@@ -2178,7 +2200,7 @@ Task&lt;HttpResponseMessage&gt; DownloadThumbnailAsync([Path] string serverName,
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_ForgetAsync_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.ForgetAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L664">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L768">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_ForgetAsync_" data-uid="Cshrix.IMatrixClientServerApi.ForgetAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_ForgetAsync_System_String_" data-uid="Cshrix.IMatrixClientServerApi.ForgetAsync(System.String)">ForgetAsync(String)</h4>
@@ -2288,7 +2310,7 @@ The contents of the avatar can be downloaded using, for example,
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetContentConfigurationAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetContentConfigurationAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L900">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L1004">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetContentConfigurationAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetContentConfigurationAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetContentConfigurationAsync" data-uid="Cshrix.IMatrixClientServerApi.GetContentConfigurationAsync">GetContentConfigurationAsync()</h4>
@@ -2319,11 +2341,12 @@ Task&lt;ContentConfiguration&gt; GetContentConfigurationAsync()</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetContextAsync_System_String_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetContextAsync(System.String%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L563">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L667">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetContextAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetContextAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetContextAsync_System_String_System_String_System_Int32_" data-uid="Cshrix.IMatrixClientServerApi.GetContextAsync(System.String,System.String,System.Int32)">GetContextAsync(String, String, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get events and state around a specified event.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2343,17 +2366,20 @@ Task&lt;EventContext&gt; GetContextAsync([Path] string roomId, [Path] string eve
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">roomId</span></td>
-        <td></td>
+        <td><p>The ID of the room to get events from.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">eventId</span></td>
-        <td></td>
+        <td><p>The ID of the event to get context around.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">limit</span></td>
-        <td></td>
+        <td><p>The maximum number of events to return. Defaults to <code>10</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2368,20 +2394,26 @@ Task&lt;EventContext&gt; GetContextAsync([Path] string roomId, [Path] string eve
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Cshrix.Data.EventContext.html">EventContext</a>&gt;</td>
-        <td></td>
+        <td><p>An object containing the event context.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_GetContextAsync_System_String_System_String_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This API returns a number of events that happened just before and after the specified event.
+This allows clients to get the context surrounding an event.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetDeviceAsync_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetDeviceAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L530">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L570">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetDeviceAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetDeviceAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetDeviceAsync_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetDeviceAsync(System.String)">GetDeviceAsync(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get a single device.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2401,7 +2433,8 @@ Task&lt;Device&gt; GetDeviceAsync([Path] string deviceId)</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">deviceId</span></td>
-        <td></td>
+        <td><p>The ID of the device to get.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2416,16 +2449,20 @@ Task&lt;Device&gt; GetDeviceAsync([Path] string deviceId)</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Cshrix.Data.Device.html">Device</a>&gt;</td>
-        <td></td>
+        <td><p>The <a class="xref" href="Cshrix.Data.Device.html">Device</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_GetDeviceAsync_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Gets information on a single device, by device ID.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetDeviceKeyChangesAsync_System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetDeviceKeyChangesAsync(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L689">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L793">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetDeviceKeyChangesAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetDeviceKeyChangesAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetDeviceKeyChangesAsync_System_String_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetDeviceKeyChangesAsync(System.String,System.String)">GetDeviceKeyChangesAsync(String, String)</h4>
@@ -2478,11 +2515,12 @@ Task&lt;DeviceChangeLists&gt; GetDeviceKeyChangesAsync([Query] string from, [Que
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetDevicesAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetDevicesAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L524">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L543">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetDevicesAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetDevicesAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetDevicesAsync" data-uid="Cshrix.IMatrixClientServerApi.GetDevicesAsync">GetDevicesAsync()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>List registered devices for the current user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2500,10 +2538,14 @@ Task&lt;DevicesResponse&gt; GetDevicesAsync()</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Cshrix.Data.DevicesResponse.html">DevicesResponse</a>&gt;</td>
-        <td></td>
+        <td><p>A wrapper object containing the list of devices registered to the user.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_GetDevicesAsync_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Gets information about all devices for the current user.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetDisplayNameAsync_Cshrix_Data_UserId_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetDisplayNameAsync(Cshrix.Data.UserId)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -2564,7 +2606,7 @@ either locally or on remote homeservers.</p>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetEventAsync_System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetEventAsync(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L566">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L670">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetEventAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetEventAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetEventAsync_System_String_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetEventAsync(System.String,System.String)">GetEventAsync(String, String)</h4>
@@ -2617,7 +2659,7 @@ Task&lt;Event&gt; GetEventAsync([Path] string roomId, [Path] string eventId)</co
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetFilterAsync_Cshrix_Data_UserId_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetFilterAsync(Cshrix.Data.UserId%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L641">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L745">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetFilterAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetFilterAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetFilterAsync_Cshrix_Data_UserId_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetFilterAsync(Cshrix.Data.UserId,System.String)">GetFilterAsync(UserId, String)</h4>
@@ -2670,7 +2712,7 @@ Task&lt;Filter&gt; GetFilterAsync([Path] UserId userId, [Path] string filterId)<
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetJoinedMembersAsync_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetJoinedMembersAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L569">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L673">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetJoinedMembersAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetJoinedMembersAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetJoinedMembersAsync_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetJoinedMembersAsync(System.String)">GetJoinedMembersAsync(String)</h4>
@@ -2718,7 +2760,7 @@ Task&lt;JoinedMembersResponse&gt; GetJoinedMembersAsync([Path] string roomId)</c
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetJoinedRoomsAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetJoinedRoomsAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L658">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L762">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetJoinedRoomsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetJoinedRoomsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetJoinedRoomsAsync" data-uid="Cshrix.IMatrixClientServerApi.GetJoinedRoomsAsync">GetJoinedRoomsAsync()</h4>
@@ -2749,7 +2791,7 @@ Task&lt;JoinedRooms&gt; GetJoinedRoomsAsync()</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetLoginFlowsAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetLoginFlowsAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L705">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L809">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetLoginFlowsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetLoginFlowsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetLoginFlowsAsync" data-uid="Cshrix.IMatrixClientServerApi.GetLoginFlowsAsync">GetLoginFlowsAsync()</h4>
@@ -2780,7 +2822,7 @@ Task&lt;LoginFlows&gt; GetLoginFlowsAsync()</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetMemberEventsAsync_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetMemberEventsAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L572">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L676">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetMemberEventsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetMemberEventsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetMemberEventsAsync_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetMemberEventsAsync(System.String)">GetMemberEventsAsync(String)</h4>
@@ -2828,7 +2870,7 @@ Task&lt;Chunk&lt;StateEvent&gt;&gt; GetMemberEventsAsync([Path] string roomId)</
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetMessageEventsAsync_System_String_System_String_System_String_Cshrix_Data_Direction_System_Int32_Cshrix_Data_RoomEventFilter_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetMessageEventsAsync(System.String%2CSystem.String%2CSystem.String%2CCshrix.Data.Direction%2CSystem.Int32%2CCshrix.Data.RoomEventFilter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L575">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L679">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetMessageEventsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetMessageEventsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetMessageEventsAsync_System_String_System_String_System_String_Cshrix_Data_Direction_System_Int32_Cshrix_Data_RoomEventFilter_" data-uid="Cshrix.IMatrixClientServerApi.GetMessageEventsAsync(System.String,System.String,System.String,Cshrix.Data.Direction,System.Int32,Cshrix.Data.RoomEventFilter)">GetMessageEventsAsync(String, String, String, Direction, Int32, RoomEventFilter)</h4>
@@ -2901,7 +2943,7 @@ Task&lt;PaginatedChunk&lt;RoomEvent&gt;&gt; GetMessageEventsAsync([Path] string 
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetNotificationPushersAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetNotificationPushersAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L727">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L831">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetNotificationPushersAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetNotificationPushersAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetNotificationPushersAsync" data-uid="Cshrix.IMatrixClientServerApi.GetNotificationPushersAsync">GetNotificationPushersAsync()</h4>
@@ -2932,7 +2974,7 @@ Task&lt;NotificationPushersContainer&gt; GetNotificationPushersAsync()</code></p
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetNotificationPushRuleAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetNotificationPushRuleAsync(System.String%2CCshrix.Data.Notifications.NotificationPushRuleKind%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L736">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L840">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetNotificationPushRuleAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetNotificationPushRuleAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetNotificationPushRuleAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetNotificationPushRuleAsync(System.String,Cshrix.Data.Notifications.NotificationPushRuleKind,System.String)">GetNotificationPushRuleAsync(String, NotificationPushRuleKind, String)</h4>
@@ -2990,7 +3032,7 @@ Task&lt;NotificationPushRule&gt; GetNotificationPushRuleAsync([Path] string scop
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetNotificationPushRulesAsync_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetNotificationPushRulesAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L733">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L837">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetNotificationPushRulesAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetNotificationPushRulesAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetNotificationPushRulesAsync_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetNotificationPushRulesAsync(System.String)">GetNotificationPushRulesAsync(String)</h4>
@@ -3038,7 +3080,7 @@ Task&lt;NotificationRulesets&gt; GetNotificationPushRulesAsync([Path] string sco
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetNotificationsAsync_System_String_System_Nullable_System_Int32__System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetNotificationsAsync(System.String%2CSystem.Nullable%7BSystem.Int32%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L721">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L825">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetNotificationsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetNotificationsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetNotificationsAsync_System_String_System_Nullable_System_Int32__System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetNotificationsAsync(System.String,System.Nullable{System.Int32},System.String)">GetNotificationsAsync(String, Nullable&lt;Int32&gt;, String)</h4>
@@ -3096,7 +3138,7 @@ Task&lt;NotificationsResponse&gt; GetNotificationsAsync([Query] string from = nu
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetPresenceAsync_Cshrix_Data_UserId_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetPresenceAsync(Cshrix.Data.UserId)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L781">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L885">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetPresenceAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetPresenceAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetPresenceAsync_Cshrix_Data_UserId_" data-uid="Cshrix.IMatrixClientServerApi.GetPresenceAsync(Cshrix.Data.UserId)">GetPresenceAsync(UserId)</h4>
@@ -3144,7 +3186,7 @@ Task&lt;PresenceStatusResponse&gt; GetPresenceAsync([Path] UserId userId)</code>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetPresenceEventsAsync_Cshrix_Data_UserId_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetPresenceEventsAsync(Cshrix.Data.UserId)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L775">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L879">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetPresenceEventsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetPresenceEventsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetPresenceEventsAsync_Cshrix_Data_UserId_" data-uid="Cshrix.IMatrixClientServerApi.GetPresenceEventsAsync(Cshrix.Data.UserId)">GetPresenceEventsAsync(UserId)</h4>
@@ -3248,7 +3290,7 @@ not limited to <code>displayname</code> or <code>avatar_url</code>.</p>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetPublicRoomsAsync_Cshrix_Data_PublicRoomsRequest_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetPublicRoomsAsync(Cshrix.Data.PublicRoomsRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L797">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L901">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetPublicRoomsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetPublicRoomsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetPublicRoomsAsync_Cshrix_Data_PublicRoomsRequest_" data-uid="Cshrix.IMatrixClientServerApi.GetPublicRoomsAsync(Cshrix.Data.PublicRoomsRequest)">GetPublicRoomsAsync(PublicRoomsRequest)</h4>
@@ -3296,7 +3338,7 @@ Task&lt;PublicRoomsChunk&gt; GetPublicRoomsAsync([Body] PublicRoomsRequest data)
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetPublicRoomsAsync_System_Nullable_System_Int32__System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetPublicRoomsAsync(System.Nullable%7BSystem.Int32%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L791">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L895">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetPublicRoomsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetPublicRoomsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetPublicRoomsAsync_System_Nullable_System_Int32__System_String_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetPublicRoomsAsync(System.Nullable{System.Int32},System.String,System.String)">GetPublicRoomsAsync(Nullable&lt;Int32&gt;, String, String)</h4>
@@ -3414,7 +3456,7 @@ Task&lt;TagsResponse&gt; GetRoomTagsAsync([Path] UserId userId, [Path] string ro
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetStateEventAsync_System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetStateEventAsync(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L608">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L712">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetStateEventAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetStateEventAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetStateEventAsync_System_String_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetStateEventAsync(System.String,System.String)">GetStateEventAsync(String, String)</h4>
@@ -3467,7 +3509,7 @@ Task&lt;StateEvent&gt; GetStateEventAsync([Path] string roomId, [Path] string ev
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetStateEventAsync_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetStateEventAsync(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L617">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L721">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetStateEventAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetStateEventAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetStateEventAsync_System_String_System_String_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetStateEventAsync(System.String,System.String,System.String)">GetStateEventAsync(String, String, String)</h4>
@@ -3525,7 +3567,7 @@ Task&lt;StateEvent&gt; GetStateEventAsync([Path] string roomId, [Path] string ev
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetStateEventsAsync_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetStateEventsAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L605">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L709">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetStateEventsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetStateEventsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetStateEventsAsync_System_String_" data-uid="Cshrix.IMatrixClientServerApi.GetStateEventsAsync(System.String)">GetStateEventsAsync(String)</h4>
@@ -3619,7 +3661,7 @@ to reset the user&apos;s account password.
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetTurnServerCredentialsAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetTurnServerCredentialsAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L842">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L946">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetTurnServerCredentialsAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetTurnServerCredentialsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetTurnServerCredentialsAsync" data-uid="Cshrix.IMatrixClientServerApi.GetTurnServerCredentialsAsync">GetTurnServerCredentialsAsync()</h4>
@@ -3650,7 +3692,7 @@ Task&lt;TurnServerCredentials&gt; GetTurnServerCredentialsAsync()</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri%2CSystem.Nullable%7BSystem.DateTimeOffset%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L895">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L999">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_" data-uid="Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__" data-uid="Cshrix.IMatrixClientServerApi.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})">GetUriPreviewInfoAsync(Uri, Nullable&lt;DateTimeOffset&gt;)</h4>
@@ -3744,7 +3786,7 @@ I.E.: If the server implements <code>r0.0.0</code>, <code>r0.0.1</code>, and <co
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_InviteAsync_System_String_Cshrix_Data_ThirdParty_ThirdPartyRoomInvite_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.InviteAsync(System.String%2CCshrix.Data.ThirdParty.ThirdPartyRoomInvite)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L667">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L771">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_InviteAsync_" data-uid="Cshrix.IMatrixClientServerApi.InviteAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_InviteAsync_System_String_Cshrix_Data_ThirdParty_ThirdPartyRoomInvite_" data-uid="Cshrix.IMatrixClientServerApi.InviteAsync(System.String,Cshrix.Data.ThirdParty.ThirdPartyRoomInvite)">InviteAsync(String, ThirdPartyRoomInvite)</h4>
@@ -3797,7 +3839,7 @@ Task InviteAsync([Path] string roomId, [Body] ThirdPartyRoomInvite data)</code><
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_InviteAsync_System_String_Cshrix_Data_UserIdContainer_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.InviteAsync(System.String%2CCshrix.Data.UserIdContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L670">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L774">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_InviteAsync_" data-uid="Cshrix.IMatrixClientServerApi.InviteAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_InviteAsync_System_String_Cshrix_Data_UserIdContainer_" data-uid="Cshrix.IMatrixClientServerApi.InviteAsync(System.String,Cshrix.Data.UserIdContainer)">InviteAsync(String, UserIdContainer)</h4>
@@ -3924,7 +3966,7 @@ becomes unavailable between checking its availability and attempting to register
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_JoinRoomAsync_System_String_System_Nullable_Cshrix_Data_SignedThirdPartyData__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.JoinRoomAsync(System.String%2CSystem.Nullable%7BCshrix.Data.SignedThirdPartyData%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L673">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L777">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_JoinRoomAsync_" data-uid="Cshrix.IMatrixClientServerApi.JoinRoomAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_JoinRoomAsync_System_String_System_Nullable_Cshrix_Data_SignedThirdPartyData__" data-uid="Cshrix.IMatrixClientServerApi.JoinRoomAsync(System.String,System.Nullable{Cshrix.Data.SignedThirdPartyData})">JoinRoomAsync(String, Nullable&lt;SignedThirdPartyData&gt;)</h4>
@@ -3977,7 +4019,7 @@ Task&lt;RoomIdContainer&gt; JoinRoomAsync([Path] string roomId, [Body] SignedThi
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_JoinRoomOrAliasAsync_System_String_System_Collections_Generic_IEnumerable_System_String__System_Nullable_Cshrix_Data_SignedThirdPartyData__.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.JoinRoomOrAliasAsync(System.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Nullable%7BCshrix.Data.SignedThirdPartyData%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L652">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L756">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_JoinRoomOrAliasAsync_" data-uid="Cshrix.IMatrixClientServerApi.JoinRoomOrAliasAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_JoinRoomOrAliasAsync_System_String_System_Collections_Generic_IEnumerable_System_String__System_Nullable_Cshrix_Data_SignedThirdPartyData__" data-uid="Cshrix.IMatrixClientServerApi.JoinRoomOrAliasAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{Cshrix.Data.SignedThirdPartyData})">JoinRoomOrAliasAsync(String, IEnumerable&lt;String&gt;, Nullable&lt;SignedThirdPartyData&gt;)</h4>
@@ -4035,7 +4077,7 @@ Task&lt;RoomIdContainer&gt; JoinRoomOrAliasAsync([Path] string roomIdOrAlias, [Q
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_KickAsync_System_String_Cshrix_Data_Reason_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.KickAsync(System.String%2CCshrix.Data.Reason)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L676">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L780">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_KickAsync_" data-uid="Cshrix.IMatrixClientServerApi.KickAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_KickAsync_System_String_Cshrix_Data_Reason_" data-uid="Cshrix.IMatrixClientServerApi.KickAsync(System.String,Cshrix.Data.Reason)">KickAsync(String, Reason)</h4>
@@ -4088,7 +4130,7 @@ Task KickAsync([Path] string roomId, [Body] Reason data)</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_LeaveAsync_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.LeaveAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L679">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L783">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_LeaveAsync_" data-uid="Cshrix.IMatrixClientServerApi.LeaveAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_LeaveAsync_System_String_" data-uid="Cshrix.IMatrixClientServerApi.LeaveAsync(System.String)">LeaveAsync(String)</h4>
@@ -4136,7 +4178,7 @@ Task LeaveAsync([Path] string roomId)</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_LoginAsync_Cshrix_Data_LoginRequest_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.LoginAsync(Cshrix.Data.LoginRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L708">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L812">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_LoginAsync_" data-uid="Cshrix.IMatrixClientServerApi.LoginAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_LoginAsync_Cshrix_Data_LoginRequest_" data-uid="Cshrix.IMatrixClientServerApi.LoginAsync(Cshrix.Data.LoginRequest)">LoginAsync(LoginRequest)</h4>
@@ -4184,7 +4226,7 @@ Task&lt;AuthenticationResponse&gt; LoginAsync([Body] LoginRequest data)</code></
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_LogoutAllAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.LogoutAllAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L714">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L818">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_LogoutAllAsync_" data-uid="Cshrix.IMatrixClientServerApi.LogoutAllAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_LogoutAllAsync" data-uid="Cshrix.IMatrixClientServerApi.LogoutAllAsync">LogoutAllAsync()</h4>
@@ -4215,7 +4257,7 @@ Task LogoutAllAsync()</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_LogoutAsync.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.LogoutAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L711">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L815">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_LogoutAsync_" data-uid="Cshrix.IMatrixClientServerApi.LogoutAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_LogoutAsync" data-uid="Cshrix.IMatrixClientServerApi.LogoutAsync">LogoutAsync()</h4>
@@ -4246,11 +4288,12 @@ Task LogoutAsync()</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_MapRoomAliasAsync_Cshrix_Data_RoomAlias_Cshrix_Data_RoomIdContainer_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.MapRoomAliasAsync(Cshrix.Data.RoomAlias%2CCshrix.Data.RoomIdContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L556">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L649">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_MapRoomAliasAsync_" data-uid="Cshrix.IMatrixClientServerApi.MapRoomAliasAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_MapRoomAliasAsync_Cshrix_Data_RoomAlias_Cshrix_Data_RoomIdContainer_" data-uid="Cshrix.IMatrixClientServerApi.MapRoomAliasAsync(Cshrix.Data.RoomAlias,Cshrix.Data.RoomIdContainer)">MapRoomAliasAsync(RoomAlias, RoomIdContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Create a new mapping from room alias to room ID.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -4270,12 +4313,14 @@ Task MapRoomAliasAsync([Path(&quot;roomAlias&quot;)] RoomAlias alias, [Body] Roo
       <tr>
         <td><a class="xref" href="Cshrix.Data.RoomAlias.html">RoomAlias</a></td>
         <td><span class="parametername">alias</span></td>
-        <td></td>
+        <td><p>The room alias to set.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.RoomIdContainer.html">RoomIdContainer</a></td>
         <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><p>Information about the room alias.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -4290,7 +4335,8 @@ Task MapRoomAliasAsync([Path(&quot;roomAlias&quot;)] RoomAlias alias, [Body] Roo
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing request progress.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -4299,7 +4345,7 @@ Task MapRoomAliasAsync([Path(&quot;roomAlias&quot;)] RoomAlias alias, [Body] Roo
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_ModifyNotificationPusherAsync_Cshrix_Data_Notifications_NotificationPusher_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.ModifyNotificationPusherAsync(Cshrix.Data.Notifications.NotificationPusher)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L730">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L834">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_ModifyNotificationPusherAsync_" data-uid="Cshrix.IMatrixClientServerApi.ModifyNotificationPusherAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_ModifyNotificationPusherAsync_Cshrix_Data_Notifications_NotificationPusher_" data-uid="Cshrix.IMatrixClientServerApi.ModifyNotificationPusherAsync(Cshrix.Data.Notifications.NotificationPusher)">ModifyNotificationPusherAsync(NotificationPusher)</h4>
@@ -4347,7 +4393,7 @@ Task ModifyNotificationPusherAsync([Body] NotificationPusher data)</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_QueryDeviceKeysAsync_Cshrix_Data_DeviceKeysQuery_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.QueryDeviceKeysAsync(Cshrix.Data.DeviceKeysQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L695">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L799">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_QueryDeviceKeysAsync_" data-uid="Cshrix.IMatrixClientServerApi.QueryDeviceKeysAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_QueryDeviceKeysAsync_Cshrix_Data_DeviceKeysQuery_" data-uid="Cshrix.IMatrixClientServerApi.QueryDeviceKeysAsync(Cshrix.Data.DeviceKeysQuery)">QueryDeviceKeysAsync(DeviceKeysQuery)</h4>
@@ -4395,7 +4441,7 @@ Task&lt;DeviceKeysQueryResponse&gt; QueryDeviceKeysAsync([Body] DeviceKeysQuery 
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_RedactEventAsync_System_String_System_String_System_Int32_Cshrix_Data_Events_Content_RedactionContent_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.RedactEventAsync(System.String%2CSystem.String%2CSystem.Int32%2CCshrix.Data.Events.Content.RedactionContent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L591">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L695">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_RedactEventAsync_" data-uid="Cshrix.IMatrixClientServerApi.RedactEventAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_RedactEventAsync_System_String_System_String_System_Int32_Cshrix_Data_Events_Content_RedactionContent_" data-uid="Cshrix.IMatrixClientServerApi.RedactEventAsync(System.String,System.String,System.Int32,Cshrix.Data.Events.Content.RedactionContent)">RedactEventAsync(String, String, Int32, RedactionContent)</h4>
@@ -4556,7 +4602,7 @@ Relationship between access tokens and devices
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_ReportAsync_System_String_System_String_Cshrix_Data_Report_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.ReportAsync(System.String%2CSystem.String%2CCshrix.Data.Report)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L811">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L915">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_ReportAsync_" data-uid="Cshrix.IMatrixClientServerApi.ReportAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_ReportAsync_System_String_System_String_Cshrix_Data_Report_" data-uid="Cshrix.IMatrixClientServerApi.ReportAsync(System.String,System.String,Cshrix.Data.Report)">ReportAsync(String, String, Report)</h4>
@@ -4614,7 +4660,7 @@ Task ReportAsync([Path] string roomId, [Path] string eventId, [Body] Report data
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_RequestOpenIdTokenAsync_Cshrix_Data_UserId_System_Object_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.RequestOpenIdTokenAsync(Cshrix.Data.UserId%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L835">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L939">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_RequestOpenIdTokenAsync_" data-uid="Cshrix.IMatrixClientServerApi.RequestOpenIdTokenAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_RequestOpenIdTokenAsync_Cshrix_Data_UserId_System_Object_" data-uid="Cshrix.IMatrixClientServerApi.RequestOpenIdTokenAsync(Cshrix.Data.UserId,System.Object)">RequestOpenIdTokenAsync(UserId, Object)</h4>
@@ -4667,11 +4713,12 @@ Task&lt;OpenIdToken&gt; RequestOpenIdTokenAsync([Path] UserId userId, [Body] obj
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_ResolveRoomAliasAsync_Cshrix_Data_RoomAlias_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.ResolveRoomAliasAsync(Cshrix.Data.RoomAlias)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L553">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L640">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_ResolveRoomAliasAsync_" data-uid="Cshrix.IMatrixClientServerApi.ResolveRoomAliasAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_ResolveRoomAliasAsync_Cshrix_Data_RoomAlias_" data-uid="Cshrix.IMatrixClientServerApi.ResolveRoomAliasAsync(Cshrix.Data.RoomAlias)">ResolveRoomAliasAsync(RoomAlias)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get the room ID corresponding to this room alias.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -4691,7 +4738,8 @@ Task&lt;RoomAliasInformation&gt; ResolveRoomAliasAsync([Path(&quot;roomAlias&quo
       <tr>
         <td><a class="xref" href="Cshrix.Data.RoomAlias.html">RoomAlias</a></td>
         <td><span class="parametername">alias</span></td>
-        <td></td>
+        <td><p>The room alias.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -4706,16 +4754,24 @@ Task&lt;RoomAliasInformation&gt; ResolveRoomAliasAsync([Path(&quot;roomAlias&quo
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Cshrix.Data.RoomAliasInformation.html">RoomAliasInformation</a>&gt;</td>
-        <td></td>
+        <td><p>Information about the alias.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_ResolveRoomAliasAsync_Cshrix_Data_RoomAlias__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Requests that the server resolve a room alias to a room ID.</p>
+<p>
+The server will use the federation API to resolve the alias if the domain part of the alias does not
+correspond to the server&apos;s own domain.
+</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SearchAsync_Cshrix_Data_Search_SearchQuery_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SearchAsync(Cshrix.Data.Search.SearchQuery%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L818">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L922">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SearchAsync_" data-uid="Cshrix.IMatrixClientServerApi.SearchAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SearchAsync_Cshrix_Data_Search_SearchQuery_System_String_" data-uid="Cshrix.IMatrixClientServerApi.SearchAsync(Cshrix.Data.Search.SearchQuery,System.String)">SearchAsync(SearchQuery, String)</h4>
@@ -4837,7 +4893,7 @@ determined based upon the <code data-dev-comment-type="paramref" class="paramref
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SendEventAsync_System_String_System_String_System_Int32_Cshrix_Data_Events_Event_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SendEventAsync(System.String%2CSystem.String%2CSystem.Int32%2CCshrix.Data.Events.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L598">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L702">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SendEventAsync_" data-uid="Cshrix.IMatrixClientServerApi.SendEventAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SendEventAsync_System_String_System_String_System_Int32_Cshrix_Data_Events_Event_" data-uid="Cshrix.IMatrixClientServerApi.SendEventAsync(System.String,System.String,System.Int32,Cshrix.Data.Events.Event)">SendEventAsync(String, String, Int32, Event)</h4>
@@ -4900,7 +4956,7 @@ Task&lt;EventIdContainer&gt; SendEventAsync([Path] string roomId, [Path] string 
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SendReceiptAsync_System_String_System_String_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SendReceiptAsync(System.String%2CSystem.String%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L584">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L688">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SendReceiptAsync_" data-uid="Cshrix.IMatrixClientServerApi.SendReceiptAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SendReceiptAsync_System_String_System_String_System_String_System_Object_" data-uid="Cshrix.IMatrixClientServerApi.SendReceiptAsync(System.String,System.String,System.String,System.Object)">SendReceiptAsync(String, String, String, Object)</h4>
@@ -4963,7 +5019,7 @@ Task SendReceiptAsync([Path] string roomId, [Path] string receiptType, [Path] st
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SendStateAsync_System_String_System_String_Cshrix_Data_Events_Content_EventContent_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SendStateAsync(System.String%2CSystem.String%2CCshrix.Data.Events.Content.EventContent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L611">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L715">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SendStateAsync_" data-uid="Cshrix.IMatrixClientServerApi.SendStateAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SendStateAsync_System_String_System_String_Cshrix_Data_Events_Content_EventContent_" data-uid="Cshrix.IMatrixClientServerApi.SendStateAsync(System.String,System.String,Cshrix.Data.Events.Content.EventContent)">SendStateAsync(String, String, EventContent)</h4>
@@ -5021,7 +5077,7 @@ Task&lt;EventIdContainer&gt; SendStateAsync([Path] string roomId, [Path] string 
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SendStateAsync_System_String_System_String_System_String_Cshrix_Data_Events_Content_EventContent_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SendStateAsync(System.String%2CSystem.String%2CSystem.String%2CCshrix.Data.Events.Content.EventContent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L620">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L724">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SendStateAsync_" data-uid="Cshrix.IMatrixClientServerApi.SendStateAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SendStateAsync_System_String_System_String_System_String_Cshrix_Data_Events_Content_EventContent_" data-uid="Cshrix.IMatrixClientServerApi.SendStateAsync(System.String,System.String,System.String,Cshrix.Data.Events.Content.EventContent)">SendStateAsync(String, String, String, EventContent)</h4>
@@ -5084,7 +5140,7 @@ Task&lt;EventIdContainer&gt; SendStateAsync([Path] string roomId, [Path] string 
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SendToDevicesAsync_System_String_System_String_Cshrix_Data_SendToDeviceMessages_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SendToDevicesAsync(System.String%2CSystem.String%2CCshrix.Data.SendToDeviceMessages)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L825">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L929">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SendToDevicesAsync_" data-uid="Cshrix.IMatrixClientServerApi.SendToDevicesAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SendToDevicesAsync_System_String_System_String_Cshrix_Data_SendToDeviceMessages_" data-uid="Cshrix.IMatrixClientServerApi.SendToDevicesAsync(System.String,System.String,Cshrix.Data.SendToDeviceMessages)">SendToDevicesAsync(String, String, SendToDeviceMessages)</h4>
@@ -5142,7 +5198,7 @@ Task SendToDevicesAsync([Path] string eventType, [Path(&quot;txnId&quot;)] strin
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SendTypingAsync_System_String_Cshrix_Data_UserId_Cshrix_Data_TypingState_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SendTypingAsync(System.String%2CCshrix.Data.UserId%2CCshrix.Data.TypingState)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L627">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L731">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SendTypingAsync_" data-uid="Cshrix.IMatrixClientServerApi.SendTypingAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SendTypingAsync_System_String_Cshrix_Data_UserId_Cshrix_Data_TypingState_" data-uid="Cshrix.IMatrixClientServerApi.SendTypingAsync(System.String,Cshrix.Data.UserId,Cshrix.Data.TypingState)">SendTypingAsync(String, UserId, TypingState)</h4>
@@ -5328,11 +5384,12 @@ user's avatar <a class="xref" href="https://docs.microsoft.com/dotnet/api/system
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SetDeviceMetadataAsync_System_String_Cshrix_Data_DeviceMetadata_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SetDeviceMetadataAsync(System.String%2CCshrix.Data.DeviceMetadata)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L533">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L580">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SetDeviceMetadataAsync_" data-uid="Cshrix.IMatrixClientServerApi.SetDeviceMetadataAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SetDeviceMetadataAsync_System_String_Cshrix_Data_DeviceMetadata_" data-uid="Cshrix.IMatrixClientServerApi.SetDeviceMetadataAsync(System.String,Cshrix.Data.DeviceMetadata)">SetDeviceMetadataAsync(String, DeviceMetadata)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Update a device.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -5352,12 +5409,14 @@ Task SetDeviceMetadataAsync([Path] string deviceId, [Body] DeviceMetadata data)<
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">deviceId</span></td>
-        <td></td>
+        <td><p>The ID of the device to update.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.DeviceMetadata.html">DeviceMetadata</a></td>
         <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><p>New metadata to set on the device.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -5372,10 +5431,14 @@ Task SetDeviceMetadataAsync([Path] string deviceId, [Body] DeviceMetadata data)<
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing request progress.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_SetDeviceMetadataAsync_System_String_Cshrix_Data_DeviceMetadata__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Updates the metadata on the given device.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SetDisplayNameAsync_Cshrix_Data_UserId_Cshrix_Data_DisplayNameContainer_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SetDisplayNameAsync(Cshrix.Data.UserId%2CCshrix.Data.DisplayNameContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -5442,7 +5505,7 @@ e.g. you need to have their <code>access_token</code>.</p>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SetNotificationPushRuleActionsAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_Cshrix_Data_Notifications_NotificationActionsContainer_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SetNotificationPushRuleActionsAsync(System.String%2CCshrix.Data.Notifications.NotificationPushRuleKind%2CSystem.String%2CCshrix.Data.Notifications.NotificationActionsContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L757">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L861">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SetNotificationPushRuleActionsAsync_" data-uid="Cshrix.IMatrixClientServerApi.SetNotificationPushRuleActionsAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SetNotificationPushRuleActionsAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_Cshrix_Data_Notifications_NotificationActionsContainer_" data-uid="Cshrix.IMatrixClientServerApi.SetNotificationPushRuleActionsAsync(System.String,Cshrix.Data.Notifications.NotificationPushRuleKind,System.String,Cshrix.Data.Notifications.NotificationActionsContainer)">SetNotificationPushRuleActionsAsync(String, NotificationPushRuleKind, String, NotificationActionsContainer)</h4>
@@ -5505,7 +5568,7 @@ Task SetNotificationPushRuleActionsAsync([Path] string scope, [Path] Notificatio
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SetNotificationPushRuleAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_Cshrix_Data_Notifications_NotificationPushRule_System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SetNotificationPushRuleAsync(System.String%2CCshrix.Data.Notifications.NotificationPushRuleKind%2CSystem.String%2CCshrix.Data.Notifications.NotificationPushRule%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L748">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L852">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SetNotificationPushRuleAsync_" data-uid="Cshrix.IMatrixClientServerApi.SetNotificationPushRuleAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SetNotificationPushRuleAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_Cshrix_Data_Notifications_NotificationPushRule_System_String_System_String_" data-uid="Cshrix.IMatrixClientServerApi.SetNotificationPushRuleAsync(System.String,Cshrix.Data.Notifications.NotificationPushRuleKind,System.String,Cshrix.Data.Notifications.NotificationPushRule,System.String,System.String)">SetNotificationPushRuleAsync(String, NotificationPushRuleKind, String, NotificationPushRule, String, String)</h4>
@@ -5578,7 +5641,7 @@ Task SetNotificationPushRuleAsync([Path] string scope, [Path] NotificationPushRu
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SetNotificationPushRuleEnabledAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_Cshrix_Data_EnabledContainer_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SetNotificationPushRuleEnabledAsync(System.String%2CCshrix.Data.Notifications.NotificationPushRuleKind%2CSystem.String%2CCshrix.Data.EnabledContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L764">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L868">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SetNotificationPushRuleEnabledAsync_" data-uid="Cshrix.IMatrixClientServerApi.SetNotificationPushRuleEnabledAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SetNotificationPushRuleEnabledAsync_System_String_Cshrix_Data_Notifications_NotificationPushRuleKind_System_String_Cshrix_Data_EnabledContainer_" data-uid="Cshrix.IMatrixClientServerApi.SetNotificationPushRuleEnabledAsync(System.String,Cshrix.Data.Notifications.NotificationPushRuleKind,System.String,Cshrix.Data.EnabledContainer)">SetNotificationPushRuleEnabledAsync(String, NotificationPushRuleKind, String, EnabledContainer)</h4>
@@ -5641,7 +5704,7 @@ Task SetNotificationPushRuleEnabledAsync([Path] string scope, [Path] Notificatio
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SetPresenceAsync_Cshrix_Data_UserId_Cshrix_Data_PresenceStatusRequest_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SetPresenceAsync(Cshrix.Data.UserId%2CCshrix.Data.PresenceStatusRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L784">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L888">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SetPresenceAsync_" data-uid="Cshrix.IMatrixClientServerApi.SetPresenceAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SetPresenceAsync_Cshrix_Data_UserId_Cshrix_Data_PresenceStatusRequest_" data-uid="Cshrix.IMatrixClientServerApi.SetPresenceAsync(Cshrix.Data.UserId,Cshrix.Data.PresenceStatusRequest)">SetPresenceAsync(UserId, PresenceStatusRequest)</h4>
@@ -5694,7 +5757,7 @@ Task SetPresenceAsync([Path] UserId userId, [Body] PresenceStatusRequest data)</
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SetReadMarkersAsync_System_String_Cshrix_Data_ReadMarkers_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SetReadMarkersAsync(System.String%2CCshrix.Data.ReadMarkers)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L804">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L908">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SetReadMarkersAsync_" data-uid="Cshrix.IMatrixClientServerApi.SetReadMarkersAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SetReadMarkersAsync_System_String_Cshrix_Data_ReadMarkers_" data-uid="Cshrix.IMatrixClientServerApi.SetReadMarkersAsync(System.String,Cshrix.Data.ReadMarkers)">SetReadMarkersAsync(String, ReadMarkers)</h4>
@@ -5820,7 +5883,7 @@ the account data. The config will be synced to clients in the per-room <code>acc
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_TimeSpan_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.SyncAsync(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.String%2CSystem.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L630">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L734">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_SyncAsync_" data-uid="Cshrix.IMatrixClientServerApi.SyncAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_TimeSpan_" data-uid="Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.TimeSpan)">SyncAsync(String, String, Boolean, String, TimeSpan)</h4>
@@ -5888,7 +5951,7 @@ Task&lt;SyncResponse&gt; SyncAsync([Query] string since = null, [Query] string f
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UnbanAsync_System_String_Cshrix_Data_UserIdContainer_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UnbanAsync(System.String%2CCshrix.Data.UserIdContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L682">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L786">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UnbanAsync_" data-uid="Cshrix.IMatrixClientServerApi.UnbanAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UnbanAsync_System_String_Cshrix_Data_UserIdContainer_" data-uid="Cshrix.IMatrixClientServerApi.UnbanAsync(System.String,Cshrix.Data.UserIdContainer)">UnbanAsync(String, UserIdContainer)</h4>
@@ -5941,11 +6004,12 @@ Task UnbanAsync([Path] string roomId, [Body] UserIdContainer data)</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UpdateAppServiceRoomVisibilityAsync_System_String_System_String_Cshrix_Data_RoomVisibilityContainer_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UpdateAppServiceRoomVisibilityAsync(System.String%2CSystem.String%2CCshrix.Data.RoomVisibilityContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L540">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L604">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UpdateAppServiceRoomVisibilityAsync_" data-uid="Cshrix.IMatrixClientServerApi.UpdateAppServiceRoomVisibilityAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UpdateAppServiceRoomVisibilityAsync_System_String_System_String_Cshrix_Data_RoomVisibilityContainer_" data-uid="Cshrix.IMatrixClientServerApi.UpdateAppServiceRoomVisibilityAsync(System.String,System.String,Cshrix.Data.RoomVisibilityContainer)">UpdateAppServiceRoomVisibilityAsync(String, String, RoomVisibilityContainer)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates a room's visibility in the application service's room directory.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -5965,17 +6029,21 @@ Task UpdateAppServiceRoomVisibilityAsync([Path] string networkId, [Path] string 
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">networkId</span></td>
-        <td></td>
+        <td><p>The protocol (network) ID to update the room list for. This would have been provided by the application
+service as being listed as a supported protocol.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">roomId</span></td>
-        <td></td>
+        <td><p>The room ID to add to the directory.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.RoomVisibilityContainer.html">RoomVisibilityContainer</a></td>
         <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><p>A wrapper object containing the room visibility to set.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -5990,16 +6058,24 @@ Task UpdateAppServiceRoomVisibilityAsync([Path] string networkId, [Path] string 
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing request progress.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_IMatrixClientServerApi_UpdateAppServiceRoomVisibilityAsync_System_String_System_String_Cshrix_Data_RoomVisibilityContainer__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Updates the visibility of a given room on the application service&apos;s room directory.</p>
+<p>
+This API is similar to the room directory visibility API used by clients to update the homeserver&apos;s more
+general room directory.
+</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UpdatePresenceListAsync_Cshrix_Data_UserId_Cshrix_Data_PresenceListUpdate_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UpdatePresenceListAsync(Cshrix.Data.UserId%2CCshrix.Data.PresenceListUpdate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L778">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L882">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UpdatePresenceListAsync_" data-uid="Cshrix.IMatrixClientServerApi.UpdatePresenceListAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UpdatePresenceListAsync_Cshrix_Data_UserId_Cshrix_Data_PresenceListUpdate_" data-uid="Cshrix.IMatrixClientServerApi.UpdatePresenceListAsync(Cshrix.Data.UserId,Cshrix.Data.PresenceListUpdate)">UpdatePresenceListAsync(UserId, PresenceListUpdate)</h4>
@@ -6052,7 +6128,7 @@ Task UpdatePresenceListAsync([Path] UserId userId, [Body] PresenceListUpdate dat
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UploadAsync_System_String_System_Net_Http_Headers_MediaTypeHeaderValue_System_Byte___.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UploadAsync(System.String%2CSystem.Net.Http.Headers.MediaTypeHeaderValue%2CSystem.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L861">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L965">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UploadAsync_" data-uid="Cshrix.IMatrixClientServerApi.UploadAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UploadAsync_System_String_System_Net_Http_Headers_MediaTypeHeaderValue_System_Byte___" data-uid="Cshrix.IMatrixClientServerApi.UploadAsync(System.String,System.Net.Http.Headers.MediaTypeHeaderValue,System.Byte[])">UploadAsync(String, MediaTypeHeaderValue, Byte[])</h4>
@@ -6110,7 +6186,7 @@ Task&lt;ContentUriContainer&gt; UploadAsync([Query] string filename, [Header(&qu
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UploadAsync_System_String_System_Net_Http_Headers_MediaTypeHeaderValue_System_IO_Stream_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UploadAsync(System.String%2CSystem.Net.Http.Headers.MediaTypeHeaderValue%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L849">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L953">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UploadAsync_" data-uid="Cshrix.IMatrixClientServerApi.UploadAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UploadAsync_System_String_System_Net_Http_Headers_MediaTypeHeaderValue_System_IO_Stream_" data-uid="Cshrix.IMatrixClientServerApi.UploadAsync(System.String,System.Net.Http.Headers.MediaTypeHeaderValue,System.IO.Stream)">UploadAsync(String, MediaTypeHeaderValue, Stream)</h4>
@@ -6168,7 +6244,7 @@ Task&lt;ContentUriContainer&gt; UploadAsync([Query] string filename, [Header(&qu
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UploadAsync_System_String_System_String_System_Byte___.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UploadAsync(System.String%2CSystem.String%2CSystem.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L867">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L971">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UploadAsync_" data-uid="Cshrix.IMatrixClientServerApi.UploadAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UploadAsync_System_String_System_String_System_Byte___" data-uid="Cshrix.IMatrixClientServerApi.UploadAsync(System.String,System.String,System.Byte[])">UploadAsync(String, String, Byte[])</h4>
@@ -6226,7 +6302,7 @@ Task&lt;ContentUriContainer&gt; UploadAsync([Query] string filename, [Header(&qu
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UploadAsync_System_String_System_String_System_IO_Stream_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UploadAsync(System.String%2CSystem.String%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L855">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L959">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UploadAsync_" data-uid="Cshrix.IMatrixClientServerApi.UploadAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UploadAsync_System_String_System_String_System_IO_Stream_" data-uid="Cshrix.IMatrixClientServerApi.UploadAsync(System.String,System.String,System.IO.Stream)">UploadAsync(String, String, Stream)</h4>
@@ -6284,7 +6360,7 @@ Task&lt;ContentUriContainer&gt; UploadAsync([Query] string filename, [Header(&qu
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UploadDeviceKeysAsync_Cshrix_Data_UploadKeysRequest_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync(Cshrix.Data.UploadKeysRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L698">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L802">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UploadDeviceKeysAsync_" data-uid="Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UploadDeviceKeysAsync_Cshrix_Data_UploadKeysRequest_" data-uid="Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync(Cshrix.Data.UploadKeysRequest)">UploadDeviceKeysAsync(UploadKeysRequest)</h4>
@@ -6332,7 +6408,7 @@ Task&lt;IReadOnlyDictionary&lt;string, int&gt;&gt; UploadDeviceKeysAsync([Body] 
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/apiSpec/new?filename=Cshrix_IMatrixClientServerApi_UploadFilterAsync_Cshrix_Data_UserId_Cshrix_Data_Filter_.md&amp;value=---%0Auid%3A%20Cshrix.IMatrixClientServerApi.UploadFilterAsync(Cshrix.Data.UserId%2CCshrix.Data.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L638">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IMatrixClientServerApi.cs/#L742">View Source</a>
   </span>
   <a id="Cshrix_IMatrixClientServerApi_UploadFilterAsync_" data-uid="Cshrix.IMatrixClientServerApi.UploadFilterAsync*"></a>
   <h4 id="Cshrix_IMatrixClientServerApi_UploadFilterAsync_Cshrix_Data_UserId_Cshrix_Data_Filter_" data-uid="Cshrix.IMatrixClientServerApi.UploadFilterAsync(Cshrix.Data.UserId,Cshrix.Data.Filter)">UploadFilterAsync(UserId, Filter)</h4>

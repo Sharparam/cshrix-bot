@@ -428,7 +428,7 @@ var assemblies = [
       { "name": "Cshrix.Extensions.JObjectExtensions", "rp": "Cshrix_JObjectExtensions.htm", "cl": 23, "ucl": 10, "cal": 33, "tl": 176, "ct": "LineCoverage", "mc": "-", "cb": 18, "tb": 28, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.MatrixClientServerApiExtensions", "rp": "Cshrix_MatrixClientServerApiExtensions.htm", "cl": 0, "ucl": 45, "cal": 45, "tl": 210, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 24, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.ResponseExtensions", "rp": "Cshrix_ResponseExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Helpers.DateTimeUtils", "rp": "Cshrix_DateTimeUtils.htm", "cl": 0, "ucl": 2, "cal": 2, "tl": 30, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Helpers.DateTimeUtils", "rp": "Cshrix_DateTimeUtils.htm", "cl": 0, "ucl": 2, "cal": 2, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.EnumHelpers", "rp": "Cshrix_EnumHelpers.htm", "cl": 13, "ucl": 0, "cal": 13, "tl": 64, "ct": "LineCoverage", "mc": "-", "cb": 6, "tb": 10, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.HashCode", "rp": "Cshrix_HashCode.htm", "cl": 10, "ucl": 40, "cal": 50, "tl": 239, "ct": "LineCoverage", "mc": "-", "cb": 6, "tb": 70, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.RandomHelpers", "rp": "Cshrix_RandomHelpers.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },

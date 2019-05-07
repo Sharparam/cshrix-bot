@@ -13445,56 +13445,6 @@ references:
   fullName.vb: Cshrix.Extensions.ResponseExtensions.TryGetError(Of T, TError)(RestEase.Response(Of T), ByRef TError)
   nameWithType: ResponseExtensions.TryGetError<T, TError>(Response<T>, out TError)
   nameWithType.vb: ResponseExtensions.TryGetError(Of T, TError)(Response(Of T), ByRef TError)
-- uid: Cshrix.Helpers
-  name: Cshrix.Helpers
-  href: api/Cshrix.Helpers.html
-  commentId: N:Cshrix.Helpers
-  fullName: Cshrix.Helpers
-  nameWithType: Cshrix.Helpers
-- uid: Cshrix.Helpers.DateTimeUtils
-  name: DateTimeUtils
-  href: api/Cshrix.Helpers.DateTimeUtils.html
-  commentId: T:Cshrix.Helpers.DateTimeUtils
-  fullName: Cshrix.Helpers.DateTimeUtils
-  nameWithType: DateTimeUtils
-- uid: Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds(System.Int64)
-  name: FromUnixTimeMilliseconds(Int64)
-  href: api/Cshrix.Helpers.DateTimeUtils.html#Cshrix_Helpers_DateTimeUtils_FromUnixTimeMilliseconds_System_Int64_
-  commentId: M:Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds(System.Int64)
-  fullName: Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds(System.Int64)
-  nameWithType: DateTimeUtils.FromUnixTimeMilliseconds(Int64)
-- uid: Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds*
-  name: FromUnixTimeMilliseconds
-  href: api/Cshrix.Helpers.DateTimeUtils.html#Cshrix_Helpers_DateTimeUtils_FromUnixTimeMilliseconds_
-  commentId: Overload:Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds
-  isSpec: "True"
-  fullName: Cshrix.Helpers.DateTimeUtils.FromUnixTimeMilliseconds
-  nameWithType: DateTimeUtils.FromUnixTimeMilliseconds
-- uid: Cshrix.Helpers.RandomHelpers
-  name: RandomHelpers
-  href: api/Cshrix.Helpers.RandomHelpers.html
-  commentId: T:Cshrix.Helpers.RandomHelpers
-  fullName: Cshrix.Helpers.RandomHelpers
-  nameWithType: RandomHelpers
-- uid: Cshrix.Helpers.RandomHelpers.Rng
-  name: Rng
-  href: api/Cshrix.Helpers.RandomHelpers.html#Cshrix_Helpers_RandomHelpers_Rng
-  commentId: F:Cshrix.Helpers.RandomHelpers.Rng
-  fullName: Cshrix.Helpers.RandomHelpers.Rng
-  nameWithType: RandomHelpers.Rng
-- uid: Cshrix.Helpers.RandomHelpers.SecureBytes(System.Int32)
-  name: SecureBytes(Int32)
-  href: api/Cshrix.Helpers.RandomHelpers.html#Cshrix_Helpers_RandomHelpers_SecureBytes_System_Int32_
-  commentId: M:Cshrix.Helpers.RandomHelpers.SecureBytes(System.Int32)
-  fullName: Cshrix.Helpers.RandomHelpers.SecureBytes(System.Int32)
-  nameWithType: RandomHelpers.SecureBytes(Int32)
-- uid: Cshrix.Helpers.RandomHelpers.SecureBytes*
-  name: SecureBytes
-  href: api/Cshrix.Helpers.RandomHelpers.html#Cshrix_Helpers_RandomHelpers_SecureBytes_
-  commentId: Overload:Cshrix.Helpers.RandomHelpers.SecureBytes
-  isSpec: "True"
-  fullName: Cshrix.Helpers.RandomHelpers.SecureBytes
-  nameWithType: RandomHelpers.SecureBytes
 - uid: Cshrix.IMatrixClient
   name: IMatrixClient
   href: api/Cshrix.IMatrixClient.html
