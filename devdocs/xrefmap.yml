@@ -12416,6 +12416,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.TypingState.TypingState
   nameWithType: TypingState.TypingState
+- uid: Cshrix.Data.TypingState.IsTyping
+  name: IsTyping
+  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_IsTyping
+  commentId: P:Cshrix.Data.TypingState.IsTyping
+  fullName: Cshrix.Data.TypingState.IsTyping
+  nameWithType: TypingState.IsTyping
+- uid: Cshrix.Data.TypingState.IsTyping*
+  name: IsTyping
+  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_IsTyping_
+  commentId: Overload:Cshrix.Data.TypingState.IsTyping
+  isSpec: "True"
+  fullName: Cshrix.Data.TypingState.IsTyping
+  nameWithType: TypingState.IsTyping
 - uid: Cshrix.Data.TypingState.Timeout
   name: Timeout
   href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_Timeout
@@ -12429,19 +12442,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.TypingState.Timeout
   nameWithType: TypingState.Timeout
-- uid: Cshrix.Data.TypingState.Typing
-  name: Typing
-  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_Typing
-  commentId: P:Cshrix.Data.TypingState.Typing
-  fullName: Cshrix.Data.TypingState.Typing
-  nameWithType: TypingState.Typing
-- uid: Cshrix.Data.TypingState.Typing*
-  name: Typing
-  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_Typing_
-  commentId: Overload:Cshrix.Data.TypingState.Typing
-  isSpec: "True"
-  fullName: Cshrix.Data.TypingState.Typing
-  nameWithType: TypingState.Typing
 - uid: Cshrix.Data.UnsignedDeviceInfo
   name: UnsignedDeviceInfo
   href: api/Cshrix.Data.UnsignedDeviceInfo.html
@@ -13917,19 +13917,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.GetMemberEventsAsync
   nameWithType: IMatrixClientServerApi.GetMemberEventsAsync
-- uid: Cshrix.IMatrixClientServerApi.GetMessageEventsAsync(System.String,System.String,System.String,Cshrix.Data.Direction,System.Int32,Cshrix.Data.RoomEventFilter)
-  name: GetMessageEventsAsync(String, String, String, Direction, Int32, RoomEventFilter)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetMessageEventsAsync_System_String_System_String_System_String_Cshrix_Data_Direction_System_Int32_Cshrix_Data_RoomEventFilter_
-  commentId: M:Cshrix.IMatrixClientServerApi.GetMessageEventsAsync(System.String,System.String,System.String,Cshrix.Data.Direction,System.Int32,Cshrix.Data.RoomEventFilter)
-  fullName: Cshrix.IMatrixClientServerApi.GetMessageEventsAsync(System.String, System.String, System.String, Cshrix.Data.Direction, System.Int32, Cshrix.Data.RoomEventFilter)
-  nameWithType: IMatrixClientServerApi.GetMessageEventsAsync(String, String, String, Direction, Int32, RoomEventFilter)
-- uid: Cshrix.IMatrixClientServerApi.GetMessageEventsAsync*
-  name: GetMessageEventsAsync
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetMessageEventsAsync_
-  commentId: Overload:Cshrix.IMatrixClientServerApi.GetMessageEventsAsync
-  isSpec: "True"
-  fullName: Cshrix.IMatrixClientServerApi.GetMessageEventsAsync
-  nameWithType: IMatrixClientServerApi.GetMessageEventsAsync
 - uid: Cshrix.IMatrixClientServerApi.GetNotificationPushersAsync
   name: GetNotificationPushersAsync()
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetNotificationPushersAsync
@@ -14046,6 +14033,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.GetPublicRoomsAsync
   nameWithType: IMatrixClientServerApi.GetPublicRoomsAsync
+- uid: Cshrix.IMatrixClientServerApi.GetRoomEventsAsync(System.String,System.String,System.String,Cshrix.Data.Direction,System.Int32,Cshrix.Data.RoomEventFilter)
+  name: GetRoomEventsAsync(String, String, String, Direction, Int32, RoomEventFilter)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetRoomEventsAsync_System_String_System_String_System_String_Cshrix_Data_Direction_System_Int32_Cshrix_Data_RoomEventFilter_
+  commentId: M:Cshrix.IMatrixClientServerApi.GetRoomEventsAsync(System.String,System.String,System.String,Cshrix.Data.Direction,System.Int32,Cshrix.Data.RoomEventFilter)
+  fullName: Cshrix.IMatrixClientServerApi.GetRoomEventsAsync(System.String, System.String, System.String, Cshrix.Data.Direction, System.Int32, Cshrix.Data.RoomEventFilter)
+  nameWithType: IMatrixClientServerApi.GetRoomEventsAsync(String, String, String, Direction, Int32, RoomEventFilter)
+- uid: Cshrix.IMatrixClientServerApi.GetRoomEventsAsync*
+  name: GetRoomEventsAsync
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetRoomEventsAsync_
+  commentId: Overload:Cshrix.IMatrixClientServerApi.GetRoomEventsAsync
+  isSpec: "True"
+  fullName: Cshrix.IMatrixClientServerApi.GetRoomEventsAsync
+  nameWithType: IMatrixClientServerApi.GetRoomEventsAsync
 - uid: Cshrix.IMatrixClientServerApi.GetRoomTagsAsync(Cshrix.Data.UserId,System.String)
   name: GetRoomTagsAsync(UserId, String)
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_GetRoomTagsAsync_Cshrix_Data_UserId_System_String_
@@ -14314,12 +14314,12 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.QueryDeviceKeysAsync
   nameWithType: IMatrixClientServerApi.QueryDeviceKeysAsync
-- uid: Cshrix.IMatrixClientServerApi.RedactEventAsync(System.String,System.String,System.Int32,Cshrix.Data.Events.Content.RedactionContent)
-  name: RedactEventAsync(String, String, Int32, RedactionContent)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_RedactEventAsync_System_String_System_String_System_Int32_Cshrix_Data_Events_Content_RedactionContent_
-  commentId: M:Cshrix.IMatrixClientServerApi.RedactEventAsync(System.String,System.String,System.Int32,Cshrix.Data.Events.Content.RedactionContent)
-  fullName: Cshrix.IMatrixClientServerApi.RedactEventAsync(System.String, System.String, System.Int32, Cshrix.Data.Events.Content.RedactionContent)
-  nameWithType: IMatrixClientServerApi.RedactEventAsync(String, String, Int32, RedactionContent)
+- uid: Cshrix.IMatrixClientServerApi.RedactEventAsync(System.String,System.String,System.String,Cshrix.Data.Events.Content.RedactionContent)
+  name: RedactEventAsync(String, String, String, RedactionContent)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_RedactEventAsync_System_String_System_String_System_String_Cshrix_Data_Events_Content_RedactionContent_
+  commentId: M:Cshrix.IMatrixClientServerApi.RedactEventAsync(System.String,System.String,System.String,Cshrix.Data.Events.Content.RedactionContent)
+  fullName: Cshrix.IMatrixClientServerApi.RedactEventAsync(System.String, System.String, System.String, Cshrix.Data.Events.Content.RedactionContent)
+  nameWithType: IMatrixClientServerApi.RedactEventAsync(String, String, String, RedactionContent)
 - uid: Cshrix.IMatrixClientServerApi.RedactEventAsync*
   name: RedactEventAsync
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_RedactEventAsync_
@@ -14405,12 +14405,12 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.SearchUsersAsync
   nameWithType: IMatrixClientServerApi.SearchUsersAsync
-- uid: Cshrix.IMatrixClientServerApi.SendEventAsync(System.String,System.String,System.Int32,Cshrix.Data.Events.Event)
-  name: SendEventAsync(String, String, Int32, Event)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SendEventAsync_System_String_System_String_System_Int32_Cshrix_Data_Events_Event_
-  commentId: M:Cshrix.IMatrixClientServerApi.SendEventAsync(System.String,System.String,System.Int32,Cshrix.Data.Events.Event)
-  fullName: Cshrix.IMatrixClientServerApi.SendEventAsync(System.String, System.String, System.Int32, Cshrix.Data.Events.Event)
-  nameWithType: IMatrixClientServerApi.SendEventAsync(String, String, Int32, Event)
+- uid: Cshrix.IMatrixClientServerApi.SendEventAsync(System.String,System.String,System.String,Cshrix.Data.Events.Content.EventContent)
+  name: SendEventAsync(String, String, String, EventContent)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SendEventAsync_System_String_System_String_System_String_Cshrix_Data_Events_Content_EventContent_
+  commentId: M:Cshrix.IMatrixClientServerApi.SendEventAsync(System.String,System.String,System.String,Cshrix.Data.Events.Content.EventContent)
+  fullName: Cshrix.IMatrixClientServerApi.SendEventAsync(System.String, System.String, System.String, Cshrix.Data.Events.Content.EventContent)
+  nameWithType: IMatrixClientServerApi.SendEventAsync(String, String, String, EventContent)
 - uid: Cshrix.IMatrixClientServerApi.SendEventAsync*
   name: SendEventAsync
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SendEventAsync_
@@ -14606,12 +14606,12 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.SetRoomAccountDataAsync
   nameWithType: IMatrixClientServerApi.SetRoomAccountDataAsync
-- uid: Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.TimeSpan)
-  name: SyncAsync(String, String, Boolean, String, TimeSpan)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_System_String_System_TimeSpan_
-  commentId: M:Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,System.String,System.TimeSpan)
-  fullName: Cshrix.IMatrixClientServerApi.SyncAsync(System.String, System.String, System.Boolean, System.String, System.TimeSpan)
-  nameWithType: IMatrixClientServerApi.SyncAsync(String, String, Boolean, String, TimeSpan)
+- uid: Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,Cshrix.Data.Presence,System.TimeSpan)
+  name: SyncAsync(String, String, Boolean, Presence, TimeSpan)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_Cshrix_Data_Presence_System_TimeSpan_
+  commentId: M:Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,Cshrix.Data.Presence,System.TimeSpan)
+  fullName: Cshrix.IMatrixClientServerApi.SyncAsync(System.String, System.String, System.Boolean, Cshrix.Data.Presence, System.TimeSpan)
+  nameWithType: IMatrixClientServerApi.SyncAsync(String, String, Boolean, Presence, TimeSpan)
 - uid: Cshrix.IMatrixClientServerApi.SyncAsync*
   name: SyncAsync
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_

@@ -430,9 +430,10 @@ var assemblies = [
       { "name": "Cshrix.Extensions.ResponseExtensions", "rp": "Cshrix_ResponseExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.DateTimeUtils", "rp": "Cshrix_DateTimeUtils.htm", "cl": 0, "ucl": 2, "cal": 2, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.EnumHelpers", "rp": "Cshrix_EnumHelpers.htm", "cl": 13, "ucl": 0, "cal": 13, "tl": 64, "ct": "LineCoverage", "mc": "-", "cb": 6, "tb": 10, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Helpers.HashCode", "rp": "Cshrix_HashCode.htm", "cl": 10, "ucl": 40, "cal": 50, "tl": 239, "ct": "LineCoverage", "mc": "-", "cb": 6, "tb": 70, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Helpers.HashCode", "rp": "Cshrix_HashCode.htm", "cl": 10, "ucl": 40, "cal": 50, "tl": 260, "ct": "LineCoverage", "mc": "-", "cb": 6, "tb": 70, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.RandomHelpers", "rp": "Cshrix_RandomHelpers.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Helpers.ReflectionHelpers", "rp": "Cshrix_ReflectionHelpers.htm", "cl": 2, "ucl": 0, "cal": 2, "tl": 32, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 4, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Helpers.TransactionUtils", "rp": "Cshrix_TransactionUtils.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 43, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.MatrixClient", "rp": "Cshrix_MatrixClient.htm", "cl": 0, "ucl": 21, "cal": 21, "tl": 100, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.ComparisonConditionConverter`1", "rp": "Cshrix_ComparisonConditionConverter_1.htm", "cl": 0, "ucl": 29, "cal": 29, "tl": 124, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 16, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.EventConverter", "rp": "Cshrix_EventConverter.htm", "cl": 94, "ucl": 9, "cal": 103, "tl": 232, "ct": "LineCoverage", "mc": "-", "cb": 26, "tb": 36, "lch": [], "bch": [], "hc": [] },
@@ -469,17 +470,17 @@ var riskHotspots = [
     "metrics": [
       { "value": 13, "exceeded": false },
       { "value": 4096, "exceeded": true },
-      { "value": 13.59, "exceeded": false },
+      { "value": 182, "exceeded": true },
     ]},
   {
     "assembly": "Cshrix", "class": "Cshrix.Data.Identifier", "reportPath": "Cshrix_Identifier.htm", "methodName": "Cshrix.Data.Identifier Cshrix.Data.Identifier::ParseId(System.String)", "methodShortName": "ParseId(...)", "fileIndex": 0, "line": 91,
     "metrics": [
       { "value": 12, "exceeded": false },
       { "value": 512, "exceeded": true },
-      { "value": 19.59, "exceeded": true },
+      { "value": 22.42, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3,T4,T5,T6,T7,T8)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 227,
+    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3,T4,T5,T6,T7,T8)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 247,
     "metrics": [
       { "value": 17, "exceeded": false },
       { "value": 256, "exceeded": true },
@@ -490,10 +491,10 @@ var riskHotspots = [
     "metrics": [
       { "value": 10, "exceeded": false },
       { "value": 256, "exceeded": true },
-      { "value": 22.5, "exceeded": true },
+      { "value": 110, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3,T4,T5,T6,T7)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 186,
+    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3,T4,T5,T6,T7)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 203,
     "metrics": [
       { "value": 15, "exceeded": false },
       { "value": 128, "exceeded": false },
@@ -507,14 +508,14 @@ var riskHotspots = [
       { "value": 182, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3,T4,T5,T6)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 149,
+    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3,T4,T5,T6)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 163,
     "metrics": [
       { "value": 13, "exceeded": false },
       { "value": 64, "exceeded": false },
       { "value": 182, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3,T4,T5)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 116,
+    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3,T4,T5)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 127,
     "metrics": [
       { "value": 11, "exceeded": false },
       { "value": 32, "exceeded": false },
@@ -525,6 +526,13 @@ var riskHotspots = [
     "metrics": [
       { "value": 9, "exceeded": false },
       { "value": 16, "exceeded": false },
+      { "value": 90, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.StringArrayFlagsEnumConverter`1", "reportPath": "Cshrix_StringArrayFlagsEnumConverter_1.htm", "methodName": "T Cshrix.Serialization.StringArrayFlagsEnumConverter`1::ReadJson(Newtonsoft.Json.JsonReader,System.Type,T,System.Boolean,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 69,
+    "metrics": [
+      { "value": 9, "exceeded": false },
+      { "value": 64, "exceeded": false },
       { "value": 90, "exceeded": true },
     ]},
   {
@@ -542,6 +550,13 @@ var riskHotspots = [
       { "value": 72, "exceeded": true },
     ]},
   {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.EventConverter", "reportPath": "Cshrix_EventConverter.htm", "methodName": "Cshrix.Data.Events.Content.EventContent Cshrix.Serialization.EventConverter::ParseEventContent(System.String,Newtonsoft.Json.Linq.JObject)", "methodShortName": "ParseEventContent(...)", "fileIndex": 0, "line": 209,
+    "metrics": [
+      { "value": 8, "exceeded": false },
+      { "value": 64, "exceeded": false },
+      { "value": 72, "exceeded": true },
+    ]},
+  {
     "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "CreateContentFromResponse()", "methodShortName": "CreateContentFromResponse()", "fileIndex": 0, "line": 145,
     "metrics": [
       { "value": 7, "exceeded": false },
@@ -549,11 +564,32 @@ var riskHotspots = [
       { "value": 56, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 71,
+    "assembly": "Cshrix", "class": "Cshrix.Helpers.HashCode", "reportPath": "Cshrix_HashCode.htm", "methodName": "System.Int32 Cshrix.Helpers.HashCode::Combine(T1,T2,T3)", "methodShortName": "Combine(...)", "fileIndex": 0, "line": 76,
     "metrics": [
       { "value": 7, "exceeded": false },
       { "value": 8, "exceeded": false },
       { "value": 56, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Data.Identifier", "reportPath": "Cshrix_Identifier.htm", "methodName": "System.Boolean Cshrix.Data.Identifier::Equals(Cshrix.Data.Identifier)", "methodShortName": "Equals(...)", "fileIndex": 0, "line": 172,
+    "metrics": [
+      { "value": 6, "exceeded": false },
+      { "value": 16, "exceeded": false },
+      { "value": 42, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Data.ServerName", "reportPath": "Cshrix_ServerName.htm", "methodName": "System.Boolean Cshrix.Data.ServerName::Equals(Cshrix.Data.ServerName)", "methodShortName": "Equals(...)", "fileIndex": 0, "line": 78,
+    "metrics": [
+      { "value": 6, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 42, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Helpers.EnumHelpers", "reportPath": "Cshrix_EnumHelpers.htm", "methodName": "System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.Enum> Cshrix.Helpers.EnumHelpers::GetNamedFlags(System.Type)", "methodShortName": "GetNamedFlags(...)", "fileIndex": 0, "line": 45,
+    "metrics": [
+      { "value": 6, "exceeded": false },
+      { "value": 32, "exceeded": false },
+      { "value": 42, "exceeded": true },
     ]},
   {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.ComparisonConditionConverter`1", "reportPath": "Cshrix_ComparisonConditionConverter_1.htm", "methodName": "System.String Cshrix.Serialization.ComparisonConditionConverter`1::ExtractOperator(System.String)", "methodShortName": "ExtractOperator(...)", "fileIndex": 0, "line": 101,
@@ -567,6 +603,20 @@ var riskHotspots = [
     "metrics": [
       { "value": 6, "exceeded": false },
       { "value": 4, "exceeded": false },
+      { "value": 42, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.MillisecondTimeSpanConverter", "reportPath": "Cshrix_MillisecondTimeSpanConverter.htm", "methodName": "System.Object Cshrix.Serialization.MillisecondTimeSpanConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 67,
+    "metrics": [
+      { "value": 6, "exceeded": false },
+      { "value": 32, "exceeded": false },
+      { "value": 42, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.NotificationActionConverter", "reportPath": "Cshrix_NotificationActionConverter.htm", "methodName": "Cshrix.Data.Notifications.NotificationAction Cshrix.Serialization.NotificationActionConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Data.Notifications.NotificationAction,System.Boolean,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 125,
+    "metrics": [
+      { "value": 6, "exceeded": false },
+      { "value": 32, "exceeded": false },
       { "value": 42, "exceeded": true },
     ]},
   {
@@ -613,6 +663,13 @@ var riskHotspots = [
     ]},
   {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "reportPath": "Cshrix_MatrixApiQueryParamSerializer.htm", "methodName": "System.String Cshrix.Serialization.MatrixApiQueryParamSerializer::Serialize(T)", "methodShortName": "Serialize(...)", "fileIndex": 0, "line": 99,
+    "metrics": [
+      { "value": 5, "exceeded": false },
+      { "value": 16, "exceeded": false },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.MatrixErrorConverter", "reportPath": "Cshrix_MatrixErrorConverter.htm", "methodName": "Cshrix.Errors.MatrixError Cshrix.Serialization.MatrixErrorConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Errors.MatrixError,System.Boolean,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 64,
     "metrics": [
       { "value": 5, "exceeded": false },
       { "value": 16, "exceeded": false },
@@ -696,6 +753,34 @@ var riskHotspots = [
       { "value": 20, "exceeded": true },
     ]},
   {
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.JObjectExtensions", "reportPath": "Cshrix_JObjectExtensions.htm", "methodName": "T Cshrix.Extensions.JObjectExtensions::ValueOrDefault(Newtonsoft.Json.Linq.JObject,System.String,T)", "methodShortName": "ValueOrDefault(...)", "fileIndex": 0, "line": 37,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.JObjectExtensions", "reportPath": "Cshrix_JObjectExtensions.htm", "methodName": "System.Boolean Cshrix.Extensions.JObjectExtensions::TryGetValue(Newtonsoft.Json.Linq.JObject,System.String,T&)", "methodShortName": "TryGetValue(...)", "fileIndex": 0, "line": 68,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.JObjectExtensions", "reportPath": "Cshrix_JObjectExtensions.htm", "methodName": "T Cshrix.Extensions.JObjectExtensions::ObjectOrDefault(Newtonsoft.Json.Linq.JObject,System.String,T)", "methodShortName": "ObjectOrDefault(...)", "fileIndex": 0, "line": 127,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.JObjectExtensions", "reportPath": "Cshrix_JObjectExtensions.htm", "methodName": "System.Boolean Cshrix.Extensions.JObjectExtensions::TryGetObject(Newtonsoft.Json.Linq.JObject,System.String,T&)", "methodShortName": "TryGetObject(...)", "fileIndex": 0, "line": 156,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.ComparisonConditionConverter`1", "reportPath": "Cshrix_ComparisonConditionConverter_1.htm", "methodName": "Cshrix.Data.Notifications.ComparisonCondition`1<T> Cshrix.Serialization.ComparisonConditionConverter`1::ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Data.Notifications.ComparisonCondition`1<T>,System.Boolean,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 52,
     "metrics": [
       { "value": 4, "exceeded": false },
@@ -710,10 +795,31 @@ var riskHotspots = [
       { "value": 20, "exceeded": true },
     ]},
   {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.NotificationActionConverter", "reportPath": "Cshrix_NotificationActionConverter.htm", "methodName": "System.Void Cshrix.Serialization.NotificationActionConverter::WriteJson(Newtonsoft.Json.JsonWriter,Cshrix.Data.Notifications.NotificationAction,Newtonsoft.Json.JsonSerializer)", "methodShortName": "WriteJson(...)", "fileIndex": 0, "line": 62,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.OneTimeKeyConverter", "reportPath": "Cshrix_OneTimeKeyConverter.htm", "methodName": "Cshrix.Data.OneTimeKey Cshrix.Serialization.OneTimeKeyConverter::CreateFromJObject(Newtonsoft.Json.Linq.JObject)", "methodShortName": "CreateFromJObject(...)", "fileIndex": 0, "line": 96,
     "metrics": [
       { "value": 4, "exceeded": false },
       { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.ServerNameConverter", "reportPath": "Cshrix_ServerNameConverter.htm", "methodName": "Cshrix.Data.ServerName Cshrix.Serialization.ServerNameConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Data.ServerName,System.Boolean,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 41,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.StringArrayFlagsEnumConverter`1", "reportPath": "Cshrix_StringArrayFlagsEnumConverter_1.htm", "methodName": "System.Void Cshrix.Serialization.StringArrayFlagsEnumConverter`1::WriteJson(Newtonsoft.Json.JsonWriter,T,Newtonsoft.Json.JsonSerializer)", "methodShortName": "WriteJson(...)", "fileIndex": 0, "line": 37,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 2, "exceeded": false },
       { "value": 20, "exceeded": true },
     ]},
   {
