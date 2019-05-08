@@ -17,11 +17,11 @@ namespace Cshrix.Data
     public readonly struct TypingState
     {
         [JsonConstructor]
-        public TypingState(TimeSpan timeout, bool typing)
+        public TypingState(TimeSpan timeout, bool isTyping)
             : this()
         {
             Timeout = timeout;
-            Typing = typing;
+            IsTyping = isTyping;
         }
 
         [JsonProperty("timeout")]
@@ -29,6 +29,6 @@ namespace Cshrix.Data
         public TimeSpan Timeout { get; }
 
         [JsonProperty("typing")]
-        public bool Typing { get; }
+        public bool IsTyping { get; }
     }
 }

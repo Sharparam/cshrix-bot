@@ -667,24 +667,90 @@ namespace Cshrix
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/context/{eventId}")]
         Task<EventContext> GetContextAsync([Path] string roomId, [Path] string eventId, [Query] int limit = 10);
 
+        /// <summary>
+        /// Get a single event by event ID.
+        /// </summary>
+        /// <param name="roomId">The ID of the room the event is in.</param>
+        /// <param name="eventId">The ID of the event to get.</param>
+        /// <returns>The full event.</returns>
+        /// <remarks>
+        /// Get a single event based on a <paramref name="roomId" /> and <paramref name="eventId" />.
+        /// You must have permission to retrieve this event e.g. by being a member in the room for this event.
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/event/{eventId}")]
         Task<Event> GetEventAsync([Path] string roomId, [Path] string eventId);
 
+        /// <summary>
+        /// Gets the list of currently joined users and their profile data.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to get the members of.</param>
+        /// <returns>
+        /// A wrapper containing a dictionary mapping <see cref="UserId" /> to <see cref="Profile" /> objects.
+        /// </returns>
+        /// <remarks>
+        /// This API returns a map of MXIDs to member info objects for members of the room. The current user must
+        /// be in the room for it to work, unless it is an application service, in which case any of the AS's users
+        /// must be in the room. This API is primarily for application services and should be faster to respond than
+        /// <c>/members</c> as it can be implemented more efficiently on the server.
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/joined_members")]
         Task<JoinedMembersResponse> GetJoinedMembersAsync([Path] string roomId);
 
+        /// <summary>
+        /// Get member events for a room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to get member events for.</param>
+        /// <returns>
+        /// Events of type <c>m.room.member</c> for the room. If you are joined to the room then this will be
+        /// the current list of events. If you have left the room then it will be the list as it was when you
+        /// left the room.
+        /// </returns>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/members")]
         Task<Chunk<StateEvent>> GetMemberEventsAsync([Path] string roomId);
 
+        /// <summary>
+        /// Get room events for a room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to get events for.</param>
+        /// <param name="from">
+        /// The token to start returning events from. This token can be obtained from a <c>prev_batch</c> token
+        /// returned for each room by the sync API, or from a <c>start</c> or <c>end</c> token returned by a
+        /// previous request to this endpoint.
+        /// </param>
+        /// <param name="to">
+        /// The token to stop returning events at. This token can be obtained from a <c>prev_batch</c> token
+        /// returned for each room by the sync endpoint, or from a <c>start</c> or <c>end</c> token returned
+        /// by a previous request to this endpoint.
+        /// </param>
+        /// <param name="direction">The direction to return events from.</param>
+        /// <param name="limit">The maximum number of events to return. Defaults to <c>10</c>.</param>
+        /// <param name="filter">A <see cref="RoomEventFilter" /> to filter returned events with.</param>
+        /// <returns>An object containing room events and a token to request more.</returns>
+        /// <remarks>
+        /// This API returns a list of message and state events for a room. It uses pagination query parameters
+        /// to paginate history in the room.
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/messages")]
-        Task<PaginatedChunk<RoomEvent>> GetMessageEventsAsync(
+        Task<PaginatedChunk<RoomEvent>> GetRoomEventsAsync(
             [Path] string roomId,
             [Query] string from = null,
             [Query] string to = null,
-            [Query("dir")] Direction direction = Direction.Backwards,
+            [Query("dir", QuerySerializationMethod.Serialized)] Direction direction = Direction.Backwards,
             [Query] int limit = 10,
             [Query] RoomEventFilter filter = default);
 
+        /// <summary>
+        /// Send a receipt for the given event ID.
+        /// </summary>
+        /// <param name="roomId">The ID of the room in which to send the event.</param>
+        /// <param name="receiptType">The type of receipt to send.</param>
+        /// <param name="eventId">The event ID to acknowledge up to.</param>
+        /// <param name="data">
+        /// Extra receipt information to attach to the event content, if any.
+        /// The server will automatically set the <c>ts</c> field.
+        /// </param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>This API updates the marker for the given receipt type to the event ID specified.</remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/receipt/{receiptType}/{eventId}")]
         Task SendReceiptAsync(
             [Path] string roomId,
@@ -692,35 +758,160 @@ namespace Cshrix
             [Path] string eventId,
             [Body] object data = null);
 
+        /// <summary>
+        /// Redacts an event.
+        /// </summary>
+        /// <param name="roomId">The ID of the room from which to redact the event.</param>
+        /// <param name="eventId">The ID of the event to redact.</param>
+        /// <param name="transactionId">
+        /// The transaction ID for this event. Clients should generate a unique ID; it will be used by the server
+        /// to ensure idempotency of requests.
+        /// </param>
+        /// <param name="data">An object containing reasoning as to why the event was redacted.</param>
+        /// <returns>A wrapper containing the ID for the redaction event.</returns>
+        /// <remarks>
+        /// <para>
+        /// Strips all information out of an event which isn't critical to the integrity of the server-side
+        /// representation of the room.
+        /// </para>
+        /// <para><strong>This cannot be undone.</strong></para>
+        /// <para>
+        /// Users may redact their own events, and any user with a power level greater than or equal to the
+        /// <c>redact</c> power level of the room may redact events there.
+        /// </para>
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/rooms/{roomId}/redact/{eventId}/{txnId}")]
         Task<EventIdContainer> RedactEventAsync(
             [Path] string roomId,
             [Path] string eventId,
-            [Path("txnId")] int transactionId,
+            [Path("txnId")] string transactionId,
             [Body] RedactionContent data);
 
+        /// <summary>
+        /// Send an event with content to the given room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to send the event to.</param>
+        /// <param name="eventType">The type of event to send.</param>
+        /// <param name="transactionId">
+        /// The transaction ID for this event. Clients should generate an ID unique across requests with the
+        /// same access token; it will be used by the server to ensure idempotency of requests.
+        /// </param>
+        /// <param name="data">Event content to send in the event.</param>
+        /// <returns>A wrapper containing the event ID for the created message event.</returns>
+        /// <remarks>
+        /// <para>
+        /// This endpoint is used to send room and message events to a room. These events allow access to
+        /// historical events and pagination, making them suited for "once-off" activity in a room.
+        /// </para>
+        /// <para>
+        /// The body of the request should be the content object of the event; the fields in this object will vary
+        /// depending on the type of event.
+        /// See <a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#room-events">Room Events</a>
+        /// for the <c>m.event</c> specification.
+        /// </para>
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/rooms/{roomId}/send/{eventType}/{txnId}")]
         Task<EventIdContainer> SendEventAsync(
             [Path] string roomId,
             [Path] string eventType,
-            [Path("txnId")] int transactionId,
-            [Body] Event data);
+            [Path("txnId")] string transactionId,
+            [Body] EventContent data);
 
+        /// <summary>
+        /// Get all state events in the current state of a room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to look up the state for.</param>
+        /// <returns>A list of <see cref="StateEvent" /> for the room.</returns>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state")]
         Task<IReadOnlyCollection<StateEvent>> GetStateEventsAsync([Path] string roomId);
 
+        /// <summary>
+        /// Get a specific type of state for a room, where the state key is empty.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to look up the state in.</param>
+        /// <param name="eventType">The type of state event to look up.</param>
+        /// <returns>The <see cref="StateEvent" />.</returns>
+        /// <remarks>
+        /// <para>
+        /// Looks up the contents of a state event in a room. If the user is joined to the room then the state is
+        /// taken from the current state of the room. If the user has left the room then the state is taken from
+        /// the state of the room when they left.
+        /// </para>
+        /// <para>This looks up the state event with the empty state key.</para>
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}")]
         Task<StateEvent> GetStateEventAsync([Path] string roomId, [Path] string eventType);
 
+        /// <summary>
+        /// Send a state event to the given room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to set the state in.</param>
+        /// <param name="eventType">The type of event to send.</param>
+        /// <param name="data">Content of the event.</param>
+        /// <returns>A wrapper containing the ID of the created event.</returns>
+        /// <remarks>
+        /// <para>
+        /// State events can be sent using this endpoint. This endpoint is equivalent to calling
+        /// <c>/rooms/{roomId}/state/{eventType}/{stateKey}</c> with an empty <c>stateKey</c>. Previous state events
+        /// with matching type and an empty state key will be overwritten.
+        /// </para>
+        /// <para>
+        /// Requests to this endpoint <em>cannot use transaction IDs</em> like other <c>PUT</c> paths because they
+        /// cannot be differentiated from the <c>state_key</c>. Furthermore, <c>POST</c> is unsupported on state
+        /// paths.
+        /// </para>
+        /// <para>
+        /// The body of the request should be the content object of the event; the fields in this object will vary
+        /// depending on the type of event.
+        /// See <a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#room-events">Room Events</a>
+        /// for the <c>m.event</c> specification.
+        /// </para>
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}")]
         Task<EventIdContainer> SendStateAsync(
             [Path] string roomId,
             [Path] string eventType,
             [Body] EventContent data);
 
+        /// <summary>
+        /// Get the state event identified by a type and state key.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to look up the state in.</param>
+        /// <param name="eventType">The type of state event to look up.</param>
+        /// <param name="stateKey">The key of the state to look up.</param>
+        /// <returns>The <see cref="StateEvent" />.</returns>
+        /// <remarks>
+        /// Looks up the contents of a state event in a room. If the user is joined to the room then the state is taken
+        /// from the current state of the room. If the user has left the room then the state is taken from the state
+        /// of the room when they left.
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
         Task<StateEvent> GetStateEventAsync([Path] string roomId, [Path] string eventType, [Path] string stateKey);
 
+        /// <summary>
+        /// Send a state event to the given room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to set the state in.</param>
+        /// <param name="eventType">The type of state event to send.</param>
+        /// <param name="stateKey">The <c>state_key</c> for the state to send.</param>
+        /// <param name="data">Content of the event.</param>
+        /// <returns>A wrapper containing the ID of the created event.</returns>
+        /// <remarks>
+        /// <para>
+        /// State events can be sent using this endpoint. These events will be overwritten if the
+        /// <paramref name="eventType" /> and <paramref name="stateKey" /> both match.
+        /// </para>
+        /// <para>
+        /// Requests to this endpoint <em>cannot use transaction IDs</em> like other <c>PUT</c> paths because they
+        /// cannot be differentiated from the <c>state_key</c>. Furthermore, <c>POST</c> is unsupported on state paths.
+        /// </para>
+        /// <para>
+        /// The body of the request should be the content object of the event; the fields in this object will vary
+        /// depending on the type of event.
+        /// See <a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#room-events">Room Events</a>
+        /// for the <c>m.event</c> specification.
+        /// </para>
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
         Task<EventIdContainer> SendStateAsync(
             [Path] string roomId,
@@ -728,20 +919,92 @@ namespace Cshrix
             [Path] string stateKey,
             [Body] EventContent data);
 
+        /// <summary>
+        /// Informs the server that the user has started or stopped typing.
+        /// </summary>
+        /// <param name="roomId">The ID of the room in which the user's typing state has changed.</param>
+        /// <param name="userId">The ID of the user whose typing state has changed.</param>
+        /// <param name="data">The current typing state.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// This tells the server that the user is typing for the next <c>N</c> milliseconds where <c>N</c> is the
+        /// value specified in the <see cref="TypingState.Timeout" /> property. Alternatively, if
+        /// <see cref="TypingState.IsTyping" /> is <c>false</c>, it tells the server that the user has stopped typing.
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/rooms/{roomId}/typing/{userId}")]
         Task SendTypingAsync([Path] string roomId, [Path] UserId userId, [Body] TypingState data);
 
+        /// <summary>
+        /// Synchronise the client's state and receive new messages.
+        /// </summary>
+        /// <param name="since">A point in time to continue sync from.</param>
+        /// <param name="filter">
+        /// The ID of a filter created using the filter API or a filter JSON object encoded as a string. The server
+        /// will detect whether it is an ID or a JSON object by whether the first character is a <c>{</c> open brace.
+        /// Passing the JSON inline is best suited to one-off requests. Creating a filter using the filter API is
+        /// recommended for clients that reuse the same filter multiple times, for example in long poll requests.
+        /// </param>
+        /// <param name="fullState">
+        /// <para>Controls whether to include the full state for all rooms the user is a member of.</para>
+        /// <para>
+        /// If this is set to <c>true</c>, then all state events will be returned, even if
+        /// <paramref name="since" /> is non-empty.
+        /// The timeline will still be limited by the <paramref name="since" /> parameter. In this case, the
+        /// <paramref name="timeout" /> parameter will be ignored and the query will return immediately, possibly
+        /// with an empty timeline.
+        /// </para>
+        /// <para>
+        /// If <c>false</c>, and <paramref name="since" /> is non-empty, only state which has changed since the point
+        /// indicated by <paramref name="since" /> will be returned.
+        /// </para>
+        /// </param>
+        /// <param name="presence">
+        /// Controls whether the client is automatically marked as online by polling this API. If this parameter is
+        /// omitted then the client is automatically marked as online when it uses this API. Otherwise if the
+        /// parameter is set to <see cref="Presence.Offline" /> then the client is not marked as being online when it
+        /// uses this API. When set to <see cref="Presence.Unavailable" />, the client is marked as being idle.
+        /// </param>
+        /// <param name="timeout">
+        /// <para>
+        /// The maximum time to wait before returning this request. If no events (or other data) become available
+        /// before this time elapses, the server will return a response with empty fields.
+        /// </para>
+        /// <para>
+        /// By default, this is <see cref="TimeSpan.Zero" />, so the server will
+        /// return immediately even if the response is empty.
+        /// </para>
+        /// </param>
+        /// <returns></returns>
         [Get("_matrix/client/{apiVersion}/sync")]
         Task<SyncResponse> SyncAsync(
             [Query] string since = null,
             [Query] string filter = null,
             [Query("full_state")] bool fullState = false,
-            [Query("set_presence")] string setPresence = "offline",
+            [Query("set_presence", QuerySerializationMethod.Serialized)] Presence presence = Presence.Online,
             [Query(QuerySerializationMethod.Serialized)] TimeSpan timeout = default);
 
+        /// <summary>
+        /// Upload a new filter.
+        /// </summary>
+        /// <param name="userId">
+        /// The ID of the user uploading the filter. The access token must be authorized to make requests for this
+        /// user ID.
+        /// </param>
+        /// <param name="data">The filter to upload.</param>
+        /// <returns>A wrapper containing the ID of the created filter.</returns>
+        /// <remarks>
+        /// Uploads a new filter definition to the homeserver. Returns a filter ID that may be used in future requests
+        /// to restrict which events are returned to the client.
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/user/{userId}/filter")]
         Task<FilterIdContainer> UploadFilterAsync([Path] UserId userId, [Body] Filter data);
 
+        /// <summary>
+        /// Download a filter.
+        /// </summary>
+        /// <param name="userId">The ID of the user to download a filter for.</param>
+        /// <param name="filterId">The ID of the filter to download.</param>
+        /// <returns>The filter definition.</returns>
         [Get("_matrix/client/{apiVersion}/user/{userId}/filter/{filterId}")]
         Task<Filter> GetFilterAsync([Path] UserId userId, [Path] string filterId);
 
