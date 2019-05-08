@@ -1021,36 +1021,233 @@ namespace Cshrix
         // another level `signed`. For now assume that is a doc error because it would be a
         // preposterous amount of nesting. Awaiting response from #matrix-dev:matrix.org
         // on whether this is actually intended.
+        /// <summary>
+        /// Start the requesting user participating in a particular room.
+        /// </summary>
+        /// <param name="roomIdOrAlias">The ID or alias of the room to join.</param>
+        /// <param name="serverNames">
+        /// The servers to attempt to join the room through. One of the servers must be participating in the room.
+        /// </param>
+        /// <param name="data">
+        /// A signature of an <c>m.third_party_invite</c> token to prove that this user owns a third party identity
+        /// which has been invited to the room.
+        /// </param>
+        /// <returns>A wrapper object containing the ID of the room that was joined.</returns>
+        /// <remarks>
+        /// <para>Note that this API takes either a room ID or alias, unlike <see cref="JoinRoomAsync" />.</para>
+        /// <para>
+        /// This API starts a user participating in a particular room, if that user is allowed to participate in that
+        /// room. After this call, the client is allowed to see all current state events in the room, and all
+        /// subsequent events associated with the room until the user leaves the room.
+        /// </para>
+        /// <para>
+        /// After a user has joined a room, the room will appear as an entry in the response of the call to
+        /// <see cref="SyncAsync" />.
+        /// </para>
+        /// <para>
+        /// If <paramref name="data" /> was supplied, the homeserver must verify that it matches a pending
+        /// <c>m.room.third_party_invite</c> event in the room, and perform key validity checking if required
+        /// by the event.
+        /// </para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/join/{roomIdOrAlias}")]
         Task<RoomIdContainer> JoinRoomOrAliasAsync(
             [Path] string roomIdOrAlias,
             [Query("server_name")] IEnumerable<string> serverNames = null,
             [Body] SignedThirdPartyData? data = null);
 
+        /// <summary>
+        /// List the user's current rooms.
+        /// </summary>
+        /// <returns>A wrapper object containing a list of room IDs the user is joined to.</returns>
         [Get("_matrix/client/{apiVersion}/joined_rooms")]
         Task<JoinedRooms> GetJoinedRoomsAsync();
 
+        /// <summary>
+        /// Ban a user in a room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room from which the user should be banned.</param>
+        /// <param name="data">An object that contains the user ID that should be banned, along with a reason.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>Ban a user in the room. If the user is currently in the room, also kick them.</para>
+        /// <para>
+        /// When a user is banned from a room, they may not join it or be invited to it until they are unbanned.
+        /// </para>
+        /// <para>The caller must have the required power level in order to perform this operation.</para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/ban")]
         Task BanAsync([Path] string roomId, [Body] Reason data);
 
+        /// <summary>
+        /// Stop the requesting user remembering about a particular room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to forget.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>This API stops a user remembering about a particular room.</para>
+        /// <para>
+        /// In general, history is a first class citizen in Matrix. After this APi is called, however, a user will no
+        /// longer be able to retrieve history for this room. If all users on a homeserver forget a room, the room is
+        /// eligible for deletion from that homeserver.
+        /// </para>
+        /// <para>If the user is currently joined to the room, they must leave the room before calling this API.</para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/forget")]
         Task ForgetAsync([Path] string roomId);
 
+        /// <summary>
+        /// Invite a user to participate in a particular room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to which to invite the user.</param>
+        /// <param name="data">An object containing information about the 3PID to use for sending the invite.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>
+        /// <em>Note that there are two forms of this API, which are documented separately. This version of the API
+        /// does not require that the inviter know the Matrix identifier of the invitee, and instead relies on
+        /// third party identifiers. The homeserver uses an identity server to perform the mapping from third party
+        /// identifier to a Matrix identifier. The other is documented here:
+        /// <see cref="InviteAsync(string, UserIdContainer)" />.</em>
+        /// </para>
+        /// <para>
+        /// This API invites a user to participate in a particular room. They do not start participating in the room
+        /// until they actually join the room.
+        /// </para>
+        /// <para>Only users currently in a particular room can invite other users to join that room.</para>
+        /// <para>
+        /// If the identity server did know the Matrix user identifier for the third party identifier, the homeserver
+        /// will append a <c>m.room.member</c> event to the room.
+        /// </para>
+        /// <para>
+        /// If the identity server does not know a Matrix user identifier for the passed third party identifier, the
+        /// homeserver will issue an invitation which can be accepted upon providing proof of ownership of the
+        /// third party identifier. This is achieved by the identity server generating a token, which it gives to
+        /// the inviting homeserver. The homeserver will add an <c>m.room.third_party_invite</c> event into the graph
+        /// for the room, containing that token.
+        /// </para>
+        /// <para>
+        /// When the invitee binds the invited third party identifier to a Matrix user ID, the identity server will
+        /// give the user a list of pending invitations, each containing:
+        /// <list type="bullet">
+        /// <item><description>The room ID to which they were invited.</description></item>
+        /// <item><description>The token given to the homeserver.</description></item>
+        /// <item><description>
+        /// A signature of the token, signed with the identity server's private key.
+        /// </description></item>
+        /// <item><description>The Matrix user ID who invited them to the room.</description></item>
+        /// </list>
+        /// </para>
+        /// <para>
+        /// If a token is requested from the identity server, the homeserver will append a
+        /// <c>m.room.third_party_invite</c> event to the room.
+        /// </para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/invite")]
         Task InviteAsync([Path] string roomId, [Body] ThirdPartyRoomInvite data);
 
+        /// <summary>
+        /// Invite a user to participate in a particular room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to which to invite the user.</param>
+        /// <param name="data">An object containing the user ID of the invitee.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>
+        /// <em>Note that there are two forms of this API, which are documented separately. This version of the API
+        /// requires that the inviter knows the Matrix identifier of the invitee. The other is documented here:
+        /// <see cref="InviteAsync(string, ThirdPartyRoomInvite)" />.</em>
+        /// </para>
+        /// <para>
+        /// This API invites a user to participate in a particular room. They do not start participating in the room
+        /// until they actually join the room.
+        /// </para>
+        /// <para>Only users currently in a particular room can invite other users to join that room.</para>
+        /// <para>
+        /// If the user was invited to the room, the homeserver will append a <c>m.room.member</c> event to the room.
+        /// </para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/invite")]
         Task InviteAsync([Path] string roomId, [Body] UserIdContainer data);
 
+        /// <summary>
+        /// Start the requesting user participating in a particular room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to join.</param>
+        /// <param name="data">Signed third party data, if joining from a 3PID invite.</param>
+        /// <returns>A wrapper object containing the ID of the joined room.</returns>
+        /// <remarks>
+        /// <para>
+        /// Note that this API requires a room ID, not alias. <see cref="JoinRoomOrAliasAsync" /> exists if you have a
+        /// room alias.
+        /// </para>
+        /// <para>
+        /// This API starts a user participating in a particular room, if that user is allowed to participate in that
+        /// room. After this call, the client is allowed to see all current state events in the room, and all
+        /// subsequent events associated with the room until the user leaves the room.
+        /// </para>
+        /// <para>
+        /// After a user has joined a room, the room will appear as an entry in the response of the call to
+        /// <see cref="SyncAsync" />.
+        /// </para>
+        /// <para>
+        /// If <paramref name="data" /> was supplied, the homeserver must verify that it matches a pending
+        /// <c>m.room.third_party_invite</c> event in the room, and perform key validity checking if required
+        /// by the event.
+        /// </para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/join")]
         Task<RoomIdContainer> JoinRoomAsync([Path] string roomId, [Body] SignedThirdPartyData? data = null);
 
+        /// <summary>
+        /// Kick a user from a room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room from which the user should be kicked.</param>
+        /// <param name="data">An object that contains the user ID that should be kicked, along with a reason.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>The caller must have the required power level in order to perform this operation.</para>
+        /// <para>
+        /// Kicking a user adjusts the target member's membership state to be <see cref="Membership.Left" /> with
+        /// an optional <c>reason</c>. Like with other membership changes, a user can directly adjust the target
+        /// member's state by using <see cref="SendStateAsync(string, string, string, EventContent)" />.
+        /// </para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/kick")]
         Task KickAsync([Path] string roomId, [Body] Reason data);
 
+        /// <summary>
+        /// Stop the requesting user participating in a particular room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to leave.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>This API stops a user participating in a particular room.</para>
+        /// <para>
+        /// If the user was already in the room, the will no longer be able to see new events in the room. If the room
+        /// requires an invite to join, they will need to be re-invited before they can re-join.
+        /// </para>
+        /// <para>If the user was invited to the room, but had not joined, this call serves to reject the invite.</para>
+        /// <para>
+        /// The user will still be allowed to retrieve history from the room which they were previously allowed to see.
+        /// </para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/leave")]
         Task LeaveAsync([Path] string roomId);
 
+        /// <summary>
+        /// Unban a user from the room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room from which the user should be unbanned.</param>
+        /// <param name="data">An object containing the ID of the user to unban.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>
+        /// Unban a user from the room. This allows them to be invited to the room, and join if they would otherwise
+        /// be allowed to join according to its join rules.
+        /// </para>
+        /// <para>The caller must have the required power level in order to perform this operation.</para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/unban")]
         Task UnbanAsync([Path] string roomId, [Body] UserIdContainer data);
 
