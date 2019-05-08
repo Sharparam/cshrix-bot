@@ -1255,17 +1255,74 @@ namespace Cshrix
 
         #region End-to-end encryption
 
+        /// <summary>
+        /// Query users with recent device key updates.
+        /// </summary>
+        /// <param name="from">
+        /// The desired start point of the list. Should be the <c>next_batch</c> field from a response to an earlier
+        /// call to <see cref="SyncAsync" />. Users who have not uploaded new device identity keys since this point,
+        /// nor deleted existing devices with identity keys since then, will be excluded from the results.
+        /// </param>
+        /// <param name="to">
+        /// The desired end point of the list. Should be the <c>next_batch</c> field from a recent call to
+        /// <see cref="SyncAsync" /> - typically the most recent such call. This may be used by the server as a hint
+        /// to check its caches are up to date.
+        /// </param>
+        /// <returns>Lists of users who have had device changes.</returns>
+        /// <remarks>
+        /// <para>Gets lists of users who have updated their device identity keys since a previous sync token.</para>
+        /// <para>
+        /// The server should include in the results any users who:
+        /// <list type="bullet">
+        /// <item><description>
+        /// Currently share a room with the calling user
+        /// (i.e. both users have membership state <see cref="Membership.Joined" />); and
+        /// </description></item>
+        /// <item><description>
+        /// Added new device identity keys or removed an existing device with identity keys,
+        /// between <paramref name="from" /> and <paramref name="to" />.
+        /// </description></item>
+        /// </list>
+        /// </para>
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/keys/changes")]
         Task<DeviceChangeLists> GetDeviceKeyChangesAsync([Query] string from, [Query] string to);
 
+        /// <summary>
+        /// Claim one-time encryption keys (OTKs).
+        /// </summary>
+        /// <param name="data">Data specifying keys to request.</param>
+        /// <returns>The claimed keys.</returns>
+        /// <remarks>
+        /// Claims one-time keys (OTKs) for use in pre-key messages.
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/keys/claim")]
         Task<ClaimKeysResponse> ClaimOneTimeKeysAsync([Body] ClaimKeysRequest data);
 
+        /// <summary>
+        /// Download device identity keys.
+        /// </summary>
+        /// <param name="data">Data specifying what keys to request.</param>
+        /// <returns>The requested devices and associated identity keys.</returns>
+        /// <remarks>
+        /// Returns the current devices and identity keys for the given users.
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/keys/query")]
         Task<DeviceKeysQueryResponse> QueryDeviceKeysAsync([Body] DeviceKeysQuery data);
 
+        /// <summary>
+        /// Upload end-to-end encryption (E2EE) keys.
+        /// </summary>
+        /// <param name="data">The keys to be published.</param>
+        /// <returns>
+        /// For each key algorithm, the dictionary in the returned object keys it to the number of unclaimed
+        /// one-time keys that type currently held on the server for the current device.
+        /// </returns>
+        /// <remarks>
+        /// Publishes end-to-end encryption (E2EE) keys for the current device.
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/keys/upload")]
-        Task<IReadOnlyDictionary<string, int>> UploadDeviceKeysAsync([Body] UploadKeysRequest data);
+        Task<OneTimeKeyCounts> UploadDeviceKeysAsync([Body] UploadKeysRequest data);
 
         #endregion End-to-end encryption
 
