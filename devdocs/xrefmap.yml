@@ -8672,6 +8672,41 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.OneTimeKey.Signatures
   nameWithType: OneTimeKey.Signatures
+- uid: Cshrix.Data.OneTimeKeyCounts
+  name: OneTimeKeyCounts
+  href: api/Cshrix.Data.OneTimeKeyCounts.html
+  commentId: T:Cshrix.Data.OneTimeKeyCounts
+  fullName: Cshrix.Data.OneTimeKeyCounts
+  nameWithType: OneTimeKeyCounts
+- uid: Cshrix.Data.OneTimeKeyCounts.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
+  name: OneTimeKeyCounts(IReadOnlyDictionary<String, Int32>)
+  href: api/Cshrix.Data.OneTimeKeyCounts.html#Cshrix_Data_OneTimeKeyCounts__ctor_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Int32__
+  commentId: M:Cshrix.Data.OneTimeKeyCounts.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
+  name.vb: OneTimeKeyCounts(IReadOnlyDictionary(Of String, Int32))
+  fullName: Cshrix.Data.OneTimeKeyCounts.OneTimeKeyCounts(System.Collections.Generic.IReadOnlyDictionary<System.String, System.Int32>)
+  fullName.vb: Cshrix.Data.OneTimeKeyCounts.OneTimeKeyCounts(System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Int32))
+  nameWithType: OneTimeKeyCounts.OneTimeKeyCounts(IReadOnlyDictionary<String, Int32>)
+  nameWithType.vb: OneTimeKeyCounts.OneTimeKeyCounts(IReadOnlyDictionary(Of String, Int32))
+- uid: Cshrix.Data.OneTimeKeyCounts.#ctor*
+  name: OneTimeKeyCounts
+  href: api/Cshrix.Data.OneTimeKeyCounts.html#Cshrix_Data_OneTimeKeyCounts__ctor_
+  commentId: Overload:Cshrix.Data.OneTimeKeyCounts.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Data.OneTimeKeyCounts.OneTimeKeyCounts
+  nameWithType: OneTimeKeyCounts.OneTimeKeyCounts
+- uid: Cshrix.Data.OneTimeKeyCounts.Counts
+  name: Counts
+  href: api/Cshrix.Data.OneTimeKeyCounts.html#Cshrix_Data_OneTimeKeyCounts_Counts
+  commentId: P:Cshrix.Data.OneTimeKeyCounts.Counts
+  fullName: Cshrix.Data.OneTimeKeyCounts.Counts
+  nameWithType: OneTimeKeyCounts.Counts
+- uid: Cshrix.Data.OneTimeKeyCounts.Counts*
+  name: Counts
+  href: api/Cshrix.Data.OneTimeKeyCounts.html#Cshrix_Data_OneTimeKeyCounts_Counts_
+  commentId: Overload:Cshrix.Data.OneTimeKeyCounts.Counts
+  isSpec: "True"
+  fullName: Cshrix.Data.OneTimeKeyCounts.Counts
+  nameWithType: OneTimeKeyCounts.Counts
 - uid: Cshrix.Data.OpenIdToken
   name: OpenIdToken
   href: api/Cshrix.Data.OpenIdToken.html
