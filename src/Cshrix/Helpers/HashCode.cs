@@ -50,10 +50,13 @@ namespace Cshrix.Helpers
         /// <returns>The combined hash of all values.</returns>
         internal static int Combine<T1, T2>(T1 value1, T2 value2)
         {
-            var hash = Initializer;
-            hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
-            return hash;
+            unchecked
+            {
+                var hash = Initializer;
+                hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
+                return hash;
+            }
         }
 
         /// <summary>
@@ -68,11 +71,14 @@ namespace Cshrix.Helpers
         /// <returns>The combined hash of all values.</returns>
         internal static int Combine<T1, T2, T3>(T1 value1, T2 value2, T3 value3)
         {
-            var hash = Initializer;
-            hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
-            return hash;
+            unchecked
+            {
+                var hash = Initializer;
+                hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
+                return hash;
+            }
         }
 
         /// <summary>
@@ -89,12 +95,15 @@ namespace Cshrix.Helpers
         /// <returns>The combined hash of all values.</returns>
         internal static int Combine<T1, T2, T3, T4>(T1 value1, T2 value2, T3 value3, T4 value4)
         {
-            var hash = Initializer;
-            hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
-            return hash;
+            unchecked
+            {
+                var hash = Initializer;
+                hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
+                return hash;
+            }
         }
 
         /// <summary>
@@ -113,13 +122,16 @@ namespace Cshrix.Helpers
         /// <returns>The combined hash of all values.</returns>
         internal static int Combine<T1, T2, T3, T4, T5>(T1 value1, T2 value2, T3 value3, T4 value4, T5 value5)
         {
-            var hash = Initializer;
-            hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value5?.GetHashCode() ?? 0);
-            return hash;
+            unchecked
+            {
+                var hash = Initializer;
+                hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value5?.GetHashCode() ?? 0);
+                return hash;
+            }
         }
 
         /// <summary>
@@ -146,14 +158,17 @@ namespace Cshrix.Helpers
             T5 value5,
             T6 value6)
         {
-            var hash = Initializer;
-            hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value5?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value6?.GetHashCode() ?? 0);
-            return hash;
+            unchecked
+            {
+                var hash = Initializer;
+                hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value5?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value6?.GetHashCode() ?? 0);
+                return hash;
+            }
         }
 
         /// <summary>
@@ -183,15 +198,18 @@ namespace Cshrix.Helpers
             T6 value6,
             T7 value7)
         {
-            var hash = Initializer;
-            hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value5?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value6?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value7?.GetHashCode() ?? 0);
-            return hash;
+            unchecked
+            {
+                var hash = Initializer;
+                hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value5?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value6?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value7?.GetHashCode() ?? 0);
+                return hash;
+            }
         }
 
         /// <summary>
@@ -224,16 +242,19 @@ namespace Cshrix.Helpers
             T7 value7,
             T8 value8)
         {
-            var hash = Initializer;
-            hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value5?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value6?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value7?.GetHashCode() ?? 0);
-            hash = hash * Multiplier + (value8?.GetHashCode() ?? 0);
-            return hash;
+            unchecked
+            {
+                var hash = Initializer;
+                hash = hash * Multiplier + (value1?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value2?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value3?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value4?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value5?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value6?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value7?.GetHashCode() ?? 0);
+                hash = hash * Multiplier + (value8?.GetHashCode() ?? 0);
+                return hash;
+            }
         }
     }
 }
