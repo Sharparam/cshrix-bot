@@ -974,7 +974,12 @@ namespace Cshrix
         /// return immediately even if the response is empty.
         /// </para>
         /// </param>
-        /// <returns></returns>
+        /// <returns>The initial snapshot or delta for the client to use to update their state.</returns>
+        /// <remarks>
+        /// Synchronise the client's state with the latest state on the server. Clients use this API when they first
+        /// log in to get an initial snapshot of the state on the server, and then continue to call this API to get
+        /// incremental deltas to the state, and to receive new events.
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/sync")]
         Task<SyncResponse> SyncAsync(
             [Query] string since = null,
