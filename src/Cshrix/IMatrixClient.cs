@@ -23,6 +23,16 @@ namespace Cshrix
     public interface IMatrixClient
     {
         /// <summary>
+        /// Starts syncing with the Matrix API.
+        /// </summary>
+        void StartSyncing();
+
+        /// <summary>
+        /// Stops syncing with the Matrix API.
+        /// </summary>
+        Task StopSyncing();
+
+        /// <summary>
         /// Gets the current user's ID.
         /// </summary>
         /// <returns>The current user's ID.</returns>

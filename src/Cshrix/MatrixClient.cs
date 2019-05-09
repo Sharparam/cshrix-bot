@@ -26,11 +26,11 @@ namespace Cshrix
 
     using Serialization;
 
-    /// <inheritdoc />
+    /// <inheritdoc cref="IMatrixClient" />
     /// <summary>
     /// Implementation of a Matrix client.
     /// </summary>
-    public class MatrixClient : IMatrixClient
+    public class MatrixClient : IMatrixClient, IDisposable
     {
         /// <summary>
         /// The default base URL for the API that will be used if none is configured.
@@ -48,6 +48,11 @@ namespace Cshrix
         private readonly IMatrixClientServerApi _api;
 
         /// <summary>
+        /// A listener to use for the sync API.
+        /// </summary>
+        private readonly SyncListener _syncListener;
+
+        /// <summary>
         /// An options monitor to retrieve the current client configuration.
         /// </summary>
         private readonly IOptionsMonitor<MatrixClientConfiguration> _configMonitor;
@@ -56,15 +61,15 @@ namespace Cshrix
         /// <summary>
         /// Initializes a new instance of the <see cref="MatrixClient" /> class.
         /// </summary>
-        /// <param name="log">Logger instance.</param>
+        /// <param name="loggerFactory">A factory to create logger instances.</param>
         /// <param name="httpClient">An instance of <see cref="HttpClient" /> to use for making API calls.</param>
         /// <param name="clientConfig">Client configuration monitor.</param>
         public MatrixClient(
-            ILogger<MatrixClient> log,
+            ILoggerFactory loggerFactory,
             HttpClient httpClient,
             IOptionsMonitor<MatrixClientConfiguration> clientConfig)
         {
-            Log = log;
+            Log = loggerFactory.CreateLogger<MatrixClient>();
             var baseUri = clientConfig.CurrentValue.BaseUri ?? new Uri(DefaultBaseUrl);
             httpClient.BaseAddress = baseUri;
 
@@ -77,6 +82,8 @@ namespace Cshrix
             _configMonitor = clientConfig;
             _api.ApiVersion = _configMonitor.CurrentValue.ApiVersion ?? DefaultApiVersion;
             _api.SetBearerToken(_configMonitor.CurrentValue.AccessToken);
+
+            _syncListener = new SyncListener(loggerFactory.CreateLogger<SyncListener>(), _api);
         }
 
         /// <summary>
@@ -85,7 +92,19 @@ namespace Cshrix
         protected ILogger Log { get; }
 
         /// <inheritdoc />
-        public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync()).UserId;
+        public void Dispose()
+        {
+            _syncListener?.Dispose();
+        }
+
+        /// <inheritdoc />
+        public void StartSyncing() => _syncListener.Start();
+
+        /// <inheritdoc />
+        public Task StopSyncing() => _syncListener.Stop();
+
+        /// <inheritdoc />
+        public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync().ConfigureAwait(false)).UserId;
 
         /// <inheritdoc />
         public Task<NotificationRulesets> GetNotificationPushRulesAsync() => _api.GetNotificationPushRulesAsync();
@@ -93,7 +112,7 @@ namespace Cshrix
         /// <inheritdoc />
         public async Task<PreviewInfo> GetPreviewInfoAsync(Uri uri, DateTimeOffset? at = null)
         {
-            var info = await _api.GetUriPreviewInfoAsync(uri, at);
+            var info = await _api.GetUriPreviewInfoAsync(uri, at).ConfigureAwait(false);
             return info;
         }
     }

@@ -13,6 +13,7 @@ namespace Cshrix
     using System.IO;
     using System.Net.Http;
     using System.Net.Http.Headers;
+    using System.Threading;
     using System.Threading.Tasks;
 
     using Data;
@@ -974,6 +975,7 @@ namespace Cshrix
         /// return immediately even if the response is empty.
         /// </para>
         /// </param>
+        /// <param name="cancellationToken">Cancellation token to pass to the underlying HTTP requester.</param>
         /// <returns>The initial snapshot or delta for the client to use to update their state.</returns>
         /// <remarks>
         /// Synchronise the client's state with the latest state on the server. Clients use this API when they first
@@ -984,9 +986,10 @@ namespace Cshrix
         Task<SyncResponse> SyncAsync(
             [Query] string since = null,
             [Query] string filter = null,
-            [Query("full_state")] bool fullState = false,
+            [Query("full_state", QuerySerializationMethod.Serialized)] bool fullState = false,
             [Query("set_presence", QuerySerializationMethod.Serialized)] Presence presence = Presence.Online,
-            [Query(QuerySerializationMethod.Serialized)] TimeSpan timeout = default);
+            [Query(QuerySerializationMethod.Serialized)] TimeSpan timeout = default,
+            CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Upload a new filter.

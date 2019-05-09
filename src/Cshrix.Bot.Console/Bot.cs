@@ -68,6 +68,9 @@ namespace Cshrix.Bot.Console
                     _log.LogError(ex, "Failed to get user ID, no error reported.");
                 }
             }
+
+            _log.LogInformation("Starting sync");
+            _client.StartSyncing();
         }
     }
 }

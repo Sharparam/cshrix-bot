@@ -64,6 +64,12 @@ namespace Cshrix.Bot.Console
                 var bot = provider.GetRequiredService<Bot>();
 
                 await bot.TestAsync();
+
+                Console.WriteLine("Press <ENTER> to exit");
+                Console.ReadLine();
+
+                log.LogInformation("<ENTER> pressed, disposing service provider and exiting");
+                provider.Dispose();
             }
             catch (Exception ex)
             {

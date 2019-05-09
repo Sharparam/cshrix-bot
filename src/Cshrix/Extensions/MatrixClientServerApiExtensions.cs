@@ -64,7 +64,7 @@ namespace Cshrix.Extensions
         {
             using (var response = await DownloadAsync(api, serverName, mediaId, filename, allowRemote))
             {
-                return await CreateContentFromResponse(response);
+                return await CreateContentFromResponse(response).ConfigureAwait(false);
             }
         }
 
@@ -101,7 +101,7 @@ namespace Cshrix.Extensions
                 resizeMethod,
                 allowRemote))
             {
-                return await CreateContentFromResponse(response);
+                return await CreateContentFromResponse(response).ConfigureAwait(false);
             }
         }
 
@@ -149,7 +149,7 @@ namespace Cshrix.Extensions
 
             var filename = hasContentDisposition ? ParseFilename(contentDispositionString) : null;
             var contentType = ParseContentType(hasContentType ? contentTypeString : DefaultContentType);
-            var bytes = await response.Content.ReadAsByteArrayAsync();
+            var bytes = await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
             return new Content(filename, contentType, bytes);
         }
 
