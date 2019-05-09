@@ -10,11 +10,11 @@ namespace Cshrix.Data
 {
     using System;
 
-    using Helpers;
-
     using Newtonsoft.Json;
 
     using Serialization;
+
+    using Utilities;
 
     [JsonConverter(typeof(ServerNameConverter))]
     public readonly struct ServerName : IEquatable<ServerName>, IEquatable<string>

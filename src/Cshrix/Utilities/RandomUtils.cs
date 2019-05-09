@@ -6,7 +6,7 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Helpers
+namespace Cshrix.Utilities
 {
     using System;
     using System.Security.Cryptography;
@@ -14,7 +14,7 @@ namespace Cshrix.Helpers
     /// <summary>
     /// Contains helper methods for working with and generating random numbers and data.
     /// </summary>
-    internal static class RandomHelpers
+    internal static class RandomUtils
     {
         /// <summary>
         /// Global <see cref="Random" /> instance.

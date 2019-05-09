@@ -10,7 +10,7 @@ namespace Cshrix.Extensions
 {
     using System;
 
-    using Helpers;
+    using Utilities;
 
     /// <summary>
     /// Contains extension methods for the <see cref="DateTime" /> structure.

@@ -12,10 +12,10 @@ namespace Cshrix.Serialization
     using System.Collections.Generic;
     using System.Runtime.Serialization;
 
-    using Helpers;
-
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+
+    using Utilities;
 
     /// <inheritdoc />
     /// <summary>
@@ -34,7 +34,7 @@ namespace Cshrix.Serialization
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, T value, JsonSerializer serializer)
         {
-            var named = EnumHelpers.GetNamedFlags<T>();
+            var named = EnumUtils.GetNamedFlags<T>();
 
             writer.WriteStartArray();
 
@@ -80,7 +80,7 @@ namespace Cshrix.Serialization
             }
 
             var values = array.ToObject<HashSet<string>>();
-            var named = EnumHelpers.GetNamedFlags<T>();
+            var named = EnumUtils.GetNamedFlags<T>();
 
             var hasNone = Enum.TryParse("None", out T value);
 

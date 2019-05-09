@@ -6,7 +6,7 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Helpers
+namespace Cshrix.Utilities
 {
     using System;
     using System.Collections.Concurrent;
@@ -19,7 +19,7 @@ namespace Cshrix.Helpers
     /// <summary>
     /// Contains helper methods for working with enums.
     /// </summary>
-    internal static class EnumHelpers
+    internal static class EnumUtils
     {
         /// <summary>
         /// Contains cached dictionaries with information about enum types and their flags values.

@@ -11,7 +11,7 @@ namespace Cshrix.Data
     using System;
     using System.Collections.Generic;
 
-    using Helpers;
+    using Utilities;
 
     public abstract class Identifier : IEquatable<Identifier>, IEquatable<string>
     {
