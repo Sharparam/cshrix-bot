@@ -10,12 +10,15 @@ namespace Cshrix.DependencyInjection
 {
     using Configuration;
 
+    using JetBrains.Annotations;
+
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
     /// <summary>
     /// Contains extension methods for the <see cref="IServiceCollection" /> interface.
     /// </summary>
+    [PublicAPI]
     public static class ServiceCollectionExtensions
     {
         /// <summary>
