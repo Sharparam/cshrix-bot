@@ -19,6 +19,7 @@
     <ItemGroup>
       <Compile Include="Helpers.fs" />
       <Compile Include="Data\OneTimeKeyTests.fs" />
+      <Compile Include="Data\TypingStateTests.fs" />
     </ItemGroup>
 
     <ItemGroup>

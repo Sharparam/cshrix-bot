@@ -43,4 +43,8 @@
     <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cshrix.FSharp\Cshrix.FSharp.fsproj" />
+  </ItemGroup>
+
 </Project>
