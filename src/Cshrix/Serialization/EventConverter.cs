@@ -102,7 +102,7 @@ namespace Cshrix.Serialization
         /// <param name="value">The value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, Event value, JsonSerializer serializer) =>
-            throw new NotImplementedException();
+            throw new NotSupportedException("Writing is handled by the default JSON.NET behaviour");
 
         /// <inheritdoc />
         /// <summary>Reads the JSON representation of the object.</summary>
