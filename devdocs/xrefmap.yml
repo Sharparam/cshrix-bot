@@ -12432,51 +12432,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.TurnServerCredentials.Username
   nameWithType: TurnServerCredentials.Username
-- uid: Cshrix.Data.TypingState
-  name: TypingState
-  href: api/Cshrix.Data.TypingState.html
-  commentId: T:Cshrix.Data.TypingState
-  fullName: Cshrix.Data.TypingState
-  nameWithType: TypingState
-- uid: Cshrix.Data.TypingState.#ctor(System.TimeSpan,System.Boolean)
-  name: TypingState(TimeSpan, Boolean)
-  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState__ctor_System_TimeSpan_System_Boolean_
-  commentId: M:Cshrix.Data.TypingState.#ctor(System.TimeSpan,System.Boolean)
-  fullName: Cshrix.Data.TypingState.TypingState(System.TimeSpan, System.Boolean)
-  nameWithType: TypingState.TypingState(TimeSpan, Boolean)
-- uid: Cshrix.Data.TypingState.#ctor*
-  name: TypingState
-  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState__ctor_
-  commentId: Overload:Cshrix.Data.TypingState.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.TypingState.TypingState
-  nameWithType: TypingState.TypingState
-- uid: Cshrix.Data.TypingState.IsTyping
-  name: IsTyping
-  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_IsTyping
-  commentId: P:Cshrix.Data.TypingState.IsTyping
-  fullName: Cshrix.Data.TypingState.IsTyping
-  nameWithType: TypingState.IsTyping
-- uid: Cshrix.Data.TypingState.IsTyping*
-  name: IsTyping
-  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_IsTyping_
-  commentId: Overload:Cshrix.Data.TypingState.IsTyping
-  isSpec: "True"
-  fullName: Cshrix.Data.TypingState.IsTyping
-  nameWithType: TypingState.IsTyping
-- uid: Cshrix.Data.TypingState.Timeout
-  name: Timeout
-  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_Timeout
-  commentId: P:Cshrix.Data.TypingState.Timeout
-  fullName: Cshrix.Data.TypingState.Timeout
-  nameWithType: TypingState.Timeout
-- uid: Cshrix.Data.TypingState.Timeout*
-  name: Timeout
-  href: api/Cshrix.Data.TypingState.html#Cshrix_Data_TypingState_Timeout_
-  commentId: Overload:Cshrix.Data.TypingState.Timeout
-  isSpec: "True"
-  fullName: Cshrix.Data.TypingState.Timeout
-  nameWithType: TypingState.Timeout
 - uid: Cshrix.Data.UnsignedDeviceInfo
   name: UnsignedDeviceInfo
   href: api/Cshrix.Data.UnsignedDeviceInfo.html
@@ -13528,6 +13483,32 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClient.GetUserIdAsync
   nameWithType: IMatrixClient.GetUserIdAsync
+- uid: Cshrix.IMatrixClient.StartSyncing
+  name: StartSyncing()
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_StartSyncing
+  commentId: M:Cshrix.IMatrixClient.StartSyncing
+  fullName: Cshrix.IMatrixClient.StartSyncing()
+  nameWithType: IMatrixClient.StartSyncing()
+- uid: Cshrix.IMatrixClient.StartSyncing*
+  name: StartSyncing
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_StartSyncing_
+  commentId: Overload:Cshrix.IMatrixClient.StartSyncing
+  isSpec: "True"
+  fullName: Cshrix.IMatrixClient.StartSyncing
+  nameWithType: IMatrixClient.StartSyncing
+- uid: Cshrix.IMatrixClient.StopSyncing
+  name: StopSyncing()
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_StopSyncing
+  commentId: M:Cshrix.IMatrixClient.StopSyncing
+  fullName: Cshrix.IMatrixClient.StopSyncing()
+  nameWithType: IMatrixClient.StopSyncing()
+- uid: Cshrix.IMatrixClient.StopSyncing*
+  name: StopSyncing
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_StopSyncing_
+  commentId: Overload:Cshrix.IMatrixClient.StopSyncing
+  isSpec: "True"
+  fullName: Cshrix.IMatrixClient.StopSyncing
+  nameWithType: IMatrixClient.StopSyncing
 - uid: Cshrix.IMatrixClientServerApi
   name: IMatrixClientServerApi
   href: api/Cshrix.IMatrixClientServerApi.html
@@ -14641,12 +14622,12 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.SetRoomAccountDataAsync
   nameWithType: IMatrixClientServerApi.SetRoomAccountDataAsync
-- uid: Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,Cshrix.Data.Presence,System.TimeSpan)
-  name: SyncAsync(String, String, Boolean, Presence, TimeSpan)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_Cshrix_Data_Presence_System_TimeSpan_
-  commentId: M:Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,Cshrix.Data.Presence,System.TimeSpan)
-  fullName: Cshrix.IMatrixClientServerApi.SyncAsync(System.String, System.String, System.Boolean, Cshrix.Data.Presence, System.TimeSpan)
-  nameWithType: IMatrixClientServerApi.SyncAsync(String, String, Boolean, Presence, TimeSpan)
+- uid: Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,Cshrix.Data.Presence,System.TimeSpan,System.Threading.CancellationToken)
+  name: SyncAsync(String, String, Boolean, Presence, TimeSpan, CancellationToken)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_System_String_System_String_System_Boolean_Cshrix_Data_Presence_System_TimeSpan_System_Threading_CancellationToken_
+  commentId: M:Cshrix.IMatrixClientServerApi.SyncAsync(System.String,System.String,System.Boolean,Cshrix.Data.Presence,System.TimeSpan,System.Threading.CancellationToken)
+  fullName: Cshrix.IMatrixClientServerApi.SyncAsync(System.String, System.String, System.Boolean, Cshrix.Data.Presence, System.TimeSpan, System.Threading.CancellationToken)
+  nameWithType: IMatrixClientServerApi.SyncAsync(String, String, Boolean, Presence, TimeSpan, CancellationToken)
 - uid: Cshrix.IMatrixClientServerApi.SyncAsync*
   name: SyncAsync
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_SyncAsync_
@@ -14846,15 +14827,15 @@ references:
   commentId: T:Cshrix.MatrixClient
   fullName: Cshrix.MatrixClient
   nameWithType: MatrixClient
-- uid: Cshrix.MatrixClient.#ctor(Microsoft.Extensions.Logging.ILogger{Cshrix.MatrixClient},System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptionsMonitor{Cshrix.Configuration.MatrixClientConfiguration})
-  name: MatrixClient(ILogger<MatrixClient>, HttpClient, IOptionsMonitor<MatrixClientConfiguration>)
-  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient__ctor_Microsoft_Extensions_Logging_ILogger_Cshrix_MatrixClient__System_Net_Http_HttpClient_Microsoft_Extensions_Options_IOptionsMonitor_Cshrix_Configuration_MatrixClientConfiguration__
-  commentId: M:Cshrix.MatrixClient.#ctor(Microsoft.Extensions.Logging.ILogger{Cshrix.MatrixClient},System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptionsMonitor{Cshrix.Configuration.MatrixClientConfiguration})
-  name.vb: MatrixClient(ILogger(Of MatrixClient), HttpClient, IOptionsMonitor(Of MatrixClientConfiguration))
-  fullName: Cshrix.MatrixClient.MatrixClient(Microsoft.Extensions.Logging.ILogger<Cshrix.MatrixClient>, System.Net.Http.HttpClient, Microsoft.Extensions.Options.IOptionsMonitor<Cshrix.Configuration.MatrixClientConfiguration>)
-  fullName.vb: Cshrix.MatrixClient.MatrixClient(Microsoft.Extensions.Logging.ILogger(Of Cshrix.MatrixClient), System.Net.Http.HttpClient, Microsoft.Extensions.Options.IOptionsMonitor(Of Cshrix.Configuration.MatrixClientConfiguration))
-  nameWithType: MatrixClient.MatrixClient(ILogger<MatrixClient>, HttpClient, IOptionsMonitor<MatrixClientConfiguration>)
-  nameWithType.vb: MatrixClient.MatrixClient(ILogger(Of MatrixClient), HttpClient, IOptionsMonitor(Of MatrixClientConfiguration))
+- uid: Cshrix.MatrixClient.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptionsMonitor{Cshrix.Configuration.MatrixClientConfiguration})
+  name: MatrixClient(ILoggerFactory, HttpClient, IOptionsMonitor<MatrixClientConfiguration>)
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient__ctor_Microsoft_Extensions_Logging_ILoggerFactory_System_Net_Http_HttpClient_Microsoft_Extensions_Options_IOptionsMonitor_Cshrix_Configuration_MatrixClientConfiguration__
+  commentId: M:Cshrix.MatrixClient.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptionsMonitor{Cshrix.Configuration.MatrixClientConfiguration})
+  name.vb: MatrixClient(ILoggerFactory, HttpClient, IOptionsMonitor(Of MatrixClientConfiguration))
+  fullName: Cshrix.MatrixClient.MatrixClient(Microsoft.Extensions.Logging.ILoggerFactory, System.Net.Http.HttpClient, Microsoft.Extensions.Options.IOptionsMonitor<Cshrix.Configuration.MatrixClientConfiguration>)
+  fullName.vb: Cshrix.MatrixClient.MatrixClient(Microsoft.Extensions.Logging.ILoggerFactory, System.Net.Http.HttpClient, Microsoft.Extensions.Options.IOptionsMonitor(Of Cshrix.Configuration.MatrixClientConfiguration))
+  nameWithType: MatrixClient.MatrixClient(ILoggerFactory, HttpClient, IOptionsMonitor<MatrixClientConfiguration>)
+  nameWithType.vb: MatrixClient.MatrixClient(ILoggerFactory, HttpClient, IOptionsMonitor(Of MatrixClientConfiguration))
 - uid: Cshrix.MatrixClient.#ctor*
   name: MatrixClient
   href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient__ctor_
@@ -14862,6 +14843,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.MatrixClient.MatrixClient
   nameWithType: MatrixClient.MatrixClient
+- uid: Cshrix.MatrixClient.Dispose
+  name: Dispose()
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_Dispose
+  commentId: M:Cshrix.MatrixClient.Dispose
+  fullName: Cshrix.MatrixClient.Dispose()
+  nameWithType: MatrixClient.Dispose()
+- uid: Cshrix.MatrixClient.Dispose*
+  name: Dispose
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_Dispose_
+  commentId: Overload:Cshrix.MatrixClient.Dispose
+  isSpec: "True"
+  fullName: Cshrix.MatrixClient.Dispose
+  nameWithType: MatrixClient.Dispose
 - uid: Cshrix.MatrixClient.GetNotificationPushRulesAsync
   name: GetNotificationPushRulesAsync()
   href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_GetNotificationPushRulesAsync
@@ -14917,6 +14911,32 @@ references:
   isSpec: "True"
   fullName: Cshrix.MatrixClient.Log
   nameWithType: MatrixClient.Log
+- uid: Cshrix.MatrixClient.StartSyncing
+  name: StartSyncing()
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_StartSyncing
+  commentId: M:Cshrix.MatrixClient.StartSyncing
+  fullName: Cshrix.MatrixClient.StartSyncing()
+  nameWithType: MatrixClient.StartSyncing()
+- uid: Cshrix.MatrixClient.StartSyncing*
+  name: StartSyncing
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_StartSyncing_
+  commentId: Overload:Cshrix.MatrixClient.StartSyncing
+  isSpec: "True"
+  fullName: Cshrix.MatrixClient.StartSyncing
+  nameWithType: MatrixClient.StartSyncing
+- uid: Cshrix.MatrixClient.StopSyncing
+  name: StopSyncing()
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_StopSyncing
+  commentId: M:Cshrix.MatrixClient.StopSyncing
+  fullName: Cshrix.MatrixClient.StopSyncing()
+  nameWithType: MatrixClient.StopSyncing()
+- uid: Cshrix.MatrixClient.StopSyncing*
+  name: StopSyncing
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_StopSyncing_
+  commentId: Overload:Cshrix.MatrixClient.StopSyncing
+  isSpec: "True"
+  fullName: Cshrix.MatrixClient.StopSyncing
+  nameWithType: MatrixClient.StopSyncing
 - uid: Cshrix.Serialization
   name: Cshrix.Serialization
   href: api/Cshrix.Serialization.html
@@ -15175,51 +15195,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Serialization.MatrixErrorConverter.WriteJson
   nameWithType: MatrixErrorConverter.WriteJson
-- uid: Cshrix.Serialization.MillisecondTimeSpanConverter
-  name: MillisecondTimeSpanConverter
-  href: api/Cshrix.Serialization.MillisecondTimeSpanConverter.html
-  commentId: T:Cshrix.Serialization.MillisecondTimeSpanConverter
-  fullName: Cshrix.Serialization.MillisecondTimeSpanConverter
-  nameWithType: MillisecondTimeSpanConverter
-- uid: Cshrix.Serialization.MillisecondTimeSpanConverter.CanConvert(System.Type)
-  name: CanConvert(Type)
-  href: api/Cshrix.Serialization.MillisecondTimeSpanConverter.html#Cshrix_Serialization_MillisecondTimeSpanConverter_CanConvert_System_Type_
-  commentId: M:Cshrix.Serialization.MillisecondTimeSpanConverter.CanConvert(System.Type)
-  fullName: Cshrix.Serialization.MillisecondTimeSpanConverter.CanConvert(System.Type)
-  nameWithType: MillisecondTimeSpanConverter.CanConvert(Type)
-- uid: Cshrix.Serialization.MillisecondTimeSpanConverter.CanConvert*
-  name: CanConvert
-  href: api/Cshrix.Serialization.MillisecondTimeSpanConverter.html#Cshrix_Serialization_MillisecondTimeSpanConverter_CanConvert_
-  commentId: Overload:Cshrix.Serialization.MillisecondTimeSpanConverter.CanConvert
-  isSpec: "True"
-  fullName: Cshrix.Serialization.MillisecondTimeSpanConverter.CanConvert
-  nameWithType: MillisecondTimeSpanConverter.CanConvert
-- uid: Cshrix.Serialization.MillisecondTimeSpanConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
-  name: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  href: api/Cshrix.Serialization.MillisecondTimeSpanConverter.html#Cshrix_Serialization_MillisecondTimeSpanConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:Cshrix.Serialization.MillisecondTimeSpanConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: Cshrix.Serialization.MillisecondTimeSpanConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
-  nameWithType: MillisecondTimeSpanConverter.ReadJson(JsonReader, Type, Object, JsonSerializer)
-- uid: Cshrix.Serialization.MillisecondTimeSpanConverter.ReadJson*
-  name: ReadJson
-  href: api/Cshrix.Serialization.MillisecondTimeSpanConverter.html#Cshrix_Serialization_MillisecondTimeSpanConverter_ReadJson_
-  commentId: Overload:Cshrix.Serialization.MillisecondTimeSpanConverter.ReadJson
-  isSpec: "True"
-  fullName: Cshrix.Serialization.MillisecondTimeSpanConverter.ReadJson
-  nameWithType: MillisecondTimeSpanConverter.ReadJson
-- uid: Cshrix.Serialization.MillisecondTimeSpanConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
-  name: WriteJson(JsonWriter, Object, JsonSerializer)
-  href: api/Cshrix.Serialization.MillisecondTimeSpanConverter.html#Cshrix_Serialization_MillisecondTimeSpanConverter_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:Cshrix.Serialization.MillisecondTimeSpanConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: Cshrix.Serialization.MillisecondTimeSpanConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)
-  nameWithType: MillisecondTimeSpanConverter.WriteJson(JsonWriter, Object, JsonSerializer)
-- uid: Cshrix.Serialization.MillisecondTimeSpanConverter.WriteJson*
-  name: WriteJson
-  href: api/Cshrix.Serialization.MillisecondTimeSpanConverter.html#Cshrix_Serialization_MillisecondTimeSpanConverter_WriteJson_
-  commentId: Overload:Cshrix.Serialization.MillisecondTimeSpanConverter.WriteJson
-  isSpec: "True"
-  fullName: Cshrix.Serialization.MillisecondTimeSpanConverter.WriteJson
-  nameWithType: MillisecondTimeSpanConverter.WriteJson
 - uid: Cshrix.Serialization.NotificationActionConverter
   name: NotificationActionConverter
   href: api/Cshrix.Serialization.NotificationActionConverter.html
