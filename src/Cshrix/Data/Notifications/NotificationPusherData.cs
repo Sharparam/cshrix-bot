@@ -14,8 +14,16 @@ namespace Cshrix.Data.Notifications
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information for a notification pusher implementation.
+    /// </summary>
     public struct NotificationPusherData
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotificationPusherData" /> structure.
+        /// </summary>
+        /// <param name="uri">A URI to send notifications to.</param>
+        /// <param name="format">A format to use when sending notifications to a push gateway.</param>
         [JsonConstructor]
         public NotificationPusherData([CanBeNull] Uri uri = null, [CanBeNull] string format = null)
             : this()
@@ -24,6 +32,12 @@ namespace Cshrix.Data.Notifications
             Format = format;
         }
 
+        /// <summary>
+        /// Gets the URI to send notifications to.
+        /// </summary>
+        /// <remarks>
+        /// Must be supplied if <see cref="NotificationPusher.Kind" /> is <c>http</c>.
+        /// </remarks>
         [JsonProperty(
             "url",
             NullValueHandling = NullValueHandling.Ignore,
@@ -31,6 +45,9 @@ namespace Cshrix.Data.Notifications
         [CanBeNull]
         public Uri Uri { get; }
 
+        /// <summary>
+        /// Gets the format to use when sending notifications to the push gateway.
+        /// </summary>
         [JsonProperty(
             "format",
             NullValueHandling = NullValueHandling.Ignore,

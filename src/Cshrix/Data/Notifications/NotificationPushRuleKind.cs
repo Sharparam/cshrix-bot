@@ -13,22 +13,40 @@ namespace Cshrix.Data.Notifications
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Available push notification rule kinds.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum NotificationPushRuleKind
     {
+        /// <summary>
+        /// The highest priority kind of rule.
+        /// </summary>
         [EnumMember(Value = "override")]
         Override,
 
-        [EnumMember(Value = "underride")]
-        Underride,
+        /// <summary>
+        /// Rules operating on message contents that match certain patterns.
+        /// </summary>
+        [EnumMember(Value = "content")]
+        Content,
 
-        [EnumMember(Value = "sender")]
-        Sender,
-
+        /// <summary>
+        /// Rules operating on all messages in a specific room.
+        /// </summary>
         [EnumMember(Value = "room")]
         Room,
 
-        [EnumMember(Value = "content")]
-        Content
+        /// <summary>
+        /// Rules operating on all messages from a specific sender.
+        /// </summary>
+        [EnumMember(Value = "sender")]
+        Sender,
+
+        /// <summary>
+        /// Identical to <see cref="Override" /> rules except they are applied last, after all other kinds of rules.
+        /// </summary>
+        [EnumMember(Value = "underride")]
+        Underride
     }
 }

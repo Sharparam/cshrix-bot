@@ -12,13 +12,23 @@ namespace Cshrix.Data.Notifications
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// A wrapper containing a collection of notification actions.
+    /// </summary>
     public readonly struct NotificationActionsContainer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotificationActionsContainer" /> structure.
+        /// </summary>
+        /// <param name="actions">A collection of notification actions.</param>
         [JsonConstructor]
         public NotificationActionsContainer(IReadOnlyCollection<NotificationAction> actions)
             : this() =>
             Actions = actions;
 
+        /// <summary>
+        /// Gets a collection of notification actions.
+        /// </summary>
         [JsonProperty("actions")]
         public IReadOnlyCollection<NotificationAction> Actions { get; }
     }

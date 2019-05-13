@@ -1395,53 +1395,145 @@ namespace Cshrix
 
         #region Push notifications
 
+        /// <summary>
+        /// Gets a list of events that the user has been notified about.
+        /// </summary>
+        /// <param name="from">Pagination token given to retrieve the next set of events.</param>
+        /// <param name="limit">Limit on the number of events to return in this request.</param>
+        /// <param name="only">
+        /// Allows basic filtering of events returned. Supply <c>highlight</c> to return only events where
+        /// the notification had the highlight tweak set.
+        /// </param>
+        /// <returns>A batch of notification events.</returns>
+        /// <remarks>
+        /// This API is used to paginate through the list of events that the user has been, or would have been
+        /// notified about.
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/notifications")]
         Task<NotificationsResponse> GetNotificationsAsync(
             [Query] string from = null,
             [Query] int? limit = null,
             [Query] string only = null);
 
+        /// <summary>
+        /// Gets the current pushers for the authenticated user.
+        /// </summary>
+        /// <returns>The currently active notification pushers.</returns>
+        /// <remarks>Gets all currently active pushers for the authenticated user.</remarks>
         [Get("_matrix/client/{apiVersion}/pushers")]
         Task<NotificationPushersContainer> GetNotificationPushersAsync();
 
+        /// <summary>
+        /// Modify a pusher for the current user on the homeserver.
+        /// </summary>
+        /// <param name="data">The pusher information.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
         [Post("_matrix/client/{apiVersion}/pushers/set")]
         Task ModifyNotificationPusherAsync([Body] NotificationPusher data);
 
+        /// <summary>
+        /// Retrieve all push rules, optionally limited to a certain scope.
+        /// </summary>
+        /// <param name="scope">Optional scope to return a subset of rules under the specified scope.</param>
+        /// <returns>All the push rulesets for the current user, matching the scope if one was given.</returns>
         [Get("_matrix/client/{apiVersion}/pushrules/{scope}")]
         Task<NotificationRulesets> GetNotificationPushRulesAsync([Path] string scope = null);
 
+        /// <summary>
+        /// Retrieve a push rule.
+        /// </summary>
+        /// <param name="scope">The scope to retrieve from.</param>
+        /// <param name="kind">The kind of rule to retrieve.</param>
+        /// <param name="ruleId">The ID of the rule to retrieve.</param>
+        /// <returns>
+        /// The requested push rule. This will also include data specific to the rule itself such as the rules
+        /// actions and conditions, if set.
+        /// </returns>
+        /// <remarks>Retrieve a single specified push rule.</remarks>
         [Get("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
         Task<NotificationPushRule> GetNotificationPushRuleAsync(
             [Path] string scope,
-            [Path] NotificationPushRuleKind kind,
+            [Path(PathSerializationMethod.Serialized)] NotificationPushRuleKind kind,
             [Path] string ruleId);
 
+        /// <summary>
+        /// Delete a push rule.
+        /// </summary>
+        /// <param name="scope">The scope to delete from.</param>
+        /// <param name="kind">The kind of rule to delete.</param>
+        /// <param name="ruleId">The ID of the rule to delete.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>This endpoint removes the push rule defined in the path.</remarks>
         [Delete("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
         Task DeleteNotificationPushRuleAsync(
             [Path] string scope,
-            [Path] NotificationPushRuleKind kind,
+            [Path(PathSerializationMethod.Serialized)] NotificationPushRuleKind kind,
             [Path] string ruleId);
 
+        /// <summary>
+        /// Add or change a push rule.
+        /// </summary>
+        /// <param name="scope">The scope to add the rule in.</param>
+        /// <param name="kind">The kind of rule to add.</param>
+        /// <param name="ruleId">The ID of the rule to add.</param>
+        /// <param name="data">Push rule data.</param>
+        /// <param name="before">
+        /// Provide the ID of a rule to make the new rule the next-most important rule with respect to the given
+        /// user-defined rule. It is not possible to add a rule relative to a predefined server rule.
+        /// </param>
+        /// <param name="after">
+        /// Provide the ID of a rule to make the new rule the next-least important rule relative to the given
+        /// user-defined rule. It is not possible to add a rule relative to a predefined server rule.
+        /// </param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// <para>
+        /// This endpoint allows the creation, modification, and deletion of pushers for the current user ID.
+        /// The behaviour of this endpoint varies depending on the provided values in <paramref name="data" />.
+        /// </para>
+        /// <para>When creating push rules, they <em>must</em> be enabled by default.</para>
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}")]
         Task SetNotificationPushRuleAsync(
             [Path] string scope,
-            [Path] NotificationPushRuleKind kind,
+            [Path(PathSerializationMethod.Serialized)] NotificationPushRuleKind kind,
             [Path] string ruleId,
             [Body] NotificationPushRule data,
             [Query] string before = null,
             [Query] string after = null);
 
+        /// <summary>
+        /// Set the actions for a push rule.
+        /// </summary>
+        /// <param name="scope">The scope of the rule.</param>
+        /// <param name="kind">The kind of the rule.</param>
+        /// <param name="ruleId">The ID of the rule on which to set the actions.</param>
+        /// <param name="data">The actions to set.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// This endpoint allows clients to change the actions of a push rule. This can be used to change the
+        /// actions of built-in rules.
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}/actions")]
         Task SetNotificationPushRuleActionsAsync(
             [Path] string scope,
-            [Path] NotificationPushRuleKind kind,
+            [Path(PathSerializationMethod.Serialized)] NotificationPushRuleKind kind,
             [Path] string ruleId,
             [Body] NotificationActionsContainer data);
 
+        /// <summary>
+        /// Enable or disable a push rule.
+        /// </summary>
+        /// <param name="scope">The scope of the rule.</param>
+        /// <param name="kind">The kind of rule.</param>
+        /// <param name="ruleId">The ID of the rule.</param>
+        /// <param name="data">An object containing a boolean specifying whether to enable or disable the rule.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>This endpoint allows clients to enable or disable the specified push rule.</remarks>
         [Put("_matrix/client/{apiVersion}/pushrules/{scope}/{kind}/{ruleId}/enabled")]
         Task SetNotificationPushRuleEnabledAsync(
             [Path] string scope,
-            [Path] NotificationPushRuleKind kind,
+            [Path(PathSerializationMethod.Serialized)] NotificationPushRuleKind kind,
             [Path] string ruleId,
             [Body] EnabledContainer data);
 
@@ -1469,7 +1561,7 @@ namespace Cshrix
         Task<PublicRoomsChunk> GetPublicRoomsAsync(
             [Query] int? limit = null,
             [Query] string since = null,
-            [Query()] string server = null);
+            [Query] string server = null);
 
         [Post("_matrix/client/{apiVersion}/publicRooms")]
         Task<PublicRoomsChunk> GetPublicRoomsAsync([Body] PublicRoomsRequest data);

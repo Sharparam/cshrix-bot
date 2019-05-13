@@ -12,20 +12,35 @@ namespace Cshrix.Data.Notifications
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains notification data.
+    /// </summary>
     public readonly struct NotificationsResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotificationsResponse" /> structure.
+        /// </summary>
+        /// <param name="notifications">A collection of events that triggered notifications.</param>
+        /// <param name="nextToken">A token that can be used to paginate through notification events, if any.</param>
         [JsonConstructor]
-        public NotificationsResponse(string nextToken, IReadOnlyCollection<Notification> notifications)
+        public NotificationsResponse(IReadOnlyCollection<Notification> notifications, string nextToken = null)
             : this()
         {
-            NextToken = nextToken;
             Notifications = notifications;
+            NextToken = nextToken;
         }
 
-        [JsonProperty("next_token")]
-        public string NextToken { get; }
-
+        /// <summary>
+        /// Gets the collection of events that triggered notifications.
+        /// </summary>
         [JsonProperty("notifications")]
         public IReadOnlyCollection<Notification> Notifications { get; }
+
+        /// <summary>
+        /// Gets the token to supply in the <c>from</c> parameter of the next <c>/notifications</c> request in order
+        /// to request more events. If this is <c>null</c>, there are no more results.
+        /// </summary>
+        [JsonProperty("next_token")]
+        public string NextToken { get; }
     }
 }
