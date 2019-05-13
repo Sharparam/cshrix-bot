@@ -739,6 +739,9 @@
                             <a href="Cshrix.Data.Notifications.NotificationPushCondition.html" title="NotificationPushCondition" class="">NotificationPushCondition</a>
                           </li>
                           <li class="">
+                            <a href="Cshrix.Data.Notifications.NotificationPushConditionKind.html" title="NotificationPushConditionKind" class="">NotificationPushConditionKind</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Data.Notifications.NotificationPusher.html" title="NotificationPusher" class="">NotificationPusher</a>
                           </li>
                           <li class="">
@@ -1006,7 +1009,8 @@
   
   <h1 id="Cshrix_Data_Notifications_Notification" data-uid="Cshrix.Data.Notifications.Notification" class="text-break">Struct Notification
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains information about a notification.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1042,16 +1046,17 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationAction__Cshrix_Data_Events_Event_System_String_System_Boolean_System_String_System_DateTimeOffset_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.%23ctor(System.Collections.Generic.IReadOnlyCollection%7BCshrix.Data.Notifications.NotificationAction%7D%2CCshrix.Data.Events.Event%2CSystem.String%2CSystem.Boolean%2CSystem.String%2CSystem.DateTimeOffset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L24">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L36">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_Notification__ctor_" data-uid="Cshrix.Data.Notifications.Notification.#ctor*"></a>
   <h4 id="Cshrix_Data_Notifications_Notification__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationAction__Cshrix_Data_Events_Event_System_String_System_Boolean_System_String_System_DateTimeOffset_" data-uid="Cshrix.Data.Notifications.Notification.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.NotificationAction},Cshrix.Data.Events.Event,System.String,System.Boolean,System.String,System.DateTimeOffset)">Notification(IReadOnlyCollection&lt;NotificationAction&gt;, Event, String, Boolean, String, DateTimeOffset)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Notifications.Notification.html">Notification</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public Notification(IReadOnlyCollection&lt;NotificationAction&gt; actions, Event event, [CanBeNull] string profileTag, bool read, string roomId, DateTimeOffset sentAt)</code></pre>
+public Notification(IReadOnlyCollection&lt;NotificationAction&gt; actions, Event event, [CanBeNull] string profileTag, bool isRead, string roomId, DateTimeOffset sentAt)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1066,32 +1071,38 @@ public Notification(IReadOnlyCollection&lt;NotificationAction&gt; actions, Event
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.Notifications.NotificationAction.html">NotificationAction</a>&gt;</td>
         <td><span class="parametername">actions</span></td>
-        <td></td>
+        <td><p>Actions that should be performed as a response to the notification.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Events.Event.html">Event</a></td>
         <td><span class="parametername">event</span></td>
-        <td></td>
+        <td><p>The event that triggered the notification.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">profileTag</span></td>
-        <td></td>
+        <td><p>The profile tag of the rule that matched the event.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">read</span></td>
-        <td></td>
+        <td><span class="parametername">isRead</span></td>
+        <td><p>Whether the user has sent a read receipt for the notification event.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">roomId</span></td>
-        <td></td>
+        <td><p>The ID of the room in which the event was posted.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></td>
         <td><span class="parametername">sentAt</span></td>
-        <td></td>
+        <td><p>The date and time at which the event notification was sent.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1102,11 +1113,12 @@ public Notification(IReadOnlyCollection&lt;NotificationAction&gt; actions, Event
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification_Actions.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.Actions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L42">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L57">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_Notification_Actions_" data-uid="Cshrix.Data.Notifications.Notification.Actions*"></a>
   <h4 id="Cshrix_Data_Notifications_Notification_Actions" data-uid="Cshrix.Data.Notifications.Notification.Actions">Actions</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of actions that should be performed when the conditions for this rule are met.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1133,11 +1145,12 @@ public IReadOnlyCollection&lt;NotificationAction&gt; Actions { get; }</code></pr
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification_Event.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.Event%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L45">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L63">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_Notification_Event_" data-uid="Cshrix.Data.Notifications.Notification.Event*"></a>
   <h4 id="Cshrix_Data_Notifications_Notification_Event" data-uid="Cshrix.Data.Notifications.Notification.Event">Event</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the event that triggered the notification.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1161,18 +1174,52 @@ public Event Event { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification_ProfileTag.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.ProfileTag%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification_IsRead.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.IsRead%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L48">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L80">View Source</a>
   </span>
-  <a id="Cshrix_Data_Notifications_Notification_ProfileTag_" data-uid="Cshrix.Data.Notifications.Notification.ProfileTag*"></a>
-  <h4 id="Cshrix_Data_Notifications_Notification_ProfileTag" data-uid="Cshrix.Data.Notifications.Notification.ProfileTag">ProfileTag</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Cshrix_Data_Notifications_Notification_IsRead_" data-uid="Cshrix.Data.Notifications.Notification.IsRead*"></a>
+  <h4 id="Cshrix_Data_Notifications_Notification_IsRead" data-uid="Cshrix.Data.Notifications.Notification.IsRead">IsRead</h4>
+  <div class="markdown level1 summary"><p>Get a value indicating whether the user has sent a read receipt indicating that they have acknowledged
+this notification.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;profile_tag&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;read&quot;)]
+public bool IsRead { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification_ProfileTag.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.ProfileTag%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L69">View Source</a>
+  </span>
+  <a id="Cshrix_Data_Notifications_Notification_ProfileTag_" data-uid="Cshrix.Data.Notifications.Notification.ProfileTag*"></a>
+  <h4 id="Cshrix_Data_Notifications_Notification_ProfileTag" data-uid="Cshrix.Data.Notifications.Notification.ProfileTag">ProfileTag</h4>
+  <div class="markdown level1 summary"><p>Gets the profile tag of the rule that matched the event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;profile_tag&quot;, NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore)]
 [CanBeNull]
 public string ProfileTag { get; }</code></pre>
   </div>
@@ -1193,45 +1240,15 @@ public string ProfileTag { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification_Read.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.Read%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L52">View Source</a>
-  </span>
-  <a id="Cshrix_Data_Notifications_Notification_Read_" data-uid="Cshrix.Data.Notifications.Notification.Read*"></a>
-  <h4 id="Cshrix_Data_Notifications_Notification_Read" data-uid="Cshrix.Data.Notifications.Notification.Read">Read</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;read&quot;)]
-public bool Read { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification_RoomId.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.RoomId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L55">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L86">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_Notification_RoomId_" data-uid="Cshrix.Data.Notifications.Notification.RoomId*"></a>
   <h4 id="Cshrix_Data_Notifications_Notification_RoomId" data-uid="Cshrix.Data.Notifications.Notification.RoomId">RoomId</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the ID of the room in which the event was posted.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1258,11 +1275,12 @@ public string RoomId { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification_SentAt.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification.SentAt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L58">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L92">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_Notification_SentAt_" data-uid="Cshrix.Data.Notifications.Notification.SentAt*"></a>
   <h4 id="Cshrix_Data_Notifications_Notification_SentAt" data-uid="Cshrix.Data.Notifications.Notification.SentAt">SentAt</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the date and time at which the event notification was sent.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1296,7 +1314,7 @@ public DateTimeOffset SentAt { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_Notification.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.Notification%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L22" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/Notification.cs/#L25" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

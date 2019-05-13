@@ -7874,6 +7874,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Notifications.Notification.Event
   nameWithType: Notification.Event
+- uid: Cshrix.Data.Notifications.Notification.IsRead
+  name: IsRead
+  href: api/Cshrix.Data.Notifications.Notification.html#Cshrix_Data_Notifications_Notification_IsRead
+  commentId: P:Cshrix.Data.Notifications.Notification.IsRead
+  fullName: Cshrix.Data.Notifications.Notification.IsRead
+  nameWithType: Notification.IsRead
+- uid: Cshrix.Data.Notifications.Notification.IsRead*
+  name: IsRead
+  href: api/Cshrix.Data.Notifications.Notification.html#Cshrix_Data_Notifications_Notification_IsRead_
+  commentId: Overload:Cshrix.Data.Notifications.Notification.IsRead
+  isSpec: "True"
+  fullName: Cshrix.Data.Notifications.Notification.IsRead
+  nameWithType: Notification.IsRead
 - uid: Cshrix.Data.Notifications.Notification.ProfileTag
   name: ProfileTag
   href: api/Cshrix.Data.Notifications.Notification.html#Cshrix_Data_Notifications_Notification_ProfileTag
@@ -7887,19 +7900,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Notifications.Notification.ProfileTag
   nameWithType: Notification.ProfileTag
-- uid: Cshrix.Data.Notifications.Notification.Read
-  name: Read
-  href: api/Cshrix.Data.Notifications.Notification.html#Cshrix_Data_Notifications_Notification_Read
-  commentId: P:Cshrix.Data.Notifications.Notification.Read
-  fullName: Cshrix.Data.Notifications.Notification.Read
-  nameWithType: Notification.Read
-- uid: Cshrix.Data.Notifications.Notification.Read*
-  name: Read
-  href: api/Cshrix.Data.Notifications.Notification.html#Cshrix_Data_Notifications_Notification_Read_
-  commentId: Overload:Cshrix.Data.Notifications.Notification.Read
-  isSpec: "True"
-  fullName: Cshrix.Data.Notifications.Notification.Read
-  nameWithType: Notification.Read
 - uid: Cshrix.Data.Notifications.Notification.RoomId
   name: RoomId
   href: api/Cshrix.Data.Notifications.Notification.html#Cshrix_Data_Notifications_Notification_RoomId
@@ -8025,15 +8025,15 @@ references:
   commentId: T:Cshrix.Data.Notifications.NotificationPushCondition
   fullName: Cshrix.Data.Notifications.NotificationPushCondition
   nameWithType: NotificationPushCondition
-- uid: Cshrix.Data.Notifications.NotificationPushCondition.#ctor(System.String,System.String,System.String,System.Nullable{Cshrix.Data.Notifications.ComparisonCondition{System.Int32}})
-  name: NotificationPushCondition(String, String, String, Nullable<ComparisonCondition<Int32>>)
-  href: api/Cshrix.Data.Notifications.NotificationPushCondition.html#Cshrix_Data_Notifications_NotificationPushCondition__ctor_System_String_System_String_System_String_System_Nullable_Cshrix_Data_Notifications_ComparisonCondition_System_Int32___
-  commentId: M:Cshrix.Data.Notifications.NotificationPushCondition.#ctor(System.String,System.String,System.String,System.Nullable{Cshrix.Data.Notifications.ComparisonCondition{System.Int32}})
-  name.vb: NotificationPushCondition(String, String, String, Nullable(Of ComparisonCondition(Of Int32)))
-  fullName: Cshrix.Data.Notifications.NotificationPushCondition.NotificationPushCondition(System.String, System.String, System.String, System.Nullable<Cshrix.Data.Notifications.ComparisonCondition<System.Int32>>)
-  fullName.vb: Cshrix.Data.Notifications.NotificationPushCondition.NotificationPushCondition(System.String, System.String, System.String, System.Nullable(Of Cshrix.Data.Notifications.ComparisonCondition(Of System.Int32)))
-  nameWithType: NotificationPushCondition.NotificationPushCondition(String, String, String, Nullable<ComparisonCondition<Int32>>)
-  nameWithType.vb: NotificationPushCondition.NotificationPushCondition(String, String, String, Nullable(Of ComparisonCondition(Of Int32)))
+- uid: Cshrix.Data.Notifications.NotificationPushCondition.#ctor(Cshrix.Data.Notifications.NotificationPushConditionKind,System.String,System.String,System.Nullable{Cshrix.Data.Notifications.ComparisonCondition{System.Int32}})
+  name: NotificationPushCondition(NotificationPushConditionKind, String, String, Nullable<ComparisonCondition<Int32>>)
+  href: api/Cshrix.Data.Notifications.NotificationPushCondition.html#Cshrix_Data_Notifications_NotificationPushCondition__ctor_Cshrix_Data_Notifications_NotificationPushConditionKind_System_String_System_String_System_Nullable_Cshrix_Data_Notifications_ComparisonCondition_System_Int32___
+  commentId: M:Cshrix.Data.Notifications.NotificationPushCondition.#ctor(Cshrix.Data.Notifications.NotificationPushConditionKind,System.String,System.String,System.Nullable{Cshrix.Data.Notifications.ComparisonCondition{System.Int32}})
+  name.vb: NotificationPushCondition(NotificationPushConditionKind, String, String, Nullable(Of ComparisonCondition(Of Int32)))
+  fullName: Cshrix.Data.Notifications.NotificationPushCondition.NotificationPushCondition(Cshrix.Data.Notifications.NotificationPushConditionKind, System.String, System.String, System.Nullable<Cshrix.Data.Notifications.ComparisonCondition<System.Int32>>)
+  fullName.vb: Cshrix.Data.Notifications.NotificationPushCondition.NotificationPushCondition(Cshrix.Data.Notifications.NotificationPushConditionKind, System.String, System.String, System.Nullable(Of Cshrix.Data.Notifications.ComparisonCondition(Of System.Int32)))
+  nameWithType: NotificationPushCondition.NotificationPushCondition(NotificationPushConditionKind, String, String, Nullable<ComparisonCondition<Int32>>)
+  nameWithType.vb: NotificationPushCondition.NotificationPushCondition(NotificationPushConditionKind, String, String, Nullable(Of ComparisonCondition(Of Int32)))
 - uid: Cshrix.Data.Notifications.NotificationPushCondition.#ctor*
   name: NotificationPushCondition
   href: api/Cshrix.Data.Notifications.NotificationPushCondition.html#Cshrix_Data_Notifications_NotificationPushCondition__ctor_
@@ -8093,6 +8093,30 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Notifications.NotificationPushCondition.Pattern
   nameWithType: NotificationPushCondition.Pattern
+- uid: Cshrix.Data.Notifications.NotificationPushConditionKind
+  name: NotificationPushConditionKind
+  href: api/Cshrix.Data.Notifications.NotificationPushConditionKind.html
+  commentId: T:Cshrix.Data.Notifications.NotificationPushConditionKind
+  fullName: Cshrix.Data.Notifications.NotificationPushConditionKind
+  nameWithType: NotificationPushConditionKind
+- uid: Cshrix.Data.Notifications.NotificationPushConditionKind.ContainsDisplayName
+  name: ContainsDisplayName
+  href: api/Cshrix.Data.Notifications.NotificationPushConditionKind.html#Cshrix_Data_Notifications_NotificationPushConditionKind_ContainsDisplayName
+  commentId: F:Cshrix.Data.Notifications.NotificationPushConditionKind.ContainsDisplayName
+  fullName: Cshrix.Data.Notifications.NotificationPushConditionKind.ContainsDisplayName
+  nameWithType: NotificationPushConditionKind.ContainsDisplayName
+- uid: Cshrix.Data.Notifications.NotificationPushConditionKind.EventMatch
+  name: EventMatch
+  href: api/Cshrix.Data.Notifications.NotificationPushConditionKind.html#Cshrix_Data_Notifications_NotificationPushConditionKind_EventMatch
+  commentId: F:Cshrix.Data.Notifications.NotificationPushConditionKind.EventMatch
+  fullName: Cshrix.Data.Notifications.NotificationPushConditionKind.EventMatch
+  nameWithType: NotificationPushConditionKind.EventMatch
+- uid: Cshrix.Data.Notifications.NotificationPushConditionKind.RoomMemberCount
+  name: RoomMemberCount
+  href: api/Cshrix.Data.Notifications.NotificationPushConditionKind.html#Cshrix_Data_Notifications_NotificationPushConditionKind_RoomMemberCount
+  commentId: F:Cshrix.Data.Notifications.NotificationPushConditionKind.RoomMemberCount
+  fullName: Cshrix.Data.Notifications.NotificationPushConditionKind.RoomMemberCount
+  nameWithType: NotificationPushConditionKind.RoomMemberCount
 - uid: Cshrix.Data.Notifications.NotificationPusher
   name: NotificationPusher
   href: api/Cshrix.Data.Notifications.NotificationPusher.html
@@ -8573,15 +8597,15 @@ references:
   commentId: T:Cshrix.Data.Notifications.NotificationsResponse
   fullName: Cshrix.Data.Notifications.NotificationsResponse
   nameWithType: NotificationsResponse
-- uid: Cshrix.Data.Notifications.NotificationsResponse.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.Notification})
-  name: NotificationsResponse(String, IReadOnlyCollection<Notification>)
-  href: api/Cshrix.Data.Notifications.NotificationsResponse.html#Cshrix_Data_Notifications_NotificationsResponse__ctor_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_Notification__
-  commentId: M:Cshrix.Data.Notifications.NotificationsResponse.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.Notification})
-  name.vb: NotificationsResponse(String, IReadOnlyCollection(Of Notification))
-  fullName: Cshrix.Data.Notifications.NotificationsResponse.NotificationsResponse(System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Notifications.Notification>)
-  fullName.vb: Cshrix.Data.Notifications.NotificationsResponse.NotificationsResponse(System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Notifications.Notification))
-  nameWithType: NotificationsResponse.NotificationsResponse(String, IReadOnlyCollection<Notification>)
-  nameWithType.vb: NotificationsResponse.NotificationsResponse(String, IReadOnlyCollection(Of Notification))
+- uid: Cshrix.Data.Notifications.NotificationsResponse.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.Notification},System.String)
+  name: NotificationsResponse(IReadOnlyCollection<Notification>, String)
+  href: api/Cshrix.Data.Notifications.NotificationsResponse.html#Cshrix_Data_Notifications_NotificationsResponse__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_Notification__System_String_
+  commentId: M:Cshrix.Data.Notifications.NotificationsResponse.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.Notification},System.String)
+  name.vb: NotificationsResponse(IReadOnlyCollection(Of Notification), String)
+  fullName: Cshrix.Data.Notifications.NotificationsResponse.NotificationsResponse(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Notifications.Notification>, System.String)
+  fullName.vb: Cshrix.Data.Notifications.NotificationsResponse.NotificationsResponse(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Notifications.Notification), System.String)
+  nameWithType: NotificationsResponse.NotificationsResponse(IReadOnlyCollection<Notification>, String)
+  nameWithType.vb: NotificationsResponse.NotificationsResponse(IReadOnlyCollection(Of Notification), String)
 - uid: Cshrix.Data.Notifications.NotificationsResponse.#ctor*
   name: NotificationsResponse
   href: api/Cshrix.Data.Notifications.NotificationsResponse.html#Cshrix_Data_Notifications_NotificationsResponse__ctor_

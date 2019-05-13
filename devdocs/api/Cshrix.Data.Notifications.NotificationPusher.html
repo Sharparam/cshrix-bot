@@ -738,6 +738,9 @@
                           <li class="">
                             <a href="Cshrix.Data.Notifications.NotificationPushCondition.html" title="NotificationPushCondition" class="">NotificationPushCondition</a>
                           </li>
+                          <li class="">
+                            <a href="Cshrix.Data.Notifications.NotificationPushConditionKind.html" title="NotificationPushConditionKind" class="">NotificationPushConditionKind</a>
+                          </li>
                           <li class="active">
                             <a href="Cshrix.Data.Notifications.NotificationPusher.html" title="NotificationPusher" class="active">NotificationPusher</a>
                           </li>
@@ -1006,7 +1009,8 @@
   
   <h1 id="Cshrix_Data_Notifications_NotificationPusher" data-uid="Cshrix.Data.Notifications.NotificationPusher" class="text-break">Struct NotificationPusher
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Describes a notification pusher.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1042,11 +1046,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_Globalization_CultureInfo_Cshrix_Data_Notifications_NotificationPusherData_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Globalization.CultureInfo%2CCshrix.Data.Notifications.NotificationPusherData%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L20">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L40">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher__ctor_" data-uid="Cshrix.Data.Notifications.NotificationPusher.#ctor*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_Globalization_CultureInfo_Cshrix_Data_Notifications_NotificationPusherData_System_Boolean_" data-uid="Cshrix.Data.Notifications.NotificationPusher.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.Globalization.CultureInfo,Cshrix.Data.Notifications.NotificationPusherData,System.Boolean)">NotificationPusher(String, String, String, String, String, String, CultureInfo, NotificationPusherData, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Notifications.NotificationPusher.html">NotificationPusher</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1066,47 +1071,57 @@ public NotificationPusher(string pushKey, string kind, string applicationId, str
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">pushKey</span></td>
-        <td></td>
+        <td><p>The unique identifier for the pusher.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">kind</span></td>
-        <td></td>
+        <td><p>The kind of the pusher.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">applicationId</span></td>
-        <td></td>
+        <td><p>The reverse-DNS style identifier for the application.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">applicationDisplayName</span></td>
-        <td></td>
+        <td><p>The display name of the application.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">deviceDisplayName</span></td>
-        <td></td>
+        <td><p>The display name of the device owning the pusher.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">profileTag</span></td>
-        <td></td>
+        <td><p>The string determining a set of device-specific rules for the pusher to execute.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a></td>
         <td><span class="parametername">culture</span></td>
-        <td></td>
+        <td><p>Preferred culture for receiving events.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Notifications.NotificationPusherData.html">NotificationPusherData</a></td>
         <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><p>Information for the pusher implementation.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">append</span></td>
-        <td></td>
+        <td><p>Whether to append this pusher or overwrite existing ones sharing the same <a class="xref" href="Cshrix.Data.Notifications.NotificationPusher.html#Cshrix_Data_Notifications_NotificationPusher_PushKey">PushKey</a> and
+<a class="xref" href="Cshrix.Data.Notifications.NotificationPusher.html#Cshrix_Data_Notifications_NotificationPusher_ApplicationId">ApplicationId</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1117,11 +1132,15 @@ public NotificationPusher(string pushKey, string kind, string applicationId, str
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_Append.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.Append%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L69">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L121">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_Append_" data-uid="Cshrix.Data.Notifications.NotificationPusher.Append*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_Append" data-uid="Cshrix.Data.Notifications.NotificationPusher.Append">Append</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the homeserver should add another pusher with the given
+<a class="xref" href="Cshrix.Data.Notifications.NotificationPusher.html#Cshrix_Data_Notifications_NotificationPusher_PushKey">PushKey</a> and <a class="xref" href="Cshrix.Data.Notifications.NotificationPusher.html#Cshrix_Data_Notifications_NotificationPusher_ApplicationId">ApplicationId</a> in addition to any others with different user IDs.
+Otherwise, the homeserver must remove any other pushers with the same <a class="xref" href="Cshrix.Data.Notifications.NotificationPusher.html#Cshrix_Data_Notifications_NotificationPusher_ApplicationId">ApplicationId</a> and
+<a class="xref" href="Cshrix.Data.Notifications.NotificationPusher.html#Cshrix_Data_Notifications_NotificationPusher_PushKey">PushKey</a> for different users.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1148,11 +1167,12 @@ public bool Append { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_ApplicationDisplayName.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.ApplicationDisplayName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L53">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L87">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_ApplicationDisplayName_" data-uid="Cshrix.Data.Notifications.NotificationPusher.ApplicationDisplayName*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_ApplicationDisplayName" data-uid="Cshrix.Data.Notifications.NotificationPusher.ApplicationDisplayName">ApplicationDisplayName</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a string that will allow the user to identify what application owns this pusher.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1179,11 +1199,12 @@ public string ApplicationDisplayName { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_ApplicationId.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.ApplicationId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L50">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L81">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_ApplicationId_" data-uid="Cshrix.Data.Notifications.NotificationPusher.ApplicationId*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_ApplicationId" data-uid="Cshrix.Data.Notifications.NotificationPusher.ApplicationId">ApplicationId</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a reverse-DNS style identifier for the application.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1205,16 +1226,20 @@ public string ApplicationId { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationPusher_ApplicationId_examples">Examples</h5>
+  <p><code>com.sharparam.custompusher</code></p>
+
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_Culture.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.Culture%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L63">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L106">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_Culture_" data-uid="Cshrix.Data.Notifications.NotificationPusher.Culture*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_Culture" data-uid="Cshrix.Data.Notifications.NotificationPusher.Culture">Culture</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the preferred culture for receiving notifications, e.g. <code>en-US</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1241,11 +1266,12 @@ public CultureInfo Culture { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_Data.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.Data%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L66">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L112">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_Data_" data-uid="Cshrix.Data.Notifications.NotificationPusher.Data*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_Data" data-uid="Cshrix.Data.Notifications.NotificationPusher.Data">Data</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an object containing information for the pusher implementation itself.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1272,11 +1298,12 @@ public NotificationPusherData Data { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_DeviceDisplayName.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.DeviceDisplayName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L56">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L93">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_DeviceDisplayName_" data-uid="Cshrix.Data.Notifications.NotificationPusher.DeviceDisplayName*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_DeviceDisplayName" data-uid="Cshrix.Data.Notifications.NotificationPusher.DeviceDisplayName">DeviceDisplayName</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a string that will allow the user to identify what device owns this pusher.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1303,11 +1330,12 @@ public string DeviceDisplayName { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_Kind.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.Kind%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L47">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L74">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_Kind_" data-uid="Cshrix.Data.Notifications.NotificationPusher.Kind*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_Kind" data-uid="Cshrix.Data.Notifications.NotificationPusher.Kind">Kind</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the kind of this pusher.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1329,16 +1357,20 @@ public string Kind { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationPusher_Kind_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code>http</code> is a pusher that sends HTTP pokes, for example.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_ProfileTag.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.ProfileTag%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L59">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L99">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_ProfileTag_" data-uid="Cshrix.Data.Notifications.NotificationPusher.ProfileTag*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_ProfileTag" data-uid="Cshrix.Data.Notifications.NotificationPusher.ProfileTag">ProfileTag</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a string that determines which set of device-specific rules this pusher executes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1366,11 +1398,12 @@ public string ProfileTag { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher_PushKey.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher.PushKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L44">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L67">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPusher_PushKey_" data-uid="Cshrix.Data.Notifications.NotificationPusher.PushKey*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPusher_PushKey" data-uid="Cshrix.Data.Notifications.NotificationPusher.PushKey">PushKey</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a unique identifier for this pusher.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1403,7 +1436,7 @@ public string PushKey { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPusher.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPusher%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L18" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPusher.cs/#L21" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

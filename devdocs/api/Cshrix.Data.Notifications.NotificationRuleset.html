@@ -739,6 +739,9 @@
                             <a href="Cshrix.Data.Notifications.NotificationPushCondition.html" title="NotificationPushCondition" class="">NotificationPushCondition</a>
                           </li>
                           <li class="">
+                            <a href="Cshrix.Data.Notifications.NotificationPushConditionKind.html" title="NotificationPushConditionKind" class="">NotificationPushConditionKind</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Data.Notifications.NotificationPusher.html" title="NotificationPusher" class="">NotificationPusher</a>
                           </li>
                           <li class="">
@@ -1006,7 +1009,8 @@
   
   <h1 id="Cshrix_Data_Notifications_NotificationRuleset" data-uid="Cshrix.Data.Notifications.NotificationRuleset" class="text-break">Struct NotificationRuleset
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains information about a push notification ruleset.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1042,16 +1046,17 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationRuleset__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationRuleset.%23ctor(System.Collections.Generic.IReadOnlyCollection%7BCshrix.Data.Notifications.NotificationPushRule%7D%2CSystem.Collections.Generic.IReadOnlyCollection%7BCshrix.Data.Notifications.NotificationPushRule%7D%2CSystem.Collections.Generic.IReadOnlyCollection%7BCshrix.Data.Notifications.NotificationPushRule%7D%2CSystem.Collections.Generic.IReadOnlyCollection%7BCshrix.Data.Notifications.NotificationPushRule%7D%2CSystem.Collections.Generic.IReadOnlyCollection%7BCshrix.Data.Notifications.NotificationPushRule%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L19">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L30">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationRuleset__ctor_" data-uid="Cshrix.Data.Notifications.NotificationRuleset.#ctor*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationRuleset__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Notifications_NotificationPushRule__" data-uid="Cshrix.Data.Notifications.NotificationRuleset.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.NotificationPushRule},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.NotificationPushRule},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.NotificationPushRule},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.NotificationPushRule},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Notifications.NotificationPushRule})">NotificationRuleset(IReadOnlyCollection&lt;NotificationPushRule&gt;, IReadOnlyCollection&lt;NotificationPushRule&gt;, IReadOnlyCollection&lt;NotificationPushRule&gt;, IReadOnlyCollection&lt;NotificationPushRule&gt;, IReadOnlyCollection&lt;NotificationPushRule&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Notifications.NotificationRuleset.html">NotificationRuleset</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public NotificationRuleset([CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; content, [CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; override, [CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; room, [CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; sender, [CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; underride)</code></pre>
+public NotificationRuleset([CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; override, [CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; content, [CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; room, [CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; sender, [CanBeNull] IReadOnlyCollection&lt;NotificationPushRule&gt; underride)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1065,28 +1070,33 @@ public NotificationRuleset([CanBeNull] IReadOnlyCollection&lt;NotificationPushRu
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.Notifications.NotificationPushRule.html">NotificationPushRule</a>&gt;</td>
-        <td><span class="parametername">content</span></td>
-        <td></td>
+        <td><span class="parametername">override</span></td>
+        <td><p>Override rules.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.Notifications.NotificationPushRule.html">NotificationPushRule</a>&gt;</td>
-        <td><span class="parametername">override</span></td>
-        <td></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>Content rules.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.Notifications.NotificationPushRule.html">NotificationPushRule</a>&gt;</td>
         <td><span class="parametername">room</span></td>
-        <td></td>
+        <td><p>Room rules.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.Notifications.NotificationPushRule.html">NotificationPushRule</a>&gt;</td>
         <td><span class="parametername">sender</span></td>
-        <td></td>
+        <td><p>Sender rules.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.Notifications.NotificationPushRule.html">NotificationPushRule</a>&gt;</td>
         <td><span class="parametername">underride</span></td>
-        <td></td>
+        <td><p>Underride rules.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1097,11 +1107,12 @@ public NotificationRuleset([CanBeNull] IReadOnlyCollection&lt;NotificationPushRu
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationRuleset_Content.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationRuleset.Content%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L35">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L68">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationRuleset_Content_" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Content*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationRuleset_Content" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Content">Content</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of content rules.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1124,16 +1135,23 @@ public IReadOnlyCollection&lt;NotificationPushRule&gt; Content { get; }</code></
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationRuleset_Content_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>These configure behaviour for (unencrypted) messages that match certain patterns. Content rules take one
+parameter: <a class="xref" href="Cshrix.Data.Notifications.NotificationPushRule.html#Cshrix_Data_Notifications_NotificationPushRule_Pattern">Pattern</a>, that gives the glob pattern to match against.
+This is treated in the same way as <a class="xref" href="Cshrix.Data.Notifications.NotificationPushCondition.html#Cshrix_Data_Notifications_NotificationPushCondition_Pattern">Pattern</a> for
+<a class="xref" href="Cshrix.Data.Notifications.NotificationPushConditionKind.html#Cshrix_Data_Notifications_NotificationPushConditionKind_EventMatch">EventMatch</a>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationRuleset_Override.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationRuleset.Override%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L42">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L52">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationRuleset_Override_" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Override*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationRuleset_Override" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Override">Override</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of override rules.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1156,16 +1174,20 @@ public IReadOnlyCollection&lt;NotificationPushRule&gt; Override { get; }</code><
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationRuleset_Override_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The highest priority rules are user-configured overrides.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationRuleset_Room.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationRuleset.Room%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L49">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L82">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationRuleset_Room_" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Room*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationRuleset_Room" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Room">Room</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of room rules.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1188,16 +1210,21 @@ public IReadOnlyCollection&lt;NotificationPushRule&gt; Room { get; }</code></pre
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationRuleset_Room_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>These rules change the behaviour of all messages for a given room.
+The <a class="xref" href="Cshrix.Data.Notifications.NotificationPushRule.html#Cshrix_Data_Notifications_NotificationPushRule_Id">Id</a> of a room rule is always the ID of the room that it affects.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationRuleset_Sender.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationRuleset.Sender%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L56">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L97">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationRuleset_Sender_" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Sender*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationRuleset_Sender" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Sender">Sender</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of sender rules.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1220,16 +1247,22 @@ public IReadOnlyCollection&lt;NotificationPushRule&gt; Sender { get; }</code></p
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationRuleset_Sender_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>These rules configure notification behaviour for messages from a specific Matrix user ID.
+The <a class="xref" href="Cshrix.Data.Notifications.NotificationPushRule.html#Cshrix_Data_Notifications_NotificationPushRule_Id">Id</a> of sender rules is always the Matrix user ID of the user whose
+messages they'd apply to.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationRuleset_Underride.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationRuleset.Underride%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L63">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L111">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationRuleset_Underride_" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Underride*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationRuleset_Underride" data-uid="Cshrix.Data.Notifications.NotificationRuleset.Underride">Underride</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of underride rules.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1252,6 +1285,10 @@ public IReadOnlyCollection&lt;NotificationPushRule&gt; Underride { get; }</code>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationRuleset_Underride_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>These are identical to <a class="xref" href="Cshrix.Data.Notifications.NotificationRuleset.html#Cshrix_Data_Notifications_NotificationRuleset_Override">Override</a> rules, but have a lower priority than <a class="xref" href="Cshrix.Data.Notifications.NotificationRuleset.html#Cshrix_Data_Notifications_NotificationRuleset_Content">Content</a>,
+<a class="xref" href="Cshrix.Data.Notifications.NotificationRuleset.html#Cshrix_Data_Notifications_NotificationRuleset_Room">Room</a>, and <a class="xref" href="Cshrix.Data.Notifications.NotificationRuleset.html#Cshrix_Data_Notifications_NotificationRuleset_Sender">Sender</a> rules.</p>
+</div>
 </article>
           </div>
           
@@ -1263,7 +1300,7 @@ public IReadOnlyCollection&lt;NotificationPushRule&gt; Underride { get; }</code>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationRuleset.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationRuleset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationRuleset.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

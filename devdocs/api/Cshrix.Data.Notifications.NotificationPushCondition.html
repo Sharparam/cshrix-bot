@@ -739,6 +739,9 @@
                             <a href="Cshrix.Data.Notifications.NotificationPushCondition.html" title="NotificationPushCondition" class="active">NotificationPushCondition</a>
                           </li>
                           <li class="">
+                            <a href="Cshrix.Data.Notifications.NotificationPushConditionKind.html" title="NotificationPushConditionKind" class="">NotificationPushConditionKind</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Data.Notifications.NotificationPusher.html" title="NotificationPusher" class="">NotificationPusher</a>
                           </li>
                           <li class="">
@@ -1006,7 +1009,8 @@
   
   <h1 id="Cshrix_Data_Notifications_NotificationPushCondition" data-uid="Cshrix.Data.Notifications.NotificationPushCondition" class="text-break">Struct NotificationPushCondition
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A condition for a push notification rule.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1039,19 +1043,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPushCondition__ctor_System_String_System_String_System_String_System_Nullable_Cshrix_Data_Notifications_ComparisonCondition_System_Int32___.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPushCondition.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.Nullable%7BCshrix.Data.Notifications.ComparisonCondition%7BSystem.Int32%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPushCondition__ctor_Cshrix_Data_Notifications_NotificationPushConditionKind_System_String_System_String_System_Nullable_Cshrix_Data_Notifications_ComparisonCondition_System_Int32___.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPushCondition.%23ctor(Cshrix.Data.Notifications.NotificationPushConditionKind%2CSystem.String%2CSystem.String%2CSystem.Nullable%7BCshrix.Data.Notifications.ComparisonCondition%7BSystem.Int32%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L19">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L29">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPushCondition__ctor_" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.#ctor*"></a>
-  <h4 id="Cshrix_Data_Notifications_NotificationPushCondition__ctor_System_String_System_String_System_String_System_Nullable_Cshrix_Data_Notifications_ComparisonCondition_System_Int32___" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.#ctor(System.String,System.String,System.String,System.Nullable{Cshrix.Data.Notifications.ComparisonCondition{System.Int32}})">NotificationPushCondition(String, String, String, Nullable&lt;ComparisonCondition&lt;Int32&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Cshrix_Data_Notifications_NotificationPushCondition__ctor_Cshrix_Data_Notifications_NotificationPushConditionKind_System_String_System_String_System_Nullable_Cshrix_Data_Notifications_ComparisonCondition_System_Int32___" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.#ctor(Cshrix.Data.Notifications.NotificationPushConditionKind,System.String,System.String,System.Nullable{Cshrix.Data.Notifications.ComparisonCondition{System.Int32}})">NotificationPushCondition(NotificationPushConditionKind, String, String, Nullable&lt;ComparisonCondition&lt;Int32&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Notifications.NotificationPushCondition.html">NotificationPushCondition</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public NotificationPushCondition(string kind, [CanBeNull] string key, [CanBeNull] string pattern, ComparisonCondition&lt;int&gt;? condition)</code></pre>
+public NotificationPushCondition(NotificationPushConditionKind kind, [CanBeNull] string key, [CanBeNull] string pattern, ComparisonCondition&lt;int&gt;? condition)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1064,7 +1069,7 @@ public NotificationPushCondition(string kind, [CanBeNull] string key, [CanBeNull
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><a class="xref" href="Cshrix.Data.Notifications.NotificationPushConditionKind.html">NotificationPushConditionKind</a></td>
         <td><span class="parametername">kind</span></td>
         <td></td>
       </tr>
@@ -1092,11 +1097,12 @@ public NotificationPushCondition(string kind, [CanBeNull] string key, [CanBeNull
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPushCondition_Condition.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPushCondition.Condition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L44">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L78">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPushCondition_Condition_" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.Condition*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPushCondition_Condition" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.Condition">Condition</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a comparison condition to apply.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1119,16 +1125,21 @@ public ComparisonCondition&lt;int&gt;? Condition { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationPushCondition_Condition_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Required if <a class="xref" href="Cshrix.Data.Notifications.NotificationPushCondition.html#Cshrix_Data_Notifications_NotificationPushCondition_Kind">Kind</a> is <a class="xref" href="Cshrix.Data.Notifications.NotificationPushConditionKind.html#Cshrix_Data_Notifications_NotificationPushConditionKind_RoomMemberCount">RoomMemberCount</a>.
+The comparer specifies under what conditions the push condition will trigger.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPushCondition_Key.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPushCondition.Key%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L36">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L55">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPushCondition_Key_" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.Key*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPushCondition_Key" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.Key">Key</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the dot-separated field of the event to match.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1151,21 +1162,25 @@ public string Key { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationPushCondition_Key_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Required if <a class="xref" href="Cshrix.Data.Notifications.NotificationPushCondition.html#Cshrix_Data_Notifications_NotificationPushCondition_Kind">Kind</a> is <a class="xref" href="Cshrix.Data.Notifications.NotificationPushConditionKind.html#Cshrix_Data_Notifications_NotificationPushConditionKind_EventMatch">EventMatch</a>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPushCondition_Kind.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPushCondition.Kind%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L33">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L46">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPushCondition_Kind_" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.Kind*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPushCondition_Kind" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.Kind">Kind</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the kind of this condition.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonProperty(&quot;kind&quot;)]
-public string Kind { get; }</code></pre>
+public NotificationPushConditionKind Kind { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1177,7 +1192,7 @@ public string Kind { get; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><a class="xref" href="Cshrix.Data.Notifications.NotificationPushConditionKind.html">NotificationPushConditionKind</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1187,11 +1202,12 @@ public string Kind { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPushCondition_Pattern.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPushCondition.Pattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L40">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L67">View Source</a>
   </span>
   <a id="Cshrix_Data_Notifications_NotificationPushCondition_Pattern_" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.Pattern*"></a>
   <h4 id="Cshrix_Data_Notifications_NotificationPushCondition_Pattern" data-uid="Cshrix.Data.Notifications.NotificationPushCondition.Pattern">Pattern</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the glob-style pattern to match against.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1214,6 +1230,11 @@ public string Pattern { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Notifications_NotificationPushCondition_Pattern_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Required if <a class="xref" href="Cshrix.Data.Notifications.NotificationPushCondition.html#Cshrix_Data_Notifications_NotificationPushCondition_Kind">Kind</a> is <a class="xref" href="Cshrix.Data.Notifications.NotificationPushConditionKind.html#Cshrix_Data_Notifications_NotificationPushConditionKind_EventMatch">EventMatch</a>.
+Patterns with no special glob characters should be treated as having asterisks prepended and appended
+when testing the condition.</p>
+</div>
 </article>
           </div>
           
@@ -1225,7 +1246,7 @@ public string Pattern { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Notifications_NotificationPushCondition.md&amp;value=---%0Auid%3A%20Cshrix.Data.Notifications.NotificationPushCondition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Notifications/NotificationPushCondition.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
