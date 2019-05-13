@@ -6,7 +6,8 @@
           "src": "..",
           "files": [
             "*.sln",
-            "src/**.csproj"
+            "src/**.csproj",
+            "src/**.fsproj"
           ]
         }
       ],
