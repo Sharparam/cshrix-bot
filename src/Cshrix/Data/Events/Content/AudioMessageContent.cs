@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using System;
 
-    public class AudioMessageContent : UriMessageContent<AudioInfo>
+    public sealed class AudioMessageContent : UriMessageContent<AudioInfo>
     {
         public AudioMessageContent(
             string body,

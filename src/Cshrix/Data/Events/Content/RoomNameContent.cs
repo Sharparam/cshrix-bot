@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class RoomNameContent : EventContent
+    public sealed class RoomNameContent : EventContent
     {
         public RoomNameContent(string name) => Name = name;
 

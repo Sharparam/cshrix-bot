@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class FullyReadContent : EventContent
+    public sealed class FullyReadContent : EventContent
     {
         public FullyReadContent(string eventId) => EventId = eventId;
 

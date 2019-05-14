@@ -17,7 +17,7 @@ namespace Cshrix.Data.Events.Content
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
-    public class EncryptedContent : EventContent
+    public sealed class EncryptedContent : EventContent
     {
         public EncryptedContent(
             Algorithm algorithm,

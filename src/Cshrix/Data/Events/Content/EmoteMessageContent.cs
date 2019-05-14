@@ -8,7 +8,7 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    public class EmoteMessageContent : FormattedMessageContent
+    public sealed class EmoteMessageContent : FormattedMessageContent
     {
         public EmoteMessageContent(string body, string messageType, string format, string formattedBody)
             : base(body, messageType, format, formattedBody)

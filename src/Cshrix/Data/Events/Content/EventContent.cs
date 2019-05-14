@@ -8,15 +8,19 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    using Extensions;
-
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
+    /// <summary>
+    /// Contains additional content for an event.
+    /// </summary>
     public class EventContent
     {
+        /// <summary>
+        /// Additional data not otherwise parsed by child classes of <see cref="EventContent" />.
+        /// </summary>
         [UsedImplicitly]
         [JsonExtensionData]
         public JObject AdditionalData
@@ -26,15 +30,5 @@ namespace Cshrix.Data.Events.Content
             [UsedImplicitly]
             protected set;
         }
-
-        protected T GetValueOrDefault<T>([NotNull] string key, T @default = default) =>
-            AdditionalData.ValueOrDefault(key, @default);
-
-        protected bool TryGetValue<T>([NotNull] string key, out T value) => AdditionalData.TryGetValue(key, out value);
-
-        protected T GetObjectOrDefault<T>([NotNull] string key, T @default = default) =>
-            AdditionalData.ObjectOrDefault(key, @default);
-
-        protected bool TryGetObject<T>([NotNull] string key, out T value) => AdditionalData.TryGetObject(key, out value);
     }
 }

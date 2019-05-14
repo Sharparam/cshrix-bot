@@ -14,29 +14,51 @@ namespace Cshrix.Data
 
     using Serialization;
 
+    /// <summary>
+    /// Credentials for a TURN server(s).
+    /// </summary>
     public readonly struct TurnServerCredentials
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TurnServerCredentials" /> structure.
+        /// </summary>
+        /// <param name="uris">A list of TURN URIs.</param>
+        /// <param name="username">The username to use.</param>
+        /// <param name="password">The password to use.</param>
+        /// <param name="ttl">The time-to-live.</param>
         [JsonConstructor]
-        public TurnServerCredentials(string password, TimeSpan ttl, Uri[] uris, string username)
+        public TurnServerCredentials(Uri[] uris, string username, string password, TimeSpan ttl)
             : this()
         {
-            Password = password;
-            Ttl = ttl;
             Uris = uris;
             Username = username;
+            Password = password;
+            Ttl = ttl;
         }
 
-        [JsonProperty("password")]
-        public string Password { get; }
-
-        [JsonProperty("ttl")]
-        [JsonConverter(typeof(SecondTimeSpanConverter))]
-        public TimeSpan Ttl { get; }
-
+        /// <summary>
+        /// Gets an array of URIs for TURN servers.
+        /// </summary>
         [JsonProperty("uris")]
         public Uri[] Uris { get; }
 
+        /// <summary>
+        /// Gets the username.
+        /// </summary>
         [JsonProperty("username")]
         public string Username { get; }
+
+        /// <summary>
+        /// Gets the password.
+        /// </summary>
+        [JsonProperty("password")]
+        public string Password { get; }
+
+        /// <summary>
+        /// Gets the time-to-live (TTL).
+        /// </summary>
+        [JsonProperty("ttl")]
+        [JsonConverter(typeof(SecondTimeSpanConverter))]
+        public TimeSpan Ttl { get; }
     }
 }

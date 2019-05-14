@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class GroupsContent : EventContent
+    public sealed class GroupsContent : EventContent
     {
         public GroupsContent(IReadOnlyCollection<GroupId> groups) => Groups = groups;
 

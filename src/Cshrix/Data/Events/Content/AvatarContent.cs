@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class AvatarContent : EventContent
+    public sealed class AvatarContent : EventContent
     {
         public AvatarContent(ImageInfo info, Uri uri)
         {

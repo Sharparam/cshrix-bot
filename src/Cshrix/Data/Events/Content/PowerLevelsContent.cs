@@ -13,7 +13,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class PowerLevelsContent : EventContent
+    public sealed class PowerLevelsContent : EventContent
     {
         public PowerLevelsContent(
             int ban,

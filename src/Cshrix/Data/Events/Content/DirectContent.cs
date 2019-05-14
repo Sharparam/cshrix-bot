@@ -13,7 +13,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class DirectContent : EventContent
+    public sealed class DirectContent : EventContent
     {
         public IReadOnlyCollection<string> this[UserId key]
         {

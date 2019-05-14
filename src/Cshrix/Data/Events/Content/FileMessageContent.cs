@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using System;
 
-    public class FileMessageContent : UriMessageContent<FileInfo>
+    public sealed class FileMessageContent : UriMessageContent<FileInfo>
     {
         public FileMessageContent(string body, string messageType, FileInfo info, Uri uri, EncryptedFile? encryptedFile)
             : base(body, messageType, info, uri, encryptedFile)

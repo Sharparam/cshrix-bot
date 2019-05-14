@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class LocationMessageContent : MessageContent
+    public sealed class LocationMessageContent : MessageContent
     {
         public LocationMessageContent(string body, string messageType, Uri uri, LocationInfo info)
             : base(body, messageType)

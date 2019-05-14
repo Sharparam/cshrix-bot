@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class RedactionContent : EventContent
+    public sealed class RedactionContent : EventContent
     {
         public RedactionContent(string reason) => Reason = reason;
 

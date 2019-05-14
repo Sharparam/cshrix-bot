@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class TypingContent : EventContent
+    public sealed class TypingContent : EventContent
     {
         public TypingContent(IReadOnlyCollection<UserId> userIds) => UserIds = userIds;
 

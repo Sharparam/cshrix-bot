@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class AliasesContent : EventContent
+    public sealed class AliasesContent : EventContent
     {
         public AliasesContent(IReadOnlyCollection<RoomAlias> aliases) => Aliases = aliases;
 

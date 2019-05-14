@@ -8,7 +8,7 @@
 
 namespace Cshrix.Data.Events.Content
 {
-    public class TextMessageContent : FormattedMessageContent
+    public sealed class TextMessageContent : FormattedMessageContent
     {
         public TextMessageContent(string body, string messageType, string format, string formattedBody)
             : base(body, messageType, format, formattedBody)

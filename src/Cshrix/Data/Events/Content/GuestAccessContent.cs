@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class GuestAccessContent : EventContent
+    public sealed class GuestAccessContent : EventContent
     {
         public GuestAccessContent(GuestAccess access) => Access = access;
 

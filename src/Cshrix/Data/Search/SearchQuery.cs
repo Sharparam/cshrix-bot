@@ -10,13 +10,23 @@ namespace Cshrix.Data.Search
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// A search query for events.
+    /// </summary>
     public readonly struct SearchQuery
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchQuery" /> structure.
+        /// </summary>
+        /// <param name="categories">The search categories.</param>
         [JsonConstructor]
         public SearchQuery(SearchCategories categories)
             : this() =>
             Categories = categories;
 
+        /// <summary>
+        /// Gets an object containing the search categories to search in, and their criteria.
+        /// </summary>
         [JsonProperty("search_categories")]
         public SearchCategories Categories { get; }
     }

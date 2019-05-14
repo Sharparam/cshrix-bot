@@ -13,8 +13,18 @@ namespace Cshrix.Data
 
     using JetBrains.Annotations;
 
+    /// <summary>
+    /// Contains content downloaded from a Matrix media repository.
+    /// </summary>
+    [PublicAPI]
     public readonly struct Content
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Content" /> structure.
+        /// </summary>
+        /// <param name="filename">The filename of the content.</param>
+        /// <param name="contentType">The content type of the content.</param>
+        /// <param name="bytes">The downloaded bytes of the content.</param>
         public Content([CanBeNull] string filename, ContentType contentType, IReadOnlyCollection<byte> bytes)
             : this()
         {
@@ -23,11 +33,20 @@ namespace Cshrix.Data
             Bytes = bytes;
         }
 
+        /// <summary>
+        /// Gets the filename of the downloaded content.
+        /// </summary>
         [CanBeNull]
         public string Filename { get; }
 
+        /// <summary>
+        /// Gets the content type of the downloaded content.
+        /// </summary>
         public ContentType ContentType { get; }
 
+        /// <summary>
+        /// Gets the downloaded content data.
+        /// </summary>
         public IReadOnlyCollection<byte> Bytes { get; }
     }
 }

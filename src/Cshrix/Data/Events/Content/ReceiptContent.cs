@@ -13,7 +13,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class ReceiptContent : EventContent
+    public sealed class ReceiptContent : EventContent
     {
         public ReceiptData this[string key]
         {

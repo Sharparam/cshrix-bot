@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class CreationContent : EventContent
+    public sealed class CreationContent : EventContent
     {
         public CreationContent(UserId creator, bool federate, string roomVersion)
         {

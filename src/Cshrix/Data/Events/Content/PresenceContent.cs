@@ -18,7 +18,7 @@ namespace Cshrix.Data.Events.Content
 
     using Serialization;
 
-    public class PresenceContent : EventContent
+    public sealed class PresenceContent : EventContent
     {
         public PresenceContent(
             Uri avatarUri,

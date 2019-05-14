@@ -13,7 +13,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class ThirdPartyInviteContent : EventContent
+    public sealed class ThirdPartyInviteContent : EventContent
     {
         public ThirdPartyInviteContent(
             string displayName,

@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class HistoryVisibilityContent : EventContent
+    public sealed class HistoryVisibilityContent : EventContent
     {
         public HistoryVisibilityContent(HistoryVisibility visibility) => Visibility = visibility;
 

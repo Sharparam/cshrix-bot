@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class RoomKeyRequestContent : EventContent
+    public sealed class RoomKeyRequestContent : EventContent
     {
         public RoomKeyRequestContent(
             RequestedKeyInfo body,

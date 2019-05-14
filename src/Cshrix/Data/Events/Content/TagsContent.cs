@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class TagsContent : EventContent
+    public sealed class TagsContent : EventContent
     {
         public TagsContent(IReadOnlyDictionary<string, TagData> tags) => Tags = tags;
 

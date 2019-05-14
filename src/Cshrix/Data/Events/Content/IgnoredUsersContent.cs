@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class IgnoredUsersContent : EventContent
+    public sealed class IgnoredUsersContent : EventContent
     {
         public IgnoredUsersContent(IReadOnlyDictionary<UserId, object> users) => Users = users;
 

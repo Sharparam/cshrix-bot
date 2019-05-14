@@ -14,7 +14,7 @@ namespace Cshrix.Data.Events.Content
 
     using Serialization;
 
-    public class EncryptionContent : EventContent
+    public sealed class EncryptionContent : EventContent
     {
         public EncryptionContent(string algorithm, TimeSpan rotationPeriod, int rotationPeriodMessages)
         {

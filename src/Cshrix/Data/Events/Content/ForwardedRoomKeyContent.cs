@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class ForwardedRoomKeyContent : EventContent
+    public sealed class ForwardedRoomKeyContent : EventContent
     {
         public ForwardedRoomKeyContent(
             string algorithm,

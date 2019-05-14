@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class StickerContent : EventContent
+    public sealed class StickerContent : EventContent
     {
         public StickerContent(string body, ImageInfo info, Uri uri)
         {

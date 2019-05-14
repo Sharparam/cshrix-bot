@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class PinnedEventsContent : EventContent
+    public sealed class PinnedEventsContent : EventContent
     {
         public PinnedEventsContent(IReadOnlyCollection<UserId> pinned) => Pinned = pinned;
 

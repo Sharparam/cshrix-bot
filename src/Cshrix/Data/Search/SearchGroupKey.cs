@@ -13,12 +13,21 @@ namespace Cshrix.Data.Search
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Keys that are available to group by in search results.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum SearchGroupKey
     {
+        /// <summary>
+        /// Group by room ID.
+        /// </summary>
         [EnumMember(Value = "room_id")]
         RoomId,
 
+        /// <summary>
+        /// Group by sender.
+        /// </summary>
         [EnumMember(Value = "sender")]
         Sender
     }

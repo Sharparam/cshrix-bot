@@ -1627,6 +1627,12 @@ namespace Cshrix
 
         #region Read Markers
 
+        /// <summary>
+        /// Set the position of read marker and optionally read receipt for a room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to set the read markers in.</param>
+        /// <param name="data">Data specifying where to set the marker and receipt.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/read_markers")]
         Task SetReadMarkersAsync([Path] string roomId, [Body] ReadMarkers data);
 
@@ -1634,6 +1640,16 @@ namespace Cshrix
 
         #region Reporting content
 
+        /// <summary>
+        /// Reports an event as inappropriate.
+        /// </summary>
+        /// <param name="roomId">The ID of the room in which the event being reported is located.</param>
+        /// <param name="eventId">The ID of the event to report.</param>
+        /// <param name="data">Object containing data on why the event is being reported.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// Reports an event as inappropriate to the server, which may then notify the appropriate people.
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/rooms/{roomId}/report/{eventId}")]
         Task ReportAsync([Path] string roomId, [Path] string eventId, [Body] Report data);
 
@@ -1641,6 +1657,16 @@ namespace Cshrix
 
         #region Search
 
+        /// <summary>
+        /// Perform a server-side search.
+        /// </summary>
+        /// <param name="data">The search query.</param>
+        /// <param name="from">
+        /// The point to return events from.
+        /// If given, this should be a <c>next_batch</c> result from a previous call to this endpoint.
+        /// </param>
+        /// <returns>The results of the search.</returns>
+        /// <remarks>Performs a full text search across different categories.</remarks>
         [Post("_matrix/client/{apiVersion}/search")]
         Task<SearchResult> SearchAsync([Body] SearchQuery data, [Query("next_batch")] string from = null);
 
@@ -1648,6 +1674,17 @@ namespace Cshrix
 
         #region Send-to-Device messaging
 
+        /// <summary>
+        /// Send an event to a given set of devices.
+        /// </summary>
+        /// <param name="eventType">The type of event to send.</param>
+        /// <param name="transactionId">
+        /// The transaction ID for this event. Clients should generate an ID unique across requests with the same
+        /// access token; it will be used by the server to ensure idempotency of requests.
+        /// </param>
+        /// <param name="data">Contains per-user and per-device event content.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>This endpoint is used to send send-to-device events to a set of client devices.</remarks>
         [Put("_matrix/client/{apiVersion}/sendToDevice/{eventType}/{txnId}")]
         Task SendToDevicesAsync(
             [Path] string eventType,
@@ -1658,6 +1695,25 @@ namespace Cshrix
 
         #region OpenID
 
+        /// <summary>
+        /// Get an OpenID token object to verify the requester's identity.
+        /// </summary>
+        /// <param name="userId">
+        /// The ID of the user to request an OpenID token for. Should be the user who is authenticated for the request.
+        /// </param>
+        /// <param name="data">An empty object. Reserved for future expansion.</param>
+        /// <returns>The OpenID token for the user.</returns>
+        /// <remarks>
+        /// <para>
+        /// Gets an OpenID token object that the requester may supply to another service to verify their identity in
+        /// Matrix. The generated token is only valid for exchanging for user information from the federation API
+        /// for OpenID.
+        /// </para>
+        /// <para>
+        /// The access token generated is only valid for the OpenID API. It cannot be used to request another OpenID
+        /// access token or call <c>/sync</c>, for example.
+        /// </para>
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/user/{userId}/openid/request_token")]
         Task<OpenIdToken> RequestOpenIdTokenAsync([Path] UserId userId, [Body] object data);
 
@@ -1665,6 +1721,11 @@ namespace Cshrix
 
         #region VOIP
 
+        /// <summary>
+        /// Obtain TURN server credentials.
+        /// </summary>
+        /// <returns>The TURN server credentials.</returns>
+        /// <remarks>This API provides credentials for the client to use when initiating calls.</remarks>
         [Get("_matrix/client/{apiVersion}/voip/turnServer")]
         Task<TurnServerCredentials> GetTurnServerCredentialsAsync();
 
@@ -1672,36 +1733,85 @@ namespace Cshrix
 
         #region Media
 
+        /// <summary>
+        /// Upload some content to the content repository.
+        /// </summary>
+        /// <param name="filename">The name of the file being uploaded.</param>
+        /// <param name="contentType">The content type of the file being uploaded.</param>
+        /// <param name="data">The content to upload.</param>
+        /// <returns>A wrapper object containing the MXC URI for the uploaded content.</returns>
         [Post("_matrix/media/{apiVersion}/upload")]
         Task<ContentUriContainer> UploadAsync(
             [Query] string filename,
             [Header("Content-Type")] MediaTypeHeaderValue contentType,
             [Body] Stream data);
 
+        /// <summary>
+        /// Upload some content to the content repository.
+        /// </summary>
+        /// <param name="filename">The name of the file being uploaded.</param>
+        /// <param name="contentType">The content type of the file being uploaded.</param>
+        /// <param name="data">The content to upload.</param>
+        /// <returns>A wrapper object containing the MXC URI for the uploaded content.</returns>
         [Post("_matrix/media/{apiVersion}/upload")]
         Task<ContentUriContainer> UploadAsync(
             [Query] string filename,
             [Header("Content-Type")] string contentType,
             [Body] Stream data);
 
+        /// <summary>
+        /// Upload some content to the content repository.
+        /// </summary>
+        /// <param name="filename">The name of the file being uploaded.</param>
+        /// <param name="contentType">The content type of the file being uploaded.</param>
+        /// <param name="data">The content to upload.</param>
+        /// <returns>A wrapper object containing the MXC URI for the uploaded content.</returns>
         [Post("_matrix/media/{apiVersion}/upload")]
         Task<ContentUriContainer> UploadAsync(
             [Query] string filename,
             [Header("Content-Type")] MediaTypeHeaderValue contentType,
             [Body] byte[] data);
 
+        /// <summary>
+        /// Upload some content to the content repository.
+        /// </summary>
+        /// <param name="filename">The name of the file being uploaded.</param>
+        /// <param name="contentType">The content type of the file being uploaded.</param>
+        /// <param name="data">The content to upload.</param>
+        /// <returns>A wrapper object containing the MXC URI for the uploaded content.</returns>
         [Post("_matrix/media/{apiVersion}/upload")]
         Task<ContentUriContainer> UploadAsync(
             [Query] string filename,
             [Header("Content-Type")] string contentType,
             [Body] byte[] data);
 
+        /// <summary>
+        /// Download content from the content repository.
+        /// </summary>
+        /// <param name="serverName">The server name from the <c>mxc://</c> URI (the authority component).</param>
+        /// <param name="mediaId">The media ID from the <c>mxc://</c> URI (the path component).</param>
+        /// <param name="allowRemote">
+        /// A value indicating whether the server should attempt to fetch the media if it is deemed remote.
+        /// This is to prevent routing loops where the server contacts itself. Defaults to <c>true</c> if not provided.
+        /// </param>
+        /// <returns>A response message from which the content can be downloaded/streamed.</returns>
         [Get("_matrix/media/{apiVersion}/download/{serverName}/{mediaId}")]
         Task<HttpResponseMessage> DownloadAsync(
             [Path] string serverName,
             [Path] string mediaId,
             [Query("allow_remote")] bool? allowRemote = null);
 
+        /// <summary>
+        /// Download content from the content repository as a given filename.
+        /// </summary>
+        /// <param name="serverName">The server name from the <c>mxc://</c> URI (the authority component).</param>
+        /// <param name="mediaId">The media ID from the <c>mxc://</c> URI (the path component).</param>
+        /// <param name="filename">The filename to give in the <c>Content-Disposition</c> header.</param>
+        /// <param name="allowRemote">
+        /// A value indicating whether the server should attempt to fetch the media if it is deemed remote.
+        /// This is to prevent routing loops where the server contacts itself. Defaults to <c>true</c> if not provided.
+        /// </param>
+        /// <returns>A response message from which the content can be downloaded/streamed.</returns>
         [Get("_matrix/media/{apiVersion}/download/{serverName}/{mediaId}/{filename}")]
         Task<HttpResponseMessage> DownloadAsync(
             [Path] string serverName,
@@ -1709,6 +1819,23 @@ namespace Cshrix
             [Path] string filename,
             [Query("allow_remote")] bool? allowRemote = null);
 
+        /// <summary>
+        /// Download a thumbnail of the content from the content repository.
+        /// </summary>
+        /// <param name="serverName">The server name from the <c>mxc://</c> URI (the authority component).</param>
+        /// <param name="mediaId">The media ID from the <c>mxc://</c> URI (the path component).</param>
+        /// <param name="width">
+        /// The desired width of the thumbnail, in pixels. The actual thumbnail may not match the size specified.
+        /// </param>
+        /// <param name="height">
+        /// The desired height of the thumbnail, in pixels. The actual thumbnail may not match the size specified.
+        /// </param>
+        /// <param name="resizeMethod">The desired resizing method.</param>
+        /// <param name="allowRemote">
+        /// A value indicating whether the server should attempt to fetch the media if it is deemed remote.
+        /// This is to prevent routing loops where the server contacts itself. Defaults to <c>true</c> if not provided.
+        /// </param>
+        /// <returns>A response message from which the thumbnail can be downloaded/streamed.</returns>
         [Get("_matrix/media/{apiVersion}/thumbnail/{serverName}/{mediaId}")]
         Task<HttpResponseMessage> DownloadThumbnailAsync(
             [Path] string serverName,
@@ -1718,11 +1845,41 @@ namespace Cshrix
             [Query("method", QuerySerializationMethod.Serialized)] ResizeMethod resizeMethod = ResizeMethod.Scale,
             [Query("allow_remote")] bool? allowRemote = null);
 
+        /// <summary>
+        /// Get information about a URI for a client.
+        /// </summary>
+        /// <param name="uri">The URI to get a preview of.</param>
+        /// <param name="at">
+        /// The preferred point in time to return a preview for. The server may return a newer version if it does not
+        /// have the requested version available.
+        /// </param>
+        /// <returns>
+        /// The OpenGraph data for the URI, which may be empty. Some values are replaced with Matrix equivalents if
+        /// they are provided in the response. The differences from the OpenGraph protocol are described in the
+        /// Matrix API documentation.
+        /// </returns>
         [Get("_matrix/media/{apiVersion}/preview_url")]
         Task<PreviewInfo> GetUriPreviewInfoAsync(
             [Query("url")] Uri uri,
             [Query("ts", QuerySerializationMethod.Serialized)] DateTimeOffset? at = null);
 
+        /// <summary>
+        /// Get the configuration for the content repository.
+        /// </summary>
+        /// <returns>The public content repository configuration for the Matrix server.</returns>
+        /// <remarks>
+        /// <para>
+        /// This endpoint allows clients to retrieve the configuration of the content repository, such as upload
+        /// limitations. Clients <em>should</em> use this as a guide when using content repository endpoints.
+        /// All values are intentionally left optional. Clients <em>should</em> follow the advice given in the field
+        /// description when the field is not available.
+        /// </para>
+        /// <para>
+        /// <strong>NOTE:</strong> Both clients and server administrators should be aware that proxies between the
+        /// client and the server may affect the apparent behaviour of content repository APIs, for example,
+        /// proxies may enforce a lower upload size limit than is advertised by the server on this endpoint.
+        /// </para>
+        /// </remarks>
         [Get("_matrix/media/{apiVersion}/config")]
         Task<ContentConfiguration> GetContentConfigurationAsync();
 

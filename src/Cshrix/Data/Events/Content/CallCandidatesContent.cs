@@ -12,7 +12,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class CallCandidatesContent : CallContent
+    public sealed class CallCandidatesContent : CallContent
     {
         public CallCandidatesContent(string callId, int version, IReadOnlyCollection<Candidate> candidates)
             : base(callId, version) =>

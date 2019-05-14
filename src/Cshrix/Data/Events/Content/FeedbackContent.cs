@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class FeedbackContent : EventContent
+    public sealed class FeedbackContent : EventContent
     {
         public FeedbackContent(string targetEventId, FeedbackType type)
         {

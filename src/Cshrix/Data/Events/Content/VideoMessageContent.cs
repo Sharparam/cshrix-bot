@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using System;
 
-    public class VideoMessageContent : UriMessageContent<VideoInfo>
+    public sealed class VideoMessageContent : UriMessageContent<VideoInfo>
     {
         public VideoMessageContent(
             string body,

@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class JoinRuleContent : EventContent
+    public sealed class JoinRuleContent : EventContent
     {
         public JoinRuleContent(JoinRule rule) => Rule = rule;
 

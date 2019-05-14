@@ -13,7 +13,7 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class ServerAclContent : EventContent
+    public sealed class ServerAclContent : EventContent
     {
         public ServerAclContent(
             bool allowIpLiterals,

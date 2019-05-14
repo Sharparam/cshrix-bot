@@ -14,7 +14,7 @@ namespace Cshrix.Data.Events.Content
 
     using Serialization;
 
-    public class CallInviteContent : CallContent
+    public sealed class CallInviteContent : CallContent
     {
         public CallInviteContent(string callId, Offer offer, int version, TimeSpan lifetime)
             : base(callId, version)

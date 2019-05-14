@@ -10,7 +10,7 @@ namespace Cshrix.Data.Events.Content
 {
     using System;
 
-    public class ImageMessageContent : UriMessageContent<ImageInfo>
+    public sealed class ImageMessageContent : UriMessageContent<ImageInfo>
     {
         public ImageMessageContent(
             string body,
