@@ -16,8 +16,18 @@ namespace Cshrix.Data.Presence
 
     using Serialization;
 
+    /// <summary>
+    /// Describes the presence state of a user.
+    /// </summary>
     public readonly struct PresenceStatusResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PresenceStatusResponse" /> structure.
+        /// </summary>
+        /// <param name="presence">The current presence of the user.</param>
+        /// <param name="lastActiveAgo">The amount of time since the last activity.</param>
+        /// <param name="statusMessage">Optional state message for the user.</param>
+        /// <param name="isCurrentlyActive">Whether the user is currently active.</param>
         [JsonConstructor]
         public PresenceStatusResponse(
             Presence presence,
@@ -32,17 +42,29 @@ namespace Cshrix.Data.Presence
             IsCurrentlyActive = isCurrentlyActive;
         }
 
+        /// <summary>
+        /// Gets the current presence of the user.
+        /// </summary>
         [JsonProperty("presence")]
         public Presence Presence { get; }
 
+        /// <summary>
+        /// Gets the amount of time since the user was last active.
+        /// </summary>
         [JsonConverter(typeof(MillisecondTimeSpanConverter))]
         [JsonProperty("last_active_ago")]
         public TimeSpan? LastActiveAgo { get; }
 
+        /// <summary>
+        /// Gets the state message for this user, or <c>null</c> if not set.
+        /// </summary>
         [JsonProperty("status_msg")]
         [CanBeNull]
         public string StatusMessage { get; }
 
+        /// <summary>
+        /// Gets a value indicating whether the user is currently active.
+        /// </summary>
         [JsonProperty("currently_active")]
         public bool IsCurrentlyActive { get; }
     }

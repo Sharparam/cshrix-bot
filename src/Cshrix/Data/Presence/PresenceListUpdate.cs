@@ -15,8 +15,12 @@ namespace Cshrix.Data.Presence
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Describes modifications to make to a user's presence list.
+    /// </summary>
     public readonly struct PresenceListUpdate
     {
+        /// <inheritdoc />
         public PresenceListUpdate(
             [CanBeNull] IEnumerable<UserId> add = null,
             [CanBeNull] IEnumerable<UserId> remove = null)
@@ -24,6 +28,11 @@ namespace Cshrix.Data.Presence
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PresenceListUpdate" /> structure.
+        /// </summary>
+        /// <param name="add">User ID's to add to the presence list.</param>
+        /// <param name="remove">User ID's to remove from the presence list.</param>
         [JsonConstructor]
         public PresenceListUpdate(
             [CanBeNull] IReadOnlyCollection<UserId> add = null,
@@ -34,6 +43,9 @@ namespace Cshrix.Data.Presence
             Remove = remove;
         }
 
+        /// <summary>
+        /// Gets a collection of user ID's to add to the presence list.
+        /// </summary>
         [JsonProperty(
             "invite",
             NullValueHandling = NullValueHandling.Ignore,
@@ -41,6 +53,9 @@ namespace Cshrix.Data.Presence
         [CanBeNull]
         public IReadOnlyCollection<UserId> Add { get; }
 
+        /// <summary>
+        /// Gets a collection of user ID's to remove from the presence list.
+        /// </summary>
         [JsonProperty(
             "drop",
             NullValueHandling = NullValueHandling.Ignore,

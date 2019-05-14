@@ -1545,15 +1545,43 @@ namespace Cshrix
 
         #region Presence
 
+        /// <summary>
+        /// Get presence events for a user's presence list.
+        /// </summary>
+        /// <param name="userId">The ID of the user whose presence list should be retrieved.</param>
+        /// <returns>A list of presence events.</returns>
+        /// <remarks>Retrieves a presence event for each user on the presence list.</remarks>
         [Get("_matrix/client/{apiVersion}/presence/list/{userId}")]
         Task<IReadOnlyCollection<Event>> GetPresenceEventsAsync([Path] UserId userId);
 
+        /// <summary>
+        /// Add or remove user's from the current user's presence list.
+        /// </summary>
+        /// <param name="userId">The ID of the user whose presence list to modify.</param>
+        /// <param name="data">Object describing the modifications to perform.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
         [Post("_matrix/client/{apiVersion}/presence/list/{userId}")]
         Task UpdatePresenceListAsync([Path] UserId userId, [Body] PresenceListUpdate data);
 
+        /// <summary>
+        /// Get a user's presence state.
+        /// </summary>
+        /// <param name="userId">The ID of the user whose presence state to get.</param>
+        /// <returns>The presence state for the user.</returns>
         [Get("_matrix/client/{apiVersion}/presence/{userId}/status")]
         Task<PresenceStatusResponse> GetPresenceAsync([Path] UserId userId);
 
+        /// <summary>
+        /// Update a user's presence state.
+        /// </summary>
+        /// <param name="userId">The ID of the user whose presence state to update.</param>
+        /// <param name="data">New presence data to set.</param>
+        /// <returns>A <see cref="Task" /> representing request progress.</returns>
+        /// <remarks>
+        /// This API sets the given user's presence state. When setting the status, the activity time is updated to
+        /// reflect that activity; the client does not need to specify the <c>last_active_ago</c> field.
+        /// You cannot set the presence state of another user.
+        /// </remarks>
         [Put("_matrix/client/{apiVersion}/presence/{userId}/status")]
         Task SetPresenceAsync([Path] UserId userId, [Body] PresenceStatusRequest data);
 
@@ -1561,14 +1589,39 @@ namespace Cshrix
 
         #region Room discovery
 
+        /// <summary>
+        /// Lists the public rooms on the server.
+        /// </summary>
+        /// <param name="limit">Limit the number of results returned.</param>
+        /// <param name="since">
+        /// A pagination token from a previous request, allowing clients to get the next (or previous) batch of rooms.
+        /// The direction of pagination is specified solely by which token is supplied, rather than via
+        /// an explicit flag.
+        /// </param>
+        /// <param name="server">The server to fetch the public room lists from. Defaults to the local server.</param>
+        /// <returns>A list of the rooms on the server.</returns>
+        /// <remarks>
+        /// This API returns paginated responses. The rooms are ordered by the number of joined members,
+        /// with the largest room first.
+        /// </remarks>
         [Get("_matrix/client/{apiVersion}/publicRooms")]
         Task<PublicRoomsChunk> GetPublicRoomsAsync(
             [Query] int? limit = null,
             [Query] string since = null,
             [Query] string server = null);
 
+        /// <summary>
+        /// Lists the public rooms on a server with optional filter.
+        /// </summary>
+        /// <param name="data">The filter to apply.</param>
+        /// <param name="server">The server to fetch the public room lists from. Defaults to the local server.</param>
+        /// <returns>A list of filtered rooms on the server.</returns>
+        /// <remarks>
+        /// This API returns paginated responses. The rooms are ordered by the number of joined members,
+        /// with the largest rooms first.
+        /// </remarks>
         [Post("_matrix/client/{apiVersion}/publicRooms")]
-        Task<PublicRoomsChunk> GetPublicRoomsAsync([Body] PublicRoomsRequest data);
+        Task<PublicRoomsChunk> GetPublicRoomsAsync([Body] PublicRoomsRequest data, [Query] string server = null);
 
         #endregion Room discovery
 

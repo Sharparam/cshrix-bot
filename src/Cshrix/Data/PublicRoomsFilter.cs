@@ -12,13 +12,23 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information on how to filter a request to list public rooms.
+    /// </summary>
     public readonly struct PublicRoomsFilter
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicRoomsFilter" /> structure.
+        /// </summary>
+        /// <param name="genericSearchTerm">A string to search for in the room metadata.</param>
         [JsonConstructor]
         public PublicRoomsFilter([CanBeNull] string genericSearchTerm)
             : this() =>
             GenericSearchTerm = genericSearchTerm;
 
+        /// <summary>
+        /// Gets a string to search for in the room metadata, e.g. name, topic, canonical alias et.c.
+        /// </summary>
         [JsonProperty(
             "generic_search_term",
             NullValueHandling = NullValueHandling.Ignore,
