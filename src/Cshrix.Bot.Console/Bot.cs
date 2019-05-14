@@ -70,7 +70,7 @@ namespace Cshrix.Bot.Console
             }
 
             _log.LogInformation("Starting sync");
-            _client.StartSyncingAsync();
+            await _client.StartSyncingAsync();
         }
     }
 }
