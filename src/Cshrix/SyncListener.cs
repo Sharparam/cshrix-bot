@@ -78,19 +78,19 @@ namespace Cshrix
         /// </summary>
         public void Dispose()
         {
-            Stop().Wait();
+            StopAsync().Wait();
         }
 
         /// <summary>
         /// Starts the sync listener.
         /// </summary>
         /// <param name="token">Optional token to start syncing from.</param>
-        public void Start(string token = null)
+        public Task StartAsync(string token = null)
         {
             if (_syncTask?.IsCompleted == false)
             {
                 _log.LogDebug("Sync listener already started");
-                return;
+                return Task.CompletedTask;
             }
 
             _log.LogDebug("Starting sync listener");
@@ -106,12 +106,13 @@ namespace Cshrix
                 cancellationToken);
 
             _log.LogDebug("Sync listener started");
+            return Task.CompletedTask;
         }
 
         /// <summary>
         /// Stops the sync listener.
         /// </summary>
-        public async Task Stop()
+        public async Task StopAsync()
         {
             _log.LogDebug("Stopping sync listener");
             _cancellationTokenSource.Cancel();
@@ -132,7 +133,7 @@ namespace Cshrix
             {
                 try
                 {
-                    await Sync(cancellationToken);
+                    await SyncAsync(cancellationToken);
                 }
                 catch (TaskCanceledException) when (cancellationToken.IsCancellationRequested)
                 {
@@ -146,7 +147,7 @@ namespace Cshrix
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to pass to any async calls.</param>
         /// <returns>A <see cref="Task" /> representing progress.</returns>
-        private async Task Sync(CancellationToken cancellationToken)
+        private async Task SyncAsync(CancellationToken cancellationToken)
         {
             try
             {

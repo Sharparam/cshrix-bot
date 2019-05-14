@@ -25,12 +25,12 @@ namespace Cshrix
         /// <summary>
         /// Starts syncing with the Matrix API.
         /// </summary>
-        void StartSyncing();
+        Task StartSyncingAsync();
 
         /// <summary>
         /// Stops syncing with the Matrix API.
         /// </summary>
-        Task StopSyncing();
+        Task StopSyncingAsync();
 
         /// <summary>
         /// Gets the current user's ID.

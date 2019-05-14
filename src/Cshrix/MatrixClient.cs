@@ -98,10 +98,10 @@ namespace Cshrix
         }
 
         /// <inheritdoc />
-        public void StartSyncing() => _syncListener.Start();
+        public Task StartSyncingAsync() => _syncListener.StartAsync();
 
         /// <inheritdoc />
-        public Task StopSyncing() => _syncListener.Stop();
+        public Task StopSyncingAsync() => _syncListener.StopAsync();
 
         /// <inheritdoc />
         public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync().ConfigureAwait(false)).UserId;
