@@ -21,7 +21,20 @@ namespace Cshrix.Data
     /// </summary>
     public readonly struct RoomEventFilter
     {
-        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomEventFilter" /> structure.
+        /// </summary>
+        /// <param name="limit">Maximum number of events to return.</param>
+        /// <param name="types">Event types to include, or <c>null</c> to include all.</param>
+        /// <param name="notTypes">Event types to exclude.</param>
+        /// <param name="senders">Senders to include, or <c>null</c> to include all.</param>
+        /// <param name="notSenders">Senders to exclude.</param>
+        /// <param name="rooms">Rooms to include, or <c>null</c> to include all.</param>
+        /// <param name="notRooms">Rooms to exclude.</param>
+        /// <param name="containsUrl">
+        /// <c>true</c> to only include events with a URL in their content,
+        /// <c>false</c> to only include events without a URL.
+        /// </param>
         public RoomEventFilter(
             int? limit = null,
             [CanBeNull] IEnumerable<string> types = null,

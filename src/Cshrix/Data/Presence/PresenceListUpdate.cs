@@ -20,7 +20,11 @@ namespace Cshrix.Data.Presence
     /// </summary>
     public readonly struct PresenceListUpdate
     {
-        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PresenceListUpdate" /> structure.
+        /// </summary>
+        /// <param name="add">User ID's to add to the presence list.</param>
+        /// <param name="remove">User ID's to remove from the presence list.</param>
         public PresenceListUpdate(
             [CanBeNull] IEnumerable<UserId> add = null,
             [CanBeNull] IEnumerable<UserId> remove = null)

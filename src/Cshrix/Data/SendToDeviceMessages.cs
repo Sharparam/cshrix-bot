@@ -21,7 +21,10 @@ namespace Cshrix.Data
     /// </summary>
     public readonly struct SendToDeviceMessages
     {
-        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendToDeviceMessages" /> structure.
+        /// </summary>
+        /// <param name="messages">Dictionary of users to a dictionary of device ID to message.</param>
         public SendToDeviceMessages(IDictionary<UserId, IDictionary<string, EventContent>> messages)
             : this(
                 new ReadOnlyDictionary<UserId, IReadOnlyDictionary<string, EventContent>>(
