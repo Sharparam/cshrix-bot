@@ -9,4 +9,6 @@
 [<AutoOpen>]
 module Cshrix.FSharp.Tests.Helpers
 
+#nowarn "77"
+
 let inline ( !> ) (b : ^b) : ^a = (^a : (static member op_Explicit : ^b -> ^a) (b))
