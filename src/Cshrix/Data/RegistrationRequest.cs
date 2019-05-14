@@ -10,16 +10,29 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information required to request user registration.
+    /// </summary>
     public readonly struct RegistrationRequest
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegistrationRequest" /> structure.
+        /// </summary>
+        /// <param name="username">Localpart to use in generating the Matrix user ID.</param>
+        /// <param name="password">Password to set.</param>
+        /// <param name="bindEmail">Whether to bind the email used for authentication to the new account.</param>
+        /// <param name="deviceId">ID to set on the current device.</param>
+        /// <param name="initialDeviceDisplayName">Initial display name to set on the current device.</param>
+        /// <param name="inhibitLogin">Whether to prevent automatic login.</param>
+        /// <param name="authenticationData">Data used to authenticate the request.</param>
         [JsonConstructor]
         public RegistrationRequest(
             string username = null,
             string password = null,
             bool bindEmail = true,
             string deviceId = null,
-            bool inhibitLogin = false,
             string initialDeviceDisplayName = null,
+            bool inhibitLogin = false,
             SessionContainer authenticationData = null)
             : this()
         {
@@ -32,37 +45,60 @@ namespace Cshrix.Data
             Username = username;
         }
 
+        /// <summary>
+        /// Gets the data used to authenticate the registration request.
+        /// </summary>
         [JsonProperty("auth")]
         public SessionContainer AuthenticationData { get; }
 
-        [JsonProperty("bind_email")]
-        public bool BindEmail { get; }
-
+        /// <summary>
+        /// Gets the localpart that should be used when creating the account.
+        /// </summary>
         [JsonProperty(
-            "device_id",
+            "username",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string DeviceId { get; }
+        public string Username { get; }
 
-        [JsonProperty("inhibit_login")]
-        public bool InhibitLogin { get; }
-
-        [JsonProperty(
-            "initial_device_display_name",
-            NullValueHandling = NullValueHandling.Ignore,
-            DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string InitialDeviceDisplayName { get; }
-
+        /// <summary>
+        /// Gets the password to set on the account.
+        /// </summary>
         [JsonProperty(
             "password",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Password { get; }
 
+        /// <summary>
+        /// Gets a value indicating whether the server should associate the email used
+        /// for authentication with the new user account.
+        /// </summary>
+        [JsonProperty("bind_email")]
+        public bool BindEmail { get; }
+
+        /// <summary>
+        /// Gets a device ID to apply to the current device on successful registration.
+        /// </summary>
         [JsonProperty(
-            "username",
+            "device_id",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Username { get; }
+        public string DeviceId { get; }
+
+        /// <summary>
+        /// Gets an initial display name to set on the user's device.
+        /// </summary>
+        [JsonProperty(
+            "initial_device_display_name",
+            NullValueHandling = NullValueHandling.Ignore,
+            DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string InitialDeviceDisplayName { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether access tokens and device IDs should <em>not</em> be returned on
+        /// successful registration. This prevents automatic login.
+        /// </summary>
+        [JsonProperty("inhibit_login")]
+        public bool InhibitLogin { get; }
     }
 }

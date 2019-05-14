@@ -16,11 +16,15 @@ namespace Cshrix
     using System.Threading;
     using System.Threading.Tasks;
 
+    using Cryptography;
+
     using Data;
     using Data.Authentication;
+    using Data.Devices;
     using Data.Events;
     using Data.Events.Content;
     using Data.Notifications;
+    using Data.Presence;
     using Data.Search;
     using Data.ThirdParty;
 

@@ -13,18 +13,33 @@ namespace Cshrix.Data
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Different history visibility states for a room.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum HistoryVisibility
     {
+        /// <summary>
+        /// Anyone can read history, even non-joined users.
+        /// </summary>
         [EnumMember(Value = "world_readable")]
         WorldReadable,
 
+        /// <summary>
+        /// All history is available to joined users.
+        /// </summary>
         [EnumMember(Value = "shared")]
         Shared,
 
+        /// <summary>
+        /// History is available to joined users from the point in time they were invited.
+        /// </summary>
         [EnumMember(Value = "invited")]
         Invited,
 
+        /// <summary>
+        /// History is available to joined users from the point in time they joined.
+        /// </summary>
         [EnumMember(Value = "joined")]
         Joined
     }

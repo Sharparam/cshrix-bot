@@ -11,6 +11,8 @@ namespace Cshrix.Data
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
+    using Devices;
+
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;

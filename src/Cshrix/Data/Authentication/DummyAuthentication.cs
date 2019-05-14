@@ -6,12 +6,17 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data
+namespace Cshrix.Data.Authentication
 {
-    using Authentication;
-
+    /// <summary>
+    /// Dummy authentication data.
+    /// </summary>
     public sealed class DummyAuthentication : AuthenticationData
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DummyAuthentication" /> class.
+        /// </summary>
+        /// <param name="session">Session identifier.</param>
         public DummyAuthentication(string session)
             : base(AuthenticationType.Dummy, session)
         {

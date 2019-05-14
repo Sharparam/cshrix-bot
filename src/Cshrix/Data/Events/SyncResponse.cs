@@ -10,6 +10,8 @@ namespace Cshrix.Data.Events
 {
     using System.Collections.Generic;
 
+    using Devices;
+
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;

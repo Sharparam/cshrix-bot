@@ -12,6 +12,8 @@ namespace Cshrix.Data
     using System.Collections.ObjectModel;
     using System.Linq;
 
+    using Cryptography;
+
     using Newtonsoft.Json;
 
     public readonly struct ClaimKeysResponse

@@ -14,6 +14,8 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
+    using Presence;
+
     using Serialization;
 
     public class PresenceContent : EventContent

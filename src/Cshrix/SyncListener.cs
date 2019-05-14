@@ -12,6 +12,8 @@ namespace Cshrix
     using System.Threading;
     using System.Threading.Tasks;
 
+    using Data.Events;
+
     using Errors;
 
     using Extensions;
@@ -162,7 +164,7 @@ namespace Cshrix
 
                 _log.LogTrace("Processing data from sync call");
 
-                // TODO: Process sync data
+                HandleSyncResponse(response);
 
                 _token = response.NextBatchToken;
                 _syncDelay = DefaultSyncDelay;
@@ -185,6 +187,10 @@ namespace Cshrix
             _log.LogTrace("Sync run complete, next batch is {Token}", _token);
             _log.LogTrace("Delaying next sync call by {Delay}", _syncDelay);
             await Task.Delay(_syncDelay, cancellationToken).ConfigureAwait(false);
+        }
+
+        private void HandleSyncResponse(SyncResponse response)
+        {
         }
     }
 }
