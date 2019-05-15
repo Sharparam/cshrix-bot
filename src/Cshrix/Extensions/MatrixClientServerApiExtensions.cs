@@ -30,22 +30,6 @@ namespace Cshrix.Extensions
         private const string DefaultContentType = "application/octet-stream";
 
         /// <summary>
-        /// Sets a bearer token to use for authenticating with the API.
-        /// </summary>
-        /// <param name="api">An instance of <see cref="IMatrixClientServerApi" />.</param>
-        /// <param name="accessToken">The access token to set.</param>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="api" /> is <c>null</c>.</exception>
-        public static void SetBearerToken([NotNull] this IMatrixClientServerApi api, string accessToken)
-        {
-            if (api == null)
-            {
-                throw new ArgumentNullException(nameof(api));
-            }
-
-            api.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-        }
-
-        /// <summary>
         /// Get an OpenID token object to verify the requester's identity.
         /// </summary>
         /// <param name="api">An instance of <see cref="IMatrixClientServerApi" /></param>

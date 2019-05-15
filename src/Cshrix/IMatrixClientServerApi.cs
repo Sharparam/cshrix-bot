@@ -45,44 +45,8 @@ namespace Cshrix
     /// the official Matrix site.
     /// </remarks>
     [PublicAPI]
-    public interface IMatrixClientServerApi
+    public interface IMatrixClientServerApi : IApi
     {
-        /// <summary>
-        /// Gets or sets the string passed as the User-Agent to the Matrix API.
-        /// </summary>
-        [UsedImplicitly]
-        [Header("User-Agent", nameof(Cshrix))]
-        string UserAgent { get; set; }
-
-        /// <summary>
-        /// Gets or sets the API version to use.
-        /// </summary>
-        [UsedImplicitly]
-        [Path("apiVersion")]
-        string ApiVersion { get; set; }
-
-        /// <summary>
-        /// Gets or sets the authorization header value.
-        /// </summary>
-        /// <remarks>
-        /// To set a bearer token directly, the extension method
-        /// <see cref="MatrixClientServerApiExtensions.SetBearerToken" /> can be used.
-        /// </remarks>
-        /// <seealso cref="MatrixClientServerApiExtensions.SetBearerToken" />
-        [UsedImplicitly]
-        [Header("Authorization")]
-        AuthenticationHeaderValue Authorization { get; set; }
-
-        /// <summary>
-        /// Gets or sets the impersonated user.
-        /// </summary>
-        /// <remarks>
-        /// This field is only useful if the token in use belongs to an application service.
-        /// </remarks>
-        [UsedImplicitly]
-        [Query("user_id")]
-        UserId UserId { get; set; }
-
         #region Server administration
 
         /// <summary>
@@ -99,18 +63,6 @@ namespace Cshrix
         /// </remarks>
         [Get("_matrix/client/versions")]
         Task<VersionsResponse> GetVersionsAsync();
-
-        /// <summary>
-        /// Gets information about a particular user.
-        /// </summary>
-        /// <param name="userId">The ID of the user to look up.</param>
-        /// <returns>An instance of <see cref="WhoisResponse" /> containing user information.</returns>
-        /// <remarks>
-        /// This API may be restricted to only be called by the user being looked up, or by a server admin.
-        /// Server-local administrator privileges are not specified in this document.
-        /// </remarks>
-        [Get("_matrix/client/{apiVersion}/admin/whois/{userId}")]
-        Task<WhoisResponse> WhoisAsync([Path] UserId userId);
 
         #endregion Server administration
 
