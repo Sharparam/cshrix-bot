@@ -20,9 +20,17 @@ namespace Cshrix.Cryptography
 
     using Serialization;
 
+    /// <summary>
+    /// A one-time key for encryption.
+    /// </summary>
     [JsonConverter(typeof(OneTimeKeyConverter))]
     public readonly struct OneTimeKey
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OneTimeKey" /> structure.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="signatures">Signatures for the key, if any.</param>
         public OneTimeKey(string key, IDictionary<UserId, IDictionary<string, string>> signatures)
             : this(
                 key,
@@ -33,6 +41,11 @@ namespace Cshrix.Cryptography
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OneTimeKey" /> structure.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="signatures">Signatures for the key, if any.</param>
         [JsonConstructor]
         public OneTimeKey(
             string key,
@@ -43,11 +56,14 @@ namespace Cshrix.Cryptography
             Signatures = signatures;
         }
 
+        /// <summary>
+        /// Gets the key.
+        /// </summary>
         [JsonProperty("key")]
         public string Key { get; }
 
         /// <summary>
-        /// Signatures for the key (if signed).
+        /// Gets the signatures for the key (if signed).
         /// </summary>
         /// <remarks>
         /// Will be <c>null</c> if this is an unsigned key.

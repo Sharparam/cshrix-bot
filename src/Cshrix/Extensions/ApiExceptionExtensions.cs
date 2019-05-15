@@ -23,6 +23,12 @@ namespace Cshrix.Extensions
     /// </summary>
     public static class ApiExceptionExtensions
     {
+        /// <summary>
+        /// Extracts a <see cref="MatrixError" /> from an <see cref="ApiException" />.
+        /// </summary>
+        /// <param name="exception">The exception instance to extract the error from.</param>
+        /// <returns>An instance of <see cref="MatrixError" />.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="exception" /> is <c>null</c>.</exception>
         public static MatrixError GetError([NotNull] this ApiException exception)
         {
             if (exception == null)
@@ -34,6 +40,13 @@ namespace Cshrix.Extensions
             return error;
         }
 
+        /// <summary>
+        /// Extracts a <see cref="MatrixError" /> of a specific type from an <see cref="ApiException" />.
+        /// </summary>
+        /// <param name="exception">The exception instance to extract the error from.</param>
+        /// <typeparam name="TError">The type of error to extract.</typeparam>
+        /// <returns>An instance of <typeparamref name="TError" />.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="exception" /> is <c>null</c>.</exception>
         public static TError GetError<TError>([NotNull] this ApiException exception) where TError : MatrixError
         {
             if (exception == null)
@@ -45,6 +58,16 @@ namespace Cshrix.Extensions
             return error;
         }
 
+        /// <summary>
+        /// Attempts to extract a <see cref="MatrixError" /> from an <see cref="ApiException" />.
+        /// </summary>
+        /// <param name="exception">The exception instance to extract an error from.</param>
+        /// <param name="error">
+        /// When this method returns, contains the extracted error, if one was found; otherwise,
+        /// the default value for <see cref="MatrixError" />.
+        /// </param>
+        /// <returns><c>true</c> if an error was found; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="exception" /> is <c>null</c>.</exception>
         public static bool TryGetError([NotNull] this ApiException exception, out MatrixError error)
         {
             if (exception == null)
@@ -64,6 +87,17 @@ namespace Cshrix.Extensions
             }
         }
 
+        /// <summary>
+        /// Attempts to extract a <see cref="MatrixError" /> of a specific type from an <see cref="ApiException" />.
+        /// </summary>
+        /// <param name="exception">The exception instance to extract an error from.</param>
+        /// <param name="error">
+        /// When this method returns, contains the extracted error, if one was found; otherwise,
+        /// the default value for <typeparamref name="TError" />.
+        /// </param>
+        /// <typeparam name="TError">The type of error to extract.</typeparam>
+        /// <returns><c>true</c> if an error was found; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="exception" /> is <c>null</c>.</exception>
         public static bool TryGetError<TError>([NotNull] this ApiException exception, out TError error)
             where TError : MatrixError
         {
