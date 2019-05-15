@@ -212,7 +212,7 @@ var assemblies = [
     "classes": [
       { "name": "Cshrix.Configuration.MatrixClientConfiguration", "rp": "Cshrix_MatrixClientConfiguration.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 42, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Cryptography.Olm.NativeMethods", "rp": "Cshrix_NativeMethods.htm", "cl": 0, "ucl": 0, "cal": 0, "tl": 0, "ct": "MethodCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Cryptography.OneTimeKey", "rp": "Cshrix_OneTimeKey.htm", "cl": 13, "ucl": 0, "cal": 13, "tl": 59, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 4, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Cryptography.OneTimeKey", "rp": "Cshrix_OneTimeKey.htm", "cl": 13, "ucl": 0, "cal": 13, "tl": 75, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 4, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Cryptography.OneTimeKeyCounts", "rp": "Cshrix_OneTimeKeyCounts.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Authentication.AuthenticationContainer", "rp": "Cshrix_AuthenticationContainer.htm", "cl": 0, "ucl": 2, "cal": 2, "tl": 23, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Authentication.AuthenticationData", "rp": "Cshrix_AuthenticationData.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 19, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
@@ -414,19 +414,20 @@ var assemblies = [
       { "name": "Cshrix.Data.UserId", "rp": "Cshrix_UserId.htm", "cl": 10, "ucl": 6, "cal": 16, "tl": 70, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.UserIdContainer", "rp": "Cshrix_UserIdContainer.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 23, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.UserIdUserIdentifier", "rp": "Cshrix_UserIdUserIdentifier.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 25, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Data.VersionsResponse", "rp": "Cshrix_VersionsResponse.htm", "cl": 0, "ucl": 5, "cal": 5, "tl": 31, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Data.VersionsResponse", "rp": "Cshrix_VersionsResponse.htm", "cl": 0, "ucl": 5, "cal": 5, "tl": 49, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.WhoisResponse", "rp": "Cshrix_WhoisResponse.htm", "cl": 0, "ucl": 8, "cal": 8, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.DependencyInjection.ServiceCollectionExtensions", "rp": "Cshrix_ServiceCollectionExtensions.htm", "cl": 0, "ucl": 5, "cal": 5, "tl": 82, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Errors.MatrixError", "rp": "Cshrix_MatrixError.htm", "cl": 6, "ucl": 1, "cal": 7, "tl": 51, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Errors.RateLimitError", "rp": "Cshrix_RateLimitError.htm", "cl": 3, "ucl": 0, "cal": 3, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Errors.UnauthorizedError", "rp": "Cshrix_UnauthorizedError.htm", "cl": 0, "ucl": 11, "cal": 11, "tl": 91, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Extensions.ApiExceptionExtensions", "rp": "Cshrix_ApiExceptionExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 92, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Extensions.ApiExceptionExtensions", "rp": "Cshrix_ApiExceptionExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 126, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Extensions.ApiExtensions", "rp": "Cshrix_ApiExtensions.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 37, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.DateTimeExtensions", "rp": "Cshrix_DateTimeExtensions.htm", "cl": 0, "ucl": 1, "cal": 1, "tl": 29, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.DictionaryExtensions", "rp": "Cshrix_DictionaryExtensions.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 56, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.HttpResponseHeadersExtensions", "rp": "Cshrix_HttpResponseHeadersExtensions.htm", "cl": 0, "ucl": 16, "cal": 16, "tl": 107, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 10, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.HttpResponseMessageExtensions", "rp": "Cshrix_HttpResponseMessageExtensions.htm", "cl": 0, "ucl": 24, "cal": 24, "tl": 127, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 20, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.JObjectExtensions", "rp": "Cshrix_JObjectExtensions.htm", "cl": 23, "ucl": 10, "cal": 33, "tl": 176, "ct": "LineCoverage", "mc": "-", "cb": 18, "tb": 28, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Extensions.MatrixClientServerApiExtensions", "rp": "Cshrix_MatrixClientServerApiExtensions.htm", "cl": 0, "ucl": 58, "cal": 58, "tl": 326, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 36, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Extensions.MatrixClientServerApiExtensions", "rp": "Cshrix_MatrixClientServerApiExtensions.htm", "cl": 0, "ucl": 54, "cal": 54, "tl": 310, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 34, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.ResponseExtensions", "rp": "Cshrix_ResponseExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.MatrixClient", "rp": "Cshrix_MatrixClient.htm", "cl": 0, "ucl": 26, "cal": 26, "tl": 119, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 10, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.ComparisonConditionConverter`1", "rp": "Cshrix_ComparisonConditionConverter_1.htm", "cl": 0, "ucl": 29, "cal": 29, "tl": 124, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 16, "lch": [], "bch": [], "hc": [] },
@@ -528,14 +529,14 @@ var riskHotspots = [
       { "value": 90, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "DownloadContentAsync()", "methodShortName": "DownloadContentAsync()", "fileIndex": 0, "line": 129,
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "DownloadContentAsync()", "methodShortName": "DownloadContentAsync()", "fileIndex": 0, "line": 113,
     "metrics": [
       { "value": 9, "exceeded": false },
       { "value": 16, "exceeded": false },
       { "value": 90, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "DownloadThumbnailContentAsync()", "methodShortName": "DownloadThumbnailContentAsync()", "fileIndex": 0, "line": 207,
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "DownloadThumbnailContentAsync()", "methodShortName": "DownloadThumbnailContentAsync()", "fileIndex": 0, "line": 191,
     "metrics": [
       { "value": 9, "exceeded": false },
       { "value": 16, "exceeded": false },
@@ -563,7 +564,7 @@ var riskHotspots = [
       { "value": 72, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "CreateContentFromResponse()", "methodShortName": "CreateContentFromResponse()", "fileIndex": 0, "line": 261,
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.MatrixClientServerApiExtensions", "reportPath": "Cshrix_MatrixClientServerApiExtensions.htm", "methodName": "CreateContentFromResponse()", "methodShortName": "CreateContentFromResponse()", "fileIndex": 0, "line": 245,
     "metrics": [
       { "value": 7, "exceeded": false },
       { "value": 8, "exceeded": false },

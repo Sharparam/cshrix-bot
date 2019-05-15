@@ -97,10 +97,16 @@
                         
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Cshrix.IApi.html" title="IApi" class="">IApi</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.IMatrixClient.html" title="IMatrixClient" class="">IMatrixClient</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.IMatrixClientServerApi.html" title="IMatrixClientServerApi" class="">IMatrixClientServerApi</a>
+                          </li>
+                          <li class="">
+                            <a href="Cshrix.ISynapseAdminApi.html" title="ISynapseAdminApi" class="">ISynapseAdminApi</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.IWellKnownApi.html" title="IWellKnownApi" class="">IWellKnownApi</a>
@@ -898,6 +904,9 @@
                             <a href="Cshrix.Extensions.ApiExceptionExtensions.html" title="ApiExceptionExtensions" class="active">ApiExceptionExtensions</a>
                           </li>
                           <li class="">
+                            <a href="Cshrix.Extensions.ApiExtensions.html" title="ApiExtensions" class="">ApiExtensions</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Extensions.DateTimeExtensions.html" title="DateTimeExtensions" class="">DateTimeExtensions</a>
                           </li>
                           <li class="">
@@ -1066,11 +1075,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Extensions_ApiExceptionExtensions_GetError_RestEase_ApiException_.md&amp;value=---%0Auid%3A%20Cshrix.Extensions.ApiExceptionExtensions.GetError(RestEase.ApiException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Extensions/ApiExceptionExtensions.cs/#L26">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Extensions/ApiExceptionExtensions.cs/#L32">View Source</a>
   </span>
   <a id="Cshrix_Extensions_ApiExceptionExtensions_GetError_" data-uid="Cshrix.Extensions.ApiExceptionExtensions.GetError*"></a>
   <h4 id="Cshrix_Extensions_ApiExceptionExtensions_GetError_RestEase_ApiException_" data-uid="Cshrix.Extensions.ApiExceptionExtensions.GetError(RestEase.ApiException)">GetError(ApiException)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Extracts a <a class="xref" href="Cshrix.Errors.MatrixError.html">MatrixError</a> from an <span class="xref">RestEase.ApiException</span>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1089,7 +1099,8 @@
       <tr>
         <td><span class="xref">RestEase.ApiException</span></td>
         <td><span class="parametername">exception</span></td>
-        <td></td>
+        <td><p>The exception instance to extract the error from.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1104,7 +1115,24 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Cshrix.Errors.MatrixError.html">MatrixError</a></td>
-        <td></td>
+        <td><p>An instance of <a class="xref" href="Cshrix.Errors.MatrixError.html">MatrixError</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">exception</code> is <code>null</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1113,11 +1141,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Extensions_ApiExceptionExtensions_GetError__1_RestEase_ApiException_.md&amp;value=---%0Auid%3A%20Cshrix.Extensions.ApiExceptionExtensions.GetError%60%601(RestEase.ApiException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Extensions/ApiExceptionExtensions.cs/#L37">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Extensions/ApiExceptionExtensions.cs/#L50">View Source</a>
   </span>
   <a id="Cshrix_Extensions_ApiExceptionExtensions_GetError_" data-uid="Cshrix.Extensions.ApiExceptionExtensions.GetError*"></a>
   <h4 id="Cshrix_Extensions_ApiExceptionExtensions_GetError__1_RestEase_ApiException_" data-uid="Cshrix.Extensions.ApiExceptionExtensions.GetError``1(RestEase.ApiException)">GetError&lt;TError&gt;(ApiException)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Extracts a <a class="xref" href="Cshrix.Errors.MatrixError.html">MatrixError</a> of a specific type from an <span class="xref">RestEase.ApiException</span>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1137,7 +1166,8 @@
       <tr>
         <td><span class="xref">RestEase.ApiException</span></td>
         <td><span class="parametername">exception</span></td>
-        <td></td>
+        <td><p>The exception instance to extract the error from.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1152,7 +1182,8 @@
     <tbody>
       <tr>
         <td><span class="xref">TError</span></td>
-        <td></td>
+        <td><p>An instance of <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1167,7 +1198,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">TError</span></td>
-        <td></td>
+        <td><p>The type of error to extract.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">exception</code> is <code>null</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1176,11 +1224,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Extensions_ApiExceptionExtensions_TryGetError_RestEase_ApiException_Cshrix_Errors_MatrixError__.md&amp;value=---%0Auid%3A%20Cshrix.Extensions.ApiExceptionExtensions.TryGetError(RestEase.ApiException%2CCshrix.Errors.MatrixError%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Extensions/ApiExceptionExtensions.cs/#L48">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Extensions/ApiExceptionExtensions.cs/#L71">View Source</a>
   </span>
   <a id="Cshrix_Extensions_ApiExceptionExtensions_TryGetError_" data-uid="Cshrix.Extensions.ApiExceptionExtensions.TryGetError*"></a>
   <h4 id="Cshrix_Extensions_ApiExceptionExtensions_TryGetError_RestEase_ApiException_Cshrix_Errors_MatrixError__" data-uid="Cshrix.Extensions.ApiExceptionExtensions.TryGetError(RestEase.ApiException,Cshrix.Errors.MatrixError@)">TryGetError(ApiException, out MatrixError)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Attempts to extract a <a class="xref" href="Cshrix.Errors.MatrixError.html">MatrixError</a> from an <span class="xref">RestEase.ApiException</span>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1199,12 +1248,15 @@
       <tr>
         <td><span class="xref">RestEase.ApiException</span></td>
         <td><span class="parametername">exception</span></td>
-        <td></td>
+        <td><p>The exception instance to extract an error from.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Errors.MatrixError.html">MatrixError</a></td>
         <td><span class="parametername">error</span></td>
-        <td></td>
+        <td><p>When this method returns, contains the extracted error, if one was found; otherwise,
+the default value for <a class="xref" href="Cshrix.Errors.MatrixError.html">MatrixError</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1219,7 +1271,24 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if an error was found; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">exception</code> is <code>null</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1228,11 +1297,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Extensions_ApiExceptionExtensions_TryGetError__1_RestEase_ApiException___0__.md&amp;value=---%0Auid%3A%20Cshrix.Extensions.ApiExceptionExtensions.TryGetError%60%601(RestEase.ApiException%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Extensions/ApiExceptionExtensions.cs/#L67">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Extensions/ApiExceptionExtensions.cs/#L101">View Source</a>
   </span>
   <a id="Cshrix_Extensions_ApiExceptionExtensions_TryGetError_" data-uid="Cshrix.Extensions.ApiExceptionExtensions.TryGetError*"></a>
   <h4 id="Cshrix_Extensions_ApiExceptionExtensions_TryGetError__1_RestEase_ApiException___0__" data-uid="Cshrix.Extensions.ApiExceptionExtensions.TryGetError``1(RestEase.ApiException,``0@)">TryGetError&lt;TError&gt;(ApiException, out TError)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Attempts to extract a <a class="xref" href="Cshrix.Errors.MatrixError.html">MatrixError</a> of a specific type from an <span class="xref">RestEase.ApiException</span>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1252,12 +1322,15 @@
       <tr>
         <td><span class="xref">RestEase.ApiException</span></td>
         <td><span class="parametername">exception</span></td>
-        <td></td>
+        <td><p>The exception instance to extract an error from.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TError</span></td>
         <td><span class="parametername">error</span></td>
-        <td></td>
+        <td><p>When this method returns, contains the extracted error, if one was found; otherwise,
+the default value for <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1272,7 +1345,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if an error was found; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1287,7 +1361,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">TError</span></td>
-        <td></td>
+        <td><p>The type of error to extract.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">exception</code> is <code>null</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>

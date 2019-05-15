@@ -13048,6 +13048,25 @@ references:
   fullName.vb: Cshrix.Extensions.ApiExceptionExtensions.TryGetError(Of TError)(RestEase.ApiException, ByRef TError)
   nameWithType: ApiExceptionExtensions.TryGetError<TError>(ApiException, out TError)
   nameWithType.vb: ApiExceptionExtensions.TryGetError(Of TError)(ApiException, ByRef TError)
+- uid: Cshrix.Extensions.ApiExtensions
+  name: ApiExtensions
+  href: api/Cshrix.Extensions.ApiExtensions.html
+  commentId: T:Cshrix.Extensions.ApiExtensions
+  fullName: Cshrix.Extensions.ApiExtensions
+  nameWithType: ApiExtensions
+- uid: Cshrix.Extensions.ApiExtensions.SetBearerToken(Cshrix.IApi,System.String)
+  name: SetBearerToken(IApi, String)
+  href: api/Cshrix.Extensions.ApiExtensions.html#Cshrix_Extensions_ApiExtensions_SetBearerToken_Cshrix_IApi_System_String_
+  commentId: M:Cshrix.Extensions.ApiExtensions.SetBearerToken(Cshrix.IApi,System.String)
+  fullName: Cshrix.Extensions.ApiExtensions.SetBearerToken(Cshrix.IApi, System.String)
+  nameWithType: ApiExtensions.SetBearerToken(IApi, String)
+- uid: Cshrix.Extensions.ApiExtensions.SetBearerToken*
+  name: SetBearerToken
+  href: api/Cshrix.Extensions.ApiExtensions.html#Cshrix_Extensions_ApiExtensions_SetBearerToken_
+  commentId: Overload:Cshrix.Extensions.ApiExtensions.SetBearerToken
+  isSpec: "True"
+  fullName: Cshrix.Extensions.ApiExtensions.SetBearerToken
+  nameWithType: ApiExtensions.SetBearerToken
 - uid: Cshrix.Extensions.DateTimeExtensions
   name: DateTimeExtensions
   href: api/Cshrix.Extensions.DateTimeExtensions.html
@@ -13326,19 +13345,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.RequestOpenIdTokenAsync
   nameWithType: MatrixClientServerApiExtensions.RequestOpenIdTokenAsync
-- uid: Cshrix.Extensions.MatrixClientServerApiExtensions.SetBearerToken(Cshrix.IMatrixClientServerApi,System.String)
-  name: SetBearerToken(IMatrixClientServerApi, String)
-  href: api/Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_SetBearerToken_Cshrix_IMatrixClientServerApi_System_String_
-  commentId: M:Cshrix.Extensions.MatrixClientServerApiExtensions.SetBearerToken(Cshrix.IMatrixClientServerApi,System.String)
-  fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.SetBearerToken(Cshrix.IMatrixClientServerApi, System.String)
-  nameWithType: MatrixClientServerApiExtensions.SetBearerToken(IMatrixClientServerApi, String)
-- uid: Cshrix.Extensions.MatrixClientServerApiExtensions.SetBearerToken*
-  name: SetBearerToken
-  href: api/Cshrix.Extensions.MatrixClientServerApiExtensions.html#Cshrix_Extensions_MatrixClientServerApiExtensions_SetBearerToken_
-  commentId: Overload:Cshrix.Extensions.MatrixClientServerApiExtensions.SetBearerToken
-  isSpec: "True"
-  fullName: Cshrix.Extensions.MatrixClientServerApiExtensions.SetBearerToken
-  nameWithType: MatrixClientServerApiExtensions.SetBearerToken
 - uid: Cshrix.Extensions.ResponseExtensions
   name: ResponseExtensions
   href: api/Cshrix.Extensions.ResponseExtensions.html
@@ -13395,6 +13401,64 @@ references:
   fullName.vb: Cshrix.Extensions.ResponseExtensions.TryGetError(Of T, TError)(RestEase.Response(Of T), ByRef TError)
   nameWithType: ResponseExtensions.TryGetError<T, TError>(Response<T>, out TError)
   nameWithType.vb: ResponseExtensions.TryGetError(Of T, TError)(Response(Of T), ByRef TError)
+- uid: Cshrix.IApi
+  name: IApi
+  href: api/Cshrix.IApi.html
+  commentId: T:Cshrix.IApi
+  fullName: Cshrix.IApi
+  nameWithType: IApi
+- uid: Cshrix.IApi.ApiVersion
+  name: ApiVersion
+  href: api/Cshrix.IApi.html#Cshrix_IApi_ApiVersion
+  commentId: P:Cshrix.IApi.ApiVersion
+  fullName: Cshrix.IApi.ApiVersion
+  nameWithType: IApi.ApiVersion
+- uid: Cshrix.IApi.ApiVersion*
+  name: ApiVersion
+  href: api/Cshrix.IApi.html#Cshrix_IApi_ApiVersion_
+  commentId: Overload:Cshrix.IApi.ApiVersion
+  isSpec: "True"
+  fullName: Cshrix.IApi.ApiVersion
+  nameWithType: IApi.ApiVersion
+- uid: Cshrix.IApi.Authorization
+  name: Authorization
+  href: api/Cshrix.IApi.html#Cshrix_IApi_Authorization
+  commentId: P:Cshrix.IApi.Authorization
+  fullName: Cshrix.IApi.Authorization
+  nameWithType: IApi.Authorization
+- uid: Cshrix.IApi.Authorization*
+  name: Authorization
+  href: api/Cshrix.IApi.html#Cshrix_IApi_Authorization_
+  commentId: Overload:Cshrix.IApi.Authorization
+  isSpec: "True"
+  fullName: Cshrix.IApi.Authorization
+  nameWithType: IApi.Authorization
+- uid: Cshrix.IApi.UserAgent
+  name: UserAgent
+  href: api/Cshrix.IApi.html#Cshrix_IApi_UserAgent
+  commentId: P:Cshrix.IApi.UserAgent
+  fullName: Cshrix.IApi.UserAgent
+  nameWithType: IApi.UserAgent
+- uid: Cshrix.IApi.UserAgent*
+  name: UserAgent
+  href: api/Cshrix.IApi.html#Cshrix_IApi_UserAgent_
+  commentId: Overload:Cshrix.IApi.UserAgent
+  isSpec: "True"
+  fullName: Cshrix.IApi.UserAgent
+  nameWithType: IApi.UserAgent
+- uid: Cshrix.IApi.UserId
+  name: UserId
+  href: api/Cshrix.IApi.html#Cshrix_IApi_UserId
+  commentId: P:Cshrix.IApi.UserId
+  fullName: Cshrix.IApi.UserId
+  nameWithType: IApi.UserId
+- uid: Cshrix.IApi.UserId*
+  name: UserId
+  href: api/Cshrix.IApi.html#Cshrix_IApi_UserId_
+  commentId: Overload:Cshrix.IApi.UserId
+  isSpec: "True"
+  fullName: Cshrix.IApi.UserId
+  nameWithType: IApi.UserId
 - uid: Cshrix.IMatrixClient
   name: IMatrixClient
   href: api/Cshrix.IMatrixClient.html
@@ -13501,32 +13565,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.AddThirdPartyIdentifierAsync
   nameWithType: IMatrixClientServerApi.AddThirdPartyIdentifierAsync
-- uid: Cshrix.IMatrixClientServerApi.ApiVersion
-  name: ApiVersion
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_ApiVersion
-  commentId: P:Cshrix.IMatrixClientServerApi.ApiVersion
-  fullName: Cshrix.IMatrixClientServerApi.ApiVersion
-  nameWithType: IMatrixClientServerApi.ApiVersion
-- uid: Cshrix.IMatrixClientServerApi.ApiVersion*
-  name: ApiVersion
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_ApiVersion_
-  commentId: Overload:Cshrix.IMatrixClientServerApi.ApiVersion
-  isSpec: "True"
-  fullName: Cshrix.IMatrixClientServerApi.ApiVersion
-  nameWithType: IMatrixClientServerApi.ApiVersion
-- uid: Cshrix.IMatrixClientServerApi.Authorization
-  name: Authorization
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_Authorization
-  commentId: P:Cshrix.IMatrixClientServerApi.Authorization
-  fullName: Cshrix.IMatrixClientServerApi.Authorization
-  nameWithType: IMatrixClientServerApi.Authorization
-- uid: Cshrix.IMatrixClientServerApi.Authorization*
-  name: Authorization
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_Authorization_
-  commentId: Overload:Cshrix.IMatrixClientServerApi.Authorization
-  isSpec: "True"
-  fullName: Cshrix.IMatrixClientServerApi.Authorization
-  nameWithType: IMatrixClientServerApi.Authorization
 - uid: Cshrix.IMatrixClientServerApi.BanAsync(System.String,Cshrix.Data.Reason)
   name: BanAsync(String, Reason)
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_BanAsync_System_String_Cshrix_Data_Reason_
@@ -14697,32 +14735,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.UploadFilterAsync
   nameWithType: IMatrixClientServerApi.UploadFilterAsync
-- uid: Cshrix.IMatrixClientServerApi.UserAgent
-  name: UserAgent
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_UserAgent
-  commentId: P:Cshrix.IMatrixClientServerApi.UserAgent
-  fullName: Cshrix.IMatrixClientServerApi.UserAgent
-  nameWithType: IMatrixClientServerApi.UserAgent
-- uid: Cshrix.IMatrixClientServerApi.UserAgent*
-  name: UserAgent
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_UserAgent_
-  commentId: Overload:Cshrix.IMatrixClientServerApi.UserAgent
-  isSpec: "True"
-  fullName: Cshrix.IMatrixClientServerApi.UserAgent
-  nameWithType: IMatrixClientServerApi.UserAgent
-- uid: Cshrix.IMatrixClientServerApi.UserId
-  name: UserId
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_UserId
-  commentId: P:Cshrix.IMatrixClientServerApi.UserId
-  fullName: Cshrix.IMatrixClientServerApi.UserId
-  nameWithType: IMatrixClientServerApi.UserId
-- uid: Cshrix.IMatrixClientServerApi.UserId*
-  name: UserId
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_UserId_
-  commentId: Overload:Cshrix.IMatrixClientServerApi.UserId
-  isSpec: "True"
-  fullName: Cshrix.IMatrixClientServerApi.UserId
-  nameWithType: IMatrixClientServerApi.UserId
 - uid: Cshrix.IMatrixClientServerApi.WhoAmIAsync
   name: WhoAmIAsync()
   href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_WhoAmIAsync
@@ -14736,19 +14748,25 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.WhoAmIAsync
   nameWithType: IMatrixClientServerApi.WhoAmIAsync
-- uid: Cshrix.IMatrixClientServerApi.WhoisAsync(Cshrix.Data.UserId)
+- uid: Cshrix.ISynapseAdminApi
+  name: ISynapseAdminApi
+  href: api/Cshrix.ISynapseAdminApi.html
+  commentId: T:Cshrix.ISynapseAdminApi
+  fullName: Cshrix.ISynapseAdminApi
+  nameWithType: ISynapseAdminApi
+- uid: Cshrix.ISynapseAdminApi.WhoisAsync(Cshrix.Data.UserId)
   name: WhoisAsync(UserId)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_WhoisAsync_Cshrix_Data_UserId_
-  commentId: M:Cshrix.IMatrixClientServerApi.WhoisAsync(Cshrix.Data.UserId)
-  fullName: Cshrix.IMatrixClientServerApi.WhoisAsync(Cshrix.Data.UserId)
-  nameWithType: IMatrixClientServerApi.WhoisAsync(UserId)
-- uid: Cshrix.IMatrixClientServerApi.WhoisAsync*
+  href: api/Cshrix.ISynapseAdminApi.html#Cshrix_ISynapseAdminApi_WhoisAsync_Cshrix_Data_UserId_
+  commentId: M:Cshrix.ISynapseAdminApi.WhoisAsync(Cshrix.Data.UserId)
+  fullName: Cshrix.ISynapseAdminApi.WhoisAsync(Cshrix.Data.UserId)
+  nameWithType: ISynapseAdminApi.WhoisAsync(UserId)
+- uid: Cshrix.ISynapseAdminApi.WhoisAsync*
   name: WhoisAsync
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_WhoisAsync_
-  commentId: Overload:Cshrix.IMatrixClientServerApi.WhoisAsync
+  href: api/Cshrix.ISynapseAdminApi.html#Cshrix_ISynapseAdminApi_WhoisAsync_
+  commentId: Overload:Cshrix.ISynapseAdminApi.WhoisAsync
   isSpec: "True"
-  fullName: Cshrix.IMatrixClientServerApi.WhoisAsync
-  nameWithType: IMatrixClientServerApi.WhoisAsync
+  fullName: Cshrix.ISynapseAdminApi.WhoisAsync
+  nameWithType: ISynapseAdminApi.WhoisAsync
 - uid: Cshrix.IWellKnownApi
   name: IWellKnownApi
   href: api/Cshrix.IWellKnownApi.html
