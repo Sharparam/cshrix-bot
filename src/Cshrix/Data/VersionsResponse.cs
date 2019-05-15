@@ -13,18 +13,36 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains the list of versions supported by the server.
+    /// </summary>
     public readonly struct VersionsResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VersionsResponse" /> structure.
+        /// </summary>
+        /// <param name="versions">Supported versions.</param>
         public VersionsResponse(IEnumerable<string> versions)
             : this(versions.ToList().AsReadOnly())
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VersionsResponse" /> structure.
+        /// </summary>
+        /// <param name="versions">Supported versions.</param>
         [JsonConstructor]
         public VersionsResponse(IReadOnlyCollection<string> versions)
             : this() =>
             Versions = versions;
 
+        /// <summary>
+        /// Gets a collection of versions supported by the server.
+        /// </summary>
+        /// <remarks>
+        /// These can be used to set the <see cref="IMatrixClientServerApi.ApiVersion" /> property on
+        /// <see cref="IMatrixClientServerApi" />.
+        /// </remarks>
         [JsonProperty("versions")]
         public IReadOnlyCollection<string> Versions { get; }
     }
