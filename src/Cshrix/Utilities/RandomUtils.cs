@@ -1,4 +1,4 @@
-// <copyright file="RandomHelpers.cs">
+// <copyright file="RandomUtils.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public

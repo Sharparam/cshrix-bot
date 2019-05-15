@@ -1,4 +1,4 @@
-// <copyright file="EnumHelpers.cs">
+// <copyright file="EnumUtils.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
