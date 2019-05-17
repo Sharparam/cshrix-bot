@@ -19,10 +19,10 @@ namespace Cshrix.Data
     /// <summary>
     /// Specifies a filter for room events in search APIs.
     /// </summary>
-    public readonly struct RoomEventFilter
+    public sealed class RoomEventFilter : EventFilter
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RoomEventFilter" /> structure.
+        /// Initializes a new instance of the <see cref="RoomEventFilter" /> class.
         /// </summary>
         /// <param name="limit">Maximum number of events to return.</param>
         /// <param name="types">Event types to include, or <c>null</c> to include all.</param>
@@ -57,7 +57,7 @@ namespace Cshrix.Data
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RoomEventFilter" /> structure.
+        /// Initializes a new instance of the <see cref="RoomEventFilter" /> class.
         /// </summary>
         /// <param name="limit">Maximum number of events to return.</param>
         /// <param name="types">Event types to include, or <c>null</c> to include all.</param>
@@ -80,73 +80,12 @@ namespace Cshrix.Data
             [CanBeNull] IReadOnlyCollection<string> rooms = null,
             [CanBeNull] IReadOnlyCollection<string> notRooms = null,
             bool containsUrl = false)
-            : this()
+            : base(limit, types, notTypes, senders, notSenders)
         {
-            Limit = limit;
-            Types = types;
-            NotTypes = notTypes;
-            Senders = senders;
-            NotSenders = notSenders;
             Rooms = rooms;
             NotRooms = notRooms;
             ContainsUrl = containsUrl;
         }
-
-        /// <summary>
-        /// Gets the maximum number of events to return.
-        /// </summary>
-        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Limit { get; }
-
-        /// <summary>
-        /// Gets a collection of types, including only events whose type is present in this collection.
-        /// </summary>
-        /// <remarks>
-        /// If this is <c>null</c>, all types are included.
-        /// An asterisk (<c>*</c>) can be used as a wildcard to match any sequence of characters.
-        /// </remarks>
-        [JsonProperty(
-            "types",
-            NullValueHandling = NullValueHandling.Ignore,
-            DefaultValueHandling = DefaultValueHandling.Ignore)]
-        [CanBeNull]
-        public IReadOnlyCollection<string> Types { get; }
-
-        /// <summary>
-        /// Gets a collection of event types, excluding any events with those types.
-        /// </summary>
-        /// <remarks>
-        /// If this is <c>null</c>, no types are excluded.
-        /// An asterisk (<c>*</c>) can be used as a wildcard to match any sequence of characters.
-        /// </remarks>
-        [JsonProperty(
-            "not_types",
-            NullValueHandling = NullValueHandling.Ignore,
-            DefaultValueHandling = DefaultValueHandling.Ignore)]
-        [CanBeNull]
-        public IReadOnlyCollection<string> NotTypes { get; }
-
-        /// <summary>
-        /// Gets a collection of user IDs, including only events sent by those user IDs.
-        /// </summary>
-        /// <remarks>If this is <c>null</c>, all senders are included.</remarks>
-        [JsonProperty(
-            "senders",
-            NullValueHandling = NullValueHandling.Ignore,
-            DefaultValueHandling = DefaultValueHandling.Ignore)]
-        [CanBeNull]
-        public IReadOnlyCollection<UserId> Senders { get; }
-
-        /// <summary>
-        /// Gets a collection of user IDs, excluding any events sent by those user IDs.
-        /// </summary>
-        /// <remarks>If this is <c>null</c>, no senders are excluded.</remarks>
-        [JsonProperty(
-            "not_senders",
-            NullValueHandling = NullValueHandling.Ignore,
-            DefaultValueHandling = DefaultValueHandling.Ignore)]
-        [CanBeNull]
-        public IReadOnlyCollection<UserId> NotSenders { get; }
 
         /// <summary>
         /// Gets a collection of room IDs, including only events from those rooms.

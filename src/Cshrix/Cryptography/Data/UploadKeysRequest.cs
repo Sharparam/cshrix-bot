@@ -6,12 +6,12 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data
+namespace Cshrix.Cryptography.Data
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    using Devices;
+    using Cshrix.Data.Devices;
 
     using JetBrains.Annotations;
 

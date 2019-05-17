@@ -6,10 +6,8 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-namespace Cshrix.Data
+namespace Cshrix.Data.Authentication
 {
-    using Authentication;
-
     using Newtonsoft.Json;
 
     public readonly struct LoginFlow

@@ -10,6 +10,8 @@ namespace Cshrix.Data.Search
 {
     using System.ComponentModel;
 
+    using JetBrains.Annotations;
+
     using Newtonsoft.Json;
 
     /// <summary>
@@ -36,7 +38,7 @@ namespace Cshrix.Data.Search
         public SearchCriteria(
             string searchTerm,
             SearchKeys? keys = null,
-            RoomEventFilter? filter = null,
+            [CanBeNull] RoomEventFilter filter = null,
             SearchOrdering ordering = DefaultOrdering,
             SearchContextConfiguration? contextConfiguration = null,
             bool includeState = false,
@@ -71,7 +73,8 @@ namespace Cshrix.Data.Search
             "filter",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public RoomEventFilter? Filter { get; }
+        [CanBeNull]
+        public RoomEventFilter Filter { get; }
 
         /// <summary>
         /// Gets the ordering to apply to search results.

@@ -15,13 +15,26 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains the result of a whois request.
+    /// </summary>
     public readonly struct WhoisResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhoisResponse" /> structure.
+        /// </summary>
+        /// <param name="userId">The Matrix user ID of the user.</param>
+        /// <param name="devices">The user's devices.</param>
         public WhoisResponse(UserId userId, IDictionary<string, DeviceInfo> devices)
             : this(userId, (IReadOnlyDictionary<string, DeviceInfo>)new ReadOnlyDictionary<string, DeviceInfo>(devices))
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhoisResponse" /> structure.
+        /// </summary>
+        /// <param name="userId">The Matrix user ID of the user.</param>
+        /// <param name="devices">The user's devices.</param>
         [JsonConstructor]
         public WhoisResponse(UserId userId, IReadOnlyDictionary<string, DeviceInfo> devices)
             : this()
@@ -30,9 +43,15 @@ namespace Cshrix.Data
             Devices = devices;
         }
 
+        /// <summary>
+        /// Gets the Matrix user ID of the user.
+        /// </summary>
         [JsonProperty("user_id")]
         public UserId UserId { get; }
 
+        /// <summary>
+        /// Gets a dictionary of the user's devices.
+        /// </summary>
         [JsonProperty("devices")]
         public IReadOnlyDictionary<string, DeviceInfo> Devices { get; }
     }

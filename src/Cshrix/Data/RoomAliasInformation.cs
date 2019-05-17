@@ -12,20 +12,34 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
-    public struct RoomAliasInformation
+    /// <summary>
+    /// Contains information about a room alias.
+    /// </summary>
+    public readonly struct RoomAliasInformation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomAliasInformation" /> structure.
+        /// </summary>
+        /// <param name="roomId">The room ID for the alias.</param>
+        /// <param name="servers">A collection of servers that are aware of the alias.</param>
         [JsonConstructor]
-        public RoomAliasInformation(string roomId, IReadOnlyCollection<string> servers)
+        public RoomAliasInformation(string roomId, IReadOnlyCollection<ServerName> servers)
             : this()
         {
             RoomId = roomId;
             Servers = servers;
         }
 
+        /// <summary>
+        /// Gets the room ID for the alias.
+        /// </summary>
         [JsonProperty("room_id")]
         public string RoomId { get; }
 
+        /// <summary>
+        /// Gets a collection of servers that are aware of the room alias.
+        /// </summary>
         [JsonProperty("servers")]
-        public IReadOnlyCollection<string> Servers { get; }
+        public IReadOnlyCollection<ServerName> Servers { get; }
     }
 }

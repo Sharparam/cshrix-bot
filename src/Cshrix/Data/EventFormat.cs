@@ -13,12 +13,21 @@ namespace Cshrix.Data
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Specifies a format for events returned from search/filter APIs.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum EventFormat
     {
+        /// <summary>
+        /// A format suitable for clients.
+        /// </summary>
         [EnumMember(Value = "client")]
         Client,
 
+        /// <summary>
+        /// A format that returns the events in their raw form, as received over federation.
+        /// </summary>
         [EnumMember(Value = "federation")]
         Federation
     }

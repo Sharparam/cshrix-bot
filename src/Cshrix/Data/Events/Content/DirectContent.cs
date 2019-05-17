@@ -13,8 +13,15 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Specifies rooms that are direct messaging rooms.
+    /// </summary>
     public sealed class DirectContent : EventContent
     {
+        /// <summary>
+        /// Gets the direct messaging room IDs for a specific user ID.
+        /// </summary>
+        /// <param name="key">The user ID to look up.</param>
         public IReadOnlyCollection<string> this[UserId key]
         {
             get
@@ -24,12 +31,34 @@ namespace Cshrix.Data.Events.Content
             }
         }
 
+        /// <summary>
+        /// Gets the number of keys (user IDs).
+        /// </summary>
         public int Count => Keys.Count();
 
+        /// <summary>
+        /// Gets all user ID keys.
+        /// </summary>
         public IEnumerable<UserId> Keys => GetValidKeys();
 
+        /// <summary>
+        /// Checks whether the specified user ID exists in the data.
+        /// </summary>
+        /// <param name="key">The user ID to check for.</param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="key" /> exists among the user IDs; otherwise, <c>false</c>.
+        /// </returns>
         public bool ContainsUser(UserId key) => AdditionalData.ContainsKey(key);
 
+        /// <summary>
+        /// Attempts to get a collection of direct messaging room IDs for the specified user ID.
+        /// </summary>
+        /// <param name="key">The user ID to get direct messaging room IDs for.</param>
+        /// <param name="values">
+        /// When this method returns, contains the room IDs that are considered direct messaging rooms, if the user ID
+        /// was found; otherwise, the default value for <see cref="IReadOnlyCollection{String}" />.
+        /// </param>
+        /// <returns><c>true</c> if the user ID existed in the data; otherwise, <c>false</c>.</returns>
         public bool TryGetData(UserId key, out IReadOnlyCollection<string> values)
         {
             if (!AdditionalData.TryGetValue(key, out var jToken))
@@ -50,6 +79,10 @@ namespace Cshrix.Data.Events.Content
             }
         }
 
+        /// <summary>
+        /// Get all keys from the data that are valid user IDs.
+        /// </summary>
+        /// <returns>A list of user IDs.</returns>
         private IEnumerable<UserId> GetValidKeys()
         {
             var validKeys = new List<UserId>();

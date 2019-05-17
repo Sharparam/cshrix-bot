@@ -12,13 +12,23 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information about users joined to a room.
+    /// </summary>
     public readonly struct JoinedMembersResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JoinedMembersResponse" /> structure.
+        /// </summary>
+        /// <param name="joined">A dictionary mapping user IDs to their profile information.</param>
         [JsonConstructor]
         public JoinedMembersResponse(IReadOnlyDictionary<UserId, Profile> joined)
             : this() =>
             Joined = joined;
 
+        /// <summary>
+        /// Gets a dictionary mapping user IDs to their profile information.
+        /// </summary>
         [JsonProperty("joined")]
         public IReadOnlyDictionary<UserId, Profile> Joined { get; }
     }

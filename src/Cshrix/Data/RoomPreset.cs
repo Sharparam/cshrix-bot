@@ -13,15 +13,28 @@ namespace Cshrix.Data
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Identifies a preset configuration when creating rooms.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum RoomPreset
     {
-        [EnumMember(Value = "private_chat")]
-        PrivateChat,
-
+        /// <summary>
+        /// The room is available for anyone to join, all history is available to joined users.
+        /// </summary>
         [EnumMember(Value = "public_chat")]
         PublicChat,
 
+        /// <summary>
+        /// The room is invite only, all history is available to joined users.
+        /// </summary>
+        [EnumMember(Value = "private_chat")]
+        PrivateChat,
+
+        /// <summary>
+        /// The room is invite only, all history is available to joined users.
+        /// Additionally, all invitees are given the same power level as the room creator.
+        /// </summary>
         [EnumMember(Value = "trusted_private_chat")]
         TrustedPrivateChat
     }

@@ -17,6 +17,7 @@ namespace Cshrix
     using System.Threading.Tasks;
 
     using Cryptography;
+    using Cryptography.Data;
 
     using Data;
     using Data.Authentication;

@@ -12,6 +12,7 @@ namespace Cshrix.Serialization
     using System.Collections.Generic;
 
     using Cryptography;
+    using Cryptography.Data;
 
     using Data;
 
