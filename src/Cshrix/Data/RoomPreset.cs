@@ -21,18 +21,19 @@ namespace Cshrix.Data
     {
         /// <summary>
         /// The room is available for anyone to join, all history is available to joined users.
+        /// Guests users are not allowed to join.
         /// </summary>
         [EnumMember(Value = "public_chat")]
         PublicChat,
 
         /// <summary>
-        /// The room is invite only, all history is available to joined users.
+        /// The room is invite only, all history is available to joined users. Guest users are allowed to join.
         /// </summary>
         [EnumMember(Value = "private_chat")]
         PrivateChat,
 
         /// <summary>
-        /// The room is invite only, all history is available to joined users.
+        /// The room is invite only, all history is available to joined users. Guest users are allowed to join.
         /// Additionally, all invitees are given the same power level as the room creator.
         /// </summary>
         [EnumMember(Value = "trusted_private_chat")]
