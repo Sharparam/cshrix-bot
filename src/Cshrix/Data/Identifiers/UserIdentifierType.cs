@@ -13,15 +13,27 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Available identification types.
+    /// </summary>
     [JsonConverter(typeof(StringConverter))]
     public enum UserIdentifierType
     {
+        /// <summary>
+        /// The user is identified by their Matrix ID.
+        /// </summary>
         [EnumMember(Value = "user")]
         User,
 
+        /// <summary>
+        /// The user is identified by a third-party identifier in canonicalized form.
+        /// </summary>
         [EnumMember(Value = "thirdparty")]
         ThirdParty,
 
+        /// <summary>
+        /// The user is identified by a phone number.
+        /// </summary>
         [EnumMember(Value = "phone")]
         Phone
     }

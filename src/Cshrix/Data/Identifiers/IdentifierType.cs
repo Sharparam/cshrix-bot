@@ -8,12 +8,24 @@
 
 namespace Cshrix.Data
 {
+    /// <summary>
+    /// Available types of identifiers.
+    /// </summary>
     public enum IdentifierType
     {
+        /// <summary>
+        /// A user ID. These are in the form of <c>@{localpart}:{server}</c>.
+        /// </summary>
         User,
 
+        /// <summary>
+        /// A group ID. These are in the form of <c>+{localpart}:{server}</c>.
+        /// </summary>
         Group,
 
+        /// <summary>
+        /// An alias for a room. These are in the form of <c>#{localpart}:{server}</c>.
+        /// </summary>
         RoomAlias
     }
 }

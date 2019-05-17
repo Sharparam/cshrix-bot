@@ -16,6 +16,8 @@ namespace Cshrix.Data
 
     using Serialization;
 
+    /// <inheritdoc cref="Identifier" />
+    /// <inheritdoc cref="IEquatable{RoomAlias}" />
     /// <summary>
     /// Represents an alias for a room.
     /// </summary>

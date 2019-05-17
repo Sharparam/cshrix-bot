@@ -10,8 +10,14 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Identification information for a user.
+    /// </summary>
     public interface IUserIdentifier
     {
+        /// <summary>
+        /// Gets the type of this identification.
+        /// </summary>
         [JsonProperty("type")]
         UserIdentifierType Type { get; }
     }

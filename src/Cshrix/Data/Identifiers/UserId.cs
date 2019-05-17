@@ -19,52 +19,64 @@ namespace Cshrix.Data
     /// <summary>
     /// The MXID of a user on Matrix.
     /// </summary>
+    /// <remarks>User IDs are in the form of <c>@localpart:domain.tld</c>.</remarks>
     [JsonConverter(typeof(UserIdConverter))]
     public sealed class UserId : Identifier, IEquatable<UserId>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserId" /> class.
         /// </summary>
-        /// <param name="localpart">The localpart of the user ID (between initial <c>@</c> and first <c>:</c>.</param>
+        /// <param name="localpart">The localpart of the user ID (between initial <c>@</c> and first <c>:</c>).</param>
         /// <param name="domain">The domain of the user ID.</param>
         public UserId(string localpart, string domain)
             : this(localpart, new ServerName(domain))
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserId" /> class.
+        /// </summary>
+        /// <param name="localpart">The localpart of the user ID (between initial <c>@</c> and first <c>:</c>).</param>
+        /// <param name="domain">The domain of the user ID.</param>
         public UserId(string localpart, ServerName domain)
             : base(IdentifierType.User, SigilMapping[IdentifierType.User], localpart, domain)
         {
         }
 
+        /// <summary>
+        /// Converts a string into a user ID.
+        /// </summary>
+        /// <param name="str">The string to convert.</param>
+        /// <returns>The converted <see cref="UserId" />.</returns>
         public static explicit operator UserId(string str) => Parse(str);
 
-        public static UserId Parse(string id)
-        {
-            var identifier = ParseId(id);
+        /// <summary>
+        /// Parses an identifier string into a user ID.
+        /// </summary>
+        /// <param name="id">The identifier to parse.</param>
+        /// <returns>An instance of <see cref="UserId" />.</returns>
+        public static UserId Parse(string id) => Parse<UserId>(id);
 
-            if (!(identifier is UserId userId))
-            {
-                throw new ArgumentException("ID must be of user type", nameof(id));
-            }
+        /// <summary>
+        /// Attempts to parse an identifier string into a user ID.
+        /// </summary>
+        /// <param name="id">The identifier to parse.</param>
+        /// <param name="value">
+        /// When this method returns, contains the parsed value;
+        /// otherwise, the default value for <see cref="UserId" />.
+        /// </param>
+        /// <returns><c>true</c> if the identifier was parsed successfully; otherwise, <c>false</c>.</returns>
+        public static bool TryParse(string id, out UserId value) => TryParse<UserId>(id, out value);
 
-            return userId;
-        }
-
-        public static bool TryParse(string id, out UserId value)
-        {
-            try
-            {
-                value = Parse(id);
-                return true;
-            }
-            catch (ArgumentException)
-            {
-                value = default;
-                return false;
-            }
-        }
-
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
+        /// otherwise, <c>false</c>.
+        /// </returns>
         public bool Equals(UserId other) => Equals((Identifier)other);
     }
 }
