@@ -10,8 +10,16 @@ namespace Cshrix.Data.Search
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Describes a search query for users.
+    /// </summary>
     public readonly struct UserSearchQuery
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserSearchQuery" /> structure.
+        /// </summary>
+        /// <param name="searchTerm">The term to search for.</param>
+        /// <param name="limit">The maximum number of results to return.</param>
         [JsonConstructor]
         public UserSearchQuery(string searchTerm, int limit = 10)
             : this()
@@ -20,10 +28,16 @@ namespace Cshrix.Data.Search
             Limit = limit;
         }
 
-        [JsonProperty("limit")]
-        public int Limit { get; }
-
+        /// <summary>
+        /// Gets the term to search for.
+        /// </summary>
         [JsonProperty("search_term")]
         public string SearchTerm { get; }
+
+        /// <summary>
+        /// Gets the maximum number of results to return.
+        /// </summary>
+        [JsonProperty("limit")]
+        public int Limit { get; }
     }
 }

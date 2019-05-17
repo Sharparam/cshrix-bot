@@ -15,21 +15,39 @@ namespace Cshrix.Data.Search
 
     using Serialization;
 
+    /// <summary>
+    /// Different keys that can be searched against in events.
+    /// </summary>
     [Flags]
     [JsonConverter(typeof(StringArrayFlagsEnumConverter<SearchKeys>))]
     public enum SearchKeys
     {
+        /// <summary>
+        /// Don't search any keys.
+        /// </summary>
         None = 0,
 
+        /// <summary>
+        /// Search in the body of the event content.
+        /// </summary>
         [EnumMember(Value = "content.body")]
         ContentBody = 1,
 
+        /// <summary>
+        /// Search in the name of the event content.
+        /// </summary>
         [EnumMember(Value = "content.name")]
         ContentName = 1 << 1,
 
+        /// <summary>
+        /// Search in the topic of the content.
+        /// </summary>
         [EnumMember(Value = "content.topic")]
         ContentTopic = 1 << 2,
 
+        /// <summary>
+        /// Search all fields.
+        /// </summary>
         All = ContentBody | ContentName | ContentTopic
     }
 }
