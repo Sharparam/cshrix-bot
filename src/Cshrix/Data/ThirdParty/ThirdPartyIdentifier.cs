@@ -14,28 +14,52 @@ namespace Cshrix.Data.ThirdParty
 
     using Serialization;
 
+    /// <summary>
+    /// Represents a third party identifier associated with a user account.
+    /// </summary>
     public readonly struct ThirdPartyIdentifier
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ThirdPartyIdentifier" /> structure.
+        /// </summary>
+        /// <param name="address">The 3PID address.</param>
+        /// <param name="medium">The medium of the 3PID.</param>
+        /// <param name="addedAt">The date and time at which the identifier was associated with the user.</param>
+        /// <param name="validatedAt">
+        /// The date and time at which the identifier was validated by the identity server.
+        /// </param>
         [JsonConstructor]
-        public ThirdPartyIdentifier(DateTimeOffset addedAt, string address, string medium, DateTimeOffset validatedAt)
+        public ThirdPartyIdentifier(string address, string medium, DateTimeOffset addedAt, DateTimeOffset validatedAt)
             : this()
         {
-            AddedAt = addedAt;
             Address = address;
             Medium = medium;
+            AddedAt = addedAt;
             ValidatedAt = validatedAt;
         }
 
+        /// <summary>
+        /// Gets the third party identifier address.
+        /// </summary>
+        [JsonProperty("address")]
+        public string Address { get; }
+
+        /// <summary>
+        /// Gets the medium of the third party identifier.
+        /// </summary>
+        [JsonProperty("medium")]
+        public string Medium { get; }
+
+        /// <summary>
+        /// Gets the date and time at which this identifier was associated with the user.
+        /// </summary>
         [JsonProperty("added_at")]
         [JsonConverter(typeof(UnixMillisecondDateTimeConverter))]
         public DateTimeOffset AddedAt { get; }
 
-        [JsonProperty("address")]
-        public string Address { get; }
-
-        [JsonProperty("medium")]
-        public string Medium { get; }
-
+        /// <summary>
+        /// Gets the date and time at which this identifier was validated by the identity server.
+        /// </summary>
         [JsonProperty("validated_at")]
         public DateTimeOffset ValidatedAt { get; }
     }

@@ -10,8 +10,16 @@ namespace Cshrix.Data.ThirdParty
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Details about a third party identifier to be removed.
+    /// </summary>
     public readonly struct ThirdPartyIdentifierDeletionRequest
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ThirdPartyIdentifierDeletionRequest" /> structure.
+        /// </summary>
+        /// <param name="address">The third party address being removed.</param>
+        /// <param name="medium">The medium of the third party identifier being removed.</param>
         [JsonConstructor]
         public ThirdPartyIdentifierDeletionRequest(string address, string medium)
             : this()
@@ -20,9 +28,15 @@ namespace Cshrix.Data.ThirdParty
             Medium = medium;
         }
 
+        /// <summary>
+        /// Gets the third party address being removed.
+        /// </summary>
         [JsonProperty("address")]
         public string Address { get; }
 
+        /// <summary>
+        /// Gets the medium of the third party identifier being removed.
+        /// </summary>
         [JsonProperty("medium")]
         public string Medium { get; }
     }

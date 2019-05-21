@@ -13,18 +13,32 @@ namespace Cshrix.Data.ThirdParty
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains the list of a user's third party identifiers.
+    /// </summary>
     public readonly struct ThirdPartyIdentifiersResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ThirdPartyIdentifiersResponse" /> structure.
+        /// </summary>
+        /// <param name="identifiers">A collection of identifiers for the account.</param>
         public ThirdPartyIdentifiersResponse(IEnumerable<ThirdPartyIdentifier> identifiers)
             : this(identifiers.ToList().AsReadOnly())
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ThirdPartyIdentifiersResponse" /> structure.
+        /// </summary>
+        /// <param name="identifiers">A collection of identifiers for the account.</param>
         [JsonConstructor]
         public ThirdPartyIdentifiersResponse(IReadOnlyCollection<ThirdPartyIdentifier> identifiers)
             : this() =>
             Identifiers = identifiers;
 
+        /// <summary>
+        /// Gets a collection of third party identifiers registered to the account.
+        /// </summary>
         [JsonProperty("threepids")]
         public IReadOnlyCollection<ThirdPartyIdentifier> Identifiers { get; }
     }

@@ -12,13 +12,24 @@ namespace Cshrix.Data.ThirdParty
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains signed third party data. Used to prove that a user owns a third party identity which has been invited
+    /// to a room.
+    /// </summary>
     public readonly struct SignedThirdPartyData
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignedThirdPartyData" /> structure.
+        /// </summary>
+        /// <param name="signed">Signed third party data.</param>
         [JsonConstructor]
         public SignedThirdPartyData([CanBeNull] SignedSenderData signed)
             : this() =>
             Signed = signed;
 
+        /// <summary>
+        /// Gets signed third party data.
+        /// </summary>
         [CanBeNull]
         [JsonProperty("third_party_signed")]
         public SignedSenderData Signed { get; }
