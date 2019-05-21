@@ -11,8 +11,6 @@ namespace Cshrix.Bot.Console
     using System;
     using System.Threading.Tasks;
 
-    using Configuration;
-
     using DependencyInjection;
 
     using Microsoft.Extensions.Configuration;
@@ -20,7 +18,6 @@ namespace Cshrix.Bot.Console
     using Microsoft.Extensions.Logging;
 
     using Serilog;
-    using Serilog.Formatting.Json;
 
     using ILogger = Microsoft.Extensions.Logging.ILogger;
 
