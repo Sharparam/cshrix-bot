@@ -10,7 +10,6 @@ namespace Cshrix.Tests.Data
 {
     using System.Collections.Generic;
 
-    using Cryptography;
     using Cryptography.Data;
 
     using Cshrix.Data;

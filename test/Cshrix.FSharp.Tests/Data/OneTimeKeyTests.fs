@@ -8,7 +8,7 @@
 
 module Cshrix.FSharp.Tests.Data.OneTimeKeyTests
 
-open Cshrix.Cryptography
+open Cshrix.Cryptography.Data
 open Cshrix.FSharp.Tests.Helpers
 
 open FsUnit
