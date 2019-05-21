@@ -15,18 +15,35 @@ namespace Cshrix.Data.Devices
 
     using Newtonsoft.Json;
 
-    public class DeleteDevicesRequest : AuthenticationContainer
+    /// <summary>
+    /// Specifies devices to delete.
+    /// </summary>
+    public sealed class DeleteDevicesRequest : AuthenticationContainer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteDevicesRequest" /> structure.
+        /// </summary>
+        /// <param name="devices">A collection of device IDs to delete.</param>
+        /// <param name="authentication">Data authenticating the user.</param>
         public DeleteDevicesRequest(IEnumerable<string> devices, SessionContainer authentication = null)
             : this(devices.ToList().AsReadOnly(), authentication)
         {
         }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteDevicesRequest" /> structure.
+        /// </summary>
+        /// <param name="devices">A collection of device IDs to delete.</param>
+        /// <param name="authentication">Data authenticating the user.</param>
         [JsonConstructor]
         public DeleteDevicesRequest(IReadOnlyCollection<string> devices, SessionContainer authentication = null)
             : base(authentication) =>
             Devices = devices;
 
+        /// <summary>
+        /// Gets a collection of device IDs to delete.
+        /// </summary>
         [JsonProperty("devices")]
         public IReadOnlyCollection<string> Devices { get; }
     }

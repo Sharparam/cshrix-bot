@@ -10,13 +10,23 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// A wrapper containing a <see cref="UserId" />.
+    /// </summary>
     public readonly struct UserIdContainer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserIdContainer" /> structure.
+        /// </summary>
+        /// <param name="userId">The <see cref="UserId" /> object.</param>
         [JsonConstructor]
         public UserIdContainer(UserId userId)
             : this() =>
             UserId = userId;
 
+        /// <summary>
+        /// The wrapped <see cref="UserId" /> object.
+        /// </summary>
         [JsonProperty("user_id")]
         public UserId UserId { get; }
     }

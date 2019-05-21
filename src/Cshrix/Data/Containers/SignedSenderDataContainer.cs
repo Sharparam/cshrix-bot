@@ -10,13 +10,23 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// A wrapper for <see cref="SignedData" />.
+    /// </summary>
     public readonly struct SignedSenderDataContainer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignedSenderDataContainer" /> structure.
+        /// </summary>
+        /// <param name="data">The <see cref="SignedData" /> object.</param>
         [JsonConstructor]
         public SignedSenderDataContainer(SignedData data)
             : this() =>
             Data = data;
 
+        /// <summary>
+        /// Gets the <see cref="SignedData" /> object.
+        /// </summary>
         [JsonProperty("signed")]
         public SignedData Data { get; }
     }

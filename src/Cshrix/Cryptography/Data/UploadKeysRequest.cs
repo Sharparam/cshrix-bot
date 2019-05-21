@@ -17,8 +17,16 @@ namespace Cshrix.Cryptography.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains encryption keys to upload to a homeserver.
+    /// </summary>
     public readonly struct UploadKeysRequest
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadKeysRequest" /> structure.
+        /// </summary>
+        /// <param name="deviceKeys">Identity keys for the current device.</param>
+        /// <param name="oneTimeKeys">One-time keys for "pre-key" messages.</param>
         public UploadKeysRequest(
             DeviceKeys? deviceKeys = null,
             [CanBeNull] IDictionary<string, object> oneTimeKeys = null)
@@ -30,6 +38,11 @@ namespace Cshrix.Cryptography.Data
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadKeysRequest" /> structure.
+        /// </summary>
+        /// <param name="deviceKeys">Identity keys for the current device.</param>
+        /// <param name="oneTimeKeys">One-time keys for "pre-key" messages.</param>
         [JsonConstructor]
         public UploadKeysRequest(
             DeviceKeys? deviceKeys = null,
@@ -40,9 +53,18 @@ namespace Cshrix.Cryptography.Data
             OneTimeKeys = oneTimeKeys;
         }
 
+        /// <summary>
+        /// Gets identity keys for the current device. May be <c>null</c> if no new identity keys are required.
+        /// </summary>
         [JsonProperty("device_keys", NullValueHandling = NullValueHandling.Ignore)]
         public DeviceKeys? DeviceKeys { get; }
 
+        /// <summary>
+        /// Gets a dictionary of one-time public keys for "pre-key" messages. The keys in the dict should be in the
+        /// format <c>{algorithm}:{key_id}</c>. The format of the dictionary value (the encryption key) is
+        /// determined by the key algorithm.
+        /// </summary>
+        /// <remarks>May be <c>null</c> if no new one-time keys are required.</remarks>
         [JsonProperty(
             "one_time_keys",
             NullValueHandling = NullValueHandling.Ignore,
