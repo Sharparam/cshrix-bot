@@ -116,6 +116,275 @@ references:
   commentId: F:Cshrix.Cryptography.Algorithm.Olm
   fullName: Cshrix.Cryptography.Algorithm.Olm
   nameWithType: Algorithm.Olm
+- uid: Cshrix.Cryptography.Data
+  name: Cshrix.Cryptography.Data
+  href: api/Cshrix.Cryptography.Data.html
+  commentId: N:Cshrix.Cryptography.Data
+  fullName: Cshrix.Cryptography.Data
+  nameWithType: Cshrix.Cryptography.Data
+- uid: Cshrix.Cryptography.Data.ClaimKeysRequest
+  name: ClaimKeysRequest
+  href: api/Cshrix.Cryptography.Data.ClaimKeysRequest.html
+  commentId: T:Cshrix.Cryptography.Data.ClaimKeysRequest
+  fullName: Cshrix.Cryptography.Data.ClaimKeysRequest
+  nameWithType: ClaimKeysRequest
+- uid: Cshrix.Cryptography.Data.ClaimKeysRequest.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}},System.Nullable{System.TimeSpan})
+  name: ClaimKeysRequest(IDictionary<UserId, IDictionary<String, String>>, Nullable<TimeSpan>)
+  href: api/Cshrix.Cryptography.Data.ClaimKeysRequest.html#Cshrix_Cryptography_Data_ClaimKeysRequest__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IDictionary_System_String_System_String___System_Nullable_System_TimeSpan__
+  commentId: M:Cshrix.Cryptography.Data.ClaimKeysRequest.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}},System.Nullable{System.TimeSpan})
+  name.vb: ClaimKeysRequest(IDictionary(Of UserId, IDictionary(Of String, String)), Nullable(Of TimeSpan))
+  fullName: Cshrix.Cryptography.Data.ClaimKeysRequest.ClaimKeysRequest(System.Collections.Generic.IDictionary<Cshrix.Data.UserId, System.Collections.Generic.IDictionary<System.String, System.String>>, System.Nullable<System.TimeSpan>)
+  fullName.vb: Cshrix.Cryptography.Data.ClaimKeysRequest.ClaimKeysRequest(System.Collections.Generic.IDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IDictionary(Of System.String, System.String)), System.Nullable(Of System.TimeSpan))
+  nameWithType: ClaimKeysRequest.ClaimKeysRequest(IDictionary<UserId, IDictionary<String, String>>, Nullable<TimeSpan>)
+  nameWithType.vb: ClaimKeysRequest.ClaimKeysRequest(IDictionary(Of UserId, IDictionary(Of String, String)), Nullable(Of TimeSpan))
+- uid: Cshrix.Cryptography.Data.ClaimKeysRequest.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.Nullable{System.TimeSpan})
+  name: ClaimKeysRequest(IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, String>>, Nullable<TimeSpan>)
+  href: api/Cshrix.Cryptography.Data.ClaimKeysRequest.html#Cshrix_Cryptography_Data_ClaimKeysRequest__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String___System_Nullable_System_TimeSpan__
+  commentId: M:Cshrix.Cryptography.Data.ClaimKeysRequest.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.Nullable{System.TimeSpan})
+  name.vb: ClaimKeysRequest(IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, String)), Nullable(Of TimeSpan))
+  fullName: Cshrix.Cryptography.Data.ClaimKeysRequest.ClaimKeysRequest(System.Collections.Generic.IReadOnlyDictionary<Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary<System.String, System.String>>, System.Nullable<System.TimeSpan>)
+  fullName.vb: Cshrix.Cryptography.Data.ClaimKeysRequest.ClaimKeysRequest(System.Collections.Generic.IReadOnlyDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.String)), System.Nullable(Of System.TimeSpan))
+  nameWithType: ClaimKeysRequest.ClaimKeysRequest(IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, String>>, Nullable<TimeSpan>)
+  nameWithType.vb: ClaimKeysRequest.ClaimKeysRequest(IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, String)), Nullable(Of TimeSpan))
+- uid: Cshrix.Cryptography.Data.ClaimKeysRequest.#ctor*
+  name: ClaimKeysRequest
+  href: api/Cshrix.Cryptography.Data.ClaimKeysRequest.html#Cshrix_Cryptography_Data_ClaimKeysRequest__ctor_
+  commentId: Overload:Cshrix.Cryptography.Data.ClaimKeysRequest.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.ClaimKeysRequest.ClaimKeysRequest
+  nameWithType: ClaimKeysRequest.ClaimKeysRequest
+- uid: Cshrix.Cryptography.Data.ClaimKeysRequest.OneTimeKeys
+  name: OneTimeKeys
+  href: api/Cshrix.Cryptography.Data.ClaimKeysRequest.html#Cshrix_Cryptography_Data_ClaimKeysRequest_OneTimeKeys
+  commentId: P:Cshrix.Cryptography.Data.ClaimKeysRequest.OneTimeKeys
+  fullName: Cshrix.Cryptography.Data.ClaimKeysRequest.OneTimeKeys
+  nameWithType: ClaimKeysRequest.OneTimeKeys
+- uid: Cshrix.Cryptography.Data.ClaimKeysRequest.OneTimeKeys*
+  name: OneTimeKeys
+  href: api/Cshrix.Cryptography.Data.ClaimKeysRequest.html#Cshrix_Cryptography_Data_ClaimKeysRequest_OneTimeKeys_
+  commentId: Overload:Cshrix.Cryptography.Data.ClaimKeysRequest.OneTimeKeys
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.ClaimKeysRequest.OneTimeKeys
+  nameWithType: ClaimKeysRequest.OneTimeKeys
+- uid: Cshrix.Cryptography.Data.ClaimKeysRequest.Timeout
+  name: Timeout
+  href: api/Cshrix.Cryptography.Data.ClaimKeysRequest.html#Cshrix_Cryptography_Data_ClaimKeysRequest_Timeout
+  commentId: P:Cshrix.Cryptography.Data.ClaimKeysRequest.Timeout
+  fullName: Cshrix.Cryptography.Data.ClaimKeysRequest.Timeout
+  nameWithType: ClaimKeysRequest.Timeout
+- uid: Cshrix.Cryptography.Data.ClaimKeysRequest.Timeout*
+  name: Timeout
+  href: api/Cshrix.Cryptography.Data.ClaimKeysRequest.html#Cshrix_Cryptography_Data_ClaimKeysRequest_Timeout_
+  commentId: Overload:Cshrix.Cryptography.Data.ClaimKeysRequest.Timeout
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.ClaimKeysRequest.Timeout
+  nameWithType: ClaimKeysRequest.Timeout
+- uid: Cshrix.Cryptography.Data.ClaimKeysResponse
+  name: ClaimKeysResponse
+  href: api/Cshrix.Cryptography.Data.ClaimKeysResponse.html
+  commentId: T:Cshrix.Cryptography.Data.ClaimKeysResponse
+  fullName: Cshrix.Cryptography.Data.ClaimKeysResponse
+  nameWithType: ClaimKeysResponse
+- uid: Cshrix.Cryptography.Data.ClaimKeysResponse.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,Cshrix.Cryptography.Data.OneTimeKey}},System.Collections.Generic.IDictionary{System.String,System.Object})
+  name: ClaimKeysResponse(IDictionary<UserId, IDictionary<String, OneTimeKey>>, IDictionary<String, Object>)
+  href: api/Cshrix.Cryptography.Data.ClaimKeysResponse.html#Cshrix_Cryptography_Data_ClaimKeysResponse__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IDictionary_System_String_Cshrix_Cryptography_Data_OneTimeKey___System_Collections_Generic_IDictionary_System_String_System_Object__
+  commentId: M:Cshrix.Cryptography.Data.ClaimKeysResponse.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,Cshrix.Cryptography.Data.OneTimeKey}},System.Collections.Generic.IDictionary{System.String,System.Object})
+  name.vb: ClaimKeysResponse(IDictionary(Of UserId, IDictionary(Of String, OneTimeKey)), IDictionary(Of String, Object))
+  fullName: Cshrix.Cryptography.Data.ClaimKeysResponse.ClaimKeysResponse(System.Collections.Generic.IDictionary<Cshrix.Data.UserId, System.Collections.Generic.IDictionary<System.String, Cshrix.Cryptography.Data.OneTimeKey>>, System.Collections.Generic.IDictionary<System.String, System.Object>)
+  fullName.vb: Cshrix.Cryptography.Data.ClaimKeysResponse.ClaimKeysResponse(System.Collections.Generic.IDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IDictionary(Of System.String, Cshrix.Cryptography.Data.OneTimeKey)), System.Collections.Generic.IDictionary(Of System.String, System.Object))
+  nameWithType: ClaimKeysResponse.ClaimKeysResponse(IDictionary<UserId, IDictionary<String, OneTimeKey>>, IDictionary<String, Object>)
+  nameWithType.vb: ClaimKeysResponse.ClaimKeysResponse(IDictionary(Of UserId, IDictionary(Of String, OneTimeKey)), IDictionary(Of String, Object))
+- uid: Cshrix.Cryptography.Data.ClaimKeysResponse.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Cryptography.Data.OneTimeKey}},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})
+  name: ClaimKeysResponse(IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, OneTimeKey>>, IReadOnlyDictionary<String, Object>)
+  href: api/Cshrix.Cryptography.Data.ClaimKeysResponse.html#Cshrix_Cryptography_Data_ClaimKeysResponse__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Cryptography_Data_OneTimeKey___System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__
+  commentId: M:Cshrix.Cryptography.Data.ClaimKeysResponse.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Cryptography.Data.OneTimeKey}},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})
+  name.vb: ClaimKeysResponse(IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, OneTimeKey)), IReadOnlyDictionary(Of String, Object))
+  fullName: Cshrix.Cryptography.Data.ClaimKeysResponse.ClaimKeysResponse(System.Collections.Generic.IReadOnlyDictionary<Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Cryptography.Data.OneTimeKey>>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Object>)
+  fullName.vb: Cshrix.Cryptography.Data.ClaimKeysResponse.ClaimKeysResponse(System.Collections.Generic.IReadOnlyDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Cryptography.Data.OneTimeKey)), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Object))
+  nameWithType: ClaimKeysResponse.ClaimKeysResponse(IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, OneTimeKey>>, IReadOnlyDictionary<String, Object>)
+  nameWithType.vb: ClaimKeysResponse.ClaimKeysResponse(IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, OneTimeKey)), IReadOnlyDictionary(Of String, Object))
+- uid: Cshrix.Cryptography.Data.ClaimKeysResponse.#ctor*
+  name: ClaimKeysResponse
+  href: api/Cshrix.Cryptography.Data.ClaimKeysResponse.html#Cshrix_Cryptography_Data_ClaimKeysResponse__ctor_
+  commentId: Overload:Cshrix.Cryptography.Data.ClaimKeysResponse.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.ClaimKeysResponse.ClaimKeysResponse
+  nameWithType: ClaimKeysResponse.ClaimKeysResponse
+- uid: Cshrix.Cryptography.Data.ClaimKeysResponse.Failures
+  name: Failures
+  href: api/Cshrix.Cryptography.Data.ClaimKeysResponse.html#Cshrix_Cryptography_Data_ClaimKeysResponse_Failures
+  commentId: P:Cshrix.Cryptography.Data.ClaimKeysResponse.Failures
+  fullName: Cshrix.Cryptography.Data.ClaimKeysResponse.Failures
+  nameWithType: ClaimKeysResponse.Failures
+- uid: Cshrix.Cryptography.Data.ClaimKeysResponse.Failures*
+  name: Failures
+  href: api/Cshrix.Cryptography.Data.ClaimKeysResponse.html#Cshrix_Cryptography_Data_ClaimKeysResponse_Failures_
+  commentId: Overload:Cshrix.Cryptography.Data.ClaimKeysResponse.Failures
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.ClaimKeysResponse.Failures
+  nameWithType: ClaimKeysResponse.Failures
+- uid: Cshrix.Cryptography.Data.ClaimKeysResponse.OneTimeKeys
+  name: OneTimeKeys
+  href: api/Cshrix.Cryptography.Data.ClaimKeysResponse.html#Cshrix_Cryptography_Data_ClaimKeysResponse_OneTimeKeys
+  commentId: P:Cshrix.Cryptography.Data.ClaimKeysResponse.OneTimeKeys
+  fullName: Cshrix.Cryptography.Data.ClaimKeysResponse.OneTimeKeys
+  nameWithType: ClaimKeysResponse.OneTimeKeys
+- uid: Cshrix.Cryptography.Data.ClaimKeysResponse.OneTimeKeys*
+  name: OneTimeKeys
+  href: api/Cshrix.Cryptography.Data.ClaimKeysResponse.html#Cshrix_Cryptography_Data_ClaimKeysResponse_OneTimeKeys_
+  commentId: Overload:Cshrix.Cryptography.Data.ClaimKeysResponse.OneTimeKeys
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.ClaimKeysResponse.OneTimeKeys
+  nameWithType: ClaimKeysResponse.OneTimeKeys
+- uid: Cshrix.Cryptography.Data.OneTimeKey
+  name: OneTimeKey
+  href: api/Cshrix.Cryptography.Data.OneTimeKey.html
+  commentId: T:Cshrix.Cryptography.Data.OneTimeKey
+  fullName: Cshrix.Cryptography.Data.OneTimeKey
+  nameWithType: OneTimeKey
+- uid: Cshrix.Cryptography.Data.OneTimeKey.#ctor(System.String,System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}})
+  name: OneTimeKey(String, IDictionary<UserId, IDictionary<String, String>>)
+  href: api/Cshrix.Cryptography.Data.OneTimeKey.html#Cshrix_Cryptography_Data_OneTimeKey__ctor_System_String_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IDictionary_System_String_System_String___
+  commentId: M:Cshrix.Cryptography.Data.OneTimeKey.#ctor(System.String,System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}})
+  name.vb: OneTimeKey(String, IDictionary(Of UserId, IDictionary(Of String, String)))
+  fullName: Cshrix.Cryptography.Data.OneTimeKey.OneTimeKey(System.String, System.Collections.Generic.IDictionary<Cshrix.Data.UserId, System.Collections.Generic.IDictionary<System.String, System.String>>)
+  fullName.vb: Cshrix.Cryptography.Data.OneTimeKey.OneTimeKey(System.String, System.Collections.Generic.IDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IDictionary(Of System.String, System.String)))
+  nameWithType: OneTimeKey.OneTimeKey(String, IDictionary<UserId, IDictionary<String, String>>)
+  nameWithType.vb: OneTimeKey.OneTimeKey(String, IDictionary(Of UserId, IDictionary(Of String, String)))
+- uid: Cshrix.Cryptography.Data.OneTimeKey.#ctor(System.String,System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}})
+  name: OneTimeKey(String, IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, String>>)
+  href: api/Cshrix.Cryptography.Data.OneTimeKey.html#Cshrix_Cryptography_Data_OneTimeKey__ctor_System_String_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String___
+  commentId: M:Cshrix.Cryptography.Data.OneTimeKey.#ctor(System.String,System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}})
+  name.vb: OneTimeKey(String, IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, String)))
+  fullName: Cshrix.Cryptography.Data.OneTimeKey.OneTimeKey(System.String, System.Collections.Generic.IReadOnlyDictionary<Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary<System.String, System.String>>)
+  fullName.vb: Cshrix.Cryptography.Data.OneTimeKey.OneTimeKey(System.String, System.Collections.Generic.IReadOnlyDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.String)))
+  nameWithType: OneTimeKey.OneTimeKey(String, IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, String>>)
+  nameWithType.vb: OneTimeKey.OneTimeKey(String, IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, String)))
+- uid: Cshrix.Cryptography.Data.OneTimeKey.#ctor*
+  name: OneTimeKey
+  href: api/Cshrix.Cryptography.Data.OneTimeKey.html#Cshrix_Cryptography_Data_OneTimeKey__ctor_
+  commentId: Overload:Cshrix.Cryptography.Data.OneTimeKey.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.OneTimeKey.OneTimeKey
+  nameWithType: OneTimeKey.OneTimeKey
+- uid: Cshrix.Cryptography.Data.OneTimeKey.Key
+  name: Key
+  href: api/Cshrix.Cryptography.Data.OneTimeKey.html#Cshrix_Cryptography_Data_OneTimeKey_Key
+  commentId: P:Cshrix.Cryptography.Data.OneTimeKey.Key
+  fullName: Cshrix.Cryptography.Data.OneTimeKey.Key
+  nameWithType: OneTimeKey.Key
+- uid: Cshrix.Cryptography.Data.OneTimeKey.Key*
+  name: Key
+  href: api/Cshrix.Cryptography.Data.OneTimeKey.html#Cshrix_Cryptography_Data_OneTimeKey_Key_
+  commentId: Overload:Cshrix.Cryptography.Data.OneTimeKey.Key
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.OneTimeKey.Key
+  nameWithType: OneTimeKey.Key
+- uid: Cshrix.Cryptography.Data.OneTimeKey.Signatures
+  name: Signatures
+  href: api/Cshrix.Cryptography.Data.OneTimeKey.html#Cshrix_Cryptography_Data_OneTimeKey_Signatures
+  commentId: P:Cshrix.Cryptography.Data.OneTimeKey.Signatures
+  fullName: Cshrix.Cryptography.Data.OneTimeKey.Signatures
+  nameWithType: OneTimeKey.Signatures
+- uid: Cshrix.Cryptography.Data.OneTimeKey.Signatures*
+  name: Signatures
+  href: api/Cshrix.Cryptography.Data.OneTimeKey.html#Cshrix_Cryptography_Data_OneTimeKey_Signatures_
+  commentId: Overload:Cshrix.Cryptography.Data.OneTimeKey.Signatures
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.OneTimeKey.Signatures
+  nameWithType: OneTimeKey.Signatures
+- uid: Cshrix.Cryptography.Data.OneTimeKeyCounts
+  name: OneTimeKeyCounts
+  href: api/Cshrix.Cryptography.Data.OneTimeKeyCounts.html
+  commentId: T:Cshrix.Cryptography.Data.OneTimeKeyCounts
+  fullName: Cshrix.Cryptography.Data.OneTimeKeyCounts
+  nameWithType: OneTimeKeyCounts
+- uid: Cshrix.Cryptography.Data.OneTimeKeyCounts.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
+  name: OneTimeKeyCounts(IReadOnlyDictionary<String, Int32>)
+  href: api/Cshrix.Cryptography.Data.OneTimeKeyCounts.html#Cshrix_Cryptography_Data_OneTimeKeyCounts__ctor_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Int32__
+  commentId: M:Cshrix.Cryptography.Data.OneTimeKeyCounts.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
+  name.vb: OneTimeKeyCounts(IReadOnlyDictionary(Of String, Int32))
+  fullName: Cshrix.Cryptography.Data.OneTimeKeyCounts.OneTimeKeyCounts(System.Collections.Generic.IReadOnlyDictionary<System.String, System.Int32>)
+  fullName.vb: Cshrix.Cryptography.Data.OneTimeKeyCounts.OneTimeKeyCounts(System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Int32))
+  nameWithType: OneTimeKeyCounts.OneTimeKeyCounts(IReadOnlyDictionary<String, Int32>)
+  nameWithType.vb: OneTimeKeyCounts.OneTimeKeyCounts(IReadOnlyDictionary(Of String, Int32))
+- uid: Cshrix.Cryptography.Data.OneTimeKeyCounts.#ctor*
+  name: OneTimeKeyCounts
+  href: api/Cshrix.Cryptography.Data.OneTimeKeyCounts.html#Cshrix_Cryptography_Data_OneTimeKeyCounts__ctor_
+  commentId: Overload:Cshrix.Cryptography.Data.OneTimeKeyCounts.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.OneTimeKeyCounts.OneTimeKeyCounts
+  nameWithType: OneTimeKeyCounts.OneTimeKeyCounts
+- uid: Cshrix.Cryptography.Data.OneTimeKeyCounts.Counts
+  name: Counts
+  href: api/Cshrix.Cryptography.Data.OneTimeKeyCounts.html#Cshrix_Cryptography_Data_OneTimeKeyCounts_Counts
+  commentId: P:Cshrix.Cryptography.Data.OneTimeKeyCounts.Counts
+  fullName: Cshrix.Cryptography.Data.OneTimeKeyCounts.Counts
+  nameWithType: OneTimeKeyCounts.Counts
+- uid: Cshrix.Cryptography.Data.OneTimeKeyCounts.Counts*
+  name: Counts
+  href: api/Cshrix.Cryptography.Data.OneTimeKeyCounts.html#Cshrix_Cryptography_Data_OneTimeKeyCounts_Counts_
+  commentId: Overload:Cshrix.Cryptography.Data.OneTimeKeyCounts.Counts
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.OneTimeKeyCounts.Counts
+  nameWithType: OneTimeKeyCounts.Counts
+- uid: Cshrix.Cryptography.Data.UploadKeysRequest
+  name: UploadKeysRequest
+  href: api/Cshrix.Cryptography.Data.UploadKeysRequest.html
+  commentId: T:Cshrix.Cryptography.Data.UploadKeysRequest
+  fullName: Cshrix.Cryptography.Data.UploadKeysRequest
+  nameWithType: UploadKeysRequest
+- uid: Cshrix.Cryptography.Data.UploadKeysRequest.#ctor(System.Nullable{Cshrix.Data.Devices.DeviceKeys},System.Collections.Generic.IDictionary{System.String,System.Object})
+  name: UploadKeysRequest(Nullable<DeviceKeys>, IDictionary<String, Object>)
+  href: api/Cshrix.Cryptography.Data.UploadKeysRequest.html#Cshrix_Cryptography_Data_UploadKeysRequest__ctor_System_Nullable_Cshrix_Data_Devices_DeviceKeys__System_Collections_Generic_IDictionary_System_String_System_Object__
+  commentId: M:Cshrix.Cryptography.Data.UploadKeysRequest.#ctor(System.Nullable{Cshrix.Data.Devices.DeviceKeys},System.Collections.Generic.IDictionary{System.String,System.Object})
+  name.vb: UploadKeysRequest(Nullable(Of DeviceKeys), IDictionary(Of String, Object))
+  fullName: Cshrix.Cryptography.Data.UploadKeysRequest.UploadKeysRequest(System.Nullable<Cshrix.Data.Devices.DeviceKeys>, System.Collections.Generic.IDictionary<System.String, System.Object>)
+  fullName.vb: Cshrix.Cryptography.Data.UploadKeysRequest.UploadKeysRequest(System.Nullable(Of Cshrix.Data.Devices.DeviceKeys), System.Collections.Generic.IDictionary(Of System.String, System.Object))
+  nameWithType: UploadKeysRequest.UploadKeysRequest(Nullable<DeviceKeys>, IDictionary<String, Object>)
+  nameWithType.vb: UploadKeysRequest.UploadKeysRequest(Nullable(Of DeviceKeys), IDictionary(Of String, Object))
+- uid: Cshrix.Cryptography.Data.UploadKeysRequest.#ctor(System.Nullable{Cshrix.Data.Devices.DeviceKeys},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})
+  name: UploadKeysRequest(Nullable<DeviceKeys>, IReadOnlyDictionary<String, Object>)
+  href: api/Cshrix.Cryptography.Data.UploadKeysRequest.html#Cshrix_Cryptography_Data_UploadKeysRequest__ctor_System_Nullable_Cshrix_Data_Devices_DeviceKeys__System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__
+  commentId: M:Cshrix.Cryptography.Data.UploadKeysRequest.#ctor(System.Nullable{Cshrix.Data.Devices.DeviceKeys},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})
+  name.vb: UploadKeysRequest(Nullable(Of DeviceKeys), IReadOnlyDictionary(Of String, Object))
+  fullName: Cshrix.Cryptography.Data.UploadKeysRequest.UploadKeysRequest(System.Nullable<Cshrix.Data.Devices.DeviceKeys>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Object>)
+  fullName.vb: Cshrix.Cryptography.Data.UploadKeysRequest.UploadKeysRequest(System.Nullable(Of Cshrix.Data.Devices.DeviceKeys), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Object))
+  nameWithType: UploadKeysRequest.UploadKeysRequest(Nullable<DeviceKeys>, IReadOnlyDictionary<String, Object>)
+  nameWithType.vb: UploadKeysRequest.UploadKeysRequest(Nullable(Of DeviceKeys), IReadOnlyDictionary(Of String, Object))
+- uid: Cshrix.Cryptography.Data.UploadKeysRequest.#ctor*
+  name: UploadKeysRequest
+  href: api/Cshrix.Cryptography.Data.UploadKeysRequest.html#Cshrix_Cryptography_Data_UploadKeysRequest__ctor_
+  commentId: Overload:Cshrix.Cryptography.Data.UploadKeysRequest.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.UploadKeysRequest.UploadKeysRequest
+  nameWithType: UploadKeysRequest.UploadKeysRequest
+- uid: Cshrix.Cryptography.Data.UploadKeysRequest.DeviceKeys
+  name: DeviceKeys
+  href: api/Cshrix.Cryptography.Data.UploadKeysRequest.html#Cshrix_Cryptography_Data_UploadKeysRequest_DeviceKeys
+  commentId: P:Cshrix.Cryptography.Data.UploadKeysRequest.DeviceKeys
+  fullName: Cshrix.Cryptography.Data.UploadKeysRequest.DeviceKeys
+  nameWithType: UploadKeysRequest.DeviceKeys
+- uid: Cshrix.Cryptography.Data.UploadKeysRequest.DeviceKeys*
+  name: DeviceKeys
+  href: api/Cshrix.Cryptography.Data.UploadKeysRequest.html#Cshrix_Cryptography_Data_UploadKeysRequest_DeviceKeys_
+  commentId: Overload:Cshrix.Cryptography.Data.UploadKeysRequest.DeviceKeys
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.UploadKeysRequest.DeviceKeys
+  nameWithType: UploadKeysRequest.DeviceKeys
+- uid: Cshrix.Cryptography.Data.UploadKeysRequest.OneTimeKeys
+  name: OneTimeKeys
+  href: api/Cshrix.Cryptography.Data.UploadKeysRequest.html#Cshrix_Cryptography_Data_UploadKeysRequest_OneTimeKeys
+  commentId: P:Cshrix.Cryptography.Data.UploadKeysRequest.OneTimeKeys
+  fullName: Cshrix.Cryptography.Data.UploadKeysRequest.OneTimeKeys
+  nameWithType: UploadKeysRequest.OneTimeKeys
+- uid: Cshrix.Cryptography.Data.UploadKeysRequest.OneTimeKeys*
+  name: OneTimeKeys
+  href: api/Cshrix.Cryptography.Data.UploadKeysRequest.html#Cshrix_Cryptography_Data_UploadKeysRequest_OneTimeKeys_
+  commentId: Overload:Cshrix.Cryptography.Data.UploadKeysRequest.OneTimeKeys
+  isSpec: "True"
+  fullName: Cshrix.Cryptography.Data.UploadKeysRequest.OneTimeKeys
+  nameWithType: UploadKeysRequest.OneTimeKeys
 - uid: Cshrix.Cryptography.KeyRequestAction
   name: KeyRequestAction
   href: api/Cshrix.Cryptography.KeyRequestAction.html
@@ -134,98 +403,6 @@ references:
   commentId: F:Cshrix.Cryptography.KeyRequestAction.Request
   fullName: Cshrix.Cryptography.KeyRequestAction.Request
   nameWithType: KeyRequestAction.Request
-- uid: Cshrix.Cryptography.OneTimeKey
-  name: OneTimeKey
-  href: api/Cshrix.Cryptography.OneTimeKey.html
-  commentId: T:Cshrix.Cryptography.OneTimeKey
-  fullName: Cshrix.Cryptography.OneTimeKey
-  nameWithType: OneTimeKey
-- uid: Cshrix.Cryptography.OneTimeKey.#ctor(System.String,System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}})
-  name: OneTimeKey(String, IDictionary<UserId, IDictionary<String, String>>)
-  href: api/Cshrix.Cryptography.OneTimeKey.html#Cshrix_Cryptography_OneTimeKey__ctor_System_String_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IDictionary_System_String_System_String___
-  commentId: M:Cshrix.Cryptography.OneTimeKey.#ctor(System.String,System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}})
-  name.vb: OneTimeKey(String, IDictionary(Of UserId, IDictionary(Of String, String)))
-  fullName: Cshrix.Cryptography.OneTimeKey.OneTimeKey(System.String, System.Collections.Generic.IDictionary<Cshrix.Data.UserId, System.Collections.Generic.IDictionary<System.String, System.String>>)
-  fullName.vb: Cshrix.Cryptography.OneTimeKey.OneTimeKey(System.String, System.Collections.Generic.IDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IDictionary(Of System.String, System.String)))
-  nameWithType: OneTimeKey.OneTimeKey(String, IDictionary<UserId, IDictionary<String, String>>)
-  nameWithType.vb: OneTimeKey.OneTimeKey(String, IDictionary(Of UserId, IDictionary(Of String, String)))
-- uid: Cshrix.Cryptography.OneTimeKey.#ctor(System.String,System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}})
-  name: OneTimeKey(String, IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, String>>)
-  href: api/Cshrix.Cryptography.OneTimeKey.html#Cshrix_Cryptography_OneTimeKey__ctor_System_String_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String___
-  commentId: M:Cshrix.Cryptography.OneTimeKey.#ctor(System.String,System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}})
-  name.vb: OneTimeKey(String, IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, String)))
-  fullName: Cshrix.Cryptography.OneTimeKey.OneTimeKey(System.String, System.Collections.Generic.IReadOnlyDictionary<Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary<System.String, System.String>>)
-  fullName.vb: Cshrix.Cryptography.OneTimeKey.OneTimeKey(System.String, System.Collections.Generic.IReadOnlyDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.String)))
-  nameWithType: OneTimeKey.OneTimeKey(String, IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, String>>)
-  nameWithType.vb: OneTimeKey.OneTimeKey(String, IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, String)))
-- uid: Cshrix.Cryptography.OneTimeKey.#ctor*
-  name: OneTimeKey
-  href: api/Cshrix.Cryptography.OneTimeKey.html#Cshrix_Cryptography_OneTimeKey__ctor_
-  commentId: Overload:Cshrix.Cryptography.OneTimeKey.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Cryptography.OneTimeKey.OneTimeKey
-  nameWithType: OneTimeKey.OneTimeKey
-- uid: Cshrix.Cryptography.OneTimeKey.Key
-  name: Key
-  href: api/Cshrix.Cryptography.OneTimeKey.html#Cshrix_Cryptography_OneTimeKey_Key
-  commentId: P:Cshrix.Cryptography.OneTimeKey.Key
-  fullName: Cshrix.Cryptography.OneTimeKey.Key
-  nameWithType: OneTimeKey.Key
-- uid: Cshrix.Cryptography.OneTimeKey.Key*
-  name: Key
-  href: api/Cshrix.Cryptography.OneTimeKey.html#Cshrix_Cryptography_OneTimeKey_Key_
-  commentId: Overload:Cshrix.Cryptography.OneTimeKey.Key
-  isSpec: "True"
-  fullName: Cshrix.Cryptography.OneTimeKey.Key
-  nameWithType: OneTimeKey.Key
-- uid: Cshrix.Cryptography.OneTimeKey.Signatures
-  name: Signatures
-  href: api/Cshrix.Cryptography.OneTimeKey.html#Cshrix_Cryptography_OneTimeKey_Signatures
-  commentId: P:Cshrix.Cryptography.OneTimeKey.Signatures
-  fullName: Cshrix.Cryptography.OneTimeKey.Signatures
-  nameWithType: OneTimeKey.Signatures
-- uid: Cshrix.Cryptography.OneTimeKey.Signatures*
-  name: Signatures
-  href: api/Cshrix.Cryptography.OneTimeKey.html#Cshrix_Cryptography_OneTimeKey_Signatures_
-  commentId: Overload:Cshrix.Cryptography.OneTimeKey.Signatures
-  isSpec: "True"
-  fullName: Cshrix.Cryptography.OneTimeKey.Signatures
-  nameWithType: OneTimeKey.Signatures
-- uid: Cshrix.Cryptography.OneTimeKeyCounts
-  name: OneTimeKeyCounts
-  href: api/Cshrix.Cryptography.OneTimeKeyCounts.html
-  commentId: T:Cshrix.Cryptography.OneTimeKeyCounts
-  fullName: Cshrix.Cryptography.OneTimeKeyCounts
-  nameWithType: OneTimeKeyCounts
-- uid: Cshrix.Cryptography.OneTimeKeyCounts.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
-  name: OneTimeKeyCounts(IReadOnlyDictionary<String, Int32>)
-  href: api/Cshrix.Cryptography.OneTimeKeyCounts.html#Cshrix_Cryptography_OneTimeKeyCounts__ctor_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Int32__
-  commentId: M:Cshrix.Cryptography.OneTimeKeyCounts.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
-  name.vb: OneTimeKeyCounts(IReadOnlyDictionary(Of String, Int32))
-  fullName: Cshrix.Cryptography.OneTimeKeyCounts.OneTimeKeyCounts(System.Collections.Generic.IReadOnlyDictionary<System.String, System.Int32>)
-  fullName.vb: Cshrix.Cryptography.OneTimeKeyCounts.OneTimeKeyCounts(System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Int32))
-  nameWithType: OneTimeKeyCounts.OneTimeKeyCounts(IReadOnlyDictionary<String, Int32>)
-  nameWithType.vb: OneTimeKeyCounts.OneTimeKeyCounts(IReadOnlyDictionary(Of String, Int32))
-- uid: Cshrix.Cryptography.OneTimeKeyCounts.#ctor*
-  name: OneTimeKeyCounts
-  href: api/Cshrix.Cryptography.OneTimeKeyCounts.html#Cshrix_Cryptography_OneTimeKeyCounts__ctor_
-  commentId: Overload:Cshrix.Cryptography.OneTimeKeyCounts.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Cryptography.OneTimeKeyCounts.OneTimeKeyCounts
-  nameWithType: OneTimeKeyCounts.OneTimeKeyCounts
-- uid: Cshrix.Cryptography.OneTimeKeyCounts.Counts
-  name: Counts
-  href: api/Cshrix.Cryptography.OneTimeKeyCounts.html#Cshrix_Cryptography_OneTimeKeyCounts_Counts
-  commentId: P:Cshrix.Cryptography.OneTimeKeyCounts.Counts
-  fullName: Cshrix.Cryptography.OneTimeKeyCounts.Counts
-  nameWithType: OneTimeKeyCounts.Counts
-- uid: Cshrix.Cryptography.OneTimeKeyCounts.Counts*
-  name: Counts
-  href: api/Cshrix.Cryptography.OneTimeKeyCounts.html#Cshrix_Cryptography_OneTimeKeyCounts_Counts_
-  commentId: Overload:Cshrix.Cryptography.OneTimeKeyCounts.Counts
-  isSpec: "True"
-  fullName: Cshrix.Cryptography.OneTimeKeyCounts.Counts
-  nameWithType: OneTimeKeyCounts.Counts
 - uid: Cshrix.Data
   name: Cshrix.Data
   href: api/Cshrix.Data.html
@@ -478,6 +655,214 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Authentication.DummyAuthentication.DummyAuthentication
   nameWithType: DummyAuthentication.DummyAuthentication
+- uid: Cshrix.Data.Authentication.EmailAuthentication
+  name: EmailAuthentication
+  href: api/Cshrix.Data.Authentication.EmailAuthentication.html
+  commentId: T:Cshrix.Data.Authentication.EmailAuthentication
+  fullName: Cshrix.Data.Authentication.EmailAuthentication
+  nameWithType: EmailAuthentication
+- uid: Cshrix.Data.Authentication.EmailAuthentication.#ctor(System.String,System.Collections.Generic.IEnumerable{Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials})
+  name: EmailAuthentication(String, IEnumerable<ThirdPartyIdentifierCredentials>)
+  href: api/Cshrix.Data.Authentication.EmailAuthentication.html#Cshrix_Data_Authentication_EmailAuthentication__ctor_System_String_System_Collections_Generic_IEnumerable_Cshrix_Data_ThirdParty_ThirdPartyIdentifierCredentials__
+  commentId: M:Cshrix.Data.Authentication.EmailAuthentication.#ctor(System.String,System.Collections.Generic.IEnumerable{Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials})
+  name.vb: EmailAuthentication(String, IEnumerable(Of ThirdPartyIdentifierCredentials))
+  fullName: Cshrix.Data.Authentication.EmailAuthentication.EmailAuthentication(System.String, System.Collections.Generic.IEnumerable<Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials>)
+  fullName.vb: Cshrix.Data.Authentication.EmailAuthentication.EmailAuthentication(System.String, System.Collections.Generic.IEnumerable(Of Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials))
+  nameWithType: EmailAuthentication.EmailAuthentication(String, IEnumerable<ThirdPartyIdentifierCredentials>)
+  nameWithType.vb: EmailAuthentication.EmailAuthentication(String, IEnumerable(Of ThirdPartyIdentifierCredentials))
+- uid: Cshrix.Data.Authentication.EmailAuthentication.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials})
+  name: EmailAuthentication(String, IReadOnlyCollection<ThirdPartyIdentifierCredentials>)
+  href: api/Cshrix.Data.Authentication.EmailAuthentication.html#Cshrix_Data_Authentication_EmailAuthentication__ctor_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_ThirdParty_ThirdPartyIdentifierCredentials__
+  commentId: M:Cshrix.Data.Authentication.EmailAuthentication.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials})
+  name.vb: EmailAuthentication(String, IReadOnlyCollection(Of ThirdPartyIdentifierCredentials))
+  fullName: Cshrix.Data.Authentication.EmailAuthentication.EmailAuthentication(System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials>)
+  fullName.vb: Cshrix.Data.Authentication.EmailAuthentication.EmailAuthentication(System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials))
+  nameWithType: EmailAuthentication.EmailAuthentication(String, IReadOnlyCollection<ThirdPartyIdentifierCredentials>)
+  nameWithType.vb: EmailAuthentication.EmailAuthentication(String, IReadOnlyCollection(Of ThirdPartyIdentifierCredentials))
+- uid: Cshrix.Data.Authentication.EmailAuthentication.#ctor*
+  name: EmailAuthentication
+  href: api/Cshrix.Data.Authentication.EmailAuthentication.html#Cshrix_Data_Authentication_EmailAuthentication__ctor_
+  commentId: Overload:Cshrix.Data.Authentication.EmailAuthentication.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.EmailAuthentication.EmailAuthentication
+  nameWithType: EmailAuthentication.EmailAuthentication
+- uid: Cshrix.Data.Authentication.EmailAuthentication.Credentials
+  name: Credentials
+  href: api/Cshrix.Data.Authentication.EmailAuthentication.html#Cshrix_Data_Authentication_EmailAuthentication_Credentials
+  commentId: P:Cshrix.Data.Authentication.EmailAuthentication.Credentials
+  fullName: Cshrix.Data.Authentication.EmailAuthentication.Credentials
+  nameWithType: EmailAuthentication.Credentials
+- uid: Cshrix.Data.Authentication.EmailAuthentication.Credentials*
+  name: Credentials
+  href: api/Cshrix.Data.Authentication.EmailAuthentication.html#Cshrix_Data_Authentication_EmailAuthentication_Credentials_
+  commentId: Overload:Cshrix.Data.Authentication.EmailAuthentication.Credentials
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.EmailAuthentication.Credentials
+  nameWithType: EmailAuthentication.Credentials
+- uid: Cshrix.Data.Authentication.LoginFlow
+  name: LoginFlow
+  href: api/Cshrix.Data.Authentication.LoginFlow.html
+  commentId: T:Cshrix.Data.Authentication.LoginFlow
+  fullName: Cshrix.Data.Authentication.LoginFlow
+  nameWithType: LoginFlow
+- uid: Cshrix.Data.Authentication.LoginFlow.#ctor(Cshrix.Data.Authentication.AuthenticationType)
+  name: LoginFlow(AuthenticationType)
+  href: api/Cshrix.Data.Authentication.LoginFlow.html#Cshrix_Data_Authentication_LoginFlow__ctor_Cshrix_Data_Authentication_AuthenticationType_
+  commentId: M:Cshrix.Data.Authentication.LoginFlow.#ctor(Cshrix.Data.Authentication.AuthenticationType)
+  fullName: Cshrix.Data.Authentication.LoginFlow.LoginFlow(Cshrix.Data.Authentication.AuthenticationType)
+  nameWithType: LoginFlow.LoginFlow(AuthenticationType)
+- uid: Cshrix.Data.Authentication.LoginFlow.#ctor*
+  name: LoginFlow
+  href: api/Cshrix.Data.Authentication.LoginFlow.html#Cshrix_Data_Authentication_LoginFlow__ctor_
+  commentId: Overload:Cshrix.Data.Authentication.LoginFlow.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginFlow.LoginFlow
+  nameWithType: LoginFlow.LoginFlow
+- uid: Cshrix.Data.Authentication.LoginFlow.Type
+  name: Type
+  href: api/Cshrix.Data.Authentication.LoginFlow.html#Cshrix_Data_Authentication_LoginFlow_Type
+  commentId: P:Cshrix.Data.Authentication.LoginFlow.Type
+  fullName: Cshrix.Data.Authentication.LoginFlow.Type
+  nameWithType: LoginFlow.Type
+- uid: Cshrix.Data.Authentication.LoginFlow.Type*
+  name: Type
+  href: api/Cshrix.Data.Authentication.LoginFlow.html#Cshrix_Data_Authentication_LoginFlow_Type_
+  commentId: Overload:Cshrix.Data.Authentication.LoginFlow.Type
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginFlow.Type
+  nameWithType: LoginFlow.Type
+- uid: Cshrix.Data.Authentication.LoginFlows
+  name: LoginFlows
+  href: api/Cshrix.Data.Authentication.LoginFlows.html
+  commentId: T:Cshrix.Data.Authentication.LoginFlows
+  fullName: Cshrix.Data.Authentication.LoginFlows
+  nameWithType: LoginFlows
+- uid: Cshrix.Data.Authentication.LoginFlows.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Authentication.LoginFlow})
+  name: LoginFlows(IReadOnlyCollection<LoginFlow>)
+  href: api/Cshrix.Data.Authentication.LoginFlows.html#Cshrix_Data_Authentication_LoginFlows__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Authentication_LoginFlow__
+  commentId: M:Cshrix.Data.Authentication.LoginFlows.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Authentication.LoginFlow})
+  name.vb: LoginFlows(IReadOnlyCollection(Of LoginFlow))
+  fullName: Cshrix.Data.Authentication.LoginFlows.LoginFlows(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Authentication.LoginFlow>)
+  fullName.vb: Cshrix.Data.Authentication.LoginFlows.LoginFlows(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Authentication.LoginFlow))
+  nameWithType: LoginFlows.LoginFlows(IReadOnlyCollection<LoginFlow>)
+  nameWithType.vb: LoginFlows.LoginFlows(IReadOnlyCollection(Of LoginFlow))
+- uid: Cshrix.Data.Authentication.LoginFlows.#ctor*
+  name: LoginFlows
+  href: api/Cshrix.Data.Authentication.LoginFlows.html#Cshrix_Data_Authentication_LoginFlows__ctor_
+  commentId: Overload:Cshrix.Data.Authentication.LoginFlows.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginFlows.LoginFlows
+  nameWithType: LoginFlows.LoginFlows
+- uid: Cshrix.Data.Authentication.LoginFlows.Flows
+  name: Flows
+  href: api/Cshrix.Data.Authentication.LoginFlows.html#Cshrix_Data_Authentication_LoginFlows_Flows
+  commentId: P:Cshrix.Data.Authentication.LoginFlows.Flows
+  fullName: Cshrix.Data.Authentication.LoginFlows.Flows
+  nameWithType: LoginFlows.Flows
+- uid: Cshrix.Data.Authentication.LoginFlows.Flows*
+  name: Flows
+  href: api/Cshrix.Data.Authentication.LoginFlows.html#Cshrix_Data_Authentication_LoginFlows_Flows_
+  commentId: Overload:Cshrix.Data.Authentication.LoginFlows.Flows
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginFlows.Flows
+  nameWithType: LoginFlows.Flows
+- uid: Cshrix.Data.Authentication.LoginRequest
+  name: LoginRequest
+  href: api/Cshrix.Data.Authentication.LoginRequest.html
+  commentId: T:Cshrix.Data.Authentication.LoginRequest
+  fullName: Cshrix.Data.Authentication.LoginRequest
+  nameWithType: LoginRequest
+- uid: Cshrix.Data.Authentication.LoginRequest.#ctor(Cshrix.Data.Authentication.AuthenticationType,Cshrix.Data.IUserIdentifier,System.String,System.String,System.String,System.String)
+  name: LoginRequest(AuthenticationType, IUserIdentifier, String, String, String, String)
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest__ctor_Cshrix_Data_Authentication_AuthenticationType_Cshrix_Data_IUserIdentifier_System_String_System_String_System_String_System_String_
+  commentId: M:Cshrix.Data.Authentication.LoginRequest.#ctor(Cshrix.Data.Authentication.AuthenticationType,Cshrix.Data.IUserIdentifier,System.String,System.String,System.String,System.String)
+  fullName: Cshrix.Data.Authentication.LoginRequest.LoginRequest(Cshrix.Data.Authentication.AuthenticationType, Cshrix.Data.IUserIdentifier, System.String, System.String, System.String, System.String)
+  nameWithType: LoginRequest.LoginRequest(AuthenticationType, IUserIdentifier, String, String, String, String)
+- uid: Cshrix.Data.Authentication.LoginRequest.#ctor*
+  name: LoginRequest
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest__ctor_
+  commentId: Overload:Cshrix.Data.Authentication.LoginRequest.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginRequest.LoginRequest
+  nameWithType: LoginRequest.LoginRequest
+- uid: Cshrix.Data.Authentication.LoginRequest.DeviceId
+  name: DeviceId
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_DeviceId
+  commentId: P:Cshrix.Data.Authentication.LoginRequest.DeviceId
+  fullName: Cshrix.Data.Authentication.LoginRequest.DeviceId
+  nameWithType: LoginRequest.DeviceId
+- uid: Cshrix.Data.Authentication.LoginRequest.DeviceId*
+  name: DeviceId
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_DeviceId_
+  commentId: Overload:Cshrix.Data.Authentication.LoginRequest.DeviceId
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginRequest.DeviceId
+  nameWithType: LoginRequest.DeviceId
+- uid: Cshrix.Data.Authentication.LoginRequest.Identifier
+  name: Identifier
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_Identifier
+  commentId: P:Cshrix.Data.Authentication.LoginRequest.Identifier
+  fullName: Cshrix.Data.Authentication.LoginRequest.Identifier
+  nameWithType: LoginRequest.Identifier
+- uid: Cshrix.Data.Authentication.LoginRequest.Identifier*
+  name: Identifier
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_Identifier_
+  commentId: Overload:Cshrix.Data.Authentication.LoginRequest.Identifier
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginRequest.Identifier
+  nameWithType: LoginRequest.Identifier
+- uid: Cshrix.Data.Authentication.LoginRequest.InitialDeviceDisplayName
+  name: InitialDeviceDisplayName
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_InitialDeviceDisplayName
+  commentId: P:Cshrix.Data.Authentication.LoginRequest.InitialDeviceDisplayName
+  fullName: Cshrix.Data.Authentication.LoginRequest.InitialDeviceDisplayName
+  nameWithType: LoginRequest.InitialDeviceDisplayName
+- uid: Cshrix.Data.Authentication.LoginRequest.InitialDeviceDisplayName*
+  name: InitialDeviceDisplayName
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_InitialDeviceDisplayName_
+  commentId: Overload:Cshrix.Data.Authentication.LoginRequest.InitialDeviceDisplayName
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginRequest.InitialDeviceDisplayName
+  nameWithType: LoginRequest.InitialDeviceDisplayName
+- uid: Cshrix.Data.Authentication.LoginRequest.Password
+  name: Password
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_Password
+  commentId: P:Cshrix.Data.Authentication.LoginRequest.Password
+  fullName: Cshrix.Data.Authentication.LoginRequest.Password
+  nameWithType: LoginRequest.Password
+- uid: Cshrix.Data.Authentication.LoginRequest.Password*
+  name: Password
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_Password_
+  commentId: Overload:Cshrix.Data.Authentication.LoginRequest.Password
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginRequest.Password
+  nameWithType: LoginRequest.Password
+- uid: Cshrix.Data.Authentication.LoginRequest.Token
+  name: Token
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_Token
+  commentId: P:Cshrix.Data.Authentication.LoginRequest.Token
+  fullName: Cshrix.Data.Authentication.LoginRequest.Token
+  nameWithType: LoginRequest.Token
+- uid: Cshrix.Data.Authentication.LoginRequest.Token*
+  name: Token
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_Token_
+  commentId: Overload:Cshrix.Data.Authentication.LoginRequest.Token
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginRequest.Token
+  nameWithType: LoginRequest.Token
+- uid: Cshrix.Data.Authentication.LoginRequest.Type
+  name: Type
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_Type
+  commentId: P:Cshrix.Data.Authentication.LoginRequest.Type
+  fullName: Cshrix.Data.Authentication.LoginRequest.Type
+  nameWithType: LoginRequest.Type
+- uid: Cshrix.Data.Authentication.LoginRequest.Type*
+  name: Type
+  href: api/Cshrix.Data.Authentication.LoginRequest.html#Cshrix_Data_Authentication_LoginRequest_Type_
+  commentId: Overload:Cshrix.Data.Authentication.LoginRequest.Type
+  isSpec: "True"
+  fullName: Cshrix.Data.Authentication.LoginRequest.Type
+  nameWithType: LoginRequest.Type
 - uid: Cshrix.Data.Authentication.PasswordAuthentication
   name: PasswordAuthentication
   href: api/Cshrix.Data.Authentication.PasswordAuthentication.html
@@ -1046,120 +1431,6 @@ references:
   fullName.vb: Cshrix.Data.Chunk(Of T).Data
   nameWithType: Chunk<T>.Data
   nameWithType.vb: Chunk(Of T).Data
-- uid: Cshrix.Data.ClaimKeysRequest
-  name: ClaimKeysRequest
-  href: api/Cshrix.Data.ClaimKeysRequest.html
-  commentId: T:Cshrix.Data.ClaimKeysRequest
-  fullName: Cshrix.Data.ClaimKeysRequest
-  nameWithType: ClaimKeysRequest
-- uid: Cshrix.Data.ClaimKeysRequest.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}},System.Nullable{System.TimeSpan})
-  name: ClaimKeysRequest(IDictionary<UserId, IDictionary<String, String>>, Nullable<TimeSpan>)
-  href: api/Cshrix.Data.ClaimKeysRequest.html#Cshrix_Data_ClaimKeysRequest__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IDictionary_System_String_System_String___System_Nullable_System_TimeSpan__
-  commentId: M:Cshrix.Data.ClaimKeysRequest.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}},System.Nullable{System.TimeSpan})
-  name.vb: ClaimKeysRequest(IDictionary(Of UserId, IDictionary(Of String, String)), Nullable(Of TimeSpan))
-  fullName: Cshrix.Data.ClaimKeysRequest.ClaimKeysRequest(System.Collections.Generic.IDictionary<Cshrix.Data.UserId, System.Collections.Generic.IDictionary<System.String, System.String>>, System.Nullable<System.TimeSpan>)
-  fullName.vb: Cshrix.Data.ClaimKeysRequest.ClaimKeysRequest(System.Collections.Generic.IDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IDictionary(Of System.String, System.String)), System.Nullable(Of System.TimeSpan))
-  nameWithType: ClaimKeysRequest.ClaimKeysRequest(IDictionary<UserId, IDictionary<String, String>>, Nullable<TimeSpan>)
-  nameWithType.vb: ClaimKeysRequest.ClaimKeysRequest(IDictionary(Of UserId, IDictionary(Of String, String)), Nullable(Of TimeSpan))
-- uid: Cshrix.Data.ClaimKeysRequest.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.Nullable{System.TimeSpan})
-  name: ClaimKeysRequest(IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, String>>, Nullable<TimeSpan>)
-  href: api/Cshrix.Data.ClaimKeysRequest.html#Cshrix_Data_ClaimKeysRequest__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String___System_Nullable_System_TimeSpan__
-  commentId: M:Cshrix.Data.ClaimKeysRequest.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.Nullable{System.TimeSpan})
-  name.vb: ClaimKeysRequest(IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, String)), Nullable(Of TimeSpan))
-  fullName: Cshrix.Data.ClaimKeysRequest.ClaimKeysRequest(System.Collections.Generic.IReadOnlyDictionary<Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary<System.String, System.String>>, System.Nullable<System.TimeSpan>)
-  fullName.vb: Cshrix.Data.ClaimKeysRequest.ClaimKeysRequest(System.Collections.Generic.IReadOnlyDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.String)), System.Nullable(Of System.TimeSpan))
-  nameWithType: ClaimKeysRequest.ClaimKeysRequest(IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, String>>, Nullable<TimeSpan>)
-  nameWithType.vb: ClaimKeysRequest.ClaimKeysRequest(IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, String)), Nullable(Of TimeSpan))
-- uid: Cshrix.Data.ClaimKeysRequest.#ctor*
-  name: ClaimKeysRequest
-  href: api/Cshrix.Data.ClaimKeysRequest.html#Cshrix_Data_ClaimKeysRequest__ctor_
-  commentId: Overload:Cshrix.Data.ClaimKeysRequest.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.ClaimKeysRequest.ClaimKeysRequest
-  nameWithType: ClaimKeysRequest.ClaimKeysRequest
-- uid: Cshrix.Data.ClaimKeysRequest.OneTimeKeys
-  name: OneTimeKeys
-  href: api/Cshrix.Data.ClaimKeysRequest.html#Cshrix_Data_ClaimKeysRequest_OneTimeKeys
-  commentId: P:Cshrix.Data.ClaimKeysRequest.OneTimeKeys
-  fullName: Cshrix.Data.ClaimKeysRequest.OneTimeKeys
-  nameWithType: ClaimKeysRequest.OneTimeKeys
-- uid: Cshrix.Data.ClaimKeysRequest.OneTimeKeys*
-  name: OneTimeKeys
-  href: api/Cshrix.Data.ClaimKeysRequest.html#Cshrix_Data_ClaimKeysRequest_OneTimeKeys_
-  commentId: Overload:Cshrix.Data.ClaimKeysRequest.OneTimeKeys
-  isSpec: "True"
-  fullName: Cshrix.Data.ClaimKeysRequest.OneTimeKeys
-  nameWithType: ClaimKeysRequest.OneTimeKeys
-- uid: Cshrix.Data.ClaimKeysRequest.Timeout
-  name: Timeout
-  href: api/Cshrix.Data.ClaimKeysRequest.html#Cshrix_Data_ClaimKeysRequest_Timeout
-  commentId: P:Cshrix.Data.ClaimKeysRequest.Timeout
-  fullName: Cshrix.Data.ClaimKeysRequest.Timeout
-  nameWithType: ClaimKeysRequest.Timeout
-- uid: Cshrix.Data.ClaimKeysRequest.Timeout*
-  name: Timeout
-  href: api/Cshrix.Data.ClaimKeysRequest.html#Cshrix_Data_ClaimKeysRequest_Timeout_
-  commentId: Overload:Cshrix.Data.ClaimKeysRequest.Timeout
-  isSpec: "True"
-  fullName: Cshrix.Data.ClaimKeysRequest.Timeout
-  nameWithType: ClaimKeysRequest.Timeout
-- uid: Cshrix.Data.ClaimKeysResponse
-  name: ClaimKeysResponse
-  href: api/Cshrix.Data.ClaimKeysResponse.html
-  commentId: T:Cshrix.Data.ClaimKeysResponse
-  fullName: Cshrix.Data.ClaimKeysResponse
-  nameWithType: ClaimKeysResponse
-- uid: Cshrix.Data.ClaimKeysResponse.#ctor(System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,Cshrix.Cryptography.OneTimeKey}})
-  name: ClaimKeysResponse(IDictionary<String, Object>, IDictionary<UserId, IDictionary<String, OneTimeKey>>)
-  href: api/Cshrix.Data.ClaimKeysResponse.html#Cshrix_Data_ClaimKeysResponse__ctor_System_Collections_Generic_IDictionary_System_String_System_Object__System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IDictionary_System_String_Cshrix_Cryptography_OneTimeKey___
-  commentId: M:Cshrix.Data.ClaimKeysResponse.#ctor(System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,Cshrix.Cryptography.OneTimeKey}})
-  name.vb: ClaimKeysResponse(IDictionary(Of String, Object), IDictionary(Of UserId, IDictionary(Of String, OneTimeKey)))
-  fullName: Cshrix.Data.ClaimKeysResponse.ClaimKeysResponse(System.Collections.Generic.IDictionary<System.String, System.Object>, System.Collections.Generic.IDictionary<Cshrix.Data.UserId, System.Collections.Generic.IDictionary<System.String, Cshrix.Cryptography.OneTimeKey>>)
-  fullName.vb: Cshrix.Data.ClaimKeysResponse.ClaimKeysResponse(System.Collections.Generic.IDictionary(Of System.String, System.Object), System.Collections.Generic.IDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IDictionary(Of System.String, Cshrix.Cryptography.OneTimeKey)))
-  nameWithType: ClaimKeysResponse.ClaimKeysResponse(IDictionary<String, Object>, IDictionary<UserId, IDictionary<String, OneTimeKey>>)
-  nameWithType.vb: ClaimKeysResponse.ClaimKeysResponse(IDictionary(Of String, Object), IDictionary(Of UserId, IDictionary(Of String, OneTimeKey)))
-- uid: Cshrix.Data.ClaimKeysResponse.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Cryptography.OneTimeKey}})
-  name: ClaimKeysResponse(IReadOnlyDictionary<String, Object>, IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, OneTimeKey>>)
-  href: api/Cshrix.Data.ClaimKeysResponse.html#Cshrix_Data_ClaimKeysResponse__ctor_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Cryptography_OneTimeKey___
-  commentId: M:Cshrix.Data.ClaimKeysResponse.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Cryptography.OneTimeKey}})
-  name.vb: ClaimKeysResponse(IReadOnlyDictionary(Of String, Object), IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, OneTimeKey)))
-  fullName: Cshrix.Data.ClaimKeysResponse.ClaimKeysResponse(System.Collections.Generic.IReadOnlyDictionary<System.String, System.Object>, System.Collections.Generic.IReadOnlyDictionary<Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Cryptography.OneTimeKey>>)
-  fullName.vb: Cshrix.Data.ClaimKeysResponse.ClaimKeysResponse(System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Object), System.Collections.Generic.IReadOnlyDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Cryptography.OneTimeKey)))
-  nameWithType: ClaimKeysResponse.ClaimKeysResponse(IReadOnlyDictionary<String, Object>, IReadOnlyDictionary<UserId, IReadOnlyDictionary<String, OneTimeKey>>)
-  nameWithType.vb: ClaimKeysResponse.ClaimKeysResponse(IReadOnlyDictionary(Of String, Object), IReadOnlyDictionary(Of UserId, IReadOnlyDictionary(Of String, OneTimeKey)))
-- uid: Cshrix.Data.ClaimKeysResponse.#ctor*
-  name: ClaimKeysResponse
-  href: api/Cshrix.Data.ClaimKeysResponse.html#Cshrix_Data_ClaimKeysResponse__ctor_
-  commentId: Overload:Cshrix.Data.ClaimKeysResponse.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.ClaimKeysResponse.ClaimKeysResponse
-  nameWithType: ClaimKeysResponse.ClaimKeysResponse
-- uid: Cshrix.Data.ClaimKeysResponse.Failures
-  name: Failures
-  href: api/Cshrix.Data.ClaimKeysResponse.html#Cshrix_Data_ClaimKeysResponse_Failures
-  commentId: P:Cshrix.Data.ClaimKeysResponse.Failures
-  fullName: Cshrix.Data.ClaimKeysResponse.Failures
-  nameWithType: ClaimKeysResponse.Failures
-- uid: Cshrix.Data.ClaimKeysResponse.Failures*
-  name: Failures
-  href: api/Cshrix.Data.ClaimKeysResponse.html#Cshrix_Data_ClaimKeysResponse_Failures_
-  commentId: Overload:Cshrix.Data.ClaimKeysResponse.Failures
-  isSpec: "True"
-  fullName: Cshrix.Data.ClaimKeysResponse.Failures
-  nameWithType: ClaimKeysResponse.Failures
-- uid: Cshrix.Data.ClaimKeysResponse.OneTimeKeys
-  name: OneTimeKeys
-  href: api/Cshrix.Data.ClaimKeysResponse.html#Cshrix_Data_ClaimKeysResponse_OneTimeKeys
-  commentId: P:Cshrix.Data.ClaimKeysResponse.OneTimeKeys
-  fullName: Cshrix.Data.ClaimKeysResponse.OneTimeKeys
-  nameWithType: ClaimKeysResponse.OneTimeKeys
-- uid: Cshrix.Data.ClaimKeysResponse.OneTimeKeys*
-  name: OneTimeKeys
-  href: api/Cshrix.Data.ClaimKeysResponse.html#Cshrix_Data_ClaimKeysResponse_OneTimeKeys_
-  commentId: Overload:Cshrix.Data.ClaimKeysResponse.OneTimeKeys
-  isSpec: "True"
-  fullName: Cshrix.Data.ClaimKeysResponse.OneTimeKeys
-  nameWithType: ClaimKeysResponse.OneTimeKeys
 - uid: Cshrix.Data.ClientInfo
   name: ClientInfo
   href: api/Cshrix.Data.ClientInfo.html
@@ -1397,15 +1668,15 @@ references:
   commentId: T:Cshrix.Data.CreateRoomRequest
   fullName: Cshrix.Data.CreateRoomRequest
   nameWithType: CreateRoomRequest
-- uid: Cshrix.Data.CreateRoomRequest.#ctor(System.Boolean,System.Nullable{Cshrix.Data.RoomVisibility},System.String,System.String,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyRoomInvite},System.String,Cshrix.Data.Events.Content.CreationContent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent},System.Nullable{Cshrix.Data.RoomPreset},Cshrix.Data.Events.Content.PowerLevelsContent)
-  name: CreateRoomRequest(Boolean, Nullable<RoomVisibility>, String, String, String, IReadOnlyCollection<UserId>, IReadOnlyCollection<ThirdPartyRoomInvite>, String, CreationContent, IReadOnlyCollection<StateEvent>, Nullable<RoomPreset>, PowerLevelsContent)
-  href: api/Cshrix.Data.CreateRoomRequest.html#Cshrix_Data_CreateRoomRequest__ctor_System_Boolean_System_Nullable_Cshrix_Data_RoomVisibility__System_String_System_String_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_ThirdParty_ThirdPartyRoomInvite__System_String_Cshrix_Data_Events_Content_CreationContent_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StateEvent__System_Nullable_Cshrix_Data_RoomPreset__Cshrix_Data_Events_Content_PowerLevelsContent_
-  commentId: M:Cshrix.Data.CreateRoomRequest.#ctor(System.Boolean,System.Nullable{Cshrix.Data.RoomVisibility},System.String,System.String,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyRoomInvite},System.String,Cshrix.Data.Events.Content.CreationContent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent},System.Nullable{Cshrix.Data.RoomPreset},Cshrix.Data.Events.Content.PowerLevelsContent)
-  name.vb: CreateRoomRequest(Boolean, Nullable(Of RoomVisibility), String, String, String, IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of ThirdPartyRoomInvite), String, CreationContent, IReadOnlyCollection(Of StateEvent), Nullable(Of RoomPreset), PowerLevelsContent)
-  fullName: Cshrix.Data.CreateRoomRequest.CreateRoomRequest(System.Boolean, System.Nullable<Cshrix.Data.RoomVisibility>, System.String, System.String, System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.ThirdParty.ThirdPartyRoomInvite>, System.String, Cshrix.Data.Events.Content.CreationContent, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StateEvent>, System.Nullable<Cshrix.Data.RoomPreset>, Cshrix.Data.Events.Content.PowerLevelsContent)
-  fullName.vb: Cshrix.Data.CreateRoomRequest.CreateRoomRequest(System.Boolean, System.Nullable(Of Cshrix.Data.RoomVisibility), System.String, System.String, System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.ThirdParty.ThirdPartyRoomInvite), System.String, Cshrix.Data.Events.Content.CreationContent, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StateEvent), System.Nullable(Of Cshrix.Data.RoomPreset), Cshrix.Data.Events.Content.PowerLevelsContent)
-  nameWithType: CreateRoomRequest.CreateRoomRequest(Boolean, Nullable<RoomVisibility>, String, String, String, IReadOnlyCollection<UserId>, IReadOnlyCollection<ThirdPartyRoomInvite>, String, CreationContent, IReadOnlyCollection<StateEvent>, Nullable<RoomPreset>, PowerLevelsContent)
-  nameWithType.vb: CreateRoomRequest.CreateRoomRequest(Boolean, Nullable(Of RoomVisibility), String, String, String, IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of ThirdPartyRoomInvite), String, CreationContent, IReadOnlyCollection(Of StateEvent), Nullable(Of RoomPreset), PowerLevelsContent)
+- uid: Cshrix.Data.CreateRoomRequest.#ctor(System.Nullable{Cshrix.Data.RoomVisibility},System.String,System.String,System.String,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyRoomInvite},Cshrix.Data.Events.Content.CreationContent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent},System.Nullable{Cshrix.Data.RoomPreset},System.Boolean,Cshrix.Data.Events.Content.PowerLevelsContent)
+  name: CreateRoomRequest(Nullable<RoomVisibility>, String, String, String, String, IReadOnlyCollection<UserId>, IReadOnlyCollection<ThirdPartyRoomInvite>, CreationContent, IReadOnlyCollection<StateEvent>, Nullable<RoomPreset>, Boolean, PowerLevelsContent)
+  href: api/Cshrix.Data.CreateRoomRequest.html#Cshrix_Data_CreateRoomRequest__ctor_System_Nullable_Cshrix_Data_RoomVisibility__System_String_System_String_System_String_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_ThirdParty_ThirdPartyRoomInvite__Cshrix_Data_Events_Content_CreationContent_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StateEvent__System_Nullable_Cshrix_Data_RoomPreset__System_Boolean_Cshrix_Data_Events_Content_PowerLevelsContent_
+  commentId: M:Cshrix.Data.CreateRoomRequest.#ctor(System.Nullable{Cshrix.Data.RoomVisibility},System.String,System.String,System.String,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyRoomInvite},Cshrix.Data.Events.Content.CreationContent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent},System.Nullable{Cshrix.Data.RoomPreset},System.Boolean,Cshrix.Data.Events.Content.PowerLevelsContent)
+  name.vb: CreateRoomRequest(Nullable(Of RoomVisibility), String, String, String, String, IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of ThirdPartyRoomInvite), CreationContent, IReadOnlyCollection(Of StateEvent), Nullable(Of RoomPreset), Boolean, PowerLevelsContent)
+  fullName: Cshrix.Data.CreateRoomRequest.CreateRoomRequest(System.Nullable<Cshrix.Data.RoomVisibility>, System.String, System.String, System.String, System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.ThirdParty.ThirdPartyRoomInvite>, Cshrix.Data.Events.Content.CreationContent, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StateEvent>, System.Nullable<Cshrix.Data.RoomPreset>, System.Boolean, Cshrix.Data.Events.Content.PowerLevelsContent)
+  fullName.vb: Cshrix.Data.CreateRoomRequest.CreateRoomRequest(System.Nullable(Of Cshrix.Data.RoomVisibility), System.String, System.String, System.String, System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.ThirdParty.ThirdPartyRoomInvite), Cshrix.Data.Events.Content.CreationContent, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StateEvent), System.Nullable(Of Cshrix.Data.RoomPreset), System.Boolean, Cshrix.Data.Events.Content.PowerLevelsContent)
+  nameWithType: CreateRoomRequest.CreateRoomRequest(Nullable<RoomVisibility>, String, String, String, String, IReadOnlyCollection<UserId>, IReadOnlyCollection<ThirdPartyRoomInvite>, CreationContent, IReadOnlyCollection<StateEvent>, Nullable<RoomPreset>, Boolean, PowerLevelsContent)
+  nameWithType.vb: CreateRoomRequest.CreateRoomRequest(Nullable(Of RoomVisibility), String, String, String, String, IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of ThirdPartyRoomInvite), CreationContent, IReadOnlyCollection(Of StateEvent), Nullable(Of RoomPreset), Boolean, PowerLevelsContent)
 - uid: Cshrix.Data.CreateRoomRequest.#ctor*
   name: CreateRoomRequest
   href: api/Cshrix.Data.CreateRoomRequest.html#Cshrix_Data_CreateRoomRequest__ctor_
@@ -2144,50 +2415,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.DisplayNameContainer.DisplayName
   nameWithType: DisplayNameContainer.DisplayName
-- uid: Cshrix.Data.EmailAuthentication
-  name: EmailAuthentication
-  href: api/Cshrix.Data.EmailAuthentication.html
-  commentId: T:Cshrix.Data.EmailAuthentication
-  fullName: Cshrix.Data.EmailAuthentication
-  nameWithType: EmailAuthentication
-- uid: Cshrix.Data.EmailAuthentication.#ctor(System.String,System.Collections.Generic.IEnumerable{Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials})
-  name: EmailAuthentication(String, IEnumerable<ThirdPartyIdentifierCredentials>)
-  href: api/Cshrix.Data.EmailAuthentication.html#Cshrix_Data_EmailAuthentication__ctor_System_String_System_Collections_Generic_IEnumerable_Cshrix_Data_ThirdParty_ThirdPartyIdentifierCredentials__
-  commentId: M:Cshrix.Data.EmailAuthentication.#ctor(System.String,System.Collections.Generic.IEnumerable{Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials})
-  name.vb: EmailAuthentication(String, IEnumerable(Of ThirdPartyIdentifierCredentials))
-  fullName: Cshrix.Data.EmailAuthentication.EmailAuthentication(System.String, System.Collections.Generic.IEnumerable<Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials>)
-  fullName.vb: Cshrix.Data.EmailAuthentication.EmailAuthentication(System.String, System.Collections.Generic.IEnumerable(Of Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials))
-  nameWithType: EmailAuthentication.EmailAuthentication(String, IEnumerable<ThirdPartyIdentifierCredentials>)
-  nameWithType.vb: EmailAuthentication.EmailAuthentication(String, IEnumerable(Of ThirdPartyIdentifierCredentials))
-- uid: Cshrix.Data.EmailAuthentication.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials})
-  name: EmailAuthentication(String, IReadOnlyCollection<ThirdPartyIdentifierCredentials>)
-  href: api/Cshrix.Data.EmailAuthentication.html#Cshrix_Data_EmailAuthentication__ctor_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_ThirdParty_ThirdPartyIdentifierCredentials__
-  commentId: M:Cshrix.Data.EmailAuthentication.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials})
-  name.vb: EmailAuthentication(String, IReadOnlyCollection(Of ThirdPartyIdentifierCredentials))
-  fullName: Cshrix.Data.EmailAuthentication.EmailAuthentication(System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials>)
-  fullName.vb: Cshrix.Data.EmailAuthentication.EmailAuthentication(System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.ThirdParty.ThirdPartyIdentifierCredentials))
-  nameWithType: EmailAuthentication.EmailAuthentication(String, IReadOnlyCollection<ThirdPartyIdentifierCredentials>)
-  nameWithType.vb: EmailAuthentication.EmailAuthentication(String, IReadOnlyCollection(Of ThirdPartyIdentifierCredentials))
-- uid: Cshrix.Data.EmailAuthentication.#ctor*
-  name: EmailAuthentication
-  href: api/Cshrix.Data.EmailAuthentication.html#Cshrix_Data_EmailAuthentication__ctor_
-  commentId: Overload:Cshrix.Data.EmailAuthentication.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.EmailAuthentication.EmailAuthentication
-  nameWithType: EmailAuthentication.EmailAuthentication
-- uid: Cshrix.Data.EmailAuthentication.Credentials
-  name: Credentials
-  href: api/Cshrix.Data.EmailAuthentication.html#Cshrix_Data_EmailAuthentication_Credentials
-  commentId: P:Cshrix.Data.EmailAuthentication.Credentials
-  fullName: Cshrix.Data.EmailAuthentication.Credentials
-  nameWithType: EmailAuthentication.Credentials
-- uid: Cshrix.Data.EmailAuthentication.Credentials*
-  name: Credentials
-  href: api/Cshrix.Data.EmailAuthentication.html#Cshrix_Data_EmailAuthentication_Credentials_
-  commentId: Overload:Cshrix.Data.EmailAuthentication.Credentials
-  isSpec: "True"
-  fullName: Cshrix.Data.EmailAuthentication.Credentials
-  nameWithType: EmailAuthentication.Credentials
 - uid: Cshrix.Data.EnabledContainer
   name: EnabledContainer
   href: api/Cshrix.Data.EnabledContainer.html
@@ -2487,15 +2714,15 @@ references:
   commentId: T:Cshrix.Data.EventContext
   fullName: Cshrix.Data.EventContext
   nameWithType: EventContext
-- uid: Cshrix.Data.EventContext.#ctor(System.String,Cshrix.Data.Events.RoomEvent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent})
-  name: EventContext(String, RoomEvent, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<RoomEvent>, String, IReadOnlyCollection<StateEvent>)
-  href: api/Cshrix.Data.EventContext.html#Cshrix_Data_EventContext__ctor_System_String_Cshrix_Data_Events_RoomEvent_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_RoomEvent__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_RoomEvent__System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StateEvent__
-  commentId: M:Cshrix.Data.EventContext.#ctor(System.String,Cshrix.Data.Events.RoomEvent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent})
-  name.vb: EventContext(String, RoomEvent, IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of RoomEvent), String, IReadOnlyCollection(Of StateEvent))
-  fullName: Cshrix.Data.EventContext.EventContext(System.String, Cshrix.Data.Events.RoomEvent, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.RoomEvent>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.RoomEvent>, System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StateEvent>)
-  fullName.vb: Cshrix.Data.EventContext.EventContext(System.String, Cshrix.Data.Events.RoomEvent, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.RoomEvent), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.RoomEvent), System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StateEvent))
-  nameWithType: EventContext.EventContext(String, RoomEvent, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<RoomEvent>, String, IReadOnlyCollection<StateEvent>)
-  nameWithType.vb: EventContext.EventContext(String, RoomEvent, IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of RoomEvent), String, IReadOnlyCollection(Of StateEvent))
+- uid: Cshrix.Data.EventContext.#ctor(System.String,System.String,Cshrix.Data.Events.RoomEvent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent})
+  name: EventContext(String, String, RoomEvent, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<StateEvent>)
+  href: api/Cshrix.Data.EventContext.html#Cshrix_Data_EventContext__ctor_System_String_System_String_Cshrix_Data_Events_RoomEvent_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_RoomEvent__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_RoomEvent__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StateEvent__
+  commentId: M:Cshrix.Data.EventContext.#ctor(System.String,System.String,Cshrix.Data.Events.RoomEvent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent})
+  name.vb: EventContext(String, String, RoomEvent, IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of StateEvent))
+  fullName: Cshrix.Data.EventContext.EventContext(System.String, System.String, Cshrix.Data.Events.RoomEvent, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.RoomEvent>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.RoomEvent>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StateEvent>)
+  fullName.vb: Cshrix.Data.EventContext.EventContext(System.String, System.String, Cshrix.Data.Events.RoomEvent, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.RoomEvent), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.RoomEvent), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StateEvent))
+  nameWithType: EventContext.EventContext(String, String, RoomEvent, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<StateEvent>)
+  nameWithType.vb: EventContext.EventContext(String, String, RoomEvent, IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of StateEvent))
 - uid: Cshrix.Data.EventContext.#ctor*
   name: EventContext
   href: api/Cshrix.Data.EventContext.html#Cshrix_Data_EventContext__ctor_
@@ -2587,24 +2814,24 @@ references:
   commentId: T:Cshrix.Data.EventFilter
   fullName: Cshrix.Data.EventFilter
   nameWithType: EventFilter
-- uid: Cshrix.Data.EventFilter.#ctor(System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{Cshrix.Data.UserId},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{Cshrix.Data.UserId},System.Collections.Generic.IEnumerable{System.String})
-  name: EventFilter(Nullable<Int32>, IEnumerable<UserId>, IEnumerable<String>, IEnumerable<UserId>, IEnumerable<String>)
-  href: api/Cshrix.Data.EventFilter.html#Cshrix_Data_EventFilter__ctor_System_Nullable_System_Int32__System_Collections_Generic_IEnumerable_Cshrix_Data_UserId__System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_Cshrix_Data_UserId__System_Collections_Generic_IEnumerable_System_String__
-  commentId: M:Cshrix.Data.EventFilter.#ctor(System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{Cshrix.Data.UserId},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{Cshrix.Data.UserId},System.Collections.Generic.IEnumerable{System.String})
-  name.vb: EventFilter(Nullable(Of Int32), IEnumerable(Of UserId), IEnumerable(Of String), IEnumerable(Of UserId), IEnumerable(Of String))
-  fullName: Cshrix.Data.EventFilter.EventFilter(System.Nullable<System.Int32>, System.Collections.Generic.IEnumerable<Cshrix.Data.UserId>, System.Collections.Generic.IEnumerable<System.String>, System.Collections.Generic.IEnumerable<Cshrix.Data.UserId>, System.Collections.Generic.IEnumerable<System.String>)
-  fullName.vb: Cshrix.Data.EventFilter.EventFilter(System.Nullable(Of System.Int32), System.Collections.Generic.IEnumerable(Of Cshrix.Data.UserId), System.Collections.Generic.IEnumerable(Of System.String), System.Collections.Generic.IEnumerable(Of Cshrix.Data.UserId), System.Collections.Generic.IEnumerable(Of System.String))
-  nameWithType: EventFilter.EventFilter(Nullable<Int32>, IEnumerable<UserId>, IEnumerable<String>, IEnumerable<UserId>, IEnumerable<String>)
-  nameWithType.vb: EventFilter.EventFilter(Nullable(Of Int32), IEnumerable(Of UserId), IEnumerable(Of String), IEnumerable(Of UserId), IEnumerable(Of String))
-- uid: Cshrix.Data.EventFilter.#ctor(System.Nullable{System.Int32},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{System.String})
-  name: EventFilter(Nullable<Int32>, IReadOnlyCollection<UserId>, IReadOnlyCollection<String>, IReadOnlyCollection<UserId>, IReadOnlyCollection<String>)
-  href: api/Cshrix.Data.EventFilter.html#Cshrix_Data_EventFilter__ctor_System_Nullable_System_Int32__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__System_Collections_Generic_IReadOnlyCollection_System_String__
-  commentId: M:Cshrix.Data.EventFilter.#ctor(System.Nullable{System.Int32},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{System.String})
-  name.vb: EventFilter(Nullable(Of Int32), IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of String), IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of String))
-  fullName: Cshrix.Data.EventFilter.EventFilter(System.Nullable<System.Int32>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>, System.Collections.Generic.IReadOnlyCollection<System.String>)
-  fullName.vb: Cshrix.Data.EventFilter.EventFilter(System.Nullable(Of System.Int32), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId), System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId), System.Collections.Generic.IReadOnlyCollection(Of System.String))
-  nameWithType: EventFilter.EventFilter(Nullable<Int32>, IReadOnlyCollection<UserId>, IReadOnlyCollection<String>, IReadOnlyCollection<UserId>, IReadOnlyCollection<String>)
-  nameWithType.vb: EventFilter.EventFilter(Nullable(Of Int32), IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of String), IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of String))
+- uid: Cshrix.Data.EventFilter.#ctor(System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{Cshrix.Data.UserId},System.Collections.Generic.IEnumerable{Cshrix.Data.UserId})
+  name: EventFilter(Nullable<Int32>, IEnumerable<String>, IEnumerable<String>, IEnumerable<UserId>, IEnumerable<UserId>)
+  href: api/Cshrix.Data.EventFilter.html#Cshrix_Data_EventFilter__ctor_System_Nullable_System_Int32__System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_Cshrix_Data_UserId__System_Collections_Generic_IEnumerable_Cshrix_Data_UserId__
+  commentId: M:Cshrix.Data.EventFilter.#ctor(System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{Cshrix.Data.UserId},System.Collections.Generic.IEnumerable{Cshrix.Data.UserId})
+  name.vb: EventFilter(Nullable(Of Int32), IEnumerable(Of String), IEnumerable(Of String), IEnumerable(Of UserId), IEnumerable(Of UserId))
+  fullName: Cshrix.Data.EventFilter.EventFilter(System.Nullable<System.Int32>, System.Collections.Generic.IEnumerable<System.String>, System.Collections.Generic.IEnumerable<System.String>, System.Collections.Generic.IEnumerable<Cshrix.Data.UserId>, System.Collections.Generic.IEnumerable<Cshrix.Data.UserId>)
+  fullName.vb: Cshrix.Data.EventFilter.EventFilter(System.Nullable(Of System.Int32), System.Collections.Generic.IEnumerable(Of System.String), System.Collections.Generic.IEnumerable(Of System.String), System.Collections.Generic.IEnumerable(Of Cshrix.Data.UserId), System.Collections.Generic.IEnumerable(Of Cshrix.Data.UserId))
+  nameWithType: EventFilter.EventFilter(Nullable<Int32>, IEnumerable<String>, IEnumerable<String>, IEnumerable<UserId>, IEnumerable<UserId>)
+  nameWithType.vb: EventFilter.EventFilter(Nullable(Of Int32), IEnumerable(Of String), IEnumerable(Of String), IEnumerable(Of UserId), IEnumerable(Of UserId))
+- uid: Cshrix.Data.EventFilter.#ctor(System.Nullable{System.Int32},System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId})
+  name: EventFilter(Nullable<Int32>, IReadOnlyCollection<String>, IReadOnlyCollection<String>, IReadOnlyCollection<UserId>, IReadOnlyCollection<UserId>)
+  href: api/Cshrix.Data.EventFilter.html#Cshrix_Data_EventFilter__ctor_System_Nullable_System_Int32__System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__
+  commentId: M:Cshrix.Data.EventFilter.#ctor(System.Nullable{System.Int32},System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId})
+  name.vb: EventFilter(Nullable(Of Int32), IReadOnlyCollection(Of String), IReadOnlyCollection(Of String), IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of UserId))
+  fullName: Cshrix.Data.EventFilter.EventFilter(System.Nullable<System.Int32>, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>)
+  fullName.vb: Cshrix.Data.EventFilter.EventFilter(System.Nullable(Of System.Int32), System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId))
+  nameWithType: EventFilter.EventFilter(Nullable<Int32>, IReadOnlyCollection<String>, IReadOnlyCollection<String>, IReadOnlyCollection<UserId>, IReadOnlyCollection<UserId>)
+  nameWithType.vb: EventFilter.EventFilter(Nullable(Of Int32), IReadOnlyCollection(Of String), IReadOnlyCollection(Of String), IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of UserId))
 - uid: Cshrix.Data.EventFilter.#ctor*
   name: EventFilter
   href: api/Cshrix.Data.EventFilter.html#Cshrix_Data_EventFilter__ctor_
@@ -7039,24 +7266,24 @@ references:
   commentId: T:Cshrix.Data.Filter
   fullName: Cshrix.Data.Filter
   nameWithType: Filter
-- uid: Cshrix.Data.Filter.#ctor(System.Nullable{Cshrix.Data.EventFilter},System.Collections.Generic.IEnumerable{System.String},System.Nullable{Cshrix.Data.EventFormat},System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.RoomFilter})
-  name: Filter(Nullable<EventFilter>, IEnumerable<String>, Nullable<EventFormat>, Nullable<EventFilter>, Nullable<RoomFilter>)
-  href: api/Cshrix.Data.Filter.html#Cshrix_Data_Filter__ctor_System_Nullable_Cshrix_Data_EventFilter__System_Collections_Generic_IEnumerable_System_String__System_Nullable_Cshrix_Data_EventFormat__System_Nullable_Cshrix_Data_EventFilter__System_Nullable_Cshrix_Data_RoomFilter__
-  commentId: M:Cshrix.Data.Filter.#ctor(System.Nullable{Cshrix.Data.EventFilter},System.Collections.Generic.IEnumerable{System.String},System.Nullable{Cshrix.Data.EventFormat},System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.RoomFilter})
-  name.vb: Filter(Nullable(Of EventFilter), IEnumerable(Of String), Nullable(Of EventFormat), Nullable(Of EventFilter), Nullable(Of RoomFilter))
-  fullName: Cshrix.Data.Filter.Filter(System.Nullable<Cshrix.Data.EventFilter>, System.Collections.Generic.IEnumerable<System.String>, System.Nullable<Cshrix.Data.EventFormat>, System.Nullable<Cshrix.Data.EventFilter>, System.Nullable<Cshrix.Data.RoomFilter>)
-  fullName.vb: Cshrix.Data.Filter.Filter(System.Nullable(Of Cshrix.Data.EventFilter), System.Collections.Generic.IEnumerable(Of System.String), System.Nullable(Of Cshrix.Data.EventFormat), System.Nullable(Of Cshrix.Data.EventFilter), System.Nullable(Of Cshrix.Data.RoomFilter))
-  nameWithType: Filter.Filter(Nullable<EventFilter>, IEnumerable<String>, Nullable<EventFormat>, Nullable<EventFilter>, Nullable<RoomFilter>)
-  nameWithType.vb: Filter.Filter(Nullable(Of EventFilter), IEnumerable(Of String), Nullable(Of EventFormat), Nullable(Of EventFilter), Nullable(Of RoomFilter))
-- uid: Cshrix.Data.Filter.#ctor(System.Nullable{Cshrix.Data.EventFilter},System.Collections.Generic.IReadOnlyCollection{System.String},System.Nullable{Cshrix.Data.EventFormat},System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.RoomFilter})
-  name: Filter(Nullable<EventFilter>, IReadOnlyCollection<String>, Nullable<EventFormat>, Nullable<EventFilter>, Nullable<RoomFilter>)
-  href: api/Cshrix.Data.Filter.html#Cshrix_Data_Filter__ctor_System_Nullable_Cshrix_Data_EventFilter__System_Collections_Generic_IReadOnlyCollection_System_String__System_Nullable_Cshrix_Data_EventFormat__System_Nullable_Cshrix_Data_EventFilter__System_Nullable_Cshrix_Data_RoomFilter__
-  commentId: M:Cshrix.Data.Filter.#ctor(System.Nullable{Cshrix.Data.EventFilter},System.Collections.Generic.IReadOnlyCollection{System.String},System.Nullable{Cshrix.Data.EventFormat},System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.RoomFilter})
-  name.vb: Filter(Nullable(Of EventFilter), IReadOnlyCollection(Of String), Nullable(Of EventFormat), Nullable(Of EventFilter), Nullable(Of RoomFilter))
-  fullName: Cshrix.Data.Filter.Filter(System.Nullable<Cshrix.Data.EventFilter>, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Nullable<Cshrix.Data.EventFormat>, System.Nullable<Cshrix.Data.EventFilter>, System.Nullable<Cshrix.Data.RoomFilter>)
-  fullName.vb: Cshrix.Data.Filter.Filter(System.Nullable(Of Cshrix.Data.EventFilter), System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Nullable(Of Cshrix.Data.EventFormat), System.Nullable(Of Cshrix.Data.EventFilter), System.Nullable(Of Cshrix.Data.RoomFilter))
-  nameWithType: Filter.Filter(Nullable<EventFilter>, IReadOnlyCollection<String>, Nullable<EventFormat>, Nullable<EventFilter>, Nullable<RoomFilter>)
-  nameWithType.vb: Filter.Filter(Nullable(Of EventFilter), IReadOnlyCollection(Of String), Nullable(Of EventFormat), Nullable(Of EventFilter), Nullable(Of RoomFilter))
+- uid: Cshrix.Data.Filter.#ctor(System.Collections.Generic.IEnumerable{System.String},System.Nullable{Cshrix.Data.EventFormat},Cshrix.Data.EventFilter,Cshrix.Data.EventFilter,System.Nullable{Cshrix.Data.RoomFilter})
+  name: Filter(IEnumerable<String>, Nullable<EventFormat>, EventFilter, EventFilter, Nullable<RoomFilter>)
+  href: api/Cshrix.Data.Filter.html#Cshrix_Data_Filter__ctor_System_Collections_Generic_IEnumerable_System_String__System_Nullable_Cshrix_Data_EventFormat__Cshrix_Data_EventFilter_Cshrix_Data_EventFilter_System_Nullable_Cshrix_Data_RoomFilter__
+  commentId: M:Cshrix.Data.Filter.#ctor(System.Collections.Generic.IEnumerable{System.String},System.Nullable{Cshrix.Data.EventFormat},Cshrix.Data.EventFilter,Cshrix.Data.EventFilter,System.Nullable{Cshrix.Data.RoomFilter})
+  name.vb: Filter(IEnumerable(Of String), Nullable(Of EventFormat), EventFilter, EventFilter, Nullable(Of RoomFilter))
+  fullName: Cshrix.Data.Filter.Filter(System.Collections.Generic.IEnumerable<System.String>, System.Nullable<Cshrix.Data.EventFormat>, Cshrix.Data.EventFilter, Cshrix.Data.EventFilter, System.Nullable<Cshrix.Data.RoomFilter>)
+  fullName.vb: Cshrix.Data.Filter.Filter(System.Collections.Generic.IEnumerable(Of System.String), System.Nullable(Of Cshrix.Data.EventFormat), Cshrix.Data.EventFilter, Cshrix.Data.EventFilter, System.Nullable(Of Cshrix.Data.RoomFilter))
+  nameWithType: Filter.Filter(IEnumerable<String>, Nullable<EventFormat>, EventFilter, EventFilter, Nullable<RoomFilter>)
+  nameWithType.vb: Filter.Filter(IEnumerable(Of String), Nullable(Of EventFormat), EventFilter, EventFilter, Nullable(Of RoomFilter))
+- uid: Cshrix.Data.Filter.#ctor(System.Collections.Generic.IReadOnlyCollection{System.String},System.Nullable{Cshrix.Data.EventFormat},Cshrix.Data.EventFilter,Cshrix.Data.EventFilter,System.Nullable{Cshrix.Data.RoomFilter})
+  name: Filter(IReadOnlyCollection<String>, Nullable<EventFormat>, EventFilter, EventFilter, Nullable<RoomFilter>)
+  href: api/Cshrix.Data.Filter.html#Cshrix_Data_Filter__ctor_System_Collections_Generic_IReadOnlyCollection_System_String__System_Nullable_Cshrix_Data_EventFormat__Cshrix_Data_EventFilter_Cshrix_Data_EventFilter_System_Nullable_Cshrix_Data_RoomFilter__
+  commentId: M:Cshrix.Data.Filter.#ctor(System.Collections.Generic.IReadOnlyCollection{System.String},System.Nullable{Cshrix.Data.EventFormat},Cshrix.Data.EventFilter,Cshrix.Data.EventFilter,System.Nullable{Cshrix.Data.RoomFilter})
+  name.vb: Filter(IReadOnlyCollection(Of String), Nullable(Of EventFormat), EventFilter, EventFilter, Nullable(Of RoomFilter))
+  fullName: Cshrix.Data.Filter.Filter(System.Collections.Generic.IReadOnlyCollection<System.String>, System.Nullable<Cshrix.Data.EventFormat>, Cshrix.Data.EventFilter, Cshrix.Data.EventFilter, System.Nullable<Cshrix.Data.RoomFilter>)
+  fullName.vb: Cshrix.Data.Filter.Filter(System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Nullable(Of Cshrix.Data.EventFormat), Cshrix.Data.EventFilter, Cshrix.Data.EventFilter, System.Nullable(Of Cshrix.Data.RoomFilter))
+  nameWithType: Filter.Filter(IReadOnlyCollection<String>, Nullable<EventFormat>, EventFilter, EventFilter, Nullable<RoomFilter>)
+  nameWithType.vb: Filter.Filter(IReadOnlyCollection(Of String), Nullable(Of EventFormat), EventFilter, EventFilter, Nullable(Of RoomFilter))
 - uid: Cshrix.Data.Filter.#ctor*
   name: Filter
   href: api/Cshrix.Data.Filter.html#Cshrix_Data_Filter__ctor_
@@ -7453,6 +7680,22 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Identifier.Inequality
   nameWithType: Identifier.Inequality
+- uid: Cshrix.Data.Identifier.Parse*
+  name: Parse
+  href: api/Cshrix.Data.Identifier.html#Cshrix_Data_Identifier_Parse_
+  commentId: Overload:Cshrix.Data.Identifier.Parse
+  isSpec: "True"
+  fullName: Cshrix.Data.Identifier.Parse
+  nameWithType: Identifier.Parse
+- uid: Cshrix.Data.Identifier.Parse``1(System.String)
+  name: Parse<T>(String)
+  href: api/Cshrix.Data.Identifier.html#Cshrix_Data_Identifier_Parse__1_System_String_
+  commentId: M:Cshrix.Data.Identifier.Parse``1(System.String)
+  name.vb: Parse(Of T)(String)
+  fullName: Cshrix.Data.Identifier.Parse<T>(System.String)
+  fullName.vb: Cshrix.Data.Identifier.Parse(Of T)(System.String)
+  nameWithType: Identifier.Parse<T>(String)
+  nameWithType.vb: Identifier.Parse(Of T)(String)
 - uid: Cshrix.Data.Identifier.ParseId(System.String)
   name: ParseId(String)
   href: api/Cshrix.Data.Identifier.html#Cshrix_Data_Identifier_ParseId_System_String_
@@ -7498,6 +7741,22 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Identifier.ToString
   nameWithType: Identifier.ToString
+- uid: Cshrix.Data.Identifier.TryParse*
+  name: TryParse
+  href: api/Cshrix.Data.Identifier.html#Cshrix_Data_Identifier_TryParse_
+  commentId: Overload:Cshrix.Data.Identifier.TryParse
+  isSpec: "True"
+  fullName: Cshrix.Data.Identifier.TryParse
+  nameWithType: Identifier.TryParse
+- uid: Cshrix.Data.Identifier.TryParse``1(System.String,``0@)
+  name: TryParse<T>(String, out T)
+  href: api/Cshrix.Data.Identifier.html#Cshrix_Data_Identifier_TryParse__1_System_String___0__
+  commentId: M:Cshrix.Data.Identifier.TryParse``1(System.String,``0@)
+  name.vb: TryParse(Of T)(String, ByRef T)
+  fullName: Cshrix.Data.Identifier.TryParse<T>(System.String, out T)
+  fullName.vb: Cshrix.Data.Identifier.TryParse(Of T)(System.String, ByRef T)
+  nameWithType: Identifier.TryParse<T>(String, out T)
+  nameWithType.vb: Identifier.TryParse(Of T)(String, ByRef T)
 - uid: Cshrix.Data.Identifier.Type
   name: Type
   href: api/Cshrix.Data.Identifier.html#Cshrix_Data_Identifier_Type
@@ -7699,170 +7958,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.LocalpartUserIdentifier.Type
   nameWithType: LocalpartUserIdentifier.Type
-- uid: Cshrix.Data.LoginFlow
-  name: LoginFlow
-  href: api/Cshrix.Data.LoginFlow.html
-  commentId: T:Cshrix.Data.LoginFlow
-  fullName: Cshrix.Data.LoginFlow
-  nameWithType: LoginFlow
-- uid: Cshrix.Data.LoginFlow.#ctor(Cshrix.Data.Authentication.AuthenticationType)
-  name: LoginFlow(AuthenticationType)
-  href: api/Cshrix.Data.LoginFlow.html#Cshrix_Data_LoginFlow__ctor_Cshrix_Data_Authentication_AuthenticationType_
-  commentId: M:Cshrix.Data.LoginFlow.#ctor(Cshrix.Data.Authentication.AuthenticationType)
-  fullName: Cshrix.Data.LoginFlow.LoginFlow(Cshrix.Data.Authentication.AuthenticationType)
-  nameWithType: LoginFlow.LoginFlow(AuthenticationType)
-- uid: Cshrix.Data.LoginFlow.#ctor*
-  name: LoginFlow
-  href: api/Cshrix.Data.LoginFlow.html#Cshrix_Data_LoginFlow__ctor_
-  commentId: Overload:Cshrix.Data.LoginFlow.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginFlow.LoginFlow
-  nameWithType: LoginFlow.LoginFlow
-- uid: Cshrix.Data.LoginFlow.Type
-  name: Type
-  href: api/Cshrix.Data.LoginFlow.html#Cshrix_Data_LoginFlow_Type
-  commentId: P:Cshrix.Data.LoginFlow.Type
-  fullName: Cshrix.Data.LoginFlow.Type
-  nameWithType: LoginFlow.Type
-- uid: Cshrix.Data.LoginFlow.Type*
-  name: Type
-  href: api/Cshrix.Data.LoginFlow.html#Cshrix_Data_LoginFlow_Type_
-  commentId: Overload:Cshrix.Data.LoginFlow.Type
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginFlow.Type
-  nameWithType: LoginFlow.Type
-- uid: Cshrix.Data.LoginFlows
-  name: LoginFlows
-  href: api/Cshrix.Data.LoginFlows.html
-  commentId: T:Cshrix.Data.LoginFlows
-  fullName: Cshrix.Data.LoginFlows
-  nameWithType: LoginFlows
-- uid: Cshrix.Data.LoginFlows.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.LoginFlow})
-  name: LoginFlows(IReadOnlyCollection<LoginFlow>)
-  href: api/Cshrix.Data.LoginFlows.html#Cshrix_Data_LoginFlows__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_LoginFlow__
-  commentId: M:Cshrix.Data.LoginFlows.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.LoginFlow})
-  name.vb: LoginFlows(IReadOnlyCollection(Of LoginFlow))
-  fullName: Cshrix.Data.LoginFlows.LoginFlows(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.LoginFlow>)
-  fullName.vb: Cshrix.Data.LoginFlows.LoginFlows(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.LoginFlow))
-  nameWithType: LoginFlows.LoginFlows(IReadOnlyCollection<LoginFlow>)
-  nameWithType.vb: LoginFlows.LoginFlows(IReadOnlyCollection(Of LoginFlow))
-- uid: Cshrix.Data.LoginFlows.#ctor*
-  name: LoginFlows
-  href: api/Cshrix.Data.LoginFlows.html#Cshrix_Data_LoginFlows__ctor_
-  commentId: Overload:Cshrix.Data.LoginFlows.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginFlows.LoginFlows
-  nameWithType: LoginFlows.LoginFlows
-- uid: Cshrix.Data.LoginFlows.Flows
-  name: Flows
-  href: api/Cshrix.Data.LoginFlows.html#Cshrix_Data_LoginFlows_Flows
-  commentId: P:Cshrix.Data.LoginFlows.Flows
-  fullName: Cshrix.Data.LoginFlows.Flows
-  nameWithType: LoginFlows.Flows
-- uid: Cshrix.Data.LoginFlows.Flows*
-  name: Flows
-  href: api/Cshrix.Data.LoginFlows.html#Cshrix_Data_LoginFlows_Flows_
-  commentId: Overload:Cshrix.Data.LoginFlows.Flows
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginFlows.Flows
-  nameWithType: LoginFlows.Flows
-- uid: Cshrix.Data.LoginRequest
-  name: LoginRequest
-  href: api/Cshrix.Data.LoginRequest.html
-  commentId: T:Cshrix.Data.LoginRequest
-  fullName: Cshrix.Data.LoginRequest
-  nameWithType: LoginRequest
-- uid: Cshrix.Data.LoginRequest.#ctor(Cshrix.Data.Authentication.AuthenticationType,Cshrix.Data.IUserIdentifier,System.String,System.String,System.String,System.String)
-  name: LoginRequest(AuthenticationType, IUserIdentifier, String, String, String, String)
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest__ctor_Cshrix_Data_Authentication_AuthenticationType_Cshrix_Data_IUserIdentifier_System_String_System_String_System_String_System_String_
-  commentId: M:Cshrix.Data.LoginRequest.#ctor(Cshrix.Data.Authentication.AuthenticationType,Cshrix.Data.IUserIdentifier,System.String,System.String,System.String,System.String)
-  fullName: Cshrix.Data.LoginRequest.LoginRequest(Cshrix.Data.Authentication.AuthenticationType, Cshrix.Data.IUserIdentifier, System.String, System.String, System.String, System.String)
-  nameWithType: LoginRequest.LoginRequest(AuthenticationType, IUserIdentifier, String, String, String, String)
-- uid: Cshrix.Data.LoginRequest.#ctor*
-  name: LoginRequest
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest__ctor_
-  commentId: Overload:Cshrix.Data.LoginRequest.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginRequest.LoginRequest
-  nameWithType: LoginRequest.LoginRequest
-- uid: Cshrix.Data.LoginRequest.DeviceId
-  name: DeviceId
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_DeviceId
-  commentId: P:Cshrix.Data.LoginRequest.DeviceId
-  fullName: Cshrix.Data.LoginRequest.DeviceId
-  nameWithType: LoginRequest.DeviceId
-- uid: Cshrix.Data.LoginRequest.DeviceId*
-  name: DeviceId
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_DeviceId_
-  commentId: Overload:Cshrix.Data.LoginRequest.DeviceId
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginRequest.DeviceId
-  nameWithType: LoginRequest.DeviceId
-- uid: Cshrix.Data.LoginRequest.Identifier
-  name: Identifier
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_Identifier
-  commentId: P:Cshrix.Data.LoginRequest.Identifier
-  fullName: Cshrix.Data.LoginRequest.Identifier
-  nameWithType: LoginRequest.Identifier
-- uid: Cshrix.Data.LoginRequest.Identifier*
-  name: Identifier
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_Identifier_
-  commentId: Overload:Cshrix.Data.LoginRequest.Identifier
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginRequest.Identifier
-  nameWithType: LoginRequest.Identifier
-- uid: Cshrix.Data.LoginRequest.InitialDeviceDisplayName
-  name: InitialDeviceDisplayName
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_InitialDeviceDisplayName
-  commentId: P:Cshrix.Data.LoginRequest.InitialDeviceDisplayName
-  fullName: Cshrix.Data.LoginRequest.InitialDeviceDisplayName
-  nameWithType: LoginRequest.InitialDeviceDisplayName
-- uid: Cshrix.Data.LoginRequest.InitialDeviceDisplayName*
-  name: InitialDeviceDisplayName
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_InitialDeviceDisplayName_
-  commentId: Overload:Cshrix.Data.LoginRequest.InitialDeviceDisplayName
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginRequest.InitialDeviceDisplayName
-  nameWithType: LoginRequest.InitialDeviceDisplayName
-- uid: Cshrix.Data.LoginRequest.Password
-  name: Password
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_Password
-  commentId: P:Cshrix.Data.LoginRequest.Password
-  fullName: Cshrix.Data.LoginRequest.Password
-  nameWithType: LoginRequest.Password
-- uid: Cshrix.Data.LoginRequest.Password*
-  name: Password
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_Password_
-  commentId: Overload:Cshrix.Data.LoginRequest.Password
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginRequest.Password
-  nameWithType: LoginRequest.Password
-- uid: Cshrix.Data.LoginRequest.Token
-  name: Token
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_Token
-  commentId: P:Cshrix.Data.LoginRequest.Token
-  fullName: Cshrix.Data.LoginRequest.Token
-  nameWithType: LoginRequest.Token
-- uid: Cshrix.Data.LoginRequest.Token*
-  name: Token
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_Token_
-  commentId: Overload:Cshrix.Data.LoginRequest.Token
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginRequest.Token
-  nameWithType: LoginRequest.Token
-- uid: Cshrix.Data.LoginRequest.Type
-  name: Type
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_Type
-  commentId: P:Cshrix.Data.LoginRequest.Type
-  fullName: Cshrix.Data.LoginRequest.Type
-  nameWithType: LoginRequest.Type
-- uid: Cshrix.Data.LoginRequest.Type*
-  name: Type
-  href: api/Cshrix.Data.LoginRequest.html#Cshrix_Data_LoginRequest_Type_
-  commentId: Overload:Cshrix.Data.LoginRequest.Type
-  isSpec: "True"
-  fullName: Cshrix.Data.LoginRequest.Type
-  nameWithType: LoginRequest.Type
 - uid: Cshrix.Data.Membership
   name: Membership
   href: api/Cshrix.Data.Membership.html
@@ -10104,15 +10199,15 @@ references:
   commentId: T:Cshrix.Data.RoomAliasInformation
   fullName: Cshrix.Data.RoomAliasInformation
   nameWithType: RoomAliasInformation
-- uid: Cshrix.Data.RoomAliasInformation.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{System.String})
-  name: RoomAliasInformation(String, IReadOnlyCollection<String>)
-  href: api/Cshrix.Data.RoomAliasInformation.html#Cshrix_Data_RoomAliasInformation__ctor_System_String_System_Collections_Generic_IReadOnlyCollection_System_String__
-  commentId: M:Cshrix.Data.RoomAliasInformation.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{System.String})
-  name.vb: RoomAliasInformation(String, IReadOnlyCollection(Of String))
-  fullName: Cshrix.Data.RoomAliasInformation.RoomAliasInformation(System.String, System.Collections.Generic.IReadOnlyCollection<System.String>)
-  fullName.vb: Cshrix.Data.RoomAliasInformation.RoomAliasInformation(System.String, System.Collections.Generic.IReadOnlyCollection(Of System.String))
-  nameWithType: RoomAliasInformation.RoomAliasInformation(String, IReadOnlyCollection<String>)
-  nameWithType.vb: RoomAliasInformation.RoomAliasInformation(String, IReadOnlyCollection(Of String))
+- uid: Cshrix.Data.RoomAliasInformation.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ServerName})
+  name: RoomAliasInformation(String, IReadOnlyCollection<ServerName>)
+  href: api/Cshrix.Data.RoomAliasInformation.html#Cshrix_Data_RoomAliasInformation__ctor_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_ServerName__
+  commentId: M:Cshrix.Data.RoomAliasInformation.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ServerName})
+  name.vb: RoomAliasInformation(String, IReadOnlyCollection(Of ServerName))
+  fullName: Cshrix.Data.RoomAliasInformation.RoomAliasInformation(System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.ServerName>)
+  fullName.vb: Cshrix.Data.RoomAliasInformation.RoomAliasInformation(System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.ServerName))
+  nameWithType: RoomAliasInformation.RoomAliasInformation(String, IReadOnlyCollection<ServerName>)
+  nameWithType.vb: RoomAliasInformation.RoomAliasInformation(String, IReadOnlyCollection(Of ServerName))
 - uid: Cshrix.Data.RoomAliasInformation.#ctor*
   name: RoomAliasInformation
   href: api/Cshrix.Data.RoomAliasInformation.html#Cshrix_Data_RoomAliasInformation__ctor_
@@ -10190,19 +10285,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.RoomEventFilter.ContainsUrl
   nameWithType: RoomEventFilter.ContainsUrl
-- uid: Cshrix.Data.RoomEventFilter.Limit
-  name: Limit
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_Limit
-  commentId: P:Cshrix.Data.RoomEventFilter.Limit
-  fullName: Cshrix.Data.RoomEventFilter.Limit
-  nameWithType: RoomEventFilter.Limit
-- uid: Cshrix.Data.RoomEventFilter.Limit*
-  name: Limit
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_Limit_
-  commentId: Overload:Cshrix.Data.RoomEventFilter.Limit
-  isSpec: "True"
-  fullName: Cshrix.Data.RoomEventFilter.Limit
-  nameWithType: RoomEventFilter.Limit
 - uid: Cshrix.Data.RoomEventFilter.NotRooms
   name: NotRooms
   href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_NotRooms
@@ -10216,32 +10298,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.RoomEventFilter.NotRooms
   nameWithType: RoomEventFilter.NotRooms
-- uid: Cshrix.Data.RoomEventFilter.NotSenders
-  name: NotSenders
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_NotSenders
-  commentId: P:Cshrix.Data.RoomEventFilter.NotSenders
-  fullName: Cshrix.Data.RoomEventFilter.NotSenders
-  nameWithType: RoomEventFilter.NotSenders
-- uid: Cshrix.Data.RoomEventFilter.NotSenders*
-  name: NotSenders
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_NotSenders_
-  commentId: Overload:Cshrix.Data.RoomEventFilter.NotSenders
-  isSpec: "True"
-  fullName: Cshrix.Data.RoomEventFilter.NotSenders
-  nameWithType: RoomEventFilter.NotSenders
-- uid: Cshrix.Data.RoomEventFilter.NotTypes
-  name: NotTypes
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_NotTypes
-  commentId: P:Cshrix.Data.RoomEventFilter.NotTypes
-  fullName: Cshrix.Data.RoomEventFilter.NotTypes
-  nameWithType: RoomEventFilter.NotTypes
-- uid: Cshrix.Data.RoomEventFilter.NotTypes*
-  name: NotTypes
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_NotTypes_
-  commentId: Overload:Cshrix.Data.RoomEventFilter.NotTypes
-  isSpec: "True"
-  fullName: Cshrix.Data.RoomEventFilter.NotTypes
-  nameWithType: RoomEventFilter.NotTypes
 - uid: Cshrix.Data.RoomEventFilter.Rooms
   name: Rooms
   href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_Rooms
@@ -10255,56 +10311,30 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.RoomEventFilter.Rooms
   nameWithType: RoomEventFilter.Rooms
-- uid: Cshrix.Data.RoomEventFilter.Senders
-  name: Senders
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_Senders
-  commentId: P:Cshrix.Data.RoomEventFilter.Senders
-  fullName: Cshrix.Data.RoomEventFilter.Senders
-  nameWithType: RoomEventFilter.Senders
-- uid: Cshrix.Data.RoomEventFilter.Senders*
-  name: Senders
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_Senders_
-  commentId: Overload:Cshrix.Data.RoomEventFilter.Senders
-  isSpec: "True"
-  fullName: Cshrix.Data.RoomEventFilter.Senders
-  nameWithType: RoomEventFilter.Senders
-- uid: Cshrix.Data.RoomEventFilter.Types
-  name: Types
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_Types
-  commentId: P:Cshrix.Data.RoomEventFilter.Types
-  fullName: Cshrix.Data.RoomEventFilter.Types
-  nameWithType: RoomEventFilter.Types
-- uid: Cshrix.Data.RoomEventFilter.Types*
-  name: Types
-  href: api/Cshrix.Data.RoomEventFilter.html#Cshrix_Data_RoomEventFilter_Types_
-  commentId: Overload:Cshrix.Data.RoomEventFilter.Types
-  isSpec: "True"
-  fullName: Cshrix.Data.RoomEventFilter.Types
-  nameWithType: RoomEventFilter.Types
 - uid: Cshrix.Data.RoomFilter
   name: RoomFilter
   href: api/Cshrix.Data.RoomFilter.html
   commentId: T:Cshrix.Data.RoomFilter
   fullName: Cshrix.Data.RoomFilter
   nameWithType: RoomFilter
-- uid: Cshrix.Data.RoomFilter.#ctor(System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.EventFilter},System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.EventFilter})
-  name: RoomFilter(Nullable<EventFilter>, Nullable<EventFilter>, Boolean, IEnumerable<String>, IEnumerable<String>, Nullable<EventFilter>, Nullable<EventFilter>)
-  href: api/Cshrix.Data.RoomFilter.html#Cshrix_Data_RoomFilter__ctor_System_Nullable_Cshrix_Data_EventFilter__System_Nullable_Cshrix_Data_EventFilter__System_Boolean_System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_System_String__System_Nullable_Cshrix_Data_EventFilter__System_Nullable_Cshrix_Data_EventFilter__
-  commentId: M:Cshrix.Data.RoomFilter.#ctor(System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.EventFilter},System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.EventFilter})
-  name.vb: RoomFilter(Nullable(Of EventFilter), Nullable(Of EventFilter), Boolean, IEnumerable(Of String), IEnumerable(Of String), Nullable(Of EventFilter), Nullable(Of EventFilter))
-  fullName: Cshrix.Data.RoomFilter.RoomFilter(System.Nullable<Cshrix.Data.EventFilter>, System.Nullable<Cshrix.Data.EventFilter>, System.Boolean, System.Collections.Generic.IEnumerable<System.String>, System.Collections.Generic.IEnumerable<System.String>, System.Nullable<Cshrix.Data.EventFilter>, System.Nullable<Cshrix.Data.EventFilter>)
-  fullName.vb: Cshrix.Data.RoomFilter.RoomFilter(System.Nullable(Of Cshrix.Data.EventFilter), System.Nullable(Of Cshrix.Data.EventFilter), System.Boolean, System.Collections.Generic.IEnumerable(Of System.String), System.Collections.Generic.IEnumerable(Of System.String), System.Nullable(Of Cshrix.Data.EventFilter), System.Nullable(Of Cshrix.Data.EventFilter))
-  nameWithType: RoomFilter.RoomFilter(Nullable<EventFilter>, Nullable<EventFilter>, Boolean, IEnumerable<String>, IEnumerable<String>, Nullable<EventFilter>, Nullable<EventFilter>)
-  nameWithType.vb: RoomFilter.RoomFilter(Nullable(Of EventFilter), Nullable(Of EventFilter), Boolean, IEnumerable(Of String), IEnumerable(Of String), Nullable(Of EventFilter), Nullable(Of EventFilter))
-- uid: Cshrix.Data.RoomFilter.#ctor(System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.EventFilter},System.Boolean,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{System.String},System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.EventFilter})
-  name: RoomFilter(Nullable<EventFilter>, Nullable<EventFilter>, Boolean, IReadOnlyCollection<String>, IReadOnlyCollection<String>, Nullable<EventFilter>, Nullable<EventFilter>)
-  href: api/Cshrix.Data.RoomFilter.html#Cshrix_Data_RoomFilter__ctor_System_Nullable_Cshrix_Data_EventFilter__System_Nullable_Cshrix_Data_EventFilter__System_Boolean_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_System_String__System_Nullable_Cshrix_Data_EventFilter__System_Nullable_Cshrix_Data_EventFilter__
-  commentId: M:Cshrix.Data.RoomFilter.#ctor(System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.EventFilter},System.Boolean,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{System.String},System.Nullable{Cshrix.Data.EventFilter},System.Nullable{Cshrix.Data.EventFilter})
-  name.vb: RoomFilter(Nullable(Of EventFilter), Nullable(Of EventFilter), Boolean, IReadOnlyCollection(Of String), IReadOnlyCollection(Of String), Nullable(Of EventFilter), Nullable(Of EventFilter))
-  fullName: Cshrix.Data.RoomFilter.RoomFilter(System.Nullable<Cshrix.Data.EventFilter>, System.Nullable<Cshrix.Data.EventFilter>, System.Boolean, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Nullable<Cshrix.Data.EventFilter>, System.Nullable<Cshrix.Data.EventFilter>)
-  fullName.vb: Cshrix.Data.RoomFilter.RoomFilter(System.Nullable(Of Cshrix.Data.EventFilter), System.Nullable(Of Cshrix.Data.EventFilter), System.Boolean, System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Nullable(Of Cshrix.Data.EventFilter), System.Nullable(Of Cshrix.Data.EventFilter))
-  nameWithType: RoomFilter.RoomFilter(Nullable<EventFilter>, Nullable<EventFilter>, Boolean, IReadOnlyCollection<String>, IReadOnlyCollection<String>, Nullable<EventFilter>, Nullable<EventFilter>)
-  nameWithType.vb: RoomFilter.RoomFilter(Nullable(Of EventFilter), Nullable(Of EventFilter), Boolean, IReadOnlyCollection(Of String), IReadOnlyCollection(Of String), Nullable(Of EventFilter), Nullable(Of EventFilter))
+- uid: Cshrix.Data.RoomFilter.#ctor(System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter)
+  name: RoomFilter(Boolean, IEnumerable<String>, IEnumerable<String>, RoomEventFilter, RoomEventFilter, RoomEventFilter, RoomEventFilter)
+  href: api/Cshrix.Data.RoomFilter.html#Cshrix_Data_RoomFilter__ctor_System_Boolean_System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_System_String__Cshrix_Data_RoomEventFilter_Cshrix_Data_RoomEventFilter_Cshrix_Data_RoomEventFilter_Cshrix_Data_RoomEventFilter_
+  commentId: M:Cshrix.Data.RoomFilter.#ctor(System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter)
+  name.vb: RoomFilter(Boolean, IEnumerable(Of String), IEnumerable(Of String), RoomEventFilter, RoomEventFilter, RoomEventFilter, RoomEventFilter)
+  fullName: Cshrix.Data.RoomFilter.RoomFilter(System.Boolean, System.Collections.Generic.IEnumerable<System.String>, System.Collections.Generic.IEnumerable<System.String>, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter)
+  fullName.vb: Cshrix.Data.RoomFilter.RoomFilter(System.Boolean, System.Collections.Generic.IEnumerable(Of System.String), System.Collections.Generic.IEnumerable(Of System.String), Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter)
+  nameWithType: RoomFilter.RoomFilter(Boolean, IEnumerable<String>, IEnumerable<String>, RoomEventFilter, RoomEventFilter, RoomEventFilter, RoomEventFilter)
+  nameWithType.vb: RoomFilter.RoomFilter(Boolean, IEnumerable(Of String), IEnumerable(Of String), RoomEventFilter, RoomEventFilter, RoomEventFilter, RoomEventFilter)
+- uid: Cshrix.Data.RoomFilter.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{System.String},Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter)
+  name: RoomFilter(Boolean, IReadOnlyCollection<String>, IReadOnlyCollection<String>, RoomEventFilter, RoomEventFilter, RoomEventFilter, RoomEventFilter)
+  href: api/Cshrix.Data.RoomFilter.html#Cshrix_Data_RoomFilter__ctor_System_Boolean_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_System_String__Cshrix_Data_RoomEventFilter_Cshrix_Data_RoomEventFilter_Cshrix_Data_RoomEventFilter_Cshrix_Data_RoomEventFilter_
+  commentId: M:Cshrix.Data.RoomFilter.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{System.String},Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter,Cshrix.Data.RoomEventFilter)
+  name.vb: RoomFilter(Boolean, IReadOnlyCollection(Of String), IReadOnlyCollection(Of String), RoomEventFilter, RoomEventFilter, RoomEventFilter, RoomEventFilter)
+  fullName: Cshrix.Data.RoomFilter.RoomFilter(System.Boolean, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Collections.Generic.IReadOnlyCollection<System.String>, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter)
+  fullName.vb: Cshrix.Data.RoomFilter.RoomFilter(System.Boolean, System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Collections.Generic.IReadOnlyCollection(Of System.String), Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter, Cshrix.Data.RoomEventFilter)
+  nameWithType: RoomFilter.RoomFilter(Boolean, IReadOnlyCollection<String>, IReadOnlyCollection<String>, RoomEventFilter, RoomEventFilter, RoomEventFilter, RoomEventFilter)
+  nameWithType.vb: RoomFilter.RoomFilter(Boolean, IReadOnlyCollection(Of String), IReadOnlyCollection(Of String), RoomEventFilter, RoomEventFilter, RoomEventFilter, RoomEventFilter)
 - uid: Cshrix.Data.RoomFilter.#ctor*
   name: RoomFilter
   href: api/Cshrix.Data.RoomFilter.html#Cshrix_Data_RoomFilter__ctor_
@@ -10611,15 +10641,15 @@ references:
   commentId: T:Cshrix.Data.Search.SearchCriteria
   fullName: Cshrix.Data.Search.SearchCriteria
   nameWithType: SearchCriteria
-- uid: Cshrix.Data.Search.SearchCriteria.#ctor(System.String,System.Nullable{Cshrix.Data.Search.SearchKeys},System.Nullable{Cshrix.Data.RoomEventFilter},Cshrix.Data.Search.SearchOrdering,System.Nullable{Cshrix.Data.Search.SearchContextConfiguration},System.Boolean,System.Nullable{Cshrix.Data.Search.SearchGroupings})
-  name: SearchCriteria(String, Nullable<SearchKeys>, Nullable<RoomEventFilter>, SearchOrdering, Nullable<SearchContextConfiguration>, Boolean, Nullable<SearchGroupings>)
-  href: api/Cshrix.Data.Search.SearchCriteria.html#Cshrix_Data_Search_SearchCriteria__ctor_System_String_System_Nullable_Cshrix_Data_Search_SearchKeys__System_Nullable_Cshrix_Data_RoomEventFilter__Cshrix_Data_Search_SearchOrdering_System_Nullable_Cshrix_Data_Search_SearchContextConfiguration__System_Boolean_System_Nullable_Cshrix_Data_Search_SearchGroupings__
-  commentId: M:Cshrix.Data.Search.SearchCriteria.#ctor(System.String,System.Nullable{Cshrix.Data.Search.SearchKeys},System.Nullable{Cshrix.Data.RoomEventFilter},Cshrix.Data.Search.SearchOrdering,System.Nullable{Cshrix.Data.Search.SearchContextConfiguration},System.Boolean,System.Nullable{Cshrix.Data.Search.SearchGroupings})
-  name.vb: SearchCriteria(String, Nullable(Of SearchKeys), Nullable(Of RoomEventFilter), SearchOrdering, Nullable(Of SearchContextConfiguration), Boolean, Nullable(Of SearchGroupings))
-  fullName: Cshrix.Data.Search.SearchCriteria.SearchCriteria(System.String, System.Nullable<Cshrix.Data.Search.SearchKeys>, System.Nullable<Cshrix.Data.RoomEventFilter>, Cshrix.Data.Search.SearchOrdering, System.Nullable<Cshrix.Data.Search.SearchContextConfiguration>, System.Boolean, System.Nullable<Cshrix.Data.Search.SearchGroupings>)
-  fullName.vb: Cshrix.Data.Search.SearchCriteria.SearchCriteria(System.String, System.Nullable(Of Cshrix.Data.Search.SearchKeys), System.Nullable(Of Cshrix.Data.RoomEventFilter), Cshrix.Data.Search.SearchOrdering, System.Nullable(Of Cshrix.Data.Search.SearchContextConfiguration), System.Boolean, System.Nullable(Of Cshrix.Data.Search.SearchGroupings))
-  nameWithType: SearchCriteria.SearchCriteria(String, Nullable<SearchKeys>, Nullable<RoomEventFilter>, SearchOrdering, Nullable<SearchContextConfiguration>, Boolean, Nullable<SearchGroupings>)
-  nameWithType.vb: SearchCriteria.SearchCriteria(String, Nullable(Of SearchKeys), Nullable(Of RoomEventFilter), SearchOrdering, Nullable(Of SearchContextConfiguration), Boolean, Nullable(Of SearchGroupings))
+- uid: Cshrix.Data.Search.SearchCriteria.#ctor(System.String,System.Nullable{Cshrix.Data.Search.SearchKeys},Cshrix.Data.RoomEventFilter,Cshrix.Data.Search.SearchOrdering,System.Nullable{Cshrix.Data.Search.SearchContextConfiguration},System.Boolean,System.Nullable{Cshrix.Data.Search.SearchGroupings})
+  name: SearchCriteria(String, Nullable<SearchKeys>, RoomEventFilter, SearchOrdering, Nullable<SearchContextConfiguration>, Boolean, Nullable<SearchGroupings>)
+  href: api/Cshrix.Data.Search.SearchCriteria.html#Cshrix_Data_Search_SearchCriteria__ctor_System_String_System_Nullable_Cshrix_Data_Search_SearchKeys__Cshrix_Data_RoomEventFilter_Cshrix_Data_Search_SearchOrdering_System_Nullable_Cshrix_Data_Search_SearchContextConfiguration__System_Boolean_System_Nullable_Cshrix_Data_Search_SearchGroupings__
+  commentId: M:Cshrix.Data.Search.SearchCriteria.#ctor(System.String,System.Nullable{Cshrix.Data.Search.SearchKeys},Cshrix.Data.RoomEventFilter,Cshrix.Data.Search.SearchOrdering,System.Nullable{Cshrix.Data.Search.SearchContextConfiguration},System.Boolean,System.Nullable{Cshrix.Data.Search.SearchGroupings})
+  name.vb: SearchCriteria(String, Nullable(Of SearchKeys), RoomEventFilter, SearchOrdering, Nullable(Of SearchContextConfiguration), Boolean, Nullable(Of SearchGroupings))
+  fullName: Cshrix.Data.Search.SearchCriteria.SearchCriteria(System.String, System.Nullable<Cshrix.Data.Search.SearchKeys>, Cshrix.Data.RoomEventFilter, Cshrix.Data.Search.SearchOrdering, System.Nullable<Cshrix.Data.Search.SearchContextConfiguration>, System.Boolean, System.Nullable<Cshrix.Data.Search.SearchGroupings>)
+  fullName.vb: Cshrix.Data.Search.SearchCriteria.SearchCriteria(System.String, System.Nullable(Of Cshrix.Data.Search.SearchKeys), Cshrix.Data.RoomEventFilter, Cshrix.Data.Search.SearchOrdering, System.Nullable(Of Cshrix.Data.Search.SearchContextConfiguration), System.Boolean, System.Nullable(Of Cshrix.Data.Search.SearchGroupings))
+  nameWithType: SearchCriteria.SearchCriteria(String, Nullable<SearchKeys>, RoomEventFilter, SearchOrdering, Nullable<SearchContextConfiguration>, Boolean, Nullable<SearchGroupings>)
+  nameWithType.vb: SearchCriteria.SearchCriteria(String, Nullable(Of SearchKeys), RoomEventFilter, SearchOrdering, Nullable(Of SearchContextConfiguration), Boolean, Nullable(Of SearchGroupings))
 - uid: Cshrix.Data.Search.SearchCriteria.#ctor*
   name: SearchCriteria
   href: api/Cshrix.Data.Search.SearchCriteria.html#Cshrix_Data_Search_SearchCriteria__ctor_
@@ -11268,12 +11298,12 @@ references:
   commentId: T:Cshrix.Data.Search.SearchUser
   fullName: Cshrix.Data.Search.SearchUser
   nameWithType: SearchUser
-- uid: Cshrix.Data.Search.SearchUser.#ctor(System.Uri,System.String,Cshrix.Data.UserId)
-  name: SearchUser(Uri, String, UserId)
-  href: api/Cshrix.Data.Search.SearchUser.html#Cshrix_Data_Search_SearchUser__ctor_System_Uri_System_String_Cshrix_Data_UserId_
-  commentId: M:Cshrix.Data.Search.SearchUser.#ctor(System.Uri,System.String,Cshrix.Data.UserId)
-  fullName: Cshrix.Data.Search.SearchUser.SearchUser(System.Uri, System.String, Cshrix.Data.UserId)
-  nameWithType: SearchUser.SearchUser(Uri, String, UserId)
+- uid: Cshrix.Data.Search.SearchUser.#ctor(Cshrix.Data.UserId,System.String,System.Uri)
+  name: SearchUser(UserId, String, Uri)
+  href: api/Cshrix.Data.Search.SearchUser.html#Cshrix_Data_Search_SearchUser__ctor_Cshrix_Data_UserId_System_String_System_Uri_
+  commentId: M:Cshrix.Data.Search.SearchUser.#ctor(Cshrix.Data.UserId,System.String,System.Uri)
+  fullName: Cshrix.Data.Search.SearchUser.SearchUser(Cshrix.Data.UserId, System.String, System.Uri)
+  nameWithType: SearchUser.SearchUser(UserId, String, Uri)
 - uid: Cshrix.Data.Search.SearchUser.#ctor*
   name: SearchUser
   href: api/Cshrix.Data.Search.SearchUser.html#Cshrix_Data_Search_SearchUser__ctor_
@@ -11958,12 +11988,12 @@ references:
   commentId: T:Cshrix.Data.ThirdParty.ThirdPartyIdentifier
   fullName: Cshrix.Data.ThirdParty.ThirdPartyIdentifier
   nameWithType: ThirdPartyIdentifier
-- uid: Cshrix.Data.ThirdParty.ThirdPartyIdentifier.#ctor(System.DateTimeOffset,System.String,System.String,System.DateTimeOffset)
-  name: ThirdPartyIdentifier(DateTimeOffset, String, String, DateTimeOffset)
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyIdentifier__ctor_System_DateTimeOffset_System_String_System_String_System_DateTimeOffset_
-  commentId: M:Cshrix.Data.ThirdParty.ThirdPartyIdentifier.#ctor(System.DateTimeOffset,System.String,System.String,System.DateTimeOffset)
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyIdentifier.ThirdPartyIdentifier(System.DateTimeOffset, System.String, System.String, System.DateTimeOffset)
-  nameWithType: ThirdPartyIdentifier.ThirdPartyIdentifier(DateTimeOffset, String, String, DateTimeOffset)
+- uid: Cshrix.Data.ThirdParty.ThirdPartyIdentifier.#ctor(System.String,System.String,System.DateTimeOffset,System.DateTimeOffset)
+  name: ThirdPartyIdentifier(String, String, DateTimeOffset, DateTimeOffset)
+  href: api/Cshrix.Data.ThirdParty.ThirdPartyIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyIdentifier__ctor_System_String_System_String_System_DateTimeOffset_System_DateTimeOffset_
+  commentId: M:Cshrix.Data.ThirdParty.ThirdPartyIdentifier.#ctor(System.String,System.String,System.DateTimeOffset,System.DateTimeOffset)
+  fullName: Cshrix.Data.ThirdParty.ThirdPartyIdentifier.ThirdPartyIdentifier(System.String, System.String, System.DateTimeOffset, System.DateTimeOffset)
+  nameWithType: ThirdPartyIdentifier.ThirdPartyIdentifier(String, String, DateTimeOffset, DateTimeOffset)
 - uid: Cshrix.Data.ThirdParty.ThirdPartyIdentifier.#ctor*
   name: ThirdPartyIdentifier
   href: api/Cshrix.Data.ThirdParty.ThirdPartyIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyIdentifier__ctor_
@@ -12260,63 +12290,63 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.ThirdParty.ThirdPartyRoomInvite.Medium
   nameWithType: ThirdPartyRoomInvite.Medium
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier
+- uid: Cshrix.Data.ThirdPartyUserIdentifier
   name: ThirdPartyUserIdentifier
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html
-  commentId: T:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html
+  commentId: T:Cshrix.Data.ThirdPartyUserIdentifier
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier
   nameWithType: ThirdPartyUserIdentifier
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.#ctor(System.String,System.String)
+- uid: Cshrix.Data.ThirdPartyUserIdentifier.#ctor(System.String,System.String)
   name: ThirdPartyUserIdentifier(String, String)
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyUserIdentifier__ctor_System_String_System_String_
-  commentId: M:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.#ctor(System.String,System.String)
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.ThirdPartyUserIdentifier(System.String, System.String)
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdPartyUserIdentifier__ctor_System_String_System_String_
+  commentId: M:Cshrix.Data.ThirdPartyUserIdentifier.#ctor(System.String,System.String)
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier.ThirdPartyUserIdentifier(System.String, System.String)
   nameWithType: ThirdPartyUserIdentifier.ThirdPartyUserIdentifier(String, String)
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.#ctor*
+- uid: Cshrix.Data.ThirdPartyUserIdentifier.#ctor*
   name: ThirdPartyUserIdentifier
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyUserIdentifier__ctor_
-  commentId: Overload:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.#ctor
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdPartyUserIdentifier__ctor_
+  commentId: Overload:Cshrix.Data.ThirdPartyUserIdentifier.#ctor
   isSpec: "True"
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.ThirdPartyUserIdentifier
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier.ThirdPartyUserIdentifier
   nameWithType: ThirdPartyUserIdentifier.ThirdPartyUserIdentifier
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Address
+- uid: Cshrix.Data.ThirdPartyUserIdentifier.Address
   name: Address
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyUserIdentifier_Address
-  commentId: P:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Address
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Address
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdPartyUserIdentifier_Address
+  commentId: P:Cshrix.Data.ThirdPartyUserIdentifier.Address
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier.Address
   nameWithType: ThirdPartyUserIdentifier.Address
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Address*
+- uid: Cshrix.Data.ThirdPartyUserIdentifier.Address*
   name: Address
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyUserIdentifier_Address_
-  commentId: Overload:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Address
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdPartyUserIdentifier_Address_
+  commentId: Overload:Cshrix.Data.ThirdPartyUserIdentifier.Address
   isSpec: "True"
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Address
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier.Address
   nameWithType: ThirdPartyUserIdentifier.Address
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Medium
+- uid: Cshrix.Data.ThirdPartyUserIdentifier.Medium
   name: Medium
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyUserIdentifier_Medium
-  commentId: P:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Medium
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Medium
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdPartyUserIdentifier_Medium
+  commentId: P:Cshrix.Data.ThirdPartyUserIdentifier.Medium
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier.Medium
   nameWithType: ThirdPartyUserIdentifier.Medium
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Medium*
+- uid: Cshrix.Data.ThirdPartyUserIdentifier.Medium*
   name: Medium
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyUserIdentifier_Medium_
-  commentId: Overload:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Medium
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdPartyUserIdentifier_Medium_
+  commentId: Overload:Cshrix.Data.ThirdPartyUserIdentifier.Medium
   isSpec: "True"
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Medium
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier.Medium
   nameWithType: ThirdPartyUserIdentifier.Medium
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Type
+- uid: Cshrix.Data.ThirdPartyUserIdentifier.Type
   name: Type
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyUserIdentifier_Type
-  commentId: P:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Type
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Type
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdPartyUserIdentifier_Type
+  commentId: P:Cshrix.Data.ThirdPartyUserIdentifier.Type
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier.Type
   nameWithType: ThirdPartyUserIdentifier.Type
-- uid: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Type*
+- uid: Cshrix.Data.ThirdPartyUserIdentifier.Type*
   name: Type
-  href: api/Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdParty_ThirdPartyUserIdentifier_Type_
-  commentId: Overload:Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Type
+  href: api/Cshrix.Data.ThirdPartyUserIdentifier.html#Cshrix_Data_ThirdPartyUserIdentifier_Type_
+  commentId: Overload:Cshrix.Data.ThirdPartyUserIdentifier.Type
   isSpec: "True"
-  fullName: Cshrix.Data.ThirdParty.ThirdPartyUserIdentifier.Type
+  fullName: Cshrix.Data.ThirdPartyUserIdentifier.Type
   nameWithType: ThirdPartyUserIdentifier.Type
 - uid: Cshrix.Data.TurnServerCredentials
   name: TurnServerCredentials
@@ -12424,63 +12454,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.UnsignedDeviceInfo.DisplayName
   nameWithType: UnsignedDeviceInfo.DisplayName
-- uid: Cshrix.Data.UploadKeysRequest
-  name: UploadKeysRequest
-  href: api/Cshrix.Data.UploadKeysRequest.html
-  commentId: T:Cshrix.Data.UploadKeysRequest
-  fullName: Cshrix.Data.UploadKeysRequest
-  nameWithType: UploadKeysRequest
-- uid: Cshrix.Data.UploadKeysRequest.#ctor(System.Nullable{Cshrix.Data.Devices.DeviceKeys},System.Collections.Generic.IDictionary{System.String,System.Object})
-  name: UploadKeysRequest(Nullable<DeviceKeys>, IDictionary<String, Object>)
-  href: api/Cshrix.Data.UploadKeysRequest.html#Cshrix_Data_UploadKeysRequest__ctor_System_Nullable_Cshrix_Data_Devices_DeviceKeys__System_Collections_Generic_IDictionary_System_String_System_Object__
-  commentId: M:Cshrix.Data.UploadKeysRequest.#ctor(System.Nullable{Cshrix.Data.Devices.DeviceKeys},System.Collections.Generic.IDictionary{System.String,System.Object})
-  name.vb: UploadKeysRequest(Nullable(Of DeviceKeys), IDictionary(Of String, Object))
-  fullName: Cshrix.Data.UploadKeysRequest.UploadKeysRequest(System.Nullable<Cshrix.Data.Devices.DeviceKeys>, System.Collections.Generic.IDictionary<System.String, System.Object>)
-  fullName.vb: Cshrix.Data.UploadKeysRequest.UploadKeysRequest(System.Nullable(Of Cshrix.Data.Devices.DeviceKeys), System.Collections.Generic.IDictionary(Of System.String, System.Object))
-  nameWithType: UploadKeysRequest.UploadKeysRequest(Nullable<DeviceKeys>, IDictionary<String, Object>)
-  nameWithType.vb: UploadKeysRequest.UploadKeysRequest(Nullable(Of DeviceKeys), IDictionary(Of String, Object))
-- uid: Cshrix.Data.UploadKeysRequest.#ctor(System.Nullable{Cshrix.Data.Devices.DeviceKeys},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})
-  name: UploadKeysRequest(Nullable<DeviceKeys>, IReadOnlyDictionary<String, Object>)
-  href: api/Cshrix.Data.UploadKeysRequest.html#Cshrix_Data_UploadKeysRequest__ctor_System_Nullable_Cshrix_Data_Devices_DeviceKeys__System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__
-  commentId: M:Cshrix.Data.UploadKeysRequest.#ctor(System.Nullable{Cshrix.Data.Devices.DeviceKeys},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})
-  name.vb: UploadKeysRequest(Nullable(Of DeviceKeys), IReadOnlyDictionary(Of String, Object))
-  fullName: Cshrix.Data.UploadKeysRequest.UploadKeysRequest(System.Nullable<Cshrix.Data.Devices.DeviceKeys>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Object>)
-  fullName.vb: Cshrix.Data.UploadKeysRequest.UploadKeysRequest(System.Nullable(Of Cshrix.Data.Devices.DeviceKeys), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Object))
-  nameWithType: UploadKeysRequest.UploadKeysRequest(Nullable<DeviceKeys>, IReadOnlyDictionary<String, Object>)
-  nameWithType.vb: UploadKeysRequest.UploadKeysRequest(Nullable(Of DeviceKeys), IReadOnlyDictionary(Of String, Object))
-- uid: Cshrix.Data.UploadKeysRequest.#ctor*
-  name: UploadKeysRequest
-  href: api/Cshrix.Data.UploadKeysRequest.html#Cshrix_Data_UploadKeysRequest__ctor_
-  commentId: Overload:Cshrix.Data.UploadKeysRequest.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.UploadKeysRequest.UploadKeysRequest
-  nameWithType: UploadKeysRequest.UploadKeysRequest
-- uid: Cshrix.Data.UploadKeysRequest.DeviceKeys
-  name: DeviceKeys
-  href: api/Cshrix.Data.UploadKeysRequest.html#Cshrix_Data_UploadKeysRequest_DeviceKeys
-  commentId: P:Cshrix.Data.UploadKeysRequest.DeviceKeys
-  fullName: Cshrix.Data.UploadKeysRequest.DeviceKeys
-  nameWithType: UploadKeysRequest.DeviceKeys
-- uid: Cshrix.Data.UploadKeysRequest.DeviceKeys*
-  name: DeviceKeys
-  href: api/Cshrix.Data.UploadKeysRequest.html#Cshrix_Data_UploadKeysRequest_DeviceKeys_
-  commentId: Overload:Cshrix.Data.UploadKeysRequest.DeviceKeys
-  isSpec: "True"
-  fullName: Cshrix.Data.UploadKeysRequest.DeviceKeys
-  nameWithType: UploadKeysRequest.DeviceKeys
-- uid: Cshrix.Data.UploadKeysRequest.OneTimeKeys
-  name: OneTimeKeys
-  href: api/Cshrix.Data.UploadKeysRequest.html#Cshrix_Data_UploadKeysRequest_OneTimeKeys
-  commentId: P:Cshrix.Data.UploadKeysRequest.OneTimeKeys
-  fullName: Cshrix.Data.UploadKeysRequest.OneTimeKeys
-  nameWithType: UploadKeysRequest.OneTimeKeys
-- uid: Cshrix.Data.UploadKeysRequest.OneTimeKeys*
-  name: OneTimeKeys
-  href: api/Cshrix.Data.UploadKeysRequest.html#Cshrix_Data_UploadKeysRequest_OneTimeKeys_
-  commentId: Overload:Cshrix.Data.UploadKeysRequest.OneTimeKeys
-  isSpec: "True"
-  fullName: Cshrix.Data.UploadKeysRequest.OneTimeKeys
-  nameWithType: UploadKeysRequest.OneTimeKeys
 - uid: Cshrix.Data.UserId
   name: UserId
   href: api/Cshrix.Data.UserId.html
@@ -13591,11 +13564,11 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.ChangePasswordAsync
   nameWithType: IMatrixClientServerApi.ChangePasswordAsync
-- uid: Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync(Cshrix.Data.ClaimKeysRequest)
+- uid: Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync(Cshrix.Cryptography.Data.ClaimKeysRequest)
   name: ClaimOneTimeKeysAsync(ClaimKeysRequest)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_ClaimOneTimeKeysAsync_Cshrix_Data_ClaimKeysRequest_
-  commentId: M:Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync(Cshrix.Data.ClaimKeysRequest)
-  fullName: Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync(Cshrix.Data.ClaimKeysRequest)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_ClaimOneTimeKeysAsync_Cshrix_Cryptography_Data_ClaimKeysRequest_
+  commentId: M:Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync(Cshrix.Cryptography.Data.ClaimKeysRequest)
+  fullName: Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync(Cshrix.Cryptography.Data.ClaimKeysRequest)
   nameWithType: IMatrixClientServerApi.ClaimOneTimeKeysAsync(ClaimKeysRequest)
 - uid: Cshrix.IMatrixClientServerApi.ClaimOneTimeKeysAsync*
   name: ClaimOneTimeKeysAsync
@@ -14250,11 +14223,11 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.LeaveAsync
   nameWithType: IMatrixClientServerApi.LeaveAsync
-- uid: Cshrix.IMatrixClientServerApi.LoginAsync(Cshrix.Data.LoginRequest)
+- uid: Cshrix.IMatrixClientServerApi.LoginAsync(Cshrix.Data.Authentication.LoginRequest)
   name: LoginAsync(LoginRequest)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_LoginAsync_Cshrix_Data_LoginRequest_
-  commentId: M:Cshrix.IMatrixClientServerApi.LoginAsync(Cshrix.Data.LoginRequest)
-  fullName: Cshrix.IMatrixClientServerApi.LoginAsync(Cshrix.Data.LoginRequest)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_LoginAsync_Cshrix_Data_Authentication_LoginRequest_
+  commentId: M:Cshrix.IMatrixClientServerApi.LoginAsync(Cshrix.Data.Authentication.LoginRequest)
+  fullName: Cshrix.IMatrixClientServerApi.LoginAsync(Cshrix.Data.Authentication.LoginRequest)
   nameWithType: IMatrixClientServerApi.LoginAsync(LoginRequest)
 - uid: Cshrix.IMatrixClientServerApi.LoginAsync*
   name: LoginAsync
@@ -14709,11 +14682,11 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.UploadAsync
   nameWithType: IMatrixClientServerApi.UploadAsync
-- uid: Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync(Cshrix.Data.UploadKeysRequest)
+- uid: Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync(Cshrix.Cryptography.Data.UploadKeysRequest)
   name: UploadDeviceKeysAsync(UploadKeysRequest)
-  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_UploadDeviceKeysAsync_Cshrix_Data_UploadKeysRequest_
-  commentId: M:Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync(Cshrix.Data.UploadKeysRequest)
-  fullName: Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync(Cshrix.Data.UploadKeysRequest)
+  href: api/Cshrix.IMatrixClientServerApi.html#Cshrix_IMatrixClientServerApi_UploadDeviceKeysAsync_Cshrix_Cryptography_Data_UploadKeysRequest_
+  commentId: M:Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync(Cshrix.Cryptography.Data.UploadKeysRequest)
+  fullName: Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync(Cshrix.Cryptography.Data.UploadKeysRequest)
   nameWithType: IMatrixClientServerApi.UploadDeviceKeysAsync(UploadKeysRequest)
 - uid: Cshrix.IMatrixClientServerApi.UploadDeviceKeysAsync*
   name: UploadDeviceKeysAsync
@@ -15211,11 +15184,11 @@ references:
   commentId: T:Cshrix.Serialization.OneTimeKeyConverter
   fullName: Cshrix.Serialization.OneTimeKeyConverter
   nameWithType: OneTimeKeyConverter
-- uid: Cshrix.Serialization.OneTimeKeyConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Cryptography.OneTimeKey,System.Boolean,Newtonsoft.Json.JsonSerializer)
+- uid: Cshrix.Serialization.OneTimeKeyConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Cryptography.Data.OneTimeKey,System.Boolean,Newtonsoft.Json.JsonSerializer)
   name: ReadJson(JsonReader, Type, OneTimeKey, Boolean, JsonSerializer)
-  href: api/Cshrix.Serialization.OneTimeKeyConverter.html#Cshrix_Serialization_OneTimeKeyConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_Cshrix_Cryptography_OneTimeKey_System_Boolean_Newtonsoft_Json_JsonSerializer_
-  commentId: M:Cshrix.Serialization.OneTimeKeyConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Cryptography.OneTimeKey,System.Boolean,Newtonsoft.Json.JsonSerializer)
-  fullName: Cshrix.Serialization.OneTimeKeyConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, Cshrix.Cryptography.OneTimeKey, System.Boolean, Newtonsoft.Json.JsonSerializer)
+  href: api/Cshrix.Serialization.OneTimeKeyConverter.html#Cshrix_Serialization_OneTimeKeyConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_Cshrix_Cryptography_Data_OneTimeKey_System_Boolean_Newtonsoft_Json_JsonSerializer_
+  commentId: M:Cshrix.Serialization.OneTimeKeyConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Cryptography.Data.OneTimeKey,System.Boolean,Newtonsoft.Json.JsonSerializer)
+  fullName: Cshrix.Serialization.OneTimeKeyConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, Cshrix.Cryptography.Data.OneTimeKey, System.Boolean, Newtonsoft.Json.JsonSerializer)
   nameWithType: OneTimeKeyConverter.ReadJson(JsonReader, Type, OneTimeKey, Boolean, JsonSerializer)
 - uid: Cshrix.Serialization.OneTimeKeyConverter.ReadJson*
   name: ReadJson
@@ -15224,11 +15197,11 @@ references:
   isSpec: "True"
   fullName: Cshrix.Serialization.OneTimeKeyConverter.ReadJson
   nameWithType: OneTimeKeyConverter.ReadJson
-- uid: Cshrix.Serialization.OneTimeKeyConverter.WriteJson(Newtonsoft.Json.JsonWriter,Cshrix.Cryptography.OneTimeKey,Newtonsoft.Json.JsonSerializer)
+- uid: Cshrix.Serialization.OneTimeKeyConverter.WriteJson(Newtonsoft.Json.JsonWriter,Cshrix.Cryptography.Data.OneTimeKey,Newtonsoft.Json.JsonSerializer)
   name: WriteJson(JsonWriter, OneTimeKey, JsonSerializer)
-  href: api/Cshrix.Serialization.OneTimeKeyConverter.html#Cshrix_Serialization_OneTimeKeyConverter_WriteJson_Newtonsoft_Json_JsonWriter_Cshrix_Cryptography_OneTimeKey_Newtonsoft_Json_JsonSerializer_
-  commentId: M:Cshrix.Serialization.OneTimeKeyConverter.WriteJson(Newtonsoft.Json.JsonWriter,Cshrix.Cryptography.OneTimeKey,Newtonsoft.Json.JsonSerializer)
-  fullName: Cshrix.Serialization.OneTimeKeyConverter.WriteJson(Newtonsoft.Json.JsonWriter, Cshrix.Cryptography.OneTimeKey, Newtonsoft.Json.JsonSerializer)
+  href: api/Cshrix.Serialization.OneTimeKeyConverter.html#Cshrix_Serialization_OneTimeKeyConverter_WriteJson_Newtonsoft_Json_JsonWriter_Cshrix_Cryptography_Data_OneTimeKey_Newtonsoft_Json_JsonSerializer_
+  commentId: M:Cshrix.Serialization.OneTimeKeyConverter.WriteJson(Newtonsoft.Json.JsonWriter,Cshrix.Cryptography.Data.OneTimeKey,Newtonsoft.Json.JsonSerializer)
+  fullName: Cshrix.Serialization.OneTimeKeyConverter.WriteJson(Newtonsoft.Json.JsonWriter, Cshrix.Cryptography.Data.OneTimeKey, Newtonsoft.Json.JsonSerializer)
   nameWithType: OneTimeKeyConverter.WriteJson(JsonWriter, OneTimeKey, JsonSerializer)
 - uid: Cshrix.Serialization.OneTimeKeyConverter.WriteJson*
   name: WriteJson

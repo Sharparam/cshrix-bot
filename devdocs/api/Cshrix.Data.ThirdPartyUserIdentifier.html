@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum SearchKeys
+    <title>Struct ThirdPartyUserIdentifier
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum SearchKeys
+    <meta name="title" content="Struct ThirdPartyUserIdentifier
    ">
     <meta name="generator" content="docfx 2.42.3.0">
     
@@ -357,8 +357,8 @@
                           <li class="">
                             <a href="Cshrix.Data.TagsResponse.html" title="TagsResponse" class="">TagsResponse</a>
                           </li>
-                          <li class="">
-                            <a href="Cshrix.Data.ThirdPartyUserIdentifier.html" title="ThirdPartyUserIdentifier" class="">ThirdPartyUserIdentifier</a>
+                          <li class="active">
+                            <a href="Cshrix.Data.ThirdPartyUserIdentifier.html" title="ThirdPartyUserIdentifier" class="active">ThirdPartyUserIdentifier</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.TurnServerCredentials.html" title="TurnServerCredentials" class="">TurnServerCredentials</a>
@@ -822,8 +822,8 @@
                           <li class="">
                             <a href="Cshrix.Data.Search.SearchGroupValue.html" title="SearchGroupValue" class="">SearchGroupValue</a>
                           </li>
-                          <li class="active">
-                            <a href="Cshrix.Data.Search.SearchKeys.html" title="SearchKeys" class="active">SearchKeys</a>
+                          <li class="">
+                            <a href="Cshrix.Data.Search.SearchKeys.html" title="SearchKeys" class="">SearchKeys</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.Search.SearchOrdering.html" title="SearchOrdering" class="">SearchOrdering</a>
@@ -1031,59 +1031,192 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Cshrix.Data.Search.SearchKeys">
+            <article class="content wrap" id="_content" data-uid="Cshrix.Data.ThirdPartyUserIdentifier">
   
   
-  <h1 id="Cshrix_Data_Search_SearchKeys" data-uid="Cshrix.Data.Search.SearchKeys" class="text-break">Enum SearchKeys
+  <h1 id="Cshrix_Data_ThirdPartyUserIdentifier" data-uid="Cshrix.Data.ThirdPartyUserIdentifier" class="text-break">Struct ThirdPartyUserIdentifier
   </h1>
-  <div class="markdown level0 summary"><p>Different keys that can be searched against in events.</p>
+  <div class="markdown level0 summary"><p>Identifies a user by one of their third party identifier.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Cshrix.Data.Search.html">Cshrix.Data.Search</a></h6>
-  <h6><strong>Assembly</strong>: Cshrix.dll</h6>
-  <h5 id="Cshrix_Data_Search_SearchKeys_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Flags]
-[JsonConverter(typeof(StringArrayFlagsEnumConverter&lt;SearchKeys&gt;))]
-public enum SearchKeys</code></pre>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Cshrix.Data.IUserIdentifier.html">IUserIdentifier</a></div>
   </div>
-  <h3 id="fields">Fields
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cshrix.Data.html">Cshrix.Data</a></h6>
+  <h6><strong>Assembly</strong>: Cshrix.dll</h6>
+  <h5 id="Cshrix_Data_ThirdPartyUserIdentifier_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct ThirdPartyUserIdentifier : IUserIdentifier</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_ThirdPartyUserIdentifier__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.Data.ThirdPartyUserIdentifier.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Identifiers/ThirdPartyUserIdentifier.cs/#L23">View Source</a>
+  </span>
+  <a id="Cshrix_Data_ThirdPartyUserIdentifier__ctor_" data-uid="Cshrix.Data.ThirdPartyUserIdentifier.#ctor*"></a>
+  <h4 id="Cshrix_Data_ThirdPartyUserIdentifier__ctor_System_String_System_String_" data-uid="Cshrix.Data.ThirdPartyUserIdentifier.#ctor(System.String,System.String)">ThirdPartyUserIdentifier(String, String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.ThirdPartyUserIdentifier.html">ThirdPartyUserIdentifier</a> structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConstructor]
+public ThirdPartyUserIdentifier(string address, string medium)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
+        <th>Type</th>
         <th>Name</th>
         <th>Description</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
-        <td id="Cshrix_Data_Search_SearchKeys_All">All</td>
-        <td><p>Search all fields.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address of the identifier.</p>
 </td>
       </tr>
       <tr>
-        <td id="Cshrix_Data_Search_SearchKeys_ContentBody">ContentBody</td>
-        <td><p>Search in the body of the event content.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Cshrix_Data_Search_SearchKeys_ContentName">ContentName</td>
-        <td><p>Search in the name of the event content.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Cshrix_Data_Search_SearchKeys_ContentTopic">ContentTopic</td>
-        <td><p>Search in the topic of the content.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Cshrix_Data_Search_SearchKeys_None">None</td>
-        <td><p>Don't search any keys.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">medium</span></td>
+        <td><p>The medium of the identifier.</p>
 </td>
       </tr>
     </tbody>
-  </thead></thead></table>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_ThirdPartyUserIdentifier_Address.md&amp;value=---%0Auid%3A%20Cshrix.Data.ThirdPartyUserIdentifier.Address%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Identifiers/ThirdPartyUserIdentifier.cs/#L40">View Source</a>
+  </span>
+  <a id="Cshrix_Data_ThirdPartyUserIdentifier_Address_" data-uid="Cshrix.Data.ThirdPartyUserIdentifier.Address*"></a>
+  <h4 id="Cshrix_Data_ThirdPartyUserIdentifier_Address" data-uid="Cshrix.Data.ThirdPartyUserIdentifier.Address">Address</h4>
+  <div class="markdown level1 summary"><p>Gets the third party identifier address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;address&quot;)]
+public string Address { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_ThirdPartyUserIdentifier_Medium.md&amp;value=---%0Auid%3A%20Cshrix.Data.ThirdPartyUserIdentifier.Medium%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Identifiers/ThirdPartyUserIdentifier.cs/#L46">View Source</a>
+  </span>
+  <a id="Cshrix_Data_ThirdPartyUserIdentifier_Medium_" data-uid="Cshrix.Data.ThirdPartyUserIdentifier.Medium*"></a>
+  <h4 id="Cshrix_Data_ThirdPartyUserIdentifier_Medium" data-uid="Cshrix.Data.ThirdPartyUserIdentifier.Medium">Medium</h4>
+  <div class="markdown level1 summary"><p>Gets the medium of the third party identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;medium&quot;)]
+public string Medium { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_ThirdPartyUserIdentifier_Type.md&amp;value=---%0Auid%3A%20Cshrix.Data.ThirdPartyUserIdentifier.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Identifiers/ThirdPartyUserIdentifier.cs/#L35">View Source</a>
+  </span>
+  <a id="Cshrix_Data_ThirdPartyUserIdentifier_Type_" data-uid="Cshrix.Data.ThirdPartyUserIdentifier.Type*"></a>
+  <h4 id="Cshrix_Data_ThirdPartyUserIdentifier_Type" data-uid="Cshrix.Data.ThirdPartyUserIdentifier.Type">Type</h4>
+  <div class="markdown level1 summary"><p>Gets the type of this identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserIdentifierType Type { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cshrix.Data.UserIdentifierType.html">UserIdentifierType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Cshrix_Data_ThirdPartyUserIdentifier_Type_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Returns <a class="xref" href="Cshrix.Data.UserIdentifierType.html#Cshrix_Data_UserIdentifierType_ThirdParty">ThirdParty</a>.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Cshrix.Data.IUserIdentifier.html">IUserIdentifier</a>
+  </div>
 </article>
           </div>
           
@@ -1092,10 +1225,10 @@ public enum SearchKeys</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Search_SearchKeys.md&amp;value=---%0Auid%3A%20Cshrix.Data.Search.SearchKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_ThirdPartyUserIdentifier.md&amp;value=---%0Auid%3A%20Cshrix.Data.ThirdPartyUserIdentifier%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Search/SearchKeys.cs/#L21" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Identifiers/ThirdPartyUserIdentifier.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
