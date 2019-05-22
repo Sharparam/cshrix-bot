@@ -12,10 +12,20 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains the content for an event of type <c>m.room.aliases</c>.
+    /// </summary>
     public sealed class AliasesContent : EventContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AliasesContent" /> class.
+        /// </summary>
+        /// <param name="aliases">Configured room aliases.</param>
         public AliasesContent(IReadOnlyCollection<RoomAlias> aliases) => Aliases = aliases;
 
+        /// <summary>
+        /// Gets all configured aliases for the room.
+        /// </summary>
         [JsonProperty("aliases")]
         public IReadOnlyCollection<RoomAlias> Aliases { get; }
     }

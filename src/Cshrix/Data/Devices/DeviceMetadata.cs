@@ -10,13 +10,23 @@ namespace Cshrix.Data.Devices
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains metadata for a device.
+    /// </summary>
     public readonly struct DeviceMetadata
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceMetadata" /> structure.
+        /// </summary>
+        /// <param name="displayName">The display name of the device.</param>
         [JsonConstructor]
         public DeviceMetadata(string displayName)
             : this() =>
             DisplayName = displayName;
 
+        /// <summary>
+        /// Gets the display name of the device.
+        /// </summary>
         [JsonProperty("display_name")]
         public string DisplayName { get; }
     }

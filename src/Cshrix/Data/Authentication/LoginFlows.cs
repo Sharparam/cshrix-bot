@@ -12,13 +12,23 @@ namespace Cshrix.Data.Authentication
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains supported login flows on the homeserver.
+    /// </summary>
     public readonly struct LoginFlows
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoginFlows" /> structure.
+        /// </summary>
+        /// <param name="flows">The supported flows.</param>
         [JsonConstructor]
         public LoginFlows(IReadOnlyCollection<LoginFlow> flows)
             : this() =>
             Flows = flows;
 
+        /// <summary>
+        /// Gets a collection of supported login flows.
+        /// </summary>
         [JsonProperty("flows")]
         public IReadOnlyCollection<LoginFlow> Flows { get; }
     }

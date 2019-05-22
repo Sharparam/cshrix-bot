@@ -10,13 +10,23 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// An object containing a display name.
+    /// </summary>
     public readonly struct DisplayNameContainer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DisplayNameContainer" /> structure.
+        /// </summary>
+        /// <param name="displayName">The display name.</param>
         [JsonConstructor]
         public DisplayNameContainer(string displayName)
             : this() =>
             DisplayName = displayName;
 
+        /// <summary>
+        /// Gets the display name.
+        /// </summary>
         [JsonProperty("displayname")]
         public string DisplayName { get; }
     }

@@ -12,8 +12,19 @@ namespace Cshrix.Data.Devices
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information on E2E device updates.
+    /// </summary>
+    /// <remarks>Only present on an initial sync.</remarks>
     public readonly struct DeviceChangeLists
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceChangeLists" /> structure.
+        /// </summary>
+        /// <param name="changed">
+        /// User IDs whose devices have updated or recently joined an E2EE room with the client.
+        /// </param>
+        /// <param name="left">User IDs whose devices we no longer share encrypted rooms with.</param>
         [JsonConstructor]
         public DeviceChangeLists(IReadOnlyCollection<UserId> changed, IReadOnlyCollection<UserId> left)
             : this()
@@ -22,9 +33,17 @@ namespace Cshrix.Data.Devices
             Left = left;
         }
 
+        /// <summary>
+        /// Gets a collection of user IDs who have updated their device identity keys, or who now share an encrypted
+        /// room with the client since the previous sync response.
+        /// </summary>
         [JsonProperty("changed")]
         public IReadOnlyCollection<UserId> Changed { get; }
 
+        /// <summary>
+        /// Gets a collection of user IDs with whom we do not share any encrypted rooms anymore since the previous
+        /// sync response.
+        /// </summary>
         [JsonProperty("left")]
         public IReadOnlyCollection<UserId> Left { get; }
     }

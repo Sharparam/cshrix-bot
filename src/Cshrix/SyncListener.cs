@@ -189,6 +189,11 @@ namespace Cshrix
             await Task.Delay(_syncDelay, cancellationToken).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// Handles a sync response from the Matrix API.
+        /// </summary>
+        /// <param name="response">The response from the API.</param>
+        /// <remarks>Examines the response and dispatches one or multiple events as appropriate.</remarks>
         private void HandleSyncResponse(SyncResponse response)
         {
         }

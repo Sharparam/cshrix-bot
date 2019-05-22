@@ -10,13 +10,23 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// An object containing a room visibility value.
+    /// </summary>
     public readonly struct RoomVisibilityContainer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomVisibilityContainer" /> structure.
+        /// </summary>
+        /// <param name="visibility">The room visibility.</param>
         [JsonConstructor]
         public RoomVisibilityContainer(RoomVisibility visibility)
             : this() =>
             Visibility = visibility;
 
+        /// <summary>
+        /// Gets the room visibility.
+        /// </summary>
         [JsonProperty("visibility")]
         public RoomVisibility Visibility { get; }
     }

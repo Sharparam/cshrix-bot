@@ -10,8 +10,16 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information about a ciphertext.
+    /// </summary>
     public readonly struct CiphertextInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CiphertextInfo" /> structure.
+        /// </summary>
+        /// <param name="body">The encrypted payload.</param>
+        /// <param name="type">The Olm message type.</param>
         [JsonConstructor]
         public CiphertextInfo(string body, int type)
             : this()
@@ -20,9 +28,15 @@ namespace Cshrix.Data.Events.Content
             Type = type;
         }
 
+        /// <summary>
+        /// Gets the encrypted payload.
+        /// </summary>
         [JsonProperty("body")]
         public string Body { get; }
 
+        /// <summary>
+        /// Gets the Olm message type of the ciphertext.
+        /// </summary>
         [JsonProperty("type")]
         public int Type { get; }
     }

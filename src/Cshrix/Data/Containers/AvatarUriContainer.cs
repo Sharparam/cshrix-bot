@@ -12,13 +12,23 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// An object containing an avatar URI.
+    /// </summary>
     public readonly struct AvatarUriContainer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AvatarUriContainer" /> structure.
+        /// </summary>
+        /// <param name="uri">The avatar URI.</param>
         [JsonConstructor]
         public AvatarUriContainer(Uri uri)
             : this() =>
             Uri = uri;
 
+        /// <summary>
+        /// Gets the avatar URI.
+        /// </summary>
         [JsonProperty("avatar_url")]
         public Uri Uri { get; }
     }

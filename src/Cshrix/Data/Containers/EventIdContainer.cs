@@ -10,13 +10,23 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// An object containing an event ID.
+    /// </summary>
     public readonly struct EventIdContainer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventIdContainer" /> structure.
+        /// </summary>
+        /// <param name="id">The event ID.</param>
         [JsonConstructor]
         public EventIdContainer(string id)
             : this() =>
             Id = id;
 
+        /// <summary>
+        /// Gets the event ID.
+        /// </summary>
         [JsonProperty("event_id")]
         public string Id { get; }
     }

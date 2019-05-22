@@ -13,18 +13,32 @@ namespace Cshrix.Data.Devices
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains all known devices for a user.
+    /// </summary>
     public readonly struct DevicesResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DevicesResponse" /> structure.
+        /// </summary>
+        /// <param name="devices">Registered devices for the user.</param>
         public DevicesResponse(IEnumerable<Device> devices)
             : this(devices.ToList().AsReadOnly())
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DevicesResponse" /> structure.
+        /// </summary>
+        /// <param name="devices">Registered devices for the user.</param>
         [JsonConstructor]
         public DevicesResponse(IReadOnlyCollection<Device> devices)
             : this() =>
             Devices = devices;
 
+        /// <summary>
+        /// Gets a collection of devices registered for the user.
+        /// </summary>
         [JsonProperty("devices")]
         public IReadOnlyCollection<Device> Devices { get; }
     }

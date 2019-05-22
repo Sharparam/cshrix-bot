@@ -10,13 +10,26 @@ namespace Cshrix.Data.Events.Content
 {
     using System;
 
+    using JetBrains.Annotations;
+
+    /// <summary>
+    /// Contains the content for a message event of type <c>m.audio</c>.
+    /// </summary>
     public sealed class AudioMessageContent : UriMessageContent<AudioInfo>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AudioMessageContent" /> class.
+        /// </summary>
+        /// <param name="body">The body text of the message.</param>
+        /// <param name="messageType">The type of the message.</param>
+        /// <param name="info">Information about the audio clip.</param>
+        /// <param name="uri">The URI of the audio clip.</param>
+        /// <param name="encryptedFile">Information about the encrypted audio file, if any.</param>
         public AudioMessageContent(
             string body,
             string messageType,
             AudioInfo info,
-            Uri uri,
+            [CanBeNull] Uri uri,
             EncryptedFile? encryptedFile)
             : base(body, messageType, info, uri, encryptedFile)
         {

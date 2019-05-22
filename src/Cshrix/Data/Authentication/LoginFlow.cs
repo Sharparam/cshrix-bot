@@ -10,13 +10,23 @@ namespace Cshrix.Data.Authentication
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Describes a login flow.
+    /// </summary>
     public readonly struct LoginFlow
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoginFlow" /> structure.
+        /// </summary>
+        /// <param name="type">The authentication type.</param>
         [JsonConstructor]
         public LoginFlow(AuthenticationType type)
             : this() =>
             Type = type;
 
+        /// <summary>
+        /// Gets the authentication type of this login flow. This is supplied as the <c>type</c> when logging in.
+        /// </summary>
         [JsonProperty("type")]
         public AuthenticationType Type { get; }
     }

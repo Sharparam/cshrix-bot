@@ -8,45 +8,50 @@
 
 namespace Cshrix.Data.Authentication
 {
-    using System;
-
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// A response returned on successful authentication.
+    /// </summary>
     public readonly struct AuthenticationResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthenticationResponse" /> structure.
+        /// </summary>
+        /// <param name="accessToken">An access token.</param>
+        /// <param name="deviceId">A device ID.</param>
+        /// <param name="userId">A user ID.</param>
         [JsonConstructor]
         public AuthenticationResponse(
             [CanBeNull] string accessToken,
             [CanBeNull] string deviceId,
-            [CanBeNull] string homeserver,
             UserId userId)
             : this()
         {
             AccessToken = accessToken;
             DeviceId = deviceId;
-
-            #pragma warning disable 618
-            Homeserver = homeserver;
-            #pragma warning restore 618
-
             UserId = userId;
         }
 
+        /// <summary>
+        /// Gets an access token for the account. This access token can then be used to authorize other requests.
+        /// </summary>
         [JsonProperty("access_token")]
         [CanBeNull]
         public string AccessToken { get; }
 
+        /// <summary>
+        /// Gets the ID of the authenticated device.
+        /// </summary>
         [JsonProperty("device_id")]
         [CanBeNull]
         public string DeviceId { get; }
 
-        [JsonProperty("home_server")]
-        [CanBeNull]
-        [Obsolete("Extract server name from the UserId instead")]
-        public string Homeserver { get; }
-
+        /// <summary>
+        /// Gets the authenticated user's user ID.
+        /// </summary>
         [JsonProperty("user_id")]
         public UserId UserId { get; }
     }
