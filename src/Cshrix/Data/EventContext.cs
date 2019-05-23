@@ -32,10 +32,10 @@ namespace Cshrix.Data
         public EventContext(
             string start,
             string end,
-            RoomEvent @event,
-            IReadOnlyCollection<RoomEvent> before,
-            IReadOnlyCollection<RoomEvent> after,
-            IReadOnlyCollection<StateEvent> state)
+            Event @event,
+            IReadOnlyCollection<Event> before,
+            IReadOnlyCollection<Event> after,
+            IReadOnlyCollection<Event> state)
             : this()
         {
             Start = start;
@@ -59,29 +59,29 @@ namespace Cshrix.Data
         public string End { get; }
 
         /// <summary>
-        /// Gets a <see cref="RoomEvent" /> for the requested event.
+        /// Gets a <see cref="Event" /> for the requested event.
         /// </summary>
         [JsonProperty("event")]
-        public RoomEvent Event { get; }
+        public Event Event { get; }
 
         /// <summary>
         /// Gets a collection of events that happened just before the requested event,
         /// in reverse-chronological order.
         /// </summary>
         [JsonProperty("events_before")]
-        public IReadOnlyCollection<RoomEvent> Before { get; }
+        public IReadOnlyCollection<Event> Before { get; }
 
         /// <summary>
         /// Gets a collection of events that happened just after the requested event,
         /// in chronological order.
         /// </summary>
         [JsonProperty("events_after")]
-        public IReadOnlyCollection<RoomEvent> After { get; }
+        public IReadOnlyCollection<Event> After { get; }
 
         /// <summary>
         /// Gets a collection of state events in the room at the last event returned.
         /// </summary>
         [JsonProperty("state")]
-        public IReadOnlyCollection<StateEvent> State { get; }
+        public IReadOnlyCollection<Event> State { get; }
     }
 }

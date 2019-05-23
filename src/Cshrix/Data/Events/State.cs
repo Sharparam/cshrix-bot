@@ -15,16 +15,16 @@ namespace Cshrix.Data.Events
 
     public readonly struct State
     {
-        public State(IEnumerable<StateEvent> events)
+        public State(IEnumerable<Event> events)
             : this(events.ToList().AsReadOnly())
         {
         }
 
         [JsonConstructor]
-        public State(IReadOnlyCollection<StateEvent> events)
+        public State(IReadOnlyCollection<Event> events)
             : this() =>
             Events = events;
 
-        public IReadOnlyCollection<StateEvent> Events { get; }
+        public IReadOnlyCollection<Event> Events { get; }
     }
 }

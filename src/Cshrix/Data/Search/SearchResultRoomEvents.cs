@@ -35,7 +35,7 @@ namespace Cshrix.Data.Search
             int count,
             IReadOnlyCollection<string> highlights,
             IReadOnlyCollection<SearchEventResult> results,
-            [CanBeNull] IReadOnlyDictionary<string, IReadOnlyCollection<StateEvent>> stateEvents,
+            [CanBeNull] IReadOnlyDictionary<string, IReadOnlyCollection<Event>> stateEvents,
             IReadOnlyDictionary<string, IReadOnlyDictionary<string, SearchGroupValue>> groups,
             [CanBeNull] string nextBatchToken)
             : this()
@@ -74,7 +74,7 @@ namespace Cshrix.Data.Search
         /// </remarks>
         [JsonProperty("state")]
         [CanBeNull]
-        public IReadOnlyDictionary<string, IReadOnlyCollection<StateEvent>> StateEvents { get; }
+        public IReadOnlyDictionary<string, IReadOnlyCollection<Event>> StateEvents { get; }
 
         /// <summary>
         /// Gets a mapping of groups that were requested. The key is the group key requested, the key of the inner

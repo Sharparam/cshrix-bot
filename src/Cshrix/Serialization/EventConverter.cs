@@ -95,7 +95,7 @@ namespace Cshrix.Serialization
 
         /// <inheritdoc />
         /// <summary>
-        /// Throws <see cref="NotImplementedException" />, as this converter doesn't implement custom serialization
+        /// Throws <see cref="NotSupportedException" />, as this converter doesn't implement custom serialization
         /// and instead delegates this to the default serialization behaviour by Newtonsoft.Json;
         /// </summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
@@ -132,14 +132,13 @@ namespace Cshrix.Serialization
             var content = ParseEventContent(type, jObject);
             var redacts = jObject.ValueOrDefault<string>("redacts");
 
-            var hasSender = jObject.TryGetObject<UserId>("sender", out var sender);
-            var hasId = jObject.TryGetValue<string>("event_id", out var id);
-            var hasStateKey = jObject.TryGetValue<string>("state_key", out var stateKey);
+            var sender = jObject.ObjectOrDefault<UserId>("sender");
+            var id = jObject.ValueOrDefault<string>("event_id");
+            var stateKey = jObject.ValueOrDefault<string>("state_key");
             var roomId = jObject.ValueOrDefault<string>("room_id");
             var unsigned = jObject.ObjectOrDefault<UnsignedData?>("unsigned");
-            var previousContent = jObject.ObjectOrDefault<EventContent>("prev_content");
+            var previousContent = ParseEventContent(type, jObject, "prev_content");
 
-            var hasSentAt = false;
             DateTimeOffset sentAt;
 
             if (jObject.ContainsKey("origin_server_ts"))
@@ -147,54 +146,13 @@ namespace Cshrix.Serialization
                 var tsValue = jObject["origin_server_ts"];
                 var ms = tsValue.Value<long>();
                 sentAt = DateTimeOffset.FromUnixTimeMilliseconds(ms);
-                hasSentAt = true;
             }
             else
             {
                 sentAt = default;
             }
 
-            if (objectType == typeof(StateEvent) || (hasId && hasSender && hasSentAt && hasStateKey))
-            {
-                return new StateEvent(
-                    content,
-                    type,
-                    redacts,
-                    id,
-                    roomId,
-                    sender,
-                    sentAt,
-                    unsigned,
-                    previousContent,
-                    stateKey);
-            }
-
-            if (objectType == typeof(RoomEvent) || (hasId && hasSender && hasSentAt))
-            {
-                return new RoomEvent(content, type, redacts, id, sender, roomId, sentAt, unsigned);
-            }
-
-            if (objectType == typeof(StrippedState) || (hasStateKey && hasSender))
-            {
-                return new StrippedState(content, stateKey, type, redacts, sender);
-            }
-
-            if (objectType == typeof(SenderEvent) || hasSender)
-            {
-                return new SenderEvent(content, type, redacts, sender);
-            }
-
-            if (objectType == typeof(RoomIdEvent) || roomId != null)
-            {
-                if (roomId == null)
-                {
-                    throw new JsonSerializationException($"Cannot deserialize to {objectType} if room_id is missing");
-                }
-
-                return new RoomIdEvent(content, type, redacts, roomId);
-            }
-
-            return new Event(content, type, redacts);
+            return new Event(content, id, type, stateKey, roomId, sender, sentAt, previousContent, redacts, unsigned);
         }
 
         /// <summary>
@@ -203,10 +161,11 @@ namespace Cshrix.Serialization
         /// </summary>
         /// <param name="type">The type of event this content came from.</param>
         /// <param name="jObject">An instance of <see cref="JObject" /> containing the data.</param>
+        /// <param name="key">The key in the JSON object to extract data from.</param>
         /// <returns>An appropriate instance of <see cref="EventContent" />.</returns>
-        private static EventContent ParseEventContent(string type, JObject jObject)
+        private static EventContent ParseEventContent(string type, JObject jObject, string key = "content")
         {
-            if (!jObject.TryGetValue("content", out var contentToken))
+            if (!jObject.TryGetValue(key, out var contentToken))
             {
                 return null;
             }

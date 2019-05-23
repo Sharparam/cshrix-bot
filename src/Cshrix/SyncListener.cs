@@ -12,6 +12,7 @@ namespace Cshrix
     using System.Threading;
     using System.Threading.Tasks;
 
+    using Data;
     using Data.Events;
 
     using Errors;
@@ -74,6 +75,11 @@ namespace Cshrix
             _api = api;
         }
 
+        /// <summary>
+        /// Raised when a new sync response is obtained from the Matrix API.
+        /// </summary>
+        public event EventHandler<SyncEventArgs> Sync;
+
         /// <inheritdoc />
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
@@ -135,7 +141,7 @@ namespace Cshrix
             {
                 try
                 {
-                    await SyncAsync(cancellationToken);
+                    await SyncAsync(cancellationToken).ConfigureAwait(false);
                 }
                 catch (TaskCanceledException) when (cancellationToken.IsCancellationRequested)
                 {
@@ -196,6 +202,7 @@ namespace Cshrix
         /// <remarks>Examines the response and dispatches one or multiple events as appropriate.</remarks>
         private void HandleSyncResponse(SyncResponse response)
         {
+            Sync?.Invoke(this, new SyncEventArgs(response));
         }
     }
 }

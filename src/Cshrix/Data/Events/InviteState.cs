@@ -13,19 +13,33 @@ namespace Cshrix.Data.Events
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains state data for a room to which the user has been invited.
+    /// </summary>
     public readonly struct InviteState
     {
-        public InviteState(IEnumerable<StrippedState> events)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InviteState" /> structure.
+        /// </summary>
+        /// <param name="events">Stripped-down state data.</param>
+        public InviteState(IEnumerable<Event> events)
             : this(events.ToList().AsReadOnly())
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InviteState" /> structure.
+        /// </summary>
+        /// <param name="events">Stripped-down state data.</param>
         [JsonConstructor]
-        public InviteState(IReadOnlyCollection<StrippedState> events)
+        public InviteState(IReadOnlyCollection<Event> events)
             : this() =>
             Events = events;
 
+        /// <summary>
+        /// Gets a collection of stripped-down state events for the room.
+        /// </summary>
         [JsonProperty("events")]
-        public IReadOnlyCollection<StrippedState> Events { get; }
+        public IReadOnlyCollection<Event> Events { get; }
     }
 }

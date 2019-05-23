@@ -9,13 +9,15 @@
 namespace Cshrix
 {
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
     using System.Net.Http;
     using System.Threading.Tasks;
 
     using Configuration;
 
     using Data;
-    using Data.Notifications;
+    using Data.Events;
 
     using Extensions;
 
@@ -57,6 +59,11 @@ namespace Cshrix
         /// </summary>
         private readonly IOptionsMonitor<MatrixClientConfiguration> _configMonitor;
 
+        /// <summary>
+        /// Contains all known rooms, keyed by their ID.
+        /// </summary>
+        private readonly ConcurrentDictionary<string, Room> _rooms;
+
         // ReSharper disable once SuggestBaseTypeForParameter
         /// <summary>
         /// Initializes a new instance of the <see cref="MatrixClient" /> class.
@@ -84,7 +91,13 @@ namespace Cshrix
             _api.SetBearerToken(_configMonitor.CurrentValue.AccessToken);
 
             _syncListener = new SyncListener(loggerFactory.CreateLogger<SyncListener>(), _api);
+            _syncListener.Sync += HandleSyncAsync;
+
+            _rooms = new ConcurrentDictionary<string, Room>();
         }
+
+        /// <inheritdoc />
+        public event EventHandler<InvitedEventArgs> Invited;
 
         /// <summary>
         /// Gets the <see cref="ILogger" /> for this instance.
@@ -94,7 +107,11 @@ namespace Cshrix
         /// <inheritdoc />
         public void Dispose()
         {
-            _syncListener?.Dispose();
+            if (_syncListener != null)
+            {
+                _syncListener.Sync -= HandleSyncAsync;
+                _syncListener.Dispose();
+            }
         }
 
         /// <inheritdoc />
@@ -107,13 +124,60 @@ namespace Cshrix
         public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync().ConfigureAwait(false)).UserId;
 
         /// <inheritdoc />
-        public Task<NotificationRulesets> GetNotificationPushRulesAsync() => _api.GetNotificationPushRulesAsync();
-
-        /// <inheritdoc />
-        public async Task<PreviewInfo> GetPreviewInfoAsync(Uri uri, DateTimeOffset? at = null)
+        public async Task<PreviewInfo> GetUriPreviewInfoAsync(Uri uri, DateTimeOffset? at = null)
         {
             var info = await _api.GetUriPreviewInfoAsync(uri, at).ConfigureAwait(false);
             return info;
+        }
+
+        /// <inheritdoc />
+        public async Task<string> JoinRoomByIdAsync(string roomId)
+        {
+            Log.LogDebug("Joining room {RoomId}", roomId);
+            var result = await _api.JoinRoomAsync(roomId).ConfigureAwait(false);
+            return result.RoomId;
+        }
+
+        /// <summary>
+        /// Processes a sync event.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="eventArgs">Event arguments.</param>
+        private void HandleSyncAsync(object sender, SyncEventArgs eventArgs)
+        {
+            Log.LogTrace("Handling sync event");
+            var response = eventArgs.Response;
+            HandleRoomEvents(response.Rooms);
+        }
+
+        private void HandleRoomEvents(SyncedRooms rooms)
+        {
+            Log.LogTrace("Handling room events");
+            HandleInvitedRoomEvents(rooms.Invited);
+        }
+
+        private void HandleInvitedRoomEvents(IReadOnlyDictionary<string, InvitedRoom> rooms)
+        {
+            Log.LogTrace("Handling {Count} rooms in the 'invited' state", rooms.Count);
+            foreach (var kvp in rooms)
+            {
+                HandleInvitedRoomEvent(kvp.Key, kvp.Value);
+            }
+        }
+
+        private void HandleInvitedRoomEvent(string roomId, InvitedRoom invitedRoom)
+        {
+            Log.LogTrace("Handling 'invited' room {RoomId}", roomId);
+            var hasRoom = _rooms.TryGetValue(roomId, out var room);
+
+            if (!hasRoom)
+            {
+                Log.LogTrace("Invited room {RoomId} did not exist, adding it", roomId);
+                room = Room.FromInvitedRoom(roomId, invitedRoom);
+                _rooms.TryAdd(roomId, room);
+            }
+
+            Invited?.Invoke(this, new InvitedEventArgs(room));
         }
     }
 }

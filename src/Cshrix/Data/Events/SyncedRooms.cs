@@ -12,10 +12,19 @@ namespace Cshrix.Data.Events
 
     using Newtonsoft.Json;
 
-    public readonly struct Rooms
+    /// <summary>
+    /// Contains sync data for rooms in various states.
+    /// </summary>
+    public readonly struct SyncedRooms
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SyncedRooms" /> structure.
+        /// </summary>
+        /// <param name="joined">Data for rooms the user is joined to.</param>
+        /// <param name="invited">Data for rooms the user has been invited to.</param>
+        /// <param name="left">Last known data for rooms the user has left.</param>
         [JsonConstructor]
-        public Rooms(
+        public SyncedRooms(
             IReadOnlyDictionary<string, JoinedRoom> joined,
             IReadOnlyDictionary<string, InvitedRoom> invited,
             IReadOnlyDictionary<string, LeftRoom> left)
@@ -26,12 +35,21 @@ namespace Cshrix.Data.Events
             Left = left;
         }
 
+        /// <summary>
+        /// Gets a dictionary of joined rooms and their associated events and state.
+        /// </summary>
         [JsonProperty("join")]
         public IReadOnlyDictionary<string, JoinedRoom> Joined { get; }
 
+        /// <summary>
+        /// Gets a dictionary of rooms the user has been invited to, along with their events and state.
+        /// </summary>
         [JsonProperty("invite")]
         public IReadOnlyDictionary<string, InvitedRoom> Invited { get; }
 
+        /// <summary>
+        /// Gets a dictionary of rooms which the user has left, along with the last known events and state.
+        /// </summary>
         [JsonProperty("leave")]
         public IReadOnlyDictionary<string, LeftRoom> Left { get; }
     }

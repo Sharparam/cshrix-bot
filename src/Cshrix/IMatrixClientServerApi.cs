@@ -663,7 +663,7 @@ namespace Cshrix
         /// left the room.
         /// </returns>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/members")]
-        Task<Chunk<StateEvent>> GetMemberEventsAsync([Path] string roomId);
+        Task<Chunk<Event>> GetMemberEventsAsync([Path] string roomId);
 
         /// <summary>
         /// Get room events for a room.
@@ -688,7 +688,7 @@ namespace Cshrix
         /// to paginate history in the room.
         /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/messages")]
-        Task<PaginatedChunk<RoomEvent>> GetRoomEventsAsync(
+        Task<PaginatedChunk<Event>> GetRoomEventsAsync(
             [Path] string roomId,
             [Query] string from = null,
             [Query] string to = null,
@@ -778,16 +778,16 @@ namespace Cshrix
         /// Get all state events in the current state of a room.
         /// </summary>
         /// <param name="roomId">The ID of the room to look up the state for.</param>
-        /// <returns>A list of <see cref="StateEvent" /> for the room.</returns>
+        /// <returns>A list of <see cref="Event" /> for the room.</returns>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state")]
-        Task<IReadOnlyCollection<StateEvent>> GetStateEventsAsync([Path] string roomId);
+        Task<IReadOnlyCollection<Event>> GetStateEventsAsync([Path] string roomId);
 
         /// <summary>
         /// Get a specific type of state for a room, where the state key is empty.
         /// </summary>
         /// <param name="roomId">The ID of the room to look up the state in.</param>
         /// <param name="eventType">The type of state event to look up.</param>
-        /// <returns>The <see cref="StateEvent" />.</returns>
+        /// <returns>The <see cref="Event" />.</returns>
         /// <remarks>
         /// <para>
         /// Looks up the contents of a state event in a room. If the user is joined to the room then the state is
@@ -797,7 +797,7 @@ namespace Cshrix
         /// <para>This looks up the state event with the empty state key.</para>
         /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}")]
-        Task<StateEvent> GetStateEventAsync([Path] string roomId, [Path] string eventType);
+        Task<Event> GetStateEventAsync([Path] string roomId, [Path] string eventType);
 
         /// <summary>
         /// Send a state event to the given room.
@@ -836,14 +836,14 @@ namespace Cshrix
         /// <param name="roomId">The ID of the room to look up the state in.</param>
         /// <param name="eventType">The type of state event to look up.</param>
         /// <param name="stateKey">The key of the state to look up.</param>
-        /// <returns>The <see cref="StateEvent" />.</returns>
+        /// <returns>The <see cref="Event" />.</returns>
         /// <remarks>
         /// Looks up the contents of a state event in a room. If the user is joined to the room then the state is taken
         /// from the current state of the room. If the user has left the room then the state is taken from the state
         /// of the room when they left.
         /// </remarks>
         [Get("_matrix/client/{apiVersion}/rooms/{roomId}/state/{eventType}/{stateKey}")]
-        Task<StateEvent> GetStateEventAsync([Path] string roomId, [Path] string eventType, [Path] string stateKey);
+        Task<Event> GetStateEventAsync([Path] string roomId, [Path] string eventType, [Path] string stateKey);
 
         /// <summary>
         /// Send a state event to the given room.

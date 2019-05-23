@@ -24,7 +24,7 @@ namespace Cshrix.Data.Events
             TimeSpan age,
             Event redactionEvent,
             string transactionId,
-            IReadOnlyCollection<StrippedState> inviteRoomState)
+            IReadOnlyCollection<Event> inviteRoomState)
             : this()
         {
             Age = age;
@@ -47,7 +47,7 @@ namespace Cshrix.Data.Events
 
         [JsonProperty("invite_room_state")]
         [CanBeNull]
-        public IReadOnlyCollection<StrippedState> InviteRoomState { get; }
+        public IReadOnlyCollection<Event> InviteRoomState { get; }
 
         [JsonIgnore]
         public bool IsRedaction => RedactionEvent != null;

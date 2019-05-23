@@ -15,11 +15,11 @@ namespace Cshrix.Data.Events
     public readonly struct ToDevice
     {
         [JsonConstructor]
-        public ToDevice(IReadOnlyCollection<SenderEvent> events)
+        public ToDevice(IReadOnlyCollection<Event> events)
             : this() =>
             Events = events;
 
         [JsonProperty("events")]
-        public IReadOnlyCollection<SenderEvent> Events { get; }
+        public IReadOnlyCollection<Event> Events { get; }
     }
 }

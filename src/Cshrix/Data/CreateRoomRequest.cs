@@ -50,7 +50,7 @@ namespace Cshrix.Data
             [CanBeNull] IReadOnlyCollection<UserId> invites = null,
             [CanBeNull] IReadOnlyCollection<ThirdPartyRoomInvite> thirdPartyInvites = null,
             [CanBeNull] CreationContent content = null,
-            [CanBeNull] IReadOnlyCollection<StateEvent> initialState = null,
+            [CanBeNull] IReadOnlyCollection<Event> initialState = null,
             RoomPreset? preset = null,
             bool isDirect = false,
             [CanBeNull] PowerLevelsContent powerLevelsOverride = null)
@@ -155,7 +155,7 @@ namespace Cshrix.Data
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         [CanBeNull]
-        public IReadOnlyCollection<StateEvent> InitialState { get; }
+        public IReadOnlyCollection<Event> InitialState { get; }
 
         /// <summary>
         /// Gets a preset to use for setting certain room parameters.

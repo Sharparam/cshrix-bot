@@ -10,6 +10,8 @@ namespace Cshrix.Bot.Console
 {
     using System.Threading.Tasks;
 
+    using Data;
+
     using Extensions;
 
     using Microsoft.Extensions.Logging;
@@ -40,6 +42,7 @@ namespace Cshrix.Bot.Console
         {
             _log = log;
             _client = client;
+            _client.Invited += OnRoomInvite;
         }
 
         /// <summary>
@@ -71,6 +74,25 @@ namespace Cshrix.Bot.Console
 
             _log.LogInformation("Starting sync");
             await _client.StartSyncingAsync();
+        }
+
+        /// <summary>
+        /// Handles an invite to a room.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="eventArgs">Event arguments.</param>
+        private async void OnRoomInvite(object sender, InvitedEventArgs eventArgs)
+        {
+            _log.LogInformation("I've been invited to a room! Attempting to join {RoomId}...", eventArgs.Room.Id);
+
+            try
+            {
+                await _client.JoinRoomByIdAsync(eventArgs.Room.Id);
+            }
+            catch (ApiException ex)
+            {
+                _log.LogError(ex, "Failed to join room {RoomId}", eventArgs.Room.Id);
+            }
         }
     }
 }

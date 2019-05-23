@@ -55,7 +55,7 @@ namespace Cshrix.Tests.Data.Events
                 }
             }";
 
-            var ev = JsonConvert.DeserializeObject<StateEvent>(json);
+            var ev = JsonConvert.DeserializeObject<Event>(json);
 
             Assert.That(ev.Content, Is.TypeOf<PowerLevelsContent>());
 
@@ -94,7 +94,7 @@ namespace Cshrix.Tests.Data.Events
                 }
             }";
 
-            var ev = JsonConvert.DeserializeObject<StateEvent>(json);
+            var ev = JsonConvert.DeserializeObject<Event>(json);
 
             Assert.That(ev.Content, Is.TypeOf<MemberContent>());
 

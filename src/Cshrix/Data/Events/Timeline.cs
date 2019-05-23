@@ -15,12 +15,12 @@ namespace Cshrix.Data.Events
 
     public readonly struct Timeline
     {
-        public Timeline(IEnumerable<RoomEvent> events, bool limited, string previousBatchToken)
+        public Timeline(IEnumerable<Event> events, bool limited, string previousBatchToken)
             : this(events.ToList().AsReadOnly(), limited, previousBatchToken)
         {
         }
 
-        public Timeline(IReadOnlyCollection<RoomEvent> events, bool limited, string previousBatchToken)
+        public Timeline(IReadOnlyCollection<Event> events, bool limited, string previousBatchToken)
             : this()
         {
             Events = events;
@@ -29,7 +29,7 @@ namespace Cshrix.Data.Events
         }
 
         [JsonProperty("events")]
-        public IReadOnlyCollection<RoomEvent> Events { get; }
+        public IReadOnlyCollection<Event> Events { get; }
 
         [JsonProperty("limited")]
         public bool Limited { get; }
