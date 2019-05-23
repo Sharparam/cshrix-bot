@@ -529,12 +529,12 @@ references:
   commentId: T:Cshrix.Data.Authentication.AuthenticationResponse
   fullName: Cshrix.Data.Authentication.AuthenticationResponse
   nameWithType: AuthenticationResponse
-- uid: Cshrix.Data.Authentication.AuthenticationResponse.#ctor(System.String,System.String,System.String,Cshrix.Data.UserId)
-  name: AuthenticationResponse(String, String, String, UserId)
-  href: api/Cshrix.Data.Authentication.AuthenticationResponse.html#Cshrix_Data_Authentication_AuthenticationResponse__ctor_System_String_System_String_System_String_Cshrix_Data_UserId_
-  commentId: M:Cshrix.Data.Authentication.AuthenticationResponse.#ctor(System.String,System.String,System.String,Cshrix.Data.UserId)
-  fullName: Cshrix.Data.Authentication.AuthenticationResponse.AuthenticationResponse(System.String, System.String, System.String, Cshrix.Data.UserId)
-  nameWithType: AuthenticationResponse.AuthenticationResponse(String, String, String, UserId)
+- uid: Cshrix.Data.Authentication.AuthenticationResponse.#ctor(System.String,System.String,Cshrix.Data.UserId)
+  name: AuthenticationResponse(String, String, UserId)
+  href: api/Cshrix.Data.Authentication.AuthenticationResponse.html#Cshrix_Data_Authentication_AuthenticationResponse__ctor_System_String_System_String_Cshrix_Data_UserId_
+  commentId: M:Cshrix.Data.Authentication.AuthenticationResponse.#ctor(System.String,System.String,Cshrix.Data.UserId)
+  fullName: Cshrix.Data.Authentication.AuthenticationResponse.AuthenticationResponse(System.String, System.String, Cshrix.Data.UserId)
+  nameWithType: AuthenticationResponse.AuthenticationResponse(String, String, UserId)
 - uid: Cshrix.Data.Authentication.AuthenticationResponse.#ctor*
   name: AuthenticationResponse
   href: api/Cshrix.Data.Authentication.AuthenticationResponse.html#Cshrix_Data_Authentication_AuthenticationResponse__ctor_
@@ -568,19 +568,6 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Authentication.AuthenticationResponse.DeviceId
   nameWithType: AuthenticationResponse.DeviceId
-- uid: Cshrix.Data.Authentication.AuthenticationResponse.Homeserver
-  name: Homeserver
-  href: api/Cshrix.Data.Authentication.AuthenticationResponse.html#Cshrix_Data_Authentication_AuthenticationResponse_Homeserver
-  commentId: P:Cshrix.Data.Authentication.AuthenticationResponse.Homeserver
-  fullName: Cshrix.Data.Authentication.AuthenticationResponse.Homeserver
-  nameWithType: AuthenticationResponse.Homeserver
-- uid: Cshrix.Data.Authentication.AuthenticationResponse.Homeserver*
-  name: Homeserver
-  href: api/Cshrix.Data.Authentication.AuthenticationResponse.html#Cshrix_Data_Authentication_AuthenticationResponse_Homeserver_
-  commentId: Overload:Cshrix.Data.Authentication.AuthenticationResponse.Homeserver
-  isSpec: "True"
-  fullName: Cshrix.Data.Authentication.AuthenticationResponse.Homeserver
-  nameWithType: AuthenticationResponse.Homeserver
 - uid: Cshrix.Data.Authentication.AuthenticationResponse.UserId
   name: UserId
   href: api/Cshrix.Data.Authentication.AuthenticationResponse.html#Cshrix_Data_Authentication_AuthenticationResponse_UserId
@@ -2168,24 +2155,24 @@ references:
   commentId: T:Cshrix.Data.Devices.DeviceKeysQuery
   fullName: Cshrix.Data.Devices.DeviceKeysQuery
   nameWithType: DeviceKeysQuery
-- uid: Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IEnumerable{System.String}},System.String,System.Nullable{System.TimeSpan})
-  name: DeviceKeysQuery(IDictionary<UserId, IEnumerable<String>>, String, Nullable<TimeSpan>)
-  href: api/Cshrix.Data.Devices.DeviceKeysQuery.html#Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IEnumerable_System_String___System_String_System_Nullable_System_TimeSpan__
-  commentId: M:Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IEnumerable{System.String}},System.String,System.Nullable{System.TimeSpan})
-  name.vb: DeviceKeysQuery(IDictionary(Of UserId, IEnumerable(Of String)), String, Nullable(Of TimeSpan))
-  fullName: Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeysQuery(System.Collections.Generic.IDictionary<Cshrix.Data.UserId, System.Collections.Generic.IEnumerable<System.String>>, System.String, System.Nullable<System.TimeSpan>)
-  fullName.vb: Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeysQuery(System.Collections.Generic.IDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IEnumerable(Of System.String)), System.String, System.Nullable(Of System.TimeSpan))
-  nameWithType: DeviceKeysQuery.DeviceKeysQuery(IDictionary<UserId, IEnumerable<String>>, String, Nullable<TimeSpan>)
-  nameWithType.vb: DeviceKeysQuery.DeviceKeysQuery(IDictionary(Of UserId, IEnumerable(Of String)), String, Nullable(Of TimeSpan))
-- uid: Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyCollection{System.String}},System.String,System.Nullable{System.TimeSpan})
-  name: DeviceKeysQuery(IReadOnlyDictionary<UserId, IReadOnlyCollection<String>>, String, Nullable<TimeSpan>)
-  href: api/Cshrix.Data.Devices.DeviceKeysQuery.html#Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyCollection_System_String___System_String_System_Nullable_System_TimeSpan__
-  commentId: M:Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyCollection{System.String}},System.String,System.Nullable{System.TimeSpan})
-  name.vb: DeviceKeysQuery(IReadOnlyDictionary(Of UserId, IReadOnlyCollection(Of String)), String, Nullable(Of TimeSpan))
-  fullName: Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeysQuery(System.Collections.Generic.IReadOnlyDictionary<Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyCollection<System.String>>, System.String, System.Nullable<System.TimeSpan>)
-  fullName.vb: Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeysQuery(System.Collections.Generic.IReadOnlyDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyCollection(Of System.String)), System.String, System.Nullable(Of System.TimeSpan))
-  nameWithType: DeviceKeysQuery.DeviceKeysQuery(IReadOnlyDictionary<UserId, IReadOnlyCollection<String>>, String, Nullable<TimeSpan>)
-  nameWithType.vb: DeviceKeysQuery.DeviceKeysQuery(IReadOnlyDictionary(Of UserId, IReadOnlyCollection(Of String)), String, Nullable(Of TimeSpan))
+- uid: Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IEnumerable{System.String}},System.Nullable{System.TimeSpan},System.String)
+  name: DeviceKeysQuery(IDictionary<UserId, IEnumerable<String>>, Nullable<TimeSpan>, String)
+  href: api/Cshrix.Data.Devices.DeviceKeysQuery.html#Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IEnumerable_System_String___System_Nullable_System_TimeSpan__System_String_
+  commentId: M:Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IEnumerable{System.String}},System.Nullable{System.TimeSpan},System.String)
+  name.vb: DeviceKeysQuery(IDictionary(Of UserId, IEnumerable(Of String)), Nullable(Of TimeSpan), String)
+  fullName: Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeysQuery(System.Collections.Generic.IDictionary<Cshrix.Data.UserId, System.Collections.Generic.IEnumerable<System.String>>, System.Nullable<System.TimeSpan>, System.String)
+  fullName.vb: Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeysQuery(System.Collections.Generic.IDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IEnumerable(Of System.String)), System.Nullable(Of System.TimeSpan), System.String)
+  nameWithType: DeviceKeysQuery.DeviceKeysQuery(IDictionary<UserId, IEnumerable<String>>, Nullable<TimeSpan>, String)
+  nameWithType.vb: DeviceKeysQuery.DeviceKeysQuery(IDictionary(Of UserId, IEnumerable(Of String)), Nullable(Of TimeSpan), String)
+- uid: Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyCollection{System.String}},System.Nullable{System.TimeSpan},System.String)
+  name: DeviceKeysQuery(IReadOnlyDictionary<UserId, IReadOnlyCollection<String>>, Nullable<TimeSpan>, String)
+  href: api/Cshrix.Data.Devices.DeviceKeysQuery.html#Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyCollection_System_String___System_Nullable_System_TimeSpan__System_String_
+  commentId: M:Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyCollection{System.String}},System.Nullable{System.TimeSpan},System.String)
+  name.vb: DeviceKeysQuery(IReadOnlyDictionary(Of UserId, IReadOnlyCollection(Of String)), Nullable(Of TimeSpan), String)
+  fullName: Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeysQuery(System.Collections.Generic.IReadOnlyDictionary<Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyCollection<System.String>>, System.Nullable<System.TimeSpan>, System.String)
+  fullName.vb: Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeysQuery(System.Collections.Generic.IReadOnlyDictionary(Of Cshrix.Data.UserId, System.Collections.Generic.IReadOnlyCollection(Of System.String)), System.Nullable(Of System.TimeSpan), System.String)
+  nameWithType: DeviceKeysQuery.DeviceKeysQuery(IReadOnlyDictionary<UserId, IReadOnlyCollection<String>>, Nullable<TimeSpan>, String)
+  nameWithType.vb: DeviceKeysQuery.DeviceKeysQuery(IReadOnlyDictionary(Of UserId, IReadOnlyCollection(Of String)), Nullable(Of TimeSpan), String)
 - uid: Cshrix.Data.Devices.DeviceKeysQuery.#ctor*
   name: DeviceKeysQuery
   href: api/Cshrix.Data.Devices.DeviceKeysQuery.html#Cshrix_Data_Devices_DeviceKeysQuery__ctor_

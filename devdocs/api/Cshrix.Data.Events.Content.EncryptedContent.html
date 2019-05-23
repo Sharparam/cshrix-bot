@@ -1036,7 +1036,8 @@
   
   <h1 id="Cshrix_Data_Events_Content_EncryptedContent" data-uid="Cshrix.Data.Events.Content.EncryptedContent" class="text-break">Class EncryptedContent
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains the data of an encrypted event (<code>m.room.encrypted</code>).</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1084,15 +1085,16 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent__ctor_Cshrix_Cryptography_Algorithm_Newtonsoft_Json_Linq_JToken_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent.%23ctor(Cshrix.Cryptography.Algorithm%2CNewtonsoft.Json.Linq.JToken%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L22">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L33">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedContent__ctor_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedContent__ctor_Cshrix_Cryptography_Algorithm_Newtonsoft_Json_Linq_JToken_System_String_System_String_System_String_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.#ctor(Cshrix.Cryptography.Algorithm,Newtonsoft.Json.Linq.JToken,System.String,System.String,System.String)">EncryptedContent(Algorithm, JToken, String, String, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.EncryptedContent.html">EncryptedContent</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EncryptedContent(Algorithm algorithm, JToken rawCiphertext, string senderKey, string deviceId, string sessionId)</code></pre>
+    <pre><code class="lang-csharp hljs">public EncryptedContent(Algorithm algorithm, JToken rawCiphertext, string senderKey, [CanBeNull] string deviceId, [CanBeNull] string sessionId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1107,27 +1109,32 @@
       <tr>
         <td><a class="xref" href="Cshrix.Cryptography.Algorithm.html">Algorithm</a></td>
         <td><span class="parametername">algorithm</span></td>
-        <td></td>
+        <td><p>The algorithm used to encrypt the data.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Newtonsoft.Json.Linq.JToken</span></td>
         <td><span class="parametername">rawCiphertext</span></td>
-        <td></td>
+        <td><p>Raw ciphertext object as returned from the API.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">senderKey</span></td>
-        <td></td>
+        <td><p>The Curve25519 key of the sender.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">deviceId</span></td>
-        <td></td>
+        <td><p>The ID of the sending device.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">sessionId</span></td>
-        <td></td>
+        <td><p>The ID of the session used to encrypt the message.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1138,11 +1145,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent_Algorithm.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent.Algorithm%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L45">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L62">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedContent_Algorithm_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.Algorithm*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedContent_Algorithm" data-uid="Cshrix.Data.Events.Content.EncryptedContent.Algorithm">Algorithm</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the encryption algorithm used to encrypt the data.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1164,16 +1172,21 @@ public Algorithm Algorithm { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptedContent_Algorithm_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The value of this property determines which other properties will have values.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent_Ciphertext.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent.Ciphertext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L51">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L85">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedContent_Ciphertext_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.Ciphertext*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedContent_Ciphertext" data-uid="Cshrix.Data.Events.Content.EncryptedContent.Ciphertext">Ciphertext</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the ciphertext of the payload, if <a class="xref" href="Cshrix.Data.Events.Content.EncryptedContent.html#Cshrix_Data_Events_Content_EncryptedContent_Algorithm">Algorithm</a> is
+<a class="xref" href="Cshrix.Cryptography.Algorithm.html#Cshrix_Cryptography_Algorithm_Megolm">Megolm</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1201,11 +1214,13 @@ public string Ciphertext { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent_CiphertextInfos.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent.CiphertextInfos%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L55">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L93">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedContent_CiphertextInfos_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.CiphertextInfos*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedContent_CiphertextInfos" data-uid="Cshrix.Data.Events.Content.EncryptedContent.CiphertextInfos">CiphertextInfos</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a dictionary mapping recipient Curve25519 identity keys to ciphertext information, if
+<a class="xref" href="Cshrix.Data.Events.Content.EncryptedContent.html#Cshrix_Data_Events_Content_EncryptedContent_Algorithm">Algorithm</a> is <a class="xref" href="Cshrix.Cryptography.Algorithm.html#Cshrix_Cryptography_Algorithm_Olm">Olm</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1233,15 +1248,17 @@ public IReadOnlyDictionary&lt;string, CiphertextInfo&gt; CiphertextInfos { get; 
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent_DeviceId.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent.DeviceId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L62">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L109">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedContent_DeviceId_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.DeviceId*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedContent_DeviceId" data-uid="Cshrix.Data.Events.Content.EncryptedContent.DeviceId">DeviceId</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the ID of the sending device.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonProperty(&quot;device_id&quot;)]
+[CanBeNull]
 public string DeviceId { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1259,16 +1276,20 @@ public string DeviceId { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptedContent_DeviceId_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Required when <a class="xref" href="Cshrix.Data.Events.Content.EncryptedContent.html#Cshrix_Data_Events_Content_EncryptedContent_Algorithm">Algorithm</a> is <a class="xref" href="Cshrix.Cryptography.Algorithm.html#Cshrix_Cryptography_Algorithm_Megolm">Megolm</a>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent_RawCiphertext.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent.RawCiphertext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L48">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L78">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedContent_RawCiphertext_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.RawCiphertext*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedContent_RawCiphertext" data-uid="Cshrix.Data.Events.Content.EncryptedContent.RawCiphertext">RawCiphertext</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the raw ciphertext for the encrypted content of the event data.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1290,16 +1311,27 @@ public JToken RawCiphertext { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptedContent_RawCiphertext_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is either an encrypted payload (a string), if <a class="xref" href="Cshrix.Data.Events.Content.EncryptedContent.html#Cshrix_Data_Events_Content_EncryptedContent_Algorithm">Algorithm</a> is
+<a class="xref" href="Cshrix.Cryptography.Algorithm.html#Cshrix_Cryptography_Algorithm_Megolm">Megolm</a>, or a dictionary mapping recipient Curve25519
+identity keys to ciphertext information, if <a class="xref" href="Cshrix.Data.Events.Content.EncryptedContent.html#Cshrix_Data_Events_Content_EncryptedContent_Algorithm">Algorithm</a> is
+<a class="xref" href="Cshrix.Cryptography.Algorithm.html#Cshrix_Cryptography_Algorithm_Olm">Olm</a>.
+For more details, see
+<a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#messaging-algorithms">
+Messaging Algorithms
+</a>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent_SenderKey.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent.SenderKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L59">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L100">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedContent_SenderKey_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.SenderKey*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedContent_SenderKey" data-uid="Cshrix.Data.Events.Content.EncryptedContent.SenderKey">SenderKey</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the Curve25519 key of the sender.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1326,15 +1358,17 @@ public string SenderKey { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent_SessionId.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent.SessionId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L65">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L119">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedContent_SessionId_" data-uid="Cshrix.Data.Events.Content.EncryptedContent.SessionId*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedContent_SessionId" data-uid="Cshrix.Data.Events.Content.EncryptedContent.SessionId">SessionId</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the ID of the session used to encrypt the message.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonProperty(&quot;session_id&quot;)]
+[CanBeNull]
 public string SessionId { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1352,6 +1386,9 @@ public string SessionId { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptedContent_SessionId_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Required when <a class="xref" href="Cshrix.Data.Events.Content.EncryptedContent.html#Cshrix_Data_Events_Content_EncryptedContent_Algorithm">Algorithm</a> is <a class="xref" href="Cshrix.Cryptography.Algorithm.html#Cshrix_Cryptography_Algorithm_Megolm">Megolm</a>.</p>
+</div>
 </article>
           </div>
           
@@ -1363,7 +1400,7 @@ public string SessionId { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedContent.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedContent.cs/#L23" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

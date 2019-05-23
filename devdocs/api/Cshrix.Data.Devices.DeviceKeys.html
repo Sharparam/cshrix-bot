@@ -1036,7 +1036,8 @@
   
   <h1 id="Cshrix_Data_Devices_DeviceKeys" data-uid="Cshrix.Data.Devices.DeviceKeys" class="text-break">Struct DeviceKeys
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains identity keys for a device.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1072,15 +1073,16 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys__ctor_Cshrix_Data_UserId_System_String_System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IDictionary_System_String_System_String___System_Nullable_Cshrix_Data_UnsignedDeviceInfo__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys.%23ctor(Cshrix.Data.UserId%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Collections.Generic.IDictionary%7BCshrix.Data.UserId%2CSystem.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%7D%2CSystem.Nullable%7BCshrix.Data.UnsignedDeviceInfo%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L19">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L33">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeys__ctor_" data-uid="Cshrix.Data.Devices.DeviceKeys.#ctor*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeys__ctor_Cshrix_Data_UserId_System_String_System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IDictionary_System_String_System_String___System_Nullable_Cshrix_Data_UnsignedDeviceInfo__" data-uid="Cshrix.Data.Devices.DeviceKeys.#ctor(Cshrix.Data.UserId,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IDictionary{System.String,System.String}},System.Nullable{Cshrix.Data.UnsignedDeviceInfo})">DeviceKeys(UserId, String, IEnumerable&lt;String&gt;, IDictionary&lt;String, String&gt;, IDictionary&lt;UserId, IDictionary&lt;String, String&gt;&gt;, Nullable&lt;UnsignedDeviceInfo&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Devices.DeviceKeys.html">DeviceKeys</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DeviceKeys(UserId userId, string deviceId, IEnumerable&lt;string&gt; algorithms, IDictionary&lt;string, string&gt; keys, IDictionary&lt;UserId, IDictionary&lt;string, string&gt;&gt; signatures, UnsignedDeviceInfo? unsignedDeviceInfo = default(UnsignedDeviceInfo? ))</code></pre>
+    <pre><code class="lang-csharp hljs">public DeviceKeys(UserId userId, string deviceId, IEnumerable&lt;string&gt; algorithms, IDictionary&lt;string, string&gt; keys, [CanBeNull] IDictionary&lt;UserId, IDictionary&lt;string, string&gt;&gt; signatures, UnsignedDeviceInfo? unsignedDeviceInfo = default(UnsignedDeviceInfo? ))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1095,32 +1097,38 @@
       <tr>
         <td><a class="xref" href="Cshrix.Data.UserId.html">UserId</a></td>
         <td><span class="parametername">userId</span></td>
-        <td></td>
+        <td><p>The user ID of the user the device belongs to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">deviceId</span></td>
-        <td></td>
+        <td><p>The ID of the device the keys belong to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">algorithms</span></td>
-        <td></td>
+        <td><p>A collection of encryption algorithms supported by the device.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">keys</span></td>
-        <td></td>
+        <td><p>A dictionary of public identity keys.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="Cshrix.Data.UserId.html">UserId</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;&gt;</td>
         <td><span class="parametername">signatures</span></td>
-        <td></td>
+        <td><p>Signatures for this object.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="Cshrix.Data.UnsignedDeviceInfo.html">UnsignedDeviceInfo</a>&gt;</td>
         <td><span class="parametername">unsignedDeviceInfo</span></td>
-        <td></td>
+        <td><p>Additional data not covered by signatures.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1129,16 +1137,17 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys__ctor_Cshrix_Data_UserId_System_String_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String___System_Nullable_Cshrix_Data_UnsignedDeviceInfo__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys.%23ctor(Cshrix.Data.UserId%2CSystem.String%2CSystem.Collections.Generic.IReadOnlyCollection%7BSystem.String%7D%2CSystem.Collections.Generic.IReadOnlyDictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Collections.Generic.IReadOnlyDictionary%7BCshrix.Data.UserId%2CSystem.Collections.Generic.IReadOnlyDictionary%7BSystem.String%2CSystem.String%7D%7D%2CSystem.Nullable%7BCshrix.Data.UnsignedDeviceInfo%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L39">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L65">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeys__ctor_" data-uid="Cshrix.Data.Devices.DeviceKeys.#ctor*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeys__ctor_Cshrix_Data_UserId_System_String_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String___System_Nullable_Cshrix_Data_UnsignedDeviceInfo__" data-uid="Cshrix.Data.Devices.DeviceKeys.#ctor(Cshrix.Data.UserId,System.String,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}},System.Nullable{Cshrix.Data.UnsignedDeviceInfo})">DeviceKeys(UserId, String, IReadOnlyCollection&lt;String&gt;, IReadOnlyDictionary&lt;String, String&gt;, IReadOnlyDictionary&lt;UserId, IReadOnlyDictionary&lt;String, String&gt;&gt;, Nullable&lt;UnsignedDeviceInfo&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Devices.DeviceKeys.html">DeviceKeys</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public DeviceKeys(UserId userId, string deviceId, IReadOnlyCollection&lt;string&gt; algorithms, IReadOnlyDictionary&lt;string, string&gt; keys, IReadOnlyDictionary&lt;UserId, IReadOnlyDictionary&lt;string, string&gt;&gt; signatures, UnsignedDeviceInfo? unsignedDeviceInfo = default(UnsignedDeviceInfo? ))</code></pre>
+public DeviceKeys(UserId userId, string deviceId, IReadOnlyCollection&lt;string&gt; algorithms, IReadOnlyDictionary&lt;string, string&gt; keys, [CanBeNull] IReadOnlyDictionary&lt;UserId, IReadOnlyDictionary&lt;string, string&gt;&gt; signatures, UnsignedDeviceInfo? unsignedDeviceInfo = default(UnsignedDeviceInfo? ))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1153,32 +1162,38 @@ public DeviceKeys(UserId userId, string deviceId, IReadOnlyCollection&lt;string&
       <tr>
         <td><a class="xref" href="Cshrix.Data.UserId.html">UserId</a></td>
         <td><span class="parametername">userId</span></td>
-        <td></td>
+        <td><p>The user ID of the user the device belongs to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">deviceId</span></td>
-        <td></td>
+        <td><p>The ID of the device the keys belong to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">algorithms</span></td>
-        <td></td>
+        <td><p>A collection of encryption algorithms supported by the device.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">keys</span></td>
-        <td></td>
+        <td><p>A dictionary of public identity keys.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="Cshrix.Data.UserId.html">UserId</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;&gt;</td>
         <td><span class="parametername">signatures</span></td>
-        <td></td>
+        <td><p>Signatures for this object.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="Cshrix.Data.UnsignedDeviceInfo.html">UnsignedDeviceInfo</a>&gt;</td>
         <td><span class="parametername">unsignedDeviceInfo</span></td>
-        <td></td>
+        <td><p>Additional data not covered by signatures.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1189,15 +1204,16 @@ public DeviceKeys(UserId userId, string deviceId, IReadOnlyCollection&lt;string&
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys_Algorithms.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys.Algorithms%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L63">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L98">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeys_Algorithms_" data-uid="Cshrix.Data.Devices.DeviceKeys.Algorithms*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeys_Algorithms" data-uid="Cshrix.Data.Devices.DeviceKeys.Algorithms">Algorithms</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of encryption algorithms supported by this device.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;algorithms&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;algorithms&quot;, Order = 1)]
 public IReadOnlyCollection&lt;string&gt; Algorithms { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1220,15 +1236,16 @@ public IReadOnlyCollection&lt;string&gt; Algorithms { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys_DeviceId.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys.DeviceId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L60">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L92">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeys_DeviceId_" data-uid="Cshrix.Data.Devices.DeviceKeys.DeviceId*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeys_DeviceId" data-uid="Cshrix.Data.Devices.DeviceKeys.DeviceId">DeviceId</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the ID of the device these keys belong to. Must match the device ID used when logging in.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;device_id&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;device_id&quot;, Order = 2)]
 public string DeviceId { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1251,15 +1268,16 @@ public string DeviceId { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys_Keys.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys.Keys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L66">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L108">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeys_Keys_" data-uid="Cshrix.Data.Devices.DeviceKeys.Keys*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeys_Keys" data-uid="Cshrix.Data.Devices.DeviceKeys.Keys">Keys</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a dictionary of public identity keys.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;keys&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;keys&quot;, Order = 3)]
 public IReadOnlyDictionary&lt;string, string&gt; Keys { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1277,20 +1295,27 @@ public IReadOnlyDictionary&lt;string, string&gt; Keys { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Devices_DeviceKeys_Keys_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Each key should be in the format <code>{algorithm}:{device_id}</code>. The values should be encoded as specified
+by the key algorithm.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys_Signatures.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys.Signatures%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L69">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L119">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeys_Signatures_" data-uid="Cshrix.Data.Devices.DeviceKeys.Signatures*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeys_Signatures" data-uid="Cshrix.Data.Devices.DeviceKeys.Signatures">Signatures</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets signatures for the device key object. Maps user IDs to a dictionary mapping
+<code>{algorithm}:{device_id}</code> to a signature.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;signatures&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;signatures&quot;, Order = 4, NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore)]
+[CanBeNull]
 public IReadOnlyDictionary&lt;UserId, IReadOnlyDictionary&lt;string, string&gt;&gt; Signatures { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1308,20 +1333,25 @@ public IReadOnlyDictionary&lt;UserId, IReadOnlyDictionary&lt;string, string&gt;&
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Devices_DeviceKeys_Signatures_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The signatures are calculated using the process described at
+<a href="https://matrix.org/docs/spec/appendices.html#signing-json">Signing JSON</a>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys_UnsignedDeviceInfo.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys.UnsignedDeviceInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L72">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L130">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeys_UnsignedDeviceInfo_" data-uid="Cshrix.Data.Devices.DeviceKeys.UnsignedDeviceInfo*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeys_UnsignedDeviceInfo" data-uid="Cshrix.Data.Devices.DeviceKeys.UnsignedDeviceInfo">UnsignedDeviceInfo</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets additional device data not covered by signatures.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;unsigned&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;unsigned&quot;, Order = 5, NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore)]
 public UnsignedDeviceInfo? UnsignedDeviceInfo { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1344,15 +1374,16 @@ public UnsignedDeviceInfo? UnsignedDeviceInfo { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys_UserId.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys.UserId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L57">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L86">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeys_UserId_" data-uid="Cshrix.Data.Devices.DeviceKeys.UserId*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeys_UserId" data-uid="Cshrix.Data.Devices.DeviceKeys.UserId">UserId</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the ID of the user the device belongs to. Must match the user ID used when logging in.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;user_id&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;user_id&quot;, Order = 6)]
 public UserId UserId { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1381,7 +1412,7 @@ public UserId UserId { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeys.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeys.cs/#L22" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -1036,7 +1036,8 @@
   
   <h1 id="Cshrix_Data_Devices_DeviceKeysQuery" data-uid="Cshrix.Data.Devices.DeviceKeysQuery" class="text-break">Struct DeviceKeysQuery
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Specifies a set of keys to download.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1069,18 +1070,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IEnumerable_System_String___System_String_System_Nullable_System_TimeSpan__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeysQuery.%23ctor(System.Collections.Generic.IDictionary%7BCshrix.Data.UserId%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%7D%2CSystem.String%2CSystem.Nullable%7BSystem.TimeSpan%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IEnumerable_System_String___System_Nullable_System_TimeSpan__System_String_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeysQuery.%23ctor(System.Collections.Generic.IDictionary%7BCshrix.Data.UserId%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%7D%2CSystem.Nullable%7BSystem.TimeSpan%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L22">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L33">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeysQuery__ctor_" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.#ctor*"></a>
-  <h4 id="Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IEnumerable_System_String___System_String_System_Nullable_System_TimeSpan__" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IEnumerable{System.String}},System.String,System.Nullable{System.TimeSpan})">DeviceKeysQuery(IDictionary&lt;UserId, IEnumerable&lt;String&gt;&gt;, String, Nullable&lt;TimeSpan&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IDictionary_Cshrix_Data_UserId_System_Collections_Generic_IEnumerable_System_String___System_Nullable_System_TimeSpan__System_String_" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IDictionary{Cshrix.Data.UserId,System.Collections.Generic.IEnumerable{System.String}},System.Nullable{System.TimeSpan},System.String)">DeviceKeysQuery(IDictionary&lt;UserId, IEnumerable&lt;String&gt;&gt;, Nullable&lt;TimeSpan&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Devices.DeviceKeysQuery.html">DeviceKeysQuery</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DeviceKeysQuery(IDictionary&lt;UserId, IEnumerable&lt;string&gt;&gt; deviceKeys, string token, TimeSpan? timeout = default(TimeSpan? ))</code></pre>
+    <pre><code class="lang-csharp hljs">public DeviceKeysQuery(IDictionary&lt;UserId, IEnumerable&lt;string&gt;&gt; deviceKeys, TimeSpan? timeout = default(TimeSpan? ), string token = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1095,35 +1097,39 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="Cshrix.Data.UserId.html">UserId</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;&gt;</td>
         <td><span class="parametername">deviceKeys</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">token</span></td>
-        <td></td>
+        <td><p>A dictionary specifying which keys to download.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</td>
         <td><span class="parametername">timeout</span></td>
-        <td></td>
+        <td><p>The time to wait when downloading remote keys.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>A &quot;since&quot; token to specify a point in time to return keys from.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyCollection_System_String___System_String_System_Nullable_System_TimeSpan__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeysQuery.%23ctor(System.Collections.Generic.IReadOnlyDictionary%7BCshrix.Data.UserId%2CSystem.Collections.Generic.IReadOnlyCollection%7BSystem.String%7D%7D%2CSystem.String%2CSystem.Nullable%7BSystem.TimeSpan%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyCollection_System_String___System_Nullable_System_TimeSpan__System_String_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeysQuery.%23ctor(System.Collections.Generic.IReadOnlyDictionary%7BCshrix.Data.UserId%2CSystem.Collections.Generic.IReadOnlyCollection%7BSystem.String%7D%7D%2CSystem.Nullable%7BSystem.TimeSpan%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L36">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L53">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeysQuery__ctor_" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.#ctor*"></a>
-  <h4 id="Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyCollection_System_String___System_String_System_Nullable_System_TimeSpan__" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyCollection{System.String}},System.String,System.Nullable{System.TimeSpan})">DeviceKeysQuery(IReadOnlyDictionary&lt;UserId, IReadOnlyCollection&lt;String&gt;&gt;, String, Nullable&lt;TimeSpan&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Cshrix_Data_Devices_DeviceKeysQuery__ctor_System_Collections_Generic_IReadOnlyDictionary_Cshrix_Data_UserId_System_Collections_Generic_IReadOnlyCollection_System_String___System_Nullable_System_TimeSpan__System_String_" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.#ctor(System.Collections.Generic.IReadOnlyDictionary{Cshrix.Data.UserId,System.Collections.Generic.IReadOnlyCollection{System.String}},System.Nullable{System.TimeSpan},System.String)">DeviceKeysQuery(IReadOnlyDictionary&lt;UserId, IReadOnlyCollection&lt;String&gt;&gt;, Nullable&lt;TimeSpan&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Devices.DeviceKeysQuery.html">DeviceKeysQuery</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public DeviceKeysQuery(IReadOnlyDictionary&lt;UserId, IReadOnlyCollection&lt;string&gt;&gt; deviceKeys, string token, TimeSpan? timeout = default(TimeSpan? ))</code></pre>
+public DeviceKeysQuery(IReadOnlyDictionary&lt;UserId, IReadOnlyCollection&lt;string&gt;&gt; deviceKeys, TimeSpan? timeout = default(TimeSpan? ), [CanBeNull] string token = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1138,17 +1144,20 @@ public DeviceKeysQuery(IReadOnlyDictionary&lt;UserId, IReadOnlyCollection&lt;str
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="Cshrix.Data.UserId.html">UserId</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;&gt;</td>
         <td><span class="parametername">deviceKeys</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">token</span></td>
-        <td></td>
+        <td><p>A dictionary specifying which keys to download.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</td>
         <td><span class="parametername">timeout</span></td>
-        <td></td>
+        <td><p>The time to wait when downloading remote keys.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>A &quot;since&quot; token to specify a point in time to return keys from.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1159,11 +1168,12 @@ public DeviceKeysQuery(IReadOnlyDictionary&lt;UserId, IReadOnlyCollection&lt;str
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeysQuery_DeviceKeys.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L52">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L72">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeysQuery_DeviceKeys_" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeys*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeysQuery_DeviceKeys" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.DeviceKeys">DeviceKeys</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a dictionary specifying the keys to download.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1185,16 +1195,21 @@ public IReadOnlyDictionary&lt;UserId, IReadOnlyCollection&lt;string&gt;&gt; Devi
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Devices_DeviceKeysQuery_DeviceKeys_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The dictionary maps user IDs to a collection of device IDs, or to an empty collection to indicate all
+devices for the corresponding user.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeysQuery_Timeout.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeysQuery.Timeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L48">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L78">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeysQuery_Timeout_" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.Timeout*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeysQuery_Timeout" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.Timeout">Timeout</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the time to wait when downloading keys from remote servers.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1222,15 +1237,18 @@ public TimeSpan Timeout { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeysQuery_Token.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeysQuery.Token%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L55">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L89">View Source</a>
   </span>
   <a id="Cshrix_Data_Devices_DeviceKeysQuery_Token_" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.Token*"></a>
   <h4 id="Cshrix_Data_Devices_DeviceKeysQuery_Token" data-uid="Cshrix.Data.Devices.DeviceKeysQuery.Token">Token</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a &quot;since&quot; token to use to specify that keys are being fetched in response to a received device
+update from a sync request.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;token&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;token&quot;, NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore)]
+[CanBeNull]
 public string Token { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1248,6 +1266,9 @@ public string Token { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Devices_DeviceKeysQuery_Token_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This allows the server to ensure its response contains the keys advertised by the notification in the sync.</p>
+</div>
 </article>
           </div>
           
@@ -1259,7 +1280,7 @@ public string Token { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Devices_DeviceKeysQuery.md&amp;value=---%0Auid%3A%20Cshrix.Data.Devices.DeviceKeysQuery%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Devices/DeviceKeysQuery.cs/#L25" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

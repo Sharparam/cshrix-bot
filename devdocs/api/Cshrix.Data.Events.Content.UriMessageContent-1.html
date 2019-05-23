@@ -1036,7 +1036,8 @@
   
   <h1 id="Cshrix_Data_Events_Content_UriMessageContent_1" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1" class="text-break">Class UriMessageContent&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains content for events that have data with a corresponding URI and possible encrypted file content.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1099,7 +1100,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of of the data.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1110,15 +1112,16 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_UriMessageContent_1__ctor_System_String_System_String__0_System_Uri_System_Nullable_Cshrix_Data_Events_Content_EncryptedFile__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.UriMessageContent%601.%23ctor(System.String%2CSystem.String%2C%600%2CSystem.Uri%2CSystem.Nullable%7BCshrix.Data.Events.Content.EncryptedFile%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L19">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L31">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_UriMessageContent_1__ctor_" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_Content_UriMessageContent_1__ctor_System_String_System_String__0_System_Uri_System_Nullable_Cshrix_Data_Events_Content_EncryptedFile__" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1.#ctor(System.String,System.String,`0,System.Uri,System.Nullable{Cshrix.Data.Events.Content.EncryptedFile})">UriMessageContent(String, String, T, Uri, Nullable&lt;EncryptedFile&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.UriMessageContent-1.html">UriMessageContent&lt;T&gt;</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected UriMessageContent(string body, string messageType, T info, Uri uri, EncryptedFile? encryptedFile)</code></pre>
+    <pre><code class="lang-csharp hljs">protected UriMessageContent(string body, string messageType, T info, [CanBeNull] Uri uri, EncryptedFile? encryptedFile)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1133,27 +1136,32 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">body</span></td>
-        <td></td>
+        <td><p>A description of the content for accessibility.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">messageType</span></td>
-        <td></td>
+        <td><p>The type of the message.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">info</span></td>
-        <td></td>
+        <td><p>The message data.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">uri</span></td>
-        <td></td>
+        <td><p>A URI for downloading the data, if not encrypted.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="Cshrix.Data.Events.Content.EncryptedFile.html">EncryptedFile</a>&gt;</td>
         <td><span class="parametername">encryptedFile</span></td>
-        <td></td>
+        <td><p>Information about the encrypted file, if any.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1164,11 +1172,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_UriMessageContent_1_EncryptedFile.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.UriMessageContent%601.EncryptedFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L34">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L60">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_UriMessageContent_1_EncryptedFile_" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1.EncryptedFile*"></a>
   <h4 id="Cshrix_Data_Events_Content_UriMessageContent_1_EncryptedFile" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1.EncryptedFile">EncryptedFile</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets information about an encrypted version of the data file, if present.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1195,11 +1204,12 @@ public EncryptedFile? EncryptedFile { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_UriMessageContent_1_Info.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.UriMessageContent%601.Info%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L27">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L47">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_UriMessageContent_1_Info_" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1.Info*"></a>
   <h4 id="Cshrix_Data_Events_Content_UriMessageContent_1_Info" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1.Info">Info</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the contained data object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1226,11 +1236,12 @@ public T Info { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_UriMessageContent_1_Uri.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.UriMessageContent%601.Uri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L30">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L53">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_UriMessageContent_1_Uri_" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1.Uri*"></a>
   <h4 id="Cshrix_Data_Events_Content_UriMessageContent_1_Uri" data-uid="Cshrix.Data.Events.Content.UriMessageContent`1.Uri">Uri</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a URI to use for downloading the data.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1264,7 +1275,7 @@ public Uri Uri { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_UriMessageContent_1.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.UriMessageContent%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/UriMessageContent.cs/#L21" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
