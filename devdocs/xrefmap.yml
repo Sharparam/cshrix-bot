@@ -1655,15 +1655,15 @@ references:
   commentId: T:Cshrix.Data.CreateRoomRequest
   fullName: Cshrix.Data.CreateRoomRequest
   nameWithType: CreateRoomRequest
-- uid: Cshrix.Data.CreateRoomRequest.#ctor(System.Nullable{Cshrix.Data.RoomVisibility},System.String,System.String,System.String,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyRoomInvite},Cshrix.Data.Events.Content.CreationContent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent},System.Nullable{Cshrix.Data.RoomPreset},System.Boolean,Cshrix.Data.Events.Content.PowerLevelsContent)
-  name: CreateRoomRequest(Nullable<RoomVisibility>, String, String, String, String, IReadOnlyCollection<UserId>, IReadOnlyCollection<ThirdPartyRoomInvite>, CreationContent, IReadOnlyCollection<StateEvent>, Nullable<RoomPreset>, Boolean, PowerLevelsContent)
-  href: api/Cshrix.Data.CreateRoomRequest.html#Cshrix_Data_CreateRoomRequest__ctor_System_Nullable_Cshrix_Data_RoomVisibility__System_String_System_String_System_String_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_ThirdParty_ThirdPartyRoomInvite__Cshrix_Data_Events_Content_CreationContent_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StateEvent__System_Nullable_Cshrix_Data_RoomPreset__System_Boolean_Cshrix_Data_Events_Content_PowerLevelsContent_
-  commentId: M:Cshrix.Data.CreateRoomRequest.#ctor(System.Nullable{Cshrix.Data.RoomVisibility},System.String,System.String,System.String,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyRoomInvite},Cshrix.Data.Events.Content.CreationContent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent},System.Nullable{Cshrix.Data.RoomPreset},System.Boolean,Cshrix.Data.Events.Content.PowerLevelsContent)
-  name.vb: CreateRoomRequest(Nullable(Of RoomVisibility), String, String, String, String, IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of ThirdPartyRoomInvite), CreationContent, IReadOnlyCollection(Of StateEvent), Nullable(Of RoomPreset), Boolean, PowerLevelsContent)
-  fullName: Cshrix.Data.CreateRoomRequest.CreateRoomRequest(System.Nullable<Cshrix.Data.RoomVisibility>, System.String, System.String, System.String, System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.ThirdParty.ThirdPartyRoomInvite>, Cshrix.Data.Events.Content.CreationContent, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StateEvent>, System.Nullable<Cshrix.Data.RoomPreset>, System.Boolean, Cshrix.Data.Events.Content.PowerLevelsContent)
-  fullName.vb: Cshrix.Data.CreateRoomRequest.CreateRoomRequest(System.Nullable(Of Cshrix.Data.RoomVisibility), System.String, System.String, System.String, System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.ThirdParty.ThirdPartyRoomInvite), Cshrix.Data.Events.Content.CreationContent, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StateEvent), System.Nullable(Of Cshrix.Data.RoomPreset), System.Boolean, Cshrix.Data.Events.Content.PowerLevelsContent)
-  nameWithType: CreateRoomRequest.CreateRoomRequest(Nullable<RoomVisibility>, String, String, String, String, IReadOnlyCollection<UserId>, IReadOnlyCollection<ThirdPartyRoomInvite>, CreationContent, IReadOnlyCollection<StateEvent>, Nullable<RoomPreset>, Boolean, PowerLevelsContent)
-  nameWithType.vb: CreateRoomRequest.CreateRoomRequest(Nullable(Of RoomVisibility), String, String, String, String, IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of ThirdPartyRoomInvite), CreationContent, IReadOnlyCollection(Of StateEvent), Nullable(Of RoomPreset), Boolean, PowerLevelsContent)
+- uid: Cshrix.Data.CreateRoomRequest.#ctor(System.Nullable{Cshrix.Data.RoomVisibility},System.String,System.String,System.String,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyRoomInvite},Cshrix.Data.Events.Content.CreationContent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Nullable{Cshrix.Data.RoomPreset},System.Boolean,Cshrix.Data.Events.Content.PowerLevelsContent)
+  name: CreateRoomRequest(Nullable<RoomVisibility>, String, String, String, String, IReadOnlyCollection<UserId>, IReadOnlyCollection<ThirdPartyRoomInvite>, CreationContent, IReadOnlyCollection<Event>, Nullable<RoomPreset>, Boolean, PowerLevelsContent)
+  href: api/Cshrix.Data.CreateRoomRequest.html#Cshrix_Data_CreateRoomRequest__ctor_System_Nullable_Cshrix_Data_RoomVisibility__System_String_System_String_System_String_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_ThirdParty_ThirdPartyRoomInvite__Cshrix_Data_Events_Content_CreationContent_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__System_Nullable_Cshrix_Data_RoomPreset__System_Boolean_Cshrix_Data_Events_Content_PowerLevelsContent_
+  commentId: M:Cshrix.Data.CreateRoomRequest.#ctor(System.Nullable{Cshrix.Data.RoomVisibility},System.String,System.String,System.String,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.ThirdParty.ThirdPartyRoomInvite},Cshrix.Data.Events.Content.CreationContent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Nullable{Cshrix.Data.RoomPreset},System.Boolean,Cshrix.Data.Events.Content.PowerLevelsContent)
+  name.vb: CreateRoomRequest(Nullable(Of RoomVisibility), String, String, String, String, IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of ThirdPartyRoomInvite), CreationContent, IReadOnlyCollection(Of Event), Nullable(Of RoomPreset), Boolean, PowerLevelsContent)
+  fullName: Cshrix.Data.CreateRoomRequest.CreateRoomRequest(System.Nullable<Cshrix.Data.RoomVisibility>, System.String, System.String, System.String, System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.ThirdParty.ThirdPartyRoomInvite>, Cshrix.Data.Events.Content.CreationContent, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>, System.Nullable<Cshrix.Data.RoomPreset>, System.Boolean, Cshrix.Data.Events.Content.PowerLevelsContent)
+  fullName.vb: Cshrix.Data.CreateRoomRequest.CreateRoomRequest(System.Nullable(Of Cshrix.Data.RoomVisibility), System.String, System.String, System.String, System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.ThirdParty.ThirdPartyRoomInvite), Cshrix.Data.Events.Content.CreationContent, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event), System.Nullable(Of Cshrix.Data.RoomPreset), System.Boolean, Cshrix.Data.Events.Content.PowerLevelsContent)
+  nameWithType: CreateRoomRequest.CreateRoomRequest(Nullable<RoomVisibility>, String, String, String, String, IReadOnlyCollection<UserId>, IReadOnlyCollection<ThirdPartyRoomInvite>, CreationContent, IReadOnlyCollection<Event>, Nullable<RoomPreset>, Boolean, PowerLevelsContent)
+  nameWithType.vb: CreateRoomRequest.CreateRoomRequest(Nullable(Of RoomVisibility), String, String, String, String, IReadOnlyCollection(Of UserId), IReadOnlyCollection(Of ThirdPartyRoomInvite), CreationContent, IReadOnlyCollection(Of Event), Nullable(Of RoomPreset), Boolean, PowerLevelsContent)
 - uid: Cshrix.Data.CreateRoomRequest.#ctor*
   name: CreateRoomRequest
   href: api/Cshrix.Data.CreateRoomRequest.html#Cshrix_Data_CreateRoomRequest__ctor_
@@ -2701,15 +2701,15 @@ references:
   commentId: T:Cshrix.Data.EventContext
   fullName: Cshrix.Data.EventContext
   nameWithType: EventContext
-- uid: Cshrix.Data.EventContext.#ctor(System.String,System.String,Cshrix.Data.Events.RoomEvent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent})
-  name: EventContext(String, String, RoomEvent, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<StateEvent>)
-  href: api/Cshrix.Data.EventContext.html#Cshrix_Data_EventContext__ctor_System_String_System_String_Cshrix_Data_Events_RoomEvent_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_RoomEvent__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_RoomEvent__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StateEvent__
-  commentId: M:Cshrix.Data.EventContext.#ctor(System.String,System.String,Cshrix.Data.Events.RoomEvent,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent})
-  name.vb: EventContext(String, String, RoomEvent, IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of StateEvent))
-  fullName: Cshrix.Data.EventContext.EventContext(System.String, System.String, Cshrix.Data.Events.RoomEvent, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.RoomEvent>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.RoomEvent>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StateEvent>)
-  fullName.vb: Cshrix.Data.EventContext.EventContext(System.String, System.String, Cshrix.Data.Events.RoomEvent, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.RoomEvent), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.RoomEvent), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StateEvent))
-  nameWithType: EventContext.EventContext(String, String, RoomEvent, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<RoomEvent>, IReadOnlyCollection<StateEvent>)
-  nameWithType.vb: EventContext.EventContext(String, String, RoomEvent, IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of RoomEvent), IReadOnlyCollection(Of StateEvent))
+- uid: Cshrix.Data.EventContext.#ctor(System.String,System.String,Cshrix.Data.Events.Event,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name: EventContext(String, String, Event, IReadOnlyCollection<Event>, IReadOnlyCollection<Event>, IReadOnlyCollection<Event>)
+  href: api/Cshrix.Data.EventContext.html#Cshrix_Data_EventContext__ctor_System_String_System_String_Cshrix_Data_Events_Event_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__
+  commentId: M:Cshrix.Data.EventContext.#ctor(System.String,System.String,Cshrix.Data.Events.Event,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name.vb: EventContext(String, String, Event, IReadOnlyCollection(Of Event), IReadOnlyCollection(Of Event), IReadOnlyCollection(Of Event))
+  fullName: Cshrix.Data.EventContext.EventContext(System.String, System.String, Cshrix.Data.Events.Event, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>)
+  fullName.vb: Cshrix.Data.EventContext.EventContext(System.String, System.String, Cshrix.Data.Events.Event, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event))
+  nameWithType: EventContext.EventContext(String, String, Event, IReadOnlyCollection<Event>, IReadOnlyCollection<Event>, IReadOnlyCollection<Event>)
+  nameWithType.vb: EventContext.EventContext(String, String, Event, IReadOnlyCollection(Of Event), IReadOnlyCollection(Of Event), IReadOnlyCollection(Of Event))
 - uid: Cshrix.Data.EventContext.#ctor*
   name: EventContext
   href: api/Cshrix.Data.EventContext.html#Cshrix_Data_EventContext__ctor_
@@ -6247,12 +6247,15 @@ references:
   commentId: T:Cshrix.Data.Events.Event
   fullName: Cshrix.Data.Events.Event
   nameWithType: Event
-- uid: Cshrix.Data.Events.Event.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String)
-  name: Event(EventContent, String, String)
-  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_
-  commentId: M:Cshrix.Data.Events.Event.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String)
-  fullName: Cshrix.Data.Events.Event.Event(Cshrix.Data.Events.Content.EventContent, System.String, System.String)
-  nameWithType: Event.Event(EventContent, String, String)
+- uid: Cshrix.Data.Events.Event.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,System.String,Cshrix.Data.UserId,System.Nullable{System.DateTimeOffset},Cshrix.Data.Events.Content.EventContent,System.String,System.Nullable{Cshrix.Data.Events.UnsignedData})
+  name: Event(EventContent, String, String, String, String, UserId, Nullable<DateTimeOffset>, EventContent, String, Nullable<UnsignedData>)
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_System_String_System_String_Cshrix_Data_UserId_System_Nullable_System_DateTimeOffset__Cshrix_Data_Events_Content_EventContent_System_String_System_Nullable_Cshrix_Data_Events_UnsignedData__
+  commentId: M:Cshrix.Data.Events.Event.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,System.String,Cshrix.Data.UserId,System.Nullable{System.DateTimeOffset},Cshrix.Data.Events.Content.EventContent,System.String,System.Nullable{Cshrix.Data.Events.UnsignedData})
+  name.vb: Event(EventContent, String, String, String, String, UserId, Nullable(Of DateTimeOffset), EventContent, String, Nullable(Of UnsignedData))
+  fullName: Cshrix.Data.Events.Event.Event(Cshrix.Data.Events.Content.EventContent, System.String, System.String, System.String, System.String, Cshrix.Data.UserId, System.Nullable<System.DateTimeOffset>, Cshrix.Data.Events.Content.EventContent, System.String, System.Nullable<Cshrix.Data.Events.UnsignedData>)
+  fullName.vb: Cshrix.Data.Events.Event.Event(Cshrix.Data.Events.Content.EventContent, System.String, System.String, System.String, System.String, Cshrix.Data.UserId, System.Nullable(Of System.DateTimeOffset), Cshrix.Data.Events.Content.EventContent, System.String, System.Nullable(Of Cshrix.Data.Events.UnsignedData))
+  nameWithType: Event.Event(EventContent, String, String, String, String, UserId, Nullable<DateTimeOffset>, EventContent, String, Nullable<UnsignedData>)
+  nameWithType.vb: Event.Event(EventContent, String, String, String, String, UserId, Nullable(Of DateTimeOffset), EventContent, String, Nullable(Of UnsignedData))
 - uid: Cshrix.Data.Events.Event.#ctor*
   name: Event
   href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event__ctor_
@@ -6273,6 +6276,32 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Events.Event.Content
   nameWithType: Event.Content
+- uid: Cshrix.Data.Events.Event.Id
+  name: Id
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Id
+  commentId: P:Cshrix.Data.Events.Event.Id
+  fullName: Cshrix.Data.Events.Event.Id
+  nameWithType: Event.Id
+- uid: Cshrix.Data.Events.Event.Id*
+  name: Id
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Id_
+  commentId: Overload:Cshrix.Data.Events.Event.Id
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.Event.Id
+  nameWithType: Event.Id
+- uid: Cshrix.Data.Events.Event.IsRedacted
+  name: IsRedacted
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_IsRedacted
+  commentId: P:Cshrix.Data.Events.Event.IsRedacted
+  fullName: Cshrix.Data.Events.Event.IsRedacted
+  nameWithType: Event.IsRedacted
+- uid: Cshrix.Data.Events.Event.IsRedacted*
+  name: IsRedacted
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_IsRedacted_
+  commentId: Overload:Cshrix.Data.Events.Event.IsRedacted
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.Event.IsRedacted
+  nameWithType: Event.IsRedacted
 - uid: Cshrix.Data.Events.Event.IsRedaction
   name: IsRedaction
   href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_IsRedaction
@@ -6286,6 +6315,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Events.Event.IsRedaction
   nameWithType: Event.IsRedaction
+- uid: Cshrix.Data.Events.Event.PreviousContent
+  name: PreviousContent
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_PreviousContent
+  commentId: P:Cshrix.Data.Events.Event.PreviousContent
+  fullName: Cshrix.Data.Events.Event.PreviousContent
+  nameWithType: Event.PreviousContent
+- uid: Cshrix.Data.Events.Event.PreviousContent*
+  name: PreviousContent
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_PreviousContent_
+  commentId: Overload:Cshrix.Data.Events.Event.PreviousContent
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.Event.PreviousContent
+  nameWithType: Event.PreviousContent
 - uid: Cshrix.Data.Events.Event.Redacts
   name: Redacts
   href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Redacts
@@ -6299,6 +6341,58 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Events.Event.Redacts
   nameWithType: Event.Redacts
+- uid: Cshrix.Data.Events.Event.RoomId
+  name: RoomId
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_RoomId
+  commentId: P:Cshrix.Data.Events.Event.RoomId
+  fullName: Cshrix.Data.Events.Event.RoomId
+  nameWithType: Event.RoomId
+- uid: Cshrix.Data.Events.Event.RoomId*
+  name: RoomId
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_RoomId_
+  commentId: Overload:Cshrix.Data.Events.Event.RoomId
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.Event.RoomId
+  nameWithType: Event.RoomId
+- uid: Cshrix.Data.Events.Event.Sender
+  name: Sender
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Sender
+  commentId: P:Cshrix.Data.Events.Event.Sender
+  fullName: Cshrix.Data.Events.Event.Sender
+  nameWithType: Event.Sender
+- uid: Cshrix.Data.Events.Event.Sender*
+  name: Sender
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Sender_
+  commentId: Overload:Cshrix.Data.Events.Event.Sender
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.Event.Sender
+  nameWithType: Event.Sender
+- uid: Cshrix.Data.Events.Event.SentAt
+  name: SentAt
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_SentAt
+  commentId: P:Cshrix.Data.Events.Event.SentAt
+  fullName: Cshrix.Data.Events.Event.SentAt
+  nameWithType: Event.SentAt
+- uid: Cshrix.Data.Events.Event.SentAt*
+  name: SentAt
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_SentAt_
+  commentId: Overload:Cshrix.Data.Events.Event.SentAt
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.Event.SentAt
+  nameWithType: Event.SentAt
+- uid: Cshrix.Data.Events.Event.StateKey
+  name: StateKey
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_StateKey
+  commentId: P:Cshrix.Data.Events.Event.StateKey
+  fullName: Cshrix.Data.Events.Event.StateKey
+  nameWithType: Event.StateKey
+- uid: Cshrix.Data.Events.Event.StateKey*
+  name: StateKey
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_StateKey_
+  commentId: Overload:Cshrix.Data.Events.Event.StateKey
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.Event.StateKey
+  nameWithType: Event.StateKey
 - uid: Cshrix.Data.Events.Event.Type
   name: Type
   href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Type
@@ -6312,6 +6406,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Events.Event.Type
   nameWithType: Event.Type
+- uid: Cshrix.Data.Events.Event.Unsigned
+  name: Unsigned
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Unsigned
+  commentId: P:Cshrix.Data.Events.Event.Unsigned
+  fullName: Cshrix.Data.Events.Event.Unsigned
+  nameWithType: Event.Unsigned
+- uid: Cshrix.Data.Events.Event.Unsigned*
+  name: Unsigned
+  href: api/Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Unsigned_
+  commentId: Overload:Cshrix.Data.Events.Event.Unsigned
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.Event.Unsigned
+  nameWithType: Event.Unsigned
 - uid: Cshrix.Data.Events.EventsContainer
   name: EventsContainer
   href: api/Cshrix.Data.Events.EventsContainer.html
@@ -6394,24 +6501,24 @@ references:
   commentId: T:Cshrix.Data.Events.InviteState
   fullName: Cshrix.Data.Events.InviteState
   nameWithType: InviteState
-- uid: Cshrix.Data.Events.InviteState.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.StrippedState})
-  name: InviteState(IEnumerable<StrippedState>)
-  href: api/Cshrix.Data.Events.InviteState.html#Cshrix_Data_Events_InviteState__ctor_System_Collections_Generic_IEnumerable_Cshrix_Data_Events_StrippedState__
-  commentId: M:Cshrix.Data.Events.InviteState.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.StrippedState})
-  name.vb: InviteState(IEnumerable(Of StrippedState))
-  fullName: Cshrix.Data.Events.InviteState.InviteState(System.Collections.Generic.IEnumerable<Cshrix.Data.Events.StrippedState>)
-  fullName.vb: Cshrix.Data.Events.InviteState.InviteState(System.Collections.Generic.IEnumerable(Of Cshrix.Data.Events.StrippedState))
-  nameWithType: InviteState.InviteState(IEnumerable<StrippedState>)
-  nameWithType.vb: InviteState.InviteState(IEnumerable(Of StrippedState))
-- uid: Cshrix.Data.Events.InviteState.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StrippedState})
-  name: InviteState(IReadOnlyCollection<StrippedState>)
-  href: api/Cshrix.Data.Events.InviteState.html#Cshrix_Data_Events_InviteState__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StrippedState__
-  commentId: M:Cshrix.Data.Events.InviteState.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StrippedState})
-  name.vb: InviteState(IReadOnlyCollection(Of StrippedState))
-  fullName: Cshrix.Data.Events.InviteState.InviteState(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StrippedState>)
-  fullName.vb: Cshrix.Data.Events.InviteState.InviteState(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StrippedState))
-  nameWithType: InviteState.InviteState(IReadOnlyCollection<StrippedState>)
-  nameWithType.vb: InviteState.InviteState(IReadOnlyCollection(Of StrippedState))
+- uid: Cshrix.Data.Events.InviteState.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.Event})
+  name: InviteState(IEnumerable<Event>)
+  href: api/Cshrix.Data.Events.InviteState.html#Cshrix_Data_Events_InviteState__ctor_System_Collections_Generic_IEnumerable_Cshrix_Data_Events_Event__
+  commentId: M:Cshrix.Data.Events.InviteState.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.Event})
+  name.vb: InviteState(IEnumerable(Of Event))
+  fullName: Cshrix.Data.Events.InviteState.InviteState(System.Collections.Generic.IEnumerable<Cshrix.Data.Events.Event>)
+  fullName.vb: Cshrix.Data.Events.InviteState.InviteState(System.Collections.Generic.IEnumerable(Of Cshrix.Data.Events.Event))
+  nameWithType: InviteState.InviteState(IEnumerable<Event>)
+  nameWithType.vb: InviteState.InviteState(IEnumerable(Of Event))
+- uid: Cshrix.Data.Events.InviteState.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name: InviteState(IReadOnlyCollection<Event>)
+  href: api/Cshrix.Data.Events.InviteState.html#Cshrix_Data_Events_InviteState__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__
+  commentId: M:Cshrix.Data.Events.InviteState.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name.vb: InviteState(IReadOnlyCollection(Of Event))
+  fullName: Cshrix.Data.Events.InviteState.InviteState(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>)
+  fullName.vb: Cshrix.Data.Events.InviteState.InviteState(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event))
+  nameWithType: InviteState.InviteState(IReadOnlyCollection<Event>)
+  nameWithType.vb: InviteState.InviteState(IReadOnlyCollection(Of Event))
 - uid: Cshrix.Data.Events.InviteState.#ctor*
   name: InviteState
   href: api/Cshrix.Data.Events.InviteState.html#Cshrix_Data_Events_InviteState__ctor_
@@ -6561,242 +6668,30 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Events.LeftRoom.Timeline
   nameWithType: LeftRoom.Timeline
-- uid: Cshrix.Data.Events.RoomEvent
-  name: RoomEvent
-  href: api/Cshrix.Data.Events.RoomEvent.html
-  commentId: T:Cshrix.Data.Events.RoomEvent
-  fullName: Cshrix.Data.Events.RoomEvent
-  nameWithType: RoomEvent
-- uid: Cshrix.Data.Events.RoomEvent.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,Cshrix.Data.UserId,System.String,System.DateTimeOffset,System.Nullable{Cshrix.Data.Events.UnsignedData})
-  name: RoomEvent(EventContent, String, String, String, UserId, String, DateTimeOffset, Nullable<UnsignedData>)
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_System_String_Cshrix_Data_UserId_System_String_System_DateTimeOffset_System_Nullable_Cshrix_Data_Events_UnsignedData__
-  commentId: M:Cshrix.Data.Events.RoomEvent.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,Cshrix.Data.UserId,System.String,System.DateTimeOffset,System.Nullable{Cshrix.Data.Events.UnsignedData})
-  name.vb: RoomEvent(EventContent, String, String, String, UserId, String, DateTimeOffset, Nullable(Of UnsignedData))
-  fullName: Cshrix.Data.Events.RoomEvent.RoomEvent(Cshrix.Data.Events.Content.EventContent, System.String, System.String, System.String, Cshrix.Data.UserId, System.String, System.DateTimeOffset, System.Nullable<Cshrix.Data.Events.UnsignedData>)
-  fullName.vb: Cshrix.Data.Events.RoomEvent.RoomEvent(Cshrix.Data.Events.Content.EventContent, System.String, System.String, System.String, Cshrix.Data.UserId, System.String, System.DateTimeOffset, System.Nullable(Of Cshrix.Data.Events.UnsignedData))
-  nameWithType: RoomEvent.RoomEvent(EventContent, String, String, String, UserId, String, DateTimeOffset, Nullable<UnsignedData>)
-  nameWithType.vb: RoomEvent.RoomEvent(EventContent, String, String, String, UserId, String, DateTimeOffset, Nullable(Of UnsignedData))
-- uid: Cshrix.Data.Events.RoomEvent.#ctor*
-  name: RoomEvent
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent__ctor_
-  commentId: Overload:Cshrix.Data.Events.RoomEvent.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.RoomEvent.RoomEvent
-  nameWithType: RoomEvent.RoomEvent
-- uid: Cshrix.Data.Events.RoomEvent.Id
-  name: Id
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_Id
-  commentId: P:Cshrix.Data.Events.RoomEvent.Id
-  fullName: Cshrix.Data.Events.RoomEvent.Id
-  nameWithType: RoomEvent.Id
-- uid: Cshrix.Data.Events.RoomEvent.Id*
-  name: Id
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_Id_
-  commentId: Overload:Cshrix.Data.Events.RoomEvent.Id
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.RoomEvent.Id
-  nameWithType: RoomEvent.Id
-- uid: Cshrix.Data.Events.RoomEvent.IsRedacted
-  name: IsRedacted
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_IsRedacted
-  commentId: P:Cshrix.Data.Events.RoomEvent.IsRedacted
-  fullName: Cshrix.Data.Events.RoomEvent.IsRedacted
-  nameWithType: RoomEvent.IsRedacted
-- uid: Cshrix.Data.Events.RoomEvent.IsRedacted*
-  name: IsRedacted
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_IsRedacted_
-  commentId: Overload:Cshrix.Data.Events.RoomEvent.IsRedacted
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.RoomEvent.IsRedacted
-  nameWithType: RoomEvent.IsRedacted
-- uid: Cshrix.Data.Events.RoomEvent.RoomId
-  name: RoomId
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_RoomId
-  commentId: P:Cshrix.Data.Events.RoomEvent.RoomId
-  fullName: Cshrix.Data.Events.RoomEvent.RoomId
-  nameWithType: RoomEvent.RoomId
-- uid: Cshrix.Data.Events.RoomEvent.RoomId*
-  name: RoomId
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_RoomId_
-  commentId: Overload:Cshrix.Data.Events.RoomEvent.RoomId
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.RoomEvent.RoomId
-  nameWithType: RoomEvent.RoomId
-- uid: Cshrix.Data.Events.RoomEvent.SentAt
-  name: SentAt
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_SentAt
-  commentId: P:Cshrix.Data.Events.RoomEvent.SentAt
-  fullName: Cshrix.Data.Events.RoomEvent.SentAt
-  nameWithType: RoomEvent.SentAt
-- uid: Cshrix.Data.Events.RoomEvent.SentAt*
-  name: SentAt
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_SentAt_
-  commentId: Overload:Cshrix.Data.Events.RoomEvent.SentAt
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.RoomEvent.SentAt
-  nameWithType: RoomEvent.SentAt
-- uid: Cshrix.Data.Events.RoomEvent.Unsigned
-  name: Unsigned
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_Unsigned
-  commentId: P:Cshrix.Data.Events.RoomEvent.Unsigned
-  fullName: Cshrix.Data.Events.RoomEvent.Unsigned
-  nameWithType: RoomEvent.Unsigned
-- uid: Cshrix.Data.Events.RoomEvent.Unsigned*
-  name: Unsigned
-  href: api/Cshrix.Data.Events.RoomEvent.html#Cshrix_Data_Events_RoomEvent_Unsigned_
-  commentId: Overload:Cshrix.Data.Events.RoomEvent.Unsigned
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.RoomEvent.Unsigned
-  nameWithType: RoomEvent.Unsigned
-- uid: Cshrix.Data.Events.RoomIdEvent
-  name: RoomIdEvent
-  href: api/Cshrix.Data.Events.RoomIdEvent.html
-  commentId: T:Cshrix.Data.Events.RoomIdEvent
-  fullName: Cshrix.Data.Events.RoomIdEvent
-  nameWithType: RoomIdEvent
-- uid: Cshrix.Data.Events.RoomIdEvent.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String)
-  name: RoomIdEvent(EventContent, String, String, String)
-  href: api/Cshrix.Data.Events.RoomIdEvent.html#Cshrix_Data_Events_RoomIdEvent__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_System_String_
-  commentId: M:Cshrix.Data.Events.RoomIdEvent.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String)
-  fullName: Cshrix.Data.Events.RoomIdEvent.RoomIdEvent(Cshrix.Data.Events.Content.EventContent, System.String, System.String, System.String)
-  nameWithType: RoomIdEvent.RoomIdEvent(EventContent, String, String, String)
-- uid: Cshrix.Data.Events.RoomIdEvent.#ctor*
-  name: RoomIdEvent
-  href: api/Cshrix.Data.Events.RoomIdEvent.html#Cshrix_Data_Events_RoomIdEvent__ctor_
-  commentId: Overload:Cshrix.Data.Events.RoomIdEvent.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.RoomIdEvent.RoomIdEvent
-  nameWithType: RoomIdEvent.RoomIdEvent
-- uid: Cshrix.Data.Events.RoomIdEvent.RoomId
-  name: RoomId
-  href: api/Cshrix.Data.Events.RoomIdEvent.html#Cshrix_Data_Events_RoomIdEvent_RoomId
-  commentId: P:Cshrix.Data.Events.RoomIdEvent.RoomId
-  fullName: Cshrix.Data.Events.RoomIdEvent.RoomId
-  nameWithType: RoomIdEvent.RoomId
-- uid: Cshrix.Data.Events.RoomIdEvent.RoomId*
-  name: RoomId
-  href: api/Cshrix.Data.Events.RoomIdEvent.html#Cshrix_Data_Events_RoomIdEvent_RoomId_
-  commentId: Overload:Cshrix.Data.Events.RoomIdEvent.RoomId
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.RoomIdEvent.RoomId
-  nameWithType: RoomIdEvent.RoomId
-- uid: Cshrix.Data.Events.Rooms
-  name: Rooms
-  href: api/Cshrix.Data.Events.Rooms.html
-  commentId: T:Cshrix.Data.Events.Rooms
-  fullName: Cshrix.Data.Events.Rooms
-  nameWithType: Rooms
-- uid: Cshrix.Data.Events.Rooms.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.JoinedRoom},System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.InvitedRoom},System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.LeftRoom})
-  name: Rooms(IReadOnlyDictionary<String, JoinedRoom>, IReadOnlyDictionary<String, InvitedRoom>, IReadOnlyDictionary<String, LeftRoom>)
-  href: api/Cshrix.Data.Events.Rooms.html#Cshrix_Data_Events_Rooms__ctor_System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Data_Events_JoinedRoom__System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Data_Events_InvitedRoom__System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Data_Events_LeftRoom__
-  commentId: M:Cshrix.Data.Events.Rooms.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.JoinedRoom},System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.InvitedRoom},System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.LeftRoom})
-  name.vb: Rooms(IReadOnlyDictionary(Of String, JoinedRoom), IReadOnlyDictionary(Of String, InvitedRoom), IReadOnlyDictionary(Of String, LeftRoom))
-  fullName: Cshrix.Data.Events.Rooms.Rooms(System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Data.Events.JoinedRoom>, System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Data.Events.InvitedRoom>, System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Data.Events.LeftRoom>)
-  fullName.vb: Cshrix.Data.Events.Rooms.Rooms(System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Data.Events.JoinedRoom), System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Data.Events.InvitedRoom), System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Data.Events.LeftRoom))
-  nameWithType: Rooms.Rooms(IReadOnlyDictionary<String, JoinedRoom>, IReadOnlyDictionary<String, InvitedRoom>, IReadOnlyDictionary<String, LeftRoom>)
-  nameWithType.vb: Rooms.Rooms(IReadOnlyDictionary(Of String, JoinedRoom), IReadOnlyDictionary(Of String, InvitedRoom), IReadOnlyDictionary(Of String, LeftRoom))
-- uid: Cshrix.Data.Events.Rooms.#ctor*
-  name: Rooms
-  href: api/Cshrix.Data.Events.Rooms.html#Cshrix_Data_Events_Rooms__ctor_
-  commentId: Overload:Cshrix.Data.Events.Rooms.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.Rooms.Rooms
-  nameWithType: Rooms.Rooms
-- uid: Cshrix.Data.Events.Rooms.Invited
-  name: Invited
-  href: api/Cshrix.Data.Events.Rooms.html#Cshrix_Data_Events_Rooms_Invited
-  commentId: P:Cshrix.Data.Events.Rooms.Invited
-  fullName: Cshrix.Data.Events.Rooms.Invited
-  nameWithType: Rooms.Invited
-- uid: Cshrix.Data.Events.Rooms.Invited*
-  name: Invited
-  href: api/Cshrix.Data.Events.Rooms.html#Cshrix_Data_Events_Rooms_Invited_
-  commentId: Overload:Cshrix.Data.Events.Rooms.Invited
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.Rooms.Invited
-  nameWithType: Rooms.Invited
-- uid: Cshrix.Data.Events.Rooms.Joined
-  name: Joined
-  href: api/Cshrix.Data.Events.Rooms.html#Cshrix_Data_Events_Rooms_Joined
-  commentId: P:Cshrix.Data.Events.Rooms.Joined
-  fullName: Cshrix.Data.Events.Rooms.Joined
-  nameWithType: Rooms.Joined
-- uid: Cshrix.Data.Events.Rooms.Joined*
-  name: Joined
-  href: api/Cshrix.Data.Events.Rooms.html#Cshrix_Data_Events_Rooms_Joined_
-  commentId: Overload:Cshrix.Data.Events.Rooms.Joined
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.Rooms.Joined
-  nameWithType: Rooms.Joined
-- uid: Cshrix.Data.Events.Rooms.Left
-  name: Left
-  href: api/Cshrix.Data.Events.Rooms.html#Cshrix_Data_Events_Rooms_Left
-  commentId: P:Cshrix.Data.Events.Rooms.Left
-  fullName: Cshrix.Data.Events.Rooms.Left
-  nameWithType: Rooms.Left
-- uid: Cshrix.Data.Events.Rooms.Left*
-  name: Left
-  href: api/Cshrix.Data.Events.Rooms.html#Cshrix_Data_Events_Rooms_Left_
-  commentId: Overload:Cshrix.Data.Events.Rooms.Left
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.Rooms.Left
-  nameWithType: Rooms.Left
-- uid: Cshrix.Data.Events.SenderEvent
-  name: SenderEvent
-  href: api/Cshrix.Data.Events.SenderEvent.html
-  commentId: T:Cshrix.Data.Events.SenderEvent
-  fullName: Cshrix.Data.Events.SenderEvent
-  nameWithType: SenderEvent
-- uid: Cshrix.Data.Events.SenderEvent.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,Cshrix.Data.UserId)
-  name: SenderEvent(EventContent, String, String, UserId)
-  href: api/Cshrix.Data.Events.SenderEvent.html#Cshrix_Data_Events_SenderEvent__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_Cshrix_Data_UserId_
-  commentId: M:Cshrix.Data.Events.SenderEvent.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,Cshrix.Data.UserId)
-  fullName: Cshrix.Data.Events.SenderEvent.SenderEvent(Cshrix.Data.Events.Content.EventContent, System.String, System.String, Cshrix.Data.UserId)
-  nameWithType: SenderEvent.SenderEvent(EventContent, String, String, UserId)
-- uid: Cshrix.Data.Events.SenderEvent.#ctor*
-  name: SenderEvent
-  href: api/Cshrix.Data.Events.SenderEvent.html#Cshrix_Data_Events_SenderEvent__ctor_
-  commentId: Overload:Cshrix.Data.Events.SenderEvent.#ctor
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.SenderEvent.SenderEvent
-  nameWithType: SenderEvent.SenderEvent
-- uid: Cshrix.Data.Events.SenderEvent.Sender
-  name: Sender
-  href: api/Cshrix.Data.Events.SenderEvent.html#Cshrix_Data_Events_SenderEvent_Sender
-  commentId: P:Cshrix.Data.Events.SenderEvent.Sender
-  fullName: Cshrix.Data.Events.SenderEvent.Sender
-  nameWithType: SenderEvent.Sender
-- uid: Cshrix.Data.Events.SenderEvent.Sender*
-  name: Sender
-  href: api/Cshrix.Data.Events.SenderEvent.html#Cshrix_Data_Events_SenderEvent_Sender_
-  commentId: Overload:Cshrix.Data.Events.SenderEvent.Sender
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.SenderEvent.Sender
-  nameWithType: SenderEvent.Sender
 - uid: Cshrix.Data.Events.State
   name: State
   href: api/Cshrix.Data.Events.State.html
   commentId: T:Cshrix.Data.Events.State
   fullName: Cshrix.Data.Events.State
   nameWithType: State
-- uid: Cshrix.Data.Events.State.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.StateEvent})
-  name: State(IEnumerable<StateEvent>)
-  href: api/Cshrix.Data.Events.State.html#Cshrix_Data_Events_State__ctor_System_Collections_Generic_IEnumerable_Cshrix_Data_Events_StateEvent__
-  commentId: M:Cshrix.Data.Events.State.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.StateEvent})
-  name.vb: State(IEnumerable(Of StateEvent))
-  fullName: Cshrix.Data.Events.State.State(System.Collections.Generic.IEnumerable<Cshrix.Data.Events.StateEvent>)
-  fullName.vb: Cshrix.Data.Events.State.State(System.Collections.Generic.IEnumerable(Of Cshrix.Data.Events.StateEvent))
-  nameWithType: State.State(IEnumerable<StateEvent>)
-  nameWithType.vb: State.State(IEnumerable(Of StateEvent))
-- uid: Cshrix.Data.Events.State.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent})
-  name: State(IReadOnlyCollection<StateEvent>)
-  href: api/Cshrix.Data.Events.State.html#Cshrix_Data_Events_State__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StateEvent__
-  commentId: M:Cshrix.Data.Events.State.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent})
-  name.vb: State(IReadOnlyCollection(Of StateEvent))
-  fullName: Cshrix.Data.Events.State.State(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StateEvent>)
-  fullName.vb: Cshrix.Data.Events.State.State(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StateEvent))
-  nameWithType: State.State(IReadOnlyCollection<StateEvent>)
-  nameWithType.vb: State.State(IReadOnlyCollection(Of StateEvent))
+- uid: Cshrix.Data.Events.State.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.Event})
+  name: State(IEnumerable<Event>)
+  href: api/Cshrix.Data.Events.State.html#Cshrix_Data_Events_State__ctor_System_Collections_Generic_IEnumerable_Cshrix_Data_Events_Event__
+  commentId: M:Cshrix.Data.Events.State.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.Event})
+  name.vb: State(IEnumerable(Of Event))
+  fullName: Cshrix.Data.Events.State.State(System.Collections.Generic.IEnumerable<Cshrix.Data.Events.Event>)
+  fullName.vb: Cshrix.Data.Events.State.State(System.Collections.Generic.IEnumerable(Of Cshrix.Data.Events.Event))
+  nameWithType: State.State(IEnumerable<Event>)
+  nameWithType.vb: State.State(IEnumerable(Of Event))
+- uid: Cshrix.Data.Events.State.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name: State(IReadOnlyCollection<Event>)
+  href: api/Cshrix.Data.Events.State.html#Cshrix_Data_Events_State__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__
+  commentId: M:Cshrix.Data.Events.State.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name.vb: State(IReadOnlyCollection(Of Event))
+  fullName: Cshrix.Data.Events.State.State(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>)
+  fullName.vb: Cshrix.Data.Events.State.State(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event))
+  nameWithType: State.State(IReadOnlyCollection<Event>)
+  nameWithType.vb: State.State(IReadOnlyCollection(Of Event))
 - uid: Cshrix.Data.Events.State.#ctor*
   name: State
   href: api/Cshrix.Data.Events.State.html#Cshrix_Data_Events_State__ctor_
@@ -6817,101 +6712,82 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Events.State.Events
   nameWithType: State.Events
-- uid: Cshrix.Data.Events.StateEvent
-  name: StateEvent
-  href: api/Cshrix.Data.Events.StateEvent.html
-  commentId: T:Cshrix.Data.Events.StateEvent
-  fullName: Cshrix.Data.Events.StateEvent
-  nameWithType: StateEvent
-- uid: Cshrix.Data.Events.StateEvent.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,System.String,Cshrix.Data.UserId,System.DateTimeOffset,System.Nullable{Cshrix.Data.Events.UnsignedData},Cshrix.Data.Events.Content.EventContent,System.String)
-  name: StateEvent(EventContent, String, String, String, String, UserId, DateTimeOffset, Nullable<UnsignedData>, EventContent, String)
-  href: api/Cshrix.Data.Events.StateEvent.html#Cshrix_Data_Events_StateEvent__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_System_String_System_String_Cshrix_Data_UserId_System_DateTimeOffset_System_Nullable_Cshrix_Data_Events_UnsignedData__Cshrix_Data_Events_Content_EventContent_System_String_
-  commentId: M:Cshrix.Data.Events.StateEvent.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,System.String,Cshrix.Data.UserId,System.DateTimeOffset,System.Nullable{Cshrix.Data.Events.UnsignedData},Cshrix.Data.Events.Content.EventContent,System.String)
-  name.vb: StateEvent(EventContent, String, String, String, String, UserId, DateTimeOffset, Nullable(Of UnsignedData), EventContent, String)
-  fullName: Cshrix.Data.Events.StateEvent.StateEvent(Cshrix.Data.Events.Content.EventContent, System.String, System.String, System.String, System.String, Cshrix.Data.UserId, System.DateTimeOffset, System.Nullable<Cshrix.Data.Events.UnsignedData>, Cshrix.Data.Events.Content.EventContent, System.String)
-  fullName.vb: Cshrix.Data.Events.StateEvent.StateEvent(Cshrix.Data.Events.Content.EventContent, System.String, System.String, System.String, System.String, Cshrix.Data.UserId, System.DateTimeOffset, System.Nullable(Of Cshrix.Data.Events.UnsignedData), Cshrix.Data.Events.Content.EventContent, System.String)
-  nameWithType: StateEvent.StateEvent(EventContent, String, String, String, String, UserId, DateTimeOffset, Nullable<UnsignedData>, EventContent, String)
-  nameWithType.vb: StateEvent.StateEvent(EventContent, String, String, String, String, UserId, DateTimeOffset, Nullable(Of UnsignedData), EventContent, String)
-- uid: Cshrix.Data.Events.StateEvent.#ctor*
-  name: StateEvent
-  href: api/Cshrix.Data.Events.StateEvent.html#Cshrix_Data_Events_StateEvent__ctor_
-  commentId: Overload:Cshrix.Data.Events.StateEvent.#ctor
+- uid: Cshrix.Data.Events.SyncedRooms
+  name: SyncedRooms
+  href: api/Cshrix.Data.Events.SyncedRooms.html
+  commentId: T:Cshrix.Data.Events.SyncedRooms
+  fullName: Cshrix.Data.Events.SyncedRooms
+  nameWithType: SyncedRooms
+- uid: Cshrix.Data.Events.SyncedRooms.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.JoinedRoom},System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.InvitedRoom},System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.LeftRoom})
+  name: SyncedRooms(IReadOnlyDictionary<String, JoinedRoom>, IReadOnlyDictionary<String, InvitedRoom>, IReadOnlyDictionary<String, LeftRoom>)
+  href: api/Cshrix.Data.Events.SyncedRooms.html#Cshrix_Data_Events_SyncedRooms__ctor_System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Data_Events_JoinedRoom__System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Data_Events_InvitedRoom__System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Data_Events_LeftRoom__
+  commentId: M:Cshrix.Data.Events.SyncedRooms.#ctor(System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.JoinedRoom},System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.InvitedRoom},System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Events.LeftRoom})
+  name.vb: SyncedRooms(IReadOnlyDictionary(Of String, JoinedRoom), IReadOnlyDictionary(Of String, InvitedRoom), IReadOnlyDictionary(Of String, LeftRoom))
+  fullName: Cshrix.Data.Events.SyncedRooms.SyncedRooms(System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Data.Events.JoinedRoom>, System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Data.Events.InvitedRoom>, System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Data.Events.LeftRoom>)
+  fullName.vb: Cshrix.Data.Events.SyncedRooms.SyncedRooms(System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Data.Events.JoinedRoom), System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Data.Events.InvitedRoom), System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Data.Events.LeftRoom))
+  nameWithType: SyncedRooms.SyncedRooms(IReadOnlyDictionary<String, JoinedRoom>, IReadOnlyDictionary<String, InvitedRoom>, IReadOnlyDictionary<String, LeftRoom>)
+  nameWithType.vb: SyncedRooms.SyncedRooms(IReadOnlyDictionary(Of String, JoinedRoom), IReadOnlyDictionary(Of String, InvitedRoom), IReadOnlyDictionary(Of String, LeftRoom))
+- uid: Cshrix.Data.Events.SyncedRooms.#ctor*
+  name: SyncedRooms
+  href: api/Cshrix.Data.Events.SyncedRooms.html#Cshrix_Data_Events_SyncedRooms__ctor_
+  commentId: Overload:Cshrix.Data.Events.SyncedRooms.#ctor
   isSpec: "True"
-  fullName: Cshrix.Data.Events.StateEvent.StateEvent
-  nameWithType: StateEvent.StateEvent
-- uid: Cshrix.Data.Events.StateEvent.PreviousContent
-  name: PreviousContent
-  href: api/Cshrix.Data.Events.StateEvent.html#Cshrix_Data_Events_StateEvent_PreviousContent
-  commentId: P:Cshrix.Data.Events.StateEvent.PreviousContent
-  fullName: Cshrix.Data.Events.StateEvent.PreviousContent
-  nameWithType: StateEvent.PreviousContent
-- uid: Cshrix.Data.Events.StateEvent.PreviousContent*
-  name: PreviousContent
-  href: api/Cshrix.Data.Events.StateEvent.html#Cshrix_Data_Events_StateEvent_PreviousContent_
-  commentId: Overload:Cshrix.Data.Events.StateEvent.PreviousContent
+  fullName: Cshrix.Data.Events.SyncedRooms.SyncedRooms
+  nameWithType: SyncedRooms.SyncedRooms
+- uid: Cshrix.Data.Events.SyncedRooms.Invited
+  name: Invited
+  href: api/Cshrix.Data.Events.SyncedRooms.html#Cshrix_Data_Events_SyncedRooms_Invited
+  commentId: P:Cshrix.Data.Events.SyncedRooms.Invited
+  fullName: Cshrix.Data.Events.SyncedRooms.Invited
+  nameWithType: SyncedRooms.Invited
+- uid: Cshrix.Data.Events.SyncedRooms.Invited*
+  name: Invited
+  href: api/Cshrix.Data.Events.SyncedRooms.html#Cshrix_Data_Events_SyncedRooms_Invited_
+  commentId: Overload:Cshrix.Data.Events.SyncedRooms.Invited
   isSpec: "True"
-  fullName: Cshrix.Data.Events.StateEvent.PreviousContent
-  nameWithType: StateEvent.PreviousContent
-- uid: Cshrix.Data.Events.StateEvent.StateKey
-  name: StateKey
-  href: api/Cshrix.Data.Events.StateEvent.html#Cshrix_Data_Events_StateEvent_StateKey
-  commentId: P:Cshrix.Data.Events.StateEvent.StateKey
-  fullName: Cshrix.Data.Events.StateEvent.StateKey
-  nameWithType: StateEvent.StateKey
-- uid: Cshrix.Data.Events.StateEvent.StateKey*
-  name: StateKey
-  href: api/Cshrix.Data.Events.StateEvent.html#Cshrix_Data_Events_StateEvent_StateKey_
-  commentId: Overload:Cshrix.Data.Events.StateEvent.StateKey
+  fullName: Cshrix.Data.Events.SyncedRooms.Invited
+  nameWithType: SyncedRooms.Invited
+- uid: Cshrix.Data.Events.SyncedRooms.Joined
+  name: Joined
+  href: api/Cshrix.Data.Events.SyncedRooms.html#Cshrix_Data_Events_SyncedRooms_Joined
+  commentId: P:Cshrix.Data.Events.SyncedRooms.Joined
+  fullName: Cshrix.Data.Events.SyncedRooms.Joined
+  nameWithType: SyncedRooms.Joined
+- uid: Cshrix.Data.Events.SyncedRooms.Joined*
+  name: Joined
+  href: api/Cshrix.Data.Events.SyncedRooms.html#Cshrix_Data_Events_SyncedRooms_Joined_
+  commentId: Overload:Cshrix.Data.Events.SyncedRooms.Joined
   isSpec: "True"
-  fullName: Cshrix.Data.Events.StateEvent.StateKey
-  nameWithType: StateEvent.StateKey
-- uid: Cshrix.Data.Events.StrippedState
-  name: StrippedState
-  href: api/Cshrix.Data.Events.StrippedState.html
-  commentId: T:Cshrix.Data.Events.StrippedState
-  fullName: Cshrix.Data.Events.StrippedState
-  nameWithType: StrippedState
-- uid: Cshrix.Data.Events.StrippedState.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,Cshrix.Data.UserId)
-  name: StrippedState(EventContent, String, String, String, UserId)
-  href: api/Cshrix.Data.Events.StrippedState.html#Cshrix_Data_Events_StrippedState__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_System_String_Cshrix_Data_UserId_
-  commentId: M:Cshrix.Data.Events.StrippedState.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,Cshrix.Data.UserId)
-  fullName: Cshrix.Data.Events.StrippedState.StrippedState(Cshrix.Data.Events.Content.EventContent, System.String, System.String, System.String, Cshrix.Data.UserId)
-  nameWithType: StrippedState.StrippedState(EventContent, String, String, String, UserId)
-- uid: Cshrix.Data.Events.StrippedState.#ctor*
-  name: StrippedState
-  href: api/Cshrix.Data.Events.StrippedState.html#Cshrix_Data_Events_StrippedState__ctor_
-  commentId: Overload:Cshrix.Data.Events.StrippedState.#ctor
+  fullName: Cshrix.Data.Events.SyncedRooms.Joined
+  nameWithType: SyncedRooms.Joined
+- uid: Cshrix.Data.Events.SyncedRooms.Left
+  name: Left
+  href: api/Cshrix.Data.Events.SyncedRooms.html#Cshrix_Data_Events_SyncedRooms_Left
+  commentId: P:Cshrix.Data.Events.SyncedRooms.Left
+  fullName: Cshrix.Data.Events.SyncedRooms.Left
+  nameWithType: SyncedRooms.Left
+- uid: Cshrix.Data.Events.SyncedRooms.Left*
+  name: Left
+  href: api/Cshrix.Data.Events.SyncedRooms.html#Cshrix_Data_Events_SyncedRooms_Left_
+  commentId: Overload:Cshrix.Data.Events.SyncedRooms.Left
   isSpec: "True"
-  fullName: Cshrix.Data.Events.StrippedState.StrippedState
-  nameWithType: StrippedState.StrippedState
-- uid: Cshrix.Data.Events.StrippedState.StateKey
-  name: StateKey
-  href: api/Cshrix.Data.Events.StrippedState.html#Cshrix_Data_Events_StrippedState_StateKey
-  commentId: P:Cshrix.Data.Events.StrippedState.StateKey
-  fullName: Cshrix.Data.Events.StrippedState.StateKey
-  nameWithType: StrippedState.StateKey
-- uid: Cshrix.Data.Events.StrippedState.StateKey*
-  name: StateKey
-  href: api/Cshrix.Data.Events.StrippedState.html#Cshrix_Data_Events_StrippedState_StateKey_
-  commentId: Overload:Cshrix.Data.Events.StrippedState.StateKey
-  isSpec: "True"
-  fullName: Cshrix.Data.Events.StrippedState.StateKey
-  nameWithType: StrippedState.StateKey
+  fullName: Cshrix.Data.Events.SyncedRooms.Left
+  nameWithType: SyncedRooms.Left
 - uid: Cshrix.Data.Events.SyncResponse
   name: SyncResponse
   href: api/Cshrix.Data.Events.SyncResponse.html
   commentId: T:Cshrix.Data.Events.SyncResponse
   fullName: Cshrix.Data.Events.SyncResponse
   nameWithType: SyncResponse
-- uid: Cshrix.Data.Events.SyncResponse.#ctor(System.String,Cshrix.Data.Events.Rooms,Cshrix.Data.Events.EventsContainer,Cshrix.Data.Events.EventsContainer,System.Nullable{Cshrix.Data.Events.ToDevice},System.Nullable{Cshrix.Data.Devices.DeviceChangeLists},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
-  name: SyncResponse(String, Rooms, EventsContainer, EventsContainer, Nullable<ToDevice>, Nullable<DeviceChangeLists>, IReadOnlyDictionary<String, Int32>)
-  href: api/Cshrix.Data.Events.SyncResponse.html#Cshrix_Data_Events_SyncResponse__ctor_System_String_Cshrix_Data_Events_Rooms_Cshrix_Data_Events_EventsContainer_Cshrix_Data_Events_EventsContainer_System_Nullable_Cshrix_Data_Events_ToDevice__System_Nullable_Cshrix_Data_Devices_DeviceChangeLists__System_Collections_Generic_IReadOnlyDictionary_System_String_System_Int32__
-  commentId: M:Cshrix.Data.Events.SyncResponse.#ctor(System.String,Cshrix.Data.Events.Rooms,Cshrix.Data.Events.EventsContainer,Cshrix.Data.Events.EventsContainer,System.Nullable{Cshrix.Data.Events.ToDevice},System.Nullable{Cshrix.Data.Devices.DeviceChangeLists},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
-  name.vb: SyncResponse(String, Rooms, EventsContainer, EventsContainer, Nullable(Of ToDevice), Nullable(Of DeviceChangeLists), IReadOnlyDictionary(Of String, Int32))
-  fullName: Cshrix.Data.Events.SyncResponse.SyncResponse(System.String, Cshrix.Data.Events.Rooms, Cshrix.Data.Events.EventsContainer, Cshrix.Data.Events.EventsContainer, System.Nullable<Cshrix.Data.Events.ToDevice>, System.Nullable<Cshrix.Data.Devices.DeviceChangeLists>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Int32>)
-  fullName.vb: Cshrix.Data.Events.SyncResponse.SyncResponse(System.String, Cshrix.Data.Events.Rooms, Cshrix.Data.Events.EventsContainer, Cshrix.Data.Events.EventsContainer, System.Nullable(Of Cshrix.Data.Events.ToDevice), System.Nullable(Of Cshrix.Data.Devices.DeviceChangeLists), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Int32))
-  nameWithType: SyncResponse.SyncResponse(String, Rooms, EventsContainer, EventsContainer, Nullable<ToDevice>, Nullable<DeviceChangeLists>, IReadOnlyDictionary<String, Int32>)
-  nameWithType.vb: SyncResponse.SyncResponse(String, Rooms, EventsContainer, EventsContainer, Nullable(Of ToDevice), Nullable(Of DeviceChangeLists), IReadOnlyDictionary(Of String, Int32))
+- uid: Cshrix.Data.Events.SyncResponse.#ctor(System.String,Cshrix.Data.Events.SyncedRooms,Cshrix.Data.Events.EventsContainer,Cshrix.Data.Events.EventsContainer,System.Nullable{Cshrix.Data.Events.ToDevice},System.Nullable{Cshrix.Data.Devices.DeviceChangeLists},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
+  name: SyncResponse(String, SyncedRooms, EventsContainer, EventsContainer, Nullable<ToDevice>, Nullable<DeviceChangeLists>, IReadOnlyDictionary<String, Int32>)
+  href: api/Cshrix.Data.Events.SyncResponse.html#Cshrix_Data_Events_SyncResponse__ctor_System_String_Cshrix_Data_Events_SyncedRooms_Cshrix_Data_Events_EventsContainer_Cshrix_Data_Events_EventsContainer_System_Nullable_Cshrix_Data_Events_ToDevice__System_Nullable_Cshrix_Data_Devices_DeviceChangeLists__System_Collections_Generic_IReadOnlyDictionary_System_String_System_Int32__
+  commentId: M:Cshrix.Data.Events.SyncResponse.#ctor(System.String,Cshrix.Data.Events.SyncedRooms,Cshrix.Data.Events.EventsContainer,Cshrix.Data.Events.EventsContainer,System.Nullable{Cshrix.Data.Events.ToDevice},System.Nullable{Cshrix.Data.Devices.DeviceChangeLists},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Int32})
+  name.vb: SyncResponse(String, SyncedRooms, EventsContainer, EventsContainer, Nullable(Of ToDevice), Nullable(Of DeviceChangeLists), IReadOnlyDictionary(Of String, Int32))
+  fullName: Cshrix.Data.Events.SyncResponse.SyncResponse(System.String, Cshrix.Data.Events.SyncedRooms, Cshrix.Data.Events.EventsContainer, Cshrix.Data.Events.EventsContainer, System.Nullable<Cshrix.Data.Events.ToDevice>, System.Nullable<Cshrix.Data.Devices.DeviceChangeLists>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Int32>)
+  fullName.vb: Cshrix.Data.Events.SyncResponse.SyncResponse(System.String, Cshrix.Data.Events.SyncedRooms, Cshrix.Data.Events.EventsContainer, Cshrix.Data.Events.EventsContainer, System.Nullable(Of Cshrix.Data.Events.ToDevice), System.Nullable(Of Cshrix.Data.Devices.DeviceChangeLists), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Int32))
+  nameWithType: SyncResponse.SyncResponse(String, SyncedRooms, EventsContainer, EventsContainer, Nullable<ToDevice>, Nullable<DeviceChangeLists>, IReadOnlyDictionary<String, Int32>)
+  nameWithType.vb: SyncResponse.SyncResponse(String, SyncedRooms, EventsContainer, EventsContainer, Nullable(Of ToDevice), Nullable(Of DeviceChangeLists), IReadOnlyDictionary(Of String, Int32))
 - uid: Cshrix.Data.Events.SyncResponse.#ctor*
   name: SyncResponse
   href: api/Cshrix.Data.Events.SyncResponse.html#Cshrix_Data_Events_SyncResponse__ctor_
@@ -7016,24 +6892,24 @@ references:
   commentId: T:Cshrix.Data.Events.Timeline
   fullName: Cshrix.Data.Events.Timeline
   nameWithType: Timeline
-- uid: Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.RoomEvent},System.Boolean,System.String)
-  name: Timeline(IEnumerable<RoomEvent>, Boolean, String)
-  href: api/Cshrix.Data.Events.Timeline.html#Cshrix_Data_Events_Timeline__ctor_System_Collections_Generic_IEnumerable_Cshrix_Data_Events_RoomEvent__System_Boolean_System_String_
-  commentId: M:Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.RoomEvent},System.Boolean,System.String)
-  name.vb: Timeline(IEnumerable(Of RoomEvent), Boolean, String)
-  fullName: Cshrix.Data.Events.Timeline.Timeline(System.Collections.Generic.IEnumerable<Cshrix.Data.Events.RoomEvent>, System.Boolean, System.String)
-  fullName.vb: Cshrix.Data.Events.Timeline.Timeline(System.Collections.Generic.IEnumerable(Of Cshrix.Data.Events.RoomEvent), System.Boolean, System.String)
-  nameWithType: Timeline.Timeline(IEnumerable<RoomEvent>, Boolean, String)
-  nameWithType.vb: Timeline.Timeline(IEnumerable(Of RoomEvent), Boolean, String)
-- uid: Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Boolean,System.String)
-  name: Timeline(IReadOnlyCollection<RoomEvent>, Boolean, String)
-  href: api/Cshrix.Data.Events.Timeline.html#Cshrix_Data_Events_Timeline__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_RoomEvent__System_Boolean_System_String_
-  commentId: M:Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.RoomEvent},System.Boolean,System.String)
-  name.vb: Timeline(IReadOnlyCollection(Of RoomEvent), Boolean, String)
-  fullName: Cshrix.Data.Events.Timeline.Timeline(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.RoomEvent>, System.Boolean, System.String)
-  fullName.vb: Cshrix.Data.Events.Timeline.Timeline(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.RoomEvent), System.Boolean, System.String)
-  nameWithType: Timeline.Timeline(IReadOnlyCollection<RoomEvent>, Boolean, String)
-  nameWithType.vb: Timeline.Timeline(IReadOnlyCollection(Of RoomEvent), Boolean, String)
+- uid: Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.Event},System.Boolean,System.String)
+  name: Timeline(IEnumerable<Event>, Boolean, String)
+  href: api/Cshrix.Data.Events.Timeline.html#Cshrix_Data_Events_Timeline__ctor_System_Collections_Generic_IEnumerable_Cshrix_Data_Events_Event__System_Boolean_System_String_
+  commentId: M:Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.Event},System.Boolean,System.String)
+  name.vb: Timeline(IEnumerable(Of Event), Boolean, String)
+  fullName: Cshrix.Data.Events.Timeline.Timeline(System.Collections.Generic.IEnumerable<Cshrix.Data.Events.Event>, System.Boolean, System.String)
+  fullName.vb: Cshrix.Data.Events.Timeline.Timeline(System.Collections.Generic.IEnumerable(Of Cshrix.Data.Events.Event), System.Boolean, System.String)
+  nameWithType: Timeline.Timeline(IEnumerable<Event>, Boolean, String)
+  nameWithType.vb: Timeline.Timeline(IEnumerable(Of Event), Boolean, String)
+- uid: Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Boolean,System.String)
+  name: Timeline(IReadOnlyCollection<Event>, Boolean, String)
+  href: api/Cshrix.Data.Events.Timeline.html#Cshrix_Data_Events_Timeline__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__System_Boolean_System_String_
+  commentId: M:Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Boolean,System.String)
+  name.vb: Timeline(IReadOnlyCollection(Of Event), Boolean, String)
+  fullName: Cshrix.Data.Events.Timeline.Timeline(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>, System.Boolean, System.String)
+  fullName.vb: Cshrix.Data.Events.Timeline.Timeline(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event), System.Boolean, System.String)
+  nameWithType: Timeline.Timeline(IReadOnlyCollection<Event>, Boolean, String)
+  nameWithType.vb: Timeline.Timeline(IReadOnlyCollection(Of Event), Boolean, String)
 - uid: Cshrix.Data.Events.Timeline.#ctor*
   name: Timeline
   href: api/Cshrix.Data.Events.Timeline.html#Cshrix_Data_Events_Timeline__ctor_
@@ -7086,15 +6962,15 @@ references:
   commentId: T:Cshrix.Data.Events.ToDevice
   fullName: Cshrix.Data.Events.ToDevice
   nameWithType: ToDevice
-- uid: Cshrix.Data.Events.ToDevice.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.SenderEvent})
-  name: ToDevice(IReadOnlyCollection<SenderEvent>)
-  href: api/Cshrix.Data.Events.ToDevice.html#Cshrix_Data_Events_ToDevice__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_SenderEvent__
-  commentId: M:Cshrix.Data.Events.ToDevice.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.SenderEvent})
-  name.vb: ToDevice(IReadOnlyCollection(Of SenderEvent))
-  fullName: Cshrix.Data.Events.ToDevice.ToDevice(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.SenderEvent>)
-  fullName.vb: Cshrix.Data.Events.ToDevice.ToDevice(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.SenderEvent))
-  nameWithType: ToDevice.ToDevice(IReadOnlyCollection<SenderEvent>)
-  nameWithType.vb: ToDevice.ToDevice(IReadOnlyCollection(Of SenderEvent))
+- uid: Cshrix.Data.Events.ToDevice.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name: ToDevice(IReadOnlyCollection<Event>)
+  href: api/Cshrix.Data.Events.ToDevice.html#Cshrix_Data_Events_ToDevice__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__
+  commentId: M:Cshrix.Data.Events.ToDevice.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name.vb: ToDevice(IReadOnlyCollection(Of Event))
+  fullName: Cshrix.Data.Events.ToDevice.ToDevice(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>)
+  fullName.vb: Cshrix.Data.Events.ToDevice.ToDevice(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event))
+  nameWithType: ToDevice.ToDevice(IReadOnlyCollection<Event>)
+  nameWithType.vb: ToDevice.ToDevice(IReadOnlyCollection(Of Event))
 - uid: Cshrix.Data.Events.ToDevice.#ctor*
   name: ToDevice
   href: api/Cshrix.Data.Events.ToDevice.html#Cshrix_Data_Events_ToDevice__ctor_
@@ -7166,15 +7042,15 @@ references:
   commentId: T:Cshrix.Data.Events.UnsignedData
   fullName: Cshrix.Data.Events.UnsignedData
   nameWithType: UnsignedData
-- uid: Cshrix.Data.Events.UnsignedData.#ctor(System.TimeSpan,Cshrix.Data.Events.Event,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StrippedState})
-  name: UnsignedData(TimeSpan, Event, String, IReadOnlyCollection<StrippedState>)
-  href: api/Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData__ctor_System_TimeSpan_Cshrix_Data_Events_Event_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StrippedState__
-  commentId: M:Cshrix.Data.Events.UnsignedData.#ctor(System.TimeSpan,Cshrix.Data.Events.Event,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StrippedState})
-  name.vb: UnsignedData(TimeSpan, Event, String, IReadOnlyCollection(Of StrippedState))
-  fullName: Cshrix.Data.Events.UnsignedData.UnsignedData(System.TimeSpan, Cshrix.Data.Events.Event, System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StrippedState>)
-  fullName.vb: Cshrix.Data.Events.UnsignedData.UnsignedData(System.TimeSpan, Cshrix.Data.Events.Event, System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StrippedState))
-  nameWithType: UnsignedData.UnsignedData(TimeSpan, Event, String, IReadOnlyCollection<StrippedState>)
-  nameWithType.vb: UnsignedData.UnsignedData(TimeSpan, Event, String, IReadOnlyCollection(Of StrippedState))
+- uid: Cshrix.Data.Events.UnsignedData.#ctor(System.TimeSpan,Cshrix.Data.Events.Event,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name: UnsignedData(TimeSpan, Event, String, IReadOnlyCollection<Event>)
+  href: api/Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData__ctor_System_TimeSpan_Cshrix_Data_Events_Event_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__
+  commentId: M:Cshrix.Data.Events.UnsignedData.#ctor(System.TimeSpan,Cshrix.Data.Events.Event,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})
+  name.vb: UnsignedData(TimeSpan, Event, String, IReadOnlyCollection(Of Event))
+  fullName: Cshrix.Data.Events.UnsignedData.UnsignedData(System.TimeSpan, Cshrix.Data.Events.Event, System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>)
+  fullName.vb: Cshrix.Data.Events.UnsignedData.UnsignedData(System.TimeSpan, Cshrix.Data.Events.Event, System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event))
+  nameWithType: UnsignedData.UnsignedData(TimeSpan, Event, String, IReadOnlyCollection<Event>)
+  nameWithType.vb: UnsignedData.UnsignedData(TimeSpan, Event, String, IReadOnlyCollection(Of Event))
 - uid: Cshrix.Data.Events.UnsignedData.#ctor*
   name: UnsignedData
   href: api/Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData__ctor_
@@ -7781,6 +7657,38 @@ references:
   commentId: F:Cshrix.Data.IdentifierType.User
   fullName: Cshrix.Data.IdentifierType.User
   nameWithType: IdentifierType.User
+- uid: Cshrix.Data.InvitedEventArgs
+  name: InvitedEventArgs
+  href: api/Cshrix.Data.InvitedEventArgs.html
+  commentId: T:Cshrix.Data.InvitedEventArgs
+  fullName: Cshrix.Data.InvitedEventArgs
+  nameWithType: InvitedEventArgs
+- uid: Cshrix.Data.InvitedEventArgs.#ctor(Cshrix.IRoom)
+  name: InvitedEventArgs(IRoom)
+  href: api/Cshrix.Data.InvitedEventArgs.html#Cshrix_Data_InvitedEventArgs__ctor_Cshrix_IRoom_
+  commentId: M:Cshrix.Data.InvitedEventArgs.#ctor(Cshrix.IRoom)
+  fullName: Cshrix.Data.InvitedEventArgs.InvitedEventArgs(Cshrix.IRoom)
+  nameWithType: InvitedEventArgs.InvitedEventArgs(IRoom)
+- uid: Cshrix.Data.InvitedEventArgs.#ctor*
+  name: InvitedEventArgs
+  href: api/Cshrix.Data.InvitedEventArgs.html#Cshrix_Data_InvitedEventArgs__ctor_
+  commentId: Overload:Cshrix.Data.InvitedEventArgs.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Data.InvitedEventArgs.InvitedEventArgs
+  nameWithType: InvitedEventArgs.InvitedEventArgs
+- uid: Cshrix.Data.InvitedEventArgs.Room
+  name: Room
+  href: api/Cshrix.Data.InvitedEventArgs.html#Cshrix_Data_InvitedEventArgs_Room
+  commentId: P:Cshrix.Data.InvitedEventArgs.Room
+  fullName: Cshrix.Data.InvitedEventArgs.Room
+  nameWithType: InvitedEventArgs.Room
+- uid: Cshrix.Data.InvitedEventArgs.Room*
+  name: Room
+  href: api/Cshrix.Data.InvitedEventArgs.html#Cshrix_Data_InvitedEventArgs_Room_
+  commentId: Overload:Cshrix.Data.InvitedEventArgs.Room
+  isSpec: "True"
+  fullName: Cshrix.Data.InvitedEventArgs.Room
+  nameWithType: InvitedEventArgs.Room
 - uid: Cshrix.Data.IUserIdentifier
   name: IUserIdentifier
   href: api/Cshrix.Data.IUserIdentifier.html
@@ -11185,15 +11093,15 @@ references:
   commentId: T:Cshrix.Data.Search.SearchResultRoomEvents
   fullName: Cshrix.Data.Search.SearchResultRoomEvents
   nameWithType: SearchResultRoomEvents
-- uid: Cshrix.Data.Search.SearchResultRoomEvents.#ctor(System.Int32,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Search.SearchEventResult},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent}},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Search.SearchGroupValue}},System.String)
-  name: SearchResultRoomEvents(Int32, IReadOnlyCollection<String>, IReadOnlyCollection<SearchEventResult>, IReadOnlyDictionary<String, IReadOnlyCollection<StateEvent>>, IReadOnlyDictionary<String, IReadOnlyDictionary<String, SearchGroupValue>>, String)
-  href: api/Cshrix.Data.Search.SearchResultRoomEvents.html#Cshrix_Data_Search_SearchResultRoomEvents__ctor_System_Int32_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Search_SearchEventResult__System_Collections_Generic_IReadOnlyDictionary_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_StateEvent___System_Collections_Generic_IReadOnlyDictionary_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Data_Search_SearchGroupValue___System_String_
-  commentId: M:Cshrix.Data.Search.SearchResultRoomEvents.#ctor(System.Int32,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Search.SearchEventResult},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.StateEvent}},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Search.SearchGroupValue}},System.String)
-  name.vb: SearchResultRoomEvents(Int32, IReadOnlyCollection(Of String), IReadOnlyCollection(Of SearchEventResult), IReadOnlyDictionary(Of String, IReadOnlyCollection(Of StateEvent)), IReadOnlyDictionary(Of String, IReadOnlyDictionary(Of String, SearchGroupValue)), String)
-  fullName: Cshrix.Data.Search.SearchResultRoomEvents.SearchResultRoomEvents(System.Int32, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Search.SearchEventResult>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.StateEvent>>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Data.Search.SearchGroupValue>>, System.String)
-  fullName.vb: Cshrix.Data.Search.SearchResultRoomEvents.SearchResultRoomEvents(System.Int32, System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Search.SearchEventResult), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.StateEvent)), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Data.Search.SearchGroupValue)), System.String)
-  nameWithType: SearchResultRoomEvents.SearchResultRoomEvents(Int32, IReadOnlyCollection<String>, IReadOnlyCollection<SearchEventResult>, IReadOnlyDictionary<String, IReadOnlyCollection<StateEvent>>, IReadOnlyDictionary<String, IReadOnlyDictionary<String, SearchGroupValue>>, String)
-  nameWithType.vb: SearchResultRoomEvents.SearchResultRoomEvents(Int32, IReadOnlyCollection(Of String), IReadOnlyCollection(Of SearchEventResult), IReadOnlyDictionary(Of String, IReadOnlyCollection(Of StateEvent)), IReadOnlyDictionary(Of String, IReadOnlyDictionary(Of String, SearchGroupValue)), String)
+- uid: Cshrix.Data.Search.SearchResultRoomEvents.#ctor(System.Int32,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Search.SearchEventResult},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event}},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Search.SearchGroupValue}},System.String)
+  name: SearchResultRoomEvents(Int32, IReadOnlyCollection<String>, IReadOnlyCollection<SearchEventResult>, IReadOnlyDictionary<String, IReadOnlyCollection<Event>>, IReadOnlyDictionary<String, IReadOnlyDictionary<String, SearchGroupValue>>, String)
+  href: api/Cshrix.Data.Search.SearchResultRoomEvents.html#Cshrix_Data_Search_SearchResultRoomEvents__ctor_System_Int32_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Search_SearchEventResult__System_Collections_Generic_IReadOnlyDictionary_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event___System_Collections_Generic_IReadOnlyDictionary_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_Cshrix_Data_Search_SearchGroupValue___System_String_
+  commentId: M:Cshrix.Data.Search.SearchResultRoomEvents.#ctor(System.Int32,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Search.SearchEventResult},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event}},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,Cshrix.Data.Search.SearchGroupValue}},System.String)
+  name.vb: SearchResultRoomEvents(Int32, IReadOnlyCollection(Of String), IReadOnlyCollection(Of SearchEventResult), IReadOnlyDictionary(Of String, IReadOnlyCollection(Of Event)), IReadOnlyDictionary(Of String, IReadOnlyDictionary(Of String, SearchGroupValue)), String)
+  fullName: Cshrix.Data.Search.SearchResultRoomEvents.SearchResultRoomEvents(System.Int32, System.Collections.Generic.IReadOnlyCollection<System.String>, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Search.SearchEventResult>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.Events.Event>>, System.Collections.Generic.IReadOnlyDictionary<System.String, System.Collections.Generic.IReadOnlyDictionary<System.String, Cshrix.Data.Search.SearchGroupValue>>, System.String)
+  fullName.vb: Cshrix.Data.Search.SearchResultRoomEvents.SearchResultRoomEvents(System.Int32, System.Collections.Generic.IReadOnlyCollection(Of System.String), System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Search.SearchEventResult), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.Events.Event)), System.Collections.Generic.IReadOnlyDictionary(Of System.String, System.Collections.Generic.IReadOnlyDictionary(Of System.String, Cshrix.Data.Search.SearchGroupValue)), System.String)
+  nameWithType: SearchResultRoomEvents.SearchResultRoomEvents(Int32, IReadOnlyCollection<String>, IReadOnlyCollection<SearchEventResult>, IReadOnlyDictionary<String, IReadOnlyCollection<Event>>, IReadOnlyDictionary<String, IReadOnlyDictionary<String, SearchGroupValue>>, String)
+  nameWithType.vb: SearchResultRoomEvents.SearchResultRoomEvents(Int32, IReadOnlyCollection(Of String), IReadOnlyCollection(Of SearchEventResult), IReadOnlyDictionary(Of String, IReadOnlyCollection(Of Event)), IReadOnlyDictionary(Of String, IReadOnlyDictionary(Of String, SearchGroupValue)), String)
 - uid: Cshrix.Data.Search.SearchResultRoomEvents.#ctor*
   name: SearchResultRoomEvents
   href: api/Cshrix.Data.Search.SearchResultRoomEvents.html#Cshrix_Data_Search_SearchResultRoomEvents__ctor_
@@ -11855,6 +11763,38 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.SignedSenderDataContainer.Data
   nameWithType: SignedSenderDataContainer.Data
+- uid: Cshrix.Data.SyncEventArgs
+  name: SyncEventArgs
+  href: api/Cshrix.Data.SyncEventArgs.html
+  commentId: T:Cshrix.Data.SyncEventArgs
+  fullName: Cshrix.Data.SyncEventArgs
+  nameWithType: SyncEventArgs
+- uid: Cshrix.Data.SyncEventArgs.#ctor(Cshrix.Data.Events.SyncResponse)
+  name: SyncEventArgs(SyncResponse)
+  href: api/Cshrix.Data.SyncEventArgs.html#Cshrix_Data_SyncEventArgs__ctor_Cshrix_Data_Events_SyncResponse_
+  commentId: M:Cshrix.Data.SyncEventArgs.#ctor(Cshrix.Data.Events.SyncResponse)
+  fullName: Cshrix.Data.SyncEventArgs.SyncEventArgs(Cshrix.Data.Events.SyncResponse)
+  nameWithType: SyncEventArgs.SyncEventArgs(SyncResponse)
+- uid: Cshrix.Data.SyncEventArgs.#ctor*
+  name: SyncEventArgs
+  href: api/Cshrix.Data.SyncEventArgs.html#Cshrix_Data_SyncEventArgs__ctor_
+  commentId: Overload:Cshrix.Data.SyncEventArgs.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Data.SyncEventArgs.SyncEventArgs
+  nameWithType: SyncEventArgs.SyncEventArgs
+- uid: Cshrix.Data.SyncEventArgs.Response
+  name: Response
+  href: api/Cshrix.Data.SyncEventArgs.html#Cshrix_Data_SyncEventArgs_Response
+  commentId: P:Cshrix.Data.SyncEventArgs.Response
+  fullName: Cshrix.Data.SyncEventArgs.Response
+  nameWithType: SyncEventArgs.Response
+- uid: Cshrix.Data.SyncEventArgs.Response*
+  name: Response
+  href: api/Cshrix.Data.SyncEventArgs.html#Cshrix_Data_SyncEventArgs_Response_
+  commentId: Overload:Cshrix.Data.SyncEventArgs.Response
+  isSpec: "True"
+  fullName: Cshrix.Data.SyncEventArgs.Response
+  nameWithType: SyncEventArgs.Response
 - uid: Cshrix.Data.TagData
   name: TagData
   href: api/Cshrix.Data.TagData.html
@@ -13425,35 +13365,22 @@ references:
   commentId: T:Cshrix.IMatrixClient
   fullName: Cshrix.IMatrixClient
   nameWithType: IMatrixClient
-- uid: Cshrix.IMatrixClient.GetNotificationPushRulesAsync
-  name: GetNotificationPushRulesAsync()
-  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_GetNotificationPushRulesAsync
-  commentId: M:Cshrix.IMatrixClient.GetNotificationPushRulesAsync
-  fullName: Cshrix.IMatrixClient.GetNotificationPushRulesAsync()
-  nameWithType: IMatrixClient.GetNotificationPushRulesAsync()
-- uid: Cshrix.IMatrixClient.GetNotificationPushRulesAsync*
-  name: GetNotificationPushRulesAsync
-  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_GetNotificationPushRulesAsync_
-  commentId: Overload:Cshrix.IMatrixClient.GetNotificationPushRulesAsync
+- uid: Cshrix.IMatrixClient.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
+  name: GetUriPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__
+  commentId: M:Cshrix.IMatrixClient.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
+  name.vb: GetUriPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
+  fullName: Cshrix.IMatrixClient.GetUriPreviewInfoAsync(System.Uri, System.Nullable<System.DateTimeOffset>)
+  fullName.vb: Cshrix.IMatrixClient.GetUriPreviewInfoAsync(System.Uri, System.Nullable(Of System.DateTimeOffset))
+  nameWithType: IMatrixClient.GetUriPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
+  nameWithType.vb: IMatrixClient.GetUriPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
+- uid: Cshrix.IMatrixClient.GetUriPreviewInfoAsync*
+  name: GetUriPreviewInfoAsync
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_GetUriPreviewInfoAsync_
+  commentId: Overload:Cshrix.IMatrixClient.GetUriPreviewInfoAsync
   isSpec: "True"
-  fullName: Cshrix.IMatrixClient.GetNotificationPushRulesAsync
-  nameWithType: IMatrixClient.GetNotificationPushRulesAsync
-- uid: Cshrix.IMatrixClient.GetPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
-  name: GetPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
-  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_GetPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__
-  commentId: M:Cshrix.IMatrixClient.GetPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
-  name.vb: GetPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
-  fullName: Cshrix.IMatrixClient.GetPreviewInfoAsync(System.Uri, System.Nullable<System.DateTimeOffset>)
-  fullName.vb: Cshrix.IMatrixClient.GetPreviewInfoAsync(System.Uri, System.Nullable(Of System.DateTimeOffset))
-  nameWithType: IMatrixClient.GetPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
-  nameWithType.vb: IMatrixClient.GetPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
-- uid: Cshrix.IMatrixClient.GetPreviewInfoAsync*
-  name: GetPreviewInfoAsync
-  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_GetPreviewInfoAsync_
-  commentId: Overload:Cshrix.IMatrixClient.GetPreviewInfoAsync
-  isSpec: "True"
-  fullName: Cshrix.IMatrixClient.GetPreviewInfoAsync
-  nameWithType: IMatrixClient.GetPreviewInfoAsync
+  fullName: Cshrix.IMatrixClient.GetUriPreviewInfoAsync
+  nameWithType: IMatrixClient.GetUriPreviewInfoAsync
 - uid: Cshrix.IMatrixClient.GetUserIdAsync
   name: GetUserIdAsync()
   href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_GetUserIdAsync
@@ -13467,6 +13394,25 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClient.GetUserIdAsync
   nameWithType: IMatrixClient.GetUserIdAsync
+- uid: Cshrix.IMatrixClient.Invited
+  name: Invited
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_Invited
+  commentId: E:Cshrix.IMatrixClient.Invited
+  fullName: Cshrix.IMatrixClient.Invited
+  nameWithType: IMatrixClient.Invited
+- uid: Cshrix.IMatrixClient.JoinRoomByIdAsync(System.String)
+  name: JoinRoomByIdAsync(String)
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_JoinRoomByIdAsync_System_String_
+  commentId: M:Cshrix.IMatrixClient.JoinRoomByIdAsync(System.String)
+  fullName: Cshrix.IMatrixClient.JoinRoomByIdAsync(System.String)
+  nameWithType: IMatrixClient.JoinRoomByIdAsync(String)
+- uid: Cshrix.IMatrixClient.JoinRoomByIdAsync*
+  name: JoinRoomByIdAsync
+  href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_JoinRoomByIdAsync_
+  commentId: Overload:Cshrix.IMatrixClient.JoinRoomByIdAsync
+  isSpec: "True"
+  fullName: Cshrix.IMatrixClient.JoinRoomByIdAsync
+  nameWithType: IMatrixClient.JoinRoomByIdAsync
 - uid: Cshrix.IMatrixClient.StartSyncingAsync
   name: StartSyncingAsync()
   href: api/Cshrix.IMatrixClient.html#Cshrix_IMatrixClient_StartSyncingAsync
@@ -14708,6 +14654,90 @@ references:
   isSpec: "True"
   fullName: Cshrix.IMatrixClientServerApi.WhoAmIAsync
   nameWithType: IMatrixClientServerApi.WhoAmIAsync
+- uid: Cshrix.IRoom
+  name: IRoom
+  href: api/Cshrix.IRoom.html
+  commentId: T:Cshrix.IRoom
+  fullName: Cshrix.IRoom
+  nameWithType: IRoom
+- uid: Cshrix.IRoom.Aliases
+  name: Aliases
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Aliases
+  commentId: P:Cshrix.IRoom.Aliases
+  fullName: Cshrix.IRoom.Aliases
+  nameWithType: IRoom.Aliases
+- uid: Cshrix.IRoom.Aliases*
+  name: Aliases
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Aliases_
+  commentId: Overload:Cshrix.IRoom.Aliases
+  isSpec: "True"
+  fullName: Cshrix.IRoom.Aliases
+  nameWithType: IRoom.Aliases
+- uid: Cshrix.IRoom.CanonicalAlias
+  name: CanonicalAlias
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_CanonicalAlias
+  commentId: P:Cshrix.IRoom.CanonicalAlias
+  fullName: Cshrix.IRoom.CanonicalAlias
+  nameWithType: IRoom.CanonicalAlias
+- uid: Cshrix.IRoom.CanonicalAlias*
+  name: CanonicalAlias
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_CanonicalAlias_
+  commentId: Overload:Cshrix.IRoom.CanonicalAlias
+  isSpec: "True"
+  fullName: Cshrix.IRoom.CanonicalAlias
+  nameWithType: IRoom.CanonicalAlias
+- uid: Cshrix.IRoom.Id
+  name: Id
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Id
+  commentId: P:Cshrix.IRoom.Id
+  fullName: Cshrix.IRoom.Id
+  nameWithType: IRoom.Id
+- uid: Cshrix.IRoom.Id*
+  name: Id
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Id_
+  commentId: Overload:Cshrix.IRoom.Id
+  isSpec: "True"
+  fullName: Cshrix.IRoom.Id
+  nameWithType: IRoom.Id
+- uid: Cshrix.IRoom.Membership
+  name: Membership
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Membership
+  commentId: P:Cshrix.IRoom.Membership
+  fullName: Cshrix.IRoom.Membership
+  nameWithType: IRoom.Membership
+- uid: Cshrix.IRoom.Membership*
+  name: Membership
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Membership_
+  commentId: Overload:Cshrix.IRoom.Membership
+  isSpec: "True"
+  fullName: Cshrix.IRoom.Membership
+  nameWithType: IRoom.Membership
+- uid: Cshrix.IRoom.Name
+  name: Name
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Name
+  commentId: P:Cshrix.IRoom.Name
+  fullName: Cshrix.IRoom.Name
+  nameWithType: IRoom.Name
+- uid: Cshrix.IRoom.Name*
+  name: Name
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Name_
+  commentId: Overload:Cshrix.IRoom.Name
+  isSpec: "True"
+  fullName: Cshrix.IRoom.Name
+  nameWithType: IRoom.Name
+- uid: Cshrix.IRoom.Topic
+  name: Topic
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Topic
+  commentId: P:Cshrix.IRoom.Topic
+  fullName: Cshrix.IRoom.Topic
+  nameWithType: IRoom.Topic
+- uid: Cshrix.IRoom.Topic*
+  name: Topic
+  href: api/Cshrix.IRoom.html#Cshrix_IRoom_Topic_
+  commentId: Overload:Cshrix.IRoom.Topic
+  isSpec: "True"
+  fullName: Cshrix.IRoom.Topic
+  nameWithType: IRoom.Topic
 - uid: Cshrix.ISynapseAdminApi
   name: ISynapseAdminApi
   href: api/Cshrix.ISynapseAdminApi.html
@@ -14794,35 +14824,22 @@ references:
   isSpec: "True"
   fullName: Cshrix.MatrixClient.Dispose
   nameWithType: MatrixClient.Dispose
-- uid: Cshrix.MatrixClient.GetNotificationPushRulesAsync
-  name: GetNotificationPushRulesAsync()
-  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_GetNotificationPushRulesAsync
-  commentId: M:Cshrix.MatrixClient.GetNotificationPushRulesAsync
-  fullName: Cshrix.MatrixClient.GetNotificationPushRulesAsync()
-  nameWithType: MatrixClient.GetNotificationPushRulesAsync()
-- uid: Cshrix.MatrixClient.GetNotificationPushRulesAsync*
-  name: GetNotificationPushRulesAsync
-  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_GetNotificationPushRulesAsync_
-  commentId: Overload:Cshrix.MatrixClient.GetNotificationPushRulesAsync
+- uid: Cshrix.MatrixClient.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
+  name: GetUriPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_GetUriPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__
+  commentId: M:Cshrix.MatrixClient.GetUriPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
+  name.vb: GetUriPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
+  fullName: Cshrix.MatrixClient.GetUriPreviewInfoAsync(System.Uri, System.Nullable<System.DateTimeOffset>)
+  fullName.vb: Cshrix.MatrixClient.GetUriPreviewInfoAsync(System.Uri, System.Nullable(Of System.DateTimeOffset))
+  nameWithType: MatrixClient.GetUriPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
+  nameWithType.vb: MatrixClient.GetUriPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
+- uid: Cshrix.MatrixClient.GetUriPreviewInfoAsync*
+  name: GetUriPreviewInfoAsync
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_GetUriPreviewInfoAsync_
+  commentId: Overload:Cshrix.MatrixClient.GetUriPreviewInfoAsync
   isSpec: "True"
-  fullName: Cshrix.MatrixClient.GetNotificationPushRulesAsync
-  nameWithType: MatrixClient.GetNotificationPushRulesAsync
-- uid: Cshrix.MatrixClient.GetPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
-  name: GetPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
-  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_GetPreviewInfoAsync_System_Uri_System_Nullable_System_DateTimeOffset__
-  commentId: M:Cshrix.MatrixClient.GetPreviewInfoAsync(System.Uri,System.Nullable{System.DateTimeOffset})
-  name.vb: GetPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
-  fullName: Cshrix.MatrixClient.GetPreviewInfoAsync(System.Uri, System.Nullable<System.DateTimeOffset>)
-  fullName.vb: Cshrix.MatrixClient.GetPreviewInfoAsync(System.Uri, System.Nullable(Of System.DateTimeOffset))
-  nameWithType: MatrixClient.GetPreviewInfoAsync(Uri, Nullable<DateTimeOffset>)
-  nameWithType.vb: MatrixClient.GetPreviewInfoAsync(Uri, Nullable(Of DateTimeOffset))
-- uid: Cshrix.MatrixClient.GetPreviewInfoAsync*
-  name: GetPreviewInfoAsync
-  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_GetPreviewInfoAsync_
-  commentId: Overload:Cshrix.MatrixClient.GetPreviewInfoAsync
-  isSpec: "True"
-  fullName: Cshrix.MatrixClient.GetPreviewInfoAsync
-  nameWithType: MatrixClient.GetPreviewInfoAsync
+  fullName: Cshrix.MatrixClient.GetUriPreviewInfoAsync
+  nameWithType: MatrixClient.GetUriPreviewInfoAsync
 - uid: Cshrix.MatrixClient.GetUserIdAsync
   name: GetUserIdAsync()
   href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_GetUserIdAsync
@@ -14836,6 +14853,25 @@ references:
   isSpec: "True"
   fullName: Cshrix.MatrixClient.GetUserIdAsync
   nameWithType: MatrixClient.GetUserIdAsync
+- uid: Cshrix.MatrixClient.Invited
+  name: Invited
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_Invited
+  commentId: E:Cshrix.MatrixClient.Invited
+  fullName: Cshrix.MatrixClient.Invited
+  nameWithType: MatrixClient.Invited
+- uid: Cshrix.MatrixClient.JoinRoomByIdAsync(System.String)
+  name: JoinRoomByIdAsync(String)
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_JoinRoomByIdAsync_System_String_
+  commentId: M:Cshrix.MatrixClient.JoinRoomByIdAsync(System.String)
+  fullName: Cshrix.MatrixClient.JoinRoomByIdAsync(System.String)
+  nameWithType: MatrixClient.JoinRoomByIdAsync(String)
+- uid: Cshrix.MatrixClient.JoinRoomByIdAsync*
+  name: JoinRoomByIdAsync
+  href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_JoinRoomByIdAsync_
+  commentId: Overload:Cshrix.MatrixClient.JoinRoomByIdAsync
+  isSpec: "True"
+  fullName: Cshrix.MatrixClient.JoinRoomByIdAsync
+  nameWithType: MatrixClient.JoinRoomByIdAsync
 - uid: Cshrix.MatrixClient.Log
   name: Log
   href: api/Cshrix.MatrixClient.html#Cshrix_MatrixClient_Log
@@ -14875,6 +14911,103 @@ references:
   isSpec: "True"
   fullName: Cshrix.MatrixClient.StopSyncingAsync
   nameWithType: MatrixClient.StopSyncingAsync
+- uid: Cshrix.Room
+  name: Room
+  href: api/Cshrix.Room.html
+  commentId: T:Cshrix.Room
+  fullName: Cshrix.Room
+  nameWithType: Room
+- uid: Cshrix.Room.#ctor(System.String,Cshrix.Data.Membership)
+  name: Room(String, Membership)
+  href: api/Cshrix.Room.html#Cshrix_Room__ctor_System_String_Cshrix_Data_Membership_
+  commentId: M:Cshrix.Room.#ctor(System.String,Cshrix.Data.Membership)
+  fullName: Cshrix.Room.Room(System.String, Cshrix.Data.Membership)
+  nameWithType: Room.Room(String, Membership)
+- uid: Cshrix.Room.#ctor*
+  name: Room
+  href: api/Cshrix.Room.html#Cshrix_Room__ctor_
+  commentId: Overload:Cshrix.Room.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Room.Room
+  nameWithType: Room.Room
+- uid: Cshrix.Room.Aliases
+  name: Aliases
+  href: api/Cshrix.Room.html#Cshrix_Room_Aliases
+  commentId: P:Cshrix.Room.Aliases
+  fullName: Cshrix.Room.Aliases
+  nameWithType: Room.Aliases
+- uid: Cshrix.Room.Aliases*
+  name: Aliases
+  href: api/Cshrix.Room.html#Cshrix_Room_Aliases_
+  commentId: Overload:Cshrix.Room.Aliases
+  isSpec: "True"
+  fullName: Cshrix.Room.Aliases
+  nameWithType: Room.Aliases
+- uid: Cshrix.Room.CanonicalAlias
+  name: CanonicalAlias
+  href: api/Cshrix.Room.html#Cshrix_Room_CanonicalAlias
+  commentId: P:Cshrix.Room.CanonicalAlias
+  fullName: Cshrix.Room.CanonicalAlias
+  nameWithType: Room.CanonicalAlias
+- uid: Cshrix.Room.CanonicalAlias*
+  name: CanonicalAlias
+  href: api/Cshrix.Room.html#Cshrix_Room_CanonicalAlias_
+  commentId: Overload:Cshrix.Room.CanonicalAlias
+  isSpec: "True"
+  fullName: Cshrix.Room.CanonicalAlias
+  nameWithType: Room.CanonicalAlias
+- uid: Cshrix.Room.Id
+  name: Id
+  href: api/Cshrix.Room.html#Cshrix_Room_Id
+  commentId: P:Cshrix.Room.Id
+  fullName: Cshrix.Room.Id
+  nameWithType: Room.Id
+- uid: Cshrix.Room.Id*
+  name: Id
+  href: api/Cshrix.Room.html#Cshrix_Room_Id_
+  commentId: Overload:Cshrix.Room.Id
+  isSpec: "True"
+  fullName: Cshrix.Room.Id
+  nameWithType: Room.Id
+- uid: Cshrix.Room.Membership
+  name: Membership
+  href: api/Cshrix.Room.html#Cshrix_Room_Membership
+  commentId: P:Cshrix.Room.Membership
+  fullName: Cshrix.Room.Membership
+  nameWithType: Room.Membership
+- uid: Cshrix.Room.Membership*
+  name: Membership
+  href: api/Cshrix.Room.html#Cshrix_Room_Membership_
+  commentId: Overload:Cshrix.Room.Membership
+  isSpec: "True"
+  fullName: Cshrix.Room.Membership
+  nameWithType: Room.Membership
+- uid: Cshrix.Room.Name
+  name: Name
+  href: api/Cshrix.Room.html#Cshrix_Room_Name
+  commentId: P:Cshrix.Room.Name
+  fullName: Cshrix.Room.Name
+  nameWithType: Room.Name
+- uid: Cshrix.Room.Name*
+  name: Name
+  href: api/Cshrix.Room.html#Cshrix_Room_Name_
+  commentId: Overload:Cshrix.Room.Name
+  isSpec: "True"
+  fullName: Cshrix.Room.Name
+  nameWithType: Room.Name
+- uid: Cshrix.Room.Topic
+  name: Topic
+  href: api/Cshrix.Room.html#Cshrix_Room_Topic
+  commentId: P:Cshrix.Room.Topic
+  fullName: Cshrix.Room.Topic
+  nameWithType: Room.Topic
+- uid: Cshrix.Room.Topic*
+  name: Topic
+  href: api/Cshrix.Room.html#Cshrix_Room_Topic_
+  commentId: Overload:Cshrix.Room.Topic
+  isSpec: "True"
+  fullName: Cshrix.Room.Topic
+  nameWithType: Room.Topic
 - uid: Cshrix.Serialization
   name: Cshrix.Serialization
   href: api/Cshrix.Serialization.html

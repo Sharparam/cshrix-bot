@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class StrippedState
+    <title>Interface IRoom
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class StrippedState
+    <meta name="title" content="Interface IRoom
    ">
     <meta name="generator" content="docfx 2.42.3.0">
     
@@ -105,6 +105,9 @@
                           <li class="">
                             <a href="Cshrix.IMatrixClientServerApi.html" title="IMatrixClientServerApi" class="">IMatrixClientServerApi</a>
                           </li>
+                          <li class="active">
+                            <a href="Cshrix.IRoom.html" title="IRoom" class="active">IRoom</a>
+                          </li>
                           <li class="">
                             <a href="Cshrix.ISynapseAdminApi.html" title="ISynapseAdminApi" class="">ISynapseAdminApi</a>
                           </li>
@@ -113,6 +116,9 @@
                           </li>
                           <li class="">
                             <a href="Cshrix.MatrixClient.html" title="MatrixClient" class="">MatrixClient</a>
+                          </li>
+                          <li class="">
+                            <a href="Cshrix.Room.html" title="Room" class="">Room</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -247,6 +253,9 @@
                             <a href="Cshrix.Data.IdentifierType.html" title="IdentifierType" class="">IdentifierType</a>
                           </li>
                           <li class="">
+                            <a href="Cshrix.Data.InvitedEventArgs.html" title="InvitedEventArgs" class="">InvitedEventArgs</a>
+                          </li>
+                          <li class="">
                             <a href="Cshrix.Data.IUserIdentifier.html" title="IUserIdentifier" class="">IUserIdentifier</a>
                           </li>
                           <li class="">
@@ -350,6 +359,9 @@
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.SignedSenderDataContainer.html" title="SignedSenderDataContainer" class="">SignedSenderDataContainer</a>
+                          </li>
+                          <li class="">
+                            <a href="Cshrix.Data.SyncEventArgs.html" title="SyncEventArgs" class="">SyncEventArgs</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.TagData.html" title="TagData" class="">TagData</a>
@@ -487,25 +499,10 @@
                             <a href="Cshrix.Data.Events.LeftRoom.html" title="LeftRoom" class="">LeftRoom</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.Events.RoomEvent.html" title="RoomEvent" class="">RoomEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="Cshrix.Data.Events.RoomIdEvent.html" title="RoomIdEvent" class="">RoomIdEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="Cshrix.Data.Events.Rooms.html" title="Rooms" class="">Rooms</a>
-                          </li>
-                          <li class="">
-                            <a href="Cshrix.Data.Events.SenderEvent.html" title="SenderEvent" class="">SenderEvent</a>
-                          </li>
-                          <li class="">
                             <a href="Cshrix.Data.Events.State.html" title="State" class="">State</a>
                           </li>
                           <li class="">
-                            <a href="Cshrix.Data.Events.StateEvent.html" title="StateEvent" class="">StateEvent</a>
-                          </li>
-                          <li class="active">
-                            <a href="Cshrix.Data.Events.StrippedState.html" title="StrippedState" class="active">StrippedState</a>
+                            <a href="Cshrix.Data.Events.SyncedRooms.html" title="SyncedRooms" class="">SyncedRooms</a>
                           </li>
                           <li class="">
                             <a href="Cshrix.Data.Events.SyncResponse.html" title="SyncResponse" class="">SyncResponse</a>
@@ -1031,136 +1028,193 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Cshrix.Data.Events.StrippedState">
+            <article class="content wrap" id="_content" data-uid="Cshrix.IRoom">
   
   
-  <h1 id="Cshrix_Data_Events_StrippedState" data-uid="Cshrix.Data.Events.StrippedState" class="text-break">Class StrippedState
+  <h1 id="Cshrix_IRoom" data-uid="Cshrix.IRoom" class="text-break">Interface IRoom
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Defines the API for a room.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Cshrix.Data.Events.Event.html">Event</a></div>
-    <div class="level2"><a class="xref" href="Cshrix.Data.Events.SenderEvent.html">SenderEvent</a></div>
-    <div class="level3"><span class="xref">StrippedState</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Cshrix.Data.Events.SenderEvent.html#Cshrix_Data_Events_SenderEvent_Sender">SenderEvent.Sender</a>
-    </div>
-    <div>
-      <a class="xref" href="Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Content">Event.Content</a>
-    </div>
-    <div>
-      <a class="xref" href="Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Type">Event.Type</a>
-    </div>
-    <div>
-      <a class="xref" href="Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_Redacts">Event.Redacts</a>
-    </div>
-    <div>
-      <a class="xref" href="Cshrix.Data.Events.Event.html#Cshrix_Data_Events_Event_IsRedaction">Event.IsRedaction</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Cshrix.Data.Events.html">Cshrix.Data.Events</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cshrix.html">Cshrix</a></h6>
   <h6><strong>Assembly</strong>: Cshrix.dll</h6>
-  <h5 id="Cshrix_Data_Events_StrippedState_syntax">Syntax</h5>
+  <h5 id="Cshrix_IRoom_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StrippedState : SenderEvent</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IRoom</code></pre>
   </div>
-  <h3 id="constructors">Constructors
+  <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_StrippedState__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_System_String_Cshrix_Data_UserId_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.StrippedState.%23ctor(Cshrix.Data.Events.Content.EventContent%2CSystem.String%2CSystem.String%2CSystem.String%2CCshrix.Data.UserId)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_IRoom_Aliases.md&amp;value=---%0Auid%3A%20Cshrix.IRoom.Aliases%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/StrippedState.cs/#L17">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IRoom.cs/#L41">View Source</a>
   </span>
-  <a id="Cshrix_Data_Events_StrippedState__ctor_" data-uid="Cshrix.Data.Events.StrippedState.#ctor*"></a>
-  <h4 id="Cshrix_Data_Events_StrippedState__ctor_Cshrix_Data_Events_Content_EventContent_System_String_System_String_System_String_Cshrix_Data_UserId_" data-uid="Cshrix.Data.Events.StrippedState.#ctor(Cshrix.Data.Events.Content.EventContent,System.String,System.String,System.String,Cshrix.Data.UserId)">StrippedState(EventContent, String, String, String, UserId)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Cshrix_IRoom_Aliases_" data-uid="Cshrix.IRoom.Aliases*"></a>
+  <h4 id="Cshrix_IRoom_Aliases" data-uid="Cshrix.IRoom.Aliases">Aliases</h4>
+  <div class="markdown level1 summary"><p>Gets the aliases available for the room.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public StrippedState(EventContent content, string stateKey, string type, string redacts, UserId sender)</code></pre>
+    <pre><code class="lang-csharp hljs">IReadOnlyCollection&lt;RoomAlias&gt; Aliases { get; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Cshrix.Data.Events.Content.EventContent.html">EventContent</a></td>
-        <td><span class="parametername">content</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">stateKey</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">type</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">redacts</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Cshrix.Data.UserId.html">UserId</a></td>
-        <td><span class="parametername">sender</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.RoomAlias.html">RoomAlias</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="properties">Properties
-  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_StrippedState_StateKey.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.StrippedState.StateKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_IRoom_CanonicalAlias.md&amp;value=---%0Auid%3A%20Cshrix.IRoom.CanonicalAlias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/StrippedState.cs/#L21">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IRoom.cs/#L35">View Source</a>
   </span>
-  <a id="Cshrix_Data_Events_StrippedState_StateKey_" data-uid="Cshrix.Data.Events.StrippedState.StateKey*"></a>
-  <h4 id="Cshrix_Data_Events_StrippedState_StateKey" data-uid="Cshrix.Data.Events.StrippedState.StateKey">StateKey</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Cshrix_IRoom_CanonicalAlias_" data-uid="Cshrix.IRoom.CanonicalAlias*"></a>
+  <h4 id="Cshrix_IRoom_CanonicalAlias" data-uid="Cshrix.IRoom.CanonicalAlias">CanonicalAlias</h4>
+  <div class="markdown level1 summary"><p>Gets the canonical alias of the room, if one is set.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;state_key&quot;)]
-public string StateKey { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+RoomAlias CanonicalAlias { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cshrix.Data.RoomAlias.html">RoomAlias</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_IRoom_Id.md&amp;value=---%0Auid%3A%20Cshrix.IRoom.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IRoom.cs/#L25">View Source</a>
+  </span>
+  <a id="Cshrix_IRoom_Id_" data-uid="Cshrix.IRoom.Id*"></a>
+  <h4 id="Cshrix_IRoom_Id" data-uid="Cshrix.IRoom.Id">Id</h4>
+  <div class="markdown level1 summary"><p>Gets the ID of the room.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Id { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_IRoom_Membership.md&amp;value=---%0Auid%3A%20Cshrix.IRoom.Membership%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IRoom.cs/#L30">View Source</a>
+  </span>
+  <a id="Cshrix_IRoom_Membership_" data-uid="Cshrix.IRoom.Membership*"></a>
+  <h4 id="Cshrix_IRoom_Membership" data-uid="Cshrix.IRoom.Membership">Membership</h4>
+  <div class="markdown level1 summary"><p>Gets the current membership status of the user in this room.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Membership Membership { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cshrix.Data.Membership.html">Membership</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_IRoom_Name.md&amp;value=---%0Auid%3A%20Cshrix.IRoom.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IRoom.cs/#L46">View Source</a>
+  </span>
+  <a id="Cshrix_IRoom_Name_" data-uid="Cshrix.IRoom.Name*"></a>
+  <h4 id="Cshrix_IRoom_Name" data-uid="Cshrix.IRoom.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Gets the name of the room.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_IRoom_Topic.md&amp;value=---%0Auid%3A%20Cshrix.IRoom.Topic%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IRoom.cs/#L51">View Source</a>
+  </span>
+  <a id="Cshrix_IRoom_Topic_" data-uid="Cshrix.IRoom.Topic*"></a>
+  <h4 id="Cshrix_IRoom_Topic" data-uid="Cshrix.IRoom.Topic">Topic</h4>
+  <div class="markdown level1 summary"><p>Gets the topic of the room.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Topic { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1185,10 +1239,10 @@ public string StateKey { get; }</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_StrippedState.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.StrippedState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_IRoom.md&amp;value=---%0Auid%3A%20Cshrix.IRoom%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/StrippedState.cs/#L15" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/IRoom.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
