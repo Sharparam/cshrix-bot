@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_LeftRoom" data-uid="Cshrix.Data.Events.LeftRoom" class="text-break">Struct LeftRoom
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains events and data for a room the user has left.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1062,6 +1063,55 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public struct LeftRoom</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_LeftRoom__ctor_Cshrix_Data_Events_State_Cshrix_Data_Events_Timeline_Cshrix_Data_Events_EventsContainer_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.LeftRoom.%23ctor(Cshrix.Data.Events.State%2CCshrix.Data.Events.Timeline%2CCshrix.Data.Events.EventsContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L24">View Source</a>
+  </span>
+  <a id="Cshrix_Data_Events_LeftRoom__ctor_" data-uid="Cshrix.Data.Events.LeftRoom.#ctor*"></a>
+  <h4 id="Cshrix_Data_Events_LeftRoom__ctor_Cshrix_Data_Events_State_Cshrix_Data_Events_Timeline_Cshrix_Data_Events_EventsContainer_" data-uid="Cshrix.Data.Events.LeftRoom.#ctor(Cshrix.Data.Events.State,Cshrix.Data.Events.Timeline,Cshrix.Data.Events.EventsContainer)">LeftRoom(State, Timeline, EventsContainer)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.LeftRoom.html">LeftRoom</a> structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConstructor]
+public LeftRoom(State state, Timeline timeline, EventsContainer accountData)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cshrix.Data.Events.State.html">State</a></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>The last known state of the room.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cshrix.Data.Events.Timeline.html">Timeline</a></td>
+        <td><span class="parametername">timeline</span></td>
+        <td><p>Timeline of the room.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cshrix.Data.Events.EventsContainer.html">EventsContainer</a></td>
+        <td><span class="parametername">accountData</span></td>
+        <td><p>Room-specific account data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
@@ -1069,11 +1119,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_LeftRoom_AccountData.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.LeftRoom.AccountData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L21">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L48">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_LeftRoom_AccountData_" data-uid="Cshrix.Data.Events.LeftRoom.AccountData*"></a>
   <h4 id="Cshrix_Data_Events_LeftRoom_AccountData" data-uid="Cshrix.Data.Events.LeftRoom.AccountData">AccountData</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets room-specific account data for the room.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1100,11 +1151,12 @@ public EventsContainer AccountData { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_LeftRoom_State.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.LeftRoom.State%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L15">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L36">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_LeftRoom_State_" data-uid="Cshrix.Data.Events.LeftRoom.State*"></a>
   <h4 id="Cshrix_Data_Events_LeftRoom_State" data-uid="Cshrix.Data.Events.LeftRoom.State">State</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the last known state of the room.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1131,11 +1183,12 @@ public State State { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_LeftRoom_Timeline.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.LeftRoom.Timeline%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L18">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L42">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_LeftRoom_Timeline_" data-uid="Cshrix.Data.Events.LeftRoom.Timeline*"></a>
   <h4 id="Cshrix_Data_Events_LeftRoom_Timeline" data-uid="Cshrix.Data.Events.LeftRoom.Timeline">Timeline</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the timeline for the room, as it looked when the room was left.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1168,7 +1221,7 @@ public Timeline Timeline { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_LeftRoom.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.LeftRoom%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/LeftRoom.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

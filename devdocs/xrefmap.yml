@@ -4919,15 +4919,15 @@ references:
   commentId: T:Cshrix.Data.Events.Content.PinnedEventsContent
   fullName: Cshrix.Data.Events.Content.PinnedEventsContent
   nameWithType: PinnedEventsContent
-- uid: Cshrix.Data.Events.Content.PinnedEventsContent.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId})
-  name: PinnedEventsContent(IReadOnlyCollection<UserId>)
-  href: api/Cshrix.Data.Events.Content.PinnedEventsContent.html#Cshrix_Data_Events_Content_PinnedEventsContent__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_UserId__
-  commentId: M:Cshrix.Data.Events.Content.PinnedEventsContent.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.UserId})
-  name.vb: PinnedEventsContent(IReadOnlyCollection(Of UserId))
-  fullName: Cshrix.Data.Events.Content.PinnedEventsContent.PinnedEventsContent(System.Collections.Generic.IReadOnlyCollection<Cshrix.Data.UserId>)
-  fullName.vb: Cshrix.Data.Events.Content.PinnedEventsContent.PinnedEventsContent(System.Collections.Generic.IReadOnlyCollection(Of Cshrix.Data.UserId))
-  nameWithType: PinnedEventsContent.PinnedEventsContent(IReadOnlyCollection<UserId>)
-  nameWithType.vb: PinnedEventsContent.PinnedEventsContent(IReadOnlyCollection(Of UserId))
+- uid: Cshrix.Data.Events.Content.PinnedEventsContent.#ctor(System.Collections.Generic.IReadOnlyCollection{System.String})
+  name: PinnedEventsContent(IReadOnlyCollection<String>)
+  href: api/Cshrix.Data.Events.Content.PinnedEventsContent.html#Cshrix_Data_Events_Content_PinnedEventsContent__ctor_System_Collections_Generic_IReadOnlyCollection_System_String__
+  commentId: M:Cshrix.Data.Events.Content.PinnedEventsContent.#ctor(System.Collections.Generic.IReadOnlyCollection{System.String})
+  name.vb: PinnedEventsContent(IReadOnlyCollection(Of String))
+  fullName: Cshrix.Data.Events.Content.PinnedEventsContent.PinnedEventsContent(System.Collections.Generic.IReadOnlyCollection<System.String>)
+  fullName.vb: Cshrix.Data.Events.Content.PinnedEventsContent.PinnedEventsContent(System.Collections.Generic.IReadOnlyCollection(Of System.String))
+  nameWithType: PinnedEventsContent.PinnedEventsContent(IReadOnlyCollection<String>)
+  nameWithType.vb: PinnedEventsContent.PinnedEventsContent(IReadOnlyCollection(Of String))
 - uid: Cshrix.Data.Events.Content.PinnedEventsContent.#ctor*
   name: PinnedEventsContent
   href: api/Cshrix.Data.Events.Content.PinnedEventsContent.html#Cshrix_Data_Events_Content_PinnedEventsContent__ctor_
@@ -5190,12 +5190,12 @@ references:
   commentId: T:Cshrix.Data.Events.Content.PublicKey
   fullName: Cshrix.Data.Events.Content.PublicKey
   nameWithType: PublicKey
-- uid: Cshrix.Data.Events.Content.PublicKey.#ctor(System.Uri,System.String)
-  name: PublicKey(Uri, String)
-  href: api/Cshrix.Data.Events.Content.PublicKey.html#Cshrix_Data_Events_Content_PublicKey__ctor_System_Uri_System_String_
-  commentId: M:Cshrix.Data.Events.Content.PublicKey.#ctor(System.Uri,System.String)
-  fullName: Cshrix.Data.Events.Content.PublicKey.PublicKey(System.Uri, System.String)
-  nameWithType: PublicKey.PublicKey(Uri, String)
+- uid: Cshrix.Data.Events.Content.PublicKey.#ctor(System.String,System.Uri)
+  name: PublicKey(String, Uri)
+  href: api/Cshrix.Data.Events.Content.PublicKey.html#Cshrix_Data_Events_Content_PublicKey__ctor_System_String_System_Uri_
+  commentId: M:Cshrix.Data.Events.Content.PublicKey.#ctor(System.String,System.Uri)
+  fullName: Cshrix.Data.Events.Content.PublicKey.PublicKey(System.String, System.Uri)
+  nameWithType: PublicKey.PublicKey(String, Uri)
 - uid: Cshrix.Data.Events.Content.PublicKey.#ctor*
   name: PublicKey
   href: api/Cshrix.Data.Events.Content.PublicKey.html#Cshrix_Data_Events_Content_PublicKey__ctor_
@@ -6629,6 +6629,19 @@ references:
   commentId: T:Cshrix.Data.Events.LeftRoom
   fullName: Cshrix.Data.Events.LeftRoom
   nameWithType: LeftRoom
+- uid: Cshrix.Data.Events.LeftRoom.#ctor(Cshrix.Data.Events.State,Cshrix.Data.Events.Timeline,Cshrix.Data.Events.EventsContainer)
+  name: LeftRoom(State, Timeline, EventsContainer)
+  href: api/Cshrix.Data.Events.LeftRoom.html#Cshrix_Data_Events_LeftRoom__ctor_Cshrix_Data_Events_State_Cshrix_Data_Events_Timeline_Cshrix_Data_Events_EventsContainer_
+  commentId: M:Cshrix.Data.Events.LeftRoom.#ctor(Cshrix.Data.Events.State,Cshrix.Data.Events.Timeline,Cshrix.Data.Events.EventsContainer)
+  fullName: Cshrix.Data.Events.LeftRoom.LeftRoom(Cshrix.Data.Events.State, Cshrix.Data.Events.Timeline, Cshrix.Data.Events.EventsContainer)
+  nameWithType: LeftRoom.LeftRoom(State, Timeline, EventsContainer)
+- uid: Cshrix.Data.Events.LeftRoom.#ctor*
+  name: LeftRoom
+  href: api/Cshrix.Data.Events.LeftRoom.html#Cshrix_Data_Events_LeftRoom__ctor_
+  commentId: Overload:Cshrix.Data.Events.LeftRoom.#ctor
+  isSpec: "True"
+  fullName: Cshrix.Data.Events.LeftRoom.LeftRoom
+  nameWithType: LeftRoom.LeftRoom
 - uid: Cshrix.Data.Events.LeftRoom.AccountData
   name: AccountData
   href: api/Cshrix.Data.Events.LeftRoom.html#Cshrix_Data_Events_LeftRoom_AccountData
@@ -7084,19 +7097,19 @@ references:
   isSpec: "True"
   fullName: Cshrix.Data.Events.UnsignedData.InviteRoomState
   nameWithType: UnsignedData.InviteRoomState
-- uid: Cshrix.Data.Events.UnsignedData.IsRedaction
-  name: IsRedaction
-  href: api/Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData_IsRedaction
-  commentId: P:Cshrix.Data.Events.UnsignedData.IsRedaction
-  fullName: Cshrix.Data.Events.UnsignedData.IsRedaction
-  nameWithType: UnsignedData.IsRedaction
-- uid: Cshrix.Data.Events.UnsignedData.IsRedaction*
-  name: IsRedaction
-  href: api/Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData_IsRedaction_
-  commentId: Overload:Cshrix.Data.Events.UnsignedData.IsRedaction
+- uid: Cshrix.Data.Events.UnsignedData.IsRedacted
+  name: IsRedacted
+  href: api/Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData_IsRedacted
+  commentId: P:Cshrix.Data.Events.UnsignedData.IsRedacted
+  fullName: Cshrix.Data.Events.UnsignedData.IsRedacted
+  nameWithType: UnsignedData.IsRedacted
+- uid: Cshrix.Data.Events.UnsignedData.IsRedacted*
+  name: IsRedacted
+  href: api/Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData_IsRedacted_
+  commentId: Overload:Cshrix.Data.Events.UnsignedData.IsRedacted
   isSpec: "True"
-  fullName: Cshrix.Data.Events.UnsignedData.IsRedaction
-  nameWithType: UnsignedData.IsRedaction
+  fullName: Cshrix.Data.Events.UnsignedData.IsRedacted
+  nameWithType: UnsignedData.IsRedacted
 - uid: Cshrix.Data.Events.UnsignedData.RedactionEvent
   name: RedactionEvent
   href: api/Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData_RedactionEvent

@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_Timeline" data-uid="Cshrix.Data.Events.Timeline" class="text-break">Struct Timeline
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Describes the timeline of a room.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1069,11 +1070,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Timeline__ctor_System_Collections_Generic_IEnumerable_Cshrix_Data_Events_Event__System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Timeline.%23ctor(System.Collections.Generic.IEnumerable%7BCshrix.Data.Events.Event%7D%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L18">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L27">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Timeline__ctor_" data-uid="Cshrix.Data.Events.Timeline.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_Timeline__ctor_System_Collections_Generic_IEnumerable_Cshrix_Data_Events_Event__System_Boolean_System_String_" data-uid="Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IEnumerable{Cshrix.Data.Events.Event},System.Boolean,System.String)">Timeline(IEnumerable&lt;Event&gt;, Boolean, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Timeline.html">Timeline</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1092,17 +1094,20 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Cshrix.Data.Events.Event.html">Event</a>&gt;</td>
         <td><span class="parametername">events</span></td>
-        <td></td>
+        <td><p>Timeline events.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">limited</span></td>
-        <td></td>
+        <td><p>Whether the number of events was limited by a filter.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">previousBatchToken</span></td>
-        <td></td>
+        <td><p>A token to request previous events from the API.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1111,15 +1116,17 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Timeline__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Timeline.%23ctor(System.Collections.Generic.IReadOnlyCollection%7BCshrix.Data.Events.Event%7D%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L23">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L38">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Timeline__ctor_" data-uid="Cshrix.Data.Events.Timeline.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_Timeline__ctor_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__System_Boolean_System_String_" data-uid="Cshrix.Data.Events.Timeline.#ctor(System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event},System.Boolean,System.String)">Timeline(IReadOnlyCollection&lt;Event&gt;, Boolean, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Timeline.html">Timeline</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Timeline(IReadOnlyCollection&lt;Event&gt; events, bool limited, string previousBatchToken)</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonConstructor]
+public Timeline(IReadOnlyCollection&lt;Event&gt; events, bool limited, string previousBatchToken)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1134,17 +1141,20 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.Events.Event.html">Event</a>&gt;</td>
         <td><span class="parametername">events</span></td>
-        <td></td>
+        <td><p>Timeline events.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">limited</span></td>
-        <td></td>
+        <td><p>Whether the number of events was limited by a filter.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">previousBatchToken</span></td>
-        <td></td>
+        <td><p>A token to request previous events from the API.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1155,11 +1165,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Timeline_Events.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Timeline.Events%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L31">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L50">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Timeline_Events_" data-uid="Cshrix.Data.Events.Timeline.Events*"></a>
   <h4 id="Cshrix_Data_Events_Timeline_Events" data-uid="Cshrix.Data.Events.Timeline.Events">Events</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the events that are part of the timeline.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1186,11 +1197,12 @@ public IReadOnlyCollection&lt;Event&gt; Events { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Timeline_Limited.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Timeline.Limited%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L34">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L56">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Timeline_Limited_" data-uid="Cshrix.Data.Events.Timeline.Limited*"></a>
   <h4 id="Cshrix_Data_Events_Timeline_Limited" data-uid="Cshrix.Data.Events.Timeline.Limited">Limited</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the number of events was limited by a filter.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1217,11 +1229,13 @@ public bool Limited { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Timeline_PreviousBatchToken.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Timeline.PreviousBatchToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L37">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L63">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Timeline_PreviousBatchToken_" data-uid="Cshrix.Data.Events.Timeline.PreviousBatchToken*"></a>
   <h4 id="Cshrix_Data_Events_Timeline_PreviousBatchToken" data-uid="Cshrix.Data.Events.Timeline.PreviousBatchToken">PreviousBatchToken</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a token that can be supplied to the <code>from</code> parameter on the <code>rooms/{roomId}/messages</code>
+endpoint.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1254,7 +1268,7 @@ public string PreviousBatchToken { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Timeline.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Timeline%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Timeline.cs/#L19" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_UnreadCounts" data-uid="Cshrix.Data.Events.UnreadCounts" class="text-break">Struct UnreadCounts
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Describes unread counts for messages.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1069,15 +1070,17 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnreadCounts__ctor_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnreadCounts.%23ctor(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnreadCounts.cs/#L15">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnreadCounts.cs/#L23">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_UnreadCounts__ctor_" data-uid="Cshrix.Data.Events.UnreadCounts.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_UnreadCounts__ctor_System_Int32_System_Int32_" data-uid="Cshrix.Data.Events.UnreadCounts.#ctor(System.Int32,System.Int32)">UnreadCounts(Int32, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.UnreadCounts.html">UnreadCounts</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnreadCounts(int highlightCount, int notificationCount)</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonConstructor]
+public UnreadCounts(int highlightCount, int notificationCount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1092,12 +1095,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">highlightCount</span></td>
-        <td></td>
+        <td><p>The number of unread notifications with the highlight flag set.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">notificationCount</span></td>
-        <td></td>
+        <td><p>The total number of unread notifications.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1108,11 +1113,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnreadCounts_HighlightCount.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnreadCounts.HighlightCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnreadCounts.cs/#L22">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnreadCounts.cs/#L34">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_UnreadCounts_HighlightCount_" data-uid="Cshrix.Data.Events.UnreadCounts.HighlightCount*"></a>
   <h4 id="Cshrix_Data_Events_UnreadCounts_HighlightCount" data-uid="Cshrix.Data.Events.UnreadCounts.HighlightCount">HighlightCount</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the number of unread notifications for this room with the highlight flag set.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1139,11 +1145,12 @@ public int HighlightCount { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnreadCounts_NotificationCount.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnreadCounts.NotificationCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnreadCounts.cs/#L25">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnreadCounts.cs/#L40">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_UnreadCounts_NotificationCount_" data-uid="Cshrix.Data.Events.UnreadCounts.NotificationCount*"></a>
   <h4 id="Cshrix_Data_Events_UnreadCounts_NotificationCount" data-uid="Cshrix.Data.Events.UnreadCounts.NotificationCount">NotificationCount</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the total number of unread notifications for this room.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1176,7 +1183,7 @@ public int NotificationCount { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnreadCounts.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnreadCounts%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnreadCounts.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnreadCounts.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

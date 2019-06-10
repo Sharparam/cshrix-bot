@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_Content_PublicKey" data-uid="Cshrix.Data.Events.Content.PublicKey" class="text-break">Struct PublicKey
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains data on a public key in a third party invite.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1066,19 +1067,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_PublicKey__ctor_System_Uri_System_String_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.PublicKey.%23ctor(System.Uri%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_PublicKey__ctor_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.PublicKey.%23ctor(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/PublicKey.cs/#L19">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/PublicKey.cs/#L27">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_PublicKey__ctor_" data-uid="Cshrix.Data.Events.Content.PublicKey.#ctor*"></a>
-  <h4 id="Cshrix_Data_Events_Content_PublicKey__ctor_System_Uri_System_String_" data-uid="Cshrix.Data.Events.Content.PublicKey.#ctor(System.Uri,System.String)">PublicKey(Uri, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Cshrix_Data_Events_Content_PublicKey__ctor_System_String_System_Uri_" data-uid="Cshrix.Data.Events.Content.PublicKey.#ctor(System.String,System.Uri)">PublicKey(String, Uri)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.PublicKey.html">PublicKey</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public PublicKey([CanBeNull] Uri keyValidityUri, string key)</code></pre>
+public PublicKey(string key, [CanBeNull] Uri keyValidityUri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1091,14 +1093,16 @@ public PublicKey([CanBeNull] Uri keyValidityUri, string key)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
-        <td><span class="parametername">keyValidityUri</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">key</span></td>
-        <td></td>
+        <td><p>The public key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">keyValidityUri</span></td>
+        <td><p>A URI that can be used to validate <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1109,11 +1113,12 @@ public PublicKey([CanBeNull] Uri keyValidityUri, string key)</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_PublicKey_Key.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.PublicKey.Key%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/PublicKey.cs/#L31">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/PublicKey.cs/#L38">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_PublicKey_Key_" data-uid="Cshrix.Data.Events.Content.PublicKey.Key*"></a>
   <h4 id="Cshrix_Data_Events_Content_PublicKey_Key" data-uid="Cshrix.Data.Events.Content.PublicKey.Key">Key</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a Base64-encoded ED25519 key with which a token may be signed.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1140,11 +1145,12 @@ public string Key { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_PublicKey_KeyValidityUri.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.PublicKey.KeyValidityUri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/PublicKey.cs/#L27">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/PublicKey.cs/#L52">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_PublicKey_KeyValidityUri_" data-uid="Cshrix.Data.Events.Content.PublicKey.KeyValidityUri*"></a>
   <h4 id="Cshrix_Data_Events_Content_PublicKey_KeyValidityUri" data-uid="Cshrix.Data.Events.Content.PublicKey.KeyValidityUri">KeyValidityUri</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a URI which can be called to validate whether <a class="xref" href="Cshrix.Data.Events.Content.PublicKey.html#Cshrix_Data_Events_Content_PublicKey_Key">Key</a> has been revoked.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1167,6 +1173,14 @@ public Uri KeyValidityUri { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_PublicKey_KeyValidityUri_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The URI should be called with the query parameter <code>public_key</code> set to <a class="xref" href="Cshrix.Data.Events.Content.PublicKey.html#Cshrix_Data_Events_Content_PublicKey_Key">Key</a>.</p>
+<p>
+The URI <em>must</em> return a JSON object that contains a boolean property named <code>valid</code> which
+specifies if <a class="xref" href="Cshrix.Data.Events.Content.PublicKey.html#Cshrix_Data_Events_Content_PublicKey_Key">Key</a> is valid. If this property is <code>null</code>, then <a class="xref" href="Cshrix.Data.Events.Content.PublicKey.html#Cshrix_Data_Events_Content_PublicKey_Key">Key</a>
+must be considered valid indefinitely.
+</p>
+</div>
 </article>
           </div>
           
@@ -1178,7 +1192,7 @@ public Uri KeyValidityUri { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_PublicKey.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.PublicKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/PublicKey.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/PublicKey.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

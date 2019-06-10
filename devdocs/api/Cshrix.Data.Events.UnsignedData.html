@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_UnsignedData" data-uid="Cshrix.Data.Events.UnsignedData" class="text-break">Struct UnsignedData
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains information about an event which was not sent by the originating homeserver.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1069,11 +1070,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnsignedData__ctor_System_TimeSpan_Cshrix_Data_Events_Event_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnsignedData.%23ctor(System.TimeSpan%2CCshrix.Data.Events.Event%2CSystem.String%2CSystem.Collections.Generic.IReadOnlyCollection%7BCshrix.Data.Events.Event%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L22">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L32">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_UnsignedData__ctor_" data-uid="Cshrix.Data.Events.UnsignedData.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_UnsignedData__ctor_System_TimeSpan_Cshrix_Data_Events_Event_System_String_System_Collections_Generic_IReadOnlyCollection_Cshrix_Data_Events_Event__" data-uid="Cshrix.Data.Events.UnsignedData.#ctor(System.TimeSpan,Cshrix.Data.Events.Event,System.String,System.Collections.Generic.IReadOnlyCollection{Cshrix.Data.Events.Event})">UnsignedData(TimeSpan, Event, String, IReadOnlyCollection&lt;Event&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.UnsignedData.html">UnsignedData</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1093,22 +1095,26 @@ public UnsignedData(TimeSpan age, Event redactionEvent, string transactionId, IR
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
         <td><span class="parametername">age</span></td>
-        <td></td>
+        <td><p>The time since the event was sent.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Events.Event.html">Event</a></td>
         <td><span class="parametername">redactionEvent</span></td>
-        <td></td>
+        <td><p>An event that redacted this event, if any.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">transactionId</span></td>
-        <td></td>
+        <td><p>The transaction ID of the event, if applicable.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Cshrix.Data.Events.Event.html">Event</a>&gt;</td>
         <td><span class="parametername">inviteRoomState</span></td>
-        <td></td>
+        <td><p>A subset of state events of the room at the time of an invite.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1119,11 +1125,12 @@ public UnsignedData(TimeSpan age, Event redactionEvent, string transactionId, IR
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnsignedData_Age.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnsignedData.Age%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L36">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L49">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_UnsignedData_Age_" data-uid="Cshrix.Data.Events.UnsignedData.Age*"></a>
   <h4 id="Cshrix_Data_Events_UnsignedData_Age" data-uid="Cshrix.Data.Events.UnsignedData.Age">Age</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the time since the event was sent.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1151,11 +1158,13 @@ public TimeSpan Age { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnsignedData_InviteRoomState.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnsignedData.InviteRoomState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L48">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L83">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_UnsignedData_InviteRoomState_" data-uid="Cshrix.Data.Events.UnsignedData.InviteRoomState*"></a>
   <h4 id="Cshrix_Data_Events_UnsignedData_InviteRoomState" data-uid="Cshrix.Data.Events.UnsignedData.InviteRoomState">InviteRoomState</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a subset of state events of the relevant room at the time of an invite, if
+<code>membership</code> is <code>invite</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1178,21 +1187,31 @@ public IReadOnlyCollection&lt;Event&gt; InviteRoomState { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_UnsignedData_InviteRoomState_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Note that this state is informational, and <em>should not</em> be trusted; once the client has joined the
+room, it <em>should</em> fetch the live state from the server and discard the
+<a class="xref" href="Cshrix.Data.Events.UnsignedData.html#Cshrix_Data_Events_UnsignedData_InviteRoomState">InviteRoomState</a>. Also, clients must not rely on any particular state being present here;
+they <em>should</em> behave properly (with possibly a degraded but not a broken experience) in the
+absence of any particular events here. If they are set on the room, at least the state for
+<code>m.room.avatar</code>, <code>m.room.canonical_alias</code>, <code>m.room.join_rules</code>, and <code>m.room.name</code>
+<em>should</em> be included.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnsignedData_IsRedaction.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnsignedData.IsRedaction%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnsignedData_IsRedacted.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnsignedData.IsRedacted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L52">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L90">View Source</a>
   </span>
-  <a id="Cshrix_Data_Events_UnsignedData_IsRedaction_" data-uid="Cshrix.Data.Events.UnsignedData.IsRedaction*"></a>
-  <h4 id="Cshrix_Data_Events_UnsignedData_IsRedaction" data-uid="Cshrix.Data.Events.UnsignedData.IsRedaction">IsRedaction</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Cshrix_Data_Events_UnsignedData_IsRedacted_" data-uid="Cshrix.Data.Events.UnsignedData.IsRedacted*"></a>
+  <h4 id="Cshrix_Data_Events_UnsignedData_IsRedacted" data-uid="Cshrix.Data.Events.UnsignedData.IsRedacted">IsRedacted</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the event has been redacted.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonIgnore]
-public bool IsRedaction { get; }</code></pre>
+public bool IsRedacted { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1214,11 +1233,12 @@ public bool IsRedaction { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnsignedData_RedactionEvent.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnsignedData.RedactionEvent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L40">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L56">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_UnsignedData_RedactionEvent_" data-uid="Cshrix.Data.Events.UnsignedData.RedactionEvent*"></a>
   <h4 id="Cshrix_Data_Events_UnsignedData_RedactionEvent" data-uid="Cshrix.Data.Events.UnsignedData.RedactionEvent">RedactionEvent</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the event that redacted this event, if any.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1246,11 +1266,12 @@ public Event RedactionEvent { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnsignedData_TransactionId.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnsignedData.TransactionId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L44">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L66">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_UnsignedData_TransactionId_" data-uid="Cshrix.Data.Events.UnsignedData.TransactionId*"></a>
   <h4 id="Cshrix_Data_Events_UnsignedData_TransactionId" data-uid="Cshrix.Data.Events.UnsignedData.TransactionId">TransactionId</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the transaction ID set when this message was sent.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1273,6 +1294,9 @@ public string TransactionId { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_UnsignedData_TransactionId_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This key will only be non-<code>null</code> for message events sent by the device calling the API.</p>
+</div>
 </article>
           </div>
           
@@ -1284,7 +1308,7 @@ public string TransactionId { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_UnsignedData.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.UnsignedData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/UnsignedData.cs/#L23" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
