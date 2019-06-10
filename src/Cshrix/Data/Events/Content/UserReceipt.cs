@@ -14,13 +14,23 @@ namespace Cshrix.Data.Events.Content
 
     using Serialization;
 
+    /// <summary>
+    /// Describes a user-specific receipt.
+    /// </summary>
     public readonly struct UserReceipt
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserReceipt" /> structure.
+        /// </summary>
+        /// <param name="timestamp">The date and time at which the receipt was sent.</param>
         [JsonConstructor]
         public UserReceipt(DateTimeOffset timestamp)
             : this() =>
             Timestamp = timestamp;
 
+        /// <summary>
+        /// Gets the date and time at which the user sent the receipt.
+        /// </summary>
         [JsonProperty("ts")]
         [JsonConverter(typeof(UnixMillisecondDateTimeConverter))]
         public DateTimeOffset Timestamp { get; }

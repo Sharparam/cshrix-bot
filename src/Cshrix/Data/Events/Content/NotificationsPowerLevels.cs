@@ -12,13 +12,23 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Specifies the power level requirement for specific notification types.
+    /// </summary>
     public readonly struct NotificationsPowerLevels
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotificationsPowerLevels" /> structure.
+        /// </summary>
+        /// <param name="room"></param>
         [JsonConstructor]
         public NotificationsPowerLevels(int room = 50)
             : this() =>
             Room = room;
 
+        /// <summary>
+        /// Level required for the <c>room</c> notification type.
+        /// </summary>
         [JsonProperty("room")]
         [DefaultValue(50)]
         public int Room { get; }

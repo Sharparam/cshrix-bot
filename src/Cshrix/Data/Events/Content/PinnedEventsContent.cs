@@ -12,11 +12,21 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information on which events in a room have been pinned.
+    /// </summary>
     public sealed class PinnedEventsContent : EventContent
     {
-        public PinnedEventsContent(IReadOnlyCollection<UserId> pinned) => Pinned = pinned;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PinnedEventsContent" /> class.
+        /// </summary>
+        /// <param name="pinned">A collection of event IDs that have been pinned.</param>
+        public PinnedEventsContent(IReadOnlyCollection<string> pinned) => Pinned = pinned;
 
+        /// <summary>
+        /// Gets a collection of event IDs that have been pinned.
+        /// </summary>
         [JsonProperty("pinned")]
-        public IReadOnlyCollection<UserId> Pinned { get; }
+        public IReadOnlyCollection<string> Pinned { get; }
     }
 }

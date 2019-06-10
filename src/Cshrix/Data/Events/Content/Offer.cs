@@ -10,8 +10,16 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// A session description object for a VoIP call.
+    /// </summary>
     public readonly struct Offer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Offer" /> structure.
+        /// </summary>
+        /// <param name="type">The type of session description.</param>
+        /// <param name="sdp">The SDP text of the session description.</param>
         [JsonConstructor]
         public Offer(string type, string sdp)
             : this()
@@ -20,9 +28,18 @@ namespace Cshrix.Data.Events.Content
             Sdp = sdp;
         }
 
+        /// <summary>
+        /// Gets the type of session description.
+        /// </summary>
+        /// <remarks>
+        /// Must be <c>offer</c>.
+        /// </remarks>
         [JsonProperty("type")]
         public string Type { get; }
 
+        /// <summary>
+        /// Gets the SDP text of the session description.
+        /// </summary>
         [JsonProperty("sdp")]
         public string Sdp { get; }
     }

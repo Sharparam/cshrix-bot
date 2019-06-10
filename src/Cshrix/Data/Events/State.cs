@@ -13,18 +13,32 @@ namespace Cshrix.Data.Events
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains state (events) for a room.
+    /// </summary>
     public readonly struct State
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="State" /> structure.
+        /// </summary>
+        /// <param name="events">State events.</param>
         public State(IEnumerable<Event> events)
             : this(events.ToList().AsReadOnly())
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="State" /> structure.
+        /// </summary>
+        /// <param name="events">State events.</param>
         [JsonConstructor]
         public State(IReadOnlyCollection<Event> events)
             : this() =>
             Events = events;
 
+        /// <summary>
+        /// Gets a collection of state events.
+        /// </summary>
         public IReadOnlyCollection<Event> Events { get; }
     }
 }

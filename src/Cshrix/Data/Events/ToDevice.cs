@@ -12,13 +12,23 @@ namespace Cshrix.Data.Events
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information about send-to-device messages for the client device.
+    /// </summary>
     public readonly struct ToDevice
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToDevice" /> structure.
+        /// </summary>
+        /// <param name="events">A collection of send-to-device messages.</param>
         [JsonConstructor]
         public ToDevice(IReadOnlyCollection<Event> events)
             : this() =>
             Events = events;
 
+        /// <summary>
+        /// Gets a collection of send-to-device messages.
+        /// </summary>
         [JsonProperty("events")]
         public IReadOnlyCollection<Event> Events { get; }
     }

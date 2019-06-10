@@ -277,7 +277,7 @@ namespace Cshrix.Data
         /// <summary>
         /// Compares this instance of <see cref="AvailableContainer" /> to a <see cref="bool" /> value.
         /// </summary>
-        /// <para>The value to compare with.</para>
+        /// <param name="other">The value to compare with.</param>
         /// <returns>
         /// <c>-1</c> if this value comes before <paramref name="other" />,
         /// <c>0</c> if this value and <paramref name="other" /> are equal,

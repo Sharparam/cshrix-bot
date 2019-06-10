@@ -139,6 +139,6 @@ namespace Cshrix.Data.Events
         /// Gets a value indicating whether this event is redacted.
         /// </summary>
         [JsonIgnore]
-        public bool IsRedacted => Unsigned?.IsRedaction == true;
+        public bool IsRedacted => Unsigned?.IsRedacted == true;
     }
 }

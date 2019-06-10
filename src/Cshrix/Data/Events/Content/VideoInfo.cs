@@ -16,8 +16,23 @@ namespace Cshrix.Data.Events.Content
 
     using Serialization;
 
-    public class VideoInfo : FileInfo
+    /// <summary>
+    /// Describes a video file.
+    /// </summary>
+    public sealed class VideoInfo : FileInfo
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VideoInfo" /> class.
+        /// </summary>
+        /// <param name="mimeType">The MIME type of the file.</param>
+        /// <param name="size">The size of the file, in bytes.</param>
+        /// <param name="thumbnailUri">URI to a thumbnail for the video.</param>
+        /// <param name="thumbnailFile">Information about an encrypted thumbnail file.</param>
+        /// <param name="thumbnailInfo">Information about the thumbnail.</param>
+        /// <param name="duration">The duration of the video.</param>
+        /// <param name="height">The height of the video, in pixels.</param>
+        /// <param name="width">The width of the video, in pixels.</param>
         public VideoInfo(
             string mimeType,
             int size,
@@ -34,13 +49,22 @@ namespace Cshrix.Data.Events.Content
             Width = width;
         }
 
+        /// <summary>
+        /// Gets the duration of the video.
+        /// </summary>
         [JsonProperty("duration")]
         [JsonConverter(typeof(MillisecondTimeSpanConverter))]
         public TimeSpan? Duration { get; }
 
+        /// <summary>
+        /// Gets the height of the video, in pixels.
+        /// </summary>
         [JsonProperty("h")]
         public int Height { get; }
 
+        /// <summary>
+        /// Gets the width of the video, in pixels.
+        /// </summary>
         [JsonProperty("w")]
         public int Width { get; }
     }
