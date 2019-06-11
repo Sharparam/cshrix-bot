@@ -882,7 +882,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.EmoteMessageContent.html",
-          "hash": "KwQ68ZqvSHTd9MK2f4Zkjg=="
+          "hash": "j0+j+q4lzigpvXs/ubB/Ug=="
         }
       },
       "is_incremental": false,
@@ -906,7 +906,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.EncryptedFile.html",
-          "hash": "9y5rS3TEJ+iJjqASRUvqyw=="
+          "hash": "tCj44VD+Pw6jfqTIbTnX0Q=="
         }
       },
       "is_incremental": false,
@@ -918,7 +918,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.EncryptionContent.html",
-          "hash": "nYteSysYORKYJDK2VS7jfg=="
+          "hash": "ngLHs1evmFt+JF41xq6ZJg=="
         }
       },
       "is_incremental": false,
@@ -942,7 +942,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.FeedbackContent.html",
-          "hash": "uq1pZGAaYqQxN+b6hLuExA=="
+          "hash": "/9bb/fLcrJpsgS5EiqM5gg=="
         }
       },
       "is_incremental": false,
@@ -954,7 +954,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.FeedbackType.html",
-          "hash": "gJ1uf+O889etpgGE4DxjOg=="
+          "hash": "vtuKZ8S/FVJD6cf3eZVhPQ=="
         }
       },
       "is_incremental": false,
@@ -1050,7 +1050,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.HistoryVisibilityContent.html",
-          "hash": "2aRrIr9gOFoBKYkePgFD5A=="
+          "hash": "3zlyEkjIMdFB9ZMLpLSgUQ=="
         }
       },
       "is_incremental": false,
@@ -1062,7 +1062,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.IgnoredUsersContent.html",
-          "hash": "FxU7+vZfzDeNV7bY7OvEdg=="
+          "hash": "QxzSbzO+E1Oij+zJ1flmsg=="
         }
       },
       "is_incremental": false,
@@ -1074,7 +1074,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.ImageInfo.html",
-          "hash": "AYolaT1RtSSPzYQyWVlWqg=="
+          "hash": "LAHL7x4q68LpML9hIkFVBg=="
         }
       },
       "is_incremental": false,
@@ -1086,7 +1086,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.ImageMessageContent.html",
-          "hash": "WEDbwn94G9UkwdDqK+lwIA=="
+          "hash": "CYyAy6eGsX6R+EvA6ucpJA=="
         }
       },
       "is_incremental": false,
@@ -1098,7 +1098,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.JoinRuleContent.html",
-          "hash": "aLxddIVxa7U9K+jvzhLqaw=="
+          "hash": "45ITzor4P0UuYSCOzsuSNA=="
         }
       },
       "is_incremental": false,
@@ -1110,7 +1110,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.JsonWebKey.html",
-          "hash": "2W1cencQYTI/PHSIhQkfsw=="
+          "hash": "qcvKOUaKLKs+mxzFYuJArA=="
         }
       },
       "is_incremental": false,
@@ -1122,7 +1122,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.LocationInfo.html",
-          "hash": "8kTFStvS6VtogrvGrp/4Fg=="
+          "hash": "cqcw92RCZezhGV2Qxtv8qw=="
         }
       },
       "is_incremental": false,
@@ -1134,7 +1134,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.LocationMessageContent.html",
-          "hash": "TISi2FA2hFnd0jx866EOXg=="
+          "hash": "WgD/xcp5B7fD1wbvJs+ymw=="
         }
       },
       "is_incremental": false,
@@ -1146,7 +1146,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.MemberContent.html",
-          "hash": "IK8Us2peAmiq77CM6XcXHA=="
+          "hash": "nLg+Ecq/2XEnIaNEShvWoQ=="
         }
       },
       "is_incremental": false,
@@ -1158,7 +1158,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.MessageContent.html",
-          "hash": "+QJjK783c36gG11ZOJl5hg=="
+          "hash": "ZwZtwZ0NOCwGWHUBWydqDA=="
         }
       },
       "is_incremental": false,
@@ -1170,7 +1170,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.NoticeMessageContent.html",
-          "hash": "LkvhhqDL3nqM9J6HgrNnvw=="
+          "hash": "adj7xLiqAqMTjZOvKYJ5Tg=="
         }
       },
       "is_incremental": false,
@@ -1278,7 +1278,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.RedactionContent.html",
-          "hash": "8o03mn8/SBJNFXfIjegTVg=="
+          "hash": "KKi5feDk1umZkCpzEfc19w=="
         }
       },
       "is_incremental": false,
@@ -1290,7 +1290,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.RequestedKeyInfo.html",
-          "hash": "GlkSg0ARhuZzx1ZUQc5yBA=="
+          "hash": "rvPk7UWLti5/zbZE+faBFA=="
         }
       },
       "is_incremental": false,
@@ -1302,7 +1302,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.RoomKeyContent.html",
-          "hash": "38MLvcPTYxZWZRAKkzhiZg=="
+          "hash": "8as4dMiiimdb7W9TaUA9rQ=="
         }
       },
       "is_incremental": false,
@@ -1314,7 +1314,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.RoomKeyRequestContent.html",
-          "hash": "CyaCYtjC73bA/FhRz83WDQ=="
+          "hash": "4d5sFAJTIvj/Jlg/j6T2Fw=="
         }
       },
       "is_incremental": false,
@@ -1326,7 +1326,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.RoomNameContent.html",
-          "hash": "chi3lGd30Fff15G+absADw=="
+          "hash": "Q79DEQh3bCdueXgo449BnQ=="
         }
       },
       "is_incremental": false,
@@ -1338,7 +1338,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.RoomTopicContent.html",
-          "hash": "hxDi/+UNmPzEK10WTkCfNA=="
+          "hash": "eN0mwFjMWHGZdXuNkKHCfQ=="
         }
       },
       "is_incremental": false,
@@ -1350,7 +1350,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.ServerAclContent.html",
-          "hash": "1L5wEvmUK3JzL4Bq1B4CEQ=="
+          "hash": "AM+wo9nQ2gzM8+TYOmTkig=="
         }
       },
       "is_incremental": false,
@@ -1362,7 +1362,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.StickerContent.html",
-          "hash": "rR1S83ol8+ZsmYQ8M9q4kg=="
+          "hash": "TC3AZ7NBD6rjFIOEH58ntw=="
         }
       },
       "is_incremental": false,
@@ -1374,7 +1374,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.TagsContent.html",
-          "hash": "2QY6OUUgl3H8ZvKfyqorDQ=="
+          "hash": "lqA2isvFqyzqQfdFjPkDRA=="
         }
       },
       "is_incremental": false,
@@ -1386,7 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.TextMessageContent.html",
-          "hash": "IUh0rAvuej2YzJy7id8h+Q=="
+          "hash": "2TVtWd2LH7M/OxJIUkEvkg=="
         }
       },
       "is_incremental": false,
@@ -1398,7 +1398,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.ThirdPartyInvite.html",
-          "hash": "wfvrIf3lrpBTqdwyY9n9/g=="
+          "hash": "9pGXDcmuK48PjWs9IXxkjQ=="
         }
       },
       "is_incremental": false,
@@ -1410,7 +1410,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.ThirdPartyInviteContent.html",
-          "hash": "GpwpzebNwua7LnYeX9xOQw=="
+          "hash": "Bj5XRtMeVoqhbwSwZrgrqQ=="
         }
       },
       "is_incremental": false,
@@ -1422,7 +1422,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.ThumbnailInfo.html",
-          "hash": "krhTIFOgnHUaAdxOK0WRtQ=="
+          "hash": "QRg3KDFPchwHtSRPDi3kHA=="
         }
       },
       "is_incremental": false,
@@ -1434,7 +1434,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.TypingContent.html",
-          "hash": "tmIKoXHVMxe/DoRsy6cOaw=="
+          "hash": "Y1gKSzBLPMJdSUNmdU0rKA=="
         }
       },
       "is_incremental": false,
@@ -1482,7 +1482,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.VideoMessageContent.html",
-          "hash": "3hesBWCKdeksr7xJN6P6mg=="
+          "hash": "oZsTPqd0vFTkuVumNOUqmA=="
         }
       },
       "is_incremental": false,
@@ -1494,7 +1494,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Events.Content.html",
-          "hash": "XsiFtZcD9BwmiNys/3mmug=="
+          "hash": "Z0Xb9BXToBcfmiRJ8mKdDg=="
         }
       },
       "is_incremental": false,
@@ -1902,7 +1902,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Data.Notifications.NotificationPushConditionKind.html",
-          "hash": "0iWCkIB50RtQfbF1EER0lA=="
+          "hash": "9bn4Hy1rv2C68elZGlH/zA=="
         }
       },
       "is_incremental": false,
@@ -3120,7 +3120,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.IMatrixClientServerApi.html",
-          "hash": "pHtyvmto8a9gekX1eyD0ew=="
+          "hash": "kaQWmMj4hJ0aYQ0ucwCKSQ=="
         }
       },
       "is_incremental": false,
@@ -3258,7 +3258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cshrix.Serialization.MatrixErrorConverter.html",
-          "hash": "Q07nouZtpR5baaeFMUxtKg=="
+          "hash": "XSTO1629lGTXWv7xyhbVRA=="
         }
       },
       "is_incremental": false,
@@ -3618,10 +3618,11 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 289,
+          "total_file_count": 0,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
@@ -3630,11 +3631,10 @@
           "total_file_count": 6,
           "skipped_file_count": 0
         },
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 289,
           "skipped_file_count": 0
         }
       }

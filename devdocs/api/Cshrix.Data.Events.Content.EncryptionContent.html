@@ -1033,7 +1033,9 @@
   
   <h1 id="Cshrix_Data_Events_Content_EncryptionContent" data-uid="Cshrix.Data.Events.Content.EncryptionContent" class="text-break">Class EncryptionContent
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains content for an event describing how messages sent in a room should be encrypted
+(<code>m.room.encryption</code>).</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1081,11 +1083,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptionContent__ctor_System_String_System_TimeSpan_System_Int32_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptionContent.%23ctor(System.String%2CSystem.TimeSpan%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L19">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L31">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptionContent__ctor_" data-uid="Cshrix.Data.Events.Content.EncryptionContent.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptionContent__ctor_System_String_System_TimeSpan_System_Int32_" data-uid="Cshrix.Data.Events.Content.EncryptionContent.#ctor(System.String,System.TimeSpan,System.Int32)">EncryptionContent(String, TimeSpan, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.EncryptedContent.html">EncryptedContent</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1104,17 +1107,20 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">algorithm</span></td>
-        <td></td>
+        <td><p>Algorithm to use.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
         <td><span class="parametername">rotationPeriod</span></td>
-        <td></td>
+        <td><p>Period of time sessions should last before changing.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">rotationPeriodMessages</span></td>
-        <td></td>
+        <td><p>Number of messages that can be sent before a session needs changing.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1125,11 +1131,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptionContent_Algorithm.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptionContent.Algorithm%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L26">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L42">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptionContent_Algorithm_" data-uid="Cshrix.Data.Events.Content.EncryptionContent.Algorithm*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptionContent_Algorithm" data-uid="Cshrix.Data.Events.Content.EncryptionContent.Algorithm">Algorithm</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the encryption algorithm to be used to encrypt messages sent in the room.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1151,16 +1158,20 @@ public string Algorithm { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptionContent_Algorithm_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Must be <code>m.megolm.v1.aes-sha2</code>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptionContent_RotationPeriod.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptionContent.RotationPeriod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L29">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L49">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptionContent_RotationPeriod_" data-uid="Cshrix.Data.Events.Content.EncryptionContent.RotationPeriod*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptionContent_RotationPeriod" data-uid="Cshrix.Data.Events.Content.EncryptionContent.RotationPeriod">RotationPeriod</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the duration for which sessions should be used before changing.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1183,16 +1194,20 @@ public TimeSpan RotationPeriod { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptionContent_RotationPeriod_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A week is the recommended default.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptionContent_RotationPeriodMessages.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptionContent.RotationPeriodMessages%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L33">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L57">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptionContent_RotationPeriodMessages_" data-uid="Cshrix.Data.Events.Content.EncryptionContent.RotationPeriodMessages*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptionContent_RotationPeriodMessages" data-uid="Cshrix.Data.Events.Content.EncryptionContent.RotationPeriodMessages">RotationPeriodMessages</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the number of messages that should be sent before changing the session.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1214,6 +1229,9 @@ public int RotationPeriodMessages { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptionContent_RotationPeriodMessages_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code>100</code> is the recommended default.</p>
+</div>
 </article>
           </div>
           
@@ -1225,7 +1243,7 @@ public int RotationPeriodMessages { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptionContent.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptionContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptionContent.cs/#L21" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

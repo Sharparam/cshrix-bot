@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_Content_JsonWebKey" data-uid="Cshrix.Data.Events.Content.JsonWebKey" class="text-break">Struct JsonWebKey
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Describes a <a href="https://tools.ietf.org/html/rfc7517#appendix-A.3">JSON Web Key</a> object.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1066,19 +1067,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_JsonWebKey__ctor_System_String_System_String___System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.JsonWebKey.%23ctor(System.String%2CSystem.String%5B%5D%2CSystem.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_JsonWebKey__ctor_System_String_System_String_System_String_System_String___System_Boolean_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.JsonWebKey.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L15">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L26">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_JsonWebKey__ctor_" data-uid="Cshrix.Data.Events.Content.JsonWebKey.#ctor*"></a>
-  <h4 id="Cshrix_Data_Events_Content_JsonWebKey__ctor_System_String_System_String___System_String_System_String_System_Boolean_" data-uid="Cshrix.Data.Events.Content.JsonWebKey.#ctor(System.String,System.String[],System.String,System.String,System.Boolean)">JsonWebKey(String, String[], String, String, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Cshrix_Data_Events_Content_JsonWebKey__ctor_System_String_System_String_System_String_System_String___System_Boolean_" data-uid="Cshrix.Data.Events.Content.JsonWebKey.#ctor(System.String,System.String,System.String,System.String[],System.Boolean)">JsonWebKey(String, String, String, String[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.JsonWebKey.html">JsonWebKey</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public JsonWebKey(string keyType, string[] keyOperations, string algorithm, string key, bool extractable)</code></pre>
+public JsonWebKey(string key, string keyType, string algorithm, string[] keyOperations, bool extractable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1092,28 +1094,33 @@ public JsonWebKey(string keyType, string[] keyOperations, string algorithm, stri
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">keyType</span></td>
-        <td></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key.</p>
+</td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
-        <td><span class="parametername">keyOperations</span></td>
-        <td></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">keyType</span></td>
+        <td><p>The type of the key.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">algorithm</span></td>
-        <td></td>
+        <td><p>Key algorithm.</p>
+</td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">key</span></td>
-        <td></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><span class="parametername">keyOperations</span></td>
+        <td><p>Available key operations.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">extractable</span></td>
-        <td></td>
+        <td><p>Whether the key is extractable.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1124,11 +1131,12 @@ public JsonWebKey(string keyType, string[] keyOperations, string algorithm, stri
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_JsonWebKey_Algorithm.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.JsonWebKey.Algorithm%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L32">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L54">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_JsonWebKey_Algorithm_" data-uid="Cshrix.Data.Events.Content.JsonWebKey.Algorithm*"></a>
   <h4 id="Cshrix_Data_Events_Content_JsonWebKey_Algorithm" data-uid="Cshrix.Data.Events.Content.JsonWebKey.Algorithm">Algorithm</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the algorithm.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1150,16 +1158,20 @@ public string Algorithm { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_JsonWebKey_Algorithm_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Must be <code>A256CTR</code>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_JsonWebKey_Extractable.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.JsonWebKey.Extractable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L38">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L70">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_JsonWebKey_Extractable_" data-uid="Cshrix.Data.Events.Content.JsonWebKey.Extractable*"></a>
   <h4 id="Cshrix_Data_Events_Content_JsonWebKey_Extractable" data-uid="Cshrix.Data.Events.Content.JsonWebKey.Extractable">Extractable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether key is extractable.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1181,16 +1193,20 @@ public bool Extractable { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_JsonWebKey_Extractable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Must be <code>true</code>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_JsonWebKey_Key.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.JsonWebKey.Key%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L35">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L40">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_JsonWebKey_Key_" data-uid="Cshrix.Data.Events.Content.JsonWebKey.Key*"></a>
   <h4 id="Cshrix_Data_Events_Content_JsonWebKey_Key" data-uid="Cshrix.Data.Events.Content.JsonWebKey.Key">Key</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the key, encoded as URL-safe unpadded base64.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1217,11 +1233,12 @@ public string Key { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_JsonWebKey_KeyOperations.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.JsonWebKey.KeyOperations%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L29">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L63">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_JsonWebKey_KeyOperations_" data-uid="Cshrix.Data.Events.Content.JsonWebKey.KeyOperations*"></a>
   <h4 id="Cshrix_Data_Events_Content_JsonWebKey_KeyOperations" data-uid="Cshrix.Data.Events.Content.JsonWebKey.KeyOperations">KeyOperations</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets available operations for this key.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1243,20 +1260,24 @@ public string[] KeyOperations { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_JsonWebKey_KeyOperations_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Must at least contain <code>encrypt</code> and <code>decrypt</code>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_JsonWebKey_KeyType.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.JsonWebKey.KeyType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L26">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L47">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_JsonWebKey_KeyType_" data-uid="Cshrix.Data.Events.Content.JsonWebKey.KeyType*"></a>
   <h4 id="Cshrix_Data_Events_Content_JsonWebKey_KeyType" data-uid="Cshrix.Data.Events.Content.JsonWebKey.KeyType">KeyType</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the type of this key.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;kty&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;key&quot;)]
 public string KeyType { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -1274,6 +1295,9 @@ public string KeyType { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_JsonWebKey_KeyType_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Must be <code>oct</code>.</p>
+</div>
 </article>
           </div>
           
@@ -1285,7 +1309,7 @@ public string KeyType { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_JsonWebKey.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.JsonWebKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/JsonWebKey.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

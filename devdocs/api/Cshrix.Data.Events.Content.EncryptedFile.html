@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_Content_EncryptedFile" data-uid="Cshrix.Data.Events.Content.EncryptedFile" class="text-break">Struct EncryptedFile
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Describes an encrypted file.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -1069,11 +1070,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedFile__ctor_System_Uri_Cshrix_Data_Events_Content_JsonWebKey_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_String_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedFile.%23ctor(System.Uri%2CCshrix.Data.Events.Content.JsonWebKey%2CSystem.String%2CSystem.Collections.Generic.IReadOnlyDictionary%7BSystem.String%2CSystem.String%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L18">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L29">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedFile__ctor_" data-uid="Cshrix.Data.Events.Content.EncryptedFile.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedFile__ctor_System_Uri_Cshrix_Data_Events_Content_JsonWebKey_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_String_" data-uid="Cshrix.Data.Events.Content.EncryptedFile.#ctor(System.Uri,Cshrix.Data.Events.Content.JsonWebKey,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.String)">EncryptedFile(Uri, JsonWebKey, String, IReadOnlyDictionary&lt;String, String&gt;, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.EncryptedFile.html">EncryptedFile</a> structure.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1093,27 +1095,32 @@ public EncryptedFile(Uri uri, JsonWebKey key, string iv, IReadOnlyDictionary&lt;
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">uri</span></td>
-        <td></td>
+        <td><p>The URI to the file.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Events.Content.JsonWebKey.html">JsonWebKey</a></td>
         <td><span class="parametername">key</span></td>
-        <td></td>
+        <td><p>The JSON Web Key object for the file.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">iv</span></td>
-        <td></td>
+        <td><p>Initialization vector used by AES-CTR.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">hashes</span></td>
-        <td></td>
+        <td><p>Dictionary mapping algorithms to ciphertext hashes.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">version</span></td>
-        <td></td>
+        <td><p>Version of the encrypted attachments protocol.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1124,11 +1131,12 @@ public EncryptedFile(Uri uri, JsonWebKey key, string iv, IReadOnlyDictionary&lt;
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedFile_Hashes.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedFile.Hashes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L43">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L67">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedFile_Hashes_" data-uid="Cshrix.Data.Events.Content.EncryptedFile.Hashes*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedFile_Hashes" data-uid="Cshrix.Data.Events.Content.EncryptedFile.Hashes">Hashes</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a dictionary mapping algorithm names to a hash of the ciphertext, encoded as unpadded Base64.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1150,16 +1158,20 @@ public IReadOnlyDictionary&lt;string, string&gt; Hashes { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptedFile_Hashes_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Clients should support the SHA-256 hash, which uses the key <code>sha256</code>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedFile_IV.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedFile.IV%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L40">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L60">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedFile_IV_" data-uid="Cshrix.Data.Events.Content.EncryptedFile.IV*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedFile_IV" data-uid="Cshrix.Data.Events.Content.EncryptedFile.IV">IV</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the initialization vector used by AES-CTR, encoded as unpadded Base64.b</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1186,11 +1198,12 @@ public string IV { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedFile_Key.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedFile.Key%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L37">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L54">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedFile_Key_" data-uid="Cshrix.Data.Events.Content.EncryptedFile.Key*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedFile_Key" data-uid="Cshrix.Data.Events.Content.EncryptedFile.Key">Key</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the JSON Web Key object for the file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1217,11 +1230,12 @@ public JsonWebKey Key { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedFile_Uri.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedFile.Uri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L34">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L48">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedFile_Uri_" data-uid="Cshrix.Data.Events.Content.EncryptedFile.Uri*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedFile_Uri" data-uid="Cshrix.Data.Events.Content.EncryptedFile.Uri">Uri</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the URI to the file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1248,11 +1262,12 @@ public Uri Uri { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedFile_Version.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedFile.Version%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L46">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L74">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_EncryptedFile_Version_" data-uid="Cshrix.Data.Events.Content.EncryptedFile.Version*"></a>
   <h4 id="Cshrix_Data_Events_Content_EncryptedFile_Version" data-uid="Cshrix.Data.Events.Content.EncryptedFile.Version">Version</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the version of the encrypted attachments protocol.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1274,6 +1289,9 @@ public string Version { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_EncryptedFile_Version_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Must be <code>v2</code>.</p>
+</div>
 </article>
           </div>
           
@@ -1285,7 +1303,7 @@ public string Version { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_EncryptedFile.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.EncryptedFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/EncryptedFile.cs/#L19" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

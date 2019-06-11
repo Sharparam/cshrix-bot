@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_Content_FeedbackContent" data-uid="Cshrix.Data.Events.Content.FeedbackContent" class="text-break">Class FeedbackContent
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains the contents of a feedback event (<code>m.room.message.feedback</code>).</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1074,6 +1075,12 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public sealed class FeedbackContent : EventContent</code></pre>
   </div>
+  <h5 id="Cshrix_Data_Events_Content_FeedbackContent_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><strong>
+NB: Usage of this event is discouraged in favour of the receipts module.
+Most clients will not recognise this event.
+</strong>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -1081,11 +1088,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_FeedbackContent__ctor_System_String_Cshrix_Data_Events_Content_FeedbackType_.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.FeedbackContent.%23ctor(System.String%2CCshrix.Data.Events.Content.FeedbackType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/FeedbackContent.cs/#L15">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/FeedbackContent.cs/#L29">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_FeedbackContent__ctor_" data-uid="Cshrix.Data.Events.Content.FeedbackContent.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_Content_FeedbackContent__ctor_System_String_Cshrix_Data_Events_Content_FeedbackType_" data-uid="Cshrix.Data.Events.Content.FeedbackContent.#ctor(System.String,Cshrix.Data.Events.Content.FeedbackType)">FeedbackContent(String, FeedbackType)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.FeedbackContent.html">FeedbackContent</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1104,12 +1112,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">targetEventId</span></td>
-        <td></td>
+        <td><p>The ID of the event the feedback relates to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Events.Content.FeedbackType.html">FeedbackType</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The type of feedback.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1120,11 +1130,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_FeedbackContent_TargetEventId.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.FeedbackContent.TargetEventId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/FeedbackContent.cs/#L21">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/FeedbackContent.cs/#L38">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_FeedbackContent_TargetEventId_" data-uid="Cshrix.Data.Events.Content.FeedbackContent.TargetEventId*"></a>
   <h4 id="Cshrix_Data_Events_Content_FeedbackContent_TargetEventId" data-uid="Cshrix.Data.Events.Content.FeedbackContent.TargetEventId">TargetEventId</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the ID of the event that the feedback is related to.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1151,11 +1162,12 @@ public string TargetEventId { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_FeedbackContent_Type.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.FeedbackContent.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/FeedbackContent.cs/#L24">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/FeedbackContent.cs/#L44">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_FeedbackContent_Type_" data-uid="Cshrix.Data.Events.Content.FeedbackContent.Type*"></a>
   <h4 id="Cshrix_Data_Events_Content_FeedbackContent_Type" data-uid="Cshrix.Data.Events.Content.FeedbackContent.Type">Type</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the type of feedback.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1188,7 +1200,7 @@ public FeedbackType Type { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_FeedbackContent.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.FeedbackContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/FeedbackContent.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/FeedbackContent.cs/#L22" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

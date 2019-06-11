@@ -1033,7 +1033,8 @@
   
   <h1 id="Cshrix_Data_Events_Content_MemberContent" data-uid="Cshrix.Data.Events.Content.MemberContent" class="text-break">Class MemberContent
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains the contents of a <code>m.room.member</code> event.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1078,18 +1079,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_MemberContent__ctor_System_Uri_System_String_Cshrix_Data_Membership_System_Boolean_System_Nullable_Cshrix_Data_Events_Content_ThirdPartyInvite__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.MemberContent.%23ctor(System.Uri%2CSystem.String%2CCshrix.Data.Membership%2CSystem.Boolean%2CSystem.Nullable%7BCshrix.Data.Events.Content.ThirdPartyInvite%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_MemberContent__ctor_System_String_System_Uri_Cshrix_Data_Membership_System_Boolean_System_Nullable_Cshrix_Data_Events_Content_ThirdPartyInvite__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.MemberContent.%23ctor(System.String%2CSystem.Uri%2CCshrix.Data.Membership%2CSystem.Boolean%2CSystem.Nullable%7BCshrix.Data.Events.Content.ThirdPartyInvite%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L17">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L28">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_MemberContent__ctor_" data-uid="Cshrix.Data.Events.Content.MemberContent.#ctor*"></a>
-  <h4 id="Cshrix_Data_Events_Content_MemberContent__ctor_System_Uri_System_String_Cshrix_Data_Membership_System_Boolean_System_Nullable_Cshrix_Data_Events_Content_ThirdPartyInvite__" data-uid="Cshrix.Data.Events.Content.MemberContent.#ctor(System.Uri,System.String,Cshrix.Data.Membership,System.Boolean,System.Nullable{Cshrix.Data.Events.Content.ThirdPartyInvite})">MemberContent(Uri, String, Membership, Boolean, Nullable&lt;ThirdPartyInvite&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Cshrix_Data_Events_Content_MemberContent__ctor_System_String_System_Uri_Cshrix_Data_Membership_System_Boolean_System_Nullable_Cshrix_Data_Events_Content_ThirdPartyInvite__" data-uid="Cshrix.Data.Events.Content.MemberContent.#ctor(System.String,System.Uri,Cshrix.Data.Membership,System.Boolean,System.Nullable{Cshrix.Data.Events.Content.ThirdPartyInvite})">MemberContent(String, Uri, Membership, Boolean, Nullable&lt;ThirdPartyInvite&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.MemberContent.html">MemberContent</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MemberContent(Uri avatarUri, string displayName, Membership membership, bool isDirect, ThirdPartyInvite? thirdPartyInvite)</code></pre>
+    <pre><code class="lang-csharp hljs">public MemberContent(string displayName, Uri avatarUri, Membership membership, bool isDirect, ThirdPartyInvite? thirdPartyInvite)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1102,29 +1104,34 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
-        <td><span class="parametername">avatarUri</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">displayName</span></td>
-        <td></td>
+        <td><p>Display name of the user.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">avatarUri</span></td>
+        <td><p>URI to the user's avatar.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Cshrix.Data.Membership.html">Membership</a></td>
         <td><span class="parametername">membership</span></td>
-        <td></td>
+        <td><p>Current membership state of the user.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">isDirect</span></td>
-        <td></td>
+        <td><p>Whether the user is joined with the intention of direct messaging.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="Cshrix.Data.Events.Content.ThirdPartyInvite.html">ThirdPartyInvite</a>&gt;</td>
         <td><span class="parametername">thirdPartyInvite</span></td>
-        <td></td>
+        <td><p>Any third party invite associated with the user/membership.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1135,11 +1142,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_MemberContent_AvatarUri.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.MemberContent.AvatarUri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L31">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L51">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_MemberContent_AvatarUri_" data-uid="Cshrix.Data.Events.Content.MemberContent.AvatarUri*"></a>
   <h4 id="Cshrix_Data_Events_Content_MemberContent_AvatarUri" data-uid="Cshrix.Data.Events.Content.MemberContent.AvatarUri">AvatarUri</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the URI for the user's avatar.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1166,11 +1174,12 @@ public Uri AvatarUri { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_MemberContent_DisplayName.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.MemberContent.DisplayName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L34">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L45">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_MemberContent_DisplayName_" data-uid="Cshrix.Data.Events.Content.MemberContent.DisplayName*"></a>
   <h4 id="Cshrix_Data_Events_Content_MemberContent_DisplayName" data-uid="Cshrix.Data.Events.Content.MemberContent.DisplayName">DisplayName</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the display name of the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1197,11 +1206,12 @@ public string DisplayName { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_MemberContent_IsDirect.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.MemberContent.IsDirect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L40">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L63">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_MemberContent_IsDirect_" data-uid="Cshrix.Data.Events.Content.MemberContent.IsDirect*"></a>
   <h4 id="Cshrix_Data_Events_Content_MemberContent_IsDirect" data-uid="Cshrix.Data.Events.Content.MemberContent.IsDirect">IsDirect</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the user is joined to the room with the intention of direct messaging.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1228,11 +1238,12 @@ public bool IsDirect { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_MemberContent_Membership.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.MemberContent.Membership%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L37">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L57">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_MemberContent_Membership_" data-uid="Cshrix.Data.Events.Content.MemberContent.Membership*"></a>
   <h4 id="Cshrix_Data_Events_Content_MemberContent_Membership" data-uid="Cshrix.Data.Events.Content.MemberContent.Membership">Membership</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the type of membership the user is currently active as.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1259,11 +1270,12 @@ public Membership Membership { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_MemberContent_ThirdPartyInvite.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.MemberContent.ThirdPartyInvite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L43">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L69">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_MemberContent_ThirdPartyInvite_" data-uid="Cshrix.Data.Events.Content.MemberContent.ThirdPartyInvite*"></a>
   <h4 id="Cshrix_Data_Events_Content_MemberContent_ThirdPartyInvite" data-uid="Cshrix.Data.Events.Content.MemberContent.ThirdPartyInvite">ThirdPartyInvite</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the related third party invite, if any.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1296,7 +1308,7 @@ public ThirdPartyInvite? ThirdPartyInvite { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_MemberContent.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.MemberContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L15" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/MemberContent.cs/#L18" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

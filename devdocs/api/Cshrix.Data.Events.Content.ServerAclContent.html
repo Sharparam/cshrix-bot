@@ -1033,7 +1033,9 @@
   
   <h1 id="Cshrix_Data_Events_Content_ServerAclContent" data-uid="Cshrix.Data.Events.Content.ServerAclContent" class="text-break">Class ServerAclContent
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Contains data on what servers are permitted to participate in a room.
+Content of the <code>m.room.server_acl</code> event.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -1081,11 +1083,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_ServerAclContent__ctor_System_Boolean_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_System_String__.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.ServerAclContent.%23ctor(System.Boolean%2CSystem.Collections.Generic.IReadOnlyCollection%7BSystem.String%7D%2CSystem.Collections.Generic.IReadOnlyCollection%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L18">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L28">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_ServerAclContent__ctor_" data-uid="Cshrix.Data.Events.Content.ServerAclContent.#ctor*"></a>
   <h4 id="Cshrix_Data_Events_Content_ServerAclContent__ctor_System_Boolean_System_Collections_Generic_IReadOnlyCollection_System_String__System_Collections_Generic_IReadOnlyCollection_System_String__" data-uid="Cshrix.Data.Events.Content.ServerAclContent.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyCollection{System.String},System.Collections.Generic.IReadOnlyCollection{System.String})">ServerAclContent(Boolean, IReadOnlyCollection&lt;String&gt;, IReadOnlyCollection&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Cshrix.Data.Events.Content.ServerAclContent.html">ServerAclContent</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1104,17 +1107,20 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">allowIpLiterals</span></td>
-        <td></td>
+        <td><p>Whether to allow server names that are IP literals.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">allow</span></td>
-        <td></td>
+        <td><p>Collection of server names to allow in the room.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">deny</span></td>
-        <td></td>
+        <td><p>Collection of server names to disallow in the room.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1125,11 +1131,12 @@
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_ServerAclContent_Allow.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.ServerAclContent.Allow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L31">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L51">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_ServerAclContent_Allow_" data-uid="Cshrix.Data.Events.Content.ServerAclContent.Allow*"></a>
   <h4 id="Cshrix_Data_Events_Content_ServerAclContent_Allow" data-uid="Cshrix.Data.Events.Content.ServerAclContent.Allow">Allow</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of server names to allow in the room.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1151,16 +1158,21 @@ public IReadOnlyCollection&lt;string&gt; Allow { get; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Cshrix_Data_Events_Content_ServerAclContent_Allow_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Wildcards may be used to cover a wider range of hosts, where <code>*</code> matches zero or more characters
+and <code>?</code> matches exactly one character.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_ServerAclContent_AllowIpLiterals.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.ServerAclContent.AllowIpLiterals%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L28">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L41">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_ServerAclContent_AllowIpLiterals_" data-uid="Cshrix.Data.Events.Content.ServerAclContent.AllowIpLiterals*"></a>
   <h4 id="Cshrix_Data_Events_Content_ServerAclContent_AllowIpLiterals" data-uid="Cshrix.Data.Events.Content.ServerAclContent.AllowIpLiterals">AllowIpLiterals</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether to allow server names that are IP literals.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1187,11 +1199,13 @@ public bool AllowIpLiterals { get; }</code></pre>
     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_ServerAclContent_Deny.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.ServerAclContent.Deny%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L34">View Source</a>
+    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L58">View Source</a>
   </span>
   <a id="Cshrix_Data_Events_Content_ServerAclContent_Deny_" data-uid="Cshrix.Data.Events.Content.ServerAclContent.Deny*"></a>
   <h4 id="Cshrix_Data_Events_Content_ServerAclContent_Deny" data-uid="Cshrix.Data.Events.Content.ServerAclContent.Deny">Deny</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a collection of server names to disallow in the room. Wildcards may be used, following the same
+rules as defined on <a class="xref" href="Cshrix.Data.Events.Content.ServerAclContent.html#Cshrix_Data_Events_Content_ServerAclContent_Allow">Allow</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1224,7 +1238,7 @@ public IReadOnlyCollection&lt;string&gt; Deny { get; }</code></pre>
                     <a href="https://github.com/Sharparam/cshrix-bot/new/develop/docs/apidoc/new?filename=Cshrix_Data_Events_Content_ServerAclContent.md&amp;value=---%0Auid%3A%20Cshrix.Data.Events.Content.ServerAclContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Sharparam/cshrix-bot/blob/develop/src/Cshrix/Data/Events/Content/ServerAclContent.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

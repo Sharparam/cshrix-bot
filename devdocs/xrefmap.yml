@@ -4498,15 +4498,15 @@ references:
   commentId: T:Cshrix.Data.Events.Content.JsonWebKey
   fullName: Cshrix.Data.Events.Content.JsonWebKey
   nameWithType: JsonWebKey
-- uid: Cshrix.Data.Events.Content.JsonWebKey.#ctor(System.String,System.String[],System.String,System.String,System.Boolean)
-  name: JsonWebKey(String, String[], String, String, Boolean)
-  href: api/Cshrix.Data.Events.Content.JsonWebKey.html#Cshrix_Data_Events_Content_JsonWebKey__ctor_System_String_System_String___System_String_System_String_System_Boolean_
-  commentId: M:Cshrix.Data.Events.Content.JsonWebKey.#ctor(System.String,System.String[],System.String,System.String,System.Boolean)
-  name.vb: JsonWebKey(String, String(), String, String, Boolean)
-  fullName: Cshrix.Data.Events.Content.JsonWebKey.JsonWebKey(System.String, System.String[], System.String, System.String, System.Boolean)
-  fullName.vb: Cshrix.Data.Events.Content.JsonWebKey.JsonWebKey(System.String, System.String(), System.String, System.String, System.Boolean)
-  nameWithType: JsonWebKey.JsonWebKey(String, String[], String, String, Boolean)
-  nameWithType.vb: JsonWebKey.JsonWebKey(String, String(), String, String, Boolean)
+- uid: Cshrix.Data.Events.Content.JsonWebKey.#ctor(System.String,System.String,System.String,System.String[],System.Boolean)
+  name: JsonWebKey(String, String, String, String[], Boolean)
+  href: api/Cshrix.Data.Events.Content.JsonWebKey.html#Cshrix_Data_Events_Content_JsonWebKey__ctor_System_String_System_String_System_String_System_String___System_Boolean_
+  commentId: M:Cshrix.Data.Events.Content.JsonWebKey.#ctor(System.String,System.String,System.String,System.String[],System.Boolean)
+  name.vb: JsonWebKey(String, String, String, String(), Boolean)
+  fullName: Cshrix.Data.Events.Content.JsonWebKey.JsonWebKey(System.String, System.String, System.String, System.String[], System.Boolean)
+  fullName.vb: Cshrix.Data.Events.Content.JsonWebKey.JsonWebKey(System.String, System.String, System.String, System.String(), System.Boolean)
+  nameWithType: JsonWebKey.JsonWebKey(String, String, String, String[], Boolean)
+  nameWithType.vb: JsonWebKey.JsonWebKey(String, String, String, String(), Boolean)
 - uid: Cshrix.Data.Events.Content.JsonWebKey.#ctor*
   name: JsonWebKey
   href: api/Cshrix.Data.Events.Content.JsonWebKey.html#Cshrix_Data_Events_Content_JsonWebKey__ctor_
@@ -4691,15 +4691,15 @@ references:
   commentId: T:Cshrix.Data.Events.Content.MemberContent
   fullName: Cshrix.Data.Events.Content.MemberContent
   nameWithType: MemberContent
-- uid: Cshrix.Data.Events.Content.MemberContent.#ctor(System.Uri,System.String,Cshrix.Data.Membership,System.Boolean,System.Nullable{Cshrix.Data.Events.Content.ThirdPartyInvite})
-  name: MemberContent(Uri, String, Membership, Boolean, Nullable<ThirdPartyInvite>)
-  href: api/Cshrix.Data.Events.Content.MemberContent.html#Cshrix_Data_Events_Content_MemberContent__ctor_System_Uri_System_String_Cshrix_Data_Membership_System_Boolean_System_Nullable_Cshrix_Data_Events_Content_ThirdPartyInvite__
-  commentId: M:Cshrix.Data.Events.Content.MemberContent.#ctor(System.Uri,System.String,Cshrix.Data.Membership,System.Boolean,System.Nullable{Cshrix.Data.Events.Content.ThirdPartyInvite})
-  name.vb: MemberContent(Uri, String, Membership, Boolean, Nullable(Of ThirdPartyInvite))
-  fullName: Cshrix.Data.Events.Content.MemberContent.MemberContent(System.Uri, System.String, Cshrix.Data.Membership, System.Boolean, System.Nullable<Cshrix.Data.Events.Content.ThirdPartyInvite>)
-  fullName.vb: Cshrix.Data.Events.Content.MemberContent.MemberContent(System.Uri, System.String, Cshrix.Data.Membership, System.Boolean, System.Nullable(Of Cshrix.Data.Events.Content.ThirdPartyInvite))
-  nameWithType: MemberContent.MemberContent(Uri, String, Membership, Boolean, Nullable<ThirdPartyInvite>)
-  nameWithType.vb: MemberContent.MemberContent(Uri, String, Membership, Boolean, Nullable(Of ThirdPartyInvite))
+- uid: Cshrix.Data.Events.Content.MemberContent.#ctor(System.String,System.Uri,Cshrix.Data.Membership,System.Boolean,System.Nullable{Cshrix.Data.Events.Content.ThirdPartyInvite})
+  name: MemberContent(String, Uri, Membership, Boolean, Nullable<ThirdPartyInvite>)
+  href: api/Cshrix.Data.Events.Content.MemberContent.html#Cshrix_Data_Events_Content_MemberContent__ctor_System_String_System_Uri_Cshrix_Data_Membership_System_Boolean_System_Nullable_Cshrix_Data_Events_Content_ThirdPartyInvite__
+  commentId: M:Cshrix.Data.Events.Content.MemberContent.#ctor(System.String,System.Uri,Cshrix.Data.Membership,System.Boolean,System.Nullable{Cshrix.Data.Events.Content.ThirdPartyInvite})
+  name.vb: MemberContent(String, Uri, Membership, Boolean, Nullable(Of ThirdPartyInvite))
+  fullName: Cshrix.Data.Events.Content.MemberContent.MemberContent(System.String, System.Uri, Cshrix.Data.Membership, System.Boolean, System.Nullable<Cshrix.Data.Events.Content.ThirdPartyInvite>)
+  fullName.vb: Cshrix.Data.Events.Content.MemberContent.MemberContent(System.String, System.Uri, Cshrix.Data.Membership, System.Boolean, System.Nullable(Of Cshrix.Data.Events.Content.ThirdPartyInvite))
+  nameWithType: MemberContent.MemberContent(String, Uri, Membership, Boolean, Nullable<ThirdPartyInvite>)
+  nameWithType.vb: MemberContent.MemberContent(String, Uri, Membership, Boolean, Nullable(Of ThirdPartyInvite))
 - uid: Cshrix.Data.Events.Content.MemberContent.#ctor*
   name: MemberContent
   href: api/Cshrix.Data.Events.Content.MemberContent.html#Cshrix_Data_Events_Content_MemberContent__ctor_
@@ -8276,6 +8276,12 @@ references:
   commentId: F:Cshrix.Data.Notifications.NotificationPushConditionKind.RoomMemberCount
   fullName: Cshrix.Data.Notifications.NotificationPushConditionKind.RoomMemberCount
   nameWithType: NotificationPushConditionKind.RoomMemberCount
+- uid: Cshrix.Data.Notifications.NotificationPushConditionKind.SenderNotificationPermission
+  name: SenderNotificationPermission
+  href: api/Cshrix.Data.Notifications.NotificationPushConditionKind.html#Cshrix_Data_Notifications_NotificationPushConditionKind_SenderNotificationPermission
+  commentId: F:Cshrix.Data.Notifications.NotificationPushConditionKind.SenderNotificationPermission
+  fullName: Cshrix.Data.Notifications.NotificationPushConditionKind.SenderNotificationPermission
+  nameWithType: NotificationPushConditionKind.SenderNotificationPermission
 - uid: Cshrix.Data.Notifications.NotificationPusher
   name: NotificationPusher
   href: api/Cshrix.Data.Notifications.NotificationPusher.html
