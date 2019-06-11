@@ -35,6 +35,13 @@ namespace Cshrix.Data.Notifications
         /// A certain room member count is reached.
         /// </summary>
         [EnumMember(Value = "room_member_count")]
-        RoomMemberCount
+        RoomMemberCount,
+
+        /// <summary>
+        /// This takes into account the current power levels in the room, ensuring the sender of the event has
+        /// high enough power to trigger the notification.
+        /// </summary>
+        [EnumMember(Value = "sender_notification_permission")]
+        SenderNotificationPermission
     }
 }

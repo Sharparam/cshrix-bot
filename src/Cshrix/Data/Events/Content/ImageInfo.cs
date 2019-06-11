@@ -14,8 +14,22 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class ImageInfo : FileInfo
+    /// <summary>
+    /// Contains information about an image file.
+    /// </summary>
+    public sealed class ImageInfo : FileInfo
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageInfo" /> class.
+        /// </summary>
+        /// <param name="mimeType">The MIME type of the image.</param>
+        /// <param name="size">The size of the image, in bytes.</param>
+        /// <param name="thumbnailUri">A URL to the thumbnail for the image.</param>
+        /// <param name="thumbnailFile">An object describing an encrypted thumbnail for the image.</param>
+        /// <param name="thumbnailInfo">Information about the image thumbnail.</param>
+        /// <param name="height">Height of the image, in pixels.</param>
+        /// <param name="width">Width of the image, in pixels.</param>
         public ImageInfo(
             string mimeType,
             int size,
@@ -30,9 +44,15 @@ namespace Cshrix.Data.Events.Content
             Width = width;
         }
 
+        /// <summary>
+        /// Gets the height of the image, in pixels.
+        /// </summary>
         [JsonProperty("h")]
         public int Height { get; }
 
+        /// <summary>
+        /// Gets the width of the image, in pixels.
+        /// </summary>
         [JsonProperty("w")]
         public int Width { get; }
     }

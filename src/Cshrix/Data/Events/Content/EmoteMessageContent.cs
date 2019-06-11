@@ -8,8 +8,18 @@
 
 namespace Cshrix.Data.Events.Content
 {
+    /// <summary>
+    /// Describes a message that is an emote.
+    /// </summary>
     public sealed class EmoteMessageContent : FormattedMessageContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmoteMessageContent" /> class.
+        /// </summary>
+        /// <param name="body">The emote body.</param>
+        /// <param name="messageType">The type of the message.</param>
+        /// <param name="format">The type of formatting used.</param>
+        /// <param name="formattedBody">The formatted emote body.</param>
         public EmoteMessageContent(string body, string messageType, string format, string formattedBody)
             : base(body, messageType, format, formattedBody)
         {

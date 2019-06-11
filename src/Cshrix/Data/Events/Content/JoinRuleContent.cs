@@ -10,10 +10,20 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains data for the <c>m.room.join_rules</c> event.
+    /// </summary>
     public sealed class JoinRuleContent : EventContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JoinRuleContent" /> class.
+        /// </summary>
+        /// <param name="rule">The current join rule set on the room.</param>
         public JoinRuleContent(JoinRule rule) => Rule = rule;
 
+        /// <summary>
+        /// Gets the <see cref="JoinRule" /> configured for the room.
+        /// </summary>
         [JsonProperty("join_rule")]
         public JoinRule Rule { get; }
     }

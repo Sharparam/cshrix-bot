@@ -26,4 +26,8 @@
       <ProjectReference Include="..\..\src\Cshrix\Cshrix.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Include="Utilities\Base64UtilsTests.fs" />
+    </ItemGroup>
+
 </Project>

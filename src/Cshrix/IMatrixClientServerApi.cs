@@ -976,10 +976,6 @@ namespace Cshrix
 
         #region Room membership
 
-        // TODO: The docs say that the third party data object should be additionally wrapped in
-        // another level `signed`. For now assume that is a doc error because it would be a
-        // preposterous amount of nesting. Awaiting response from #matrix-dev:matrix.org
-        // on whether this is actually intended.
         /// <summary>
         /// Start the requesting user participating in a particular room.
         /// </summary>
