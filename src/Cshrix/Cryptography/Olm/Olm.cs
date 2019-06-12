@@ -66,7 +66,7 @@ namespace Cshrix.Cryptography.Olm
         /// <param name="minor">Minor version.</param>
         /// <param name="patch">Patch version.</param>
         [DllImport(Name, EntryPoint = "olm_get_library_version", ExactSpelling = true)]
-        internal static extern void GetLibraryVersion(out byte major, out byte minor, out byte patch);
+        internal static extern void GetVersion(out byte major, out byte minor, out byte patch);
 
         /// <summary>
         /// Gets the value that Olm will return from a function if there was an error.
