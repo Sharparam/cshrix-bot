@@ -367,7 +367,7 @@ Task("Build-Container")
     .IsDependentOn("Publish")
     .Does(() => {
         var tagSha = $"{dockerImageName}:{version.Sha}".ToLower();
-        var tagVersion = $"{dockerImageName}:{version.FullSemVer}".ToLower();
+        var tagVersion = $"{dockerImageName}:{version.SemVer}".ToLower();
         var tagLatest = $"{dockerImageName}:latest".ToLower();
 
         Information($"Building docker image {tagSha}");
