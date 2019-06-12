@@ -11,6 +11,8 @@ namespace Cshrix.Serialization
     using System;
     using System.Collections.Generic;
 
+    using Cryptography.Data;
+
     using Data;
 
     using Newtonsoft.Json;

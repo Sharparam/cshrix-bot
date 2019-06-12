@@ -103,6 +103,9 @@ namespace Cshrix.Serialization
 
             switch (value)
             {
+                case bool boolean:
+                    return boolean.ToString().ToLowerInvariant();
+
                 case TimeSpan timeSpan:
                     return SerializeTimeSpan(timeSpan);
 

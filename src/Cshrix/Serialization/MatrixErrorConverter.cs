@@ -35,14 +35,14 @@ namespace Cshrix.Serialization
 
         /// <inheritdoc />
         /// <summary>
-        /// Throws a <see cref="NotImplementedException" />, due to
+        /// Throws a <see cref="NotSupportedException" />, due to
         /// serialization being delegated to the default behaviour.
         /// </summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, MatrixError value, JsonSerializer serializer) =>
-            throw new NotImplementedException();
+            throw new NotSupportedException("Writing is handled by the default JSON.NET behaviour");
 
         /// <inheritdoc />
         /// <summary>Reads the JSON representation of a <see cref="MatrixError" />.</summary>

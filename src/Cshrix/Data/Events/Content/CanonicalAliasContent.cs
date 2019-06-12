@@ -12,10 +12,20 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class CanonicalAliasContent : EventContent
+    /// <summary>
+    /// Content for the <c>m.room.canonical_alias</c> event.
+    /// </summary>
+    public sealed class CanonicalAliasContent : EventContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CanonicalAliasContent" /> class.
+        /// </summary>
+        /// <param name="alias">The canonical alias for the room.</param>
         public CanonicalAliasContent([CanBeNull] RoomAlias alias) => Alias = alias;
 
+        /// <summary>
+        /// Gets the canonical alias for the room, if one is set.
+        /// </summary>
         [JsonProperty("alias")]
         [CanBeNull]
         public RoomAlias Alias { get; }

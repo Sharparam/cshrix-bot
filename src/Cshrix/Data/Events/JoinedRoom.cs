@@ -10,8 +10,19 @@ namespace Cshrix.Data.Events
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains events in a sync response for a joined room.
+    /// </summary>
     public readonly struct JoinedRoom
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JoinedRoom" /> structure.
+        /// </summary>
+        /// <param name="state">The current state of the room.</param>
+        /// <param name="timeline">The timeline of the room.</param>
+        /// <param name="ephemeral">Ephemeral events for the room.</param>
+        /// <param name="accountData">Room-specific account data.</param>
+        /// <param name="unreadCounts">Unread counts for the room.</param>
         [JsonConstructor]
         public JoinedRoom(
             State state,
@@ -28,18 +39,33 @@ namespace Cshrix.Data.Events
             UnreadCounts = unreadCounts;
         }
 
+        /// <summary>
+        /// Gets the current state of the room.
+        /// </summary>
         [JsonProperty("state")]
         public State State { get; }
 
+        /// <summary>
+        /// Gets the timeline for the room.
+        /// </summary>
         [JsonProperty("timeline")]
         public Timeline Timeline { get; }
 
+        /// <summary>
+        /// Gets ephemeral events for the room.
+        /// </summary>
         [JsonProperty("ephemeral")]
         public EventsContainer Ephemeral { get; }
 
+        /// <summary>
+        /// Gets account data specific for this room.
+        /// </summary>
         [JsonProperty("account_data")]
         public EventsContainer AccountData { get; }
 
+        /// <summary>
+        /// Gets an object describing unread counts for messages.
+        /// </summary>
         [JsonProperty("unread_notifications")]
         public UnreadCounts UnreadCounts { get; }
     }

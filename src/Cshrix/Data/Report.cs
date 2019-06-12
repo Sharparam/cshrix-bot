@@ -10,8 +10,16 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information about a message report.
+    /// </summary>
     public readonly struct Report
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Report" /> structure.
+        /// </summary>
+        /// <param name="reason">The reason for the report.</param>
+        /// <param name="score">The score to apply to the message.</param>
         [JsonConstructor]
         public Report(string reason, int score)
             : this()
@@ -20,9 +28,18 @@ namespace Cshrix.Data
             Score = score;
         }
 
+        /// <summary>
+        /// Gets the reason this report was made.
+        /// </summary>
         [JsonProperty("reason")]
         public string Reason { get; }
 
+        /// <summary>
+        /// Gets the user-provided score for this report.
+        /// </summary>
+        /// <remarks>
+        /// <c>-100</c> is the lowest score, and <c>100</c> the highest.
+        /// </remarks>
         [JsonProperty("score")]
         public int Score { get; }
     }

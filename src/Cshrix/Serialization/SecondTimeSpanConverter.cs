@@ -10,9 +10,9 @@ namespace Cshrix.Serialization
 {
     using System;
 
-    using Helpers;
-
     using Newtonsoft.Json;
+
+    using Utilities;
 
     /// <inheritdoc />
     /// <summary>
@@ -64,7 +64,7 @@ namespace Cshrix.Serialization
             object existingValue,
             JsonSerializer serializer)
         {
-            var nullable = ReflectionHelpers.IsNullable(objectType);
+            var nullable = ReflectionUtils.IsNullable(objectType);
 
             if (reader.TokenType == JsonToken.Null)
             {

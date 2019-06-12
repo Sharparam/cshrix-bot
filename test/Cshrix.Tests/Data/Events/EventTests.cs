@@ -130,7 +130,7 @@ namespace Cshrix.Tests.Data.Events
                 }
             }";
 
-            var ev = JsonConvert.DeserializeObject<RoomEvent>(json);
+            var ev = JsonConvert.DeserializeObject<Event>(json);
 
             var expectedEventId = "$WEIGFHFW:localhost";
             var expectedType = FeedbackType.Delivered;

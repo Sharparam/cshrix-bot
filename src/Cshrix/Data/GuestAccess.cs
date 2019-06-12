@@ -13,12 +13,21 @@ namespace Cshrix.Data
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Specifies guest access type.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum GuestAccess
     {
+        /// <summary>
+        /// Guests are allowed to join.
+        /// </summary>
         [EnumMember(Value = "can_join")]
         CanJoin,
 
+        /// <summary>
+        /// Guests are not allowed to join.
+        /// </summary>
         [EnumMember(Value = "forbidden")]
         Forbidden
     }

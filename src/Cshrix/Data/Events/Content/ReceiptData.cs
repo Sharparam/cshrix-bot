@@ -12,13 +12,23 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains receipts for an event.
+    /// </summary>
     public readonly struct ReceiptData
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReceiptData" /> structure.
+        /// </summary>
+        /// <param name="read">A dictionary mapping user IDs to their <c>m.read</c> receipts.</param>
         [JsonConstructor]
         public ReceiptData(IReadOnlyDictionary<UserId, UserReceipt> read)
             : this() =>
             Read = read;
 
+        /// <summary>
+        /// Gets a dictionary mapping user IDs to their <c>m.read</c> user receipt for this event.
+        /// </summary>
         [JsonProperty("m.read")]
         public IReadOnlyDictionary<UserId, UserReceipt> Read { get; }
     }

@@ -10,8 +10,16 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Describes a third party invite.
+    /// </summary>
     public readonly struct ThirdPartyInvite
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ThirdPartyInvite" /> structure.
+        /// </summary>
+        /// <param name="displayName">Display name of the invited user.</param>
+        /// <param name="signed">Signed data.</param>
         [JsonConstructor]
         public ThirdPartyInvite(string displayName, SignedData signed)
             : this()
@@ -20,9 +28,16 @@ namespace Cshrix.Data.Events.Content
             Signed = signed;
         }
 
+        /// <summary>
+        /// Gets the display name of the invited user.
+        /// </summary>
         [JsonProperty("displayname")]
         public string DisplayName { get; }
 
+        /// <summary>
+        /// Gets content which has been signed, which servers can use to verify the event.
+        /// </summary>
+        /// <remarks>Clients should ignore this.</remarks>
         [JsonProperty("signed")]
         public SignedData Signed { get; }
     }

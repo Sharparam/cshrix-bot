@@ -12,7 +12,6 @@ namespace Cshrix
     using System.Threading.Tasks;
 
     using Data;
-    using Data.Notifications;
 
     using JetBrains.Annotations;
 
@@ -23,23 +22,39 @@ namespace Cshrix
     public interface IMatrixClient
     {
         /// <summary>
+        /// Raised when the user is invited to a room.
+        /// </summary>
+        event EventHandler<InvitedEventArgs> Invited;
+
+        /// <summary>
+        /// Starts syncing with the Matrix API.
+        /// </summary>
+        Task StartSyncingAsync();
+
+        /// <summary>
+        /// Stops syncing with the Matrix API.
+        /// </summary>
+        Task StopSyncingAsync();
+
+        /// <summary>
         /// Gets the current user's ID.
         /// </summary>
         /// <returns>The current user's ID.</returns>
         Task<UserId> GetUserIdAsync();
 
         /// <summary>
-        /// Gets all configured notification push rules for the current user.
-        /// </summary>
-        /// <returns>Configured notification push rules.</returns>
-        Task<NotificationRulesets> GetNotificationPushRulesAsync();
-
-        /// <summary>
-        /// Gets preview information for a URL.
+        /// Gets preview information for a URI.
         /// </summary>
         /// <param name="uri">The URI to get preview information for.</param>
         /// <param name="at">The point in time at which to get information from.</param>
         /// <returns>Information about the URI.</returns>
-        Task<PreviewInfo> GetPreviewInfoAsync(Uri uri, DateTimeOffset? at = null);
+        Task<PreviewInfo> GetUriPreviewInfoAsync(Uri uri, DateTimeOffset? at = null);
+
+        /// <summary>
+        /// Joins a room by its ID.
+        /// </summary>
+        /// <param name="roomId">The ID of the room to join.</param>
+        /// <returns>The ID of the joined room.</returns>
+        Task<string> JoinRoomByIdAsync(string roomId);
     }
 }

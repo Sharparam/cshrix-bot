@@ -13,18 +13,32 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains information about a session.
+    /// </summary>
     public readonly struct SessionInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SessionInfo" /> structure.
+        /// </summary>
+        /// <param name="connections">A collection of connections.</param>
         public SessionInfo(IEnumerable<ConnectionInfo> connections)
             : this(connections.ToList().AsReadOnly())
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SessionInfo" /> structure.
+        /// </summary>
+        /// <param name="connections">A collection of connections.</param>
         [JsonConstructor]
         public SessionInfo(IReadOnlyCollection<ConnectionInfo> connections)
             : this() =>
             Connections = connections;
 
+        /// <summary>
+        /// Gets a collection of connections for this session.
+        /// </summary>
         [JsonProperty("connections")]
         public IReadOnlyCollection<ConnectionInfo> Connections { get; }
     }

@@ -16,8 +16,15 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains messages to send to specified client devices.
+    /// </summary>
     public readonly struct SendToDeviceMessages
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendToDeviceMessages" /> structure.
+        /// </summary>
+        /// <param name="messages">Dictionary of users to a dictionary of device ID to message.</param>
         public SendToDeviceMessages(IDictionary<UserId, IDictionary<string, EventContent>> messages)
             : this(
                 new ReadOnlyDictionary<UserId, IReadOnlyDictionary<string, EventContent>>(
@@ -28,11 +35,18 @@ namespace Cshrix.Data
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendToDeviceMessages" /> structure.
+        /// </summary>
+        /// <param name="messages">Dictionary of users to a dictionary of device ID to message.</param>
         [JsonConstructor]
         public SendToDeviceMessages(IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, EventContent>> messages)
             : this() =>
             Messages = messages;
 
+        /// <summary>
+        /// Gets a dictionary mapping users to a dictionary that maps device IDs to a message to send.
+        /// </summary>
         [JsonProperty("messages")]
         public IReadOnlyDictionary<UserId, IReadOnlyDictionary<string, EventContent>> Messages { get; }
     }

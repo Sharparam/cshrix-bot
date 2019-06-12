@@ -13,12 +13,21 @@ namespace Cshrix.Data.Events.Content
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Available feedback types for an event.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum FeedbackType
     {
+        /// <summary>
+        /// The event has been delivered.
+        /// </summary>
         [EnumMember(Value = "delivered")]
         Delivered,
 
+        /// <summary>
+        /// The event has been read/observed.
+        /// </summary>
         [EnumMember(Value = "read")]
         Read
     }

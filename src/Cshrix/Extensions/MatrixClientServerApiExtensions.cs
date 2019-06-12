@@ -10,12 +10,10 @@ namespace Cshrix.Extensions
 {
     using System;
     using System.Net.Http;
-    using System.Net.Http.Headers;
     using System.Net.Mime;
     using System.Threading.Tasks;
 
     using Data;
-    using Data.Events;
 
     using JetBrains.Annotations;
 
@@ -31,22 +29,58 @@ namespace Cshrix.Extensions
         private const string DefaultContentType = "application/octet-stream";
 
         /// <summary>
-        /// Sets a bearer token to use for authenticating with the API.
+        /// Get an OpenID token object to verify the requester's identity.
+        /// </summary>
+        /// <param name="api">An instance of <see cref="IMatrixClientServerApi" /></param>
+        /// <param name="userId">
+        /// The ID of the user to request an OpenID token for. Should be the user who is authenticated for the request.
+        /// </param>
+        /// <returns>The OpenID token for the user.</returns>
+        /// <remarks>
+        /// <para>
+        /// Gets an OpenID token object that the requester may supply to another service to verify their identity in
+        /// Matrix. The generated token is only valid for exchanging for user information from the federation API
+        /// for OpenID.
+        /// </para>
+        /// <para>
+        /// The access token generated is only valid for the OpenID API. It cannot be used to request another OpenID
+        /// access token or call <c>/sync</c>, for example.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="api" /> is <c>null</c>.</exception>
+        public static Task<OpenIdToken> RequestOpenIdTokenAsync([NotNull] this IMatrixClientServerApi api, UserId userId)
+        {
+            if (api == null)
+            {
+                throw new ArgumentNullException(nameof(api));
+            }
+
+            return api.RequestOpenIdTokenAsync(userId, new object());
+        }
+
+        /// <summary>
+        /// Download content from the content repository.
         /// </summary>
         /// <param name="api">An instance of <see cref="IMatrixClientServerApi" />.</param>
-        /// <param name="accessToken">The access token to set.</param>
-        public static void SetBearerToken(this IMatrixClientServerApi api, string accessToken) =>
-            api.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
-        public static Task<OpenIdToken> RequestOpenIdTokenAsync(this IMatrixClientServerApi api, UserId userId) =>
-            api.RequestOpenIdTokenAsync(userId, new object());
-
+        /// <param name="mediaUri">The MXC URI to download.</param>
+        /// <param name="filename">The filename to give in the <c>Content-Disposition</c> header.</param>
+        /// <param name="allowRemote">
+        /// A value indicating whether the server should attempt to fetch the media if it is deemed remote.
+        /// This is to prevent routing loops where the server contacts itself. Defaults to <c>true</c> if not provided.
+        /// </param>
+        /// <returns>The downloaded content.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="api" /> is <c>null</c>.</exception>
         public static Task<Content> DownloadContentAsync(
-            this IMatrixClientServerApi api,
+            [NotNull] this IMatrixClientServerApi api,
             Uri mediaUri,
             [CanBeNull] string filename = null,
             bool? allowRemote = null)
         {
+            if (api == null)
+            {
+                throw new ArgumentNullException(nameof(api));
+            }
+
             var serverName = mediaUri.Authority;
 
             // Strip the leading slash (/)
@@ -55,27 +89,68 @@ namespace Cshrix.Extensions
             return api.DownloadContentAsync(serverName, mediaId, filename, allowRemote);
         }
 
+        /// <summary>
+        /// Download content from the content repository.
+        /// </summary>
+        /// <param name="api">An instance of <see cref="IMatrixClientServerApi" />.</param>
+        /// <param name="serverName">The server name from the <c>mxc://</c> URI (the authority component).</param>
+        /// <param name="mediaId">The media ID from the <c>mxc://</c> URI (the path component).</param>
+        /// <param name="filename">The filename to give in the <c>Content-Disposition</c> header.</param>
+        /// <param name="allowRemote">
+        /// A value indicating whether the server should attempt to fetch the media if it is deemed remote.
+        /// This is to prevent routing loops where the server contacts itself. Defaults to <c>true</c> if not provided.
+        /// </param>
+        /// <returns>The downloaded content.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="api" /> is <c>null</c>.</exception>
         public static async Task<Content> DownloadContentAsync(
-            this IMatrixClientServerApi api,
+            [NotNull] this IMatrixClientServerApi api,
             string serverName,
             string mediaId,
             [CanBeNull] string filename = null,
             bool? allowRemote = null)
         {
+            if (api == null)
+            {
+                throw new ArgumentNullException(nameof(api));
+            }
+
             using (var response = await DownloadAsync(api, serverName, mediaId, filename, allowRemote))
             {
-                return await CreateContentFromResponse(response);
+                return await CreateContentFromResponse(response).ConfigureAwait(false);
             }
         }
 
+        /// <summary>
+        /// Download a thumbnail of the content from the content repository.
+        /// </summary>
+        /// <param name="api">An instance of <see cref="IMatrixClientServerApi" />.</param>
+        /// <param name="mediaUri">The MXC URI to download a thumbnail for.</param>
+        /// <param name="width">
+        /// The desired width of the thumbnail, in pixels. The actual thumbnail may not match the size specified.
+        /// </param>
+        /// <param name="height">
+        /// The desired height of the thumbnail, in pixels. The actual thumbnail may not match the size specified.
+        /// </param>
+        /// <param name="resizeMethod">The desired resizing method.</param>
+        /// <param name="allowRemote">
+        /// A value indicating whether the server should attempt to fetch the media if it is deemed remote.
+        /// This is to prevent routing loops where the server contacts itself. Defaults to <c>true</c> if not provided.
+        /// </param>
+        /// <returns>The downloaded thumbnail.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="api" /> is <c>null</c>.</exception>
         public static Task<Content> DownloadThumbnailContentAsync(
-            this IMatrixClientServerApi api,
+            [NotNull] this IMatrixClientServerApi api,
             Uri mediaUri,
             int width,
             int height,
             ResizeMethod resizeMethod = ResizeMethod.Scale,
             bool? allowRemote = null)
         {
+            if (api == null)
+            {
+                throw new ArgumentNullException(nameof(api));
+            }
+
             var serverName = mediaUri.Authority;
 
             // Strip the leading slash (/)
@@ -84,8 +159,27 @@ namespace Cshrix.Extensions
             return api.DownloadThumbnailContentAsync(serverName, mediaId, width, height, resizeMethod, allowRemote);
         }
 
+        /// <summary>
+        /// Download a thumbnail of the content from the content repository.
+        /// </summary>
+        /// <param name="api">An instance of <see cref="IMatrixClientServerApi" />.</param>
+        /// <param name="serverName">The server name from the <c>mxc://</c> URI (the authority component).</param>
+        /// <param name="mediaId">The media ID from the <c>mxc://</c> URI (the path component).</param>
+        /// <param name="width">
+        /// The desired width of the thumbnail, in pixels. The actual thumbnail may not match the size specified.
+        /// </param>
+        /// <param name="height">
+        /// The desired height of the thumbnail, in pixels. The actual thumbnail may not match the size specified.
+        /// </param>
+        /// <param name="resizeMethod">The desired resizing method.</param>
+        /// <param name="allowRemote">
+        /// A value indicating whether the server should attempt to fetch the media if it is deemed remote.
+        /// This is to prevent routing loops where the server contacts itself. Defaults to <c>true</c> if not provided.
+        /// </param>
+        /// <returns>The downloaded thumbnail.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="api" /> is <c>null</c>.</exception>
         public static async Task<Content> DownloadThumbnailContentAsync(
-            this IMatrixClientServerApi api,
+            [NotNull] this IMatrixClientServerApi api,
             string serverName,
             string mediaId,
             int width,
@@ -93,6 +187,11 @@ namespace Cshrix.Extensions
             ResizeMethod resizeMethod = ResizeMethod.Scale,
             bool? allowRemote = null)
         {
+            if (api == null)
+            {
+                throw new ArgumentNullException(nameof(api));
+            }
+
             using (var response = await api.DownloadThumbnailAsync(
                 serverName,
                 mediaId,
@@ -101,7 +200,7 @@ namespace Cshrix.Extensions
                 resizeMethod,
                 allowRemote))
             {
-                return await CreateContentFromResponse(response);
+                return await CreateContentFromResponse(response).ConfigureAwait(false);
             }
         }
 
@@ -149,7 +248,7 @@ namespace Cshrix.Extensions
 
             var filename = hasContentDisposition ? ParseFilename(contentDispositionString) : null;
             var contentType = ParseContentType(hasContentType ? contentTypeString : DefaultContentType);
-            var bytes = await response.Content.ReadAsByteArrayAsync();
+            var bytes = await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
             return new Content(filename, contentType, bytes);
         }
 

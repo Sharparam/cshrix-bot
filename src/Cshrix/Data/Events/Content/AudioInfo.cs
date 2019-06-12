@@ -14,8 +14,17 @@ namespace Cshrix.Data.Events.Content
 
     using Serialization;
 
+    /// <summary>
+    /// Describes an audio message.
+    /// </summary>
     public readonly struct AudioInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AudioInfo" /> structure.
+        /// </summary>
+        /// <param name="mimeType">The mimetype of the audio.</param>
+        /// <param name="size">The size of the audio clip, in bytes.</param>
+        /// <param name="duration">The duration of the audio.</param>
         [JsonConstructor]
         public AudioInfo(
             string mimeType,
@@ -28,12 +37,21 @@ namespace Cshrix.Data.Events.Content
             Duration = duration;
         }
 
+        /// <summary>
+        /// Gets the mimetype of the audio, e.g. <c>audio/aac</c>.
+        /// </summary>
         [JsonProperty("mimetype")]
         public string MimeType { get; }
 
+        /// <summary>
+        /// Gets the size of the audio clip, in bytes.
+        /// </summary>
         [JsonProperty("size")]
         public int Size { get; }
 
+        /// <summary>
+        /// Gets the duration of the audio.
+        /// </summary>
         [JsonProperty("duration")]
         [JsonConverter(typeof(MillisecondTimeSpanConverter))]
         public TimeSpan? Duration { get; }

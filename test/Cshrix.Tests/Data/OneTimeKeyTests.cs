@@ -6,28 +6,20 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using NUnit.Framework;
-
 namespace Cshrix.Tests.Data
 {
     using System.Collections.Generic;
 
+    using Cshrix.Cryptography.Data;
     using Cshrix.Data;
 
     using Newtonsoft.Json;
 
+    using NUnit.Framework;
+
     [TestFixture]
     public class OneTimeKeyTests
     {
-        [Test]
-        public void ShouldSerializeToStringIfUnsigned()
-        {
-            var otk = new OneTimeKey("foobar");
-            var json = JsonConvert.SerializeObject(otk);
-
-            Assert.AreEqual("\"foobar\"", json);
-        }
-
         [Test]
         public void ShouldSerializeToObjectIfSigned()
         {
@@ -43,9 +35,19 @@ namespace Cshrix.Tests.Data
 
             var json = JsonConvert.SerializeObject(otk);
 
-            const string ExpectedJson = "{\"key\":\"foobar\",\"signatures\":{\"@sharparam:matrix.sharparam.com\":{\"fizz\":\"buzz\"}}}";
+            const string ExpectedJson =
+                "{\"key\":\"foobar\",\"signatures\":{\"@sharparam:matrix.sharparam.com\":{\"fizz\":\"buzz\"}}}";
 
             Assert.AreEqual(ExpectedJson, json);
+        }
+
+        [Test]
+        public void ShouldSerializeToStringIfUnsigned()
+        {
+            var otk = new OneTimeKey("foobar");
+            var json = JsonConvert.SerializeObject(otk);
+
+            Assert.AreEqual("\"foobar\"", json);
         }
     }
 }

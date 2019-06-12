@@ -12,11 +12,22 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// A chunk of data.
+    /// </summary>
+    /// <typeparam name="T">The type of the data.</typeparam>
     public class Chunk<T>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Chunk{T}" /> class.
+        /// </summary>
+        /// <param name="data">The data to put in the chunk.</param>
         [JsonConstructor]
         public Chunk(IReadOnlyCollection<T> data) => Data = data;
 
+        /// <summary>
+        /// Gets the collection of data in this chunk.
+        /// </summary>
         [JsonProperty("chunk")]
         public IReadOnlyCollection<T> Data { get; }
     }

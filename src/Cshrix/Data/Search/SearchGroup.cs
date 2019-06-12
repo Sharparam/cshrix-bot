@@ -10,13 +10,23 @@ namespace Cshrix.Data.Search
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Configuration for a search grouping.
+    /// </summary>
     public readonly struct SearchGroup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchGroup" /> structure.
+        /// </summary>
+        /// <param name="key">The key to group by.</param>
         [JsonConstructor]
         public SearchGroup(SearchGroupKey key)
             : this() =>
             Key = key;
 
+        /// <summary>
+        /// Gets the key to group by.
+        /// </summary>
         [JsonProperty("key")]
         public SearchGroupKey Key { get; }
     }

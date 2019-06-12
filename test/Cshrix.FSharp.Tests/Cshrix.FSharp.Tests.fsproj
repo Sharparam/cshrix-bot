@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Appveyor.TestLogger" Version="2.0.0" />
+        <PackageReference Include="FsCheck" Version="2.14.0" />
+        <PackageReference Include="FsCheck.NUnit" Version="2.14.0" />
+        <PackageReference Include="FsUnit" Version="3.4.0" />
+        <PackageReference Include="NUnit" Version="3.11.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="Helpers.fs" />
+      <Compile Include="Data\OneTimeKeyTests.fs" />
+      <Compile Include="Data\TypingStateTests.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Cshrix\Cshrix.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="Utilities\Base64UtilsTests.fs" />
+    </ItemGroup>
+
+</Project>

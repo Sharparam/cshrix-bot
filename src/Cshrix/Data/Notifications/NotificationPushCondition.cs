@@ -14,11 +14,21 @@ namespace Cshrix.Data.Notifications
 
     using Serialization;
 
+    /// <summary>
+    /// A condition for a push notification rule.
+    /// </summary>
     public readonly struct NotificationPushCondition
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotificationPushCondition" /> structure.
+        /// </summary>
+        /// <param name="kind"></param>
+        /// <param name="key"></param>
+        /// <param name="pattern"></param>
+        /// <param name="condition"></param>
         [JsonConstructor]
         public NotificationPushCondition(
-            string kind,
+            NotificationPushConditionKind kind,
             [CanBeNull] string key,
             [CanBeNull] string pattern,
             ComparisonCondition<int>? condition)
@@ -30,17 +40,41 @@ namespace Cshrix.Data.Notifications
             Condition = condition;
         }
 
+        /// <summary>
+        /// Gets the kind of this condition.
+        /// </summary>
         [JsonProperty("kind")]
-        public string Kind { get; }
+        public NotificationPushConditionKind Kind { get; }
 
+        /// <summary>
+        /// Gets the dot-separated field of the event to match.
+        /// </summary>
+        /// <remarks>
+        /// Required if <see cref="Kind" /> is <see cref="NotificationPushConditionKind.EventMatch" />.
+        /// </remarks>
         [JsonProperty("key")]
         [CanBeNull]
         public string Key { get; }
 
+        /// <summary>
+        /// Gets the glob-style pattern to match against.
+        /// </summary>
+        /// <remarks>
+        /// Required if <see cref="Kind" /> is <see cref="NotificationPushConditionKind.EventMatch" />.
+        /// Patterns with no special glob characters should be treated as having asterisks prepended and appended
+        /// when testing the condition.
+        /// </remarks>
         [JsonProperty("pattern")]
         [CanBeNull]
         public string Pattern { get; }
 
+        /// <summary>
+        /// Gets a comparison condition to apply.
+        /// </summary>
+        /// <remarks>
+        /// Required if <see cref="Kind" /> is <see cref="NotificationPushConditionKind.RoomMemberCount" />.
+        /// The comparer specifies under what conditions the push condition will trigger.
+        /// </remarks>
         [JsonConverter(typeof(ComparisonConditionConverter<int>))]
         [JsonProperty("is")]
         public ComparisonCondition<int>? Condition { get; }

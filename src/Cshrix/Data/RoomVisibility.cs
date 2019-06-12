@@ -10,15 +10,27 @@ namespace Cshrix.Data
 {
     using System.Runtime.Serialization;
 
+    using JetBrains.Annotations;
+
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// The visibility of a room in the <c>/publicRooms</c> API.
+    /// </summary>
+    [PublicAPI]
     [JsonConverter(typeof(StringEnumConverter))]
     public enum RoomVisibility
     {
+        /// <summary>
+        /// The room is visible in the API.
+        /// </summary>
         [EnumMember(Value = "public")]
         Public,
 
+        /// <summary>
+        /// The room is not visible in the API.
+        /// </summary>
         [EnumMember(Value = "private")]
         Private
     }

@@ -12,10 +12,20 @@ namespace Cshrix.Data.Events.Content
 
     using Newtonsoft.Json;
 
-    public class GroupsContent : EventContent
+    /// <summary>
+    /// Content for the <c>m.room.related_groups</c> event.
+    /// </summary>
+    public sealed class GroupsContent : EventContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GroupsContent" /> class.
+        /// </summary>
+        /// <param name="groups">A collection of related group IDs.</param>
         public GroupsContent(IReadOnlyCollection<GroupId> groups) => Groups = groups;
 
+        /// <summary>
+        /// Gets a collection of group IDs that are related to the room.
+        /// </summary>
         [JsonProperty("groups")]
         public IReadOnlyCollection<GroupId> Groups { get; }
     }

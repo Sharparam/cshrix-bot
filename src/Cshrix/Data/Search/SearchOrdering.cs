@@ -13,12 +13,21 @@ namespace Cshrix.Data.Search
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Specifies a sort order.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum SearchOrdering
     {
+        /// <summary>
+        /// Sort results by relevancy.
+        /// </summary>
         [EnumMember(Value = "rank")]
         Rank,
 
+        /// <summary>
+        /// Sort results with most recent first.
+        /// </summary>
         [EnumMember(Value = "recent")]
         Recent
     }

@@ -13,14 +13,30 @@ namespace Cshrix.Data.Events
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Describes the timeline of a room.
+    /// </summary>
     public readonly struct Timeline
     {
-        public Timeline(IEnumerable<RoomEvent> events, bool limited, string previousBatchToken)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Timeline" /> structure.
+        /// </summary>
+        /// <param name="events">Timeline events.</param>
+        /// <param name="limited">Whether the number of events was limited by a filter.</param>
+        /// <param name="previousBatchToken">A token to request previous events from the API.</param>
+        public Timeline(IEnumerable<Event> events, bool limited, string previousBatchToken)
             : this(events.ToList().AsReadOnly(), limited, previousBatchToken)
         {
         }
 
-        public Timeline(IReadOnlyCollection<RoomEvent> events, bool limited, string previousBatchToken)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Timeline" /> structure.
+        /// </summary>
+        /// <param name="events">Timeline events.</param>
+        /// <param name="limited">Whether the number of events was limited by a filter.</param>
+        /// <param name="previousBatchToken">A token to request previous events from the API.</param>
+        [JsonConstructor]
+        public Timeline(IReadOnlyCollection<Event> events, bool limited, string previousBatchToken)
             : this()
         {
             Events = events;
@@ -28,12 +44,22 @@ namespace Cshrix.Data.Events
             PreviousBatchToken = previousBatchToken;
         }
 
+        /// <summary>
+        /// Gets the events that are part of the timeline.
+        /// </summary>
         [JsonProperty("events")]
-        public IReadOnlyCollection<RoomEvent> Events { get; }
+        public IReadOnlyCollection<Event> Events { get; }
 
+        /// <summary>
+        /// Gets a value indicating whether the number of events was limited by a filter.
+        /// </summary>
         [JsonProperty("limited")]
         public bool Limited { get; }
 
+        /// <summary>
+        /// Gets a token that can be supplied to the <c>from</c> parameter on the <c>rooms/{roomId}/messages</c>
+        /// endpoint.
+        /// </summary>
         [JsonProperty("prev_batch")]
         public string PreviousBatchToken { get; }
     }

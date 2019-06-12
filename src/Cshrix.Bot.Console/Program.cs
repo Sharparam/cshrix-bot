@@ -11,13 +11,15 @@ namespace Cshrix.Bot.Console
     using System;
     using System.Threading.Tasks;
 
-    using Configuration;
-
     using DependencyInjection;
 
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
+
+    using Serilog;
+
+    using ILogger = Microsoft.Extensions.Logging.ILogger;
 
     /// <summary>
     /// Main program class containing the entry point.
@@ -34,30 +36,21 @@ namespace Cshrix.Bot.Console
             ServiceProvider provider = null;
             ILogger log = null;
 
-            var basePath = AppContext.BaseDirectory;
-
             try
             {
-                var configBuilder = new ConfigurationBuilder().SetBasePath(basePath)
-                    .AddJsonFile("appsettings.json", false, true)
-                    .AddJsonFile("appsettings.local.json", true, true)
-                    .AddEnvironmentVariables("CSHRIXBOT_")
-                    .AddCommandLine(args);
-
-                var configuration = configBuilder.Build();
+                var configuration = BuildConfiguration(args);
 
                 var services = new ServiceCollection();
 
-                services.Configure<MatrixClientConfiguration>(configuration.GetSection("ClientConfiguration"));
-
                 services.AddLogging(
-                    b => b.AddConfiguration(configuration.GetSection("Logging"))
-                        .AddDebug()
-                        .AddConsole()
-                        .AddEventSourceLogger()
-                        .AddTraceSource("cshrix-bot"));
+                    builder =>
+                    {
+                        var logger = new LoggerConfiguration().ReadFrom.Configuration(configuration).CreateLogger();
+                        Log.Logger = logger;
+                        builder.AddSerilog(logger, true);
+                    });
 
-                services.AddCshrixServices();
+                services.AddCshrixServices(configuration, "ClientConfiguration");
 
                 services.AddTransient<Bot>();
 
@@ -68,6 +61,12 @@ namespace Cshrix.Bot.Console
                 var bot = provider.GetRequiredService<Bot>();
 
                 await bot.TestAsync();
+
+                Console.WriteLine("Press <ENTER> to exit");
+                Console.ReadLine();
+
+                log.LogInformation("<ENTER> pressed, disposing service provider and exiting");
+                provider.Dispose();
             }
             catch (Exception ex)
             {
@@ -88,5 +87,13 @@ namespace Cshrix.Bot.Console
                 provider?.Dispose();
             }
         }
+
+        private static IConfigurationRoot BuildConfiguration(string[] args) =>
+            new ConfigurationBuilder().SetBasePath(AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json", false, true)
+                .AddJsonFile("appsettings.local.json", true, true)
+                .AddEnvironmentVariables("CSHRIXBOT_")
+                .AddCommandLine(args)
+                .Build();
     }
 }

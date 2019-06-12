@@ -10,23 +10,37 @@ namespace Cshrix.Data
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Describes a password change request.
+    /// </summary>
     public readonly struct ChangePasswordRequest
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChangePasswordRequest" /> structure.
+        /// </summary>
+        /// <param name="newPassword">The new password to set.</param>
+        /// <param name="authenticationData">Data authenticating the user.</param>
         [JsonConstructor]
         public ChangePasswordRequest(string newPassword, SessionContainer authenticationData = null)
             : this()
         {
-            AuthenticationData = authenticationData;
             NewPassword = newPassword;
+            AuthenticationData = authenticationData;
         }
 
+        /// <summary>
+        /// Gets the new password to set.
+        /// </summary>
+        [JsonProperty("new_password")]
+        public string NewPassword { get; }
+
+        /// <summary>
+        /// Gets an object containing data authenticating the user making the request.
+        /// </summary>
         [JsonProperty(
             "auth",
             NullValueHandling = NullValueHandling.Ignore,
             DefaultValueHandling = DefaultValueHandling.Ignore)]
         public SessionContainer AuthenticationData { get; }
-
-        [JsonProperty("new_password")]
-        public string NewPassword { get; }
     }
 }

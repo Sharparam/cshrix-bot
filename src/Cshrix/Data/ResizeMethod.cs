@@ -13,12 +13,21 @@ namespace Cshrix.Data
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Available resize methods for images.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ResizeMethod
     {
+        /// <summary>
+        /// Scale the image up or down to meet the resolution target.
+        /// </summary>
         [EnumMember(Value = "scale")]
         Scale,
 
+        /// <summary>
+        /// Crop the image to meet the resolution target.
+        /// </summary>
         [EnumMember(Value = "crop")]
         Crop
     }

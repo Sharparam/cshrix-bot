@@ -10,12 +10,24 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class CallAnswerContent : CallContent
+    /// <summary>
+    /// Contains data for the <c>m.call.answer</c> event.
+    /// </summary>
+    public sealed class CallAnswerContent : CallContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CallAnswerContent" /> class.
+        /// </summary>
+        /// <param name="callId">The ID of the call.</param>
+        /// <param name="version">Call software version.</param>
+        /// <param name="answer">The session description object.</param>
         public CallAnswerContent(string callId, int version, Answer answer)
             : base(callId, version) =>
             Answer = answer;
 
+        /// <summary>
+        /// Gets an object describing the call session.
+        /// </summary>
         [JsonProperty("answer")]
         public Answer Answer { get; }
     }

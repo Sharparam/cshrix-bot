@@ -10,10 +10,20 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class GuestAccessContent : EventContent
+    /// <summary>
+    /// Contains data for the <c>m.room.guest_access</c> event.
+    /// </summary>
+    public sealed class GuestAccessContent : EventContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GuestAccessContent" /> class.
+        /// </summary>
+        /// <param name="access">Guest access level.</param>
         public GuestAccessContent(GuestAccess access) => Access = access;
 
+        /// <summary>
+        /// Gets an enum value specifying how guests can interact with the room.
+        /// </summary>
         [JsonProperty("guest_access")]
         public GuestAccess Access { get; }
     }

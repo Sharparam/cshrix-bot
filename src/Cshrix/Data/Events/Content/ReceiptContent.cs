@@ -11,10 +11,20 @@ namespace Cshrix.Data.Events.Content
     using System.Collections.Generic;
     using System.Linq;
 
+    using JetBrains.Annotations;
+
     using Newtonsoft.Json;
 
-    public class ReceiptContent : EventContent
+    /// <summary>
+    /// Describes the contents of a receipt event.
+    /// </summary>
+    [PublicAPI]
+    public sealed class ReceiptContent : EventContent
     {
+        /// <summary>
+        /// Gets receipt data for the specified key.
+        /// </summary>
+        /// <param name="key">The key to get receipt data for.</param>
         public ReceiptData this[string key]
         {
             get
@@ -24,12 +34,32 @@ namespace Cshrix.Data.Events.Content
             }
         }
 
+        /// <summary>
+        /// Gets the number of event entries.
+        /// </summary>
         public int Count => Keys.Count();
 
+        /// <summary>
+        /// Gets all valid receipt keys.
+        /// </summary>
         public IEnumerable<string> Keys => GetValidKeys();
 
+        /// <summary>
+        /// Returns a boolean value indicating whether the specified key (event ID) is present.
+        /// </summary>
+        /// <param name="key">The key (event ID) to check.</param>
+        /// <returns><c>true</c> if the specified key exists; otherwise, <c>false</c>.</returns>
         public bool ContainsEvent(string key) => AdditionalData.ContainsKey(key);
 
+        /// <summary>
+        /// Attempts to get <see cref="ReceiptData" /> for the specified key.
+        /// </summary>
+        /// <param name="key">The key to retrieve.</param>
+        /// <param name="value">
+        /// When this function returns, will contain the <see cref="ReceiptData" /> at the requested key;
+        /// or the default value for <see cref="ReceiptData" /> if the key was not found.
+        /// </param>
+        /// <returns><c>true</c> if the key was found; otherwise, <c>false</c>.</returns>
         public bool TryGetData(string key, out ReceiptData value)
         {
             if (!AdditionalData.TryGetValue(key, out var jToken))
@@ -50,6 +80,10 @@ namespace Cshrix.Data.Events.Content
             }
         }
 
+        /// <summary>
+        /// Gets valid keys.
+        /// </summary>
+        /// <returns>An enumerable containing all valid keys.</returns>
         private IEnumerable<string> GetValidKeys()
         {
             var validKeys = new List<string>();

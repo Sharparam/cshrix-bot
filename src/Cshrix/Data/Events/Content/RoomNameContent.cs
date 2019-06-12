@@ -10,10 +10,20 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class RoomNameContent : EventContent
+    /// <summary>
+    /// Contains the name of a room (from the <c>m.room.name</c> event).
+    /// </summary>
+    public sealed class RoomNameContent : EventContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomNameContent" /> class.
+        /// </summary>
+        /// <param name="name">The name of the room.</param>
         public RoomNameContent(string name) => Name = name;
 
+        /// <summary>
+        /// Gets the name of the room.
+        /// </summary>
         [JsonProperty("name")]
         public string Name { get; }
     }

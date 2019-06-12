@@ -10,10 +10,20 @@ namespace Cshrix.Data.Events.Content
 {
     using Newtonsoft.Json;
 
-    public class FullyReadContent : EventContent
+    /// <summary>
+    /// Contains data for <c>m.fully_read</c> events.
+    /// </summary>
+    public sealed class FullyReadContent : EventContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FullyReadContent" /> class.
+        /// </summary>
+        /// <param name="eventId">The ID of the event up to which the user is fully read.</param>
         public FullyReadContent(string eventId) => EventId = eventId;
 
+        /// <summary>
+        /// Gets the ID of the event which the user has fully read up to.
+        /// </summary>
         [JsonProperty("event_id")]
         public string EventId { get; }
     }

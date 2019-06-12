@@ -12,19 +12,35 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
-    public class PaginatedChunk<T> : Chunk<T>
+    /// <summary>
+    /// A paginated chunk of data.
+    /// </summary>
+    /// <typeparam name="T">The type of data in the chunk.</typeparam>
+    public sealed class PaginatedChunk<T> : Chunk<T>
     {
-        public PaginatedChunk(IReadOnlyCollection<T> data, string end, string start)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaginatedChunk{T}" /> class.
+        /// </summary>
+        /// <param name="data">The data contained in the chunk page.</param>
+        /// <param name="start">A token for the start of the pagination.</param>
+        /// <param name="end">A token for the end of the pagination.</param>
+        public PaginatedChunk(IReadOnlyCollection<T> data, string start, string end)
             : base(data)
         {
-            End = end;
             Start = start;
+            End = end;
         }
 
-        [JsonProperty("end")]
-        public string End { get; }
-
+        /// <summary>
+        /// Gets a token indicating the start of the pagination.
+        /// </summary>
         [JsonProperty("start")]
         public string Start { get; }
+
+        /// <summary>
+        /// Gets a token indicating the end of the pagination.
+        /// </summary>
+        [JsonProperty("end")]
+        public string End { get; }
     }
 }

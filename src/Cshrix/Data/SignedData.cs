@@ -12,8 +12,20 @@ namespace Cshrix.Data
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains content that has been signed, which can be used to verify an event.
+    /// </summary>
+    /// <remarks>
+    /// Clients do not usually have a need for this data.
+    /// </remarks>
     public class SignedData
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignedData" /> structure.
+        /// </summary>
+        /// <param name="userId">The ID of the user this data relates to.</param>
+        /// <param name="signatures">Signatures verifying the data.</param>
+        /// <param name="token">A token from a containing object.</param>
         public SignedData(
             UserId userId,
             IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> signatures,
@@ -24,12 +36,21 @@ namespace Cshrix.Data
             Token = token;
         }
 
+        /// <summary>
+        /// Gets the user ID this data relates to.
+        /// </summary>
         [JsonProperty("mxid")]
         public UserId UserId { get; }
 
+        /// <summary>
+        /// Gets a dictionary of signatures verifying this data.
+        /// </summary>
         [JsonProperty("signatures")]
         public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Signatures { get; }
 
+        /// <summary>
+        /// Gets a token from the containing object.
+        /// </summary>
         [JsonProperty("token")]
         public string Token { get; }
     }

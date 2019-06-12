@@ -13,12 +13,21 @@ namespace Cshrix.Data
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Specifies in what direction to return events.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum Direction
     {
+        /// <summary>
+        /// Return events in backwards order.
+        /// </summary>
         [EnumMember(Value = "b")]
         Backwards,
 
+        /// <summary>
+        /// Return events in forwards order.
+        /// </summary>
         [EnumMember(Value = "f")]
         Forwards
     }

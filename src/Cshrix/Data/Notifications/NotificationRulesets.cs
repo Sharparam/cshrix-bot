@@ -15,13 +15,24 @@ namespace Cshrix.Data.Notifications
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Contains push notification rulesets.
+    /// </summary>
+    [UsedImplicitly]
     public class NotificationRulesets : ReadOnlyDictionary<string, NotificationRuleset>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotificationRulesets" /> class.
+        /// </summary>
+        /// <param name="dictionary">Backing dictionary to use, containing all rulesets.</param>
         public NotificationRulesets([NotNull] IDictionary<string, NotificationRuleset> dictionary)
             : base(dictionary)
         {
         }
 
+        /// <summary>
+        /// Gets the <c>global</c> ruleset.
+        /// </summary>
         [JsonIgnore]
         public NotificationRuleset Global => this["global"];
     }

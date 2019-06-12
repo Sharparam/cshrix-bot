@@ -13,18 +13,33 @@ namespace Cshrix.Data
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Join rule for a room.
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum JoinRule
     {
+        /// <summary>
+        /// Room can be joined by anyone.
+        /// </summary>
         [EnumMember(Value = "public")]
         Public,
 
+        /// <summary>
+        /// Reserved for future use.
+        /// </summary>
         [EnumMember(Value = "knock")]
         Knock,
 
+        /// <summary>
+        /// Users must be invited to the room.
+        /// </summary>
         [EnumMember(Value = "invite")]
         Invite,
 
+        /// <summary>
+        /// Reserved for future use.
+        /// </summary>
         [EnumMember(Value = "private")]
         Private
     }
