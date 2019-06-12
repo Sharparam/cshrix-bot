@@ -18,12 +18,12 @@ namespace Cshrix.Cryptography.Olm
         /// </summary>
         /// <param name="session">A pointer to the session.</param>
         /// <returns>
-        /// <see cref="MessageTypePreKey" /> if the message will be a <c>PRE_KEY</c> message.
-        /// <see cref="MessageTypeMessage" /> if the message will be a normal message.
+        /// <see cref="MessageType.PreKey" /> if the message will be a <c>PRE_KEY</c> message.
+        /// <see cref="MessageType.Message" /> if the message will be a normal message.
         /// The value of <see cref="GetErrorCode" /> on failure.
         /// </returns>
         [DllImport(Name, EntryPoint = "olm_encrypt_message_type", ExactSpelling = true)]
-        internal static extern uint GetNextEncryptMessageType(IntPtr session);
+        internal static extern MessageType GetNextEncryptMessageType(IntPtr session);
 
         /// <summary>
         /// Gets the number of random bytes needed to encrypt the next message.
@@ -93,7 +93,7 @@ namespace Cshrix.Cryptography.Olm
         [DllImport(Name, EntryPoint = "olm_decrypt_max_plaintext_length", ExactSpelling = true)]
         internal static extern uint GetDecryptMaxPlaintextLength(
             IntPtr session,
-            uint messageType,
+            MessageType messageType,
             byte[] message,
             uint messageLength);
 
@@ -126,7 +126,7 @@ namespace Cshrix.Cryptography.Olm
         [DllImport(Name, EntryPoint = "olm_decrypt", ExactSpelling = true)]
         internal static extern uint Decrypt(
             IntPtr session,
-            uint messageType,
+            MessageType messageType,
             byte[] message,
             uint messageLength,
             byte[] plaintext,

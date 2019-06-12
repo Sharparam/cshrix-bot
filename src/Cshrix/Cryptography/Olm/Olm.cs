@@ -44,14 +44,20 @@ namespace Cshrix.Cryptography.Olm
         private const string Name = nameof(Olm);
 
         /// <summary>
-        /// The type identifier for a pre-key message.
+        /// Available message types.
         /// </summary>
-        internal const uint MessageTypePreKey = 0;
+        internal enum MessageType : uint
+        {
+            /// <summary>
+            /// A pre-key message.
+            /// </summary>
+            PreKey = 0,
 
-        /// <summary>
-        /// The type identifier for a normal message.
-        /// </summary>
-        internal const uint MessageTypeMessage = 1;
+            /// <summary>
+            /// A normal message.
+            /// </summary>
+            Message = 1
+        }
 
         /// <summary>
         /// Gets the version number of the library.
