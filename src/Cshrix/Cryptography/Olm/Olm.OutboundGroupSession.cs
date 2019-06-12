@@ -20,6 +20,14 @@ namespace Cshrix.Cryptography.Olm
         internal static extern uint olm_outbound_group_session_size();
 
         /// <summary>
+        /// Initialise an outbound group session object using the supplied memory
+        /// The supplied memory should be at least <see cref="olm_outbound_group_session_size" />
+        /// bytes.
+        /// </summary>
+        [DllImport(Name, EntryPoint = "olm_outbound_group_session", ExactSpelling = true)]
+        internal static extern IntPtr olm_outbound_group_session(IntPtr memory);
+
+        /// <summary>
         /// A null terminated string describing the most recent error to happen to a
         /// group session
         /// </summary>
@@ -145,13 +153,5 @@ namespace Cshrix.Cryptography.Olm
         /// </summary>
         [DllImport(Name, EntryPoint = "olm_outbound_group_session_key", ExactSpelling = true)]
         internal static extern uint olm_outbound_group_session_key(IntPtr session, byte[] key, uint key_length);
-
-        /// <summary>
-        /// Initialise an outbound group session object using the supplied memory
-        /// The supplied memory should be at least <see cref="olm_outbound_group_session_size" />
-        /// bytes.
-        /// </summary>
-        [DllImport(Name, EntryPoint = "olm_outbound_group_session", ExactSpelling = true)]
-        internal static extern IntPtr olm_outbound_group_session(IntPtr memory);
     }
 }

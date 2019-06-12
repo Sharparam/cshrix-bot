@@ -20,6 +20,14 @@ namespace Cshrix.Cryptography.Olm
         internal static extern uint olm_inbound_group_session_size();
 
         /// <summary>
+        /// Initialise an inbound group session object using the supplied memory
+        /// The supplied memory should be at least <see cref="olm_inbound_group_session_size" />
+        /// bytes.
+        /// </summary>
+        [DllImport(Name, EntryPoint = "olm_inbound_group_session", ExactSpelling = true)]
+        internal static extern IntPtr olm_inbound_group_session(IntPtr memory);
+
+        /// <summary>
         /// A null terminated string describing the most recent error to happen to a
         /// group session
         /// </summary>
@@ -160,6 +168,15 @@ namespace Cshrix.Cryptography.Olm
         internal static extern int olm_inbound_group_session_first_known_index(IntPtr session);
 
         /// <summary>
+        /// Check if the session has been verified as a valid session.
+        /// (A session is verified either because the original session share was signed,
+        /// or because we have subsequently successfully decrypted a message.)
+        /// This is mainly intended for the unit tests, currently.
+        /// </summary>
+        [DllImport(Name, EntryPoint = "olm_inbound_group_session_is_verified", ExactSpelling = true)]
+        internal static extern bool olm_inbound_group_session_is_verified(IntPtr session);
+
+        /// <summary>
         /// Get the number of bytes returned by <see cref="olm_export_inbound_group_session" />
         /// </summary>
         [DllImport(Name, EntryPoint = "olm_export_inbound_group_session_length", ExactSpelling = true)]
@@ -180,22 +197,5 @@ namespace Cshrix.Cryptography.Olm
             byte[] key,
             uint key_length,
             int message_index);
-
-        /// <summary>
-        /// Initialise an inbound group session object using the supplied memory
-        /// The supplied memory should be at least <see cref="olm_inbound_group_session_size" />
-        /// bytes.
-        /// </summary>
-        [DllImport(Name, EntryPoint = "olm_inbound_group_session", ExactSpelling = true)]
-        internal static extern IntPtr olm_inbound_group_session(IntPtr memory);
-
-        /// <summary>
-        /// Check if the session has been verified as a valid session.
-        /// (A session is verified either because the original session share was signed,
-        /// or because we have subsequently successfully decrypted a message.)
-        /// This is mainly intended for the unit tests, currently.
-        /// </summary>
-        [DllImport(Name, EntryPoint = "olm_inbound_group_session_is_verified", ExactSpelling = true)]
-        internal static extern bool olm_inbound_group_session_is_verified(IntPtr session);
     }
 }
