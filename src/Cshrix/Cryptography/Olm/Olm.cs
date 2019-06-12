@@ -16,12 +16,20 @@ namespace Cshrix.Cryptography.Olm
     /// <remarks>
     /// The following mappings apply:
     ///
-    /// | Olm (C)      | Olm (C#) |
-    /// | ------------ | -------- |
-    /// | `OlmAccount` | `IntPtr` |
-    /// | `OlmSession` | `IntPtr` |
-    /// | `OlmUtility` | `IntPtr` |
-    /// | `size_t`     | `uint`   |
+    /// | Olm (C)                     | Olm (C#) |
+    /// | --------------------------- | -------- |
+    /// | `OlmAccount *`              | `IntPtr` |
+    /// | `OlmSession *`              | `IntPtr` |
+    /// | `OlmUtility *`              | `IntPtr` |
+    /// | `OlmInboundGroupSession *`  | `IntPtr` |
+    /// | `OlmOutboundGroupSession *` | `IntPtr` |
+    /// | `OlmPkEncryption *`         | `IntPtr` |
+    /// | `OlmPkDecryption *`         | `IntPtr` |
+    /// | `OlmSAS *`                  | `IntPtr` |
+    /// | `size_t`                    | `uint`   |
+    /// | `void *`                    | `byte[]` |
+    /// | `char *`                    | `string` |
+    /// | `int` (on boolean funcs)    | `bool`   |
     ///
     /// `size_t` should not be mapped to `uint` if it is inside a `struct`, however.
     /// In that case it should map to something that has the correct amount of bytes.
