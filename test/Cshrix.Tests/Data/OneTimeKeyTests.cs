@@ -10,8 +10,7 @@ namespace Cshrix.Tests.Data
 {
     using System.Collections.Generic;
 
-    using Cryptography.Data;
-
+    using Cshrix.Cryptography.Data;
     using Cshrix.Data;
 
     using Newtonsoft.Json;

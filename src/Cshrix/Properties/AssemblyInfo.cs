@@ -8,4 +8,5 @@
 
 using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Cshrix.Tests")]
 [assembly: InternalsVisibleTo("Cshrix.FSharp.Tests")]
