@@ -88,8 +88,8 @@ a [PR][] and update this section.
 [sharparam]: https://github.com/Sharparam
 [expectocode]: https://github.com/expectocode
 
-[master]: https://github.com/chroma-sdk/Colore/tree/master
-[develop]: https://github.com/chroma-sdk/Colore/tree/develop
+[master]: https://github.com/Sharparam/cshrix-bot/tree/master
+[develop]: https://github.com/Sharparam/cshrix-bot/tree/develop
 [pr]: https://github.com/Sharparam/cshrix-bit/pulls
 
 [libolm]: https://gitlab.matrix.org/matrix-org/olm
