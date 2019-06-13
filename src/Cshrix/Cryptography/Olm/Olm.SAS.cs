@@ -9,69 +9,90 @@
 namespace Cshrix.Cryptography.Olm
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
+    [SuppressMessage("ReSharper", "InconsistentNaming", Justification = "Names match those used in the native library")]
     internal static partial class Olm
     {
         /// <summary>
-        /// A null terminated string describing the most recent error to happen to an
-        /// SAS object.
+        /// Gets a null terminated string describing the most recent error to happen to an SAS object.
         /// </summary>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <returns>The most recent error.</returns>
         [DllImport(Name, EntryPoint = "olm_sas_last_error", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         internal static extern string olm_sas_last_error(IntPtr sas);
 
         /// <summary>
-        /// The size of an SAS object in bytes.
+        /// Gets the size of an SAS object in bytes.
         /// </summary>
+        /// <returns>The size in bytes.</returns>
         [DllImport(Name, EntryPoint = "olm_sas_size", ExactSpelling = true)]
         internal static extern uint olm_sas_size();
 
         /// <summary>
         /// Initialize an SAS object using the supplied memory.
-        /// The supplied memory must be at least <c><see cref="olm_sas_size" /></c> bytes.
+        /// The supplied memory must be at least <see cref="olm_sas_size" /> bytes.
         /// </summary>
+        /// <param name="memory">A pointer to the block of memory in which to initialize the SAS object.</param>
+        /// <returns>A pointer to the initialized SAS object.</returns>
         [DllImport(Name, EntryPoint = "olm_sas", ExactSpelling = true)]
         internal static extern IntPtr olm_sas(IntPtr memory);
 
         /// <summary>
         /// Clears the memory used to back an SAS object.
         /// </summary>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <returns>Result code.</returns>
         [DllImport(Name, EntryPoint = "olm_clear_sas", ExactSpelling = true)]
         internal static extern uint olm_clear_sas(IntPtr sas);
 
         /// <summary>
-        /// The number of random bytes needed to create an SAS object.
+        /// Gets the number of random bytes needed to create an SAS object.
         /// </summary>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <returns>The number of bytes needed.</returns>
         [DllImport(Name, EntryPoint = "olm_create_sas_random_length", ExactSpelling = true)]
         internal static extern uint olm_create_sas_random_length(IntPtr sas);
 
         /// <summary>
         /// Creates a new SAS object.
         /// </summary>
-        /// <param name="sas"> [in] the SAS object to create, initialized by <c><see cref="olm_sas" /></c>.</param>
-        /// <param name="random"> [in] array of random bytes.  The contents of the buffer may be overwritten.</param>
-        /// <param name="random_length"> [in] the number of random bytes provided.  Must be at least <c><see cref="olm_create_sas_random_length" /></c>.</param>
+        /// <param name="sas">A pointer to the SAS object to create, initialized by <see cref="olm_sas" />.</param>
+        /// <param name="random">An array of random bytes. The contents of the buffer may be overwritten.</param>
+        /// <param name="random_length">
+        /// The number of random bytes provided.
+        /// Must be at least <see cref="olm_create_sas_random_length" />.
+        /// </param>
         /// <returns>
-        /// <see cref="GetErrorCode" /> on failure.  If there weren't enough random bytes then <c><see cref="olm_sas_last_error" /></c> will be <c>NOT_ENOUGH_RANDOM</c>.
+        /// The value of <see cref="olm_error" /> on failure.
+        /// If there weren't enough random bytes then <see cref="olm_sas_last_error" />
+        /// will return <c>NOT_ENOUGH_RANDOM</c>.
         /// </returns>
         [DllImport(Name, EntryPoint = "olm_create_sas", ExactSpelling = true)]
         internal static extern uint olm_create_sas(IntPtr sas, byte[] random, uint random_length);
 
         /// <summary>
-        /// The size of a public key in bytes.
+        /// Gets the size of a public key in bytes.
         /// </summary>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <returns>The size in bytes.</returns>
         [DllImport(Name, EntryPoint = "olm_sas_pubkey_length", ExactSpelling = true)]
         internal static extern uint olm_sas_pubkey_length(IntPtr sas);
 
         /// <summary>
-        /// Get the public key for the SAS object.
+        /// Gets the public key for the SAS object.
         /// </summary>
-        /// <param name="sas"> [in] the SAS object.</param>
-        /// <param name="pubkey"> [out] buffer to store the public key.</param>
-        /// <param name="pubkey_length"> [in] the size of the <c>pubkey</c> buffer.  Must be at least <c><see cref="olm_sas_pubkey_length" /></c>.</param>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <param name="pubkey">Buffer in which to store the public key.</param>
+        /// <param name="pubkey_length">
+        /// The size of the <paramref name="pubkey" /> buffer.
+        /// Must be at least <see cref="olm_sas_pubkey_length" />.</param>
         /// <returns>
-        /// <see cref="GetErrorCode" /> on failure.  If the <c>pubkey</c> buffer is too small, then <c><see cref="olm_sas_last_error" /></c> will be <c>OUTPUT_BUFFER_TOO_SMALL</c>.
+        /// The value of <see cref="olm_error" /> on failure.
+        /// If the <paramref name="pubkey" /> buffer is too small, then <see cref="olm_sas_last_error" />
+        /// will return <c>OUTPUT_BUFFER_TOO_SMALL</c>.
         /// </returns>
         [DllImport(Name, EntryPoint = "olm_sas_get_pubkey", ExactSpelling = true)]
         internal static extern uint olm_sas_get_pubkey(IntPtr sas, byte[] pubkey, uint pubkey_length);
@@ -79,23 +100,29 @@ namespace Cshrix.Cryptography.Olm
         /// <summary>
         /// Sets the public key of other user.
         /// </summary>
-        /// <param name="sas"> [in] the SAS object.</param>
-        /// <param name="their_key"> [in] the other user's public key.  The contents of the buffer will be overwritten.</param>
-        /// <param name="their_key_length"> [in] the size of the <c>their_key</c> buffer.</param>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <param name="their_key">The other user's public key. The contents of the buffer will be overwritten.</param>
+        /// <param name="their_key_length">The size of the <paramref name="their_key" /> buffer.</param>
         /// <returns>
-        /// <see cref="GetErrorCode" /> on failure.  If the <c>their_key</c> buffer is too small, then <c><see cref="olm_sas_last_error" /></c> will be <c>INPUT_BUFFER_TOO_SMALL</c>.
+        /// The value of <see cref="olm_error" /> on failure.
+        /// If the <paramref name="their_key" /> buffer is too small, then <see cref="olm_sas_last_error" />
+        /// will return <c>INPUT_BUFFER_TOO_SMALL</c>.
         /// </returns>
         [DllImport(Name, EntryPoint = "olm_sas_set_their_key", ExactSpelling = true)]
         internal static extern uint olm_sas_set_their_key(IntPtr sas, byte[] their_key, uint their_key_length);
 
         /// <summary>
-        /// Generate bytes to use for the short authentication string.
+        /// Generates bytes to use for the short authentication string (SAS).
         /// </summary>
-        /// <param name="sas"> [in] the SAS object.</param>
-        /// <param name="info"> [in] extra information to mix in when generating the bytes, as per the Matrix spec.</param>
-        /// <param name="info_length"> [in] the length of the <c>info</c> parameter.</param>
-        /// <param name="output"> [out] the output buffer.</param>
-        /// <param name="output_length"> [in] the size of the output buffer.  For hex-based SAS as in the Matrix spec, this will be 5.</param>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <param name="info">Extra information to mix in when generating the bytes, as per the Matrix spec.</param>
+        /// <param name="info_length">The length of the <paramref name="info" /> parameter.</param>
+        /// <param name="output">The output buffer.</param>
+        /// <param name="output_length">
+        /// The size of the output buffer.
+        /// For hex-based SAS as in the Matrix spec, this will be <c>5</c>.
+        /// </param>
+        /// <returns>Result code.</returns>
         [DllImport(Name, EntryPoint = "olm_sas_generate_bytes", ExactSpelling = true)]
         internal static extern uint olm_sas_generate_bytes(
             IntPtr sas,
@@ -105,39 +132,33 @@ namespace Cshrix.Cryptography.Olm
             uint output_length);
 
         /// <summary>
-        /// The size of the message authentication code generated by <c><see cref="olm_sas_calculate_mac" /></c>.
+        /// Gets the size of the message authentication code generated by <see cref="olm_sas_calculate_mac" />.
         /// </summary>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <returns>The size of the code.</returns>
         [DllImport(Name, EntryPoint = "olm_sas_mac_length", ExactSpelling = true)]
         internal static extern uint olm_sas_mac_length(IntPtr sas);
 
         /// <summary>
-        /// Generate a message authentication code (MAC) based on the shared secret.
+        /// Generates a message authentication code (MAC) based on the shared secret.
         /// </summary>
-        /// <param name="sas"> [in] the SAS object.</param>
-        /// <param name="input"> [in] the message to produce the authentication code for.</param>
-        /// <param name="input_length"> [in] the length of the message.</param>
-        /// <param name="info"> [in] extra information to mix in when generating the MAC, as per the Matrix spec.</param>
-        /// <param name="info_length"> [in] the length of the <c>info</c> parameter.</param>
-        /// <param name="mac"> [out] the buffer in which to store the MAC.</param>
-        /// <param name="mac_length"> [in] the size of the <c>mac</c> buffer.  Must be at least <c><see cref="olm_sas_mac_length" /></c></param>
+        /// <param name="sas">A pointer to the SAS object.</param>
+        /// <param name="input">The message to produce the authentication code for.</param>
+        /// <param name="input_length">The length of the message.</param>
+        /// <param name="info">Extra information to mix in when generating the MAC, as per the Matrix spec.</param>
+        /// <param name="info_length">The length of the <paramref name="info" /> parameter.</param>
+        /// <param name="mac">The buffer in which to store the MAC.</param>
+        /// <param name="mac_length">
+        /// The size of the <paramref name="mac" /> buffer.
+        /// Must be at least <see cref="olm_sas_mac_length" />.
+        /// </param>
         /// <returns>
-        /// <see cref="GetErrorCode" /> on failure.  If the <c>mac</c> buffer is too small, then <c><see cref="olm_sas_last_error" /></c> will be <c>OUTPUT_BUFFER_TOO_SMALL</c>.
+        /// The value of <see cref="olm_error" /> on failure.
+        /// If the <paramref name="mac" /> buffer is too small, then <see cref="olm_sas_last_error" />
+        /// will return <c>OUTPUT_BUFFER_TOO_SMALL</c>.
         /// </returns>
         [DllImport(Name, EntryPoint = "olm_sas_calculate_mac", ExactSpelling = true)]
         internal static extern uint olm_sas_calculate_mac(
-            IntPtr sas,
-            byte[] input,
-            uint input_length,
-            byte[] info,
-            uint info_length,
-            byte[] mac,
-            uint mac_length);
-
-        /// <summary>
-        /// for compatibility with an old version of Riot
-        /// </summary>
-        [DllImport(Name, EntryPoint = "olm_sas_calculate_mac_long_kdf", ExactSpelling = true)]
-        internal static extern uint olm_sas_calculate_mac_long_kdf(
             IntPtr sas,
             byte[] input,
             uint input_length,

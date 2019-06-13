@@ -47,8 +47,4 @@
     <ProjectReference Include="..\Cshrix.FSharp\Cshrix.FSharp.fsproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Builders" />
-  </ItemGroup>
-
 </Project>

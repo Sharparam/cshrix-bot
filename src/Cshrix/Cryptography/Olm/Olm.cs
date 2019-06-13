@@ -8,6 +8,7 @@
 
 namespace Cshrix.Cryptography.Olm
 {
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
     /// <summary>
@@ -35,6 +36,7 @@ namespace Cshrix.Cryptography.Olm
     /// In that case it should map to something that has the correct amount of bytes.
     /// Or perhaps it can be solved with struct alignment?
     /// </remarks>
+    [SuppressMessage("ReSharper", "InconsistentNaming", Justification = "Names match those used in the native library")]
     internal static partial class Olm
     {
         /// <summary>
@@ -52,20 +54,14 @@ namespace Cshrix.Cryptography.Olm
         private const string Name = nameof(Olm);
 
         /// <summary>
-        /// Available message types.
+        /// Message type for a pre-key message.
         /// </summary>
-        internal enum MessageType : uint
-        {
-            /// <summary>
-            /// A pre-key message.
-            /// </summary>
-            PreKey = 0,
+        internal const uint OLM_MESSAGE_TYPE_PRE_KEY = 0;
 
-            /// <summary>
-            /// A normal message.
-            /// </summary>
-            Message = 1
-        }
+        /// <summary>
+        /// Message type for a normal message.
+        /// </summary>
+        internal const uint OLM_MESSAGE_TYPE_MESSAGE = 1;
 
         /// <summary>
         /// Gets the version number of the library.
@@ -74,13 +70,13 @@ namespace Cshrix.Cryptography.Olm
         /// <param name="minor">Minor version.</param>
         /// <param name="patch">Patch version.</param>
         [DllImport(Name, EntryPoint = "olm_get_library_version", ExactSpelling = true)]
-        internal static extern void GetVersion(out byte major, out byte minor, out byte patch);
+        internal static extern void olm_get_library_version(out byte major, out byte minor, out byte patch);
 
         /// <summary>
         /// Gets the value that Olm will return from a function if there was an error.
         /// </summary>
         /// <returns>The value returned by Olm functions if there was an error.</returns>
         [DllImport(Name, EntryPoint = "olm_error", ExactSpelling = true)]
-        internal static extern uint GetErrorCode();
+        internal static extern uint olm_error();
     }
 }
