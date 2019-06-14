@@ -13,11 +13,18 @@ namespace Cshrix.Cryptography.Olm
 
     using Microsoft.Extensions.Logging;
 
+    using static Olm;
+
     /// <summary>
     /// Contains the handle to an Olm resource.
     /// </summary>
     public abstract class SafeOlmHandle : SafeHandle
     {
+        /// <summary>
+        /// A lazy value factory for getting the standard Olm error code.
+        /// </summary>
+        private static readonly Lazy<uint> ErrorCodeFactory = new Lazy<uint>(olm_error);
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SafeOlmHandle" /> class.
         /// </summary>
@@ -45,9 +52,26 @@ namespace Cshrix.Cryptography.Olm
         public override bool IsInvalid => handle == IntPtr.Zero;
 
         /// <summary>
+        /// Gets the standard error code as defined by the Olm library.
+        /// </summary>
+        protected static uint ErrorCode => ErrorCodeFactory.Value;
+
+        /// <summary>
         /// Gets the logger instance for this class.
         /// </summary>
         protected ILogger Log { get; }
+
+        /// <summary>
+        /// Checks if a given result code is an error.
+        /// </summary>
+        /// <param name="code">The code to check.</param>
+        /// <returns>
+        /// <c>true</c> if the given code is an error; otherwise, <c>false</c>.
+        /// </returns>
+        protected static bool IsError(uint code)
+        {
+            return code == ErrorCode;
+        }
 
         /// <summary>
         /// Executes the code required to free the handle.
@@ -56,9 +80,9 @@ namespace Cshrix.Cryptography.Olm
         /// <c>true</c> if the handle is released successfully;
         /// otherwise, in the event of a catastrophic failure, <c>false</c>.
         /// In this case, it generates a
-        /// <see cref="https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/releasehandlefailed-mda">
+        /// <a href="https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/releasehandlefailed-mda">
         /// releaseHandleFailed
-        /// </see>
+        /// </a>
         /// Managed Debugging Assistant.
         /// </returns>
         protected override bool ReleaseHandle()

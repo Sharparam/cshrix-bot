@@ -39,6 +39,12 @@ namespace Cshrix.Cryptography.Olm
             var pickledLength = olm_pickle_account_length(handle);
             var pickled = new byte[(int)pickledLength];
             var result = olm_pickle_account(handle, key, (uint)key.Length, pickled, pickledLength);
+
+            if (IsError(result))
+            {
+                throw CreateAccountException(result);
+            }
+
             return pickled;
         }
 
@@ -50,6 +56,11 @@ namespace Cshrix.Cryptography.Olm
         public void Unpickle(byte[] pickled, byte[] key)
         {
             var result = olm_unpickle_account(handle, key, (uint)key.Length, pickled, (uint)pickled.Length);
+
+            if (IsError(result))
+            {
+                throw CreateAccountException(result);
+            }
         }
 
         /// <inheritdoc />
@@ -88,8 +99,38 @@ namespace Cshrix.Cryptography.Olm
 
             pool.Return(randomBuffer, true);
 
+            if (IsError(createResult))
+            {
+                throw CreateAccountException(createResult, accountHandle);
+            }
+
             log.LogDebug("Returning created account handle {Handle}", accountHandle);
             return accountHandle;
         }
+
+        /// <summary>
+        /// Create an <see cref="OlmException" /> pre-filled with the last account error string.
+        /// </summary>
+        /// <param name="code">The error code.</param>
+        /// <param name="accountPointer">A pointer to the account instance.</param>
+        /// <param name="innerException">Additional inner exception to set.</param>
+        /// <returns>An instance of <see cref="OlmException" />.</returns>
+        private static OlmException CreateAccountException(
+            uint code,
+            IntPtr accountPointer,
+            Exception innerException = null)
+        {
+            var message = olm_account_last_error(accountPointer);
+            return new OlmException(code, message, innerException);
+        }
+
+        /// <summary>
+        /// Create an <see cref="OlmException" /> pre-filled with the last account error string.
+        /// </summary>
+        /// <param name="code">The error code.</param>
+        /// <param name="innerException">Additional inner exception to set.</param>
+        /// <returns>An instance of <see cref="OlmException" />.</returns>
+        private OlmException CreateAccountException(uint code, Exception innerException = null) =>
+            CreateAccountException(code, handle, innerException);
     }
 }
