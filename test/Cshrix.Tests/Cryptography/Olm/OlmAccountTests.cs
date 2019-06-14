@@ -19,6 +19,7 @@ namespace Cshrix.Tests.Cryptography.Olm
     using NUnit.Framework;
 
     [TestFixture]
+    [Category("olm")]
     public class OlmAccountTests
     {
         [Test]

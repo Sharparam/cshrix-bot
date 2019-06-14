@@ -213,7 +213,8 @@ void Test(ICakeContext context = null)
     var settings = new DotNetCoreTestSettings
     {
         Configuration = configuration,
-        NoBuild = true
+        NoBuild = true,
+        Filter = "TestCategory!=olm"
     };
 
     if (isAppVeyor)
