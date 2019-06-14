@@ -22,7 +22,7 @@ namespace Cshrix.Data.Events
         /// <param name="timeline">Timeline of the room.</param>
         /// <param name="accountData">Room-specific account data.</param>
         [JsonConstructor]
-        public LeftRoom(State state, Timeline timeline, EventsContainer accountData)
+        public LeftRoom(EventsContainer state, Timeline timeline, EventsContainer accountData)
             : this()
         {
             State = state;
@@ -34,7 +34,7 @@ namespace Cshrix.Data.Events
         /// Gets the last known state of the room.
         /// </summary>
         [JsonProperty("state")]
-        public State State { get; }
+        public EventsContainer State { get; }
 
         /// <summary>
         /// Gets the timeline for the room, as it looked when the room was left.

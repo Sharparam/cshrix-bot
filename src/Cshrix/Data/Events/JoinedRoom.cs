@@ -25,7 +25,7 @@ namespace Cshrix.Data.Events
         /// <param name="unreadCounts">Unread counts for the room.</param>
         [JsonConstructor]
         public JoinedRoom(
-            State state,
+            EventsContainer state,
             Timeline timeline,
             EventsContainer ephemeral,
             EventsContainer accountData,
@@ -43,7 +43,7 @@ namespace Cshrix.Data.Events
         /// Gets the current state of the room.
         /// </summary>
         [JsonProperty("state")]
-        public State State { get; }
+        public EventsContainer State { get; }
 
         /// <summary>
         /// Gets the timeline for the room.

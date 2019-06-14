@@ -62,12 +62,23 @@ namespace Cshrix
         /// </summary>
         /// <param name="id">The ID of the room the user was invited to.</param>
         /// <param name="invitedRoom">The data for the invited room.</param>
-        /// <returns></returns>
+        /// <returns>An instance of <see cref="Room" />.</returns>
         internal static Room FromInvitedRoom(string id, InvitedRoom invitedRoom)
         {
             var room = new Room(id, Membership.Invited);
 
             var state = invitedRoom.InviteState;
+            room.UpdateFromState(state);
+
+            return room;
+        }
+
+        /// <summary>
+        /// Updates room details from a collection of state events.
+        /// </summary>
+        /// <param name="state">The state events to update from.</param>
+        private void UpdateFromState(EventsContainer state)
+        {
             var aliasState = state.Events.OfEventType("m.room.canonical_alias")
                 .FirstOrDefault(e => e.StateKey == string.Empty);
 
@@ -75,27 +86,25 @@ namespace Cshrix
 
             if (aliasContent?.Alias != null)
             {
-                room.CanonicalAlias = aliasContent.Alias;
-                room._aliases.Add(aliasContent.Alias);
+                CanonicalAlias = aliasContent.Alias;
+                _aliases.Add(aliasContent.Alias);
             }
 
             var aliasesStates = state.Events.OfEventType("m.room.aliases");
             var aliases = aliasesStates.SelectMany(e => (e.Content as AliasesContent)?.Aliases).Where(a => a != null);
-            room._aliases.UnionWith(aliases);
+            _aliases.UnionWith(aliases);
 
             if (state.Events.OfEventType("m.room.name").FirstOrDefault(e => e.StateKey == string.Empty)?.Content is
                 RoomNameContent nameContent)
             {
-                room.Name = nameContent.Name;
+                Name = nameContent.Name;
             }
 
             if (state.Events.OfEventType("m.room.topic").FirstOrDefault(e => e.StateKey == string.Empty)?.Content is
                 RoomTopicContent topicContent)
             {
-                room.Topic = topicContent.Topic;
+                Topic = topicContent.Topic;
             }
-
-            return room;
         }
     }
 }

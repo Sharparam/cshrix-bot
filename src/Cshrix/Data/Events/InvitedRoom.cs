@@ -20,7 +20,7 @@ namespace Cshrix.Data.Events
         /// </summary>
         /// <param name="inviteState">The invite state.</param>
         [JsonConstructor]
-        public InvitedRoom(InviteState inviteState)
+        public InvitedRoom(EventsContainer inviteState)
             : this() =>
             InviteState = inviteState;
 
@@ -28,6 +28,6 @@ namespace Cshrix.Data.Events
         /// Gets the invite state for the room.
         /// </summary>
         [JsonProperty("invite_state")]
-        public InviteState InviteState { get; }
+        public EventsContainer InviteState { get; }
     }
 }
