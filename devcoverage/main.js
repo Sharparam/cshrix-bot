@@ -411,7 +411,7 @@ var assemblies = [
       { "name": "Cshrix.Data.UserId", "rp": "Cshrix_UserId.htm", "cl": 6, "ucl": 2, "cal": 8, "tl": 82, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.UserIdContainer", "rp": "Cshrix_UserIdContainer.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.UserIdUserIdentifier", "rp": "Cshrix_UserIdUserIdentifier.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Data.VersionsResponse", "rp": "Cshrix_VersionsResponse.htm", "cl": 0, "ucl": 5, "cal": 5, "tl": 49, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Data.VersionsResponse", "rp": "Cshrix_VersionsResponse.htm", "cl": 0, "ucl": 5, "cal": 5, "tl": 48, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.WhoisResponse", "rp": "Cshrix_WhoisResponse.htm", "cl": 0, "ucl": 8, "cal": 8, "tl": 58, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.DependencyInjection.ServiceCollectionExtensions", "rp": "Cshrix_ServiceCollectionExtensions.htm", "cl": 0, "ucl": 5, "cal": 5, "tl": 82, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Errors.MatrixError", "rp": "Cshrix_MatrixError.htm", "cl": 6, "ucl": 1, "cal": 7, "tl": 51, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
