@@ -18,6 +18,7 @@ namespace Cshrix.Data.Events
         /// <summary>
         /// Initializes a new instance of the <see cref="JoinedRoom" /> structure.
         /// </summary>
+        /// <param name="summary">A summary of the room.ĳ</param>
         /// <param name="state">The current state of the room.</param>
         /// <param name="timeline">The timeline of the room.</param>
         /// <param name="ephemeral">Ephemeral events for the room.</param>
@@ -25,6 +26,7 @@ namespace Cshrix.Data.Events
         /// <param name="unreadCounts">Unread counts for the room.</param>
         [JsonConstructor]
         public JoinedRoom(
+            RoomSummary summary,
             EventsContainer state,
             Timeline timeline,
             EventsContainer ephemeral,
@@ -32,12 +34,19 @@ namespace Cshrix.Data.Events
             UnreadCounts unreadCounts)
             : this()
         {
+            Summary = summary;
             State = state;
             Timeline = timeline;
             Ephemeral = ephemeral;
             AccountData = accountData;
             UnreadCounts = unreadCounts;
         }
+
+        /// <summary>
+        /// Gets a summary of the room.
+        /// </summary>
+        [JsonProperty("summary")]
+        public RoomSummary Summary { get; }
 
         /// <summary>
         /// Gets the current state of the room.
