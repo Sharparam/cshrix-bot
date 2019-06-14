@@ -39,7 +39,7 @@ namespace Cshrix.Cryptography.Olm
         /// <param name="decryption">A pointer to the decryption object.</param>
         /// <returns>The most recent error.</returns>
         [DllImport(Name, EntryPoint = "olm_pk_decryption_last_error", ExactSpelling = true)]
-        [return: MarshalAs(UnmanagedType.LPStr)]
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(OlmStringMarshaler))]
         internal static extern string olm_pk_decryption_last_error(IntPtr decryption);
 
         /// <summary>

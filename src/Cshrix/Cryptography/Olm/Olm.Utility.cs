@@ -37,7 +37,7 @@ namespace Cshrix.Cryptography.Olm
         /// <param name="utility">A pointer to a previously created instance of <c>OlmUtility</c>.</param>
         /// <returns>A string describing the error.</returns>
         [DllImport(Name, EntryPoint = "olm_utility_last_error", ExactSpelling = true)]
-        [return: MarshalAs(UnmanagedType.LPStr)]
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(OlmStringMarshaler))]
         internal static extern string olm_utility_last_error(IntPtr utility);
 
         /// <summary>

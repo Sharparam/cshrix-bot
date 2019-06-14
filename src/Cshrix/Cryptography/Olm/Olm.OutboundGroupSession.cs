@@ -37,7 +37,7 @@ namespace Cshrix.Cryptography.Olm
         /// <param name="session">A pointer to the session.</param>
         /// <returns>The most recent error.</returns>
         [DllImport(Name, EntryPoint = "olm_outbound_group_session_last_error", ExactSpelling = true)]
-        [return: MarshalAs(UnmanagedType.LPStr)]
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(OlmStringMarshaler))]
         internal static extern string olm_outbound_group_session_last_error(IntPtr session);
 
         /// <summary>

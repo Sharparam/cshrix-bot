@@ -21,7 +21,7 @@ namespace Cshrix.Cryptography.Olm
         /// <param name="sas">A pointer to the SAS object.</param>
         /// <returns>The most recent error.</returns>
         [DllImport(Name, EntryPoint = "olm_sas_last_error", ExactSpelling = true)]
-        [return: MarshalAs(UnmanagedType.LPStr)]
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(OlmStringMarshaler))]
         internal static extern string olm_sas_last_error(IntPtr sas);
 
         /// <summary>
