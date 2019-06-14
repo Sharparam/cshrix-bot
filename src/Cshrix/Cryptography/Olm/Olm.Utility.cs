@@ -87,6 +87,7 @@ namespace Cshrix.Cryptography.Olm
         /// <param name="message_length">Length of <paramref name="message" />.</param>
         /// <param name="signature">The signature.</param>
         /// <param name="signature_length">Length of <paramref name="signature" />.</param>
+        /// <returns>The value of <see cref="olm_error" /> on failure.</returns>
         [DllImport(Name, EntryPoint = "olm_ed25519_verify", ExactSpelling = true)]
         internal static extern uint olm_ed25519_verify(
             IntPtr utility,
