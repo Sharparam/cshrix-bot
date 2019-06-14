@@ -10,20 +10,23 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Version>0.0.0</Version>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Adam Hellberg</Authors>
     <Product>cshrix-bot</Product>
     <Description>Bot for Matrix made with cshrix.</Description>
     <Copyright>Copyright (c) 2019 by Adam Hellberg.</Copyright>
-    <PackageLicenseUrl>https://github.com/Sharparam/cshrix-bot/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Sharparam/cshrix-bot</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Sharparam/cshrix-bot</RepositoryUrl>
-    <PackageTags>matrix</PackageTags>
+    <PackageTags>matrix;matrix-org;cshrix;bot;chatbot;chat;netstandard;netcore;csharp;cs</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DocumentationFile>bin\Debug\Cshrix.Bot.Console.xml</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DocumentationFile>bin\Release\Cshrix.Bot.Console.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <None Update="appsettings.json">

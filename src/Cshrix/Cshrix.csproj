@@ -10,24 +10,25 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Version>0.0.0</Version>
-    <Authors>Adam Hellberg</Authors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Authors>Adam Hellberg;Sharparam</Authors>
     <Product>cshrix</Product>
     <Description>Matrix library for C#.</Description>
     <Copyright>Copyright (c) 2019 by Adam Hellberg.</Copyright>
-    <PackageLicenseUrl>https://github.com/Sharparam/cshrix/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Sharparam/cshrix</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Sharparam/cshrix</RepositoryUrl>
-    <PackageTags>matrix</PackageTags>
+    <PackageTags>matrix;matrix-org;chat;decentralised;netstandard;netcore;csharp;fsharp;cs;fs</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DocumentationFile>bin\Debug\Cshrix.xml</DocumentationFile>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DocumentationFile>bin\Release\Cshrix.xml</DocumentationFile>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
