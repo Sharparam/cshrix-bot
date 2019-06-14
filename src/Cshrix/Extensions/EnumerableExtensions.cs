@@ -12,16 +12,34 @@ namespace Cshrix.Extensions
     using System.Linq;
 
     using Data.Events;
+    using Data.Events.Content;
 
     /// <summary>
     /// Contains extensions for <see cref="IEnumerable{T}" />
     /// </summary>
     internal static class EnumerableExtensions
     {
-        internal static IEnumerable<T> OfEventType<T>(this IEnumerable<T> events, string type) where T : Event =>
+        internal static IEnumerable<Event> OfEventType(this IEnumerable<Event> events, string type) =>
             events.Where(e => e.Type == type);
 
-        internal static ILookup<string, T> ToEventTypeLookup<T>(this IEnumerable<T> events) where T : Event =>
+        internal static IEnumerable<Event> OfEventType(this EventsContainer events, string type) =>
+            events.Events.OfEventType(type);
+
+        internal static EventContent GetStateEventContentOrDefault(this IEnumerable<Event> events, string type) =>
+            events.OfEventType(type).FirstOrDefault(e => e.StateKey == string.Empty)?.Content;
+
+        internal static TContent GetStateEventContentOrDefault<TContent>(this IEnumerable<Event> events, string type)
+            where TContent : EventContent =>
+            events.GetStateEventContentOrDefault(type) as TContent;
+
+        internal static EventContent GetStateEventContentOrDefault(this EventsContainer events, string type) =>
+            events.Events.GetStateEventContentOrDefault(type);
+
+        internal static TContent GetStateEventContentOrDefault<TContent>(this EventsContainer events, string type)
+            where TContent : EventContent =>
+            events.Events.GetStateEventContentOrDefault<TContent>(type);
+
+        internal static ILookup<string, Event> ToEventTypeLookup(this IEnumerable<Event> events) =>
             events.ToLookup(e => e.Type);
     }
 }

@@ -8,9 +8,11 @@
 
 namespace Cshrix
 {
+    using System;
     using System.Collections.Generic;
 
     using Data;
+    using Data.Events.Content;
 
     using JetBrains.Annotations;
 
@@ -19,6 +21,11 @@ namespace Cshrix
     /// </summary>
     public interface IRoom
     {
+        /// <summary>
+        /// Raised when this room is upgraded to a new version.
+        /// </summary>
+        event EventHandler<TombstonedEventArgs> Tombstoned;
+
         /// <summary>
         /// Gets the ID of the room.
         /// </summary>
@@ -49,5 +56,27 @@ namespace Cshrix
         /// Gets the topic of the room.
         /// </summary>
         string Topic { get; }
+
+        /// <summary>
+        /// Gets the ID of the user that created this room.
+        /// </summary>
+        [CanBeNull]
+        UserId Creator { get; }
+
+        /// <summary>
+        /// Gets the version of this room.
+        /// </summary>
+        string Version { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether this room has been tombstoned.
+        /// </summary>
+        bool IsTombstoned { get; }
+
+        /// <summary>
+        /// Gets information about the tombstone event, if any.
+        /// </summary>
+        [CanBeNull]
+        TombstoneContent TombstoneContent { get; }
     }
 }

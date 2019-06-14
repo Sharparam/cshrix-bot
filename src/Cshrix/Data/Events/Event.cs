@@ -22,7 +22,7 @@ namespace Cshrix.Data.Events
     /// Describes a basic event.
     /// </summary>
     [JsonConverter(typeof(EventConverter))]
-    public class Event
+    public sealed class Event
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Event" /> class.

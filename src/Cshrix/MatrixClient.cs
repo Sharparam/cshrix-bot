@@ -99,6 +99,9 @@ namespace Cshrix
         /// <inheritdoc />
         public event EventHandler<InvitedEventArgs> Invited;
 
+        /// <inheritdoc />
+        public event EventHandler<JoinedEventArgs> Joined;
+
         /// <summary>
         /// Gets the <see cref="ILogger" /> for this instance.
         /// </summary>
@@ -150,12 +153,21 @@ namespace Cshrix
             HandleRoomEvents(response.Rooms);
         }
 
+        /// <summary>
+        /// Handles room events from a sync result.
+        /// </summary>
+        /// <param name="rooms">The <c>rooms</c> part of a sync result.</param>
         private void HandleRoomEvents(SyncedRooms rooms)
         {
             Log.LogTrace("Handling room events");
             HandleInvitedRoomEvents(rooms.Invited);
+            HandleJoinedRoomEvents(rooms.Joined);
         }
 
+        /// <summary>
+        /// Handles events in rooms the user has been invited to.
+        /// </summary>
+        /// <param name="rooms">Invited rooms from a sync result.</param>
         private void HandleInvitedRoomEvents(IReadOnlyDictionary<string, InvitedRoom> rooms)
         {
             Log.LogTrace("Handling {Count} rooms in the 'invited' state", rooms.Count);
@@ -165,6 +177,24 @@ namespace Cshrix
             }
         }
 
+        /// <summary>
+        /// Handles events in rooms the user is joined to.
+        /// </summary>
+        /// <param name="rooms">Joined rooms from a sync result.</param>
+        private void HandleJoinedRoomEvents(IReadOnlyDictionary<string, JoinedRoom> rooms)
+        {
+            Log.LogTrace("Handling {Count} rooms in the 'joined' state", rooms.Count);
+            foreach (var kvp in rooms)
+            {
+                HandleJoinedRoomEvent(kvp.Key, kvp.Value);
+            }
+        }
+
+        /// <summary>
+        /// Handles an invitation to a room.
+        /// </summary>
+        /// <param name="roomId">ID of the room the user was invited to.</param>
+        /// <param name="invitedRoom">Data for the room.</param>
         private void HandleInvitedRoomEvent(string roomId, InvitedRoom invitedRoom)
         {
             Log.LogTrace("Handling 'invited' room {RoomId}", roomId);
@@ -178,6 +208,29 @@ namespace Cshrix
             }
 
             Invited?.Invoke(this, new InvitedEventArgs(room));
+        }
+
+        /// <summary>
+        /// Handles updates to a joined room.
+        /// </summary>
+        /// <param name="roomId">The ID of the room.</param>
+        /// <param name="joinedRoom">Data for the room.</param>
+        private void HandleJoinedRoomEvent(string roomId, JoinedRoom joinedRoom)
+        {
+            Log.LogTrace("Handling 'joined' room {RoomId}", roomId);
+            var hasRoom = _rooms.TryGetValue(roomId, out var room);
+
+            if (hasRoom)
+            {
+                room.Update(joinedRoom);
+            }
+            else
+            {
+                Log.LogTrace("Joined room {RoomId} did not exist, adding it", roomId);
+                room = Room.FromJoinedRoom(roomId, joinedRoom);
+                _rooms.TryAdd(roomId, room);
+                Joined?.Invoke(this, new JoinedEventArgs(room));
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-// <copyright file="InvitedEventArgs.cs">
+// <copyright file="JoinedEventArgs.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -11,18 +11,18 @@ namespace Cshrix.Data
     using System;
 
     /// <summary>
-    /// Contains the data for the event when the user is invited to a room.
+    /// Contains the data for the event when the user joins a room.
     /// </summary>
-    public sealed class InvitedEventArgs : EventArgs
+    public sealed class JoinedEventArgs : EventArgs
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InvitedEventArgs" /> class.
+        /// Initializes a new instance of the <see cref="JoinedEventArgs" /> class.
         /// </summary>
-        /// <param name="room">The room the user was invited to.</param>
-        public InvitedEventArgs(IRoom room) => Room = room;
+        /// <param name="room">The room the user joined.</param>
+        public JoinedEventArgs(IRoom room) => Room = room;
 
         /// <summary>
-        /// Gets the room the user was invited to.
+        /// Gets the room the user joined.
         /// </summary>
         public IRoom Room { get; }
     }

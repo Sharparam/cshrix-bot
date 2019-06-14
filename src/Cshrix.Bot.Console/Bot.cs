@@ -43,6 +43,7 @@ namespace Cshrix.Bot.Console
             _log = log;
             _client = client;
             _client.Invited += OnRoomInvite;
+            _client.Joined += OnRoomJoin;
         }
 
         /// <summary>
@@ -93,6 +94,49 @@ namespace Cshrix.Bot.Console
             {
                 _log.LogError(ex, "Failed to join room {RoomId}", eventArgs.Room.Id);
             }
+        }
+
+        /// <summary>
+        /// Handles the user joining a room.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="eventArgs">Event arguments.</param>
+        private async void OnRoomJoin(object sender, JoinedEventArgs eventArgs)
+        {
+            _log.LogInformation("I've joined the room {RoomId}!", eventArgs.Room.Id);
+
+            var room = eventArgs.Room;
+
+            if (room.IsTombstoned)
+            {
+                await HandleTombstonedRoom(room);
+            }
+        }
+
+        /// <summary>
+        /// Handles a room which has been tombstoned.
+        /// </summary>
+        /// <param name="room">The room that has been tombstoned.</param>
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleTombstonedRoom(IRoom room)
+        {
+            var content = room.TombstoneContent;
+
+            if (content == null)
+            {
+                _log.LogError("Room {RoomId} was tombstoned but no tombstone content exists", room.Id);
+                return;
+            }
+
+            _log.LogInformation(
+                "Room {RoomId} has been tombstoned (\"{Message}\")! Replacement room is {ReplacementRoomId}",
+                room.Id,
+                content.Message,
+                content.ReplacementRoomId);
+
+            _log.LogInformation("Attempting to join replacement room {RoomId}", content.ReplacementRoomId);
+            var joinedId = await _client.JoinRoomByIdAsync(content.ReplacementRoomId);
+            _log.LogInformation("Successfully joined {RoomId}", joinedId);
         }
     }
 }

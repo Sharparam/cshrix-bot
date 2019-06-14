@@ -27,6 +27,11 @@ namespace Cshrix
         event EventHandler<InvitedEventArgs> Invited;
 
         /// <summary>
+        /// Raised when the user joins a room.
+        /// </summary>
+        event EventHandler<JoinedEventArgs> Joined;
+
+        /// <summary>
         /// Starts syncing with the Matrix API.
         /// </summary>
         Task StartSyncingAsync();

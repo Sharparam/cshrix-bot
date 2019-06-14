@@ -8,6 +8,7 @@
 
 namespace Cshrix
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -22,6 +23,11 @@ namespace Cshrix
     /// </summary>
     public sealed class Room : IRoom
     {
+        /// <summary>
+        /// The default room version if none is specified.
+        /// </summary>
+        private const string DefaultRoomVersion = "1";
+
         /// <summary>
         /// A set containing all known aliases for the room.
         /// </summary>
@@ -38,6 +44,9 @@ namespace Cshrix
             Membership = membership;
             _aliases = new HashSet<RoomAlias>();
         }
+
+        /// <inheritdoc />
+        public event EventHandler<TombstonedEventArgs> Tombstoned;
 
         /// <inheritdoc />
         public string Id { get; }
@@ -57,6 +66,18 @@ namespace Cshrix
         /// <inheritdoc />
         public string Topic { get; private set; }
 
+        /// <inheritdoc />
+        public UserId Creator { get; private set; }
+
+        /// <inheritdoc />
+        public string Version { get; private set; } = DefaultRoomVersion;
+
+        /// <inheritdoc />
+        public bool IsTombstoned { get; private set; }
+
+        /// <inheritdoc />
+        public TombstoneContent TombstoneContent { get; private set; }
+
         /// <summary>
         /// Creates a <see cref="Room" /> from the contents of an <see cref="InvitedRoom" />.
         /// </summary>
@@ -68,21 +89,73 @@ namespace Cshrix
             var room = new Room(id, Membership.Invited);
 
             var state = invitedRoom.InviteState;
-            room.UpdateFromState(state);
+            room.UpdateFromEvents(state.Events);
 
             return room;
         }
 
         /// <summary>
-        /// Updates room details from a collection of state events.
+        /// Creates a <see cref="Room" /> from the contents of a <see cref="JoinedRoom" />.
         /// </summary>
-        /// <param name="state">The state events to update from.</param>
-        private void UpdateFromState(EventsContainer state)
+        /// <param name="id">The ID of the room.</param>
+        /// <param name="joinedRoom">Data about the joined room.</param>
+        /// <returns>An instance of <see cref="Room" />.</returns>
+        internal static Room FromJoinedRoom(string id, JoinedRoom joinedRoom)
         {
-            var aliasState = state.Events.OfEventType("m.room.canonical_alias")
-                .FirstOrDefault(e => e.StateKey == string.Empty);
+            var room = new Room(id, Membership.Joined);
 
-            var aliasContent = aliasState?.Content as CanonicalAliasContent;
+            room.Update(joinedRoom);
+
+            return room;
+        }
+
+        /// <summary>
+        /// Updates a room from a synced <see cref="JoinedRoom" /> object.
+        /// </summary>
+        /// <param name="joinedRoom">The sync data to update from.</param>
+        internal void Update(JoinedRoom joinedRoom)
+        {
+            UpdateFromEvents(joinedRoom.State.Events);
+            UpdateFromEvents(joinedRoom.Timeline.Events);
+        }
+
+        /// <summary>
+        /// Updates room details from a collection of events.
+        /// </summary>
+        /// <param name="events">The events to update from.</param>
+        private void UpdateFromEvents(IReadOnlyCollection<Event> events)
+        {
+            UpdateAliasesFromEvents(events);
+
+            if (events.GetStateEventContentOrDefault("m.room.name") is RoomNameContent nameContent)
+            {
+                Name = nameContent.Name;
+            }
+
+            if (events.GetStateEventContentOrDefault("m.room.topic") is RoomTopicContent topicContent)
+            {
+                Topic = topicContent.Topic;
+            }
+
+            if (events.GetStateEventContentOrDefault("m.room.create") is CreationContent creationContent)
+            {
+                Creator = creationContent.Creator;
+                Version = creationContent.RoomVersion ?? DefaultRoomVersion;
+            }
+
+            if (events.GetStateEventContentOrDefault("m.room.tombstone") is TombstoneContent tombstoneContent)
+            {
+                OnTombstone(tombstoneContent);
+            }
+        }
+
+        /// <summary>
+        /// Updates this room's aliases from a collection of events.
+        /// </summary>
+        /// <param name="events">The events to update from.</param>
+        private void UpdateAliasesFromEvents(IReadOnlyCollection<Event> events)
+        {
+            var aliasContent = events.GetStateEventContentOrDefault<CanonicalAliasContent>("m.room.canonical_alias");
 
             if (aliasContent?.Alias != null)
             {
@@ -90,21 +163,20 @@ namespace Cshrix
                 _aliases.Add(aliasContent.Alias);
             }
 
-            var aliasesStates = state.Events.OfEventType("m.room.aliases");
+            var aliasesStates = events.OfEventType("m.room.aliases");
             var aliases = aliasesStates.SelectMany(e => (e.Content as AliasesContent)?.Aliases).Where(a => a != null);
             _aliases.UnionWith(aliases);
+        }
 
-            if (state.Events.OfEventType("m.room.name").FirstOrDefault(e => e.StateKey == string.Empty)?.Content is
-                RoomNameContent nameContent)
-            {
-                Name = nameContent.Name;
-            }
-
-            if (state.Events.OfEventType("m.room.topic").FirstOrDefault(e => e.StateKey == string.Empty)?.Content is
-                RoomTopicContent topicContent)
-            {
-                Topic = topicContent.Topic;
-            }
+        /// <summary>
+        /// Sets tombstone properties and invokes the <see cref="Tombstoned" /> event.
+        /// </summary>
+        /// <param name="content">Information about the tombstone event.</param>
+        private void OnTombstone(TombstoneContent content)
+        {
+            IsTombstoned = true;
+            TombstoneContent = content;
+            Tombstoned?.Invoke(this, new TombstonedEventArgs(content));
         }
     }
 }
