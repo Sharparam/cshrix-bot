@@ -1,4 +1,4 @@
-// <copyright file="Tests.cs">
+// <copyright file="OlmAccountTests.cs">
 //   Copyright (c) 2019 by Adam Hellberg.
 //
 //   This Source Code Form is subject to the terms of the Mozilla Public
@@ -6,23 +6,23 @@
 //   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using NUnit.Framework;
-
-namespace Cshrix.Tests
+namespace Cshrix.Tests.Cryptography.Olm
 {
     using System.Text;
 
-    using Cryptography.Olm;
+    using Cshrix.Cryptography.Olm;
 
     using Microsoft.Extensions.Logging;
 
     using Moq;
 
+    using NUnit.Framework;
+
     [TestFixture]
-    public class Tests
+    public class OlmAccountTests
     {
         [Test]
-        public void TestOlmAccount()
+        public void ShouldUnpickleAccountWithCorrectKey()
         {
             var account = new OlmAccount(Mock.Of<ILogger<OlmAccount>>());
 
@@ -33,6 +33,7 @@ namespace Cshrix.Tests
 
             account2.Unpickle(pickled, key);
 
+            // The test is successful if no exception was thrown when unpickling the account
             Assert.Pass();
         }
     }
