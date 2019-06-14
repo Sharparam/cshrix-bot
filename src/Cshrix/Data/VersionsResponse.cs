@@ -40,8 +40,7 @@ namespace Cshrix.Data
         /// Gets a collection of versions supported by the server.
         /// </summary>
         /// <remarks>
-        /// These can be used to set the <see cref="IMatrixClientServerApi.ApiVersion" /> property on
-        /// <see cref="IMatrixClientServerApi" />.
+        /// These can be used to set the <c>ApiVersion</c> property on <see cref="IMatrixClientServerApi" />.
         /// </remarks>
         [JsonProperty("versions")]
         public IReadOnlyCollection<string> Versions { get; }

@@ -9,21 +9,23 @@
 namespace Cshrix.Cryptography.Olm
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
+    [SuppressMessage("ReSharper", "InconsistentNaming", Justification = "Names match those used in the native library")]
     internal static partial class Olm
     {
         /// <summary>
-        /// Gets the type of the next message that <see cref="Encrypt" /> will return.
+        /// Gets the type of the next message that <see cref="olm_encrypt" /> will return.
         /// </summary>
         /// <param name="session">A pointer to the session.</param>
         /// <returns>
-        /// <see cref="MessageType.PreKey" /> if the message will be a <c>PRE_KEY</c> message.
-        /// <see cref="MessageType.Message" /> if the message will be a normal message.
-        /// The value of <see cref="GetErrorCode" /> on failure.
+        /// <see cref="OLM_MESSAGE_TYPE_PRE_KEY" /> if the message will be a <c>PRE_KEY</c> message.
+        /// <see cref="OLM_MESSAGE_TYPE_MESSAGE" /> if the message will be a normal message.
+        /// The value of <see cref="olm_error" /> on failure.
         /// </returns>
         [DllImport(Name, EntryPoint = "olm_encrypt_message_type", ExactSpelling = true)]
-        internal static extern MessageType GetNextEncryptMessageType(IntPtr session);
+        internal static extern uint olm_encrypt_message_type(IntPtr session);
 
         /// <summary>
         /// Gets the number of random bytes needed to encrypt the next message.
@@ -31,16 +33,16 @@ namespace Cshrix.Cryptography.Olm
         /// <param name="session">A pointer to the session.</param>
         /// <returns>The number of random bytes needed.</returns>
         [DllImport(Name, EntryPoint = "olm_encrypt_random_length", ExactSpelling = true)]
-        internal static extern uint GetEncryptRandomLength(IntPtr session);
+        internal static extern uint olm_encrypt_random_length(IntPtr session);
 
         /// <summary>
         /// Gets the size of the next message in bytes for the given number of plain-text bytes.
         /// </summary>
         /// <param name="session">A pointer to the session.</param>
-        /// <param name="plaintextLength">The length of the plaintext in bytes.</param>
+        /// <param name="plaintext_length">The length of the plaintext in bytes.</param>
         /// <returns>The size of the next message.</returns>
         [DllImport(Name, EntryPoint = "olm_encrypt_message_length", ExactSpelling = true)]
-        internal static extern uint GetNextEncryptMessageLength(IntPtr session, uint plaintextLength);
+        internal static extern uint olm_encrypt_message_length(IntPtr session, uint plaintext_length);
 
         /// <summary>
         /// Encrypts a message using the session.
@@ -48,29 +50,29 @@ namespace Cshrix.Cryptography.Olm
         /// </summary>
         /// <param name="session">A pointer to the session.</param>
         /// <param name="plaintext">The plaintext to encrypt.</param>
-        /// <param name="plaintextLength">Length of <paramref name="plaintext" />.</param>
+        /// <param name="plaintext_length">Length of <paramref name="plaintext" />.</param>
         /// <param name="random">Random bytes.</param>
-        /// <param name="randomLength">Length of <paramref name="random" />.</param>
+        /// <param name="random_length">Length of <paramref name="random" />.</param>
         /// <param name="message">Output buffer for the encrypted message.</param>
-        /// <param name="messageLength">Length of <paramref name="message" />.</param>
+        /// <param name="message_length">Length of <paramref name="message" />.</param>
         /// <returns>
-        /// The length of the message in bytes on success. The value of <see cref="GetErrorCode" /> on failure.
+        /// The length of the message in bytes on success. The value of <see cref="olm_error" /> on failure.
         /// </returns>
         /// <remarks>
-        /// If the message buffer is too small then <see cref="GetLastSessionError" />
+        /// If the message buffer is too small then <see cref="olm_session_last_error" />
         /// will return <c>OUTPUT_BUFFER_TOO_SMALL</c>.
-        /// If there weren't enough random bytes then <see cref="GetLastSessionError" />
+        /// If there weren't enough random bytes then <see cref="olm_session_last_error" />
         /// will return <c>NOT_ENOUGH_RANDOM</c>.
         /// </remarks>
         [DllImport(Name, EntryPoint = "olm_encrypt", ExactSpelling = true)]
-        internal static extern uint Encrypt(
+        internal static extern uint olm_encrypt(
             IntPtr session,
             byte[] plaintext,
-            uint plaintextLength,
+            uint plaintext_length,
             byte[] random,
-            uint randomLength,
+            uint random_length,
             byte[] message,
-            uint messageLength);
+            uint message_length);
 
         /// <summary>
         /// Gets the maximum number of bytes of plain-text a given message could decode to.
@@ -78,58 +80,58 @@ namespace Cshrix.Cryptography.Olm
         /// The <paramref name="message" /> buffer is destroyed.
         /// </summary>
         /// <param name="session">A pointer to the session.</param>
-        /// <param name="messageType">The type of message.</param>
+        /// <param name="message_type">The type of message.</param>
         /// <param name="message">The message.</param>
-        /// <param name="messageLength">Length of <paramref name="message" />.</param>
-        /// <returns>The value of <see cref="GetErrorCode" /> on failure.</returns>
+        /// <param name="message_length">Length of <paramref name="message" />.</param>
+        /// <returns>The value of <see cref="olm_error" /> on failure.</returns>
         /// <remarks>
-        /// If the message base64 couldn't be decoded then <see cref="GetLastSessionError" />
+        /// If the message base64 couldn't be decoded then <see cref="olm_session_last_error" />
         /// will return <c>INVALID_BASE64</c>.
-        /// If the message is for an unsupported version of the protocol then <see cref="GetLastSessionError" />
+        /// If the message is for an unsupported version of the protocol then <see cref="olm_session_last_error" />
         /// will return <c>BAD_MESSAGE_VERSION</c>.
-        /// If the message couldn't be decoded then <see cref="GetLastSessionError" />
+        /// If the message couldn't be decoded then <see cref="olm_session_last_error" />
         /// will return <c>BAD_MESSAGE_FORMAT</c>.
         /// </remarks>
         [DllImport(Name, EntryPoint = "olm_decrypt_max_plaintext_length", ExactSpelling = true)]
-        internal static extern uint GetDecryptMaxPlaintextLength(
+        internal static extern uint olm_decrypt_max_plaintext_length(
             IntPtr session,
-            MessageType messageType,
+            uint message_type,
             byte[] message,
-            uint messageLength);
+            uint message_length);
 
         /// <summary>
         /// Decrypts a message using the session.
         /// The input <paramref name="message" /> buffer is destroyed.
         /// </summary>
         /// <param name="session">A pointer to the session.</param>
-        /// <param name="messageType">The type of message being decrypted.</param>
+        /// <param name="message_type">The type of message being decrypted.</param>
         /// <param name="message">The message contents.</param>
-        /// <param name="messageLength">Length of <paramref name="message" />.</param>
+        /// <param name="message_length">Length of <paramref name="message" />.</param>
         /// <param name="plaintext">Output buffer to store decrypted plaintext in.</param>
-        /// <param name="plaintextLength">The length (capacity) of <paramref name="plaintext" />.</param>
+        /// <param name="plaintext_length">The length (capacity) of <paramref name="plaintext" />.</param>
         /// <returns>
         /// The length of the plain-text on success.
-        /// The value of <see cref="GetErrorCode" /> on failure.
+        /// The value of <see cref="olm_error" /> on failure.
         /// </returns>
         /// <remarks>
-        /// If the plain-text buffer is smaller than the value returned by <see cref="GetDecryptMaxPlaintextLength" />
-        /// then <see cref="GetLastSessionError" /> will return <c>OUTPUT_BUFFER_TOO_SMALL</c>.
+        /// If the plain-text buffer is smaller than the value returned by <see cref="olm_decrypt_max_plaintext_length" />
+        /// then <see cref="olm_session_last_error" /> will return <c>OUTPUT_BUFFER_TOO_SMALL</c>.
         /// If the Base64 couldn't be decoded then
-        /// <see cref="GetLastSessionError" /> will return <c>INVALID_BASE64</c>.
-        /// If the message is for an unsupported version of the protocol then <see cref="GetLastSessionError" />
+        /// <see cref="olm_session_last_error" /> will return <c>INVALID_BASE64</c>.
+        /// If the message is for an unsupported version of the protocol then <see cref="olm_session_last_error" />
         /// will return <c>BAD_MESSAGE_VERSION</c>.
-        /// If the message couldn't be decoded then <see cref="GetLastSessionError" />
+        /// If the message couldn't be decoded then <see cref="olm_session_last_error" />
         /// will return <c>BAD_MESSAGE_FORMAT</c>.
-        /// If the MAC on the message was invalid then <see cref="GetLastSessionError" />
+        /// If the MAC on the message was invalid then <see cref="olm_session_last_error" />
         /// will return <c>BAD_MESSAGE_MAC</c>.
         /// </remarks>
         [DllImport(Name, EntryPoint = "olm_decrypt", ExactSpelling = true)]
-        internal static extern uint Decrypt(
+        internal static extern uint olm_decrypt(
             IntPtr session,
-            MessageType messageType,
+            uint message_type,
             byte[] message,
-            uint messageLength,
+            uint message_length,
             byte[] plaintext,
-            uint plaintextLength);
+            uint plaintext_length);
     }
 }

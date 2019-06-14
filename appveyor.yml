@@ -1,4 +1,4 @@
-image: Visual Studio 2017
+image: Visual Studio 2019
 
 version: '{build}'
 
@@ -13,10 +13,6 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   github_access_token:
     secure: H9GNaUHDXdNotkHCbBnrAmifPm0EVND+1eMCMSAGdFf1UbVWHsTBcwSu2UqOwONH
-  DOCKER_USER:
-    secure: +9I5JTMOlh/rhcIllkQ+ZQ==
-  DOCKER_PASSWORD:
-    secure: 3OIk/ZlLSt19JQBOv2dyc/qw2F7HZ7cJ5eCpxpPnJ5F67u/9+rbRsUlDKXWCS6qyN3aDniR6wsCsBsYwS0u4/Dqwvf4eI7+4vB4JH5mjQyE=
   DOCKER_REGISTRY: sharparam
   COVERALLS_REPO_TOKEN:
     secure: KBR9chytnX5p8YjEuRn+mwEVKRW7FcWE/gxJaiRosnjVTIozI103+bCesjxpZ1aj
@@ -34,7 +30,6 @@ init:
   - git config --global user.email "ci@appveyor.com"
   - git config --global credential.helper store
   - ps: Add-Content "$HOME\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
-  - ps: $env:DOCKER_PASSWORD | docker login -u "$env:DOCKER_USER" --password-stdin
 
 install:
   - git config --global user.name "AppVeyor CI"
