@@ -72,6 +72,7 @@ namespace Cshrix.Serialization
                 ["m.room.related_groups"] = typeof(GroupsContent),
                 ["m.room.server_acl"] = typeof(ServerAclContent),
                 ["m.room.third_party_invite"] = typeof(ThirdPartyInviteContent),
+                ["m.room.tombstone"] = typeof(TombstoneContent),
                 ["m.room.topic"] = typeof(RoomTopicContent),
                 ["m.sticker"] = typeof(StickerContent),
                 ["m.tag"] = typeof(TagsContent),
