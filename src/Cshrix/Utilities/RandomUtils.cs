@@ -28,11 +28,20 @@ namespace Cshrix.Utilities
         /// <returns>An array containing <paramref name="count" /> securely generated random bytes.</returns>
         internal static byte[] SecureBytes(int count)
         {
+            var data = new byte[count];
+            SecureBytes(data);
+            return data;
+        }
+
+        /// <summary>
+        /// Fills a byte array with random bytes, generated securely.
+        /// </summary>
+        /// <param name="buffer">The array to write random bytes into.</param>
+        internal static void SecureBytes(byte[] buffer)
+        {
             using (var csprng = new RNGCryptoServiceProvider())
             {
-                var data = new byte[count];
-                csprng.GetBytes(data);
-                return data;
+                csprng.GetBytes(buffer);
             }
         }
     }
