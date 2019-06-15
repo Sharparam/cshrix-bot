@@ -43,6 +43,7 @@ namespace Cshrix
             Id = id;
             Membership = membership;
             _aliases = new HashSet<RoomAlias>();
+            PowerLevels = new PowerLevels();
         }
 
         /// <inheritdoc />
@@ -71,6 +72,9 @@ namespace Cshrix
 
         /// <inheritdoc />
         public string Version { get; private set; } = DefaultRoomVersion;
+
+        /// <inheritdoc />
+        public PowerLevels PowerLevels { get; }
 
         /// <inheritdoc />
         public bool IsTombstoned { get; private set; }

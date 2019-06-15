@@ -69,6 +69,11 @@ namespace Cshrix
         string Version { get; }
 
         /// <summary>
+        /// Gets the latest power levels set on the room.
+        /// </summary>
+        PowerLevels PowerLevels { get; }
+
+        /// <summary>
         /// Gets a value indicating whether this room has been tombstoned.
         /// </summary>
         bool IsTombstoned { get; }
