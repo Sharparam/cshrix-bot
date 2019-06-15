@@ -18,6 +18,8 @@ namespace Cshrix
 
     using Extensions;
 
+    using Microsoft.Extensions.Logging;
+
     /// <summary>
     /// Describes a room joined by the client, and defines possible actions.
     /// </summary>
@@ -29,6 +31,11 @@ namespace Cshrix
         private const string DefaultRoomVersion = "1";
 
         /// <summary>
+        /// The logger instance for the object.
+        /// </summary>
+        private readonly ILogger _log;
+
+        /// <summary>
         /// A set containing all known aliases for the room.
         /// </summary>
         private readonly HashSet<RoomAlias> _aliases;
@@ -36,10 +43,12 @@ namespace Cshrix
         /// <summary>
         /// Initializes a new instance of the <see cref="Room" /> class.
         /// </summary>
+        /// <param name="log">Logger instance for the room.</param>
         /// <param name="id">The ID of the room.</param>
         /// <param name="membership">The current membership of the user in the room.</param>
-        public Room(string id, Membership membership)
+        private Room(ILogger log, string id, Membership membership)
         {
+            _log = log;
             Id = id;
             Membership = membership;
             _aliases = new HashSet<RoomAlias>();
@@ -85,12 +94,14 @@ namespace Cshrix
         /// <summary>
         /// Creates a <see cref="Room" /> from the contents of an <see cref="InvitedRoom" />.
         /// </summary>
+        /// <param name="loggerFactory">Logger factory.</param>
         /// <param name="id">The ID of the room the user was invited to.</param>
         /// <param name="invitedRoom">The data for the invited room.</param>
         /// <returns>An instance of <see cref="Room" />.</returns>
-        internal static Room FromInvitedRoom(string id, InvitedRoom invitedRoom)
+        internal static Room FromInvitedRoom(ILoggerFactory loggerFactory, string id, InvitedRoom invitedRoom)
         {
-            var room = new Room(id, Membership.Invited);
+            var logger = loggerFactory.CreateLogger(GenerateLoggerCategory(id));
+            var room = new Room(logger, id, Membership.Invited);
 
             var state = invitedRoom.InviteState;
             room.UpdateFromEvents(state.Events);
@@ -101,16 +112,29 @@ namespace Cshrix
         /// <summary>
         /// Creates a <see cref="Room" /> from the contents of a <see cref="JoinedRoom" />.
         /// </summary>
+        /// <param name="loggerFactory">Logger factory.</param>
         /// <param name="id">The ID of the room.</param>
         /// <param name="joinedRoom">Data about the joined room.</param>
         /// <returns>An instance of <see cref="Room" />.</returns>
-        internal static Room FromJoinedRoom(string id, JoinedRoom joinedRoom)
+        internal static Room FromJoinedRoom(ILoggerFactory loggerFactory, string id, JoinedRoom joinedRoom)
         {
-            var room = new Room(id, Membership.Joined);
+            var logger = loggerFactory.CreateLogger(GenerateLoggerCategory(id));
+            var room = new Room(logger, id, Membership.Joined);
 
             room.Update(joinedRoom);
 
             return room;
+        }
+
+        /// <summary>
+        /// Generates a logger category for the specified room ID.
+        /// </summary>
+        /// <param name="id">The room ID.</param>
+        /// <returns>The logger category.</returns>
+        private static string GenerateLoggerCategory(string id)
+        {
+            var typeName = typeof(Room).FullName;
+            return $"{typeName}.{id}";
         }
 
         /// <summary>
@@ -119,6 +143,7 @@ namespace Cshrix
         /// <param name="joinedRoom">The sync data to update from.</param>
         internal void Update(JoinedRoom joinedRoom)
         {
+            _log.LogTrace("Updating from a JoinedRoom object");
             UpdateFromEvents(joinedRoom.State.Events);
             UpdateFromEvents(joinedRoom.Timeline.Events);
         }
@@ -159,10 +184,12 @@ namespace Cshrix
         /// <param name="events">The events to update from.</param>
         private void UpdateAliasesFromEvents(IReadOnlyCollection<Event> events)
         {
+            _log.LogTrace("Updating aliases from events");
             var aliasContent = events.GetStateEventContentOrDefault<CanonicalAliasContent>("m.room.canonical_alias");
 
             if (aliasContent?.Alias != null)
             {
+                _log.LogTrace("New canonical alias: {CanonicalAlias}", aliasContent.Alias);
                 CanonicalAlias = aliasContent.Alias;
                 _aliases.Add(aliasContent.Alias);
             }
@@ -178,6 +205,7 @@ namespace Cshrix
         /// <param name="content">Information about the tombstone event.</param>
         private void OnTombstone(TombstoneContent content)
         {
+            _log.LogTrace("Room tombstoned. Setting properties and broadcasting event");
             IsTombstoned = true;
             TombstoneContent = content;
             Tombstoned?.Invoke(this, new TombstonedEventArgs(content));

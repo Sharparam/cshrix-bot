@@ -45,6 +45,11 @@ namespace Cshrix
         private const string DefaultApiVersion = "r0";
 
         /// <summary>
+        /// The application logger factory.
+        /// </summary>
+        private readonly ILoggerFactory _loggerFactory;
+
+        /// <summary>
         /// The instance of <see cref="IMatrixClientServerApi" /> to use for API calls.
         /// </summary>
         private readonly IMatrixClientServerApi _api;
@@ -76,6 +81,7 @@ namespace Cshrix
             HttpClient httpClient,
             IOptionsMonitor<MatrixClientConfiguration> clientConfig)
         {
+            _loggerFactory = loggerFactory;
             Log = loggerFactory.CreateLogger<MatrixClient>();
             var baseUri = clientConfig.CurrentValue.BaseUri ?? new Uri(DefaultBaseUrl);
             httpClient.BaseAddress = baseUri;
@@ -203,7 +209,7 @@ namespace Cshrix
             if (!hasRoom)
             {
                 Log.LogTrace("Invited room {RoomId} did not exist, adding it", roomId);
-                room = Room.FromInvitedRoom(roomId, invitedRoom);
+                room = Room.FromInvitedRoom(_loggerFactory, roomId, invitedRoom);
                 _rooms.TryAdd(roomId, room);
             }
 
@@ -227,7 +233,7 @@ namespace Cshrix
             else
             {
                 Log.LogTrace("Joined room {RoomId} did not exist, adding it", roomId);
-                room = Room.FromJoinedRoom(roomId, joinedRoom);
+                room = Room.FromJoinedRoom(_loggerFactory, roomId, joinedRoom);
                 _rooms.TryAdd(roomId, room);
                 Joined?.Invoke(this, new JoinedEventArgs(room));
             }
