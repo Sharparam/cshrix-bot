@@ -113,7 +113,7 @@ namespace Cshrix.Data
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal; otherwise, <c>false</c>.</returns>
         public static bool operator !=(Identifier left, Identifier right) =>
-            left?.Equals(right) ?? !ReferenceEquals(null, right);
+            !left?.Equals(right) ?? !ReferenceEquals(null, right);
 
         /// <summary>
         /// Checks if an instance of <see cref="Identifier" /> and a <see cref="string" /> are equal.
@@ -137,7 +137,7 @@ namespace Cshrix.Data
         /// otherwise, <c>false</c>.
         /// </returns>
         public static bool operator !=(Identifier left, string right) =>
-            left?.Equals(right) ?? ReferenceEquals(null, right);
+            !left?.Equals(right) ?? !ReferenceEquals(null, right);
 
         /// <summary>
         /// Checks if a <see cref="string" /> and an instance of <see cref="Identifier" /> are equal.
@@ -161,7 +161,7 @@ namespace Cshrix.Data
         /// otherwise, <c>false</c>.
         /// </returns>
         public static bool operator !=(string left, Identifier right) =>
-            right?.Equals(left) ?? !ReferenceEquals(null, left);
+            !right?.Equals(left) ?? !ReferenceEquals(null, left);
 
         /// <summary>
         /// Gets the type of this identifier.
