@@ -29,11 +29,11 @@ namespace Cshrix.Serialization
         /// </exception>
         protected override GroupId Parse(string id)
         {
-            var successful = GroupId.TryParse(id, out var userId);
+            var successful = GroupId.TryParse(id, out var groupId);
 
             if (successful)
             {
-                return userId;
+                return groupId;
             }
 
             throw new JsonSerializationException("String was not a valid GroupId");

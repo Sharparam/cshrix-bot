@@ -44,7 +44,7 @@ namespace Cshrix.Data
         /// <param name="localpart">The localpart of the alias.</param>
         /// <param name="domain">The domain on which the alias lives.</param>
         public RoomAlias(string localpart, ServerName domain)
-            : base(IdentifierType.User, localpart, domain)
+            : base(IdentifierType.RoomAlias, localpart, domain)
         {
         }
 

@@ -39,7 +39,7 @@ namespace Cshrix.Data
         /// <param name="localpart">The localpart of the group ID (between initial <c>+</c> and first <c>:</c>).</param>
         /// <param name="domain">The domain of the group ID.</param>
         public GroupId(string localpart, ServerName domain)
-            : base(IdentifierType.User, SigilMapping[IdentifierType.User], localpart, domain)
+            : base(IdentifierType.Group, localpart, domain)
         {
         }
 

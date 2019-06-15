@@ -27,7 +27,7 @@ namespace Cshrix.Tests.Serialization
         }
 
         [Test]
-        public void ShouldDeserializeStringUserId()
+        public void ShouldDeserializeUserId()
         {
             const string UserId = "\"@sharparam:matrix.sharparam.com\"";
             var deserialized = JsonConvert.DeserializeObject<UserId>(UserId);
@@ -36,6 +36,28 @@ namespace Cshrix.Tests.Serialization
             Assert.AreEqual('@', deserialized.Sigil);
             Assert.AreEqual("sharparam", deserialized.Localpart);
             Assert.AreEqual("matrix.sharparam.com", deserialized.Domain.Hostname);
+        }
+
+        [Test]
+        public void ShouldSerializeRoomAlias()
+        {
+            const string Alias = "#cshrix-bot:sharparam.com";
+            var roomAlias = RoomAlias.Parse(Alias);
+            var serialized = JsonConvert.SerializeObject(roomAlias);
+
+            Assert.AreEqual($"\"{Alias}\"", serialized);
+        }
+
+        [Test]
+        public void ShouldDeserializeRoomAlias()
+        {
+            const string RoomAlias = "\"#cshrix-bot:sharparam.com\"";
+            var deserialized = JsonConvert.DeserializeObject<RoomAlias>(RoomAlias);
+
+            Assert.AreEqual(IdentifierType.RoomAlias, deserialized.Type);
+            Assert.AreEqual('#', deserialized.Sigil);
+            Assert.AreEqual("cshrix-bot", deserialized.Localpart);
+            Assert.AreEqual("sharparam.com", deserialized.Domain.Hostname);
         }
     }
 }

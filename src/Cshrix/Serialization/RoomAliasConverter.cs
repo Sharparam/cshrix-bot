@@ -29,11 +29,11 @@ namespace Cshrix.Serialization
         /// </exception>
         protected override RoomAlias Parse(string id)
         {
-            var successful = RoomAlias.TryParse(id, out var userId);
+            var successful = RoomAlias.TryParse(id, out var alias);
 
             if (successful)
             {
-                return userId;
+                return alias;
             }
 
             throw new JsonSerializationException("String was not a valid RoomAlias");
