@@ -41,6 +41,11 @@ namespace Cshrix
         private readonly HashSet<RoomAlias> _aliases;
 
         /// <summary>
+        /// Contains event IDs that have been replaced by new events.
+        /// </summary>
+        private readonly HashSet<string> _replacedEventIds;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Room" /> class.
         /// </summary>
         /// <param name="log">Logger instance for the room.</param>
@@ -52,6 +57,7 @@ namespace Cshrix
             Id = id;
             Membership = membership;
             _aliases = new HashSet<RoomAlias>();
+            _replacedEventIds = new HashSet<string>();
             PowerLevels = new PowerLevels();
         }
 
@@ -154,26 +160,43 @@ namespace Cshrix
         /// <param name="events">The events to update from.</param>
         private void UpdateFromEvents(IReadOnlyCollection<Event> events)
         {
-            UpdateAliasesFromEvents(events);
+            var filtered = events.Where(e => !_replacedEventIds.Contains(e.Id)).ToList().AsReadOnly();
 
-            if (events.GetStateEventContentOrDefault("m.room.name") is RoomNameContent nameContent)
+            _log.LogTrace("Updating from collection of events");
+            UpdateAliasesFromEvents(filtered);
+
+            if (filtered.GetStateEventContentOrDefault("m.room.name") is RoomNameContent nameContent)
             {
+                _log.LogTrace("Updating room name to {Name}", nameContent.Name);
                 Name = nameContent.Name;
             }
 
-            if (events.GetStateEventContentOrDefault("m.room.topic") is RoomTopicContent topicContent)
+            if (filtered.GetStateEventContentOrDefault("m.room.topic") is RoomTopicContent topicContent)
             {
+                _log.LogTrace("Updating room topic to {Topic}", topicContent.Topic);
                 Topic = topicContent.Topic;
             }
 
-            if (events.GetStateEventContentOrDefault("m.room.create") is CreationContent creationContent)
+            if (filtered.GetStateEventContentOrDefault("m.room.create") is CreationContent creationContent)
             {
+                _log.LogTrace(
+                    "Updating room creator to {Creator} and version to {Version}",
+                    creationContent.Creator,
+                    creationContent.RoomVersion);
+
                 Creator = creationContent.Creator;
                 Version = creationContent.RoomVersion ?? DefaultRoomVersion;
             }
 
-            if (events.GetStateEventContentOrDefault("m.room.tombstone") is TombstoneContent tombstoneContent)
+            if (filtered.GetStateEventContentOrDefault("m.room.power_levels") is PowerLevelsContent powerLevelsContent)
             {
+                _log.LogTrace("Updating power levels");
+                PowerLevels.Content = powerLevelsContent;
+            }
+
+            if (filtered.GetStateEventContentOrDefault("m.room.tombstone") is TombstoneContent tombstoneContent)
+            {
+                _log.LogTrace("Room has been tombstoned");
                 OnTombstone(tombstoneContent);
             }
         }
