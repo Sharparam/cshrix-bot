@@ -137,7 +137,7 @@ namespace Cshrix.Serialization
             var id = jObject.ValueOrDefault<string>("event_id");
             var stateKey = jObject.ValueOrDefault<string>("state_key");
             var roomId = jObject.ValueOrDefault<string>("room_id");
-            var unsigned = jObject.ObjectOrDefault<UnsignedData?>("unsigned");
+            var unsigned = ParseUnsignedData(type, jObject);
             var previousContent = ParseEventContent(type, jObject, "prev_content");
 
             DateTimeOffset sentAt;
@@ -187,6 +187,43 @@ namespace Cshrix.Serialization
             }
 
             return hasType ? (EventContent)contentObject.ToObject(contentType) : contentObject.ToObject<EventContent>();
+        }
+
+        /// <summary>
+        /// Parses unsigned data from an event, if any.
+        /// </summary>
+        /// <param name="eventType">The type of the event.</param>
+        /// <param name="jObject">The JSON object containing the event.</param>
+        /// <param name="key">The name of the key containing unsigned data.</param>
+        /// <returns>
+        /// An instance of <see cref="UnsignedData" /> if found; otherwise, <c>null</c>.
+        /// </returns>
+        private static UnsignedData? ParseUnsignedData(string eventType, JObject jObject, string key = "unsigned")
+        {
+            var hasData = jObject.TryGetValue(key, out var token);
+
+            if (!hasData || !(token is JObject unsignedObject))
+            {
+                return null;
+            }
+
+            var replacesStateEventId = unsignedObject.ValueOrDefault<string>("replaces_state");
+            var previousContent = ParseEventContent(eventType, unsignedObject, "prev_content");
+            var previousSender = unsignedObject.ObjectOrDefault<UserId>("prev_sender");
+            var ageMilliseconds = unsignedObject.ValueOrDefault<long?>("age");
+            var age = ageMilliseconds.HasValue ? TimeSpan.FromSeconds(ageMilliseconds.Value) : (TimeSpan?)null;
+            var redactionEvent = unsignedObject.ObjectOrDefault<Event>("redacted_because");
+            var transactionId = unsignedObject.ValueOrDefault<string>("transaction_id");
+            var inviteRoomState = unsignedObject.ObjectOrDefault<IReadOnlyCollection<Event>>("invite_room_state");
+
+            return new UnsignedData(
+                replacesStateEventId,
+                previousContent,
+                previousSender,
+                age,
+                redactionEvent,
+                transactionId,
+                inviteRoomState);
         }
     }
 }

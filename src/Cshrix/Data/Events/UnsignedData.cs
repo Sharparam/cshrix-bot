@@ -11,6 +11,8 @@ namespace Cshrix.Data.Events
     using System;
     using System.Collections.Generic;
 
+    using Content;
+
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;
@@ -25,16 +27,22 @@ namespace Cshrix.Data.Events
         /// <summary>
         /// Initializes a new instance of the <see cref="UnsignedData" /> structure.
         /// </summary>
+        /// <param name="replacesStateEventId">The ID of the event being replaced.</param>
+        /// <param name="previousContent">The previous contents of the event.</param>
+        /// <param name="previousSender">The ID of the user who sent the previous event.</param>
         /// <param name="age">The time since the event was sent.</param>
         /// <param name="redactionEvent">An event that redacted this event, if any.</param>
         /// <param name="transactionId">The transaction ID of the event, if applicable.</param>
         /// <param name="inviteRoomState">A subset of state events of the room at the time of an invite.</param>
         [JsonConstructor]
         public UnsignedData(
-            TimeSpan age,
-            Event redactionEvent,
-            string transactionId,
-            IReadOnlyCollection<Event> inviteRoomState)
+            [CanBeNull] string replacesStateEventId,
+            [CanBeNull] EventContent previousContent,
+            [CanBeNull] UserId previousSender,
+            TimeSpan? age,
+            [CanBeNull] Event redactionEvent,
+            [CanBeNull] string transactionId,
+            [CanBeNull] IReadOnlyCollection<Event> inviteRoomState)
             : this()
         {
             Age = age;
@@ -44,11 +52,32 @@ namespace Cshrix.Data.Events
         }
 
         /// <summary>
+        /// Gets the ID of the state event replaced by the current event.
+        /// </summary>
+        [JsonProperty("replaces_state")]
+        [CanBeNull]
+        public string ReplacesStateEventId { get; }
+
+        /// <summary>
+        /// Gets the previous contents of the event.
+        /// </summary>
+        [JsonProperty("prev_content")]
+        [CanBeNull]
+        public EventContent PreviousContent { get; }
+
+        /// <summary>
+        /// Gets the ID of the user who sent the previous event.
+        /// </summary>
+        [JsonProperty("prev_sender")]
+        [CanBeNull]
+        public UserId PreviousSender { get; }
+
+        /// <summary>
         /// Gets the time since the event was sent.
         /// </summary>
         [JsonProperty("age")]
         [JsonConverter(typeof(MillisecondTimeSpanConverter))]
-        public TimeSpan Age { get; }
+        public TimeSpan? Age { get; }
 
         /// <summary>
         /// Gets the event that redacted this event, if any.

@@ -160,6 +160,11 @@ namespace Cshrix
         /// <param name="events">The events to update from.</param>
         private void UpdateFromEvents(IReadOnlyCollection<Event> events)
         {
+            var replacedIds = events.Where(e => e.Unsigned?.ReplacesStateEventId != null)
+                .Select(e => e.Unsigned.Value.ReplacesStateEventId);
+
+            _replacedEventIds.UnionWith(replacedIds);
+
             var filtered = events.Where(e => !_replacedEventIds.Contains(e.Id)).ToList().AsReadOnly();
 
             _log.LogTrace("Updating from collection of events");
@@ -210,10 +215,18 @@ namespace Cshrix
             _log.LogTrace("Updating aliases from events");
             var aliasContent = events.GetStateEventContentOrDefault<CanonicalAliasContent>("m.room.canonical_alias");
 
-            if (aliasContent?.Alias != null)
+            if (aliasContent != null)
             {
+                var oldCanonAlias = CanonicalAlias;
                 _log.LogTrace("New canonical alias: {CanonicalAlias}", aliasContent.Alias);
                 CanonicalAlias = aliasContent.Alias;
+
+                if (oldCanonAlias != null)
+                {
+                    _log.LogTrace("Removing old canonical alias: {OldCanonicalAlias}", oldCanonAlias);
+                    _aliases.Remove(oldCanonAlias);
+                }
+
                 _aliases.Add(aliasContent.Alias);
             }
 
