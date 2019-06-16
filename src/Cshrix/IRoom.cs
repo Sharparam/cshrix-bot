@@ -22,6 +22,11 @@ namespace Cshrix
     public interface IRoom
     {
         /// <summary>
+        /// Raised when a message is received in this room.
+        /// </summary>
+        event EventHandler<MessageEventArgs> Message;
+
+        /// <summary>
         /// Raised when this room is upgraded to a new version.
         /// </summary>
         event EventHandler<TombstonedEventArgs> Tombstoned;
@@ -71,7 +76,7 @@ namespace Cshrix
         /// <summary>
         /// Gets the latest power levels set on the room.
         /// </summary>
-        PowerLevels PowerLevels { get; }
+        IPowerLevels PowerLevels { get; }
 
         /// <summary>
         /// Gets a value indicating whether this room has been tombstoned.

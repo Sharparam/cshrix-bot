@@ -46,20 +46,28 @@ namespace Cshrix
         private readonly HashSet<string> _replacedEventIds;
 
         /// <summary>
+        /// Contains power levels for this room.
+        /// </summary>
+        private readonly PowerLevels _powerLevels;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Room" /> class.
         /// </summary>
         /// <param name="log">Logger instance for the room.</param>
         /// <param name="id">The ID of the room.</param>
         /// <param name="membership">The current membership of the user in the room.</param>
-        private Room(ILogger log, string id, Membership membership)
+        public Room(ILogger log, string id, Membership membership)
         {
             _log = log;
             Id = id;
             Membership = membership;
             _aliases = new HashSet<RoomAlias>();
             _replacedEventIds = new HashSet<string>();
-            PowerLevels = new PowerLevels();
+            _powerLevels = new PowerLevels();
         }
+
+        /// <inheritdoc />
+        public event EventHandler<MessageEventArgs> Message;
 
         /// <inheritdoc />
         public event EventHandler<TombstonedEventArgs> Tombstoned;
@@ -89,7 +97,7 @@ namespace Cshrix
         public string Version { get; private set; } = DefaultRoomVersion;
 
         /// <inheritdoc />
-        public PowerLevels PowerLevels { get; }
+        public IPowerLevels PowerLevels => _powerLevels;
 
         /// <inheritdoc />
         public bool IsTombstoned { get; private set; }
@@ -98,49 +106,25 @@ namespace Cshrix
         public TombstoneContent TombstoneContent { get; private set; }
 
         /// <summary>
-        /// Creates a <see cref="Room" /> from the contents of an <see cref="InvitedRoom" />.
-        /// </summary>
-        /// <param name="loggerFactory">Logger factory.</param>
-        /// <param name="id">The ID of the room the user was invited to.</param>
-        /// <param name="invitedRoom">The data for the invited room.</param>
-        /// <returns>An instance of <see cref="Room" />.</returns>
-        internal static Room FromInvitedRoom(ILoggerFactory loggerFactory, string id, InvitedRoom invitedRoom)
-        {
-            var logger = loggerFactory.CreateLogger(GenerateLoggerCategory(id));
-            var room = new Room(logger, id, Membership.Invited);
-
-            var state = invitedRoom.InviteState;
-            room.UpdateFromEvents(state.Events);
-
-            return room;
-        }
-
-        /// <summary>
-        /// Creates a <see cref="Room" /> from the contents of a <see cref="JoinedRoom" />.
-        /// </summary>
-        /// <param name="loggerFactory">Logger factory.</param>
-        /// <param name="id">The ID of the room.</param>
-        /// <param name="joinedRoom">Data about the joined room.</param>
-        /// <returns>An instance of <see cref="Room" />.</returns>
-        internal static Room FromJoinedRoom(ILoggerFactory loggerFactory, string id, JoinedRoom joinedRoom)
-        {
-            var logger = loggerFactory.CreateLogger(GenerateLoggerCategory(id));
-            var room = new Room(logger, id, Membership.Joined);
-
-            room.Update(joinedRoom);
-
-            return room;
-        }
-
-        /// <summary>
         /// Generates a logger category for the specified room ID.
         /// </summary>
         /// <param name="id">The room ID.</param>
         /// <returns>The logger category.</returns>
-        private static string GenerateLoggerCategory(string id)
+        internal static string GenerateLoggerCategory(string id)
         {
             var typeName = typeof(Room).FullName;
             return $"{typeName}.{id}";
+        }
+
+        /// <summary>
+        /// Updates a room from a synced <see cref="InvitedRoom" /> object.
+        /// </summary>
+        /// <param name="invitedRoom">The sync data to update from.</param>
+        internal void Update(InvitedRoom invitedRoom)
+        {
+            _log.LogTrace("Updating from an InvitedRoom object");
+            Membership = Membership.Invited;
+            UpdateFromEvents(invitedRoom.InviteState.Events);
         }
 
         /// <summary>
@@ -150,6 +134,7 @@ namespace Cshrix
         internal void Update(JoinedRoom joinedRoom)
         {
             _log.LogTrace("Updating from a JoinedRoom object");
+            Membership = Membership.Joined;
             UpdateFromEvents(joinedRoom.State.Events);
             UpdateFromEvents(joinedRoom.Timeline.Events);
         }
@@ -196,7 +181,7 @@ namespace Cshrix
             if (filtered.GetStateEventContentOrDefault("m.room.power_levels") is PowerLevelsContent powerLevelsContent)
             {
                 _log.LogTrace("Updating power levels");
-                PowerLevels.Content = powerLevelsContent;
+                _powerLevels.Content = powerLevelsContent;
             }
 
             if (filtered.GetStateEventContentOrDefault("m.room.tombstone") is TombstoneContent tombstoneContent)
@@ -204,6 +189,8 @@ namespace Cshrix
                 _log.LogTrace("Room has been tombstoned");
                 OnTombstone(tombstoneContent);
             }
+
+            HandleMessageEvents(filtered);
         }
 
         /// <summary>
@@ -233,6 +220,41 @@ namespace Cshrix
             var aliasesStates = events.OfEventType("m.room.aliases");
             var aliases = aliasesStates.SelectMany(e => (e.Content as AliasesContent)?.Aliases).Where(a => a != null);
             _aliases.UnionWith(aliases);
+        }
+
+        /// <summary>
+        /// Extracts message events from the given collection of events and handles them.
+        /// </summary>
+        /// <param name="events">The collection of events to process.</param>
+        private void HandleMessageEvents(IReadOnlyCollection<Event> events)
+        {
+            _log.LogTrace("Handling message events");
+            var messageEvents = events.OfEventType("m.room.message");
+            foreach (var messageEvent in messageEvents)
+            {
+                HandleMessageEvent(messageEvent);
+            }
+        }
+
+        /// <summary>
+        /// Handles a message event.
+        /// </summary>
+        /// <param name="messageEvent">The message event to handle.</param>
+        private void HandleMessageEvent(Event messageEvent)
+        {
+            if (messageEvent.Type != "m.room.message" || messageEvent.Sender == null || !messageEvent.SentAt.HasValue ||
+                !(messageEvent.Content is MessageContent content))
+            {
+                return;
+            }
+
+            var sender = messageEvent.Sender;
+            var timestamp = messageEvent.SentAt.Value;
+
+            var message = new Message(sender, this, timestamp, content.MessageType, content);
+
+            _log.LogTrace("Broadcasting message from {Sender} at {Timestamp}", sender, timestamp);
+            Message?.Invoke(this, new MessageEventArgs(message));
         }
 
         /// <summary>

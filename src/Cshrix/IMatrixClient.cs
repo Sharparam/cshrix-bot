@@ -32,6 +32,11 @@ namespace Cshrix
         event EventHandler<JoinedEventArgs> Joined;
 
         /// <summary>
+        /// Raised when a message is received.
+        /// </summary>
+        event EventHandler<MessageEventArgs> Message;
+
+        /// <summary>
         /// Starts syncing with the Matrix API.
         /// </summary>
         Task StartSyncingAsync();

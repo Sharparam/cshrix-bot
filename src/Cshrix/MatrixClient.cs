@@ -108,6 +108,9 @@ namespace Cshrix
         /// <inheritdoc />
         public event EventHandler<JoinedEventArgs> Joined;
 
+        /// <inheritdoc />
+        public event EventHandler<MessageEventArgs> Message;
+
         /// <summary>
         /// Gets the <see cref="ILogger" /> for this instance.
         /// </summary>
@@ -204,16 +207,8 @@ namespace Cshrix
         private void HandleInvitedRoomEvent(string roomId, InvitedRoom invitedRoom)
         {
             Log.LogTrace("Handling 'invited' room {RoomId}", roomId);
-            var hasRoom = _rooms.TryGetValue(roomId, out var room);
-
-            if (!hasRoom)
-            {
-                Log.LogTrace("Invited room {RoomId} did not exist, adding it", roomId);
-                room = Room.FromInvitedRoom(_loggerFactory, roomId, invitedRoom);
-                _rooms.TryAdd(roomId, room);
-            }
-
-            Invited?.Invoke(this, new InvitedEventArgs(room));
+            var room = GetOrAddRoom(roomId, Membership.Invited);
+            room.Update(invitedRoom);
         }
 
         /// <summary>
@@ -224,19 +219,58 @@ namespace Cshrix
         private void HandleJoinedRoomEvent(string roomId, JoinedRoom joinedRoom)
         {
             Log.LogTrace("Handling 'joined' room {RoomId}", roomId);
+            var room = GetOrAddRoom(roomId, Membership.Joined);
+            room.Update(joinedRoom);
+        }
+
+        /// <summary>
+        /// Gets an existing room by ID or adds it if it doesn't exist.
+        /// </summary>
+        /// <param name="roomId">The ID of the room.</param>
+        /// <param name="membership">The initial membership of the room.</param>
+        /// <returns>The <see cref="Room" /> instance for the given ID.</returns>
+        private Room GetOrAddRoom(string roomId, Membership membership)
+        {
             var hasRoom = _rooms.TryGetValue(roomId, out var room);
 
             if (hasRoom)
             {
-                room.Update(joinedRoom);
+                return room;
             }
-            else
+
+            Log.LogTrace("Room {RoomId} did not exist, adding it", roomId);
+            var logger = _loggerFactory.CreateLogger(Room.GenerateLoggerCategory(roomId));
+            room = new Room(logger, roomId, membership);
+            _rooms.TryAdd(roomId, room);
+            room.Message += HandleMessage;
+
+            // ReSharper disable once SwitchStatementMissingSomeCases
+            switch (membership)
             {
-                Log.LogTrace("Joined room {RoomId} did not exist, adding it", roomId);
-                room = Room.FromJoinedRoom(_loggerFactory, roomId, joinedRoom);
-                _rooms.TryAdd(roomId, room);
-                Joined?.Invoke(this, new JoinedEventArgs(room));
+                case Membership.Invited:
+                    Invited?.Invoke(this, new InvitedEventArgs(room));
+                    break;
+
+                case Membership.Joined:
+                    Joined?.Invoke(this, new JoinedEventArgs(room));
+                    break;
             }
+
+            return room;
+        }
+
+        /// <summary>
+        /// Handles message events from rooms.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="eventArgs">Event arguments.</param>
+        /// <remarks>
+        /// This handler simply forwards the message event onto listeners, only changing the <c>sender</c>
+        /// of the .NET event.
+        /// </remarks>
+        private void HandleMessage(object sender, MessageEventArgs eventArgs)
+        {
+            Message?.Invoke(this, eventArgs);
         }
     }
 }

@@ -44,6 +44,7 @@ namespace Cshrix.Bot.Console
             _client = client;
             _client.Invited += OnRoomInvite;
             _client.Joined += OnRoomJoin;
+            _client.Message += OnMessage;
         }
 
         /// <summary>
@@ -111,6 +112,21 @@ namespace Cshrix.Bot.Console
             {
                 await HandleTombstonedRoom(room);
             }
+        }
+
+        /// <summary>
+        /// Handles a message event.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="eventArgs">Event arguments.</param>
+        private void OnMessage(object sender, MessageEventArgs eventArgs)
+        {
+            var message = eventArgs.Message;
+            var roomPart = message.Room.CanonicalAlias?.ToString() ?? message.Room.Id;
+
+            var rendered = $"[{roomPart}] <{message.SenderId}> {message.Content.Body}";
+
+            _log.LogInformation(rendered);
         }
 
         /// <summary>
