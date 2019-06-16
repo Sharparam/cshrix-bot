@@ -299,7 +299,7 @@ var assemblies = [
       { "name": "Cshrix.Data.Events.Content.NotificationsPowerLevels", "rp": "Cshrix_NotificationsPowerLevels.htm", "cl": 3, "ucl": 0, "cal": 3, "tl": 36, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Events.Content.Offer", "rp": "Cshrix_Offer.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Events.Content.PinnedEventsContent", "rp": "Cshrix_PinnedEventsContent.htm", "cl": 0, "ucl": 2, "cal": 2, "tl": 32, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Data.Events.Content.PowerLevelsContent", "rp": "Cshrix_PowerLevelsContent.htm", "cl": 32, "ucl": 0, "cal": 32, "tl": 125, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Data.Events.Content.PowerLevelsContent", "rp": "Cshrix_PowerLevelsContent.htm", "cl": 32, "ucl": 0, "cal": 32, "tl": 144, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Events.Content.PresenceContent", "rp": "Cshrix_PresenceContent.htm", "cl": 0, "ucl": 17, "cal": 17, "tl": 81, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Events.Content.PublicKey", "rp": "Cshrix_PublicKey.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 56, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Events.Content.ReceiptContent", "rp": "Cshrix_ReceiptContent.htm", "cl": 3, "ucl": 15, "cal": 18, "tl": 99, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
@@ -334,7 +334,7 @@ var assemblies = [
       { "name": "Cshrix.Data.Events.Timeline", "rp": "Cshrix_Timeline.htm", "cl": 0, "ucl": 10, "cal": 10, "tl": 66, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Events.ToDevice", "rp": "Cshrix_ToDevice.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Events.UnreadCounts", "rp": "Cshrix_UnreadCounts.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 43, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Data.Events.UnsignedData", "rp": "Cshrix_UnsignedData.htm", "cl": 6, "ucl": 5, "cal": 11, "tl": 93, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Data.Events.UnsignedData", "rp": "Cshrix_UnsignedData.htm", "cl": 6, "ucl": 8, "cal": 14, "tl": 122, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Filter", "rp": "Cshrix_Filter.htm", "cl": 0, "ucl": 14, "cal": 14, "tl": 121, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.FilterIdContainer", "rp": "Cshrix_FilterIdContainer.htm", "cl": 0, "ucl": 3, "cal": 3, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.GroupId", "rp": "Cshrix_GroupId.htm", "cl": 0, "ucl": 8, "cal": 8, "tl": 82, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
@@ -373,7 +373,7 @@ var assemblies = [
       { "name": "Cshrix.Data.Reason", "rp": "Cshrix_Reason.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 49, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.RegistrationRequest", "rp": "Cshrix_RegistrationRequest.htm", "cl": 0, "ucl": 16, "cal": 16, "tl": 104, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.Report", "rp": "Cshrix_Report.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Data.RoomAlias", "rp": "Cshrix_RoomAlias.htm", "cl": 3, "ucl": 5, "cal": 8, "tl": 88, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Data.RoomAlias", "rp": "Cshrix_RoomAlias.htm", "cl": 4, "ucl": 4, "cal": 8, "tl": 88, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.RoomAliasInformation", "rp": "Cshrix_RoomAliasInformation.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.RoomEventFilter", "rp": "Cshrix_RoomEventFilter.htm", "cl": 0, "ucl": 18, "cal": 18, "tl": 120, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 12, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Data.RoomFilter", "rp": "Cshrix_RoomFilter.htm", "cl": 0, "ucl": 25, "cal": 25, "tl": 158, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 4, "lch": [], "bch": [], "hc": [] },
@@ -427,17 +427,19 @@ var assemblies = [
       { "name": "Cshrix.Extensions.ApiExceptionExtensions", "rp": "Cshrix_ApiExceptionExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 126, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.ApiExtensions", "rp": "Cshrix_ApiExtensions.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 37, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.DateTimeExtensions", "rp": "Cshrix_DateTimeExtensions.htm", "cl": 0, "ucl": 1, "cal": 1, "tl": 29, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Extensions.DictionaryExtensions", "rp": "Cshrix_DictionaryExtensions.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 56, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Extensions.DictionaryExtensions", "rp": "Cshrix_DictionaryExtensions.htm", "cl": 0, "ucl": 13, "cal": 13, "tl": 116, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 10, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.EnumerableExtensions", "rp": "Cshrix_EnumerableExtensions.htm", "cl": 0, "ucl": 7, "cal": 7, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.HttpResponseHeadersExtensions", "rp": "Cshrix_HttpResponseHeadersExtensions.htm", "cl": 0, "ucl": 16, "cal": 16, "tl": 107, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 10, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.HttpResponseMessageExtensions", "rp": "Cshrix_HttpResponseMessageExtensions.htm", "cl": 0, "ucl": 24, "cal": 24, "tl": 127, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 20, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.JObjectExtensions", "rp": "Cshrix_JObjectExtensions.htm", "cl": 23, "ucl": 10, "cal": 33, "tl": 176, "ct": "LineCoverage", "mc": "-", "cb": 18, "tb": 28, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.MatrixClientServerApiExtensions", "rp": "Cshrix_MatrixClientServerApiExtensions.htm", "cl": 0, "ucl": 54, "cal": 54, "tl": 309, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 34, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Extensions.ObjectExtensions", "rp": "Cshrix_ObjectExtensions.htm", "cl": 0, "ucl": 1, "cal": 1, "tl": 24, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Extensions.ResponseExtensions", "rp": "Cshrix_ResponseExtensions.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.MatrixClient", "rp": "Cshrix_MatrixClient.htm", "cl": 0, "ucl": 66, "cal": 66, "tl": 236, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 20, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Room", "rp": "Cshrix_Room.htm", "cl": 0, "ucl": 48, "cal": 48, "tl": 182, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 22, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.MatrixClient", "rp": "Cshrix_MatrixClient.htm", "cl": 0, "ucl": 67, "cal": 67, "tl": 242, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 20, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.PowerLevels", "rp": "Cshrix_PowerLevels.htm", "cl": 0, "ucl": 25, "cal": 25, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 19, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Room", "rp": "Cshrix_Room.htm", "cl": 0, "ucl": 79, "cal": 79, "tl": 250, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 30, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.ComparisonConditionConverter`1", "rp": "Cshrix_ComparisonConditionConverter_1.htm", "cl": 0, "ucl": 29, "cal": 29, "tl": 124, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 16, "lch": [], "bch": [], "hc": [] },
-      { "name": "Cshrix.Serialization.EventConverter", "rp": "Cshrix_EventConverter.htm", "cl": 76, "ucl": 4, "cal": 80, "tl": 192, "ct": "LineCoverage", "mc": "-", "cb": 13, "tb": 16, "lch": [], "bch": [], "hc": [] },
+      { "name": "Cshrix.Serialization.EventConverter", "rp": "Cshrix_EventConverter.htm", "cl": 95, "ucl": 4, "cal": 99, "tl": 229, "ct": "LineCoverage", "mc": "-", "cb": 18, "tb": 22, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.GroupIdConverter", "rp": "Cshrix_GroupIdConverter.htm", "cl": 0, "ucl": 4, "cal": 4, "tl": 42, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.IdentifierConverter`1", "rp": "Cshrix_IdentifierConverter_1.htm", "cl": 5, "ucl": 4, "cal": 9, "tl": 80, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 6, "lch": [], "bch": [], "hc": [] },
       { "name": "Cshrix.Serialization.MatrixApiQueryParamSerializer", "rp": "Cshrix_MatrixApiQueryParamSerializer.htm", "cl": 0, "ucl": 24, "cal": 24, "tl": 167, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 16, "lch": [], "bch": [], "hc": [] },
@@ -485,6 +487,13 @@ var riskHotspots = [
       { "value": 17, "exceeded": false },
       { "value": 256, "exceeded": true },
       { "value": 306, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Room", "reportPath": "Cshrix_Room.htm", "methodName": "System.Void Cshrix.Room::UpdateFromEvents(System.Collections.Generic.IReadOnlyCollection`1<Cshrix.Data.Events.Event>)", "methodShortName": "UpdateFromEvents(...)", "fileIndex": 0, "line": 163,
+    "metrics": [
+      { "value": 9, "exceeded": false },
+      { "value": 256, "exceeded": true },
+      { "value": 90, "exceeded": true },
     ]},
   {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.UnixMillisecondDateTimeConverter", "reportPath": "Cshrix_UnixMillisecondDateTimeConverter.htm", "methodName": "System.Object Cshrix.Serialization.UnixMillisecondDateTimeConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 93,
@@ -571,6 +580,13 @@ var riskHotspots = [
       { "value": 56, "exceeded": true },
     ]},
   {
+    "assembly": "Cshrix", "class": "Cshrix.PowerLevels", "reportPath": "Cshrix_PowerLevels.htm", "methodName": "System.Int32 Cshrix.PowerLevels::GetActionLevel(Cshrix.PowerAction)", "methodShortName": "GetActionLevel(...)", "fileIndex": 0, "line": 77,
+    "metrics": [
+      { "value": 7, "exceeded": false },
+      { "value": 10, "exceeded": false },
+      { "value": 56, "exceeded": true },
+    ]},
+  {
     "assembly": "Cshrix", "class": "Cshrix.SyncListener", "reportPath": "Cshrix_SyncListener.htm", "methodName": "SyncLoop()", "methodShortName": "SyncLoop()", "fileIndex": 0, "line": 144,
     "metrics": [
       { "value": 7, "exceeded": false },
@@ -596,20 +612,6 @@ var riskHotspots = [
     "metrics": [
       { "value": 6, "exceeded": false },
       { "value": 8, "exceeded": false },
-      { "value": 42, "exceeded": true },
-    ]},
-  {
-    "assembly": "Cshrix", "class": "Cshrix.Room", "reportPath": "Cshrix_Room.htm", "methodName": "System.Void Cshrix.Room::UpdateFromEvents(System.Collections.Generic.IReadOnlyCollection`1<Cshrix.Data.Events.Event>)", "methodShortName": "UpdateFromEvents(...)", "fileIndex": 0, "line": 128,
-    "metrics": [
-      { "value": 6, "exceeded": false },
-      { "value": 32, "exceeded": false },
-      { "value": 42, "exceeded": true },
-    ]},
-  {
-    "assembly": "Cshrix", "class": "Cshrix.Room", "reportPath": "Cshrix_Room.htm", "methodName": "System.Void Cshrix.Room::UpdateAliasesFromEvents(System.Collections.Generic.IReadOnlyCollection`1<Cshrix.Data.Events.Event>)", "methodShortName": "UpdateAliasesFromEvents(...)", "fileIndex": 0, "line": 158,
-    "metrics": [
-      { "value": 6, "exceeded": false },
-      { "value": 16, "exceeded": false },
       { "value": 42, "exceeded": true },
     ]},
   {
@@ -690,6 +692,20 @@ var riskHotspots = [
       { "value": 30, "exceeded": true },
     ]},
   {
+    "assembly": "Cshrix", "class": "Cshrix.Room", "reportPath": "Cshrix_Room.htm", "methodName": "System.Void Cshrix.Room::UpdateAliasesFromEvents(System.Collections.Generic.IReadOnlyCollection`1<Cshrix.Data.Events.Event>)", "methodShortName": "UpdateAliasesFromEvents(...)", "fileIndex": 0, "line": 215,
+    "metrics": [
+      { "value": 5, "exceeded": false },
+      { "value": 16, "exceeded": false },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.Serialization.EventConverter", "reportPath": "Cshrix_EventConverter.htm", "methodName": "System.Nullable`1<Cshrix.Data.Events.UnsignedData> Cshrix.Serialization.EventConverter::ParseUnsignedData(System.String,Newtonsoft.Json.Linq.JObject,System.String)", "methodShortName": "ParseUnsignedData(...)", "fileIndex": 0, "line": 203,
+    "metrics": [
+      { "value": 5, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
     "assembly": "Cshrix", "class": "Cshrix.Serialization.MatrixErrorConverter", "reportPath": "Cshrix_MatrixErrorConverter.htm", "methodName": "Cshrix.Errors.MatrixError Cshrix.Serialization.MatrixErrorConverter::ReadJson(Newtonsoft.Json.JsonReader,System.Type,Cshrix.Errors.MatrixError,System.Boolean,Newtonsoft.Json.JsonSerializer)", "methodShortName": "ReadJson(...)", "fileIndex": 0, "line": 64,
     "metrics": [
       { "value": 5, "exceeded": false },
@@ -753,7 +769,7 @@ var riskHotspots = [
       { "value": 20, "exceeded": true },
     ]},
   {
-    "assembly": "Cshrix", "class": "Cshrix.Extensions.DictionaryExtensions", "reportPath": "Cshrix_DictionaryExtensions.htm", "methodName": "TValue Cshrix.Extensions.DictionaryExtensions::GetValueOrDefault(System.Collections.Generic.IDictionary`2<TKey,TValue>,TKey,TValue)", "methodShortName": "GetValueOrDefault(...)", "fileIndex": 0, "line": 42,
+    "assembly": "Cshrix", "class": "Cshrix.Extensions.DictionaryExtensions", "reportPath": "Cshrix_DictionaryExtensions.htm", "methodName": "TValue Cshrix.Extensions.DictionaryExtensions::GetValueOrDefault(System.Collections.Generic.IReadOnlyDictionary`2<TKey,TValue>,TKey,TValue)", "methodShortName": "GetValueOrDefault(...)", "fileIndex": 0, "line": 43,
     "metrics": [
       { "value": 4, "exceeded": false },
       { "value": 8, "exceeded": false },
@@ -803,6 +819,20 @@ var riskHotspots = [
     ]},
   {
     "assembly": "Cshrix", "class": "Cshrix.Extensions.JObjectExtensions", "reportPath": "Cshrix_JObjectExtensions.htm", "methodName": "System.Boolean Cshrix.Extensions.JObjectExtensions::TryGetObject(Newtonsoft.Json.Linq.JObject,System.String,T&)", "methodShortName": "TryGetObject(...)", "fileIndex": 0, "line": 156,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.PowerLevels", "reportPath": "Cshrix_PowerLevels.htm", "methodName": "System.Int32 Cshrix.PowerLevels::GetUserLevel(Cshrix.Data.UserId,System.Boolean)", "methodShortName": "GetUserLevel(...)", "fileIndex": 0, "line": 109,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "Cshrix", "class": "Cshrix.PowerLevels", "reportPath": "Cshrix_PowerLevels.htm", "methodName": "System.Int32 Cshrix.PowerLevels::GetEventTypeLevel(System.String,System.Boolean)", "methodShortName": "GetEventTypeLevel(...)", "fileIndex": 0, "line": 126,
     "metrics": [
       { "value": 4, "exceeded": false },
       { "value": 8, "exceeded": false },
