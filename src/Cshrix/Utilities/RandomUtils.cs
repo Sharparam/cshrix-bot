@@ -17,6 +17,16 @@ namespace Cshrix.Utilities
     internal static class RandomUtils
     {
         /// <summary>
+        /// A factory to generate an instance of <see cref="RNGCryptoServiceProvider" />.
+        /// </summary>
+        /// <remarks>
+        /// Generating a default instance with the default constructor and keeping it around without disposing it
+        /// is fine as described in https://stackoverflow.com/a/28073796/1104531.
+        /// </remarks>
+        private static readonly Lazy<RNGCryptoServiceProvider> Csprng =
+            new Lazy<RNGCryptoServiceProvider>(() => new RNGCryptoServiceProvider());
+
+        /// <summary>
         /// Global <see cref="Random" /> instance.
         /// </summary>
         internal static readonly Random Rng = new Random();
@@ -39,10 +49,7 @@ namespace Cshrix.Utilities
         /// <param name="buffer">The array to write random bytes into.</param>
         internal static void SecureBytes(byte[] buffer)
         {
-            using (var csprng = new RNGCryptoServiceProvider())
-            {
-                csprng.GetBytes(buffer);
-            }
+            Csprng.Value.GetBytes(buffer);
         }
     }
 }
