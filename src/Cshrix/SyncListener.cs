@@ -17,6 +17,8 @@ namespace Cshrix
 
     using Errors;
 
+    using Events;
+
     using Extensions;
 
     using Microsoft.Extensions.Logging;
@@ -31,7 +33,12 @@ namespace Cshrix
         /// <summary>
         /// The default amount of time to wait between sync calls.
         /// </summary>
-        private static readonly TimeSpan DefaultSyncDelay = TimeSpan.FromSeconds(1);
+        private static readonly TimeSpan DefaultSyncDelay = TimeSpan.Zero;
+
+        /// <summary>
+        /// The default amount of time to wait for a sync response from the server.
+        /// </summary>
+        private static readonly TimeSpan DefaultSyncTimeout = TimeSpan.FromSeconds(30);
 
         /// <summary>
         /// The logger instance for this class.
@@ -78,7 +85,7 @@ namespace Cshrix
         /// <summary>
         /// Raised when a new sync response is obtained from the Matrix API.
         /// </summary>
-        public event EventHandler<SyncEventArgs> Sync;
+        public event AsyncEventHandler<SyncEventArgs> Sync;
 
         /// <inheritdoc />
         /// <summary>
@@ -160,7 +167,11 @@ namespace Cshrix
             try
             {
                 _log.LogTrace("Calling sync API with token {Token}", _token);
-                var response = await _api.SyncAsync(_token, cancellationToken: cancellationToken).ConfigureAwait(false);
+                var response = await _api.SyncAsync(
+                        _token,
+                        timeout: DefaultSyncTimeout,
+                        cancellationToken: cancellationToken)
+                    .ConfigureAwait(false);
 
                 if (cancellationToken.IsCancellationRequested)
                 {
@@ -170,7 +181,7 @@ namespace Cshrix
 
                 _log.LogTrace("Processing data from sync call");
 
-                HandleSyncResponse(response);
+                await HandleSyncResponse(response);
 
                 _token = response.NextBatchToken;
                 _syncDelay = DefaultSyncDelay;
@@ -191,18 +202,23 @@ namespace Cshrix
             }
 
             _log.LogTrace("Sync run complete, next batch is {Token}", _token);
-            _log.LogTrace("Delaying next sync call by {Delay}", _syncDelay);
-            await Task.Delay(_syncDelay, cancellationToken).ConfigureAwait(false);
+
+            if (_syncDelay > TimeSpan.Zero)
+            {
+                _log.LogTrace("Delaying next sync call by {Delay}", _syncDelay);
+                await Task.Delay(_syncDelay, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
         /// Handles a sync response from the Matrix API.
         /// </summary>
         /// <param name="response">The response from the API.</param>
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
         /// <remarks>Examines the response and dispatches one or multiple events as appropriate.</remarks>
-        private void HandleSyncResponse(SyncResponse response)
+        private async Task HandleSyncResponse(SyncResponse response)
         {
-            Sync?.Invoke(this, new SyncEventArgs(response));
+            await Sync.InvokeAsync(this, new SyncEventArgs(response));
         }
     }
 }

@@ -8,13 +8,20 @@
 
 namespace Cshrix.Bot.Console
 {
+    using System;
     using System.Threading.Tasks;
+
+    using Configuration;
+
+    using Cshrix.Extensions;
 
     using Data;
 
-    using Extensions;
-
+    using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Options;
+
+    using Plugins;
 
     using RestEase;
 
@@ -34,17 +41,32 @@ namespace Cshrix.Bot.Console
         private readonly IMatrixClient _client;
 
         /// <summary>
+        /// The plugin manager.
+        /// </summary>
+        private readonly IPluginManager _pluginManager;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Bot" /> class.
         /// </summary>
-        /// <param name="log">Logger instance to use.</param>
-        /// <param name="client"><see cref="MatrixClient" /> instance to use.</param>
-        public Bot(ILogger<Bot> log, IMatrixClient client)
+        /// <param name="loggerFactory">Logger factory.</param>
+        /// <param name="serviceProvider">A service provider instance for the application.</param>
+        public Bot(
+            ILoggerFactory loggerFactory,
+            IServiceProvider serviceProvider)
         {
-            _log = log;
-            _client = client;
-            _client.Invited += OnRoomInvite;
-            _client.Joined += OnRoomJoin;
-            _client.Message += OnMessage;
+            _log = loggerFactory.CreateLogger<Bot>();
+            _client = serviceProvider.GetRequiredService<IMatrixClient>();
+            var options = serviceProvider.GetRequiredService<IOptions<BotConfiguration>>();
+
+            _pluginManager = new PluginManager(
+                loggerFactory.CreateLogger<PluginManager>(),
+                _client,
+                serviceProvider.GetServices<IPlugin>(),
+                options);
+
+            _client.Invited += OnRoomInviteAsync;
+            _client.Joined += OnRoomJoinAsync;
+            _client.Message += OnMessageAsync;
         }
 
         /// <summary>
@@ -83,7 +105,8 @@ namespace Cshrix.Bot.Console
         /// </summary>
         /// <param name="sender">The object that raised the event.</param>
         /// <param name="eventArgs">Event arguments.</param>
-        private async void OnRoomInvite(object sender, InvitedEventArgs eventArgs)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task OnRoomInviteAsync(object sender, InvitedEventArgs eventArgs)
         {
             _log.LogInformation("I've been invited to a room! Attempting to join {RoomId}...", eventArgs.Room.Id);
 
@@ -102,7 +125,8 @@ namespace Cshrix.Bot.Console
         /// </summary>
         /// <param name="sender">The object that raised the event.</param>
         /// <param name="eventArgs">Event arguments.</param>
-        private async void OnRoomJoin(object sender, JoinedEventArgs eventArgs)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task OnRoomJoinAsync(object sender, JoinedEventArgs eventArgs)
         {
             _log.LogInformation("I've joined the room {RoomId}!", eventArgs.Room.Id);
 
@@ -110,7 +134,7 @@ namespace Cshrix.Bot.Console
 
             if (room.IsTombstoned)
             {
-                await HandleTombstonedRoom(room);
+                await HandleTombstonedRoomAsync(room);
             }
         }
 
@@ -119,7 +143,8 @@ namespace Cshrix.Bot.Console
         /// </summary>
         /// <param name="sender">The object that raised the event.</param>
         /// <param name="eventArgs">Event arguments.</param>
-        private void OnMessage(object sender, MessageEventArgs eventArgs)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task OnMessageAsync(object sender, MessageEventArgs eventArgs)
         {
             var message = eventArgs.Message;
             var roomPart = message.Room.CanonicalAlias?.ToString() ?? message.Room.Id;
@@ -127,6 +152,8 @@ namespace Cshrix.Bot.Console
             var rendered = $"[{roomPart}] <{message.SenderId}> {message.Content.Body}";
 
             _log.LogInformation(rendered);
+
+            await _pluginManager.HandleMessageAsync(eventArgs.Message);
         }
 
         /// <summary>
@@ -134,7 +161,7 @@ namespace Cshrix.Bot.Console
         /// </summary>
         /// <param name="room">The room that has been tombstoned.</param>
         /// <returns>A <see cref="Task" /> representing progress.</returns>
-        private async Task HandleTombstonedRoom(IRoom room)
+        private async Task HandleTombstonedRoomAsync(IRoom room)
         {
             var content = room.TombstoneContent;
 
