@@ -21,6 +21,8 @@ namespace Cshrix
 
     using Extensions;
 
+    using JetBrains.Annotations;
+
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
 
@@ -69,6 +71,12 @@ namespace Cshrix
         /// </summary>
         private readonly ConcurrentDictionary<string, Room> _rooms;
 
+        /// <summary>
+        /// The authenticated user's own user ID.
+        /// </summary>
+        [CanBeNull]
+        private UserId _userId;
+
         // ReSharper disable once SuggestBaseTypeForParameter
         /// <summary>
         /// Initializes a new instance of the <see cref="MatrixClient" /> class.
@@ -111,6 +119,9 @@ namespace Cshrix
         /// <inheritdoc />
         public event EventHandler<MessageEventArgs> Message;
 
+        /// <inheritdoc />
+        public UserId UserId => GetUserId();
+
         /// <summary>
         /// Gets the <see cref="ILogger" /> for this instance.
         /// </summary>
@@ -133,7 +144,20 @@ namespace Cshrix
         public Task StopSyncingAsync() => _syncListener.StopAsync();
 
         /// <inheritdoc />
-        public async Task<UserId> GetUserIdAsync() => (await _api.WhoAmIAsync().ConfigureAwait(false)).UserId;
+        public UserId GetUserId() => GetUserIdAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+
+        /// <inheritdoc />
+        public async Task<UserId> GetUserIdAsync()
+        {
+            if (_userId != null)
+            {
+                return _userId;
+            }
+
+            var userId = (await _api.WhoAmIAsync().ConfigureAwait(false)).UserId;
+            _userId = userId;
+            return userId;
+        }
 
         /// <inheritdoc />
         public async Task<PreviewInfo> GetUriPreviewInfoAsync(Uri uri, DateTimeOffset? at = null)
@@ -240,7 +264,7 @@ namespace Cshrix
 
             Log.LogTrace("Room {RoomId} did not exist, adding it", roomId);
             var logger = _loggerFactory.CreateLogger(Room.GenerateLoggerCategory(roomId));
-            room = new Room(logger, roomId, membership);
+            room = new Room(logger, this, _api, roomId, membership);
             _rooms.TryAdd(roomId, room);
             room.Message += HandleMessage;
 

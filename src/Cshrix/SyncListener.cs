@@ -31,7 +31,12 @@ namespace Cshrix
         /// <summary>
         /// The default amount of time to wait between sync calls.
         /// </summary>
-        private static readonly TimeSpan DefaultSyncDelay = TimeSpan.FromSeconds(1);
+        private static readonly TimeSpan DefaultSyncDelay = TimeSpan.Zero;
+
+        /// <summary>
+        /// The default amount of time to wait for a sync response from the server.
+        /// </summary>
+        private static readonly TimeSpan DefaultSyncTimeout = TimeSpan.FromSeconds(30);
 
         /// <summary>
         /// The logger instance for this class.
@@ -160,7 +165,11 @@ namespace Cshrix
             try
             {
                 _log.LogTrace("Calling sync API with token {Token}", _token);
-                var response = await _api.SyncAsync(_token, cancellationToken: cancellationToken).ConfigureAwait(false);
+                var response = await _api.SyncAsync(
+                        _token,
+                        timeout: DefaultSyncTimeout,
+                        cancellationToken: cancellationToken)
+                    .ConfigureAwait(false);
 
                 if (cancellationToken.IsCancellationRequested)
                 {
@@ -191,8 +200,12 @@ namespace Cshrix
             }
 
             _log.LogTrace("Sync run complete, next batch is {Token}", _token);
-            _log.LogTrace("Delaying next sync call by {Delay}", _syncDelay);
-            await Task.Delay(_syncDelay, cancellationToken).ConfigureAwait(false);
+
+            if (_syncDelay > TimeSpan.Zero)
+            {
+                _log.LogTrace("Delaying next sync call by {Delay}", _syncDelay);
+                await Task.Delay(_syncDelay, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>

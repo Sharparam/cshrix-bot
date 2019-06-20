@@ -37,6 +37,11 @@ namespace Cshrix
         event EventHandler<MessageEventArgs> Message;
 
         /// <summary>
+        /// Gets the current user's ID.
+        /// </summary>
+        UserId UserId { get; }
+
+        /// <summary>
         /// Starts syncing with the Matrix API.
         /// </summary>
         Task StartSyncingAsync();
@@ -45,6 +50,12 @@ namespace Cshrix
         /// Stops syncing with the Matrix API.
         /// </summary>
         Task StopSyncingAsync();
+
+        /// <summary>
+        /// Gets the current user's ID.
+        /// </summary>
+        /// <returns>The current user's ID.</returns>
+        UserId GetUserId();
 
         /// <summary>
         /// Gets the current user's ID.

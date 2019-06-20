@@ -10,6 +10,7 @@ namespace Cshrix
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using Data;
     using Data.Events.Content;
@@ -88,5 +89,12 @@ namespace Cshrix
         /// </summary>
         [CanBeNull]
         TombstoneContent TombstoneContent { get; }
+
+        /// <summary>
+        /// Sends a simple plaintext message to the room.
+        /// </summary>
+        /// <param name="message">The message to send.</param>
+        /// <returns>The event ID of the created message event.</returns>
+        Task<string> SendAsync(string message);
     }
 }

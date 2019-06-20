@@ -8,13 +8,20 @@
 
 namespace Cshrix.Bot.Console
 {
+    using System;
     using System.Threading.Tasks;
+
+    using Configuration;
+
+    using Cshrix.Extensions;
 
     using Data;
 
-    using Extensions;
-
+    using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Options;
+
+    using Plugins;
 
     using RestEase;
 
@@ -34,14 +41,29 @@ namespace Cshrix.Bot.Console
         private readonly IMatrixClient _client;
 
         /// <summary>
+        /// The plugin manager.
+        /// </summary>
+        private readonly IPluginManager _pluginManager;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Bot" /> class.
         /// </summary>
-        /// <param name="log">Logger instance to use.</param>
-        /// <param name="client"><see cref="MatrixClient" /> instance to use.</param>
-        public Bot(ILogger<Bot> log, IMatrixClient client)
+        /// <param name="loggerFactory">Logger factory.</param>
+        /// <param name="serviceProvider">A service provider instance for the application.</param>
+        public Bot(
+            ILoggerFactory loggerFactory,
+            IServiceProvider serviceProvider)
         {
-            _log = log;
-            _client = client;
+            _log = loggerFactory.CreateLogger<Bot>();
+            _client = serviceProvider.GetRequiredService<IMatrixClient>();
+            var options = serviceProvider.GetRequiredService<IOptions<BotConfiguration>>();
+
+            _pluginManager = new PluginManager(
+                loggerFactory.CreateLogger<PluginManager>(),
+                _client,
+                serviceProvider.GetServices<IPlugin>(),
+                options);
+
             _client.Invited += OnRoomInvite;
             _client.Joined += OnRoomJoin;
             _client.Message += OnMessage;
@@ -127,6 +149,8 @@ namespace Cshrix.Bot.Console
             var rendered = $"[{roomPart}] <{message.SenderId}> {message.Content.Body}";
 
             _log.LogInformation(rendered);
+
+            _pluginManager.HandleMessage(eventArgs.Message);
         }
 
         /// <summary>

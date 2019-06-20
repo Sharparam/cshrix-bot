@@ -11,8 +11,6 @@ namespace Cshrix.Bot.Console
     using System;
     using System.Threading.Tasks;
 
-    using DependencyInjection;
-
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
@@ -50,13 +48,11 @@ namespace Cshrix.Bot.Console
                         builder.AddSerilog(logger, true);
                     });
 
-                services.AddCshrixServices(configuration, "ClientConfiguration");
-
-                services.AddTransient<Bot>();
+                services.AddBotServices(configuration);
 
                 provider = services.BuildServiceProvider();
 
-                log = provider.GetRequiredService<ILoggerFactory>().CreateLogger("MAIN");
+                log = provider.GetRequiredService<ILoggerFactory>().CreateLogger(typeof(Program));
 
                 var bot = provider.GetRequiredService<Bot>();
 

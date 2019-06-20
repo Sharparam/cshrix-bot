@@ -11,6 +11,7 @@ namespace Cshrix
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using Data;
     using Data.Events;
@@ -19,6 +20,8 @@ namespace Cshrix
     using Extensions;
 
     using Microsoft.Extensions.Logging;
+
+    using Utilities;
 
     /// <summary>
     /// Describes a room joined by the client, and defines possible actions.
@@ -34,6 +37,17 @@ namespace Cshrix
         /// The logger instance for the object.
         /// </summary>
         private readonly ILogger _log;
+
+        // ReSharper disable once NotAccessedField.Local
+        /// <summary>
+        /// The Matrix client instance.
+        /// </summary>
+        private readonly IMatrixClient _client;
+
+        /// <summary>
+        /// The client-server API instance.
+        /// </summary>
+        private readonly IMatrixClientServerApi _api;
 
         /// <summary>
         /// A set containing all known aliases for the room.
@@ -54,11 +68,15 @@ namespace Cshrix
         /// Initializes a new instance of the <see cref="Room" /> class.
         /// </summary>
         /// <param name="log">Logger instance for the room.</param>
+        /// <param name="client">The Matrix client instance.</param>
+        /// <param name="api">The Matrix client-server API instance.</param>
         /// <param name="id">The ID of the room.</param>
         /// <param name="membership">The current membership of the user in the room.</param>
-        public Room(ILogger log, string id, Membership membership)
+        public Room(ILogger log, IMatrixClient client, IMatrixClientServerApi api, string id, Membership membership)
         {
             _log = log;
+            _client = client;
+            _api = api;
             Id = id;
             Membership = membership;
             _aliases = new HashSet<RoomAlias>();
@@ -104,6 +122,22 @@ namespace Cshrix
 
         /// <inheritdoc />
         public TombstoneContent TombstoneContent { get; private set; }
+
+        /// <inheritdoc />
+        public async Task<string> SendAsync(string message)
+        {
+            _log.LogTrace("Sending message to room");
+            var content = new MessageContent(message, "m.text");
+            var transactionId = TransactionUtils.GenerateId();
+            _log.LogTrace("Sending message with transaction ID {TransactionId}", transactionId);
+            var result = await _api.SendEventAsync(Id, "m.room.message", transactionId, content);
+            _log.LogTrace(
+                "Message with TXNID {TransactionId} sent to room with event ID {EventId}",
+                transactionId,
+                result.Id);
+
+            return result.Id;
+        }
 
         /// <summary>
         /// Generates a logger category for the specified room ID.

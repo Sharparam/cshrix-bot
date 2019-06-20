@@ -8,16 +8,18 @@
 
 namespace Cshrix.Bot.Console.Plugins
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using Data;
+
+    using JetBrains.Annotations;
+
     /// <summary>
     /// A plugin that can be loaded into the bot.
     /// </summary>
     public interface IPlugin
     {
-        /// <summary>
-        /// Gets the ID of the plugin.
-        /// </summary>
-        string Id { get; }
-
         /// <summary>
         /// Gets the display name of the plugin.
         /// </summary>
@@ -27,5 +29,19 @@ namespace Cshrix.Bot.Console.Plugins
         /// Gets the description of the plugin.
         /// </summary>
         string Description { get; }
+
+        /// <summary>
+        /// Gets a collection of commands this plugin wishes to handle.
+        /// </summary>
+        IReadOnlyCollection<string> Commands { get; }
+
+        /// <summary>
+        /// Handles a command.
+        /// </summary>
+        /// <param name="message">The message that triggered the command.</param>
+        /// <param name="command">The command word.</param>
+        /// <param name="text">The text following the command, if any.</param>
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        Task HandleCommand(Message message, string command, [CanBeNull] string text);
     }
 }
