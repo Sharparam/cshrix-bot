@@ -17,6 +17,8 @@ namespace Cshrix
 
     using Errors;
 
+    using Events;
+
     using Extensions;
 
     using Microsoft.Extensions.Logging;
@@ -83,7 +85,7 @@ namespace Cshrix
         /// <summary>
         /// Raised when a new sync response is obtained from the Matrix API.
         /// </summary>
-        public event EventHandler<SyncEventArgs> Sync;
+        public event AsyncEventHandler<SyncEventArgs> Sync;
 
         /// <inheritdoc />
         /// <summary>
@@ -179,7 +181,7 @@ namespace Cshrix
 
                 _log.LogTrace("Processing data from sync call");
 
-                HandleSyncResponse(response);
+                await HandleSyncResponse(response);
 
                 _token = response.NextBatchToken;
                 _syncDelay = DefaultSyncDelay;
@@ -212,10 +214,11 @@ namespace Cshrix
         /// Handles a sync response from the Matrix API.
         /// </summary>
         /// <param name="response">The response from the API.</param>
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
         /// <remarks>Examines the response and dispatches one or multiple events as appropriate.</remarks>
-        private void HandleSyncResponse(SyncResponse response)
+        private async Task HandleSyncResponse(SyncResponse response)
         {
-            Sync?.Invoke(this, new SyncEventArgs(response));
+            await Sync.InvokeAsync(this, new SyncEventArgs(response));
         }
     }
 }

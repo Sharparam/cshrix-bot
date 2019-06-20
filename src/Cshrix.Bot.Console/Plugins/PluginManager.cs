@@ -75,7 +75,7 @@ namespace Cshrix.Bot.Console.Plugins
         }
 
         /// <inheritdoc />
-        public async Task<bool> HandleMessage(Message message)
+        public async Task<bool> HandleMessageAsync(Message message)
         {
             if (message.SenderId == _client.UserId)
             {

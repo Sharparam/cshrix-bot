@@ -22,6 +22,6 @@ namespace Cshrix.Bot.Console.Plugins
         /// </summary>
         /// <param name="message">The message to handle.</param>
         /// <returns><c>true</c> if the message was handled by a plugin; otherwise, <c>false</c>.</returns>
-        Task<bool> HandleMessage(Message message);
+        Task<bool> HandleMessageAsync(Message message);
     }
 }

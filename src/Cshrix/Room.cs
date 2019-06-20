@@ -8,7 +8,6 @@
 
 namespace Cshrix
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -16,6 +15,8 @@ namespace Cshrix
     using Data;
     using Data.Events;
     using Data.Events.Content;
+
+    using Events;
 
     using Extensions;
 
@@ -85,10 +86,10 @@ namespace Cshrix
         }
 
         /// <inheritdoc />
-        public event EventHandler<MessageEventArgs> Message;
+        public event AsyncEventHandler<MessageEventArgs> Message;
 
         /// <inheritdoc />
-        public event EventHandler<TombstonedEventArgs> Tombstoned;
+        public event AsyncEventHandler<TombstonedEventArgs> Tombstoned;
 
         /// <inheritdoc />
         public string Id { get; }
@@ -154,30 +155,33 @@ namespace Cshrix
         /// Updates a room from a synced <see cref="InvitedRoom" /> object.
         /// </summary>
         /// <param name="invitedRoom">The sync data to update from.</param>
-        internal void Update(InvitedRoom invitedRoom)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        internal async Task UpdateAsync(InvitedRoom invitedRoom)
         {
             _log.LogTrace("Updating from an InvitedRoom object");
             Membership = Membership.Invited;
-            UpdateFromEvents(invitedRoom.InviteState.Events);
+            await UpdateFromEventsAsync(invitedRoom.InviteState.Events);
         }
 
         /// <summary>
         /// Updates a room from a synced <see cref="JoinedRoom" /> object.
         /// </summary>
         /// <param name="joinedRoom">The sync data to update from.</param>
-        internal void Update(JoinedRoom joinedRoom)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        internal async Task UpdateAsync(JoinedRoom joinedRoom)
         {
             _log.LogTrace("Updating from a JoinedRoom object");
             Membership = Membership.Joined;
-            UpdateFromEvents(joinedRoom.State.Events);
-            UpdateFromEvents(joinedRoom.Timeline.Events);
+            await UpdateFromEventsAsync(joinedRoom.State.Events);
+            await UpdateFromEventsAsync(joinedRoom.Timeline.Events);
         }
 
         /// <summary>
         /// Updates room details from a collection of events.
         /// </summary>
         /// <param name="events">The events to update from.</param>
-        private void UpdateFromEvents(IReadOnlyCollection<Event> events)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task UpdateFromEventsAsync(IReadOnlyCollection<Event> events)
         {
             var replacedIds = events.Where(e => e.Unsigned?.ReplacesStateEventId != null)
                 .Select(e => e.Unsigned.Value.ReplacesStateEventId);
@@ -221,10 +225,10 @@ namespace Cshrix
             if (filtered.GetStateEventContentOrDefault("m.room.tombstone") is TombstoneContent tombstoneContent)
             {
                 _log.LogTrace("Room has been tombstoned");
-                OnTombstone(tombstoneContent);
+                await OnTombstoneAsync(tombstoneContent);
             }
 
-            HandleMessageEvents(filtered);
+            await HandleMessageEventsAsync(filtered);
         }
 
         /// <summary>
@@ -260,13 +264,14 @@ namespace Cshrix
         /// Extracts message events from the given collection of events and handles them.
         /// </summary>
         /// <param name="events">The collection of events to process.</param>
-        private void HandleMessageEvents(IReadOnlyCollection<Event> events)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleMessageEventsAsync(IReadOnlyCollection<Event> events)
         {
             _log.LogTrace("Handling message events");
             var messageEvents = events.OfEventType("m.room.message");
             foreach (var messageEvent in messageEvents)
             {
-                HandleMessageEvent(messageEvent);
+                await HandleMessageEventAsync(messageEvent);
             }
         }
 
@@ -274,7 +279,8 @@ namespace Cshrix
         /// Handles a message event.
         /// </summary>
         /// <param name="messageEvent">The message event to handle.</param>
-        private void HandleMessageEvent(Event messageEvent)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleMessageEventAsync(Event messageEvent)
         {
             if (messageEvent.Type != "m.room.message" || messageEvent.Sender == null || !messageEvent.SentAt.HasValue ||
                 !(messageEvent.Content is MessageContent content))
@@ -288,19 +294,20 @@ namespace Cshrix
             var message = new Message(sender, this, timestamp, content.MessageType, content);
 
             _log.LogTrace("Broadcasting message from {Sender} at {Timestamp}", sender, timestamp);
-            Message?.Invoke(this, new MessageEventArgs(message));
+            await Message.InvokeAsync(this, new MessageEventArgs(message));
         }
 
         /// <summary>
         /// Sets tombstone properties and invokes the <see cref="Tombstoned" /> event.
         /// </summary>
         /// <param name="content">Information about the tombstone event.</param>
-        private void OnTombstone(TombstoneContent content)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task OnTombstoneAsync(TombstoneContent content)
         {
             _log.LogTrace("Room tombstoned. Setting properties and broadcasting event");
             IsTombstoned = true;
             TombstoneContent = content;
-            Tombstoned?.Invoke(this, new TombstonedEventArgs(content));
+            await Tombstoned.InvokeAsync(this, new TombstonedEventArgs(content));
         }
     }
 }

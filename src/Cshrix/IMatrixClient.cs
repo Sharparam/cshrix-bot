@@ -13,6 +13,8 @@ namespace Cshrix
 
     using Data;
 
+    using Events;
+
     using JetBrains.Annotations;
 
     /// <summary>
@@ -24,17 +26,17 @@ namespace Cshrix
         /// <summary>
         /// Raised when the user is invited to a room.
         /// </summary>
-        event EventHandler<InvitedEventArgs> Invited;
+        event AsyncEventHandler<InvitedEventArgs> Invited;
 
         /// <summary>
         /// Raised when the user joins a room.
         /// </summary>
-        event EventHandler<JoinedEventArgs> Joined;
+        event AsyncEventHandler<JoinedEventArgs> Joined;
 
         /// <summary>
         /// Raised when a message is received.
         /// </summary>
-        event EventHandler<MessageEventArgs> Message;
+        event AsyncEventHandler<MessageEventArgs> Message;
 
         /// <summary>
         /// Gets the current user's ID.

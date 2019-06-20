@@ -19,6 +19,8 @@ namespace Cshrix
     using Data;
     using Data.Events;
 
+    using Events;
+
     using Extensions;
 
     using JetBrains.Annotations;
@@ -111,13 +113,13 @@ namespace Cshrix
         }
 
         /// <inheritdoc />
-        public event EventHandler<InvitedEventArgs> Invited;
+        public event AsyncEventHandler<InvitedEventArgs> Invited;
 
         /// <inheritdoc />
-        public event EventHandler<JoinedEventArgs> Joined;
+        public event AsyncEventHandler<JoinedEventArgs> Joined;
 
         /// <inheritdoc />
-        public event EventHandler<MessageEventArgs> Message;
+        public event AsyncEventHandler<MessageEventArgs> Message;
 
         /// <inheritdoc />
         public UserId UserId => GetUserId();
@@ -179,34 +181,37 @@ namespace Cshrix
         /// </summary>
         /// <param name="sender">The object that raised the event.</param>
         /// <param name="eventArgs">Event arguments.</param>
-        private void HandleSyncAsync(object sender, SyncEventArgs eventArgs)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleSyncAsync(object sender, SyncEventArgs eventArgs)
         {
             Log.LogTrace("Handling sync event");
             var response = eventArgs.Response;
-            HandleRoomEvents(response.Rooms);
+            await HandleRoomEventsAsync(response.Rooms);
         }
 
         /// <summary>
         /// Handles room events from a sync result.
         /// </summary>
         /// <param name="rooms">The <c>rooms</c> part of a sync result.</param>
-        private void HandleRoomEvents(SyncedRooms rooms)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleRoomEventsAsync(SyncedRooms rooms)
         {
             Log.LogTrace("Handling room events");
-            HandleInvitedRoomEvents(rooms.Invited);
-            HandleJoinedRoomEvents(rooms.Joined);
+            await HandleInvitedRoomEventsAsync(rooms.Invited);
+            await HandleJoinedRoomEventsAsync(rooms.Joined);
         }
 
         /// <summary>
         /// Handles events in rooms the user has been invited to.
         /// </summary>
         /// <param name="rooms">Invited rooms from a sync result.</param>
-        private void HandleInvitedRoomEvents(IReadOnlyDictionary<string, InvitedRoom> rooms)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleInvitedRoomEventsAsync(IReadOnlyDictionary<string, InvitedRoom> rooms)
         {
             Log.LogTrace("Handling {Count} rooms in the 'invited' state", rooms.Count);
             foreach (var kvp in rooms)
             {
-                HandleInvitedRoomEvent(kvp.Key, kvp.Value);
+                await HandleInvitedRoomEventAsync(kvp.Key, kvp.Value);
             }
         }
 
@@ -214,12 +219,13 @@ namespace Cshrix
         /// Handles events in rooms the user is joined to.
         /// </summary>
         /// <param name="rooms">Joined rooms from a sync result.</param>
-        private void HandleJoinedRoomEvents(IReadOnlyDictionary<string, JoinedRoom> rooms)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleJoinedRoomEventsAsync(IReadOnlyDictionary<string, JoinedRoom> rooms)
         {
             Log.LogTrace("Handling {Count} rooms in the 'joined' state", rooms.Count);
             foreach (var kvp in rooms)
             {
-                HandleJoinedRoomEvent(kvp.Key, kvp.Value);
+                await HandleJoinedRoomEventAsync(kvp.Key, kvp.Value);
             }
         }
 
@@ -228,11 +234,12 @@ namespace Cshrix
         /// </summary>
         /// <param name="roomId">ID of the room the user was invited to.</param>
         /// <param name="invitedRoom">Data for the room.</param>
-        private void HandleInvitedRoomEvent(string roomId, InvitedRoom invitedRoom)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleInvitedRoomEventAsync(string roomId, InvitedRoom invitedRoom)
         {
             Log.LogTrace("Handling 'invited' room {RoomId}", roomId);
-            var room = GetOrAddRoom(roomId, Membership.Invited);
-            room.Update(invitedRoom);
+            var room = await GetOrAddRoomAsync(roomId, Membership.Invited);
+            await room.UpdateAsync(invitedRoom);
         }
 
         /// <summary>
@@ -240,11 +247,12 @@ namespace Cshrix
         /// </summary>
         /// <param name="roomId">The ID of the room.</param>
         /// <param name="joinedRoom">Data for the room.</param>
-        private void HandleJoinedRoomEvent(string roomId, JoinedRoom joinedRoom)
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
+        private async Task HandleJoinedRoomEventAsync(string roomId, JoinedRoom joinedRoom)
         {
             Log.LogTrace("Handling 'joined' room {RoomId}", roomId);
-            var room = GetOrAddRoom(roomId, Membership.Joined);
-            room.Update(joinedRoom);
+            var room = await GetOrAddRoomAsync(roomId, Membership.Joined);
+            await room.UpdateAsync(joinedRoom);
         }
 
         /// <summary>
@@ -253,7 +261,7 @@ namespace Cshrix
         /// <param name="roomId">The ID of the room.</param>
         /// <param name="membership">The initial membership of the room.</param>
         /// <returns>The <see cref="Room" /> instance for the given ID.</returns>
-        private Room GetOrAddRoom(string roomId, Membership membership)
+        private async Task<Room> GetOrAddRoomAsync(string roomId, Membership membership)
         {
             var hasRoom = _rooms.TryGetValue(roomId, out var room);
 
@@ -266,17 +274,17 @@ namespace Cshrix
             var logger = _loggerFactory.CreateLogger(Room.GenerateLoggerCategory(roomId));
             room = new Room(logger, this, _api, roomId, membership);
             _rooms.TryAdd(roomId, room);
-            room.Message += HandleMessage;
+            room.Message += HandleMessageAsync;
 
             // ReSharper disable once SwitchStatementMissingSomeCases
             switch (membership)
             {
                 case Membership.Invited:
-                    Invited?.Invoke(this, new InvitedEventArgs(room));
+                    await Invited.InvokeAsync(this, new InvitedEventArgs(room));
                     break;
 
                 case Membership.Joined:
-                    Joined?.Invoke(this, new JoinedEventArgs(room));
+                    await Joined.InvokeAsync(this, new JoinedEventArgs(room));
                     break;
             }
 
@@ -288,13 +296,14 @@ namespace Cshrix
         /// </summary>
         /// <param name="sender">The object that raised the event.</param>
         /// <param name="eventArgs">Event arguments.</param>
+        /// <returns>A <see cref="Task" /> representing progress.</returns>
         /// <remarks>
         /// This handler simply forwards the message event onto listeners, only changing the <c>sender</c>
         /// of the .NET event.
         /// </remarks>
-        private void HandleMessage(object sender, MessageEventArgs eventArgs)
+        private async Task HandleMessageAsync(object sender, MessageEventArgs eventArgs)
         {
-            Message?.Invoke(this, eventArgs);
+            await Message.InvokeAsync(this, eventArgs);
         }
     }
 }

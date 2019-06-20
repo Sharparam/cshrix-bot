@@ -8,12 +8,13 @@
 
 namespace Cshrix
 {
-    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     using Data;
     using Data.Events.Content;
+
+    using Events;
 
     using JetBrains.Annotations;
 
@@ -25,12 +26,12 @@ namespace Cshrix
         /// <summary>
         /// Raised when a message is received in this room.
         /// </summary>
-        event EventHandler<MessageEventArgs> Message;
+        event AsyncEventHandler<MessageEventArgs> Message;
 
         /// <summary>
         /// Raised when this room is upgraded to a new version.
         /// </summary>
-        event EventHandler<TombstonedEventArgs> Tombstoned;
+        event AsyncEventHandler<TombstonedEventArgs> Tombstoned;
 
         /// <summary>
         /// Gets the ID of the room.
