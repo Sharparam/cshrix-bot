@@ -360,7 +360,7 @@ namespace Cshrix.Data
         /// <inheritdoc />
         /// <summary>Serves as the default hash function.</summary>
         /// <returns>A hash code for the current object.</returns>
-        public override int GetHashCode() => HashCode.Combine(Type, Sigil, Localpart, Domain);
+        public override int GetHashCode() => Utilities.HashCode.Combine(Type, Sigil, Localpart, Domain);
 
         /// <inheritdoc />
         /// <summary>Returns a string that represents the current object.</summary>
