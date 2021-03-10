@@ -206,7 +206,7 @@ namespace Cshrix.Data
         /// <inheritdoc />
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
-        public override int GetHashCode() => HashCode.Combine(Hostname, Port);
+        public override int GetHashCode() => Utilities.HashCode.Combine(Hostname, Port);
 
         /// <inheritdoc />
         /// <summary>Returns a string that represents the current object.</summary>
